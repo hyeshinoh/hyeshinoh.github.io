@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hyeshin Oh의 기술블로그
+title: 우와팬더의 블로그
 subtitle:
 description: 데이터사이언스를 공부합니다
 keywords:
-author: Hyeshin Oh
-language:
+author: 우와팬더
+language: en
 timezone: Asia/Seoul
 
 # URL
@@ -43,7 +43,7 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-  
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -52,7 +52,7 @@ index_generator:
   path: ''
   per_page: 10
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
