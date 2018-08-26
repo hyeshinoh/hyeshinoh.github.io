@@ -5,18 +5,18 @@
     
     <title>python 01. Python Basic Syntax | 우와팬더의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Python Basic Syntax파이썬의 기본적인 문법 복습 내용입니다. 다루는 내용 기본(comment, print) 식별자 변수 데이터 타입 데이터 형변화 연산자  1. Comment &amp;amp; Print1.1 comment 프로그래밍에서 comment(주석)이란 코드가 실행되지 않는 라인을 의미 코드에 대한 설명을 적거나 잠시 실행시키고 싶지 않은">
+    <meta name="description" content="jupyter notebook으로 보기 Python Basic Syntax파이썬의 기본적인 문법 복습 내용입니다. 다루는 내용 기본(comment, print) 식별자 변수 데이터 타입 데이터 형변화 연산자  1. Comment &amp;amp; Print1.1 comment 프로그래밍에서 comment(주석)이란 코드가 실행되지 않는 라인을 의미 코드에 대한 설">
 <meta name="keywords" content="python,programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 01. Python Basic Syntax">
 <meta property="og:url" content="http://yoursite.com/2018/07/07/python_01/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="Python Basic Syntax파이썬의 기본적인 문법 복습 내용입니다. 다루는 내용 기본(comment, print) 식별자 변수 데이터 타입 데이터 형변화 연산자  1. Comment &amp;amp; Print1.1 comment 프로그래밍에서 comment(주석)이란 코드가 실행되지 않는 라인을 의미 코드에 대한 설명을 적거나 잠시 실행시키고 싶지 않은">
+<meta property="og:description" content="jupyter notebook으로 보기 Python Basic Syntax파이썬의 기본적인 문법 복습 내용입니다. 다루는 내용 기본(comment, print) 식별자 변수 데이터 타입 데이터 형변화 연산자  1. Comment &amp;amp; Print1.1 comment 프로그래밍에서 comment(주석)이란 코드가 실행되지 않는 라인을 의미 코드에 대한 설">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-14T02:23:28.000Z">
+<meta property="og:updated_time" content="2018-08-26T14:05:41.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 01. Python Basic Syntax">
-<meta name="twitter:description" content="Python Basic Syntax파이썬의 기본적인 문법 복습 내용입니다. 다루는 내용 기본(comment, print) 식별자 변수 데이터 타입 데이터 형변화 연산자  1. Comment &amp;amp; Print1.1 comment 프로그래밍에서 comment(주석)이란 코드가 실행되지 않는 라인을 의미 코드에 대한 설명을 적거나 잠시 실행시키고 싶지 않은">
+<meta name="twitter:description" content="jupyter notebook으로 보기 Python Basic Syntax파이썬의 기본적인 문법 복습 내용입니다. 다루는 내용 기본(comment, print) 식별자 변수 데이터 타입 데이터 형변화 연산자  1. Comment &amp;amp; Print1.1 comment 프로그래밍에서 comment(주석)이란 코드가 실행되지 않는 라인을 의미 코드에 대한 설">
     
 
     
@@ -258,7 +258,8 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="Python-Basic-Syntax"><a href="#Python-Basic-Syntax" class="headerlink" title="Python Basic Syntax"></a><strong>Python Basic Syntax</strong></h1><p>파이썬의 기본적인 문법 복습 내용입니다.</p>
+            <p><a href="https://github.com/hyeshinoh/Python_Study/blob/master/python_01_basic_syntax.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
+<h1 id="Python-Basic-Syntax"><a href="#Python-Basic-Syntax" class="headerlink" title="Python Basic Syntax"></a><strong>Python Basic Syntax</strong></h1><p>파이썬의 기본적인 문법 복습 내용입니다.</p>
 <h4 id="다루는-내용"><a href="#다루는-내용" class="headerlink" title="다루는 내용"></a>다루는 내용</h4><ul>
 <li>기본(comment, print)</li>
 <li>식별자</li>
@@ -278,7 +279,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"python"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>python
 </code></pre><p>end 인수를 지정해주면 줄바꿈 등을 설정 가능<br>디폴트는 줄바꿈(개행)인 <code>end=&quot;\n&quot;</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 줄바꿈</span></span><br><span class="line">print(<span class="string">"python"</span>, end=<span class="string">"\n"</span>)  </span><br><span class="line">print(<span class="string">"python"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># tab</span></span><br><span class="line">print(<span class="string">"python\tbasic\tsyntax"</span>)</span><br><span class="line">print(<span class="string">"python"</span>, end=<span class="string">"\t"</span>), print(<span class="string">"programming"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 구분하기</span></span><br><span class="line">print(<span class="string">"subject"</span>, end=<span class="string">" : "</span>), print(<span class="string">"python"</span>)</span><br><span class="line">print(<span class="string">"python"</span>, end=<span class="string">", "</span>), print(<span class="string">"python"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 줄바꿈</span></span><br><span class="line">print(<span class="string">"python"</span>, end=<span class="string">"\n"</span>)  </span><br><span class="line">print(<span class="string">"python"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># tab: "\t"</span></span><br><span class="line">print(<span class="string">"python\tbasic\tsyntax"</span>)</span><br><span class="line">print(<span class="string">"python"</span>, end=<span class="string">"\t"</span>), print(<span class="string">"programming"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 구분하기</span></span><br><span class="line">print(<span class="string">"subject"</span>, end=<span class="string">" : "</span>), print(<span class="string">"python"</span>)</span><br><span class="line">print(<span class="string">"python"</span>, end=<span class="string">", "</span>), print(<span class="string">"python"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>python
  python
  python    basic    syntax
@@ -693,13 +694,14 @@ b is data
 <pre><code>True
  True
  False
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">b = a</span><br><span class="line">print( a <span class="keyword">is</span> b )       <span class="comment"># 데이터가 저장되어 있는 주소가 같은지 확인합니다</span></span><br><span class="line"></span><br><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">c = a.copy()</span><br><span class="line">print( a <span class="keyword">is</span> c )</span><br><span class="line">print( a <span class="keyword">is</span> <span class="keyword">not</span> c )</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">b = a</span><br><span class="line">print( a <span class="keyword">is</span> b )       <span class="comment"># 데이터가 저장되어 있는 주소가 같은지 확인</span></span><br><span class="line"></span><br><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">c = a.copy()</span><br><span class="line">print( a <span class="keyword">is</span> c )</span><br><span class="line">print( a <span class="keyword">is</span> <span class="keyword">not</span> c )</span><br></pre></td></tr></table></figure>
 <pre><code>True
  False
  True
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 리스트의 값을 비교하려면? '==' 사용</span></span><br><span class="line">lst = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">lst1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">lst == lst1, lst <span class="keyword">is</span> lst1</span><br></pre></td></tr></table></figure>
 <pre><code>(True, False)
-</code></pre>
+</code></pre><p><a href="https://github.com/hyeshinoh/Python_Study/blob/master/python_01_basic_syntax.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
+
         
         </div>
         <footer class="article-footer">
