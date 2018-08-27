@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="jupyter notebook으로 보기 Python 03: Function - Basic다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return *args, **kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-27T11:00:11.812Z">
+<meta property="og:updated_time" content="2018-08-27T13:22:37.208Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 03. Python Function - Basic">
 <meta name="twitter:description" content="jupyter notebook으로 보기 Python 03: Function - Basic다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return *args, **kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법">
@@ -348,7 +348,28 @@ After:  10
 </li>
 </ul>
 <p>Out[11]:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure></p>
-<h3 id="1-5-함수의-형태"><a href="#1-5-함수의-형태" class="headerlink" title="1.5 함수의 형태"></a>1.5 함수의 형태</h3><p>parameter의 유무, return value의 유무에 따라 함수 형태가 다름<br>|      | parameter 없음 | parameter 존재 |<br>| —- | ————- | ————- |<br>| return value 없음 | 함수 내의 수행문만 수행 | 인자를 사용하여 수행문 수행 |<br>| return value 존재 |    인자 없이 수행문 수행 후 결과값 반환 | 인자를 사용하여 수행문 수행 후 결과값 반환 |</p>
+<h3 id="1-5-함수의-형태"><a href="#1-5-함수의-형태" class="headerlink" title="1.5 함수의 형태"></a>1.5 함수의 형태</h3><p>parameter의 유무, return value의 유무에 따라 함수 형태가 다름</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">parameter 없음</th>
+<th style="text-align:center">parameter 존재</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">return value <br> 없음</td>
+<td style="text-align:center">함수 내의 수행문만 수행</td>
+<td style="text-align:center">인자를 사용하여 <br> 수행문 수행</td>
+</tr>
+<tr>
+<td style="text-align:center">return value <br> 존재</td>
+<td style="text-align:center">인자 없이 수행문 <br> 수행 후 결과값 반환</td>
+<td style="text-align:center">인자를 사용하여 <br> 수행문 수행 후 결과값 반환</td>
+</tr>
+</tbody>
+</table>
 <h2 id="2-Variable-length-arguments"><a href="#2-Variable-length-arguments" class="headerlink" title="2. Variable-length arguments"></a>2. Variable-length arguments</h2><ul>
 <li>개수가 정해지지 않은 변수를 함수의 parameter로 사용하는 방법</li>
 <li>asterisk(*): 전부, 모두, all</li>
