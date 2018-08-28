@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="jupyter notebook으로 보기 Python 03: Function - Basic다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return *args, **kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-27T13:22:37.208Z">
+<meta property="og:updated_time" content="2018-08-28T02:18:14.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 03. Python Function - Basic">
 <meta name="twitter:description" content="jupyter notebook으로 보기 Python 03: Function - Basic다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return *args, **kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법">
@@ -281,16 +281,16 @@
 <li><p>함수 선언 문법</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> &lt;<span class="title">function_name</span>&gt;<span class="params">(parameter)</span>:</span></span><br><span class="line">    &lt;code&gt;</span><br><span class="line">    <span class="keyword">return</span> &lt;<span class="keyword">return</span> value&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>함수 선언 예시<br>In [1]:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    print(a + b)</span><br></pre></td></tr></table></figure>
+<li><p>함수 선언 예시</p>
 </li>
 </ul>
+<p>In [1]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    print(a + b)</span><br></pre></td></tr></table></figure></p>
 <h3 id="1-2-호출"><a href="#1-2-호출" class="headerlink" title="1.2 호출"></a>1.2 호출</h3><p>In [ ]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">&lt;function_name(argument)&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure></p>
 <p>In [2]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sum_func(<span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
 <pre><code>3
 </code></pre><p>In [3]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type(sum_func)</span><br></pre></td></tr></table></figure></p>
 <p>Out[3]:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function</span><br></pre></td></tr></table></figure></p>
-<p>함수 호출 방식: 함수 인자를 전달하는 방식에는 다음의 두 가지가 있음</p>
+<h4 id="함수-호출-방식"><a href="#함수-호출-방식" class="headerlink" title="함수 호출 방식"></a>함수 호출 방식</h4><p>함수 인자를 전달하는 방식에는 다음의 두 가지가 있음</p>
 <ol>
 <li>값에 의한 호출 (call by value)<ul>
 <li>함수에 인자를 넘길 때 값만 넘김<ul>
