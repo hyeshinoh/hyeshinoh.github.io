@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>python 04. Python Function - Intermediate | 우와팬더의 블로그</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="jupyter notebook으로 보기 Python 04: Function - Intermediate다룰 내용 scope: global / local   inner function(익명함수): 외부로 내 함수를 노출시키고 싶지 않을 때 사용   lambda function   map, filter, reduce(재귀함수)   decorater    1. 변">
+<meta name="keywords" content="python,programming">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 04. Python Function - Intermediate">
+<meta property="og:url" content="http://yoursite.com/2018/07/11/python_04_function_intermediate/index.html">
+<meta property="og:site_name" content="우와팬더의 블로그">
+<meta property="og:description" content="jupyter notebook으로 보기 Python 04: Function - Intermediate다룰 내용 scope: global / local   inner function(익명함수): 외부로 내 함수를 노출시키고 싶지 않을 때 사용   lambda function   map, filter, reduce(재귀함수)   decorater    1. 변">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-08-28T05:55:47.536Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python 04. Python Function - Intermediate">
+<meta name="twitter:description" content="jupyter notebook으로 보기 Python 04: Function - Intermediate다룰 내용 scope: global / local   inner function(익명함수): 외부로 내 함수를 노출시키고 싶지 않을 때 사용   lambda function   map, filter, reduce(재귀함수)   decorater    1. 변">
+    
+
+    
+        <link rel="alternate" href="/" title="우와팬더의 블로그" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome5/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/libs/font-awesome5/css/fa-brands.min.css">
+    <link rel="stylesheet" href="/libs/font-awesome5/css/fa-solid.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">우와팬더의 블로그</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about/index.html">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fas fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about/index.html">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile" class="profile-fixed">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">우와팬더(Hyeshin Oh)</h2>
+            <h3 id="title">Data Science를 공부합니다</h3>
+            <span id="location"><i class="fas fa-map-marker-alt" style="padding-right: 5px"></i>Seoul, Korea</span>
+            <a id="follow" target="_blank" href="https://github.com/hyeshinoh">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                62
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                7
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/hyeshinoh" target="_blank" title="github" class=tooltip>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fab fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-python_04_function_intermediate" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            python 04. Python Function - Intermediate
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/07/11/python_04_function_intermediate/">
+            <time datetime="2018-07-10T15:19:40.000Z" itemprop="datePublished">2018-07-11</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Python/">Python</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_04_function_intermediate.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
+<h1 id="Python-04-Function-Intermediate"><a href="#Python-04-Function-Intermediate" class="headerlink" title="Python 04: Function - Intermediate"></a><strong>Python 04: Function - Intermediate</strong></h1><h3 id="다룰-내용"><a href="#다룰-내용" class="headerlink" title="다룰 내용"></a>다룰 내용</h3><ul>
+<li>scope: global / local  </li>
+<li>inner function(익명함수): 외부로 내 함수를 노출시키고 싶지 않을 때 사용  </li>
+<li>lambda function  </li>
+<li>map, filter, reduce(재귀함수)  </li>
+<li>decorater  </li>
+</ul>
+<h2 id="1-변수의-범위-Scoping-Rule"><a href="#1-변수의-범위-Scoping-Rule" class="headerlink" title="1. 변수의 범위(Scoping Rule)"></a>1. 변수의 범위(Scoping Rule)</h2><ul>
+<li>변수가 사용되는 범위</li>
+<li>global variable: 프로그램 전체에서 사용 </li>
+<li>local variable: 함수 내에서만 사용</li>
+</ul>
+<h3 id="1-1-global-variable"><a href="#1-1-global-variable" class="headerlink" title="1.1 global variable"></a>1.1 global variable</h3><ul>
+<li>전역변수는 함수 내에서 사용이 가능함</li>
+<li>but, 함수 내에 전역 변수와 같은 이름의 변수를 선언하면 새로운 지역 변수가 생김</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gv = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_gv</span><span class="params">()</span>:</span></span><br><span class="line">    print(gv)</span><br><span class="line">print_gv()</span><br></pre></td></tr></table></figure>
+<pre><code>10
+</code></pre><h3 id="1-2-local-variable"><a href="#1-2-local-variable" class="headerlink" title="1.2 local variable"></a>1.2 local variable</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gv = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_gv</span><span class="params">()</span>:</span></span><br><span class="line">    gv = <span class="number">100</span></span><br><span class="line">    print(gv)    <span class="comment"># local 영역의 gv</span></span><br><span class="line">print_gv(), </span><br><span class="line">print(gv)        <span class="comment"># global 영역의 gv = 10</span></span><br></pre></td></tr></table></figure>
+<pre><code>100
+(None,)
+10
+</code></pre><h4 id="locals-로컬-영역에-선언되어-있는-변수를-호출"><a href="#locals-로컬-영역에-선언되어-있는-변수를-호출" class="headerlink" title="locals(): 로컬 영역에 선언되어 있는 변수를 호출"></a>locals(): 로컬 영역에 선언되어 있는 변수를 호출</h4><p>locals 가 실행되는 위치에서 local이므로 global영역에서 실행하면 global 변수가 나옴<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gv = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_gv</span><span class="params">(gv)</span>:</span></span><br><span class="line">    gv = <span class="number">100</span></span><br><span class="line">    gv2 = <span class="number">200</span></span><br><span class="line">    print(locals())</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print_gv(gv)</span><br></pre></td></tr></table></figure>
+<pre><code>{&apos;gv&apos;: 100, &apos;gv2&apos;: 200}
+</code></pre><h4 id="globals-글로벌-영역에-선언되어-있는-변수를-호출"><a href="#globals-글로벌-영역에-선언되어-있는-변수를-호출" class="headerlink" title="globals(): 글로벌 영역에 선언되어 있는 변수를 호출"></a>globals(): 글로벌 영역에 선언되어 있는 변수를 호출</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(globals())</span><br></pre></td></tr></table></figure>
+<pre><code>{&apos;__name__&apos;: &apos;__main__&apos;, &apos;__doc__&apos;: &apos;Automatically created module for IPython interactive environment&apos;, &apos;__package__&apos;: None, &apos;__loader__&apos;: None, &apos;__spec__&apos;: None, &apos;__builtin__&apos;: &lt;module &apos;builtins&apos; (built-in)&gt;, &apos;__builtins__&apos;: &lt;module &apos;builtins&apos; (built-in)&gt;, &apos;_ih&apos;: [&apos;&apos;, &apos;gv = 10\ndef print_gv():\n    print(gv)\nprint_gv()&apos;, &apos;gv = 10\ndef print_gv():\n    gv = 100\n    print(gv)    # local 영역의 gv\nprint_gv(), \nprint(gv)        # global 영역의 gv = 10&apos;, &apos;# locals(): 로컬 영역에 선언되어 있는 변수\ngv = 10\ndef print_gv(gv):\n    gv = 100\n    gv2 = 200\n    print(locals())\n    \n#locals 가 실행되는 위치에서 local이므로 global영역에서 실행하면 global 변수가 나옴&apos;, &apos;print_gv(gv)&apos;, &apos;print(globals())&apos;], &apos;_oh&apos;: {2: (None,)}, &apos;_dh&apos;: [&apos;/Users/hyeshinoh/Workspace/Study_Python&apos;], &apos;In&apos;: [&apos;&apos;, &apos;gv = 10\ndef print_gv():\n    print(gv)\nprint_gv()&apos;, &apos;gv = 10\ndef print_gv():\n    gv = 100\n    print(gv)    # local 영역의 gv\nprint_gv(), \nprint(gv)        # global 영역의 gv = 10&apos;, &apos;# locals(): 로컬 영역에 선언되어 있는 변수\ngv = 10\ndef print_gv(gv):\n    gv = 100\n    gv2 = 200\n    print(locals())\n    \n#locals 가 실행되는 위치에서 local이므로 global영역에서 실행하면 global 변수가 나옴&apos;, &apos;print_gv(gv)&apos;, &apos;print(globals())&apos;], &apos;Out&apos;: {2: (None,)}, &apos;get_ipython&apos;: &lt;bound method InteractiveShell.get_ipython of &lt;ipykernel.zmqshell.ZMQInteractiveShell object at 0x10ae9b208&gt;&gt;, &apos;exit&apos;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x10aeae978&gt;, &apos;quit&apos;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x10aeae978&gt;, &apos;_&apos;: (None,), &apos;__&apos;: &apos;&apos;, &apos;___&apos;: &apos;&apos;, &apos;InteractiveShell&apos;: &lt;class &apos;IPython.core.interactiveshell.InteractiveShell&apos;&gt;, &apos;np&apos;: &lt;module &apos;numpy&apos; from &apos;/usr/local/lib/python3.7/site-packages/numpy/__init__.py&apos;&gt;, &apos;sp&apos;: &lt;module &apos;scipy&apos; from &apos;/usr/local/lib/python3.7/site-packages/scipy/__init__.py&apos;&gt;, &apos;pd&apos;: &lt;module &apos;pandas&apos; from &apos;/usr/local/lib/python3.7/site-packages/pandas/__init__.py&apos;&gt;, &apos;sm&apos;: &lt;module &apos;statsmodels.api&apos; from &apos;/usr/local/lib/python3.7/site-packages/statsmodels/api.py&apos;&gt;, &apos;smf&apos;: &lt;module &apos;statsmodels.formula.api&apos; from &apos;/usr/local/lib/python3.7/site-packages/statsmodels/formula/api.py&apos;&gt;, &apos;sms&apos;: &lt;module &apos;statsmodels.stats.api&apos; from &apos;/usr/local/lib/python3.7/site-packages/statsmodels/stats/api.py&apos;&gt;, &apos;sk&apos;: &lt;module &apos;sklearn&apos; from &apos;/usr/local/lib/python3.7/site-packages/sklearn/__init__.py&apos;&gt;, &apos;mpl&apos;: &lt;module &apos;matplotlib&apos; from &apos;/usr/local/lib/python3.7/site-packages/matplotlib/__init__.py&apos;&gt;, &apos;plt&apos;: &lt;module &apos;matplotlib.pyplot&apos; from &apos;/usr/local/lib/python3.7/site-packages/matplotlib/pyplot.py&apos;&gt;, &apos;Axes3D&apos;: &lt;class &apos;mpl_toolkits.mplot3d.axes3d.Axes3D&apos;&gt;, &apos;sns&apos;: &lt;module &apos;seaborn&apos; from &apos;/usr/local/lib/python3.7/site-packages/seaborn/__init__.py&apos;&gt;, &apos;_i&apos;: &apos;print_gv(gv)&apos;, &apos;_ii&apos;: &apos;# locals(): 로컬 영역에 선언되어 있는 변수\ngv = 10\ndef print_gv(gv):\n    gv = 100\n    gv2 = 200\n    print(locals())\n    \n#locals 가 실행되는 위치에서 local이므로 global영역에서 실행하면 global 변수가 나옴&apos;, &apos;_iii&apos;: &apos;gv = 10\ndef print_gv():\n    gv = 100\n    print(gv)    # local 영역의 gv\nprint_gv(), \nprint(gv)        # global 영역의 gv = 10&apos;, &apos;_i1&apos;: &apos;gv = 10\ndef print_gv():\n    print(gv)\nprint_gv()&apos;, &apos;gv&apos;: 10, &apos;print_gv&apos;: &lt;function print_gv at 0x10aef50d0&gt;, &apos;_i2&apos;: &apos;gv = 10\ndef print_gv():\n    gv = 100\n    print(gv)    # local 영역의 gv\nprint_gv(), \nprint(gv)        # global 영역의 gv = 10&apos;, &apos;_2&apos;: (None,), &apos;_i3&apos;: &apos;# locals(): 로컬 영역에 선언되어 있는 변수\ngv = 10\ndef print_gv(gv):\n    gv = 100\n    gv2 = 200\n    print(locals())\n    \n#locals 가 실행되는 위치에서 local이므로 global영역에서 실행하면 global 변수가 나옴&apos;, &apos;_i4&apos;: &apos;print_gv(gv)&apos;, &apos;_i5&apos;: &apos;print(globals())&apos;}
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type(globals()), globals()[<span class="string">'gv'</span>]</span><br></pre></td></tr></table></figure>
+<pre><code>(dict, 10)
+</code></pre><h3 id="1-3-local-영역에서-global-변수의-변경"><a href="#1-3-local-영역에서-global-변수의-변경" class="headerlink" title="1.3 local 영역에서 global 변수의 변경"></a>1.3 local 영역에서 global 변수의 변경</h3><p>함수 내에서 전역변수 사용히 global 키워드를 사용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gv = <span class="number">10</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dss</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> gv    <span class="comment"># local영역의 gv → global영역의 gv 변수</span></span><br><span class="line">    gv = <span class="number">100</span></span><br><span class="line">    print(gv)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gv</span><br></pre></td></tr></table></figure>
+<pre><code>10
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dss()</span><br></pre></td></tr></table></figure>
+<pre><code>100
+</code></pre><p>dss() 함수 실행 후 gv는 100으로 변경됨</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gv</span><br></pre></td></tr></table></figure>
+<pre><code>100
+</code></pre><h2 id="2-Inner-function"><a href="#2-Inner-function" class="headerlink" title="2. Inner function"></a>2. Inner function</h2><ul>
+<li>global: 전역변수, 전역함수 / local: 지역변수, 지역함수</li>
+<li>전역함수 내에 지역함수를 선언할 수 있음 (inner function)</li>
+<li>local 영역에 함수를 숨겨서 global영역에서 사용할 수 없도록 함</li>
+<li>local 영역에 함수를 선언하면 함수가 실행될 때 메모리상에 올라가서 실행되기 때문에 메모리 절약<ul>
+<li>global 영역에 선언하면 그 함수가 계속 메모리에 올라간 상태(상주)로 실행이 되는 것 (호출이 되지 않더라도)</li>
+</ul>
+</li>
+<li>decorator에 inner function 이해가 필수적</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(c, d)</span>:</span>      <span class="comment"># local function - 숨겨져 있음, outer 함수 내에서만 사용 가능</span></span><br><span class="line">        <span class="keyword">return</span> c + d</span><br><span class="line">    <span class="keyword">return</span> inner(a, b)    <span class="comment"># 결과를 리턴: 3</span></span><br><span class="line"></span><br><span class="line">outer(<span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>3
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 외부에서 inner function을 사용하려면 함수를(결과값이 아니라) 호출</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">outer</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(c, d)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> c + d</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line">i = outer(<span class="number">1</span>, <span class="number">1</span>)    <span class="comment"># 왜 1과 2를 넣는가?</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i(<span class="number">2</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>6
+</code></pre><p>inner()를 바로 호출하면 error 메세지가 뜸</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inner(<span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-22-5051cd321f58&gt; in &lt;module&gt;()
+----&gt; 1 inner(1, 2)
+
+
+NameError: name &apos;inner&apos; is not defined
+</code></pre><h2 id="3-lambda-function"><a href="#3-lambda-function" class="headerlink" title="3. lambda function"></a>3. lambda function</h2><ul>
+<li>함수의 이름 없이, 간단한 파라미터를 받아서 리턴해주는 함수를 만들어 줌</li>
+<li>python3부터는 권장하지는 않으나 여전히 많이 쓰임  </li>
+<li>문법: <code>lambda &lt;parameters&gt; : &lt;return_value&gt;</code></li>
+</ul>
+<p>General Function<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line">sum_func(<span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
+<pre><code>3
+</code></pre><p>Lambda Function<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sum_func2 = <span class="keyword">lambda</span> a, b: a + b</span><br><span class="line">sum_func2(<span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
+<pre><code>3
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type(sum_func2)</span><br></pre></td></tr></table></figure>
+<pre><code>function
+</code></pre><p>General function을 사용하여 계산기 기능을 만드려면 다음과 같이 해야 함</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc</span><span class="params">(fn, a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> fn(a, b)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minus_func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a - b</span><br><span class="line"></span><br><span class="line">calc(sum_func, <span class="number">1</span>, <span class="number">2</span>), calc(minus_func, <span class="number">1</span>, <span class="number">2</span>)    <span class="comment"># 함수를 변수처럼 던져줄 수 있음</span></span><br></pre></td></tr></table></figure>
+<pre><code>(3, -1)
+</code></pre><p>Lambda function을 이용하면 lambda function을 선언하면서 함수에 넣어줌 → 한줄로 쓸 수 있음</p>
+<ul>
+<li>global 영역에 함수를 만들어주지 않아도 되어 메모리 효율 높음</li>
+<li>하지만 간단한 함수만 가능  </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">calc(<span class="keyword">lambda</span> a, b: a + b, <span class="number">1</span>, <span class="number">2</span>), calc(<span class="keyword">lambda</span> a, b: a - b, <span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>(3, -1)
+</code></pre><h2 id="4-Map-Filter-Reduce"><a href="#4-Map-Filter-Reduce" class="headerlink" title="4. Map, Filter, Reduce"></a>4. Map, Filter, Reduce</h2><p>list의 element에 함수를 적용하는 세 가지 방법인 map, filter, reduce에 대하여 알아보자</p>
+<h3 id="4-1-Map"><a href="#4-1-Map" class="headerlink" title="4.1 Map"></a>4.1 Map</h3><ul>
+<li>함수와 sequence 자료형을 받아 sequence 각 element에 함수를 적용한 결과를 리턴하는 함수</li>
+<li>문법: <code>map(&lt;function&gt;, *&lt;list&gt;)</code> </li>
+<li>python3은 iteration을 생성 → list 형변환 을 해주어야 함<ul>
+<li>generator: 실행시점에 값을 생성, 메모리 효율적</li>
+</ul>
+</li>
+</ul>
+<h4 id="list의-element에서-각각-1을-빼주기"><a href="#list의-element에서-각각-1을-빼주기" class="headerlink" title="list의 element에서 각각 1을 빼주기"></a>list의 element에서 각각 1을 빼주기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minus_one</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> num - <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>일반 함수로 구현</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">result = []</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> ls:</span><br><span class="line">    result.append(minus_one(value))</span><br><span class="line">    </span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>[0, 1, 2, 3, 4]
+</code></pre><p>map 함수 사용<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">result = list(map(minus_one, ls))</span><br><span class="line">result</span><br></pre></td></tr></table></figure></p>
+<pre><code>[0, 1, 2, 3, 4]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lambda 사용시 함수 선언해줄 필요 없음</span></span><br><span class="line">result = list(map(<span class="keyword">lambda</span> num: num - <span class="number">1</span>, ls))</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>[0, 1, 2, 3, 4]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># parameter를 두 개 넣는 것도 가능</span></span><br><span class="line">ls1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">ls2 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</span><br><span class="line"></span><br><span class="line">result = list(map(<span class="keyword">lambda</span> num1, num2: num1 + num2, ls1, ls2))</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>[6, 8, 10, 12]
+</code></pre><h4 id="quiz"><a href="#quiz" class="headerlink" title="quiz"></a>quiz</h4><h5 id="1-names에서-성만-출력하기"><a href="#1-names에서-성만-출력하기" class="headerlink" title="(1) names에서 성만 출력하기"></a>(1) names에서 성만 출력하기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="string">"Kim dss"</span>, <span class="string">"Park python"</span>, <span class="string">"Lee science"</span>, <span class="string">"Jung school"</span>]</span><br><span class="line"></span><br><span class="line">result = list(map(<span class="keyword">lambda</span> name: name.split()[<span class="number">0</span>], names))</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;Kim&apos;, &apos;Park&apos;, &apos;Lee&apos;, &apos;Jung&apos;]
+</code></pre><h5 id="2-1-10까지의-숫자리스트에서-홀수는-odd-짝수는-even을-dict-타입-key-value-형태-으로-출력하기"><a href="#2-1-10까지의-숫자리스트에서-홀수는-odd-짝수는-even을-dict-타입-key-value-형태-으로-출력하기" class="headerlink" title="(2) 1~10까지의 숫자리스트에서 홀수는 odd, 짝수는 even을 dict 타입(key, value 형태)으로 출력하기"></a>(2) 1~10까지의 숫자리스트에서 홀수는 odd, 짝수는 even을 dict 타입(key, value 형태)으로 출력하기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># general function 이용</span></span><br><span class="line">num_list = list(range(<span class="number">1</span>, <span class="number">11</span>))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">odd_or_even</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"even"</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"odd"</span></span><br><span class="line">    </span><br><span class="line">result = dict(zip(num_list, list(map(odd_or_even, num_list))))</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>{1: &apos;odd&apos;,
+ 2: &apos;even&apos;,
+ 3: &apos;odd&apos;,
+ 4: &apos;even&apos;,
+ 5: &apos;odd&apos;,
+ 6: &apos;even&apos;,
+ 7: &apos;odd&apos;,
+ 8: &apos;even&apos;,
+ 9: &apos;odd&apos;,
+ 10: &apos;even&apos;}
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># lambda function 이용</span></span><br><span class="line">num_list = list(range(<span class="number">1</span>, <span class="number">11</span>))</span><br><span class="line"></span><br><span class="line">result = list(map(<span class="keyword">lambda</span> num: <span class="string">"even"</span> <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> <span class="string">"odd"</span>, num_list))</span><br><span class="line">result = dict(zip(num_list, result))</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>{1: &apos;odd&apos;,
+ 2: &apos;even&apos;,
+ 3: &apos;odd&apos;,
+ 4: &apos;even&apos;,
+ 5: &apos;odd&apos;,
+ 6: &apos;even&apos;,
+ 7: &apos;odd&apos;,
+ 8: &apos;even&apos;,
+ 9: &apos;odd&apos;,
+ 10: &apos;even&apos;}
+</code></pre><h5 id="3-map-함수를-직접-구현하기"><a href="#3-map-함수를-직접-구현하기" class="headerlink" title="(3) map 함수를 직접 구현하기"></a>(3) map 함수를 직접 구현하기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 가장 어려운 퀴즈: 꼭 다시 풀어보면서 연습해보기</span></span><br><span class="line">ls1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">ls2 = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</span><br><span class="line">ls3 = [<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_func1</span><span class="params">(*args)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sum(args)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">map_func</span><span class="params">(func, *args)</span>:</span></span><br><span class="line">    result = []</span><br><span class="line">    <span class="comment"># 가장 짧은 리스트의 길이 결정</span></span><br><span class="line">    values_count = len(args[<span class="number">0</span>])             </span><br><span class="line">    <span class="keyword">for</span> idx <span class="keyword">in</span> range(len(args)):</span><br><span class="line">         values_count = values_count <span class="keyword">if</span> values_count &lt; len(args[idx]) <span class="keyword">else</span> len(args[idx])</span><br><span class="line">    <span class="comment"># 2중for문: 리스트에서 하나씩 묶어오기</span></span><br><span class="line">    params_count = len(args)                <span class="comment"># 리스트의 개수: 3</span></span><br><span class="line">    <span class="keyword">for</span> idx_1 <span class="keyword">in</span> range(values_count):</span><br><span class="line">        params = []</span><br><span class="line">        <span class="keyword">for</span> idx_2 <span class="keyword">in</span> range(params_count):</span><br><span class="line">            params.append(args[idx_2][idx_1])   </span><br><span class="line">        result.append(func(*params))</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">        </span><br><span class="line">map_func(sum_func1, ls1, ls2, ls3)</span><br><span class="line"></span><br><span class="line"><span class="comment"># expected result: [15, 18, 21, 24]</span></span><br></pre></td></tr></table></figure>
+<pre><code>[15, 18, 21, 24]
+</code></pre><h3 id="4-2-Filter"><a href="#4-2-Filter" class="headerlink" title="4.2 Filter"></a>4.2 Filter</h3><ul>
+<li>리스트 데이터에서 조건에 맞는 value 데이터를 필터링 해주는 함수</li>
+<li>Filter에 사용되는 함수는 bool 데이터 타입을 리턴 값으로 사용 (True / False)<ul>
+<li>함수의 리턴 값이 True이면 값이 남아 있고 False이면 값을 제거</li>
+</ul>
+</li>
+<li>문법: <code>filter(&lt;function&gt;, &lt;list(iterable)&gt;)</code></li>
+</ul>
+<p>General function 사용해서 리스트에서 짝수만 출력하기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_even</span><span class="params">(number_list)</span>:</span></span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> number <span class="keyword">in</span> number_list:</span><br><span class="line">        <span class="keyword">if</span> number % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            result.append(number)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">number_list = list(range(<span class="number">10</span>))</span><br><span class="line">print(number_list)</span><br><span class="line">get_even(number_list)</span><br></pre></td></tr></table></figure>
+<pre><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[0, 2, 4, 6, 8]
+</code></pre><p>Filter function 사용해서 리스트에서 홀수만 출력하기<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">result = list(filter(<span class="keyword">lambda</span> num: <span class="keyword">True</span> <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">1</span> <span class="keyword">else</span> <span class="keyword">False</span>, ls))</span><br><span class="line">result</span><br></pre></td></tr></table></figure></p>
+<pre><code>[1, 3, 5]
+</code></pre><h4 id="quiz-1"><a href="#quiz-1" class="headerlink" title="quiz"></a>quiz</h4><h5 id="1-성이-lee인-사람의-이름만-결과로-출력"><a href="#1-성이-lee인-사람의-이름만-결과로-출력" class="headerlink" title="(1) 성이 lee인 사람의 이름만 결과로 출력"></a>(1) 성이 lee인 사람의 이름만 결과로 출력</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="string">"Kim dss"</span>, <span class="string">"Park python"</span>, <span class="string">"Lee science"</span>, <span class="string">"Jung school"</span>, <span class="string">"Lee java"</span>]</span><br><span class="line"></span><br><span class="line">result = list(filter(<span class="keyword">lambda</span> name: name.split()[<span class="number">0</span>] == <span class="string">"Lee"</span>, names)) </span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;Lee science&apos;, &apos;Lee java&apos;]
+</code></pre><h5 id="2-이름-첫글자를-대문자로-바꾸고-성이-Lee인-사람의-이름만-결과로-출력"><a href="#2-이름-첫글자를-대문자로-바꾸고-성이-Lee인-사람의-이름만-결과로-출력" class="headerlink" title="(2) 이름 첫글자를 대문자로 바꾸고 성이 Lee인 사람의 이름만 결과로 출력"></a>(2) 이름 첫글자를 대문자로 바꾸고 성이 Lee인 사람의 이름만 결과로 출력</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="string">"Kim dss"</span>, <span class="string">"park python"</span>, <span class="string">"lee science"</span>, <span class="string">"Jung school"</span>, <span class="string">"lee java"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># names = list(map(lambda name: name[:1].upper() + name[1:], names))</span></span><br><span class="line">names = list(map(<span class="keyword">lambda</span> name: name.capitalize(), names))</span><br><span class="line">result = list(filter(<span class="keyword">lambda</span> name: name.split()[<span class="number">0</span>] == <span class="string">"Lee"</span>, names)) </span><br><span class="line"></span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;Lee science&apos;, &apos;Lee java&apos;]
+</code></pre><h5 id="3-1-10에서-짝수를-필터링하는-함수-amp-홀수를-필터링하는-함수를-적용하여-filter-구현"><a href="#3-1-10에서-짝수를-필터링하는-함수-amp-홀수를-필터링하는-함수를-적용하여-filter-구현" class="headerlink" title="(3) 1-10에서 짝수를 필터링하는 함수 &amp; 홀수를 필터링하는 함수를 적용하여 filter 구현"></a>(3) 1-10에서 짝수를 필터링하는 함수 &amp; 홀수를 필터링하는 함수를 적용하여 filter 구현</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">ls = list(range(<span class="number">1</span>,<span class="number">11</span>))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">odd</span><span class="params">(number)</span>:</span>             <span class="comment"># 홀수이면 True return</span></span><br><span class="line">    <span class="keyword">return</span> number % <span class="number">2</span> == <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">even</span><span class="params">(number)</span>:</span>            <span class="comment"># 짝수이면 True return</span></span><br><span class="line">    <span class="keyword">return</span> number % <span class="number">2</span> == <span class="number">0</span></span><br><span class="line"></span><br><span class="line">is_odd_even = &#123;              <span class="comment"># 함수도 딕셔너리의 value가 될 수 있음</span></span><br><span class="line">    <span class="string">"odd"</span>:odd,</span><br><span class="line">    <span class="string">"even"</span>:even,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">filter_func</span><span class="params">(func, data_list)</span>:</span></span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> data <span class="keyword">in</span> data_list:</span><br><span class="line">        <span class="keyword">if</span> func(data):</span><br><span class="line">            result.append(data)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">result_1 = list(filter_func(is_odd_even[<span class="string">"odd"</span>], ls))          <span class="comment"># 딕셔너리 key값으로 함수 호출</span></span><br><span class="line">result_2 = list(filter_func(is_odd_even[<span class="string">"even"</span>], ls))</span><br><span class="line"></span><br><span class="line">result_1, result_2</span><br></pre></td></tr></table></figure>
+<pre><code>([1, 3, 5, 7, 9], [2, 4, 6, 8, 10])
+</code></pre><h3 id="4-3-Reduce"><a href="#4-3-Reduce" class="headerlink" title="4.3 Reduce"></a>4.3 Reduce</h3><ul>
+<li>특정 함수에 리스트 데이터의 첫 element부터 넣고 실행하고 실행결과를 다시 함수의 파라미터로 넣어 함수를 실행, 결국 하나의 값으로 리턴</li>
+<li><code>remove(&lt;function&gt;, &lt;list&gt;)</code></li>
+<li>function의 parameter가 두 개</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">reduce(<span class="keyword">lambda</span> x, y: x + y, ls)</span><br></pre></td></tr></table></figure>
+<pre><code>15
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 가장 큰 수를 구하기</span></span><br><span class="line">reduce(<span class="keyword">lambda</span> x, y: x <span class="keyword">if</span> x &gt; y <span class="keyword">else</span> y, ls)</span><br></pre></td></tr></table></figure>
+<pre><code>8
+</code></pre><h4 id="quiz-2"><a href="#quiz-2" class="headerlink" title="quiz"></a>quiz</h4><h5 id="1-이름-길이가-가장-긴-사람을-출력하기"><a href="#1-이름-길이가-가장-긴-사람을-출력하기" class="headerlink" title="(1) 이름 길이가 가장 긴 사람을 출력하기"></a>(1) 이름 길이가 가장 긴 사람을 출력하기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">"Kim dss"</span>, <span class="string">"Park python"</span>, <span class="string">"lee science"</span>, <span class="string">"Jung fastschool"</span>, <span class="string">"Lee java"</span>]</span><br><span class="line"><span class="comment"># TODO</span></span><br><span class="line">result = reduce(<span class="keyword">lambda</span> x, y: x <span class="keyword">if</span> len(x) &gt; len(y) <span class="keyword">else</span> y, name_list)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<pre><code>Jung fastschool
+</code></pre><h5 id="2-reduce-함수-구현하기"><a href="#2-reduce-함수-구현하기" class="headerlink" title="(2) reduce 함수 구현하기"></a>(2) reduce 함수 구현하기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reduce_func</span><span class="params">(func, data_list)</span>:</span></span><br><span class="line">    result = data_list[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(data_list)):</span><br><span class="line">        result = func(result, data_list[i])</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">reduce_func(<span class="keyword">lambda</span> num1, num2: num1 + num2, ls)</span><br></pre></td></tr></table></figure>
+<pre><code>55
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reduce_func</span><span class="params">(func, data_list)</span>:</span></span><br><span class="line">    result = data_list[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">del</span> data_list[<span class="number">0</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> data <span class="keyword">in</span> data_list:</span><br><span class="line">        result = func(result, data)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">reduce_func(<span class="keyword">lambda</span> num1, num2: num1 + num2, ls)</span><br></pre></td></tr></table></figure>
+<pre><code>55
+</code></pre><h2 id="5-Decorator"><a href="#5-Decorator" class="headerlink" title="5. Decorator"></a>5. Decorator</h2><ul>
+<li>코드를 바꾸지 않고 함수의 기능을 추가하거나 수정하고 싶을때 사용</li>
+<li>여러개의 함수를 작성하는데 공통된 코드를 뽑아서 묶어 사용할 수 있음</li>
+<li><code>*args</code>와 <code>**kwargs</code>를 이용하여 내부함수와 내부 인자로 사용</li>
+</ul>
+<p>예를 들어, 아래 A와 B함수에서 공통된 부분인 code_1과 code_3을 빼서 묶어 사용하고 싶을 때 사용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">A</span><span class="params">()</span>:</span></span><br><span class="line">    code_1</span><br><span class="line">    code_2</span><br><span class="line">    code_3</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">B</span><span class="params">()</span>:</span></span><br><span class="line">    code_1</span><br><span class="line">    code_4</span><br><span class="line">    code_3</span><br></pre></td></tr></table></figure>
+<h4 id="Decorator-사용-방법"><a href="#Decorator-사용-방법" class="headerlink" title="Decorator 사용 방법"></a>Decorator 사용 방법</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">C</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>             # <span class="title">inner</span> <span class="title">function</span></span></span><br><span class="line"><span class="function">        <span class="title">code_1</span></span></span><br><span class="line">        result = func(*args, **kwargs)</span><br><span class="line">        code_3</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@C</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">A</span><span class="params">()</span>:</span></span><br><span class="line">    code_2</span><br><span class="line"></span><br><span class="line"><span class="meta">@C</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">B</span><span class="params">()</span>:</span></span><br><span class="line">    code_4</span><br><span class="line">    </span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">결과:</span></span><br><span class="line"><span class="string">A() - code1, code2, code3</span></span><br><span class="line"><span class="string">B() - code1, code4, code3</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">decorator를 쓰지 않으면 아래 처럼 써야함</span></span><br><span class="line"><span class="string">C(A)()</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+<h4 id="Decorator-함수-만들어보기-더하기와-빼기-연산을-display하기"><a href="#Decorator-함수-만들어보기-더하기와-빼기-연산을-display하기" class="headerlink" title="Decorator 함수 만들어보기: 더하기와 빼기 연산을 display하기"></a>Decorator 함수 만들어보기: 더하기와 빼기 연산을 display하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># A</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># B</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minus_func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a - b</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># C  </span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">disp_func</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"running function :"</span>, func.__name__)     <span class="comment"># 공통부분</span></span><br><span class="line">        print(<span class="string">"args :"</span>, args)                          <span class="comment"># 공통부분</span></span><br><span class="line">        print(<span class="string">"kwargs :"</span>, kwargs)                      <span class="comment"># 공통부분</span></span><br><span class="line">        result = func(*args, **kwargs)                 <span class="comment"># running func</span></span><br><span class="line">        print(<span class="string">"result :"</span>, result)                      <span class="comment"># 공통부분</span></span><br><span class="line">        <span class="keyword">return</span> result                                  <span class="comment"># 공통부분</span></span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 함수 그대로를 호출하면</span></span><br><span class="line">sum_func(<span class="number">1</span>, <span class="number">2</span>), minus_func(<span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>(3, -1)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># display를 하고 싶으면 decorator를 이용: sum_func() 함수를 호출할 때 disp_func가 추가되어 실행</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@disp_func</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b   </span><br><span class="line"></span><br><span class="line">sum_func(<span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>running function : sum_func
+args : (1, 2)
+kwargs : {}
+result : 3
+
+3
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@disp_func</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minus_func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a - b   </span><br><span class="line"></span><br><span class="line">minus_func(<span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>running function : minus_func
+args : (1, 2)
+kwargs : {}
+result : -1
+
+-1
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 데코레이터를 안 쓰고 수동으로 선언</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_int</span><span class="params">(*args)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sum(args)</span><br><span class="line"></span><br><span class="line">new_sum_int = disp_func(sum_int)</span><br><span class="line">new_sum_int(<span class="number">5</span>, <span class="number">7</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>running function : sum_int
+args : (5, 7)
+kwargs : {}
+result : 12
+
+12
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disp_func(sum_int)(<span class="number">5</span>, <span class="number">7</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>running function : sum_int
+args : (5, 7)
+kwargs : {}
+result : 12
+
+12
+</code></pre><h4 id="함수의-실행-시간을-측정하는-데코레이터-함수"><a href="#함수의-실행-시간을-측정하는-데코레이터-함수" class="headerlink" title="함수의 실행 시간을 측정하는 데코레이터 함수"></a>함수의 실행 시간을 측정하는 데코레이터 함수</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_time</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span>            <span class="comment"># 함수 정의부 packing</span></span><br><span class="line">        start_time = time.time()</span><br><span class="line">        result = func(*args, **kwargs)       <span class="comment"># 함수 호출부 unpacking</span></span><br><span class="line">        end_time = time.time()</span><br><span class="line">        print(<span class="string">"time : &#123;time&#125;"</span>.format(time = end_time - start_time))</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@run_time</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_func</span><span class="params">(ls)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sum(ls)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls = list(range(<span class="number">10000</span>))</span><br><span class="line">sum_func(ls)</span><br></pre></td></tr></table></figure>
+<pre><code>time : 0.0001068115234375
+49995000
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@run_time</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pow_func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a ** b</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pow_func(<span class="number">7</span>, <span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>time : 3.814697265625e-06
+3234476509624757991344647769100216810857203198904625400933895331391691459636928060001
+</code></pre><h4 id="관리자-계정을-확인해서-관리자-계정이면-패스워드를-출력하는-함수"><a href="#관리자-계정을-확인해서-관리자-계정이면-패스워드를-출력하는-함수" class="headerlink" title="관리자 계정을 확인해서 관리자 계정이면 패스워드를 출력하는 함수"></a>관리자 계정을 확인해서 관리자 계정이면 패스워드를 출력하는 함수</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@admin - code1, func, code3</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dss</span><span class="params">()</span>:</span></span><br><span class="line">    </span><br><span class="line"><span class="meta">@admin</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">admin_ls = [<span class="string">"pdf"</span>, <span class="string">"dss"</span>]</span><br><span class="line">pw = <span class="string">"dss8"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">admin</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        user_id = func(*args, **kwargs)</span><br><span class="line">        <span class="keyword">if</span> user_id <span class="keyword">in</span> admin_ls:</span><br><span class="line">            print(<span class="string">"allow permission [pw:&#123;&#125;]"</span>.format(pw))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"you are not admin."</span>)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@admin</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">input_user</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> input(<span class="string">"insert user name: "</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">input_user()</span><br></pre></td></tr></table></figure>
+<pre><code>insert user name:  3
+you are not admin.
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">user_id = &#123;</span><br><span class="line">    <span class="number">1</span>:<span class="string">"dss"</span>,</span><br><span class="line">    <span class="number">2</span>:<span class="string">"data"</span>,</span><br><span class="line">    <span class="number">3</span>:<span class="string">"python"</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@admin</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">input_id</span><span class="params">()</span>:</span></span><br><span class="line">    user_num = int(input(<span class="string">"inser user id: "</span>))</span><br><span class="line">    <span class="keyword">return</span> user_id[user_num]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">input_id()</span><br></pre></td></tr></table></figure>
+<pre><code>inser user id:  1
+allow permission [pw:dss8]
+</code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
+<li>인프런, ⟪프로그래밍, 데이터 과학을 위한 파이썬 입문⟫ 수업 자료</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/07/11/python_04_function_intermediate/" data-id="cjldax4hl0000dm1hfhzyfulf" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/07/11/python_04_function_intermediate/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/07/11/python_04_function_intermediate/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/07/11/2018-07-11-TIL/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    2018-07-11-TIL
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2018/07/10/2018-07-10-TIL/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">2018-07-10-TIL</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
+                            <p class="item-title"><a href="/2018/08/23/2018-08-23-TIL/" class="title">2018-08-23-TIL</a></p>
+                            <p class="item-date"><time datetime="2018-08-23T09:44:00.000Z" itemprop="datePublished">2018-08-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
+                            <p class="item-title"><a href="/2018/08/21/2018-08-20-TIL/" class="title">2018-08-20-TIL</a></p>
+                            <p class="item-date"><time datetime="2018-08-20T17:11:09.000Z" itemprop="datePublished">2018-08-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
+                            <p class="item-title"><a href="/2018/08/19/2018-08-19-TIL/" class="title">2018-08-19-TIL</a></p>
+                            <p class="item-date"><time datetime="2018-08-19T14:49:50.000Z" itemprop="datePublished">2018-08-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
+                            <p class="item-title"><a href="/2018/08/18/2018-08-18-TIL/" class="title">2018-08-18-TIL</a></p>
+                            <p class="item-date"><time datetime="2018-08-18T14:10:46.000Z" itemprop="datePublished">2018-08-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
+                            <p class="item-title"><a href="/2018/08/18/2018-08-17-TIL/" class="title">2018-08-17-TIL</a></p>
+                            <p class="item-date"><time datetime="2018-08-17T15:25:25.000Z" itemprop="datePublished">2018-08-18</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database/">Database</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python/">Python</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">52</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">38</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">52</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Database/" style="font-size: 14px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/programming/" style="font-size: 16px;">programming</a> <a href="/tags/python/" style="font-size: 18px;">python</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fas fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 우와팬더<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://yoursite.com/2018/07/11/python_04_function_intermediate/';
+        
+        this.page.identifier = 'python_04_function_intermediate';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
