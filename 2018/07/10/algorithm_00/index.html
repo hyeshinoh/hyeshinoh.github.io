@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang=en>
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>알고리즘 이론. 알고리즘이란? | 우와팬더의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="1. 알고리즘이란1.1 알고리즘은 문제 해결 과정을 묘사하는 것 알고리즘이란 어떤 작업을 수행하기 위해 입력을 받아 원하는 출력을 만들어내는 과정을 기술한 것 알고리즘을 설계하기 위해서는 입력과 출력으로 해야할 작업을 명확히 명시함 예시  초보적 알고리즘을 사용해 해결할 수 있는 예 입력: 서울시 지하철 노선도, 출발역 &amp;amp; 도착역 출력: 출발역에서">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-30T14:40:24.137Z">
+<meta property="og:updated_time" content="2018-08-30T15:10:24.543Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="알고리즘 이론. 알고리즘이란?">
 <meta name="twitter:description" content="1. 알고리즘이란1.1 알고리즘은 문제 해결 과정을 묘사하는 것 알고리즘이란 어떤 작업을 수행하기 위해 입력을 받아 원하는 출력을 만들어내는 과정을 기술한 것 알고리즘을 설계하기 위해서는 입력과 출력으로 해야할 작업을 명확히 명시함 예시  초보적 알고리즘을 사용해 해결할 수 있는 예 입력: 서울시 지하철 노선도, 출발역 &amp;amp; 도착역 출력: 출발역에서">
@@ -41,7 +41,7 @@
         <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
     
     
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
     
     
@@ -51,7 +51,7 @@
 </head>
 
 <body>
-    <div id="container">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
         <header id="header">
     <div id="header-main" class="header-inner">
         <div class="outer">
@@ -324,18 +324,18 @@
 <li>변수가 커짐에 따라 함수의 계수가 미치는 영향은 미미해지므로 계수는 무시함</li>
 </ul>
 <h4 id="대표적-점근적-표기법"><a href="#대표적-점근적-표기법" class="headerlink" title="대표적 점근적 표기법"></a>대표적 점근적 표기법</h4><h4 id="1-𝛩-표기법"><a href="#1-𝛩-표기법" class="headerlink" title="(1) 𝛩-표기법"></a>(1) 𝛩-표기법</h4><ul>
-<li>입력의 크기 $n$에 대해 알고리즘의 소요시간이 𝛩($n^2$)이라면 대략 $n^2$에 비례하는 시간이 소요됨을 의미</li>
-<li>𝛩($f(n)$)은 최고차항의 차수(점근적 증가율)가 $f(n)$과 일치하는 함수의 집합 </li>
+<li>입력의 크기 <i>n</i>에 대해 알고리즘의 소요시간이 <i>𝛩(n<sup>2</sup>)</i>이라면 <u>대략</u> <i>n<sup>2</sup></i>에 비례하는 시간이 소요됨을 의미</li>
+<li><i>𝛩(f(n))</i>은 최고차항의 차수(점근적 증가율)가 <i>f(n)</i>과 일치하는 함수의 집합 </li>
 </ul>
-<h4 id="2-O-표기법"><a href="#2-O-표기법" class="headerlink" title="(2) $O$-표기법"></a>(2) $O$-표기법</h4><ul>
-<li>입력의 크기 $n$에 대해 알고리즘의 소요시간이 $O$($n^2$)이라면 기껏해야 $n^2$에 비례하는 시간이 소요됨을 의미 </li>
-<li>$O$($f(n)$)은 최고차항의 차수가 $f(n)$과 같거나 작은 함수의 집합 </li>
-<li>$O$-표기는 함수의 점근적 상한을 나타냄</li>
+<h4 id="2-O-표기법"><a href="#2-O-표기법" class="headerlink" title="(2) O-표기법"></a>(2) <i>O</i>-표기법</h4><ul>
+<li>입력의 크기 <i>n</i>에 대해 알고리즘의 소요시간이 <i>O(n<sup>2</sup>)</i>이라면 <u>기껏해야</u> <i>n<sup>2</sup></i>에 비례하는 시간이 소요됨을 의미 </li>
+<li><i>O(f(n))</i>은 최고차항의 차수가 <i>f(n)</i>과 같거나 작은 함수의 집합 </li>
+<li><i>O</i>-표기는 함수의 <u>점근적 상한</u>을 나타냄</li>
 </ul>
 <h4 id="3-𝛺-표기법"><a href="#3-𝛺-표기법" class="headerlink" title="(3) 𝛺-표기법"></a>(3) 𝛺-표기법</h4><ul>
-<li>입력의 크기 $n$에 대해 알고리즘의 소요시간이 𝛺($n^2$)이라면 적어도 $n^2$에 비례하는 시간이 소요됨을 의미 </li>
-<li>𝛺($f(n)$)은 최고차항의 차수가 $f(n)$과 같거나 큰 함수의 집합 </li>
-<li>𝛺-표기는 함수의 점근적 하한을 나타냄</li>
+<li>입력의 크기 <i>n</i>에 대해 알고리즘의 소요시간이 <i>𝛺(n<sup>2</sup>)</i>이라면 <u>적어도</u> <i>n<sup>2</sup></i>에 비례하는 시간이 소요됨을 의미 </li>
+<li><i>𝛺(f(n))</i>은 최고차항의 차수가 <i>f(n)</i>과 같거나 큰 함수의 집합 </li>
+<li>𝛺-표기는 함수의 <u>점근적 하한</u>을 나타냄</li>
 </ul>
 
         
@@ -622,6 +622,6 @@
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div>
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
