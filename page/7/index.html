@@ -161,7 +161,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                72
+                76
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -214,6 +214,830 @@
 
             
             <section id="main">
+    <article id="post-algorithm_00" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/07/10/algorithm_00/">알고리즘 이론. 알고리즘이란?</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/07/10/algorithm_00/">
+            <time datetime="2018-07-09T15:00:21.000Z" itemprop="datePublished">2018-07-10</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/알고리즘/">알고리즘</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/알고리즘/">알고리즘</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="1-알고리즘이란"><a href="#1-알고리즘이란" class="headerlink" title="1. 알고리즘이란"></a>1. 알고리즘이란</h2><h3 id="1-1-알고리즘은-문제-해결-과정을-묘사하는-것"><a href="#1-1-알고리즘은-문제-해결-과정을-묘사하는-것" class="headerlink" title="1.1 알고리즘은 문제 해결 과정을 묘사하는 것"></a>1.1 알고리즘은 문제 해결 과정을 묘사하는 것</h3><ul>
+<li>알고리즘이란 <span style="background-color:yellow">어떤 작업</span>을 수행하기 위해 <span style="background-color:yellow">입력</span>을 받아 원하는 <span style="background-color:yellow">출력</span>을 만들어내는 과정을 기술한 것</li>
+<li>알고리즘을 설계하기 위해서는 <strong>입력</strong>과 <strong>출력</strong>으로 해야할 작업을 명확히 명시함</li>
+<li>예시<ul>
+<li>초보적 알고리즘을 사용해 해결할 수 있는 예<ul>
+<li>입력: 서울시 지하철 노선도, 출발역 &amp; 도착역</li>
+<li>출력: 출발역에서 도착역까지 가는 최단 경로</li>
+</ul>
+</li>
+<li>좀 더 높은 수준의 알고리즘 문제<ul>
+<li>입력: n개의 행렬과 각 행렬의 차원</li>
+<li>출력: 이 행렬들을 모두 곱하기 위해 가장 빨리 끝나는 곱셉 순서</li>
+</ul>
+</li>
+<li>현존하는 알고리즘으로는 현실적인 시간 내에 최적의 해를 보장할 수 없는 문제<ul>
+<li>입력: 어떤 영업사원이 방문해야 할 고객 n명의 위치</li>
+<li>출력: 이 고객들을 모두 방문하고 돌아오는 가장 짧은 경로            </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>알고리즘은 명확하고 효율적으로 설계해야 함<ul>
+<li>명확하다는 것은 모호하지 않고 이해하기 쉽다는 의미 </li>
+<li>입력의 크기가 클 때 알고리즘의 효율성에 따라 수행 시간이 크게 차이남 </li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-알고리즘은-생각하는-방법을-훈련하는-것"><a href="#1-2-알고리즘은-생각하는-방법을-훈련하는-것" class="headerlink" title="1.2 알고리즘은 생각하는 방법을 훈련하는 것"></a>1.2 알고리즘은 생각하는 방법을 훈련하는 것</h3><ul>
+<li>알고리즘 훈련을 통해 체계적으로 효율적으로 <span style="background-color:yellow">“생각하는 방법”</span>을 익힐 수 있음</li>
+<li>알고리즘을 공부하고 성공적으로 설계, 분석하는 경험이 누적되면 지적인 추상화 레벨이 높아져 문제를 간명하게 볼 수 있는 눈이 생기고 문제의 핵심과 해결 방안에 대한 고도의 직관을 갖게됨</li>
+</ul>
+<h3 id="1-3-알고리즘은-자료구조의-확장"><a href="#1-3-알고리즘은-자료구조의-확장" class="headerlink" title="1.3 알고리즘은 자료구조의 확장"></a>1.3 알고리즘은 자료구조의 확장</h3><ul>
+<li>자료구조는 알고리즘의 선수 과목</li>
+</ul>
+<h2 id="2-알고리즘-설계와-분석의-기초"><a href="#2-알고리즘-설계와-분석의-기초" class="headerlink" title="2. 알고리즘 설계와 분석의 기초"></a>2. 알고리즘 설계와 분석의 기초</h2><h3 id="2-1-기초-사항"><a href="#2-1-기초-사항" class="headerlink" title="2.1 기초 사항"></a>2.1 기초 사항</h3><ul>
+<li>알고리즘 분석의 필요성<ul>
+<li>알고리즘 설계 후에는 해당 알고리즘이 자원을 얼마나 소모하는지 분석해야 함</li>
+<li>대부분 소요 시간이 가장 중요한 관심의 대상</li>
+<li>시간분석을 하면 알고리즘이 어느 정도의 입력에서 어느 정도의 시간이 필요할지 미리 짐작할 수 있음</li>
+</ul>
+</li>
+<li>알고리즘의 수행 시간<ul>
+<li>입력의 크기에 대해 시간이 어떤 비율로 소요되는지로 표현</li>
+</ul>
+</li>
+<li>재귀(recursion, 자기호출)와 귀납적 사고<ul>
+<li>재귀: 어떤 문제를 해결하는 과정에서 자신과 똑같지만 크기가 다른 문제를 발견하고 이들의 관계를 파악함으로써 문제 해결에 간명하게 접근하는 방식</li>
+<li>귀납적 사고: 성격이 같지만 크기가 다른 문제 간의 “관계”를 파악하는 것  </li>
+<li>재귀를 이용하는 알고리즘의 정당성은 수학적 귀납법과 관련이 깊음<ul>
+<li>수학적 귀납법은 자신보다 작은 문제에 대해 결론이 옳음을 가정하고 자신과 이 작은 문제의 관계를 통해서 자신에게도 결론이 옳음을 보이는 것</li>
+<li>재귀 알고리즘이 자신보다 작은 문제를 자기호출하는 것은 수학적 귀납법의 가정과 일치, 즉 자신보다 작은 문제에서는 이 알고리즘이 제대로 작동한다고 가정하는 것  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-점근적-표기"><a href="#2-2-점근적-표기" class="headerlink" title="2.2 점근적 표기"></a>2.2 점근적 표기</h3><ul>
+<li>점근적 분석: 알고리즘은 입력의 크기가 충분히 클 때 효율성이 문제가 되므로, 알고리즘의 수행시간은 입력의 크기가 충분히 클 때 분석함</li>
+<li>점근적 증가율: 변수의 크기가 충분히 큰 경우에 변수가 커짐에 따라 함수가 증가하는 비율</li>
+<li>점근적 표기법: 점근적 증가율의 표기법</li>
+<li>수학의 극한 개념과 유사</li>
+<li>변수가 커짐에 따라 함수의 계수가 미치는 영향은 미미해지므로 계수는 무시함</li>
+</ul>
+<h4 id="대표적-점근적-표기법"><a href="#대표적-점근적-표기법" class="headerlink" title="대표적 점근적 표기법"></a>대표적 점근적 표기법</h4><h4 id="1-𝛩-표기법"><a href="#1-𝛩-표기법" class="headerlink" title="(1) 𝛩-표기법"></a>(1) 𝛩-표기법</h4><ul>
+<li>입력의 크기 <i>n</i>에 대해 알고리즘의 소요시간이 <i>𝛩(n<sup>2</sup>)</i>이라면 <u>대략</u> <i>n<sup>2</sup></i>에 비례하는 시간이 소요됨을 의미</li>
+<li><i>𝛩(f(n))</i>은 최고차항의 차수(점근적 증가율)가 <i>f(n)</i>과 일치하는 함수의 집합 </li>
+</ul>
+<h4 id="2-O-표기법"><a href="#2-O-표기법" class="headerlink" title="(2) O-표기법"></a>(2) <i>O</i>-표기법</h4><ul>
+<li>입력의 크기 <i>n</i>에 대해 알고리즘의 소요시간이 <i>O(n<sup>2</sup>)</i>이라면 <u>기껏해야</u> <i>n<sup>2</sup></i>에 비례하는 시간이 소요됨을 의미 </li>
+<li><i>O(f(n))</i>은 최고차항의 차수가 <i>f(n)</i>과 같거나 작은 함수의 집합 </li>
+<li><i>O</i>-표기는 함수의 <u>점근적 상한</u>을 나타냄</li>
+</ul>
+<h4 id="3-𝛺-표기법"><a href="#3-𝛺-표기법" class="headerlink" title="(3) 𝛺-표기법"></a>(3) 𝛺-표기법</h4><ul>
+<li>입력의 크기 <i>n</i>에 대해 알고리즘의 소요시간이 <i>𝛺(n<sup>2</sup>)</i>이라면 <u>적어도</u> <i>n<sup>2</sup></i>에 비례하는 시간이 소요됨을 의미 </li>
+<li><i>𝛺(f(n))</i>은 최고차항의 차수가 <i>f(n)</i>과 같거나 큰 함수의 집합 </li>
+<li>𝛺-표기는 함수의 <u>점근적 하한</u>을 나타냄</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/07/10/algorithm_00/" data-id="cjm7mj75d005dq41hhi9qx203" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/07/10/algorithm_00/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/07/10/algorithm_00/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-2018-07-09-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/07/09/2018-07-09-TIL/">2018-07-09-TIL</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/07/09/2018-07-09-TIL/">
+            <time datetime="2018-07-09T06:24:51.000Z" itemprop="datePublished">2018-07-09</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
+<li>DSS 수업: &lt;44절. 분류의 기초&gt;</li>
+<li>지난주 토요일 프로젝트 트러블 슈팅 후 일요일에 휴식을 잘 취하고 다시 시작하는 기분! 다시 열심히 해보자  </li>
+</ul>
+<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
+<li>DSS: CSS selector 수업 내용 복습하기</li>
+<li>DSS: javascript 수업 내용 복습하기</li>
+<li>블로그에 about 페이지 만들기</li>
+</ul>
+<h4 id="이번-주에-공부할-것"><a href="#이번-주에-공부할-것" class="headerlink" title="이번 주에 공부할 것"></a>이번 주에 공부할 것</h4><ul>
+<li>DSS: CSS selector 수업 내용 복습하기</li>
+<li>DSS: javascript 수업 내용 복습하기</li>
+<li>DSS: 통계 &lt;11장. 검정과 추정&gt; 복습하기</li>
+<li>DSS: 통계 &lt;34절. 선형회귀분석의 기초&gt; 복습하기</li>
+<li>DSS: 통계 &lt;35절. 입력변수가 카테고리값인 경우&gt; 복습하기</li>
+<li>DSS: 통계 &lt;36절. 예측성능의 진단과 비교&gt; 복습하기</li>
+<li>DSS: 통계 &lt;37절. 과최적화와 교차 검증&gt; 복습하기</li>
+<li>DSS: 통계 &lt;38절. 추천시스템&gt; 복습하기</li>
+<li>DSS: 통계 &lt;43절. 클러스터링&gt; 복습하기</li>
+<li>DSS: 통계 &lt;44절. 분류의 기초&gt; 복습하기</li>
+<li>블로그에 about 페이지 만들기</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/07/09/2018-07-09-TIL/" data-id="cjm7mj73v000tq41hvytpcssz" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/07/09/2018-07-09-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/07/09/2018-07-09-TIL/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-python_02_condition, loop" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/07/08/python_02_condition, loop/">python 02. Python Condition &amp; Loop (조건문과 반복문)</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/07/08/python_02_condition, loop/">
+            <time datetime="2018-07-07T15:55:21.000Z" itemprop="datePublished">2018-07-08</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/파이썬/">파이썬</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><a href="https://github.com/hyeshinoh/Python_Study/blob/master/python_02_condition%20%26%20loop.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
+<h1 id="Python-Condition-amp-Loop-조건문과-반복문"><a href="#Python-Condition-amp-Loop-조건문과-반복문" class="headerlink" title="Python Condition &amp; Loop (조건문과 반복문)"></a>Python Condition &amp; Loop (조건문과 반복문)</h1><h2 id="1-입력-Input"><a href="#1-입력-Input" class="headerlink" title="1. 입력 (Input)"></a>1. 입력 (Input)</h2><h3 id="1-1-문자열-입력"><a href="#1-1-문자열-입력" class="headerlink" title="1.1 문자열 입력"></a>1.1 문자열 입력</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">value = input(<span class="string">"Insert string:"</span>)</span><br><span class="line">print(value, type(value))</span><br></pre></td></tr></table></figure>
+<pre><code>Insert string:hello
+hello &lt;class &apos;str&apos;&gt;
+</code></pre><h3 id="1-2-숫자-입력"><a href="#1-2-숫자-입력" class="headerlink" title="1.2 숫자 입력"></a>1.2 숫자 입력</h3><p>int()와 같은 방법으로 숫자형으로 변환해주어야 함</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n = int(input(<span class="string">"insert integer: "</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>insert integer: 3
+</code></pre><h3 id="1-3-여러-개의-값-입력"><a href="#1-3-여러-개의-값-입력" class="headerlink" title="1.3 여러 개의 값 입력"></a>1.3 여러 개의 값 입력</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = input(<span class="string">"insert list (sep=' '): "</span>)</span><br><span class="line">ls = ls.split(<span class="string">" "</span>)</span><br><span class="line">print(type(ls), ls)</span><br></pre></td></tr></table></figure>
+<pre><code>insert list (sep=&apos; &apos;): data science
+&lt;class &apos;list&apos;&gt; [&apos;data&apos;, &apos;science&apos;]
+</code></pre><h3 id="1-4-입력-받은-숫자-활용-반복문"><a href="#1-4-입력-받은-숫자-활용-반복문" class="headerlink" title="1.4 입력 받은 숫자 활용 반복문"></a>1.4 입력 받은 숫자 활용 반복문</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n = int(input(<span class="string">"number : "</span>))</span><br><span class="line"><span class="keyword">for</span> number <span class="keyword">in</span> range(n):</span><br><span class="line">    print(number, end = <span class="string">" "</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>number : 5
+0 1 2 3 4 
+</code></pre><h1 id="2-출력-print"><a href="#2-출력-print" class="headerlink" title="2. 출력 (print)"></a>2. 출력 (print)</h1><h3 id="2-1-print"><a href="#2-1-print" class="headerlink" title="2.1 print"></a>2.1 print</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"test"</span>, <span class="string">"page"</span>)     <span class="comment"># 한 칸 띄워 출력됨</span></span><br></pre></td></tr></table></figure>
+<pre><code>test page
+</code></pre><h3 id="2-2-pprint"><a href="#2-2-pprint" class="headerlink" title="2.2 pprint"></a>2.2 pprint</h3><ul>
+<li>딕셔너리와 같은 데이터 복잡할 때 가독성을 위해 정렬, 줄바꿈하여 출력</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line"></span><br><span class="line">dic = &#123;<span class="string">"A"</span>:<span class="number">90</span>, <span class="string">"B"</span>:<span class="number">70</span>, <span class="string">"C"</span>:<span class="number">100</span>, <span class="string">"D"</span>:<span class="number">90</span>, <span class="string">"E"</span>:<span class="number">70</span>, <span class="string">"F"</span>:<span class="number">100</span>, <span class="string">"G"</span>:<span class="number">90</span>, <span class="string">"H"</span>:<span class="number">70</span>, <span class="string">"I"</span>:<span class="number">100</span>&#125;</span><br><span class="line">pprint(dic)</span><br></pre></td></tr></table></figure>
+<pre><code>{&apos;A&apos;: 90,
+ &apos;B&apos;: 70,
+ &apos;C&apos;: 100,
+ &apos;D&apos;: 90,
+ &apos;E&apos;: 70,
+ &apos;F&apos;: 100,
+ &apos;G&apos;: 90,
+ &apos;H&apos;: 70,
+ &apos;I&apos;: 100}
+</code></pre><h2 id="3-조건-if-elif-else"><a href="#3-조건-if-elif-else" class="headerlink" title="3. 조건 : if, elif, else"></a>3. 조건 : if, elif, else</h2><h3 id="3-1-if"><a href="#3-1-if" class="headerlink" title="3.1 if"></a>3.1 if</h3><h4 id="3-1-1-문법"><a href="#3-1-1-문법" class="headerlink" title="3.1.1 문법"></a>3.1.1 문법</h4><p>condition이 True이면 code_1이 실행<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> &lt;condition&gt;:</span><br><span class="line">	&lt;code_1&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flag = <span class="keyword">True</span></span><br><span class="line"><span class="keyword">if</span> flag:</span><br><span class="line">    print(<span class="string">":)"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>:)
+</code></pre><h3 id="3-2-else"><a href="#3-2-else" class="headerlink" title="3.2 else"></a>3.2 else</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">flag = <span class="keyword">True</span></span><br><span class="line"><span class="keyword">if</span> flag:</span><br><span class="line">    print(<span class="string">"dss"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"data"</span>)</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-elif"><a href="#3-3-elif" class="headerlink" title="3.3 elif"></a>3.3 elif</h3><ul>
+<li>조건을 여러 개 줄 때</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 10-8:A / 7-4:B / 3-0: C</span></span><br><span class="line">point = <span class="number">3</span></span><br><span class="line">result = <span class="string">""</span></span><br><span class="line"><span class="keyword">if</span> point &gt;= <span class="number">8</span>:</span><br><span class="line">    result = <span class="string">"A"</span></span><br><span class="line"><span class="keyword">elif</span> point &gt;= <span class="number">4</span>:</span><br><span class="line">    result = <span class="string">"B"</span></span><br><span class="line"><span class="keyword">else</span>: </span><br><span class="line">    result = <span class="string">"C"</span></span><br><span class="line">    </span><br><span class="line">print(result)</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>C
+done
+</code></pre><h3 id="3-3-3-Quiz"><a href="#3-3-3-Quiz" class="headerlink" title="3.3.3 Quiz"></a>3.3.3 Quiz</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 숫자를 하나 입력 받아서 홀수이면 "odd", 짝수이면 "even"을 출력하는 코드 만들기</span></span><br><span class="line">user_number = int(input(<span class="string">"숫자를 입력해주세요: "</span>))</span><br><span class="line"><span class="keyword">if</span> user_number % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">    print(<span class="string">"even"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"odd"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>숫자를 입력해주세요: 4
+even
+</code></pre><h3 id="3-4-삼항연산"><a href="#3-4-삼항연산" class="headerlink" title="3.4 삼항연산"></a>3.4 삼항연산</h3><p><em>간단한 조건문은 한 줄로 쓸 수 있어 편리하다.</em><br>문법: <code>(True) if (condition) else (False)</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">user_number = int(input(<span class="string">"숫자를 입력해주세요: "</span>))</span><br><span class="line">result = <span class="string">"even"</span> <span class="keyword">if</span> user_number % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> <span class="string">"odd"</span></span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<pre><code>숫자를 입력해주세요: 3
+odd
+</code></pre><h2 id="4-반복-loop"><a href="#4-반복-loop" class="headerlink" title="4. 반복 (loop)"></a>4. 반복 (loop)</h2><ul>
+<li>while, for, list comprehension 반복문</li>
+<li>break, continue</li>
+</ul>
+<h3 id="4-1-while"><a href="#4-1-while" class="headerlink" title="4.1 while"></a>4.1 while</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">3</span></span><br><span class="line"><span class="keyword">while</span> a &gt; <span class="number">0</span>:</span><br><span class="line">    print(a)</span><br><span class="line">    a -= <span class="number">1</span></span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+<pre><code>3
+2
+1
+
+0
+</code></pre><h4 id="4-1-3-break"><a href="#4-1-3-break" class="headerlink" title="4.1.3 break"></a>4.1.3 break</h4><ul>
+<li>break 코드를 만나면 강제로 반복문이 종료</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">3</span></span><br><span class="line"><span class="keyword">while</span> a &gt; <span class="number">0</span>:</span><br><span class="line">    print(a)</span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    a -= <span class="number">1</span></span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+<pre><code>3
+2
+
+2
+</code></pre><h4 id="4-1-4-continue"><a href="#4-1-4-continue" class="headerlink" title="4.1.4 continue"></a>4.1.4 continue</h4><ul>
+<li>continue 코드를 만나면 바로 반복문 구문으로 이동</li>
+<li>continue 아래 구문이 실행되지 않음</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">3</span></span><br><span class="line"><span class="keyword">while</span> a &gt; <span class="number">0</span>:</span><br><span class="line">    print(a)</span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">2</span>:</span><br><span class="line">        a = <span class="number">0</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    a -= <span class="number">1</span></span><br><span class="line">a</span><br></pre></td></tr></table></figure>
+<pre><code>3
+2
+
+0
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">"q"</span>]</span><br><span class="line">idx = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    data = a[idx]</span><br><span class="line">    idx += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> data == <span class="string">'q'</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> data % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    print(data)</span><br><span class="line">idx</span><br></pre></td></tr></table></figure>
+<pre><code>1
+3
+
+5
+</code></pre><h3 id="4-2-for문"><a href="#4-2-for문" class="headerlink" title="4.2 for문"></a>4.2 for문</h3><ul>
+<li>range, zip, enumerate </li>
+</ul>
+<h4 id="4-2-1-문법"><a href="#4-2-1-문법" class="headerlink" title="4.2.1 문법"></a>4.2.1 문법</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">for &lt;value&gt; in &lt;list&gt;:</span></span><br><span class="line"><span class="string">    &lt;code&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<pre><code>&apos;\nfor &lt;value&gt; in &lt;list&gt;:\n    &lt;code&gt;\n&apos;
+</code></pre><h4 id="4-2-2-활용"><a href="#4-2-2-활용" class="headerlink" title="4.2.2 활용"></a>4.2.2 활용</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> ls:</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
+<pre><code>0
+1
+2
+3
+4
+</code></pre><h4 id="4-2-3-range"><a href="#4-2-3-range" class="headerlink" title="4.2.3 range"></a>4.2.3 range</h4><p>list를 간편하게 생성하기 위한 함수</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<pre><code>[0, 1, 2, 3, 4, 5]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0~5 리스트를 만들고 싶을 때, 범위를 리스트 형태로 만들어 줄 수 있음</span></span><br><span class="line">print(range(<span class="number">6</span>))</span><br><span class="line">print(list(range(<span class="number">6</span>)))</span><br><span class="line">print(list(range(<span class="number">2</span>, <span class="number">6</span>)))</span><br></pre></td></tr></table></figure>
+<pre><code>range(0, 6)
+[0, 1, 2, 3, 4, 5]
+[2, 3, 4, 5]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list(range(<span class="number">0</span>,<span class="number">6</span>,<span class="number">2</span>)), list(range(<span class="number">6</span>, <span class="number">0</span>, <span class="number">-1</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>([0, 2, 4], [6, 5, 4, 3, 2, 1])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):    </span><br><span class="line">    print(<span class="string">"dss"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>dss
+dss
+dss
+dss
+dss
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">    print(<span class="string">"dss"</span>, num)</span><br></pre></td></tr></table></figure>
+<pre><code>dss 0
+dss 1
+dss 2
+dss 3
+dss 4
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">"data"</span>, <span class="string">"science"</span>, <span class="string">"school"</span>]</span><br><span class="line"><span class="keyword">for</span> idx <span class="keyword">in</span> range(len(ls)):</span><br><span class="line">    print(ls[idx])</span><br></pre></td></tr></table></figure>
+<pre><code>data
+science
+school
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">"data"</span>, <span class="string">"science"</span>, <span class="string">"school"</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> ls:</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
+<pre><code>data
+science
+school
+</code></pre><h4 id="4-2-4-zip"><a href="#4-2-4-zip" class="headerlink" title="4.2.4 zip"></a>4.2.4 zip</h4><p>2개의 리스트를 key, value (dictionary)형태로 묶어주는 함수</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">subs = [<span class="string">"korean"</span>, <span class="string">"english"</span>, <span class="string">"math"</span>, <span class="string">"science"</span>]</span><br><span class="line">points = [<span class="number">100</span>, <span class="number">80</span>, <span class="number">90</span>, <span class="number">60</span>]</span><br><span class="line"></span><br><span class="line">result = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> zip(subs, points):</span><br><span class="line">    result[k] = v          <span class="comment"># dict type으로 저장될 수 있다</span></span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>{&apos;english&apos;: 80, &apos;korean&apos;: 100, &apos;math&apos;: 90, &apos;science&apos;: 60}
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># zip을 쓰지 않으면 이렇게 해야 함</span></span><br><span class="line">result = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> idx <span class="keyword">in</span> range(len(subs)):</span><br><span class="line">    result[subs[idx]] = points[idx]</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>{&apos;english&apos;: 80, &apos;korean&apos;: 100, &apos;math&apos;: 90, &apos;science&apos;: 60}
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 가장 좋은 방법</span></span><br><span class="line">subs = [<span class="string">"korean"</span>, <span class="string">"english"</span>, <span class="string">"math"</span>, <span class="string">"science"</span>]</span><br><span class="line">points = [<span class="number">100</span>, <span class="number">80</span>, <span class="number">90</span>, <span class="number">60</span>]</span><br><span class="line"></span><br><span class="line">print(tuple(zip(subs, points)))</span><br><span class="line">print(dict(zip(subs, points)))</span><br></pre></td></tr></table></figure>
+<pre><code>((&apos;korean&apos;, 100), (&apos;english&apos;, 80), (&apos;math&apos;, 90), (&apos;science&apos;, 60))
+{&apos;korean&apos;: 100, &apos;english&apos;: 80, &apos;math&apos;: 90, &apos;science&apos;: 60}
+</code></pre><h4 id="4-2-5-enumerate"><a href="#4-2-5-enumerate" class="headerlink" title="4.2.5 enumerate"></a>4.2.5 enumerate</h4><p>리스트 형태의 데이터를 index와 value 값을 동시에 사용할수 있는 함수</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">"math"</span>, <span class="string">"science"</span>, <span class="string">"korean"</span>]</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> ls:</span><br><span class="line">    print(value)</span><br></pre></td></tr></table></figure>
+<pre><code>math
+science
+korean
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">"math"</span>, <span class="string">"science"</span>, <span class="string">"korean"</span>]</span><br><span class="line"></span><br><span class="line">num = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> ls:</span><br><span class="line">    print(num, value)</span><br><span class="line">    num += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<pre><code>0 math
+1 science
+2 korean
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">"math"</span>, <span class="string">"science"</span>, <span class="string">"korean"</span>]</span><br><span class="line"><span class="keyword">for</span> num, value <span class="keyword">in</span> enumerate(ls):</span><br><span class="line">    print(num, value)</span><br></pre></td></tr></table></figure>
+<pre><code>0 math
+1 science
+2 korean
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">"math"</span>, <span class="string">"science"</span>, <span class="string">"korean"</span>]</span><br><span class="line">filtered_ls = []</span><br><span class="line"><span class="keyword">for</span> num, value <span class="keyword">in</span> enumerate(ls):</span><br><span class="line">    <span class="keyword">if</span> value ==<span class="string">"science"</span>:</span><br><span class="line">        filtered_ls.append(num)</span><br><span class="line">    print(num, value)</span><br><span class="line">filtered_ls</span><br></pre></td></tr></table></figure>
+<pre><code>0 math
+1 science
+2 korean
+
+[1]
+</code></pre><h4 id="4-2-6-퀴즈-for문"><a href="#4-2-6-퀴즈-for문" class="headerlink" title="4.2.6 퀴즈: for문"></a>4.2.6 퀴즈: for문</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># numbers 안에 있는 숫자를 모두 더해서 result로 반환</span></span><br><span class="line">numbers = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line">result = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> numbers:</span><br><span class="line">    result += i</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>25
+</code></pre><h3 id="4-3-list-comprehension"><a href="#4-3-list-comprehension" class="headerlink" title="4.3 list comprehension"></a>4.3 list comprehension</h3><ul>
+<li>반복되어 출력되는 리스트 형태의 데이터를 만들어주는 문법</li>
+<li>for문보다 속도가 빠름 (갈수록 굉장히 중요한 부분!)</li>
+<li><code>ls = [&lt;vlaue&gt; for &lt;value&gt; in &lt;list&gt; (if &lt;condition&gt;)]</code></li>
+<li><em>간단한 형태만 가능하지만 가능한 한 많이 쓰면 좋은 문법</em></li>
+</ul>
+<h4 id="4-3-2-활용"><a href="#4-3-2-활용" class="headerlink" title="4.3.2 활용"></a>4.3.2 활용</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">6</span>)]</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<pre><code>[1, 2, 3, 4, 5]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 다른방법 1</span></span><br><span class="line">ls = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">ls = []</span><br><span class="line">ls.append(<span class="number">1</span>)</span><br><span class="line">ls.append(<span class="number">2</span>)</span><br><span class="line">ls.append(<span class="number">3</span>)</span><br><span class="line">ls.append(<span class="number">4</span>)</span><br><span class="line">ls.append(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 다른방법 2</span></span><br><span class="line">ls = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">6</span>):</span><br><span class="line">    ls.append(num)</span><br></pre></td></tr></table></figure>
+<pre><code>[1, 2, 3, 4, 5]
+</code></pre><h4 id="4-3-3-list-comprehension과-for문의-속도-비교"><a href="#4-3-3-list-comprehension과-for문의-속도-비교" class="headerlink" title="4.3.3 list comprehension과 for문의 속도 비교"></a>4.3.3 list comprehension과 for문의 속도 비교</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%%timeit</span><br><span class="line">ls = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10001</span>):</span><br><span class="line">    ls.append(num)</span><br><span class="line">len(ls)</span><br></pre></td></tr></table></figure>
+<pre><code>1.12 ms ± 40.3 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%%timeit</span><br><span class="line">ls = [num <span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10001</span>)]</span><br><span class="line">len(ls)</span><br></pre></td></tr></table></figure>
+<pre><code>503 µs ± 29.5 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+</code></pre><h4 id="4-3-4-삼항연산과-함께-사용"><a href="#4-3-4-삼항연산과-함께-사용" class="headerlink" title="4.3.4 삼항연산과 함께 사용"></a>4.3.4 삼항연산과 함께 사용</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 0 - 10까지 숫자를 출력하고 해당 수가 짝수인지 홀수 인지를 판별해서 odd / even 문자열을 추가하는 코드</span></span><br><span class="line"></span><br><span class="line">ls = [str(num)+<span class="string">": even"</span> <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> str(num)+<span class="string">": odd"</span> <span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">4</span>)]</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;0: even&apos;, &apos;1: odd&apos;, &apos;2: even&apos;, &apos;3: odd&apos;]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls = [str(num) + <span class="string">": even"</span> <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> str(num) + <span class="string">": odd"</span> <span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>)]</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;1: odd&apos;,
+ &apos;2: even&apos;,
+ &apos;3: odd&apos;,
+ &apos;4: even&apos;,
+ &apos;5: odd&apos;,
+ &apos;6: even&apos;,
+ &apos;7: odd&apos;,
+ &apos;8: even&apos;,
+ &apos;9: odd&apos;,
+ &apos;10: even&apos;]
+</code></pre><h4 id="4-3-5-조건문을-함께-사용"><a href="#4-3-5-조건문을-함께-사용" class="headerlink" title="4.3.5 조건문을 함께 사용"></a>4.3.5 조건문을 함께 사용</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 홀수만 출력되게 함</span></span><br><span class="line">ls = [num <span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">11</span>) <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">1</span>]</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<pre><code>[1, 3, 5, 7, 9]
+</code></pre><h4 id="4-3-6-quiz"><a href="#4-3-6-quiz" class="headerlink" title="4.3.6 quiz"></a>4.3.6 quiz</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 성이 lee인 사람의 성을 삭제하는 코드를 작성하세요</span></span><br><span class="line">names = [<span class="string">"kim dss"</span>, <span class="string">"lee python"</span>, <span class="string">"park data"</span>, <span class="string">"lee macpro"</span>]</span><br><span class="line"></span><br><span class="line">result = [name.replace(<span class="string">"lee "</span>, <span class="string">""</span>) <span class="keyword">for</span> name <span class="keyword">in</span> names]</span><br><span class="line"><span class="comment"># result = [name.split()[1] if name.split("")[0] = "lee" else name for name in names]</span></span><br><span class="line">print(result)</span><br><span class="line"></span><br><span class="line">result = [name <span class="keyword">for</span> name <span class="keyword">in</span> result <span class="keyword">if</span> <span class="string">"park "</span> <span class="keyword">not</span> <span class="keyword">in</span> name] </span><br><span class="line"><span class="comment"># result = [name for name in result if name.startswith("park ") != True] </span></span><br><span class="line"><span class="comment"># if name.split()[0] != "park"</span></span><br><span class="line">print(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># result 1: ["kim dss", "python", "park data", "macpro"]</span></span><br><span class="line"><span class="comment"># result 2: ["kim dss", "python", "macpro"]     - park 씨의 데이터 제거</span></span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;kim dss&apos;, &apos;python&apos;, &apos;park data&apos;, &apos;macpro&apos;]
+[&apos;kim dss&apos;, &apos;python&apos;, &apos;macpro&apos;]
+</code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, 데이터사이언스스쿨 8기 수업자료</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/07/08/python_02_condition, loop/" data-id="cjm7mj76b007dq41hmyihocgd" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/07/08/python_02_condition, loop/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/07/08/python_02_condition, loop/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-2018-07-07-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/07/07/2018-07-07-TIL/">2018-07-07-TIL</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/07/07/2018-07-07-TIL/">
+            <time datetime="2018-07-07T08:19:00.000Z" itemprop="datePublished">2018-07-07</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
+<li>Zillow 회귀분석 팀프로젝트 트러블 슈팅<ul>
+<li>문제 자체가 y값이 아니라 잔차를 예측하는 문제였다는 점에서 선형회귀로 풀기에는 한계가 있었던 프로젝트였음</li>
+<li>핵심부터 파악해서 다시 정리를 해야겠다, 적절한 문제로 다시 분석을 해보고 싶다</li>
+</ul>
+</li>
+</ul>
+<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
+<li>블로그에 about 페이지 만들기</li>
+</ul>
+<h4 id="이번-주에-공부할-것"><a href="#이번-주에-공부할-것" class="headerlink" title="이번 주에 공부할 것"></a>이번 주에 공부할 것</h4><ul>
+<li>DSS: CSS selector 수업 내용 복습하기</li>
+<li>DSS: javascript 수업 내용 복습하기</li>
+<li>DSS: 수학 &lt;11장. 검정과 추정&gt; 복습하기</li>
+<li>DSS: 수학 &lt;13장&gt; 복습하기 - 34절</li>
+<li>DSS: Kaggle 팀프로젝트</li>
+<li><del>커리어서비스: 1분 자기소개 피드백 받기 (~7/3)</del></li>
+<li><del>블로그에 disqus 적용하기</del></li>
+<li>블로그에 about 페이지 만들기</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/07/07/2018-07-07-TIL/" data-id="cjm7mj73v000wq41hgoif5npa" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/07/07/2018-07-07-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/07/07/2018-07-07-TIL/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-python_01" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -710,7 +1534,7 @@ b is data
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/07/python_01/" data-id="cjlqgktzk007l7h1hkg2vw42u" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/07/python_01/" data-id="cjm7mj76y007vq41hx2bkkonl" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -863,7 +1687,7 @@ b is data
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/06/2018-07-06-TIL/" data-id="cjlqgktwe000s7h1hpb8i7x8b" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/06/2018-07-06-TIL/" data-id="cjm7mj73u000qq41hab1bv99k" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1017,7 +1841,7 @@ b is data
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/05/2018-07-05-TIL/" data-id="cjlqgktw9000h7h1hlcu811c6" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/05/2018-07-05-TIL/" data-id="cjm7mj73t000nq41hgboon340" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1169,7 +1993,7 @@ b is data
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/04/2018-07-04-TIL/" data-id="cjlqgktwd000p7h1hhan3c9g4" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/04/2018-07-04-TIL/" data-id="cjm7mj73s000kq41hsdczizrr" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1327,7 +2151,7 @@ b is data
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/03/2018-07-03-TIL/" data-id="cjlqgktw8000f7h1htsp010bp" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/03/2018-07-03-TIL/" data-id="cjm7mj73p000fq41h5sejavlc" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1479,7 +2303,7 @@ b is data
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/03/2018-07-02-TIL/" data-id="cjlqgktwb000m7h1h1urhuzqv" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/03/2018-07-02-TIL/" data-id="cjm7mj73m000dq41h41sn8ew4" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1557,710 +2381,6 @@ b is data
 
 
 
-    <article id="post-2018-07-01-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/07/01/2018-07-01-TIL/">2018-07-01-TIL</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/07/01/2018-07-01-TIL/">
-            <time datetime="2018-07-01T12:35:13.000Z" itemprop="datePublished">2018-07-01</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
-<li>DSS: 34절. 선형회귀분석의 기초<br>다시 보니 정리가 되는 것 같다 굳굳</li>
-<li>벌써 2018년 하반기가 시작. DSS도 이제 반정도 남았는데 더 힘내서 과정도 잘 마치고 커리어 전환까지 성공해야지! </li>
-</ul>
-<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
-<li>DSS: 인성 면접 특강</li>
-<li>Zillow 팀프로젝트</li>
-</ul>
-<h4 id="이번-주에-공부할-것"><a href="#이번-주에-공부할-것" class="headerlink" title="이번 주에 공부할 것"></a>이번 주에 공부할 것</h4><ul>
-<li>DSS: CSS selector 수업 내용 복습하기</li>
-<li>DSS: javascript 수업 내용 복습하기</li>
-<li>DSS: 수학 &lt;9장. 확률변수&gt; 복습하기</li>
-<li>DSS: 수학 &lt;10장. 확률변수의 상관관계&gt; 복습하기</li>
-<li>DSS: 수학 &lt;11장. 검정과 추정&gt; 복습하기</li>
-<li>DSS: 수학 &lt;13장&gt; 복습하기 - 34절</li>
-<li>DSS: Kaggle 팀프로젝트: EDA정리하고 분석 방법 계획을 세울 것</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/07/01/2018-07-01-TIL/" data-id="cjlqgktw4000b7h1ha3uzbdkl" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/07/01/2018-07-01-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/07/01/2018-07-01-TIL/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-python_00" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/07/01/python_00/">python 00. Python에 대하여</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/07/01/python_00/">
-            <time datetime="2018-06-30T15:00:21.000Z" itemprop="datePublished">2018-07-01</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/파이썬/">파이썬</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="Python에-대하여"><a href="#Python에-대하여" class="headerlink" title="Python에 대하여"></a><strong>Python에 대하여</strong></h1><h2 id="1-Python이란"><a href="#1-Python이란" class="headerlink" title="1. Python이란?"></a>1. Python이란?</h2><ul>
-<li>1991년 귀도 반 로섬 (Guido Van Rossum)이 발표</li>
-<li>플랫폼 독립적 언어</li>
-<li>인터프리터 언어</li>
-<li>객체 지향 언어</li>
-<li>동적 타이핑 언어</li>
-<li>처음엔 C언어로 구현되었음</li>
-</ul>
-<h3 id="1-1-플랫폼-독립적-언어"><a href="#1-1-플랫폼-독립적-언어" class="headerlink" title="1.1 플랫폼 독립적 언어"></a>1.1 플랫폼 독립적 언어</h3><ul>
-<li>‘플랫폼’ = OS<ul>
-<li>윈도우, 리눅스, 안드로이드, 맥OS, iOS 등 프로그램이 실행되는 운영 체제를 플랫폼이라고 함</li>
-</ul>
-</li>
-<li>‘독립적’<ul>
-<li>OS에 상관없이 한번 프로그램을 작성하면 어디서든 사용 가능</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-2-인터프리터-언어"><a href="#1-2-인터프리터-언어" class="headerlink" title="1.2 인터프리터 언어"></a>1.2 인터프리터 언어</h3><ul>
-<li>인터프리터 = 통역기를 사용하는 언어<ul>
-<li>소스코드를 바로 실행할 수 있게 지원하는 프로그램 실행 방법</li>
-</ul>
-</li>
-<li>컴퓨터 프로그래밍 언어는 크게 컴파일러 방식과 인터프리터 방식 두 가지로 나누어짐<ul>
-<li>최근에는 컴퓨팅 파워가 발전하면서 작성이 간단한 인터프리터 언어가 발전</li>
-</ul>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>컴파일러</th>
-<th>인터프리터</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>작동방식</td>
-<td>소스코드를 기계어로 먼저 번역 <br> 해당 플랫폼에 최적화되어 프로그램을 실행</td>
-<td>별도의 번역과정 없이 소스코드를 실행시점에 <br> 해석하여 컴퓨터가 처리할 수 있도록 함</td>
-</tr>
-<tr>
-<td>장점 &amp; 단점</td>
-<td>실행속도가 빠름 <br> 한번에 많은 기억장소 필요</td>
-<td>간단히 작성, 메모리가 적게 필요<br> 실행속도가 느림</td>
-</tr>
-<tr>
-<td>주요 언어</td>
-<td>C, 자바, C++, C#</td>
-<td>파이썬, 자바스크립트, 스칼라</td>
-</tr>
-</tbody>
-</table>
-<h3 id="1-3-객체-지향적-언어"><a href="#1-3-객체-지향적-언어" class="headerlink" title="1.3 객체 지향적 언어"></a>1.3 객체 지향적 언어</h3><ul>
-<li>실행 순서가 아닌 단위 모듈(객체) 중심으로 프로그램을 작성</li>
-<li>하나의 객체는 어떤 목적을 달성하기 위한 행동(method)와 속성(attribute)을 가지고 있음</li>
-</ul>
-<h3 id="1-4-동적-타이핑-언어"><a href="#1-4-동적-타이핑-언어" class="headerlink" title="1.4 동적 타이핑 언어"></a>1.4 동적 타이핑 언어</h3><ul>
-<li>인터프리터 언어의 특징 중 하나</li>
-<li>실행하는 시점에 프로그램이 사용해야 할 데이터에 대한 타입을 결정함</li>
-</ul>
-<h2 id="2-왜-python인가"><a href="#2-왜-python인가" class="headerlink" title="2. 왜 python인가?"></a>2. 왜 python인가?</h2><ul>
-<li>쉽고 간단하며 다양한 기능을 제공</li>
-</ul>
-<h3 id="2-1-인간-지향적인-간단한-문법"><a href="#2-1-인간-지향적인-간단한-문법" class="headerlink" title="2.1 인간 지향적인 간단한 문법"></a>2.1 인간 지향적인 간단한 문법</h3><ul>
-<li>얼마나 간단한가?</li>
-<li><p>화면에 “Hello World!”를 찍기 위한 코드를 다른 언어와 비교해보자</p>
-<ul>
-<li><p>먼저 자바의 경우 다음과 같이 써야 한다(고 한다.)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HelloWorldApp</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.printIn(<span class="string">"Hello World!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>python의 경우 훨씬 간단하다</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"Hello World!"</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>화면에 1부터 10까지 순서대로 출력하는 코드도 비교해보자</p>
-<ul>
-<li><p>먼저 자바의 경우 다음과 같이 써야 한다(고 한다.)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (i=<span class="number">1</span>; i&lt; <span class="number">11</span>; i++&#123;</span><br><span class="line">    System.out.printIn (i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>python의 경우 훨씬 간단하다</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>):</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="2-2-다양한-라이브러리와-넓은-활용-범위"><a href="#2-2-다양한-라이브러리와-넓은-활용-범위" class="headerlink" title="2.2 다양한 라이브러리와 넓은 활용 범위"></a>2.2 다양한 라이브러리와 넓은 활용 범위</h3><ul>
-<li>파이썬 라이브러리의 편리함을 보여주는 재미있는 meme을 하나 보자<br><img src="https://img-9gag-fun.9cache.com/photo/a6L3Dwq_700bwp.webp" alt=""></li>
-<li>파이썬은 다양한 라이브러리가 이미 다른 사용자에 의해 구현되어 있음<ul>
-<li><em>특히 통계와 데이터분석 분야의 라이브러리가 강력</em></li>
-</ul>
-</li>
-</ul>
-<h3 id="2-3-가장-대중화된-언어"><a href="#2-3-가장-대중화된-언어" class="headerlink" title="2.3 가장 대중화된 언어"></a>2.3 가장 대중화된 언어</h3><ul>
-<li>파이썬은 최근 가장 널리 쓰이고 있는 언어 중 하나로, 강한 커뮤니티가 구축되어 있음</li>
-</ul>
-<h2 id="한-줄-요약-“Life-is-short-You-need-Python-”"><a href="#한-줄-요약-“Life-is-short-You-need-Python-”" class="headerlink" title="한 줄 요약: “Life is short. You need Python!”"></a>한 줄 요약: “Life is short. You need Python!”</h2><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
-<li>인프런, ⟪프로그래밍, 데이터 과학을 위한 파이썬 입문⟫ 수업 자료</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/07/01/python_00/" data-id="cjlqgkty5005j7h1h654swgwl" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/07/01/python_00/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/07/01/python_00/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-2018-06-30-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/06/30/2018-06-30-TIL/">2018-06-30-TIL</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/06/30/2018-06-30-TIL/">
-            <time datetime="2018-06-30T00:22:49.000Z" itemprop="datePublished">2018-06-30</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
-<li>수업: 회귀분석, 분산분석<ul>
-<li>카테고리 IV 처리방법</li>
-<li>statsmodels의 from_formula method를 사용하면 R이나 stata처럼 DV, IV 변수명만 사용해 분석을 돌릴 수 있군! 익숙하면서 편리한 방법</li>
-<li>고등학교부터 석사 과정까지 계속 반복해서 배웠지만 끊임없이 헷갈렸던 통계가 이제는 좀 정리가 되는 느낌! </li>
-</ul>
-</li>
-<li>Kaggle zillow 회귀분석 프로젝트<ul>
-<li>EDA 어느 정도 마무리. 통계분석 수업을 복습한 후 이제 feature engineering과 회귀분석으로 들어가야겠다</li>
-</ul>
-</li>
-</ul>
-<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
-<li>CSS Selector 복습, 가능하면 javascript 복습</li>
-<li>수학 복습 많이 많이!!!!</li>
-<li>python folium의 기능을 좀 더 파악하면서 zillow 프로젝트 위도 경도 data exploring</li>
-</ul>
-<h4 id="이번-주에-공부할-것"><a href="#이번-주에-공부할-것" class="headerlink" title="이번 주에 공부할 것"></a>이번 주에 공부할 것</h4><ul>
-<li><del>DSS: github 블로그 setup하기</del></li>
-<li><del>DSS: html 수업 내용 복습하기</del></li>
-<li>DSS: CSS selector 수업 내용 복습하기</li>
-<li>DSS: javascript 수업 내용 복습하기</li>
-<li>DSS: 수학 &lt;9장. 확률변수&gt; 복습하기</li>
-<li>DSS: 수학 &lt;10장. 확률변수의 상관관계&gt; 복습하기</li>
-<li>DSS: 수학 &lt;11장. 검정과 추정&gt; 복습하기</li>
-<li><del>DSS: 수학 &lt;12장. StatsModels로 공부하는 회귀분석&gt; 복습하기</del></li>
-<li>DSS: 수학 &lt;13장&gt; 복습하기</li>
-<li>DSS: Kaggle 팀프로젝트: EDA정리하고 분석 방법 계획을 세울 것</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/06/30/2018-06-30-TIL/" data-id="cjlqgktw3000a7h1h2cqgvawl" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/06/30/2018-06-30-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/06/30/2018-06-30-TIL/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-2018-06-29-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/06/29/2018-06-29-TIL/">2018-06-29 TIL</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/06/29/2018-06-29-TIL/">
-            <time datetime="2018-06-29T02:13:13.000Z" itemprop="datePublished">2018-06-29</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
-<li>수업: Flask<ul>
-<li>web쪽을 엄청난 속도로 나가고 있어 어지럽다ㅋㅋ</li>
-<li>이 모든 것들을 복습할 시간이 필요하다!!     </li>
-</ul>
-</li>
-<li>Kaggle zillow 회귀분석 프로젝트<ul>
-<li>folium 패키지를 이용해 집의 위치를 지도로 찍어보는 시도 중</li>
-<li>계속 EDA를하고 있다</li>
-<li>data visualization을 원하는대로 구현하기가 어렵다</li>
-</ul>
-</li>
-<li>왜 벌써 금요일 밤이지?!!! 하루가 너무 짧아. 일주일도 너무 짧아.</li>
-</ul>
-<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
-<li>수업: &lt;36절. 예측성능의 진단과 비교&gt;를 나갈 듯</li>
-<li>팀원들의 EDA 결과를 하나로 통합하기</li>
-<li>수학 복습 많이 많이!!!!</li>
-</ul>
-<h4 id="이번-주에-공부할-것"><a href="#이번-주에-공부할-것" class="headerlink" title="이번 주에 공부할 것"></a>이번 주에 공부할 것</h4><ul>
-<li><del>DSS: github 블로그 setup하기</del></li>
-<li><del>DSS: html 수업 내용 복습하기</del></li>
-<li>DSS: CSS selector 수업 내용 복습하기</li>
-<li>DSS: javascript 수업 내용 복습하기</li>
-<li>DSS: 수학 &lt;9장. 확률변수&gt; 복습하기</li>
-<li>DSS: 수학 &lt;10장. 확률변수의 상관관계&gt; 복습하기</li>
-<li>DSS: 수학 &lt;11장. 검정과 추정&gt; 복습하기</li>
-<li><del>DSS: 수학 &lt;12장. StatsModels로 공부하는 회귀분석&gt; 복습하기</del></li>
-<li>DSS: 수학 &lt;13장&gt; 복습하기</li>
-<li>DSS: Kaggle 팀프로젝트: EDA정리하고 분석 방법 계획을 세울 것</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/06/29/2018-06-29-TIL/" data-id="cjlqgktw100097h1hbfpa4v2s" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/06/29/2018-06-29-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/06/29/2018-06-29-TIL/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
     </nav>
@@ -2274,6 +2394,33 @@ b is data
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
+                            <p class="item-title"><a href="/2018/09/18/2018-09-18-TIL/" class="title">2018-09-18-TIL (9/7 ~ 9/18)</a></p>
+                            <p class="item-date"><time datetime="2018-09-18T07:44:06.000Z" itemprop="datePublished">2018-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/09/07/untitled/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2018-09-07T03:12:51.711Z" itemprop="datePublished">2018-09-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
+                            <p class="item-title"><a href="/2018/09/06/2018-09-06-TIL/" class="title">2018-09-06-TIL</a></p>
+                            <p class="item-date"><time datetime="2018-09-06T11:04:15.000Z" itemprop="datePublished">2018-09-06</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -2293,33 +2440,6 @@ b is data
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
-                            <p class="item-title"><a href="/2018/09/04/2018-09-03-TIL/" class="title">2018-09-03-TIL</a></p>
-                            <p class="item-date"><time datetime="2018-09-03T15:46:10.000Z" itemprop="datePublished">2018-09-04</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
-                            <p class="item-title"><a href="/2018/09/03/2018-09-01-TIL/" class="title">2018-09-01-TIL</a></p>
-                            <p class="item-date"><time datetime="2018-09-02T16:23:31.000Z" itemprop="datePublished">2018-09-03</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
-                            <p class="item-title"><a href="/2018/09/01/2018-08-31-TIL/" class="title">2018-08-31-TIL</a></p>
-                            <p class="item-date"><time datetime="2018-09-01T12:11:47.000Z" itemprop="datePublished">2018-09-01</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -2329,7 +2449,7 @@ b is data
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/데이터베이스/">데이터베이스</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/알고리즘/">알고리즘</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/파이썬/">파이썬</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">60</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/데이터베이스/">데이터베이스</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/알고리즘/">알고리즘</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/파이썬/">파이썬</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">62</span></li></ul>
         </div>
     </div>
 
@@ -2338,7 +2458,7 @@ b is data
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">40</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -2347,7 +2467,7 @@ b is data
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">60</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 

@@ -161,7 +161,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                72
+                76
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -214,6 +214,490 @@
 
             
             <section id="main">
+    <article id="post-2018-09-18-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/09/18/2018-09-18-TIL/">2018-09-18-TIL (9/7 ~ 9/18)</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/09/18/2018-09-18-TIL/">
+            <time datetime="2018-09-18T07:44:06.000Z" itemprop="datePublished">2018-09-18</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>지난 주 프로젝트 마무리와 블라디보스톡 여행 등으로 밀렸던 TIL 다시 시작!</p>
+<h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
+<li>팀 프로젝트: 블레이드앤소울 유저 이탈 예측 (빅콘테스트2018)<ul>
+<li>열흘 정도 기간 동안 시간 맞는 팀원들이 계속 모여 feature engineering, EDA, model을 정리하고 결과 보고서 자료 등을 만들어 14일에 드디어 결과 제출!</li>
+<li>분류 성능은 f1-score 73% 정도가 예상되는데 살짝 아쉬운 수준이지만, 결과를 제대로 끝까지 만들어 낸 첫 프로젝트로 좋은 경험을 한 것 같다. </li>
+</ul>
+</li>
+<li>패스트 캠퍼스 하이어링 데이를 출발로 job seeking 프로세스 시작<ul>
+<li>인터뷰가 조금씩 잡히고 있는데, 빅콘테스트 프로젝트 결과도 잘 정리해두고, 데이터사이언스스쿨에서 배운 내용도 잘 복습해야겠다.  </li>
+</ul>
+</li>
+</ul>
+<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
+<li>기술 면접 예정</li>
+<li>패스트캠퍼스 모의 면접 준비</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/09/18/2018-09-18-TIL/" data-id="cjm7mj757004zq41h560m5a3b" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/09/18/2018-09-18-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/18/2018-09-18-TIL/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-untitled" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h4 id="분류-프로젝트"><a href="#분류-프로젝트" class="headerlink" title="분류 프로젝트"></a>분류 프로젝트</h4><h1 id="엔씨소프트-‹블레이드-앤-소울›-게임-유저-이탈-예측"><a href="#엔씨소프트-‹블레이드-앤-소울›-게임-유저-이탈-예측" class="headerlink" title="엔씨소프트 ‹블레이드 앤 소울› 게임 유저 이탈 예측"></a>엔씨소프트 ‹블레이드 앤 소울› 게임 유저 이탈 예측</h1><h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><p>게임 ‘블레이드 앤 소울’ 유저 이탈 예측 모형</p>
+<ul>
+<li>엔씨소프트의 MMORPG 게임 ‘블레이드앤소울’ 유저의 활동데이터를 활용하여 어떤 유저가 향후 게임서비스에서 이탈하는지, 언제 이탈하는지 예측하는 모델 개발</li>
+</ul>
+<p>2018 빅콘테스트 챔피언리그 문제</p>
+<ul>
+<li>대회 데이터 공개: 7/18</li>
+<li>제출 마감: 9/14</li>
+</ul>
+<p>의의</p>
+<ul>
+<li>고객 이탈은 다양한 도메인의 CRM에서 중요하게 다루는 문제</li>
+<li>게임 데이터: 현실 사회와 유사한 가상 세계에서의 인간 행동에 대한 고품질 데이터가 제공되는 context </li>
+</ul>
+<h3 id="1-1-문제-및-평가-기준"><a href="#1-1-문제-및-평가-기준" class="headerlink" title="1.1 문제 및 평가 기준"></a>1.1 문제 및 평가 기준</h3><ul>
+<li>문제: 게임 유저의 향후 이탈 여부 및 시점 예측<ul>
+<li>‘이탈’의 정의: 4주 이상 접속하지 않으면 이탈로 판단</li>
+<li>제공 데이터 시점 이후 12주 동안의 접속 이력으로 판단</li>
+</ul>
+</li>
+<li>target label: 이탈 여부, 이탈 시점에 따른 4개 클래스<ul>
+<li>week: 1주일 내에 이탈</li>
+<li>month: 2-4주 내에 이탈</li>
+<li>2month: 5-8주 내에 이탈</li>
+<li>retained: 잔존</li>
+</ul>
+</li>
+<li>평가 기준: 예측 성능(F1 score)<ul>
+<li>각 클래스별 precision과 recall을 계산한 후 전체에 대한 조화 평균</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-데이터-소개"><a href="#1-2-데이터-소개" class="headerlink" title="1.2 데이터 소개"></a>1.2 데이터 소개</h3><p>데이터 규모</p>
+<ul>
+<li>Train data: (계정 아이디 기준) 10만 명의 게임 활동 데이터</li>
+<li>Test data: (계정 아이디 기준) 4만 명의 게임 활동 데이터</li>
+</ul>
+<p>데이터 구성</p>
+<ul>
+<li>주요 활동 정보 “activity”: 게임 내 주요 활동량을 유저별 1주일 단위로 집계</li>
+<li>결제 정보 “payment”: 사용자의 결제 정보를 1주일 단위로 집계</li>
+<li>사회관계 정보 “party”: 유저간 상호작용 및 사회관계에 대한 정보 (예측 대상이 아닌 유저 포함)</li>
+<li>사회관계 정보 “guild”: 유저간 상호작용 및 사회관계에 대한 정보 (예측 대상이 아닌 유저 포함)</li>
+<li>사회관계 정보 “trade”: 유저간 상호작용 및 사회관계에 대한 정보 (예측 대상이 아닌 유저 포함)</li>
+</ul>
+<h2 id="2-EDA-amp-Feature-Engineering"><a href="#2-EDA-amp-Feature-Engineering" class="headerlink" title="2. EDA &amp; Feature Engineering"></a>2. EDA &amp; Feature Engineering</h2><p>Overview</p>
+<ul>
+<li>각각 다른 schema를 가진 data에서 예측 대상인 유저id(acc_id) 기준으로 하여 feature variable 생성</li>
+<li>Activity, payment data의 경우<ul>
+<li>한 유저가 week 별로 여러 개의 관측치를 가지고 있음</li>
+<li>이를 변수마다 week별 변수로 확장(w1~w8)하거나 groupby하여 변수 생성</li>
+</ul>
+</li>
+<li>Party, guild와 trade data의 경우<ul>
+<li>party와 guild의 경우 개인 유저 레벨이 아닌 그룹(party, guild) 레벨의 data</li>
+<li>전체 사회관계를 담기 위해 train id에 대해 sampling되어 있지 않음</li>
+<li>party 멤버 id와 guild 멤버id에서 개별id를 추출하여 참여 횟수 등의 변수 생성 </li>
+<li>trade의 경우 전체 trade 리스트 중 train id가 구매/판매한 데이터만 이용해 변수 생성</li>
+<li>party와 trade 전체 데이터를 network로 분석하여 변수 생성</li>
+</ul>
+</li>
+</ul>
+<p>현재 feature variables 총 536개</p>
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/1mm9PTYYPBvEwT4YOv-zK9bUCs2nIcGCh_BwxN9m97Iw/edit?usp=sharing" target="_blank" rel="noopener">변수 설명</a></li>
+<li>Modeling에서는 feature간 상관관계 등을 고려하여 선택 사용</li>
+</ul>
+<h2 id="3-Modeling"><a href="#3-Modeling" class="headerlink" title="3. Modeling"></a>3. Modeling</h2><ol>
+<li>앙상블 기법 중 하나인 stacking을 사용 <ul>
+<li>1단계: random forest, XGBoost 등 사용<ul>
+<li>2단계: XGBoost</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Keras 단일 모델 (<a href="https://colab.research.google.com/drive/1DLjjuAU87UHCXkUEDoBE12SuTrRRXCTi" target="_blank" rel="noopener">jupyter notebook</a>)</li>
+</ol>
+<h2 id="4-Performance"><a href="#4-Performance" class="headerlink" title="4. Performance"></a>4. Performance</h2><ul>
+<li>현재 중간 평가 결과: stacking 사용 모델의 f-1 score 약 0.72</li>
+</ul>
+<h2 id="5-Conclusion"><a href="#5-Conclusion" class="headerlink" title="5. Conclusion"></a>5. Conclusion</h2><p>4개 클래스(Week-Month-2Month-Retained)별로 예측 성능에 차이 발생</p>
+<ul>
+<li>Week과 Retained은 상대적으로 잘 예측됨</li>
+<li>Month와 2Month는 서로 구분하기가 쉽지 않음</li>
+<li>Month의 recall과 2Month의 precision이 떨어지는 경향이 있음<ul>
+<li>Month로 분류해야하는 유저를 2Month로 분류하고 있다는 의미</li>
+</ul>
+</li>
+</ul>
+<p>Week과 Retained의 분류 성능이 높다는 점에 착안하여 한 label씩 분류하면서 단계적으로 진행하는 hierarchical한 접근법을 시도하였으나 최종 성능은 크게 효과적이지 않았음</p>
+<ul>
+<li>Week과 Retained 단계에서 정확도가 완벽할 정도로 굉장히  높은 경우에만 기대만큼 효과적일 것이라는 점을 알게됨</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/09/07/untitled/" data-id="cjm7mj75h005pq41hnlp49sir" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/09/07/untitled/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/07/untitled/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-2018-09-06-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/09/06/2018-09-06-TIL/">2018-09-06-TIL</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/09/06/2018-09-06-TIL/">
+            <time datetime="2018-09-06T11:04:15.000Z" itemprop="datePublished">2018-09-06</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
+<li>팀 프로젝트: 블레이드앤소울 유저 이탈 예측 (빅콘테스트2018)<ul>
+<li>party data feature engineering</li>
+</ul>
+</li>
+<li>이력서 정리: 검토 후 내일 하이어링데이 용 하드카피 출력, wanted 업데이트</li>
+<li>CNN 강의 복습</li>
+</ul>
+<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
+<li>팀 프로젝트: 블레이드앤소울 유저 이탈 예측 (빅콘테스트2018)<ul>
+<li>party network 분석, feature engineering</li>
+<li>keras 신경망 모델링</li>
+</ul>
+</li>
+<li>이력서 정리</li>
+<li>개인 프로젝트: image augmentation 후 CNN 모델링</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/09/06/2018-09-06-TIL/" data-id="cjm7mj754004qq41h0hclnbgb" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/09/06/2018-09-06-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/06/2018-09-06-TIL/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-2018-09-05-TIL" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -281,7 +765,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/06/2018-09-05-TIL/" data-id="cjlqgktxt004p7h1hu5ictqi1" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/06/2018-09-05-TIL/" data-id="cjm7mj7580052q41hkazdvvu0" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -430,7 +914,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/05/2018-09-04-TIL/" data-id="cjlqgktxs004m7h1hrxrzr3qy" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/05/2018-09-04-TIL/" data-id="cjm7mj756004wq41hbzmhk1en" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -578,7 +1062,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/04/2018-09-03-TIL/" data-id="cjlqgktxv004s7h1hzfnt48sp" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/04/2018-09-03-TIL/" data-id="cjm7mj755004tq41hkurjhb76" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -729,7 +1213,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/03/2018-09-01-TIL/" data-id="cjlqgktxy004y7h1h59pg29bf" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/03/2018-09-01-TIL/" data-id="cjm7mj750004hq41hlutvwhxa" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -893,7 +1377,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/01/2018-08-31-TIL/" data-id="cjlqgktxx004v7h1he3tar19c" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/01/2018-08-31-TIL/" data-id="cjm7mj751004kq41hkylbayvm" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1061,7 +1545,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/08/31/2018-08-30-TIL/" data-id="cjlqgktxo004d7h1hfcy1g7xa" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/08/31/2018-08-30-TIL/" data-id="cjm7mj74z004eq41hczldtaud" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1228,7 +1712,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/08/30/2018-08-29-TIL/" data-id="cjlqgktxp004g7h1h7zv9nv9g" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/08/30/2018-08-29-TIL/" data-id="cjm7mj752004nq41ho13phw8l" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1306,490 +1790,6 @@
 
 
 
-    <article id="post-2018-08-28-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/08/28/2018-08-28-TIL/">2018-08-28-TIL</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/08/28/2018-08-28-TIL/">
-            <time datetime="2018-08-28T14:30:05.000Z" itemprop="datePublished">2018-08-28</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
-<li>개인 프로젝트: 3대 기획사 아이돌 얼굴 분류<ul>
-<li>여자 아이돌 사진 preprocessing을 완료하고 CNN 모델링에 들어갔다. hyper parameter는 거의 건드리지 않고 2개 정도 모델을 돌려봤는데 현재 정확도는 50%에 못미치는 수준이다. 많이 높일 수 있을까?!!</li>
-</ul>
-</li>
-</ul>
-<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
-<li>팀 프로젝트: 블레이드앤소울 유저 이탈 예측<ul>
-<li>오랜만에 팀플 재개! 새로운 변수를 좀 만들어서 가야겠다! </li>
-</ul>
-</li>
-<li>개인 프로젝트: 여자아이돌 분류 모델링, 남자아이돌 사진 전처리<ul>
-<li>시도해볼것: 여자아이돌 image augmentation, grey scaling</li>
-</ul>
-</li>
-</ul>
-<h4 id="이번-주에-공부할-것"><a href="#이번-주에-공부할-것" class="headerlink" title="이번 주에 공부할 것"></a>이번 주에 공부할 것</h4><ul>
-<li style="list-style: none"><input type="checkbox"> 개인 프로젝트: <ul>
-<li style="list-style: none"><input type="checkbox"> 아이돌 사진 이미지 전처리 → 진행중</li>
-<li style="list-style: none"><input type="checkbox"> 이미지 분류 모델링</li>
-</ul>
-</li>
-<li style="list-style: none"><input type="checkbox"> 팀 프로젝트:<ul>
-<li style="list-style: none"><input type="checkbox"> activity에서 feature engineering 새롭게 하기</li>
-<li style="list-style: none"><input type="checkbox"> 20위권으로 자율평가 성적 올리기</li>
-</ul>
-</li>
-<li style="list-style: none"><input type="checkbox"> 관심기업 자료조사<ul>
-<li style="list-style: none"><input type="checkbox"> 관심 기업 리스트 정리하기</li>
-<li style="list-style: none"><input type="checkbox"> 5개 이상 관심 기업 정보 스크랩   </li>
-</ul>
-</li>
-<li style="list-style: none"><input type="checkbox"> github repository 정리 및 업데이트 → 진행중</li>
-<li style="list-style: none"><input type="checkbox"> python 복습: 데이터사이언스스쿨 파이썬 파트 → 진행중</li>
-<li style="list-style: none"><input type="checkbox"> 수학(통계)&amp;데이터분석 복습</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/08/28/2018-08-28-TIL/" data-id="cjlqgktxq004j7h1htw4k3gma" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/08/28/2018-08-28-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/08/28/2018-08-28-TIL/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-2018-08-23-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/08/23/2018-08-23-TIL/">2018-08-23-TIL</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/08/23/2018-08-23-TIL/">
-            <time datetime="2018-08-23T09:44:00.000Z" itemprop="datePublished">2018-08-23</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
-<li>패스트캠퍼스 데이터사이언스스쿨 종강<ul>
-<li>4개월 간의 데이터사이언스스쿨 과정이 공식적으로 끝이 났다. 4개월동안 너무 빨리 많은 것을 배워서 복습해서 내것으로 만들어야될 것이 잔뜩 쌓였다. 페이스를 잃지 말고 계속 공부를 해나가야지. </li>
-</ul>
-</li>
-<li>개인 프로젝트: 사진 데이터 전처리 작업<ul>
-<li>데이터 전처리 시간이 길어서 남자 아이돌은 잠시 미뤄두고 여자 아이돌만으로 먼저 진행해보려고 한다. </li>
-<li>여자 아이돌들의 사진에서 얼굴 부분을 crop하는 작업 완료.<br>autocrop이라는 라이브러리를 이용했는데, 얼굴이 인식이 안되는 경우도 많고 해서 검수와 수정 작업이 꽤나 필요하다. 100장씩 검색 후에 train data로 못 쓰는 사진을 지우다보니 가수마다 사진 개수도 다른 상태인데, 일단은 가지고 있는 사진으로만 전처리를 해본 후 모델링을 시도해봐야겠다.</li>
-</ul>
-</li>
-</ul>
-<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
-<li>개인 프로젝트: 여자아이돌 분류 모델링</li>
-</ul>
-<h4 id="이번-주에-공부할-것"><a href="#이번-주에-공부할-것" class="headerlink" title="이번 주에 공부할 것"></a>이번 주에 공부할 것</h4><ul>
-<li style="list-style: none"><input type="checkbox"> 개인 프로젝트: <ul>
-<li style="list-style: none"><input type="checkbox"> 아이돌 사진 이미지 전처리</li>
-<li style="list-style: none"><input type="checkbox"> 이미지 분류 모델링</li>
-</ul>
-</li>
-<li style="list-style: none"><input type="checkbox"> DSS: 수학 <code>&lt;54절. 신경망 성능 개선&gt;</code> 복습하기</li>
-<li style="list-style: none"><input type="checkbox"> DSS: 수학 <code>&lt;55절. CNN&gt;</code> 복습하기</li>
-<li style="list-style: none"><input type="checkbox"> DSS: 수학 <code>&lt;57절. GAN&gt;</code> 복습하기</li>
-<li style="list-style: none"><input type="checkbox"> 인성면접 답안 대비 (개인 신상, 취미, 특기 관련 질문)</li>
-<li style="list-style: none"><input type="checkbox"> 관심 기업 조사</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/08/23/2018-08-23-TIL/" data-id="cjlqgktxn004a7h1hwa0kvlst" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/08/23/2018-08-23-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/08/23/2018-08-23-TIL/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-2018-08-20-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/08/21/2018-08-20-TIL/">2018-08-20-TIL</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/08/21/2018-08-20-TIL/">
-            <time datetime="2018-08-20T17:11:09.000Z" itemprop="datePublished">2018-08-21</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
-<li>9/3 정도에나 픽업이 가능하다던 맥북이 갑자기 오늘 왔단다!!<br>케이스나 보호 장비 준비도 아직 못했는데!!!!!! 왜 이렇게 빨리??ㅋㅋ<br>조금 당황스럽지만 애플스토어로 달려가 픽업을 해왔다. 계속 세팅하고 이전 노트북 데이터 정리하고 하느라 정신이 없다 ㅎㅎ</li>
-<li>개인 프로젝트: 사진 데이터 전처리 작업<ul>
-<li>사진을 보면서 여러 사람이 찍힌 사진, 정면이 아닌 사진, 선글라스 등으로 얼굴이 가려진 사진 등을 걸러내고 있는데 확실하긴 하지만 자동으로 하는 방법이 분명 있을 것 같다 ㅎㅎㅎ google vision API로 얼굴 각도가 돌아가 있는 사진은 걸러낼 수 있는 것 같던데 찾아봐야겠다. 빨리 모델링을 해보고 싶다 ㅜ </li>
-</ul>
-</li>
-</ul>
-<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
-<li>개인 프로젝트: 사진 데이터 전처리 작업</li>
-</ul>
-<h4 id="이번-주에-공부할-것"><a href="#이번-주에-공부할-것" class="headerlink" title="이번 주에 공부할 것"></a>이번 주에 공부할 것</h4><ul>
-<li style="list-style: none"><input type="checkbox"> 분류 팀 프로젝트 <code>&lt;블레이드앤소울 유저 이탈 예측&gt;</code><ul>
-<li style="list-style: none"><input type="checkbox"> feature engineering 발전시키기</li>
-</ul>
-</li>
-<li style="list-style: none"><input type="checkbox"> 개인 프로젝트: <ul>
-<li style="list-style: none"><input type="checkbox"> 아이돌 사진 이미지 전처리</li>
-<li style="list-style: none"><input type="checkbox"> 이미지 분류 모델링</li>
-</ul>
-</li>
-<li style="list-style: none"><input type="checkbox"> DSS: 프로그래밍 <code>&lt;Database - SQL&gt;</code> 복습하기</li>
-<li style="list-style: none"><input type="checkbox"> DSS: 프로그래밍 <code>&lt;Database - noSQL&gt;</code> 복습하기</li>
-<li style="list-style: none"><input type="checkbox"> DSS: 프로그래밍 <code>&lt;웹 크롤링&gt;</code> 복습하기</li>
-<li style="list-style: none"><input type="checkbox"> DSS: 수학 <code>&lt;54절. 신경망 성능 개선&gt;</code> 복습하기</li>
-<li style="list-style: none"><input type="checkbox"> DSS: 수학 <code>&lt;55절. CNN&gt;</code> 복습하기</li>
-<li style="list-style: none"><input type="checkbox"> DSS: 수학 <code>&lt;57절. GAN&gt;</code> 복습하기</li>
-<li style="list-style: none"><input type="checkbox"> 인성면접 답안 대비 (개인 신상, 취미, 특기 관련 질문)</li>
-<li style="list-style: none"><input type="checkbox"> 관심 기업 조사</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/08/21/2018-08-20-TIL/" data-id="cjlqgktxk00417h1huta382mh" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/08/21/2018-08-20-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/08/21/2018-08-20-TIL/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
@@ -1803,6 +1803,33 @@
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
+                            <p class="item-title"><a href="/2018/09/18/2018-09-18-TIL/" class="title">2018-09-18-TIL (9/7 ~ 9/18)</a></p>
+                            <p class="item-date"><time datetime="2018-09-18T07:44:06.000Z" itemprop="datePublished">2018-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/09/07/untitled/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2018-09-07T03:12:51.711Z" itemprop="datePublished">2018-09-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
+                            <p class="item-title"><a href="/2018/09/06/2018-09-06-TIL/" class="title">2018-09-06-TIL</a></p>
+                            <p class="item-date"><time datetime="2018-09-06T11:04:15.000Z" itemprop="datePublished">2018-09-06</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1822,33 +1849,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
-                            <p class="item-title"><a href="/2018/09/04/2018-09-03-TIL/" class="title">2018-09-03-TIL</a></p>
-                            <p class="item-date"><time datetime="2018-09-03T15:46:10.000Z" itemprop="datePublished">2018-09-04</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
-                            <p class="item-title"><a href="/2018/09/03/2018-09-01-TIL/" class="title">2018-09-01-TIL</a></p>
-                            <p class="item-date"><time datetime="2018-09-02T16:23:31.000Z" itemprop="datePublished">2018-09-03</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
-                            <p class="item-title"><a href="/2018/09/01/2018-08-31-TIL/" class="title">2018-08-31-TIL</a></p>
-                            <p class="item-date"><time datetime="2018-09-01T12:11:47.000Z" itemprop="datePublished">2018-09-01</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1858,7 +1858,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/데이터베이스/">데이터베이스</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/알고리즘/">알고리즘</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/파이썬/">파이썬</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">60</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/데이터베이스/">데이터베이스</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/알고리즘/">알고리즘</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/파이썬/">파이썬</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">62</span></li></ul>
         </div>
     </div>
 
@@ -1867,7 +1867,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">40</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -1876,7 +1876,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">60</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
