@@ -1072,7 +1072,7 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="MySQL-intermediate-Syntax"><a href="#MySQL-intermediate-Syntax" class="headerlink" title="MySQL intermediate Syntax"></a>MySQL intermediate Syntax</h1><h2 id="1-숫자-올림-반올림-내림"><a href="#1-숫자-올림-반올림-내림" class="headerlink" title="1. 숫자 올림, 반올림, 내림"></a>1. 숫자 올림, 반올림, 내림</h2><h3 id="1-올림"><a href="#1-올림" class="headerlink" title="1) 올림"></a>1) 올림</h3><ul>
+            <h2 id="1-숫자-올림-반올림-내림"><a href="#1-숫자-올림-반올림-내림" class="headerlink" title="1. 숫자 올림, 반올림, 내림"></a>1. 숫자 올림, 반올림, 내림</h2><h3 id="1-올림"><a href="#1-올림" class="headerlink" title="1) 올림"></a>1) 올림</h3><ul>
 <li>syntax: <code>ceil(숫자)</code></li>
 <li>자릿수를 지정할 수 없기 때문에 아래와 같은 trick이 필요 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ceil</span>(<span class="number">12.345</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 올림 자릿수 지정</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">ceil</span>(<span class="number">12.345</span>*<span class="number">10</span>)*<span class="number">0.1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 올림 활용</span></span><br><span class="line"><span class="keyword">use</span> world</span><br><span class="line"><span class="keyword">select</span> percentage, <span class="keyword">ceil</span>(percentage)</span><br><span class="line"><span class="keyword">from</span> countrylanguage</span><br></pre></td></tr></table></figure>
 </li>
@@ -1633,7 +1633,7 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="MySQL-Basic-Syntax"><a href="#MySQL-Basic-Syntax" class="headerlink" title="MySQL Basic Syntax"></a>MySQL Basic Syntax</h1><p>본격적으로 RDBMS(나의 경우는 workbench)를 사용하여 MySQL 문법을 익혀보자</p>
+            <p>본격적으로 RDBMS(나의 경우는 workbench)를 사용하여 MySQL 문법을 익혀보자</p>
 <ul>
 <li>명령어는 대문자로 쓰는 것이 컨벤션이나 소문자로 써도 실행에는 문제가 없음</li>
 <li>마지막에 세미콜론(;) 또한 쓰지 않아도 실행에는 문제가 없음</li>
@@ -2117,7 +2117,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/web/">web</a></p>
-                            <p class="item-title"><a href="/2018/09/27/web_03_CSS_selector/" class="title">CSS_selector</a></p>
+                            <p class="item-title"><a href="/2018/09/27/web_03_CSS_selector/" class="title">CSS Selector</a></p>
                             <p class="item-date"><time datetime="2018-09-27T10:01:10.000Z" itemprop="datePublished">2018-09-27</time></p>
                         </div>
                     </li>
