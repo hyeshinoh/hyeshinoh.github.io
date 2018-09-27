@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang=en>
 <head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta charset="utf-8">
     
     <title>우와팬더의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -39,7 +39,7 @@
         <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
     
     
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
     
     
     
@@ -49,7 +49,7 @@
 </head>
 
 <body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+    <div id="container">
         <header id="header">
     <div id="header-main" class="header-inner">
         <div class="outer">
@@ -161,11 +161,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                78
+                79
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                12
+                13
                 <span>tags</span>
             </div>
         </div>
@@ -214,7 +214,7 @@
 
             
             <section id="main">
-    <article id="post-html_02_layout" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-web_03_CSS_selector" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -222,7 +222,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2018/09/26/html_02_layout/">HTML Layout</a>
+            <a class="article-title" href="/2018/09/27/web_03_CSS_selector/">CSS_selector</a>
         </h1>
     
 
@@ -231,7 +231,239 @@
                         
     <div class="article-date">
         <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/09/26/html_02_layout/">
+        <a href="/2018/09/27/web_03_CSS_selector/">
+            <time datetime="2018-09-27T10:01:10.000Z" itemprop="datePublished">2018-09-27</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/web/">web</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/web/">web</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="CSS-selector"><a href="#CSS-selector" class="headerlink" title="CSS selector"></a>CSS selector</h1><h2 id="1-CSS"><a href="#1-CSS" class="headerlink" title="1. CSS"></a>1. CSS</h2><h3 id="1-1-CSS란"><a href="#1-1-CSS란" class="headerlink" title="1.1 CSS란"></a>1.1 CSS란</h3><ul>
+<li>CSS는 Cascading Style Sheets의 약자로, HTML, XHTML, XML 같은 문서의 스타일을 꾸밀 때 사용하는 스타일 시트 언어</li>
+<li>글꼴이나 배경색, 너비와 높이, 위치 등을 지정할 수 있음</li>
+<li>웹브라우저, 스크린 크기, 장치에 따라서 화면을 다르게 표시될 수 있도록 지정할 수 있음</li>
+<li>문서의 내용과 표현을 분리하며 CSS 파일만 수정하면 스타일에 해당하는 HTML 문서가 한 번에 수정되는 장점이 있음</li>
+</ul>
+<h3 id="1-2-CSS-작성법"><a href="#1-2-CSS-작성법" class="headerlink" title="1.2 CSS 작성법"></a>1.2 CSS 작성법</h3><ul>
+<li>html 문서의 <code>&lt;head&gt;&lt;style&gt;</code> <code>&lt;/style&gt;&lt;/head&gt;</code> 안에 작성 </li>
+<li><code>선택자 {속성:속성값; 속성:속성값;}</code></li>
+<li>web crawling을 위해서는 CSS selector(선택자)를 이해해야 함</li>
+</ul>
+<h3 id="1-3-Selector"><a href="#1-3-Selector" class="headerlink" title="1.3 Selector"></a>1.3 Selector</h3><ul>
+<li><code>#id</code>, <code>.class</code>, <code>tag-name</code> 세 가지를 주로 이용해서 select, 속성값으로도 select 가능</li>
+<li>css 속성을 추가하기 위해 특정 element를 선택할 때 사용</li>
+<li><p>div element를 select하기</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>p element의 ds1 클래스를 select하기</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p.ds1&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>한칸 띄우면 하위 element, 붙여쓰면 둘다 해당 element</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p.ds1.ds&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="2-id-Selector"><a href="#2-id-Selector" class="headerlink" title="2. id Selector"></a>2. id Selector</h2><ul>
+<li>id를 select하기 위해서 <code>#아이디이름</code>을 사용</li>
+<li>id로 ds1, ds2를 select하여 style 적용하기<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    #ds1&#123;</span></span><br><span class="line"><span class="undefined">    font-size: 32px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    #ds1, #ds2&#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- emmet: p#ds$&#123;ds$&#125;*2 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"ds1"</span>&gt;</span>ds1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"ds2"</span>&gt;</span>ds2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>적용시 아래와 같이 나타납니다.</p>
+<p><head><br>  <style></p>
+<pre><code>#ds1{
+font-size: 32px;
+}
+#ds1, #ds2{
+color: red;
+}
+</code></pre><p>  </style><br></head></p>
+<body><br>  <p id="ds1">ds1</p><br>  <p id="ds2">ds2</p><br></body>
+
+
+<h2 id="3-Class-Selector"><a href="#3-Class-Selector" class="headerlink" title="3. Class Selector"></a>3. Class Selector</h2><ul>
+<li>class select 위해 <code>.클래스이름</code>을 사용</li>
+<li><code>.class</code>로 select하여 style 적용하기<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .ds&#123;</span></span><br><span class="line"><span class="undefined">    font-size: 15px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    .ds3, .ds4&#123;</span></span><br><span class="line"><span class="undefined">    font-weight: bold;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    .science&#123;</span></span><br><span class="line"><span class="undefined">    color: blue;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- span.ds.ds$&#123;a$&#125;*5 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"ds ds1"</span>&gt;</span>a1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"ds ds2"</span>&gt;</span>a2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"ds ds3"</span>&gt;</span>a3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"ds ds4"</span>&gt;</span>a4<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"ds ds5"</span>&gt;</span>a5<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"ds ds1 data"</span>&gt;</span>b1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"ds ds2 data"</span>&gt;</span>b2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"ds ds3 science"</span>&gt;</span>b3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"ds ds4 science"</span>&gt;</span>b4<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"ds ds5 science"</span>&gt;</span>b5<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>적용시 아래와 같이 나타납니다.</p>
+<ul>
+<li>.class로 select하여 style 적용하기<br><head><br><style><br>  .ds{<br>  font-size: 15px;<br>  }<br>  .ds3, .ds4{<br>  font-weight: bold;<br>  }<br>  .science{<br>  color: blue;<br>  }<br></style><br></head><body><br><!-- span.ds.ds${a$}*5 --><br><span class="ds ds1">a1</span><br><span class="ds ds2">a2</span><br><span class="ds ds3">a3</span><br><span class="ds ds4">a4</span><br><span class="ds ds5">a5</span><br><br><span class="ds ds1 data">b1</span><br><span class="ds ds2 data">b2</span><br><span class="ds ds3 science">b3</span><br><span class="ds ds4 science">b4</span><br><span class="ds ds5 science">b5</span><br></body>
+
+</li>
+</ul>
+<h2 id="4-not"><a href="#4-not" class="headerlink" title="4. not"></a>4. not</h2><ul>
+<li>특정 element를 빼고 싶을 때 사용<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .d:not(.ds2)&#123;</span></span><br><span class="line"><span class="undefined">    background-color: yellow;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- span.ds.ds$&#123;a$&#125;*5 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"d ds1"</span>&gt;</span>a1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"d ds2"</span>&gt;</span>a2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"d ds3"</span>&gt;</span>a3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"d ds4"</span>&gt;</span>a4<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"d ds5"</span>&gt;</span>a5<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"d ds1 data"</span>&gt;</span>b1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"d ds2 data"</span>&gt;</span>b2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"d ds3 science"</span>&gt;</span>b3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"d ds4 science"</span>&gt;</span>b4<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"d ds5 science"</span>&gt;</span>b5<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>적용시 아래와 같이 나타납니다.</p>
+<p><head><br>  <style><br>    .d:not(.ds2){<br>    background-color: yellow;<br>    }<br>  </style><br></head></p>
+<body><br>  <span class="d ds1">a1</span><br>  <span class="d ds2">a2</span><br>  <span class="d ds3">a3</span><br>  <span class="d ds4">a4</span><br>  <span class="d ds5">a5</span><br><br>  <span class="d ds1 data">b1</span><br>  <span class="d ds2 data">b2</span><br>  <span class="d ds3 science">b3</span><br>  <span class="d ds4 science">b4</span><br>  <span class="d ds5 science">b5</span><br></body>
+
+
+<h2 id="5-first-child"><a href="#5-first-child" class="headerlink" title="5. first-child"></a>5. first-child</h2><ul>
+<li>가장 앞에 있는 element를 선택할 때 사용<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .data:first-child&#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- span.data.d$&#123;a$&#125;*5 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"data d1"</span>&gt;</span>a1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"data d2"</span>&gt;</span>a2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"data d3"</span>&gt;</span>a3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"data d4"</span>&gt;</span>a4<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"data d5"</span>&gt;</span>a5<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>적용시 아래와 같이 나타납니다.</p>
+<p><head><br>  <style><br>    .data:first-child{<br>    color: red;<br>    }<br>  </style><br></head></p>
+<body><br>  <span class="data d1">a1</span><br>  <span class="data d2">a2</span><br>  <span class="data d3">a3</span><br>  <span class="data d4">a4</span><br>  <span class="data d5">a5</span><br></body>
+
+<h2 id="6-last-child"><a href="#6-last-child" class="headerlink" title="6. last-child"></a>6. last-child</h2><ul>
+<li>가장 마지막에 있는 element를 선택할 때 사용<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .last:last-child&#123;</span></span><br><span class="line"><span class="undefined">    background-color: yellow;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- span.last.b$&#123;a$&#125;*5 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"last b1"</span>&gt;</span>a1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"last b2"</span>&gt;</span>a2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"last b3"</span>&gt;</span>a3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"last b4"</span>&gt;</span>a4<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"last b5"</span>&gt;</span>a5<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>적용시 아래와 같이 나타납니다.</p>
+<p><head><br>  <style><br>    .last:last-child{<br>    background-color: yellow;<br>    }<br>  </style><br></head></p>
+<body><br>  <span class="last b1">a1</span><br>  <span class="last b2">a2</span><br>  <span class="last b3">a3</span><br>  <span class="last b4">a4</span><br>  <span class="last b5">a5</span><br></body>
+
+
+<h2 id="7-nth-child"><a href="#7-nth-child" class="headerlink" title="7. nth-child"></a>7. nth-child</h2><ul>
+<li>n번째에 있는 element를 선택할 때 사용<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .d:nth-child(3), .d:nth-child(4)&#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"d c1"</span>&gt;</span>a1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"d c2"</span>&gt;</span>a2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"d c3"</span>&gt;</span>a3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"d c4"</span>&gt;</span>a4<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"d c5"</span>&gt;</span>a5<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>적용시 아래와 같이 나타납니다.</p>
+<p><head><br>  <style><br>    .d:nth-child(3), .d:nth-child(4){<br>    color: red;<br>    }<br>  </style><br></head></p>
+<body><br>  <span class="d c1">a1</span><br>  <span class="d c2">a2</span><br>  <span class="d c3">a3</span><br>  <span class="d c4">a4</span><br>  <span class="d c5">a5</span><br></body>
+
+
+<h2 id="8-depth"><a href="#8-depth" class="headerlink" title="8. depth"></a>8. depth</h2><ul>
+<li>element의 level, 깊이를 선택</li>
+<li>공백문자: 하위 element를 모두 select</li>
+<li><code>&gt;</code>: 바로 아래 depth에 대한 element만 select</li>
+<li>tagname은 아무것도 붙이지 않고 쓰면 select할 수 있음</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .contents h1&#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .contents &gt; h1&#123;</span></span><br><span class="line"><span class="undefined">    font-size: 16px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    /*body &gt; div &gt; h1&#123;</span></span><br><span class="line"><span class="undefined">    color: yellow;</span></span><br><span class="line"><span class="undefined">    &#125;*/</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"contents"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>inner1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"txt"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>inner2<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>적용시 아래와 같이 나타납니다.</p>
+<p><head><br>  <style><br>    .contents h1{<br>    color: red;<br>    }<br>    .contents &gt; h1{<br>    font-size: 16px;<br>    }</p>
+<pre><code>/*body &gt; div &gt; h1{
+color: yellow;
+}*/
+</code></pre><p>  </style><br></head></p>
+<body><br>  <div class="contents"><br>    <h1>inner1</h1><br>  <div class="txt"><br>    <h1>inner2</h1><br>  </div><br>  </div><br></body> 
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/09/27/web_03_CSS_selector/" data-id="cjmki1mf70060vl1h3wj996po" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/09/27/web_03_CSS_selector/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/27/web_03_CSS_selector/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-web_02_html_02_layout" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/09/26/web_02_html_02_layout/">HTML Layout</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/09/26/web_02_html_02_layout/">
             <time datetime="2018-09-26T08:16:09.000Z" itemprop="datePublished">2018-09-26</time>
         </a>
     </div>
@@ -385,7 +617,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/26/html_02_layout/" data-id="cjmix9pqe005za51hgid45jm3" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/26/web_02_html_02_layout/" data-id="cjmki1mf5005xvl1h1oaf8b8g" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -453,7 +685,7 @@
 
             
     
-        <a href="http://yoursite.com/2018/09/26/html_02_layout/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/26/html_02_layout/">Comments</a>
+        <a href="http://yoursite.com/2018/09/26/web_02_html_02_layout/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/26/web_02_html_02_layout/">Comments</a>
     
 
         </footer>
@@ -463,7 +695,7 @@
 
 
 
-    <article id="post-html_01_basic" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-web_01_html_01_basic" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -471,7 +703,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2018/09/26/html_01_basic/">HTML Basic</a>
+            <a class="article-title" href="/2018/09/26/web_01_html_01_basic/">HTML Basic</a>
         </h1>
     
 
@@ -480,7 +712,7 @@
                         
     <div class="article-date">
         <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/09/26/html_01_basic/">
+        <a href="/2018/09/26/web_01_html_01_basic/">
             <time datetime="2018-09-26T06:24:14.000Z" itemprop="datePublished">2018-09-26</time>
         </a>
     </div>
@@ -526,7 +758,8 @@
 <p></p><h5>5단계 제목</h5><p></p>
 <h6>6단계 제목</h6>
 </blockquote>
-<h3 id="2-2-p-한-줄의-문자열을-표현하기-위한-element"><a href="#2-2-p-한-줄의-문자열을-표현하기-위한-element" class="headerlink" title="2.2 p: 한 줄의 문자열을 표현하기 위한 element"></a>2.2 p: 한 줄의 문자열을 표현하기 위한 element</h3><ul>
+<h3 id="2-2-p"><a href="#2-2-p" class="headerlink" title="2.2 p"></a>2.2 p</h3><ul>
+<li>paragraph의 약자로 문단을 분리하기 위한 태그</li>
 <li>emmet 문법: <code>p{p_tag_$}*3</code></li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p_tag_1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p_tag_2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p_tag_3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -534,7 +767,9 @@
 <blockquote>
 <p>p_tag_1</p><br><p>p_tag_2</p><br><p>p_tag_3</p>
 </blockquote>
-<h3 id="2-3-span-한-블럭의-문자열을-표현하기-위한-element"><a href="#2-3-span-한-블럭의-문자열을-표현하기-위한-element" class="headerlink" title="2.3 span: 한 블럭의 문자열을 표현하기 위한 element"></a>2.3 span: 한 블럭의 문자열을 표현하기 위한 element</h3><ul>
+<h3 id="2-3-span"><a href="#2-3-span" class="headerlink" title="2.3 span"></a>2.3 span</h3><ul>
+<li>영역을 설정하는 태그로 div 태그처럼 주로 CSS와 함께 쓰임</li>
+<li>div와 달리 줄바꿈이 되지 않고, 문장 단위로 지정(inline 속성)</li>
 <li>emmet 문법: <code>span{span_tag_$}*3</code></li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>span_tag_1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>span_tag_2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>span_tag_3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -542,7 +777,11 @@
 <blockquote>
 <p><span>span_tag_1</span><br><span>span_tag_2</span><br><span>span_tag_3</span></p>
 </blockquote>
-<h3 id="2-4-pre-줄바꿈이나-띄어쓰기가-적용되는-element"><a href="#2-4-pre-줄바꿈이나-띄어쓰기가-적용되는-element" class="headerlink" title="2.4. pre: 줄바꿈이나 띄어쓰기가 적용되는 element"></a>2.4. pre: 줄바꿈이나 띄어쓰기가 적용되는 element</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    python</span><br><span class="line">    data</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line">    python</span><br><span class="line">    data</span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-4-pre"><a href="#2-4-pre" class="headerlink" title="2.4. pre"></a>2.4. pre</h3><ul>
+<li>preformatted text의 약자로, 입력한 그대로 화면 출력하는 태그</li>
+<li>줄바꿈이나 띄어쓰기가 그대로 적용되는 element</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    python</span><br><span class="line">    data</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line">    python</span><br><span class="line">    data</span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>적용시 아래와 같이 나타납니다. </p>
 <blockquote>
 <p></p><p><br>   python<br>   data<br></p><p></p>
@@ -580,7 +819,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/26/html_01_basic/" data-id="cjmix9pqc005va51hd2l9ifi6" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/26/web_01_html_01_basic/" data-id="cjmki1mf3005wvl1hutkjbpc8" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -648,7 +887,7 @@
 
             
     
-        <a href="http://yoursite.com/2018/09/26/html_01_basic/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/26/html_01_basic/">Comments</a>
+        <a href="http://yoursite.com/2018/09/26/web_01_html_01_basic/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/26/web_01_html_01_basic/">Comments</a>
     
 
         </footer>
@@ -727,7 +966,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/18/2018-09-18-TIL/" data-id="cjmix9pq40056a51hmapeoxxv" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/18/2018-09-18-TIL/" data-id="cjmki1meq004uvl1hes8sf6co" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -875,7 +1114,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/06/2018-09-06-TIL/" data-id="cjmix9pq10050a51halzx0lei" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/06/2018-09-06-TIL/" data-id="cjmki1mep004rvl1h3jzfkuf2" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1020,7 +1259,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/06/2018-09-05-TIL/" data-id="cjmix9pq0004xa51hnvk5oxs5" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/06/2018-09-05-TIL/" data-id="cjmki1meo004ovl1h8kxecz8p" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1169,7 +1408,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/05/2018-09-04-TIL/" data-id="cjmix9ppz004ua51h8lvats6d" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/05/2018-09-04-TIL/" data-id="cjmki1men004lvl1hyeief13s" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1317,7 +1556,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/04/2018-09-03-TIL/" data-id="cjmix9ppy004ra51hb25lc5o8" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/04/2018-09-03-TIL/" data-id="cjmki1mev005bvl1hiu58w35c" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1468,7 +1707,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/03/2018-09-01-TIL/" data-id="cjmix9ppx004oa51htevd4a8h" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/03/2018-09-01-TIL/" data-id="cjmki1mey005jvl1hfyzseq9g" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1632,7 +1871,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/01/2018-08-31-TIL/" data-id="cjmix9ppw004la51hefh8a33d" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/01/2018-08-31-TIL/" data-id="cjmki1mer004xvl1hlkyn4xkd" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1710,174 +1949,6 @@
 
 
 
-    <article id="post-2018-08-30-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/08/31/2018-08-30-TIL/">2018-08-30-TIL</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/08/31/2018-08-30-TIL/">
-            <time datetime="2018-08-30T15:20:41.000Z" itemprop="datePublished">2018-08-31</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
-<li>팀 프로젝트: 블레이드앤소울 유저 이탈 예측 (빅콘테스트2018)<ul>
-<li>party data로 network를 구성하는데 500시간이 걸리던 코드를 100시간 정도까지로 줄였다. 더 줄일 수 있는지는 미지수. 애초부터 로컬 컴퓨터로 돌리기엔 영 무리였던 걸까?</li>
-</ul>
-</li>
-<li>알고리즘 책 읽기</li>
-</ul>
-<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
-<li>개인 프로젝트: 여자아이돌 분류 모델링, 남자아이돌 사진 전처리<ul>
-<li>시도해볼것: 여자아이돌 image augmentation, grey scaling</li>
-</ul>
-</li>
-<li>팀 프로젝트: 블레이드앤소울 유저 이탈 예측 (빅콘테스트2018)<ul>
-<li>팀플 모임. 네트워크 분석의 해결책을 찾을 수 있기를</li>
-</ul>
-</li>
-</ul>
-<h4 id="이번-주에-공부할-것"><a href="#이번-주에-공부할-것" class="headerlink" title="이번 주에 공부할 것"></a>이번 주에 공부할 것</h4><ul>
-<li style="list-style: none"><input type="checkbox"> 개인 프로젝트: <ul>
-<li style="list-style: none"><input type="checkbox"> 아이돌 사진 이미지 전처리 → 진행중</li>
-<li style="list-style: none"><input type="checkbox"> 이미지 분류 모델링</li>
-</ul>
-</li>
-<li style="list-style: none"><input type="checkbox"> 팀 프로젝트:<ul>
-<li style="list-style: none"><input type="checkbox"> activity에서 feature engineering 새롭게 하기</li>
-<li style="list-style: none"><input type="checkbox"> 20위권으로 자율평가 성적 올리기</li>
-</ul>
-</li>
-<li style="list-style: none"><input type="checkbox"> 관심기업 자료조사<ul>
-<li style="list-style: none"><input type="checkbox"> 관심 기업 리스트 정리하기</li>
-<li style="list-style: none"><input type="checkbox"> 5개 이상 관심 기업 정보 스크랩   </li>
-</ul>
-</li>
-<li style="list-style: none"><input type="checkbox"> github repository 정리 및 업데이트 → 진행중</li>
-<li style="list-style: none"><input type="checkbox"> python 복습: 데이터사이언스스쿨 파이썬 파트 → 진행중</li>
-<li style="list-style: none"><input type="checkbox"> 수학(통계)&amp;데이터분석 복습</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/08/31/2018-08-30-TIL/" data-id="cjmix9ppv004ia51hpescj5km" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/08/31/2018-08-30-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/08/31/2018-08-30-TIL/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
@@ -1896,7 +1967,16 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/web/">web</a></p>
-                            <p class="item-title"><a href="/2018/09/26/html_02_layout/" class="title">HTML Layout</a></p>
+                            <p class="item-title"><a href="/2018/09/27/web_03_CSS_selector/" class="title">CSS_selector</a></p>
+                            <p class="item-date"><time datetime="2018-09-27T10:01:10.000Z" itemprop="datePublished">2018-09-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/web/">web</a></p>
+                            <p class="item-title"><a href="/2018/09/26/web_02_html_02_layout/" class="title">HTML Layout</a></p>
                             <p class="item-date"><time datetime="2018-09-26T08:16:09.000Z" itemprop="datePublished">2018-09-26</time></p>
                         </div>
                     </li>
@@ -1905,7 +1985,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/web/">web</a></p>
-                            <p class="item-title"><a href="/2018/09/26/html_01_basic/" class="title">HTML Basic</a></p>
+                            <p class="item-title"><a href="/2018/09/26/web_01_html_01_basic/" class="title">HTML Basic</a></p>
                             <p class="item-date"><time datetime="2018-09-26T06:24:14.000Z" itemprop="datePublished">2018-09-26</time></p>
                         </div>
                     </li>
@@ -1928,15 +2008,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
-                            <p class="item-title"><a href="/2018/09/06/2018-09-05-TIL/" class="title">2018-09-05-TIL</a></p>
-                            <p class="item-date"><time datetime="2018-09-06T10:55:09.000Z" itemprop="datePublished">2018-09-06</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1946,7 +2017,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/algorithm/">algorithm</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/database/">database</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/python/">python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/web/">web</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">62</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/algorithm/">algorithm</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/database/">database</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/python/">python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/web/">web</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">62</span></li></ul>
         </div>
     </div>
 
@@ -1955,7 +2026,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -1964,7 +2035,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1973,7 +2044,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Database/" style="font-size: 15px;">Database</a> <a href="/tags/MySQL/" style="font-size: 13.33px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 13.33px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.67px;">algorithm</a> <a href="/tags/html/" style="font-size: 11.67px;">html</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/programming/" style="font-size: 18.33px;">programming</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/web/" style="font-size: 11.67px;">web</a> <a href="/tags/알고리즘/" style="font-size: 11.67px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a>
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 15.71px;">Database</a> <a href="/tags/MySQL/" style="font-size: 14.29px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 14.29px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.43px;">algorithm</a> <a href="/tags/html/" style="font-size: 11.43px;">html</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/programming/" style="font-size: 18.57px;">programming</a> <a href="/tags/python/" style="font-size: 17.14px;">python</a> <a href="/tags/web/" style="font-size: 12.86px;">web</a> <a href="/tags/알고리즘/" style="font-size: 11.43px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a>
         </div>
     </div>
 
@@ -2046,6 +2117,6 @@
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    </div>
 </body>
 </html>

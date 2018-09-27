@@ -161,11 +161,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                78
+                79
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                12
+                13
                 <span>tags</span>
             </div>
         </div>
@@ -214,6 +214,338 @@
 
             
             <section id="main">
+    <article id="post-Database_03_mysql_basic" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/07/27/Database_03_mysql_basic/">MySQL Basic - Data Type &amp; Constraint</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/07/27/Database_03_mysql_basic/">
+            <time datetime="2018-07-26T15:22:28.000Z" itemprop="datePublished">2018-07-27</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/database/">database</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Database/">Database</a>, <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/SQL/">SQL</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="MySQL-Basic"><a href="#MySQL-Basic" class="headerlink" title="MySQL Basic"></a>MySQL Basic</h1><p>MySQL 문법을 익히기 전에 데이터베이스에서 테이블을 생성할 때 알아야하는 데이터 타입과 제약조건에 대해 알아보자</p>
+<h2 id="1-Data-Type"><a href="#1-Data-Type" class="headerlink" title="1. Data Type"></a>1. Data Type</h2><p><a href="https://dev.mysql.com/doc/refman/5.7/en/data-types.html" target="_blank" rel="noopener">reference</a></p>
+<h3 id="1-Numberic"><a href="#1-Numberic" class="headerlink" title="1) Numberic"></a>1) Numberic</h3><p><a href="https://dev.mysql.com/doc/refman/5.7/en/numeric-types.html" target="_blank" rel="noopener">reference</a></p>
+<h4 id="1-정수-타입-integer-types"><a href="#1-정수-타입-integer-types" class="headerlink" title="(1) 정수 타입(integer types)"></a>(1) 정수 타입(integer types)</h4><table>
+<thead>
+<tr>
+<th><center>Type</center></th>
+<th style="text-align:center"><center>Storage  (Bytes)</center></th>
+<th style="text-align:right"><center>Minimum Value Signed</center></th>
+<th style="text-align:center"><center>Minimum Value Unsigned</center></th>
+<th style="text-align:right"><center>Maximum Value Signed</center></th>
+<th style="text-align:right"><center>Maximum Value Unsigned</center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TINYINT</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">-128</td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">127</td>
+<td style="text-align:right">255</td>
+</tr>
+<tr>
+<td>SMALLINT</td>
+<td style="text-align:center">2</td>
+<td style="text-align:right">-32,768</td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">32,767</td>
+<td style="text-align:right">65,535</td>
+</tr>
+<tr>
+<td>MEDIUMINT</td>
+<td style="text-align:center">3</td>
+<td style="text-align:right">-8,388,608</td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">8,388,607</td>
+<td style="text-align:right">16,777,215</td>
+</tr>
+<tr>
+<td>INT</td>
+<td style="text-align:center">4</td>
+<td style="text-align:right">-2,147,483,648</td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">2,147,483,647</td>
+<td style="text-align:right">4,294,967,295</td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td style="text-align:center">8</td>
+<td style="text-align:right">-2<sup>63</sup></td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">2<sup>63</sup>-1</td>
+<td style="text-align:right">2<sup>64</sup>-1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-고정-소수점-타입-fixed-point-types"><a href="#2-고정-소수점-타입-fixed-point-types" class="headerlink" title="(2) 고정 소수점 타입(fixed-point types)"></a>(2) 고정 소수점 타입(fixed-point types)</h4><ul>
+<li><p>DECIMAL(M, D)</p>
+<ul>
+<li>M : 소수점을 포함한 전체 자리수</li>
+<li>D : 소수 부분 자리수<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user1</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">COLUMN</span> deci <span class="built_in">DECIMAL</span>(<span class="number">5</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>NUMERIC(M, D)</p>
+</li>
+</ul>
+<h4 id="3-실수-floating-point-types"><a href="#3-실수-floating-point-types" class="headerlink" title="(3) 실수 (floating-point types)"></a>(3) 실수 (floating-point types)</h4><p>소수점을 나타내기 위한 데이터 타입으로 아래의 두 타입이 있음(데이터 저장공간의 차이가 있음)</p>
+<ul>
+<li>FLOAT (4byte)</li>
+<li>DOUBLE (8byte)  </li>
+</ul>
+<p>아래와 같이 고정 소수점 타입으로도 사용 가능</p>
+<ul>
+<li>FLOAT(M,D)</li>
+<li>DOUBLE(M,D)</li>
+</ul>
+<h4 id="4-비트-값-타입-bit-value-type"><a href="#4-비트-값-타입-bit-value-type" class="headerlink" title="(4) 비트 값 타입 ( bit value type )"></a>(4) 비트 값 타입 ( bit value type )</h4><p>0과 1로 구성이 되는 2진수(binary) 데이터</p>
+<ul>
+<li>BIT(M)<ul>
+<li>M: 비트의 범위</li>
+<li>예) M을 5로 작성하면 00000(2) ~ 11111(2) 까지 표현 가능</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-Date-amp-Time"><a href="#2-Date-amp-Time" class="headerlink" title="2 Date &amp; Time"></a>2 Date &amp; Time</h2><p><a href="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-types.html" target="_blank" rel="noopener">reference</a></p>
+<h3 id="1-DATE"><a href="#1-DATE" class="headerlink" title="1) DATE"></a>1) DATE</h3><p>DATE는 날짜를 저장하는 데이터 타입</p>
+<ul>
+<li>기본 포맷: “년-월-일”</li>
+</ul>
+<h3 id="2-DATETIME"><a href="#2-DATETIME" class="headerlink" title="2) DATETIME"></a>2) DATETIME</h3><p>DATETIME은 날짜와 시간을 저장하는 데이터 타입</p>
+<ul>
+<li>기본 포맷: “년-월-일 시:분:초”</li>
+</ul>
+<h3 id="3-TIMESTAME"><a href="#3-TIMESTAME" class="headerlink" title="3) TIMESTAME"></a>3) TIMESTAME</h3><p>TIMESTAME는 날짜와 시간을 저장하는 데이터 타입<br>DATETIME과 다르게 날짜를 입력하지 않으면 현재 날짜와 시간을 자동으로 저장</p>
+<h3 id="4-TIME"><a href="#4-TIME" class="headerlink" title="4) TIME"></a>4) TIME</h3><p>TIME은 시간을 저장하는 데이터 타입</p>
+<ul>
+<li>기본 포맷: “시:분:초” </li>
+</ul>
+<h3 id="5-YEAR"><a href="#5-YEAR" class="headerlink" title="5) YEAR"></a>5) YEAR</h3><p>YEAR는 연도를 저장할수 있는 데이터 타입</p>
+<ul>
+<li>YEAR(2)는 2자리의 연도를 저장</li>
+<li>YEAR(4)는 4자리의 연도를 저장</li>
+</ul>
+<h2 id="3-String"><a href="#3-String" class="headerlink" title="3. String"></a>3. String</h2><p><a href="https://dev.mysql.com/doc/refman/5.7/en/string-types.html" target="_blank" rel="noopener">reference</a></p>
+<h3 id="1-CHAR-amp-VARCHAR"><a href="#1-CHAR-amp-VARCHAR" class="headerlink" title="1) CHAR &amp; VARCHAR"></a>1) CHAR &amp; VARCHAR</h3><ol>
+<li>CHAR: 고정형 문자열</li>
+<li>VARCHAR: 가변형 문자열</li>
+</ol>
+<ul>
+<li>CHAR &amp; VARCHAR의 저장형식과 저장용량 비교</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Value</th>
+<th style="text-align:center">CHAR(4)</th>
+<th style="text-align:center">Storage Required</th>
+<th style="text-align:left">VARCHAR(4)</th>
+<th style="text-align:center">Storage Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">‘’</td>
+<td style="text-align:center">‘　　‘</td>
+<td style="text-align:center">4 bytes</td>
+<td style="text-align:left">‘’</td>
+<td style="text-align:center">1 byte</td>
+</tr>
+<tr>
+<td style="text-align:left">‘ab’</td>
+<td style="text-align:center">‘ab　‘</td>
+<td style="text-align:center">4 bytes</td>
+<td style="text-align:left">‘ab’</td>
+<td style="text-align:center">3 bytes</td>
+</tr>
+<tr>
+<td style="text-align:left">‘abcd’</td>
+<td style="text-align:center">‘abcd’</td>
+<td style="text-align:center">4 bytes</td>
+<td style="text-align:left">‘abcd’</td>
+<td style="text-align:center">5 bytes</td>
+</tr>
+<tr>
+<td style="text-align:left">‘abcdefgh’</td>
+<td style="text-align:center">‘abcd’</td>
+<td style="text-align:center">4 bytes</td>
+<td style="text-align:left">‘abcd’</td>
+<td style="text-align:center">5 bytes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-TEXT"><a href="#2-TEXT" class="headerlink" title="2) TEXT"></a>2) TEXT</h3><p>CHAR와 VARCHAR는 대체로 크기가 작은 문자열을 저장할때 사용<br>크기가 큰 문자열을 저장할 때는 TEXT를 사용</p>
+<ul>
+<li>TEXT의 타입에 따른 데이터 크기</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:right">Maximum Length</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TINYTEXT</td>
+<td style="text-align:right">255(2<sup>8</sup>-1) bytes</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">TEXT</td>
+<td style="text-align:right">65,535(2<sup>16</sup>-1) bytes</td>
+<td style="text-align:left">= 64KB</td>
+</tr>
+<tr>
+<td style="text-align:left">MEDIUMTEXT</td>
+<td style="text-align:right">16,777,215 (2<sup>24</sup>-1) bytes</td>
+<td style="text-align:left">= 16MB</td>
+</tr>
+<tr>
+<td style="text-align:left">LONGTEXT</td>
+<td style="text-align:right">4,294,967,295 (2<sup>32</sup>-1) bytes</td>
+<td style="text-align:left">= 4GB</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-Constraint"><a href="#2-Constraint" class="headerlink" title="2. Constraint"></a>2. Constraint</h2><p>데이터 베이스의 테이블을 생성할때 각 컬럼은 각각의 제약조건을 가짐</p>
+<h3 id="1-NOT-NULL"><a href="#1-NOT-NULL" class="headerlink" title="1) NOT NULL"></a>1) NOT NULL</h3><p>NOT NULL 제약조건이 있는 컬럼에 NULL 값(비어있는 값)을 저장할수 없음</p>
+<h3 id="2-UNIQUE"><a href="#2-UNIQUE" class="headerlink" title="2) UNIQUE"></a>2) UNIQUE</h3><p>UNIQUE 제약조건이 있는 컬럼에 같은 값을 저장할 수 없음</p>
+<h3 id="3-PRIMARY-KEY"><a href="#3-PRIMARY-KEY" class="headerlink" title="3) PRIMARY KEY"></a>3) PRIMARY KEY</h3><p>컬럼을 기본키로 설정하기 위해서는 NOT NULL과 UNIQUE 제약조건을 동시에 만족해야 함<br>즉, 컬럼에 비어 있는 값, 중복되는 값을 저장할수 없음<br><strong><em>하나의 테이블에 하나의 컬럼에만 이 조건을 설정 가능</em></strong></p>
+<h3 id="4-FOREIGN-KEY"><a href="#4-FOREIGN-KEY" class="headerlink" title="4) FOREIGN KEY"></a>4) FOREIGN KEY</h3><p>다른 테이블과 연결되는 값이 저장됩니다.</p>
+<h3 id="5-DEFAULT"><a href="#5-DEFAULT" class="headerlink" title="5) DEFAULT"></a>5) DEFAULT</h3><p>데이터를 저장할때 해당 컬럼에 별도의 저장값이 없으면 DEFAULT로 설정된 값이 저장</p>
+<h3 id="6-AUTO-INCREMENT"><a href="#6-AUTO-INCREMENT" class="headerlink" title="6) AUTO_INCREMENT"></a>6) AUTO_INCREMENT</h3><p>주로 테이블의 PRIMARY KEY 데이터를 저장할때 자동으로 숫자를 1씩 증가시켜 주는 기능으로 사용</p>
+<hr>
+<h4 id="※-참고-자료"><a href="#※-참고-자료" class="headerlink" title="※ 참고 자료"></a>※ 참고 자료</h4><ul>
+<li>패스트캠퍼스 ‘데이터 사이언스 스쿨 Python 8기’ 수업자료</li>
+<li>이동명, 권오현, 고정국, 「컴퓨터 사이언스 개정판」</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/07/27/Database_03_mysql_basic/" data-id="cjmki1meu0058vl1hkb016b3c" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/07/27/Database_03_mysql_basic/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/07/27/Database_03_mysql_basic/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-Database_02" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -340,7 +672,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/25/Database_02/" data-id="cjmix9pq7005ea51h7t7q65ea" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/25/Database_02/" data-id="cjmki1met0053vl1hgtgq6xrx" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -698,7 +1030,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/25/Database_01/" data-id="cjmix9pq6005ba51hl5z3owul" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/25/Database_01/" data-id="cjmki1mes0050vl1hgtsq6amn" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -861,7 +1193,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/25/2018-07-25-TIL/" data-id="cjmix9pp20029a51hzh8d9x3i" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/25/2018-07-25-TIL/" data-id="cjmki1mdw002cvl1hh8kas5of" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1019,7 +1351,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/24/2018-07-24-TIL/" data-id="cjmix9pp10026a51hygt40bw0" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/24/2018-07-24-TIL/" data-id="cjmki1mdu0026vl1hsmqgg0f5" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1179,7 +1511,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/24/2018-07-23-TIL/" data-id="cjmix9pp00023a51hr34p40r8" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/24/2018-07-23-TIL/" data-id="cjmki1mdt0023vl1hlz156vk8" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1335,7 +1667,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/23/2018-07-22-TIL/" data-id="cjmix9poz0020a51hjd4xuw4i" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/23/2018-07-22-TIL/" data-id="cjmki1mds0020vl1hhkvyhln8" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1496,7 +1828,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/21/2018-07-21-TIL/" data-id="cjmix9poy001xa51hfio9itlo" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/21/2018-07-21-TIL/" data-id="cjmki1mdq001uvl1h9bgxc2xr" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1656,7 +1988,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/21/2018-07-20-TIL/" data-id="cjmix9pox001ua51hvgf1xbtk" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/21/2018-07-20-TIL/" data-id="cjmki1mdr001xvl1hu7mmrc9q" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1814,7 +2146,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/19/2018-07-19-TIL/" data-id="cjmix9pow001ra51hqxh0e13i" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/19/2018-07-19-TIL/" data-id="cjmki1mdp001rvl1hpnjjloex" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1892,169 +2224,6 @@
 
 
 
-    <article id="post-2018-07-18-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/07/19/2018-07-18-TIL/">2018-07-18-TIL</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/07/19/2018-07-18-TIL/">
-            <time datetime="2018-07-18T15:41:44.000Z" itemprop="datePublished">2018-07-19</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>공부한 것 &amp; 리뷰</p>
-<ul>
-<li>빅콘테스트 2018 <ul>
-<li>게임 이탈 유저 예측 문제의 도메인 지식을 쌓기 위해 게임을 체험해보았다. 일단 나같은 게임 초보자들에겐 너무 어려운걸ㅜ?</li>
-<li>데이터셋의 크기도 엄청나다. 압축파일이 약 3기가에 압축을 푸니 7기가가 넘는 듯하다. 내 노트북으로 과연 이 과제를 할 수는 있는 걸까?! ㅋㅋ 내일 mmap을 활용해서 csv를 여는 것을 시도해봐야겠다.</li>
-</ul>
-</li>
-<li>데이터베이스 퀴즈 과제<ul>
-<li>SQL의 기초 문법은 수월한 편이다. 내일 join을 배우는 것 같은데 기대가 됨</li>
-</ul>
-</li>
-</ul>
-<p>내일 공부할 것</p>
-<ul>
-<li>DSS 수업: SQL</li>
-<li>DSS 통계 복습</li>
-<li>DSS: 졸업생 특강</li>
-</ul>
-<p>이번 주에 공부할 것</p>
-<ul>
-<li>DSS: 통계 &lt;11장. 검정과 추정&gt; 복습하기</li>
-<li>DSS: 통계 &lt;34절. 선형회귀분석의 기초&gt; 복습하기</li>
-<li>DSS: 통계 &lt;35절. 입력변수가 카테고리값인 경우&gt; 복습하기</li>
-<li>DSS: 통계 &lt;36절. 예측성능의 진단과 비교&gt; 복습하기</li>
-<li>DSS: 통계 &lt;37절. 과최적화와 교차 검증&gt; 복습하기</li>
-<li>DSS: 통계 &lt;38절. 추천시스템&gt; 복습하기</li>
-<li>DSS: 통계 &lt;43절. 클러스터링&gt; 복습하기</li>
-<li>DSS: 통계 &lt;44절. 분류의 기초&gt; 복습하기</li>
-<li>DSS: 통계 &lt;45절. 로지스틱 회귀분석&gt; 복습하기</li>
-<li>DSS: 통계 &lt;46절. QDA와 나이브 베이즈 모형&gt; 복습하기</li>
-<li>DSS: 인성면접 답안 대비 (개인 신상, 취미, 특기 관련 질문)</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/07/19/2018-07-18-TIL/" data-id="cjmix9pov001oa51hn7ay5mvc" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/07/19/2018-07-18-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/07/19/2018-07-18-TIL/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
@@ -2073,7 +2242,16 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/web/">web</a></p>
-                            <p class="item-title"><a href="/2018/09/26/html_02_layout/" class="title">HTML Layout</a></p>
+                            <p class="item-title"><a href="/2018/09/27/web_03_CSS_selector/" class="title">CSS_selector</a></p>
+                            <p class="item-date"><time datetime="2018-09-27T10:01:10.000Z" itemprop="datePublished">2018-09-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/web/">web</a></p>
+                            <p class="item-title"><a href="/2018/09/26/web_02_html_02_layout/" class="title">HTML Layout</a></p>
                             <p class="item-date"><time datetime="2018-09-26T08:16:09.000Z" itemprop="datePublished">2018-09-26</time></p>
                         </div>
                     </li>
@@ -2082,7 +2260,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/web/">web</a></p>
-                            <p class="item-title"><a href="/2018/09/26/html_01_basic/" class="title">HTML Basic</a></p>
+                            <p class="item-title"><a href="/2018/09/26/web_01_html_01_basic/" class="title">HTML Basic</a></p>
                             <p class="item-date"><time datetime="2018-09-26T06:24:14.000Z" itemprop="datePublished">2018-09-26</time></p>
                         </div>
                     </li>
@@ -2105,15 +2283,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
-                            <p class="item-title"><a href="/2018/09/06/2018-09-05-TIL/" class="title">2018-09-05-TIL</a></p>
-                            <p class="item-date"><time datetime="2018-09-06T10:55:09.000Z" itemprop="datePublished">2018-09-06</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -2123,7 +2292,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/algorithm/">algorithm</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/database/">database</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/python/">python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/web/">web</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">62</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/algorithm/">algorithm</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/database/">database</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/python/">python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/web/">web</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">62</span></li></ul>
         </div>
     </div>
 
@@ -2132,7 +2301,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -2141,7 +2310,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -2150,7 +2319,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Database/" style="font-size: 15px;">Database</a> <a href="/tags/MySQL/" style="font-size: 13.33px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 13.33px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.67px;">algorithm</a> <a href="/tags/html/" style="font-size: 11.67px;">html</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/programming/" style="font-size: 18.33px;">programming</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/web/" style="font-size: 11.67px;">web</a> <a href="/tags/알고리즘/" style="font-size: 11.67px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a>
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 15.71px;">Database</a> <a href="/tags/MySQL/" style="font-size: 14.29px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 14.29px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.43px;">algorithm</a> <a href="/tags/html/" style="font-size: 11.43px;">html</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/programming/" style="font-size: 18.57px;">programming</a> <a href="/tags/python/" style="font-size: 17.14px;">python</a> <a href="/tags/web/" style="font-size: 12.86px;">web</a> <a href="/tags/알고리즘/" style="font-size: 11.43px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a>
         </div>
     </div>
 
