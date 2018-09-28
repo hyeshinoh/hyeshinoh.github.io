@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="1. JavaScript1.1 JavaScript란 JavaScript란 객체 기반의 스크립트 프로그래밍 언어로, 웹 브라우저 내에서 주로 사용 HTML, CSS와 함께 웹을 지탱하는 계층 구조에서 많은 역할을 차지 HTML 은 웹 페이지상에서 문단, 제목, 표, 이미지, 동영상등을 정의하고 그 구조와 의미를 부여하는 마크업 언어 CSS 는 배경색, 폰트,">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-28T11:19:26.935Z">
+<meta property="og:updated_time" content="2018-09-28T12:01:10.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript - Basic">
 <meta name="twitter:description" content="1. JavaScript1.1 JavaScript란 JavaScript란 객체 기반의 스크립트 프로그래밍 언어로, 웹 브라우저 내에서 주로 사용 HTML, CSS와 함께 웹을 지탱하는 계층 구조에서 많은 역할을 차지 HTML 은 웹 페이지상에서 문단, 제목, 표, 이미지, 동영상등을 정의하고 그 구조와 의미를 부여하는 마크업 언어 CSS 는 배경색, 폰트,">
@@ -290,27 +290,26 @@
 <pre><code>3
 </code></pre><h2 id="2-4-연산자"><a href="#2-4-연산자" class="headerlink" title="2.4 연산자"></a>2.4 연산자</h2><ul>
 <li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>++</code>, <code>--</code> (제곱이 없음)</li>
-<li><p><code>++</code> &amp; <code>--</code>: 다른 언어에서도 사용되는 연산자</p>
+<li><code>++</code> &amp; <code>--</code>: 다른 언어에서도 사용되는 연산자</li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> result = a++;   <span class="comment">// a 가 result로 대입되고 1 증가</span></span><br><span class="line"><span class="built_in">console</span>.log(a, result);  </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> result = ++a;   <span class="comment">// a를 1 증가시키고 result에 대입</span></span><br><span class="line"><span class="built_in">console</span>.log(a, result);</span><br></pre></td></tr></table></figure>
-<p>  6 5</p>
-<pre><code>6 6
-</code></pre></li>
+<pre><code>6 5
+   6 6
+</code></pre><h2 id="2-5-데이터-타입"><a href="#2-5-데이터-타입" class="headerlink" title="2.5 데이터 타입"></a>2.5 데이터 타입</h2><ul>
+<li>동적타이핑: 변수를 선언할 때 값에 따라 데이터 타입이 나중에 설정</li>
 </ul>
-<h2 id="2-5-데이터-타입"><a href="#2-5-데이터-타입" class="headerlink" title="2.5 데이터 타입"></a>2.5 데이터 타입</h2><ul>
-<li><p>동적타이핑: 변수를 선언할 때 값에 따라 데이터 타입이 나중에 설정</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>,           <span class="comment">// number</span></span><br><span class="line">b = <span class="number">1.9</span>,             <span class="comment">// number</span></span><br><span class="line">c = <span class="string">"data"</span>,          <span class="comment">// string</span></span><br><span class="line">d = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],         <span class="comment">// object</span></span><br><span class="line">e = &#123;<span class="string">"a"</span>:<span class="number">1</span>, <span class="string">"b"</span>:<span class="number">2</span>&#125;,  <span class="comment">// object</span></span><br><span class="line">f = <span class="literal">true</span>,            <span class="comment">// boolean</span></span><br><span class="line">g = <span class="literal">false</span>;           <span class="comment">// boolean</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a, <span class="keyword">typeof</span> b, <span class="keyword">typeof</span> c, <span class="keyword">typeof</span> d,</span><br><span class="line">    <span class="keyword">typeof</span> e , <span class="keyword">typeof</span> f, <span class="keyword">typeof</span> g);</span><br></pre></td></tr></table></figure>
-<p>  number number string object object boolean boolean</p>
-</li>
-</ul>
-<h2 id="2-6-null-undefined-NaN"><a href="#2-6-null-undefined-NaN" class="headerlink" title="2.6 null, undefined, NaN"></a>2.6 null, undefined, NaN</h2><ul>
+<pre><code>number number string object object boolean boolean
+</code></pre><h2 id="2-6-null-undefined-NaN"><a href="#2-6-null-undefined-NaN" class="headerlink" title="2.6 null, undefined, NaN"></a>2.6 null, undefined, NaN</h2><ul>
 <li>null: 변수에 값이 없음을 정의</li>
 <li>undefined: 값이 지정되지 않음</li>
-<li><p>NaN: 존재하지 않는 데이터</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 값이 없음을 지정</span></span><br><span class="line"><span class="keyword">var</span> b;</span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 값이 지정되지 않음</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="number">0</span>/<span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 존재하지 않는 데이터 형태</span></span><br></pre></td></tr></table></figure>
-<p>  null<br>  undefined<br>  NaN</p>
-</li>
+<li>NaN: 존재하지 않는 데이터</li>
 </ul>
-<h2 id="2-7-비교-연산자-lt-gt-gt-lt"><a href="#2-7-비교-연산자-lt-gt-gt-lt" class="headerlink" title="2.7 비교 연산자: &lt;, &gt;, &gt;=, &lt;=, ==, !=, ===, !=="></a>2.7 비교 연산자: &lt;, &gt;, &gt;=, &lt;=, ==, !=, ===, !==</h2><h3 id="1-amp-값을-비교"><a href="#1-amp-값을-비교" class="headerlink" title="1) == &amp; ===: 값을 비교"></a>1) <code>==</code> &amp; <code>===</code>: 값을 비교</h3><ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 값이 없음을 지정</span></span><br><span class="line"><span class="keyword">var</span> b;</span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 값이 지정되지 않음</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="number">0</span>/<span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 존재하지 않는 데이터 형태</span></span><br></pre></td></tr></table></figure>
+<pre><code>null
+undefined
+NaN
+</code></pre><h2 id="2-7-비교-연산자-lt-gt-gt-lt"><a href="#2-7-비교-연산자-lt-gt-gt-lt" class="headerlink" title="2.7 비교 연산자: &lt;, &gt;, &gt;=, &lt;=, ==, !=, ===, !=="></a>2.7 비교 연산자: &lt;, &gt;, &gt;=, &lt;=, ==, !=, ===, !==</h2><h3 id="1-amp-값을-비교"><a href="#1-amp-값을-비교" class="headerlink" title="1) == &amp; ===: 값을 비교"></a>1) <code>==</code> &amp; <code>===</code>: 값을 비교</h3><ul>
 <li><code>==</code>와 <code>===</code>의 차이: <code>===</code>는 데이터타입까지 비교</li>
 <li><code>===</code> 사용 권장</li>
 </ul>
@@ -320,40 +319,51 @@ true
 true
 false
 </code></pre><h3 id="2-lt-gt-lt-gt-값을-비교"><a href="#2-lt-gt-lt-gt-값을-비교" class="headerlink" title="2) !=, &lt;, &gt;, &lt;=, &gt;=: 값을 비교"></a>2) <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>: 값을 비교</h3><ul>
-<li><p><code>&#39;==</code> 사용시 데이터타입까지 비교</p>
+<li><code>&#39;==</code> 사용시 데이터타입까지 비교</li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>!=<span class="number">1</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>!=<span class="string">'1'</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>!==<span class="number">1</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>!==<span class="string">'1'</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>&gt;<span class="number">2</span>); <span class="comment">// fasle</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>&lt;<span class="number">2</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>&gt;=<span class="number">1</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>&lt;=<span class="number">2</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<p>  false<br>  false<br>  false<br>  true<br>  false<br>  true<br>  true<br>  true</p>
-</li>
+<pre><code>false
+false
+false
+true
+false
+true
+true
+true
+</code></pre><h3 id="3-NaN은-비교연산으로-사용되지-않음"><a href="#3-NaN은-비교연산으로-사용되지-않음" class="headerlink" title="3) NaN은 비교연산으로 사용되지 않음"></a>3) NaN은 비교연산으로 사용되지 않음</h3><ul>
+<li>비교연산에서 어느 한쪽이 NaN이면 무조건 false</li>
 </ul>
-<h3 id="3-NaN은-비교연산으로-사용되지-않음"><a href="#3-NaN은-비교연산으로-사용되지-않음" class="headerlink" title="3) NaN은 비교연산으로 사용되지 않음"></a>3) NaN은 비교연산으로 사용되지 않음</h3><ul>
-<li><p>비교연산에서 어느 한쪽이 NaN이면 무조건 false</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">NaN</span>===<span class="literal">NaN</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">NaN</span>==<span class="literal">NaN</span>);</span><br></pre></td></tr></table></figure>
-<p>  false<br>  false</p>
-</li>
-</ul>
-<h2 id="2-8-할당-연산자"><a href="#2-8-할당-연산자" class="headerlink" title="2.8 할당 연산자"></a>2.8 할당 연산자</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">a += <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 3</span></span><br><span class="line">a -= <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 2</span></span><br><span class="line">a *= <span class="number">6</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 12</span></span><br><span class="line">a /= <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 6</span></span><br><span class="line">a %= <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<pre><code>false
+false
+</code></pre><h2 id="2-8-할당-연산자"><a href="#2-8-할당-연산자" class="headerlink" title="2.8 할당 연산자"></a>2.8 할당 연산자</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">a += <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 3</span></span><br><span class="line">a -= <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 2</span></span><br><span class="line">a *= <span class="number">6</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 12</span></span><br><span class="line">a /= <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 6</span></span><br><span class="line">a %= <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
 <pre><code>3
 2
 12
 6
 1
 </code></pre><h2 id="2-9-논리-연산자"><a href="#2-9-논리-연산자" class="headerlink" title="2.9 논리 연산자"></a>2.9 논리 연산자</h2><ul>
-<li><p><code>&amp;&amp;</code> : 모두 참일때 참 (and)</p>
+<li><code>&amp;&amp;</code> : 모두 참일때 참 (and)</li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> &amp;&amp; <span class="literal">true</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> &amp;&amp; <span class="literal">false</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">false</span> &amp;&amp; <span class="literal">false</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
-<p>  true<br>  false<br>  false</p>
-</li>
-<li><p><code>||</code> : 하나라도 참이면 참 (or)</p>
+<pre><code>true
+false
+false
+</code></pre><ul>
+<li><code>||</code> : 하나라도 참이면 참 (or)</li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> || <span class="literal">true</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> || <span class="literal">false</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">false</span> || <span class="literal">false</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
-<p>  true<br>  true<br>  false</p>
-</li>
+<pre><code>true
+true
+false
+</code></pre><h1 id="3-Condition-조건문"><a href="#3-Condition-조건문" class="headerlink" title="3. Condition - 조건문"></a>3. Condition - 조건문</h1><h2 id="3-1-if-else-if-else"><a href="#3-1-if-else-if-else" class="headerlink" title="3.1 if, else if, else"></a>3.1 if, else if, else</h2><ul>
+<li>문법: <code>if(조건){code} else if(조건){code} else{code}</code></li>
 </ul>
-<h1 id="3-Condition-조건문"><a href="#3-Condition-조건문" class="headerlink" title="3. Condition - 조건문"></a>3. Condition - 조건문</h1><h2 id="3-1-if-else-if-else"><a href="#3-1-if-else-if-else" class="headerlink" title="3.1 if, else if, else"></a>3.1 if, else if, else</h2><ul>
-<li><p>문법: <code>if(조건){code} else if(조건){code} else{code}</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello javascript"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">false</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello javascript"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello datascience"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">false</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello javascript"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello html"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello datascience"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  hello javascript<br>  hello datascience<br>  hello html</p>
-</li>
-</ul>
-<h2 id="3-2-false로-간주되는-데이터형"><a href="#3-2-false로-간주되는-데이터형" class="headerlink" title="3.2 false로 간주되는 데이터형"></a>3.2 false로 간주되는 데이터형</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">null</span> || <span class="literal">undefined</span> || <span class="literal">NaN</span> || <span class="number">0</span> || <span class="string">""</span>)&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello true"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello false"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>hello javascript
+hello datascience
+hello html
+</code></pre><h2 id="3-2-false로-간주되는-데이터형"><a href="#3-2-false로-간주되는-데이터형" class="headerlink" title="3.2 false로 간주되는 데이터형"></a>3.2 false로 간주되는 데이터형</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">null</span> || <span class="literal">undefined</span> || <span class="literal">NaN</span> || <span class="number">0</span> || <span class="string">""</span>)&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello true"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello false"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>hello false
 </code></pre><h2 id="3-3-true로-간주되는-데이터형"><a href="#3-3-true로-간주되는-데이터형" class="headerlink" title="3.3 true로 간주되는 데이터형"></a>3.3 true로 간주되는 데이터형</h2><ul>
 <li><code>[]</code>, <code>{}</code> (비어있는 object) - 객체이기 때문<ul>
@@ -379,7 +389,7 @@ false
 <li>python: iterable data 갯수만큼 반복</li>
 <li>js: for(초기값; 조건; 증감)</li>
 <li>in: es6에서 추가됨 (es6에 class, 화살표함수(=lambda) 등 추가)<ul>
-<li>es6를 사용할 경우 버전이 낮은 ie에서는 제대로 동작하지 않을 수 있음  </li>
+<li>es6를 사용할 경우 버전이 낮은 ie에서는 제대로 동작하지 않을 수 있음    </li>
 </ul>
 </li>
 </ul>
@@ -396,26 +406,26 @@ false
 <pre><code>5
 </code></pre><h2 id="5-4-배열-추가"><a href="#5-4-배열-추가" class="headerlink" title="5.4 배열 추가"></a>5.4 배열 추가</h2><ul>
 <li><code>unshift()</code>: 맨 앞에 추가 </li>
-<li><p><code>push()</code>: 맨 뒤에 추가</p>
+<li><code>push()</code>: 맨 뒤에 추가  </li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.push(<span class="string">'f'</span>); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr.unshift(<span class="string">'z'</span>); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
-<p>  [ ‘a’, ‘b’, ‘c’, ‘d’, ‘e’, ‘f’ ]<br>  [ ‘z’, ‘a’, ‘b’, ‘c’, ‘d’, ‘e’, ‘f’ ]</p>
-</li>
-</ul>
-<h2 id="5-5-제거"><a href="#5-5-제거" class="headerlink" title="5.5 제거"></a>5.5 제거</h2><ul>
+<pre><code>[ &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos; ]
+[ &apos;z&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos; ]
+</code></pre><h2 id="5-5-제거"><a href="#5-5-제거" class="headerlink" title="5.5 제거"></a>5.5 제거</h2><ul>
 <li><code>shift()</code>: 첫번째 배열 제거</li>
-<li><p><code>pop()</code>: 마지막 배열 제거 </p>
+<li><code>pop()</code>: 마지막 배열 제거   </li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.shift(); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr.pop();</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
-<p>  [ ‘a’, ‘b’, ‘c’, ‘d’, ‘e’, ‘f’ ]<br>  [ ‘a’, ‘b’, ‘c’, ‘d’, ‘e’ ]</p>
-</li>
-</ul>
-<h2 id="5-6-정렬"><a href="#5-6-정렬" class="headerlink" title="5.6 정렬"></a>5.6 정렬</h2><ul>
+<pre><code>[ &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos; ]
+[ &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos; ]
+</code></pre><h2 id="5-6-정렬"><a href="#5-6-정렬" class="headerlink" title="5.6 정렬"></a>5.6 정렬</h2><ul>
 <li><code>reverse()</code>: 역순으로 정렬</li>
-<li><p><code>sort()</code>: 오름차순으로 정렬</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.reverse(); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr.sort(); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
-<p>  [ ‘e’, ‘d’, ‘c’, ‘b’, ‘a’ ]<br>  [ ‘a’, ‘b’, ‘c’, ‘d’, ‘e’ ]</p>
-</li>
+<li><code>sort()</code>: 오름차순으로 정렬  </li>
 </ul>
-<h2 id="5-7-배열-자르기"><a href="#5-7-배열-자르기" class="headerlink" title="5.7 배열 자르기"></a>5.7 배열 자르기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr2 = arr.splice(<span class="number">2</span>,<span class="number">3</span>); <span class="comment">// 2번에서 3개 자름</span></span><br><span class="line"><span class="built_in">console</span>.log(arr, arr.length);</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> arr[<span class="number">2</span>]; <span class="comment">// 2번이 삭제 하지만 데이터만 삭제, 공간은 남아있음</span></span><br><span class="line"><span class="built_in">console</span>.log(arr, arr.length);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.reverse(); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr.sort(); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+<pre><code>[ &apos;e&apos;, &apos;d&apos;, &apos;c&apos;, &apos;b&apos;, &apos;a&apos; ]
+[ &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos; ]
+</code></pre><h2 id="5-7-배열-자르기"><a href="#5-7-배열-자르기" class="headerlink" title="5.7 배열 자르기"></a>5.7 배열 자르기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr2 = arr.splice(<span class="number">2</span>,<span class="number">3</span>); <span class="comment">// 2번에서 3개 자름</span></span><br><span class="line"><span class="built_in">console</span>.log(arr, arr.length);</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> arr[<span class="number">2</span>]; <span class="comment">// 2번이 삭제 하지만 데이터만 삭제, 공간은 남아있음</span></span><br><span class="line"><span class="built_in">console</span>.log(arr, arr.length);</span><br></pre></td></tr></table></figure>
 <pre><code>[ &apos;a&apos;, &apos;b&apos; ] 2
 [ &apos;a&apos;, &apos;b&apos; ] 2
 </code></pre><h2 id="5-8-배열-데이터-하나씩-사용하기"><a href="#5-8-배열-데이터-하나씩-사용하기" class="headerlink" title="5.8 배열 데이터 하나씩 사용하기"></a>5.8 배열 데이터 하나씩 사용하기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line"><span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
