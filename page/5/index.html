@@ -161,11 +161,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                80
+                81
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                13
+                14
                 <span>tags</span>
             </div>
         </div>
@@ -214,6 +214,344 @@
 
             
             <section id="main">
+    <article id="post-Database_04_mysql basic syntax" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/07/28/Database_04_mysql basic syntax/">MySQL Basic Syntax</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/07/28/Database_04_mysql basic syntax/">
+            <time datetime="2018-07-27T15:48:26.000Z" itemprop="datePublished">2018-07-28</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Database/">Database</a>, <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/SQL/">SQL</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>본격적으로 RDBMS(나의 경우는 workbench)를 사용하여 MySQL 문법을 익혀보자</p>
+<ul>
+<li>명령어는 대문자로 쓰는 것이 컨벤션이나 소문자로 써도 실행에는 문제가 없음</li>
+<li>마지막에 세미콜론(;) 또한 쓰지 않아도 실행에는 문제가 없음</li>
+</ul>
+<h2 id="1-Create"><a href="#1-Create" class="headerlink" title="1. Create"></a>1. Create</h2><h3 id="1-Create-Database"><a href="#1-Create-Database" class="headerlink" title="1) Create Database"></a>1) Create Database</h3><ul>
+<li><p>Database 생성</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Database 선택</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>현재 database 확인</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DATABASE</span>();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-Create-Table"><a href="#2-Create-Table" class="headerlink" title="2) Create Table"></a>2) Create Table</h3><p>Table을 생성할 때에는 컬럼이름, 데이터타입, 제약조건에 대한 내용이 들어감</p>
+<ul>
+<li><p>Table 생성</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> &lt;table_name&gt;(</span><br><span class="line">    column_name_1 column_datatype_1 column_constraint_1,</span><br><span class="line">    column_name_2 column_datatype_2 column_constraint_2,</span><br><span class="line">    ...</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>제약조건이 없는 user1 Table 생성</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> user1(</span><br><span class="line">    user_id <span class="built_in">INT</span>,</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">Varchar</span>(<span class="number">20</span>),</span><br><span class="line">    email <span class="built_in">Varchar</span>(<span class="number">30</span>),</span><br><span class="line">    age <span class="built_in">INT</span>(<span class="number">3</span>),</span><br><span class="line">    rdate <span class="built_in">DATE</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>제약조건이 있는 user2 Table 생성</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> user2(</span><br><span class="line">    user_id <span class="built_in">INT</span> PRIMARY <span class="keyword">KEY</span> AUTO_INCREMENT,</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">Varchar</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    email <span class="built_in">Varchar</span>(<span class="number">30</span>) <span class="keyword">UNIQUE</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    age <span class="built_in">INT</span>(<span class="number">3</span>) <span class="keyword">DEFAULT</span> <span class="string">'30'</span>,</span><br><span class="line">    rdate <span class="keyword">TIMESTAMP</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Database 선택</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>현재 database 확인</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DATABASE</span>();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="2-Alter"><a href="#2-Alter" class="headerlink" title="2. Alter"></a>2. Alter</h2><h3 id="1-Database"><a href="#1-Database" class="headerlink" title="1) Database"></a>1) Database</h3><p>ALTER를 이용하여 database encoding 변경</p>
+<ul>
+<li><p>현재 문자열 인코딩 확인</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">"character_set_database"</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>test 데이터베이스의 문자열 인코딩을 utf8로 변경</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">test</span> <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> = utf8;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">test</span> <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> = <span class="keyword">ascii</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>문자열 encoding 변경 결과 확인</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">"character_set_database"</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-Table"><a href="#2-Table" class="headerlink" title="2) Table"></a>2) Table</h3><p>ALTER를 이용하여 table의 column 추가, 삭제, 수정</p>
+<ul>
+<li><p>ADD</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- user2 테이블에 TEXT 데이터 타입을 갖는 tmp column 추가</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user2 <span class="keyword">ADD</span> tmp <span class="built_in">TEXT</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>MODIFY</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- user2 테이블에 tmp column을 INT(3) 데이터 타입으로 수정</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user2 <span class="keyword">MODIFY</span> <span class="keyword">COLUMN</span> tmp <span class="built_in">INT</span>(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DROP</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- user2 테이블의 tmp column을 삭제</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user2 <span class="keyword">DROP</span> tmp;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="3-DROP"><a href="#3-DROP" class="headerlink" title="3. DROP"></a>3. DROP</h2><h3 id="1-Database-1"><a href="#1-Database-1" class="headerlink" title="1) Database"></a>1) Database</h3><ul>
+<li>Database 삭제<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-Table-1"><a href="#2-Table-1" class="headerlink" title="2) Table"></a>2) Table</h3><ul>
+<li>Table 삭제<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> &lt;table_name&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-INSERT"><a href="#4-INSERT" class="headerlink" title="4. INSERT"></a>4. INSERT</h2><h3 id="1-Syntax"><a href="#1-Syntax" class="headerlink" title="1) Syntax"></a>1) Syntax</h3><ul>
+<li><p>Table 뒤에 오는 column이름은 생략 가능, 대신 VALUES 뒤에 value값이 순서대로 와야 함</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_1&gt;, ...)</span><br><span class="line"><span class="keyword">VALUES</span>(&lt;value_1&gt;, &lt;value_2&gt; ...)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>여러 row를 한번에 insert하기</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_1&gt;, ...)</span><br><span class="line"><span class="keyword">VALUES</span>(&lt;value_1&gt;, &lt;value_2&gt; ...),</span><br><span class="line">(&lt;value_1&gt;, &lt;value_2&gt; ...),</span><br><span class="line">...</span><br><span class="line">(&lt;value_1&gt;, &lt;value_2&gt; ...);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-Example"><a href="#2-Example" class="headerlink" title="2) Example"></a>2) Example</h3><ul>
+<li>user1 테이블에 user_id, name, email, age, rdate를 입력<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user1(user_id, <span class="keyword">name</span>, email, age, rdate)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="number">1</span>, <span class="string">"jane"</span>, <span class="string">"jane@gmail.com"</span>, <span class="number">30</span>, <span class="keyword">now</span>()),</span><br><span class="line">(<span class="number">2</span>, <span class="string">"peter"</span>, <span class="string">"peter@gmail.com"</span>, <span class="number">33</span>, <span class="string">'2017-02-20'</span>),</span><br><span class="line">(<span class="number">3</span>, <span class="string">"alice"</span>, <span class="string">"alice@gmail.com"</span>, <span class="number">23</span>, <span class="string">'2018-01-15'</span>),</span><br><span class="line">(<span class="number">4</span>, <span class="string">"po"</span>, <span class="string">"po@gmail.com"</span>, <span class="number">43</span>, <span class="string">'2002-09-16'</span>),</span><br><span class="line">(<span class="number">5</span>, <span class="string">"andy"</span>, <span class="string">"andy@gmail.com"</span>, <span class="number">17</span>, <span class="string">'2016-04-28'</span>),</span><br><span class="line">(<span class="number">6</span>, <span class="string">"jane"</span>, <span class="string">"jane1234@gmail.com"</span>, <span class="number">33</span>, <span class="string">'2013-09-02'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-SELECT"><a href="#4-SELECT" class="headerlink" title="4. SELECT"></a>4. SELECT</h2><h3 id="1-Basic"><a href="#1-Basic" class="headerlink" title="1) Basic"></a>1) Basic</h3><ul>
+<li><p>basic syntax</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> &lt;column_name_1&gt;, &lt;<span class="keyword">column</span>)name_2&gt;, ...</span><br><span class="line"><span class="keyword">FROM</span> &lt;table_name&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>전체 컬럼 데이터 조회하기 (table 전체)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>일부 컬럼 조회하기</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> user_id, <span class="keyword">name</span>, rdate</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-ALIAS"><a href="#2-ALIAS" class="headerlink" title="2) ALIAS"></a>2) ALIAS</h3><p>alias(as)를 이용하여 컬럼명을 변경할 수 있음<br>as는 생략 가능<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> user_id <span class="keyword">as</span> <span class="string">"아이디"</span>, <span class="keyword">name</span> <span class="keyword">as</span> <span class="string">"이름"</span>, rdate <span class="keyword">as</span> <span class="string">"등록일"</span></span><br><span class="line"><span class="keyword">FROM</span> user1</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-DISTINCT"><a href="#3-DISTINCT" class="headerlink" title="3) DISTINCT"></a>3) DISTINCT</h3><p>DISTINCT를 이용하여 특정 컬럼의 중복 데이터를 제거 가능</p>
+<ul>
+<li>name 컬럼을 중복 제거하여 조회<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span>(<span class="keyword">name</span>)</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="4-WHERE"><a href="#4-WHERE" class="headerlink" title="4) WHERE"></a>4) WHERE</h3><p>WHERE절을 이용해서 검색 조건을 추가<br>AND, OR, 연산자 등의 기능을 사용</p>
+<ul>
+<li><p>나이가 30살 이상인 user를 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> age &gt;= <span class="number">30</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>등록일이 2016-01-01일 이후의 user를 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> rdate &gt;= <span class="string">"2016-01-01"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>등록일이 2010-01-01에서 2017-12-31 사이인 user를 조회 (AND는 둘다 true이면 true, OR도 사용가능)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> rdate &gt;= <span class="string">"2010-01-01"</span> <span class="keyword">AND</span> rdate &lt;= <span class="string">"2017-12-13"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>BETWEEN을 사용하여 기간 조회 (숫자데이터도 사용 가능)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> rdate <span class="keyword">BETWEEN</span> <span class="string">"2010-01-01"</span> <span class="keyword">AND</span> <span class="string">"2017-12-13"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="5-ORDER-BY"><a href="#5-ORDER-BY" class="headerlink" title="5) ORDER BY"></a>5) ORDER BY</h3><p>ORDER BY를 이용하여 특정 컬럼으로 데이터 정렬 가능</p>
+<ul>
+<li><p>age로 오름차순 정렬 (ASC는 생략이 가능)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">ASC</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>age로 내림차순 정렬</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>age로 내림차순 정렬하고 rdate를 오름차순 정렬</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">DESC</span>, rdate</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="6-CONCAT"><a href="#6-CONCAT" class="headerlink" title="6) CONCAT"></a>6) CONCAT</h3><p>CONCAT을 사용하여 select한 데이터를 합쳐서 새로운 컬럼으로 보여줄 수 있음</p>
+<ul>
+<li>name과 age를 같이 보여주도록 조회<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> email, <span class="keyword">CONCAT</span>(<span class="keyword">name</span>, <span class="string">"("</span>, age, <span class="string">")"</span>) <span class="keyword">AS</span> <span class="string">"name_age"</span></span><br><span class="line"><span class="keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="7-LIKE"><a href="#7-LIKE" class="headerlink" title="7) LIKE"></a>7) LIKE</h3><p>LIKE를 이용하여 특정 문자열이 들어간 데이터 조회 가능<br>%는 ‘어떤 문자나’와 같은 의미로 “%gmail” 은 gmail 문자열 앞에 아무 문자나 올수 있음을 의미<br>NOT LIKE를 사용하여 특정 문자가 들어가지 않는 데이터 조회 가능</p>
+<ul>
+<li><p>email에 gmail이 들어간 데이터 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> email <span class="keyword">LIKE</span> <span class="string">"%@gmail%"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>email에 gmail이 들어가지 않는 데이터 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> email <span class="keyword">NOT</span> <span class="keyword">LIKE</span> <span class="string">"%@gmail%"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="8-IN"><a href="#8-IN" class="headerlink" title="8) IN"></a>8) IN</h3><p>여러개의 조건을 만족하는 데이터를 조회하고 싶을때 사용<br>WHERE 절의 조건을 여러개 사용하는것을 간단하게 만들 수 있음</p>
+<ul>
+<li><p>name이 peter와 alice인 데이터 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span>=<span class="string">"peter"</span> <span class="keyword">OR</span> <span class="keyword">name</span>=<span class="string">"alice"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>name이 peter와 alice인 데이터 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">IN</span> (<span class="string">"peter"</span>, <span class="string">"alice"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="9-LIMIT"><a href="#9-LIMIT" class="headerlink" title="9) LIMIT"></a>9) LIMIT</h3><p>LIMIT은 조회하는 데이터의 수를 제한할 때 사용<br><em>데이터가 너무 많은 경우에는 항상 limit을 사용하여 적은 데이터를 조회해야 조회 시간이나 업데이트시의 실수를 줄일수 있음</em></p>
+<ul>
+<li><p>user1 테이블에서 3개의 데이터 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>user1 테이블에서 두번째에서 네번째까지의 3개의 데이터 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">1</span>,<span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="6-UPDATE"><a href="#6-UPDATE" class="headerlink" title="6. UPDATE"></a>6. UPDATE</h2><p>업데이트시에는 항상 select-where로 변경할 데이터를 확인하고 update 해줘야 실수를 줄일 수 있음<br>limit도 함께 사용해주는 것이 좋음</p>
+<h3 id="1-syntax"><a href="#1-syntax" class="headerlink" title="1) syntax"></a>1) syntax</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE &lt;table_name&gt;</span><br><span class="line">SET &lt;column_name_1&gt; = &lt;value_1&gt;, &lt;column_name_2&gt; = &lt;value_2&gt;,</span><br><span class="line">WHERE &lt;condition&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-example"><a href="#2-example" class="headerlink" title="2) example"></a>2) example</h3><ul>
+<li>jane 이름을 가지고 있는 사람의 나이를 20, 이메일을 <a href="mailto:jane000@daum.net" target="_blank" rel="noopener">jane000@daum.net</a>으로 변경<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> user1</span><br><span class="line"><span class="keyword">SET</span> age=<span class="number">20</span>, email=<span class="string">"jane000@daum.net"</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span>=<span class="string">"jane"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="7-DELETE"><a href="#7-DELETE" class="headerlink" title="7. DELETE"></a>7. DELETE</h2><h3 id="1-syntax-1"><a href="#1-syntax-1" class="headerlink" title="1) syntax"></a>1) syntax</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> &lt;table_name&gt;</span><br><span class="line"><span class="keyword">WHERE</span> &lt;condition&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-example-1"><a href="#2-example-1" class="headerlink" title="2) example"></a>2) example</h3><ul>
+<li>2016-01-01 이전 데이터 삭제<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> rdate &lt; <span class="string">"2016-01-01"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="8-GROUP-BY"><a href="#8-GROUP-BY" class="headerlink" title="8. GROUP BY"></a>8. GROUP BY</h2><p>GROUP BY는 여러개의 동일한 데이터를 가지는 특정 컬럼을 합쳐주는 역할을 하는 명령<br>sql의 그룹함수: count, min, max, sum, avg</p>
+<ul>
+<li>world 데이터 베이스로 이동<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- world 데이터 베이스는 city, country, countrylanguage 테이블이 있는 데이터 베이스 </span></span><br><span class="line"><span class="keyword">use</span> world</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="1-GROUP-BY-함수"><a href="#1-GROUP-BY-함수" class="headerlink" title="1) GROUP BY 함수"></a>1) GROUP BY 함수</h3><h4 id="1-COUNT"><a href="#1-COUNT" class="headerlink" title="(1) COUNT"></a>(1) COUNT</h4><ul>
+<li><p>city 테이블의 CountryCode를 묶고 각 코드마다 몇개의 데이터가 있는지 확인</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> CountryCode, <span class="keyword">COUNT</span>(CountryCode)</span><br><span class="line"><span class="keyword">FROM</span> city</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> CountryCode</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>countrylanguage 테이블에서 전체 언어가 몇개 있는지 구하시오.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span>(<span class="keyword">Language</span>)) <span class="keyword">as</span> language_count</span><br><span class="line"><span class="keyword">FROM</span> countrylanguage</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="2-MAX"><a href="#2-MAX" class="headerlink" title="(2) MAX"></a>(2) MAX</h4><ul>
+<li>대륙별 인구수와 GNP 최대 값을 조회<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">MAX</span>(Population) <span class="keyword">as</span> Population, <span class="keyword">MAX</span>(GNP) <span class="keyword">as</span> GNP</span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="3-MIN"><a href="#3-MIN" class="headerlink" title="(3) MIN"></a>(3) MIN</h4><ul>
+<li>대륙별 인구수와 GNP 최소 값을 조회 (GNP와 인구수가 0이 아닌 데이터 중에서)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">MIN</span>(Population) <span class="keyword">as</span> Population, <span class="keyword">MIN</span>(GNP) <span class="keyword">as</span> GNP</span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">WHERE</span> GNP != <span class="number">0</span> <span class="keyword">AND</span> Population != <span class="number">0</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="4-SUM"><a href="#4-SUM" class="headerlink" title="(4) SUM"></a>(4) SUM</h4><ul>
+<li>대륙별 총 인구수와 총 GNP<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">SUM</span>(Population) <span class="keyword">as</span> Population, <span class="keyword">SUM</span>(GNP) <span class="keyword">as</span> GNP</span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">WHERE</span> GNP != <span class="number">0</span> <span class="keyword">AND</span> Population != <span class="number">0</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="5-AVG"><a href="#5-AVG" class="headerlink" title="(5) AVG"></a>(5) AVG</h4><ul>
+<li>대륙별 평균 인구수와 평균 GNP 결과를 인구수로 내림차순 정렬<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">AVG</span>(Population) <span class="keyword">as</span> Population, <span class="keyword">AVG</span>(GNP) <span class="keyword">as</span> GNP</span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">WHERE</span> GNP != <span class="number">0</span> <span class="keyword">AND</span> Population != <span class="number">0</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Population DESCs</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-HAVING"><a href="#2-HAVING" class="headerlink" title="2) HAVING"></a>2) HAVING</h3><p>GROUP BY에서 반환되는 결과에 조건을 줄 수 있음</p>
+<ul>
+<li><p>대륙별 전체인구를 구하고 5억이상인 대륙만 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">SUM</span>(Population) <span class="keyword">as</span> Population</span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br><span class="line"><span class="keyword">HAVING</span> Population &gt; <span class="number">500000000</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>대륙별 평균 인구수, 평균 GNP, 1인당 GNP한 결과를 1인당 GNP가 0.01 이상인 데이터를 조회하고 1인당 GNP를 내림차순으로 정렬</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">AVG</span>(Population) <span class="keyword">as</span> Population, <span class="keyword">AVG</span>(GNP) <span class="keyword">as</span> GNP,</span><br><span class="line"><span class="keyword">AVG</span>(GNP) / <span class="keyword">AVG</span>(Population) * <span class="number">1000</span> <span class="keyword">as</span> <span class="keyword">AVG</span></span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">WHERE</span> GNP != <span class="number">0</span> <span class="keyword">AND</span> Population != <span class="number">0</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br><span class="line"><span class="keyword">HAVING</span> <span class="keyword">AVG</span> &gt; <span class="number">0.01</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">AVG</span> <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="※-참고-자료"><a href="#※-참고-자료" class="headerlink" title="※ 참고 자료"></a>※ 참고 자료</h4><ul>
+<li>패스트캠퍼스 ‘데이터 사이언스 스쿨 Python 8기’ 수업자료</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/07/28/Database_04_mysql basic syntax/" data-id="cjmls6nck008d1e1hlqeil54r" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/07/28/Database_04_mysql basic syntax/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/07/28/Database_04_mysql basic syntax/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-2018-07-26-TIL" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -307,7 +645,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/27/2018-07-26-TIL/" data-id="cjmkn461s002cjk1haf7aipmw" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/27/2018-07-26-TIL/" data-id="cjmls6naj002n1e1hym2rrrv9" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -639,7 +977,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/27/Database_03_mysql_basic/" data-id="cjmkn4631005kjk1hioim2f10" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/27/Database_03_mysql_basic/" data-id="cjmls6nbt005s1e1hob5yrn60" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -843,7 +1181,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/25/Database_02/" data-id="cjmkn4630005hjk1hd7if4npl" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/25/Database_02/" data-id="cjmls6nbp005h1e1hv4rj3eav" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1201,7 +1539,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/25/Database_01/" data-id="cjmkn462z005cjk1hypwk3g6q" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/25/Database_01/" data-id="cjmls6nbv00611e1hm5mymcby" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1364,7 +1702,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/25/2018-07-25-TIL/" data-id="cjmkn461q0029jk1hrojfxhfk" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/25/2018-07-25-TIL/" data-id="cjmls6nai002k1e1hubv3g39z" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1522,7 +1860,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/24/2018-07-24-TIL/" data-id="cjmkn461p0026jk1hy0jb062v" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/24/2018-07-24-TIL/" data-id="cjmls6nah002h1e1hsjcekl95" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1682,7 +2020,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/24/2018-07-23-TIL/" data-id="cjmkn461o0023jk1hpx9962zz" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/24/2018-07-23-TIL/" data-id="cjmls6nag002e1e1h9rfxle45" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1838,7 +2176,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/23/2018-07-22-TIL/" data-id="cjmkn461n0020jk1hh4rm34zf" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/23/2018-07-22-TIL/" data-id="cjmls6naf002b1e1hjrlgohkj" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1999,7 +2337,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/21/2018-07-21-TIL/" data-id="cjmkn461j001ojk1hkth3zz78" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/21/2018-07-21-TIL/" data-id="cjmls6nae00281e1hrrrlfej2" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -2077,168 +2415,8 @@
 
 
 
-    <article id="post-2018-07-20-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/07/21/2018-07-20-TIL/">2018-07-20-TIL</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/07/21/2018-07-20-TIL/">
-            <time datetime="2018-07-20T16:24:00.000Z" itemprop="datePublished">2018-07-21</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>공부한 것 &amp; 리뷰</p>
-<ul>
-<li>DSS: 통계 &lt;44절. 분류의 기초&gt; 복습 (완료)</li>
-<li>DSS 수업: sql w/ python, mongoDB</li>
-<li>분류 팀 프로젝트<ul>
-<li>크기가 큰 csv를 다루기 위해 로컬에 mysql을 설치하고 train data들을 살펴봄     </li>
-</ul>
-</li>
-</ul>
-<p>내일 공부할 것</p>
-<ul>
-<li>DSS 수업: 의사결정나무</li>
-<li>분류 팀 프로젝트</li>
-</ul>
-<p>이번 주에 공부할 것</p>
-<ul>
-<li>DSS: 통계 &lt;11장. 검정과 추정&gt; 복습하기</li>
-<li>DSS: 통계 &lt;34절. 선형회귀분석의 기초&gt; 복습하기</li>
-<li>DSS: 통계 &lt;35절. 입력변수가 카테고리값인 경우&gt; 복습하기</li>
-<li>DSS: 통계 &lt;36절. 예측성능의 진단과 비교&gt; 복습하기</li>
-<li>DSS: 통계 &lt;37절. 과최적화와 교차 검증&gt; 복습하기</li>
-<li>DSS: 통계 &lt;38절. 추천시스템&gt; 복습하기</li>
-<li><del>DSS: 통계 &lt;43절. 클러스터링&gt; 복습하기</del></li>
-<li><del>DSS: 통계 &lt;44절. 분류의 기초&gt; 복습하기</del></li>
-<li>DSS: 통계 &lt;45절. 로지스틱 회귀분석&gt; 복습하기</li>
-<li>DSS: 통계 &lt;46절. QDA와 나이브 베이즈 모형&gt; 복습하기</li>
-<li>DSS: 인성면접 답안 대비 (개인 신상, 취미, 특기 관련 질문)</li>
-<li>관심 기업 조사</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/07/21/2018-07-20-TIL/" data-id="cjmkn461m001xjk1he8g3rwcs" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/07/21/2018-07-20-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/07/21/2018-07-20-TIL/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+        <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
 </section>
             
@@ -2250,6 +2428,15 @@
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a></p>
+                            <p class="item-title"><a href="/2018/09/28/web_04_javascript_basic/" class="title">JavaScript - Basic</a></p>
+                            <p class="item-date"><time datetime="2018-09-28T07:35:20.000Z" itemprop="datePublished">2018-09-28</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -2287,15 +2474,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
-                            <p class="item-title"><a href="/2018/09/18/2018-09-18-TIL/" class="title">2018-09-18-TIL (9/7 ~ 9/18)</a></p>
-                            <p class="item-date"><time datetime="2018-09-18T07:44:06.000Z" itemprop="datePublished">2018-09-18</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -2305,7 +2483,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">63</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">63</span></li></ul>
         </div>
     </div>
 
@@ -2314,7 +2492,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -2323,7 +2501,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">63</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">63</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -2332,7 +2510,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 15.71px;">Database</a> <a href="/tags/MySQL/" style="font-size: 14.29px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 14.29px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.43px;">algorithm</a> <a href="/tags/html/" style="font-size: 11.43px;">html</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/programming/" style="font-size: 18.57px;">programming</a> <a href="/tags/python/" style="font-size: 17.14px;">python</a> <a href="/tags/web/" style="font-size: 12.86px;">web</a> <a href="/tags/알고리즘/" style="font-size: 11.43px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a>
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 15px;">Database</a> <a href="/tags/MySQL/" style="font-size: 13.33px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 13.33px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.67px;">algorithm</a> <a href="/tags/html/" style="font-size: 11.67px;">html</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/programming/" style="font-size: 18.33px;">programming</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/web/" style="font-size: 13.33px;">web</a> <a href="/tags/알고리즘/" style="font-size: 11.67px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a>
         </div>
     </div>
 
