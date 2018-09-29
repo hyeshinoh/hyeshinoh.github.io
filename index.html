@@ -214,170 +214,6 @@
 
             
             <section id="main">
-    <article id="post-web_07_crawling" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/09/29/web_07_crawling/">Web crawling 기초</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/09/29/web_07_crawling/">
-            <time datetime="2018-09-29T06:47:26.000Z" itemprop="datePublished">2018-09-29</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/crawling/">crawling</a>, <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/web/">web</a>, <a class="tag-link" href="/tags/web-crawling/">web_crawling</a>, <a class="tag-link" href="/tags/웹크롤링/">웹크롤링</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="1-Python을-사용한-crawling의-방법"><a href="#1-Python을-사용한-crawling의-방법" class="headerlink" title="1. Python을 사용한 crawling의 방법"></a>1. Python을 사용한 crawling의 방법</h1><p>아래의 네 가지 방법이 사용되는데, 가능한 한 간단한 앞 번호의 방법을 사용하는 것이 효율적</p>
-<ol>
-<li>requests</li>
-<li>requests + bs4(BeautifulSoup)</li>
-<li>selenium</li>
-<li>scrapy</li>
-</ol>
-<h1 id="2-Requests-패키지를-이용한-crawling"><a href="#2-Requests-패키지를-이용한-crawling" class="headerlink" title="2. Requests 패키지를 이용한 crawling"></a>2. Requests 패키지를 이용한 crawling</h1><p>python의 requests 패키지를 이용해서 코드상으로 request를 보내고 reponse를 받을 수 있음</p>
-<h2 id="2-1-API가-제공되는-경우"><a href="#2-1-API가-제공되는-경우" class="headerlink" title="2.1 API가 제공되는 경우"></a>2.1 API가 제공되는 경우</h2><ul>
-<li>API로 request를 던지고 JSON format으로 데이터를 받아 pandas/csv로 저장</li>
-</ul>
-<h2 id="2-2-API가-제공되지-않는-경우"><a href="#2-2-API가-제공되지-않는-경우" class="headerlink" title="2.2 API가 제공되지 않는 경우"></a>2.2 API가 제공되지 않는 경우</h2><ul>
-<li>request를 던지고 response로 받은 HTML 코드(문자열 형태)를 CSS selector를 이용해 특정 element의 정보만 가져와서 pandas/csv로 데이터 저장</li>
-<li>BeautifulSoup: str을 CSS selector로 크롤링할 수 있게 만들어주는 패키지<ul>
-<li>HTML 문자열을 parsing해서 변환해주면 CSS selector로 데이터를 가져올 수 있음</li>
-</ul>
-</li>
-</ul>
-<h1 id="3-Selenium-패키지를-이용한-crawling"><a href="#3-Selenium-패키지를-이용한-crawling" class="headerlink" title="3. Selenium 패키지를 이용한 crawling"></a>3. Selenium 패키지를 이용한 crawling</h1><ul>
-<li>request로 crawling이 불가능한 동적웹페이지에 사용<ul>
-<li>버튼을 클릭했을 때 나타난 페이지의 특정 element 가져오기 가능</li>
-</ul>
-</li>
-<li>CSS selector나 xpath를 사용<br>(강사님은 CSS selector가 더 쉽고 자주 이용)</li>
-</ul>
-<h1 id="4-Scrapy를-이용한-crawling"><a href="#4-Scrapy를-이용한-crawling" class="headerlink" title="4. Scrapy를 이용한 crawling"></a>4. Scrapy를 이용한 crawling</h1><ul>
-<li>scrapy: python library for web crawling, 사용이 좀 더 복잡</li>
-<li>CSS selector, xpath를 사용함</li>
-<li>requests와 selenium을 모아서 전략적으로 사용하는 라이브러리</li>
-</ul>
-<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
-<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/09/29/web_07_crawling/" data-id="cjmn5tnpf006cx01hy64dqxlu" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/09/29/web_07_crawling/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/29/web_07_crawling/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <article id="post-web_08_requests" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -396,7 +232,7 @@
     <div class="article-date">
         <i class="fas fa-calendar-alt"></i>
         <a href="/2018/09/29/web_08_requests/">
-            <time datetime="2018-09-29T01:52:26.000Z" itemprop="datePublished">2018-09-29</time>
+            <time datetime="2018-09-29T13:52:26.000Z" itemprop="datePublished">2018-09-29</time>
         </a>
     </div>
 
@@ -635,6 +471,170 @@
             
     
         <a href="http://yoursite.com/2018/09/29/web_08_requests/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/29/web_08_requests/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-web_07_crawling" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/09/29/web_07_crawling/">Web crawling 기초</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/09/29/web_07_crawling/">
+            <time datetime="2018-09-29T06:47:26.000Z" itemprop="datePublished">2018-09-29</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/crawling/">crawling</a>, <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/web/">web</a>, <a class="tag-link" href="/tags/web-crawling/">web_crawling</a>, <a class="tag-link" href="/tags/웹크롤링/">웹크롤링</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="1-Python을-사용한-crawling의-방법"><a href="#1-Python을-사용한-crawling의-방법" class="headerlink" title="1. Python을 사용한 crawling의 방법"></a>1. Python을 사용한 crawling의 방법</h1><p>아래의 네 가지 방법이 사용되는데, 가능한 한 간단한 앞 번호의 방법을 사용하는 것이 효율적</p>
+<ol>
+<li>requests</li>
+<li>requests + bs4(BeautifulSoup)</li>
+<li>selenium</li>
+<li>scrapy</li>
+</ol>
+<h1 id="2-Requests-패키지를-이용한-crawling"><a href="#2-Requests-패키지를-이용한-crawling" class="headerlink" title="2. Requests 패키지를 이용한 crawling"></a>2. Requests 패키지를 이용한 crawling</h1><p>python의 requests 패키지를 이용해서 코드상으로 request를 보내고 reponse를 받을 수 있음</p>
+<h2 id="2-1-API가-제공되는-경우"><a href="#2-1-API가-제공되는-경우" class="headerlink" title="2.1 API가 제공되는 경우"></a>2.1 API가 제공되는 경우</h2><ul>
+<li>API로 request를 던지고 JSON format으로 데이터를 받아 pandas/csv로 저장</li>
+</ul>
+<h2 id="2-2-API가-제공되지-않는-경우"><a href="#2-2-API가-제공되지-않는-경우" class="headerlink" title="2.2 API가 제공되지 않는 경우"></a>2.2 API가 제공되지 않는 경우</h2><ul>
+<li>request를 던지고 response로 받은 HTML 코드(문자열 형태)를 CSS selector를 이용해 특정 element의 정보만 가져와서 pandas/csv로 데이터 저장</li>
+<li>BeautifulSoup: str을 CSS selector로 크롤링할 수 있게 만들어주는 패키지<ul>
+<li>HTML 문자열을 parsing해서 변환해주면 CSS selector로 데이터를 가져올 수 있음</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-Selenium-패키지를-이용한-crawling"><a href="#3-Selenium-패키지를-이용한-crawling" class="headerlink" title="3. Selenium 패키지를 이용한 crawling"></a>3. Selenium 패키지를 이용한 crawling</h1><ul>
+<li>request로 crawling이 불가능한 동적웹페이지에 사용<ul>
+<li>버튼을 클릭했을 때 나타난 페이지의 특정 element 가져오기 가능</li>
+</ul>
+</li>
+<li>CSS selector나 xpath를 사용<br>(강사님은 CSS selector가 더 쉽고 자주 이용)</li>
+</ul>
+<h1 id="4-Scrapy를-이용한-crawling"><a href="#4-Scrapy를-이용한-crawling" class="headerlink" title="4. Scrapy를 이용한 crawling"></a>4. Scrapy를 이용한 crawling</h1><ul>
+<li>scrapy: python library for web crawling, 사용이 좀 더 복잡</li>
+<li>CSS selector, xpath를 사용함</li>
+<li>requests와 selenium을 모아서 전략적으로 사용하는 라이브러리</li>
+</ul>
+<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/09/29/web_07_crawling/" data-id="cjmn5tnpf006cx01hy64dqxlu" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/09/29/web_07_crawling/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/29/web_07_crawling/">Comments</a>
     
 
         </footer>
@@ -2330,8 +2330,8 @@ b
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a></p>
-                            <p class="item-title"><a href="/2018/09/29/web_07_crawling/" class="title">Web crawling 기초</a></p>
-                            <p class="item-date"><time datetime="2018-09-29T06:47:26.000Z" itemprop="datePublished">2018-09-29</time></p>
+                            <p class="item-title"><a href="/2018/09/29/web_08_requests/" class="title">Web crawling - Requests</a></p>
+                            <p class="item-date"><time datetime="2018-09-29T13:52:26.000Z" itemprop="datePublished">2018-09-29</time></p>
                         </div>
                     </li>
                 
@@ -2339,8 +2339,8 @@ b
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a></p>
-                            <p class="item-title"><a href="/2018/09/29/web_08_requests/" class="title">Web crawling - Requests</a></p>
-                            <p class="item-date"><time datetime="2018-09-29T01:52:26.000Z" itemprop="datePublished">2018-09-29</time></p>
+                            <p class="item-title"><a href="/2018/09/29/web_07_crawling/" class="title">Web crawling 기초</a></p>
+                            <p class="item-date"><time datetime="2018-09-29T06:47:26.000Z" itemprop="datePublished">2018-09-29</time></p>
                         </div>
                     </li>
                 
