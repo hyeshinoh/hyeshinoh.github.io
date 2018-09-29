@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="Requests requests: 서버에 request 요청을 하고 response를 받는 패키지 http://docs.python-requests.org/en/master/ mac은 설치 필요: pip3 install requests  12import requestsimport pickle 1. 네이버 주식 데이터 가져오기 api를 사용해 json 파싱">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-29T13:58:55.768Z">
+<meta property="og:updated_time" content="2018-09-29T14:19:17.559Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web crawling - Requests">
 <meta name="twitter:description" content="Requests requests: 서버에 request 요청을 하고 response를 받는 패키지 http://docs.python-requests.org/en/master/ mac은 설치 필요: pip3 install requests  12import requestsimport pickle 1. 네이버 주식 데이터 가져오기 api를 사용해 json 파싱">
@@ -284,15 +284,159 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_data</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    URL을 받으면 json으로 데이터를 가져와서 pandas dataframe 로 만들어주는 함수</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    response = requests.get(url)   <span class="comment"># response라는 obj. 안에 결과 데이터를 받아옴</span></span><br><span class="line">    json_info = response.json()    <span class="comment"># json함수: 문자열 데이터를 json 형태로 parsing</span></span><br><span class="line">    companies = json_info[<span class="string">"result"</span>][<span class="string">"itemList"</span>]</span><br><span class="line">    df = pd.DataFrame(columns = [<span class="string">"종목"</span>,<span class="string">"시세"</span>,<span class="string">"전일비"</span>,<span class="string">"등락율"</span>,<span class="string">"시가총액"</span>,<span class="string">"거래량"</span>])</span><br><span class="line">    <span class="keyword">for</span> company <span class="keyword">in</span> companies:</span><br><span class="line">        df.loc[len(df)] = &#123;</span><br><span class="line">            <span class="string">"종목"</span>:company[<span class="string">"nm"</span>],</span><br><span class="line">            <span class="string">"시세"</span>:company[<span class="string">"nv"</span>],</span><br><span class="line">            <span class="string">"전일비"</span>:company[<span class="string">"cv"</span>],</span><br><span class="line">            <span class="string">"등락율"</span>:company[<span class="string">"cr"</span>],</span><br><span class="line">            <span class="string">"시가총액"</span>:company[<span class="string">"mks"</span>],</span><br><span class="line">            <span class="string">"거래량"</span>:company[<span class="string">"aq"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = make_url(<span class="number">100</span>, <span class="number">1</span>)</span><br><span class="line">df = get_data(url)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
-<div><br><style scoped><br>    .dataframe tbody tr th:only-of-type {<br>        vertical-align: middle;<br>    }<br><br>    .dataframe tbody tr th {<br>        vertical-align: top;<br>    }<br><br>    .dataframe thead th {<br>        text-align: right;<br>    }<br></style><br><table border="1" class="dataframe"><br>  <thead><br>    <tr style="text-align: right;"><br>      <th></th><br>      <th>종목</th><br>      <th>시세</th><br>      <th>전일비</th><br>      <th>등락율</th><br>      <th>시가총액</th><br>      <th>거래량</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <th>95</th><br>      <td>KODEX 레버리지</td><br>      <td>14885</td><br>      <td>-170</td><br>      <td>-1.13</td><br>      <td>27120</td><br>      <td>5641593</td><br>    </tr><br>    <tr><br>      <th>96</th><br>      <td>대한항공</td><br>      <td>28100</td><br>      <td>0</td><br>      <td>0.00</td><br>      <td>26651</td><br>      <td>385938</td><br>    </tr><br>    <tr><br>      <th>97</th><br>      <td>TIGER 200</td><br>      <td>30135</td><br>      <td>-175</td><br>      <td>-0.58</td><br>      <td>26428</td><br>      <td>861828</td><br>    </tr><br>    <tr><br>      <th>98</th><br>      <td>OCI</td><br>      <td>110000</td><br>      <td>3000</td><br>      <td>2.80</td><br>      <td>26234</td><br>      <td>156276</td><br>    </tr><br>    <tr><br>      <th>99</th><br>      <td>두산</td><br>      <td>136500</td><br>      <td>-1500</td><br>      <td>-1.09</td><br>      <td>26205</td><br>      <td>54640</td><br>    </tr><br>  </tbody><br></table><br></div>
-
-
+<table>
+<thead>
+<tr>
+<th></th>
+<th>종목</th>
+<th>시세</th>
+<th>전일비</th>
+<th>등락율</th>
+<th>시가총액</th>
+<th>거래량</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>95</td>
+<td>KODEX 레버리지</td>
+<td>14885</td>
+<td>-170</td>
+<td>-1.13</td>
+<td>27120</td>
+<td>5641593</td>
+</tr>
+<tr>
+<td>96</td>
+<td>대한항공</td>
+<td>28100</td>
+<td>0</td>
+<td>0.00</td>
+<td>26651</td>
+<td>385938</td>
+</tr>
+<tr>
+<td>97</td>
+<td>TIGER</td>
+<td>200</td>
+<td>30135</td>
+<td>-175</td>
+<td>-0.58</td>
+<td>26428</td>
+<td>861828</td>
+</tr>
+<tr>
+<td>98</td>
+<td>OCI</td>
+<td>110000</td>
+<td>3000</td>
+<td>2.80</td>
+<td>26234</td>
+<td>156276</td>
+</tr>
+<tr>
+<td>99</td>
+<td>두산</td>
+<td>136500</td>
+<td>-1500</td>
+<td>-1.09</td>
+<td>26205</td>
+<td>54640</td>
+</tr>
+</tbody>
+</table>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pandas.io.json <span class="keyword">import</span> json_normalize</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_data</span><span class="params">(url)</span>:</span></span><br><span class="line">    </span><br><span class="line">    response = requests.get(url)</span><br><span class="line">    json_info = response.json()    <span class="comment"># parsing</span></span><br><span class="line">    companies = json_info[<span class="string">"result"</span>][<span class="string">"itemList"</span>]</span><br><span class="line">    <span class="keyword">return</span> json_normalize(companies)</span><br><span class="line"></span><br><span class="line">url = make_url(<span class="number">100</span>, <span class="number">2</span>)</span><br><span class="line">df = get_data(url)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
-<div><br><style scoped><br>    .dataframe tbody tr th:only-of-type {<br>        vertical-align: middle;<br>    }<br><br>    .dataframe tbody tr th {<br>        vertical-align: top;<br>    }<br><br>    .dataframe thead th {<br>        text-align: right;<br>    }<br></style><br><table border="1" class="dataframe"><br>  <thead><br>    <tr style="text-align: right;"><br>      <th></th><br>      <th>aa</th><br>      <th>aq</th><br>      <th>cd</th><br>      <th>cr</th><br>      <th>cv</th><br>      <th>mks</th><br>      <th>mt</th><br>      <th>nm</th><br>      <th>nv</th><br>      <th>pcv</th><br>      <th>rf</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <th>95</th><br>      <td>645</td><br>      <td>38116</td><br>      <td>005690</td><br>      <td>-0.59</td><br>      <td>-100</td><br>      <td>10086</td><br>      <td>0</td><br>      <td>파미셀</td><br>      <td>16850</td><br>      <td>16950</td><br>      <td>5</td><br>    </tr><br>    <tr><br>      <th>96</th><br>      <td>420</td><br>      <td>9161</td><br>      <td>079550</td><br>      <td>-1.83</td><br>      <td>-850</td><br>      <td>10054</td><br>      <td>0</td><br>      <td>LIG넥스원</td><br>      <td>45700</td><br>      <td>46550</td><br>      <td>5</td><br>    </tr><br>    <tr><br>      <th>97</th><br>      <td>62</td><br>      <td>1383</td><br>      <td>226320</td><br>      <td>0.88</td><br>      <td>400</td><br>      <td>10011</td><br>      <td>0</td><br>      <td>잇츠한불</td><br>      <td>45650</td><br>      <td>45250</td><br>      <td>2</td><br>    </tr><br>    <tr><br>      <th>98</th><br>      <td>6966</td><br>      <td>72049</td><br>      <td>001820</td><br>      <td>2.02</td><br>      <td>1900</td><br>      <td>9969</td><br>      <td>0</td><br>      <td>삼화콘덴서</td><br>      <td>95900</td><br>      <td>94000</td><br>      <td>2</td><br>    </tr><br>    <tr><br>      <th>99</th><br>      <td>129</td><br>      <td>4536</td><br>      <td>001680</td><br>      <td>-0.18</td><br>      <td>-50</td><br>      <td>9875</td><br>      <td>0</td><br>      <td>대상</td><br>      <td>28500</td><br>      <td>28550</td><br>      <td>5</td><br>    </tr><br>  </tbody><br></table><br></div>
-
-
-
+<table>
+<thead>
+<tr>
+<th></th>
+<th>aa</th>
+<th>aq</th>
+<th>cd</th>
+<th>cr</th>
+<th>cv</th>
+<th>mks</th>
+<th>mt</th>
+<th>nm</th>
+<th>nv</th>
+<th>pcv</th>
+<th>rf</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>95</td>
+<td>645</td>
+<td>38116</td>
+<td>005690</td>
+<td>-0.59</td>
+<td>-100</td>
+<td>10086</td>
+<td>0</td>
+<td>파미셀</td>
+<td>16850</td>
+<td>16950</td>
+<td>5</td>
+</tr>
+<tr>
+<td>96</td>
+<td>420</td>
+<td>9161</td>
+<td>079550</td>
+<td>-1.83</td>
+<td>-850</td>
+<td>10054</td>
+<td>0</td>
+<td>LIG넥스원</td>
+<td>45700</td>
+<td>46550</td>
+<td>5</td>
+</tr>
+<tr>
+<td>97</td>
+<td>62</td>
+<td>1383</td>
+<td>226320</td>
+<td>0.88</td>
+<td>400</td>
+<td>10011</td>
+<td>0</td>
+<td>잇츠한불</td>
+<td>45650</td>
+<td>45250</td>
+<td>2</td>
+</tr>
+<tr>
+<td>98</td>
+<td>6966</td>
+<td>72049</td>
+<td>001820</td>
+<td>2.02</td>
+<td>1900</td>
+<td>9969</td>
+<td>0</td>
+<td>삼화콘덴서</td>
+<td>95900</td>
+<td>94000</td>
+<td>2</td>
+</tr>
+<tr>
+<td>99</td>
+<td>129</td>
+<td>4536</td>
+<td>001680</td>
+<td>-0.18</td>
+<td>-50</td>
+<td>9875</td>
+<td>0</td>
+<td>대상</td>
+<td>28500</td>
+<td>28550</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
 <h2 id="2-공식적으로-제공되는-API-사용하기-Dark-Sky-API"><a href="#2-공식적으로-제공되는-API-사용하기-Dark-Sky-API" class="headerlink" title="2. 공식적으로 제공되는 API 사용하기 - Dark Sky API"></a>2. 공식적으로 제공되는 API 사용하기 - Dark Sky API</h2><ul>
 <li><p>날씨 정보를 알려주는 api - <a href="https://darksky.net/dev" target="_blank" rel="noopener">https://darksky.net/dev</a></p>
 <ul>
@@ -345,20 +489,159 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">naver_top20</span><span class="params">()</span>:</span></span><br><span class="line">    df = pd.DataFrame(columns=[<span class="string">"rank"</span>,<span class="string">"keyword"</span>])</span><br><span class="line">    response = requests.get(<span class="string">"http://naver.com"</span>)</span><br><span class="line">    dom = BeautifulSoup(response.content, <span class="string">"html.parser"</span>)   <span class="comment">#html.parser   # dom 객체</span></span><br><span class="line">    keywords = dom.select(<span class="string">".ah_roll .ah_l .ah_item"</span>)   </span><br><span class="line">        <span class="comment"># CSS selector - selecting하는 방법은 다양</span></span><br><span class="line">        <span class="comment"># select 쓰면 list로 리턴 (요소가 하나라도) | select_one은 하나의 element만 리턴</span></span><br><span class="line">        <span class="comment"># len()을 찍어봐서 갯수가 맞게 나오는지 확인할 것</span></span><br><span class="line">    <span class="comment"># keywords = dom.select(".ah_roll_area &gt; .ah_l &gt; .ah_item")  </span></span><br><span class="line">    <span class="keyword">for</span> keyword <span class="keyword">in</span> keywords:</span><br><span class="line">        df.loc[len(df)] = &#123;</span><br><span class="line">            <span class="string">"rank"</span>: keyword.select_one(<span class="string">".ah_r"</span>).text,       </span><br><span class="line">            <span class="string">"keyword"</span>: keyword.select_one(<span class="string">".ah_k"</span>).text,</span><br><span class="line">            <span class="comment"># .text - element 안의 시작태그와 끝 태그 사이 내용을 가져옴</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = naver_top20()</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
-<div><br><style scoped><br>    .dataframe tbody tr th:only-of-type {<br>        vertical-align: middle;<br>    }<br><br>    .dataframe tbody tr th {<br>        vertical-align: top;<br>    }<br><br>    .dataframe thead th {<br>        text-align: right;<br>    }<br></style><br><table border="1" class="dataframe"><br>  <thead><br>    <tr style="text-align: right;"><br>      <th></th><br>      <th>rank</th><br>      <th>keyword</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <th>15</th><br>      <td>16</td><br>      <td>박미선</td><br>    </tr><br>    <tr><br>      <th>16</th><br>      <td>17</td><br>      <td>하나뿐인 내편</td><br>    </tr><br>    <tr><br>      <th>17</th><br>      <td>18</td><br>      <td>중국 샤먼 여행</td><br>    </tr><br>    <tr><br>      <th>18</th><br>      <td>19</td><br>      <td>그녀로 말할 것 같으면</td><br>    </tr><br>    <tr><br>      <th>19</th><br>      <td>20</td><br>      <td>토익</td><br>    </tr><br>  </tbody><br></table><br></div>
-
-
-
+<table>
+<thead>
+<tr>
+<th></th>
+<th>rank</th>
+<th>keyword</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15</td>
+<td>16</td>
+<td>박미선</td>
+</tr>
+<tr>
+<td>16</td>
+<td>17</td>
+<td>하나뿐인 내편</td>
+</tr>
+<tr>
+<td>17</td>
+<td>18</td>
+<td>중국 샤먼 여행</td>
+</tr>
+<tr>
+<td>18</td>
+<td>19</td>
+<td>그녀로 말할 것 같으면</td>
+</tr>
+<tr>
+<td>19</td>
+<td>20</td>
+<td>토익</td>
+</tr>
+</tbody>
+</table>
 <p>10초마다 실시간 검색어를 크롤링해서 리스트로 저장하기</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">ls = []</span><br><span class="line"><span class="keyword">for</span> idx <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">    print(idx)</span><br><span class="line">    df = naver_top20()</span><br><span class="line">    ls.append(df)</span><br><span class="line">    time.sleep(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>0
 1
 2
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls[<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-<div><br><style scoped><br>    .dataframe tbody tr th:only-of-type {<br>        vertical-align: middle;<br>    }<br><br>    .dataframe tbody tr th {<br>        vertical-align: top;<br>    }<br><br>    .dataframe thead th {<br>        text-align: right;<br>    }<br></style><br><table border="1" class="dataframe"><br>  <thead><br>    <tr style="text-align: right;"><br>      <th></th><br>      <th>rank</th><br>      <th>keyword</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <th>0</th><br>      <td>1</td><br>      <td>로또826회당첨번호</td><br>    </tr><br>    <tr><br>      <th>1</th><br>      <td>2</td><br>      <td>맨유 웨스트햄</td><br>    </tr><br>    <tr><br>      <th>2</th><br>      <td>3</td><br>      <td>그것이 알고싶다</td><br>    </tr><br>    <tr><br>      <th>3</th><br>      <td>4</td><br>      <td>류현진</td><br>    </tr><br>    <tr><br>      <th>4</th><br>      <td>5</td><br>      <td>아는형님</td><br>    </tr><br>    <tr><br>      <th>5</th><br>      <td>6</td><br>      <td>그녀로 말할 것 같으면</td><br>    </tr><br>    <tr><br>      <th>6</th><br>      <td>7</td><br>      <td>플레이어</td><br>    </tr><br>    <tr><br>      <th>7</th><br>      <td>8</td><br>      <td>로또825회당첨번호</td><br>    </tr><br>    <tr><br>      <th>8</th><br>      <td>9</td><br>      <td>맨유</td><br>    </tr><br>    <tr><br>      <th>9</th><br>      <td>10</td><br>      <td>epl</td><br>    </tr><br>    <tr><br>      <th>10</th><br>      <td>11</td><br>      <td>토트넘</td><br>    </tr><br>    <tr><br>      <th>11</th><br>      <td>12</td><br>      <td>tvn온에어</td><br>    </tr><br>    <tr><br>      <th>12</th><br>      <td>13</td><br>      <td>제3의 매력</td><br>    </tr><br>    <tr><br>      <th>13</th><br>      <td>14</td><br>      <td>미스터 션샤인</td><br>    </tr><br>    <tr><br>      <th>14</th><br>      <td>15</td><br>      <td>첼시 리버풀</td><br>    </tr><br>    <tr><br>      <th>15</th><br>      <td>16</td><br>      <td>중국 샤먼 여행</td><br>    </tr><br>    <tr><br>      <th>16</th><br>      <td>17</td><br>      <td>박미선</td><br>    </tr><br>    <tr><br>      <th>17</th><br>      <td>18</td><br>      <td>하나뿐인 내편</td><br>    </tr><br>    <tr><br>      <th>18</th><br>      <td>19</td><br>      <td>아프리카tv</td><br>    </tr><br>    <tr><br>      <th>19</th><br>      <td>20</td><br>      <td>중국 샤먼</td><br>    </tr><br>  </tbody><br></table><br></div>
-
-
-
+<table>
+<thead>
+<tr>
+<th></th>
+<th>rank</th>
+<th>keyword</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>로또826회당첨번호</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>맨유 웨스트햄</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>그것이 알고싶다</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>류현진</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>아는형님</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>그녀로 말할 것 같으면</td>
+</tr>
+<tr>
+<td>6</td>
+<td>7</td>
+<td>플레이어</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>로또825회당첨번호</td>
+</tr>
+<tr>
+<td>8</td>
+<td>9</td>
+<td>맨유</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10</td>
+<td>epl</td>
+</tr>
+<tr>
+<td>10</td>
+<td>11</td>
+<td>토트넘</td>
+</tr>
+<tr>
+<td>11</td>
+<td>12</td>
+<td>tvn온에어</td>
+</tr>
+<tr>
+<td>12</td>
+<td>13</td>
+<td>제3의 매력</td>
+</tr>
+<tr>
+<td>13</td>
+<td>14</td>
+<td>미스터 션샤인</td>
+</tr>
+<tr>
+<td>14</td>
+<td>15</td>
+<td>첼시 리버풀</td>
+</tr>
+<tr>
+<td>15</td>
+<td>16</td>
+<td>중국 샤먼 여행</td>
+</tr>
+<tr>
+<td>16</td>
+<td>17</td>
+<td>박미선</td>
+</tr>
+<tr>
+<td>17</td>
+<td>18</td>
+<td>하나뿐인 내편</td>
+</tr>
+<tr>
+<td>18</td>
+<td>19</td>
+<td>아프리카tv</td>
+</tr>
+<tr>
+<td>19</td>
+<td>20</td>
+<td>중국 샤먼</td>
+</tr>
+</tbody>
+</table>
 <h3 id="3-2-다음-검색어-순위"><a href="#3-2-다음-검색어-순위" class="headerlink" title="3.2 다음 검색어 순위"></a>3.2 다음 검색어 순위</h3><ul>
 <li>다음 검색어 순위를 가져와서 네이버 검색어 순위와 중복되는 키워드만 출력하기</li>
 <li><a href="http://daum.net" target="_blank" rel="noopener">http://daum.net</a></li>
@@ -366,10 +649,67 @@
 <h4 id="다음-실시간-검색어-순위-가져오기"><a href="#다음-실시간-검색어-순위-가져오기" class="headerlink" title="다음 실시간 검색어 순위 가져오기"></a>다음 실시간 검색어 순위 가져오기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">daum_top10</span><span class="params">()</span>:</span></span><br><span class="line">    df = pd.DataFrame(columns=[<span class="string">"rank"</span>,<span class="string">"keyword"</span>])</span><br><span class="line">    response = requests.get(<span class="string">"http://daum.net"</span>)</span><br><span class="line">    dom = BeautifulSoup(response.content, <span class="string">"html.parser"</span>)   </span><br><span class="line">    keywords = dom.select(<span class="string">"#mArticle &gt; div.cmain_tmp &gt; div.section_media &gt; div.hotissue_builtin &gt; div.realtime_part &gt; ol &gt; li"</span>)</span><br><span class="line">    print(len(keywords))</span><br><span class="line">    <span class="keyword">for</span> keyword <span class="keyword">in</span> keywords:</span><br><span class="line">        df.loc[len(df)] = &#123;</span><br><span class="line">            <span class="string">"rank"</span>:keyword.select_one(<span class="string">".ir_wa"</span>).text.replace(<span class="string">"위"</span>,<span class="string">""</span>),</span><br><span class="line">            <span class="string">"keyword"</span>:keyword.select_one(<span class="string">".link_issue"</span>).text,</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_daum = daum_top10()</span><br><span class="line">df_daum</span><br></pre></td></tr></table></figure>
 <pre><code>10
-</code></pre><div><br><style scoped><br>    .dataframe tbody tr th:only-of-type {<br>        vertical-align: middle;<br>    }<br><br>    .dataframe tbody tr th {<br>        vertical-align: top;<br>    }<br><br>    .dataframe thead th {<br>        text-align: right;<br>    }<br></style><br><table border="1" class="dataframe"><br>  <thead><br>    <tr style="text-align: right;"><br>      <th></th><br>      <th>rank</th><br>      <th>keyword</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <th>0</th><br>      <td>1</td><br>      <td>중국 샤먼</td><br>    </tr><br>    <tr><br>      <th>1</th><br>      <td>2</td><br>      <td>양희은</td><br>    </tr><br>    <tr><br>      <th>2</th><br>      <td>3</td><br>      <td>826회 로또 당첨 번호</td><br>    </tr><br>    <tr><br>      <th>3</th><br>      <td>4</td><br>      <td>김민정</td><br>    </tr><br>    <tr><br>      <th>4</th><br>      <td>5</td><br>      <td>플레이어</td><br>    </tr><br>    <tr><br>      <th>5</th><br>      <td>6</td><br>      <td>경리</td><br>    </tr><br>    <tr><br>      <th>6</th><br>      <td>7</td><br>      <td>여자배구</td><br>    </tr><br>    <tr><br>      <th>7</th><br>      <td>8</td><br>      <td>일본 태풍</td><br>    </tr><br>    <tr><br>      <th>8</th><br>      <td>9</td><br>      <td>주이</td><br>    </tr><br>    <tr><br>      <th>9</th><br>      <td>10</td><br>      <td>송병준</td><br>    </tr><br>  </tbody><br></table><br></div>
-
-
-
+</code></pre><table>
+<thead>
+<tr>
+<th></th>
+<th>rank</th>
+<th>keyword</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>중국 샤먼</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>양희은</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>826회 로또 당첨 번호</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>김민정</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>플레이어</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>경리</td>
+</tr>
+<tr>
+<td>6</td>
+<td>7</td>
+<td>여자배구</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>일본 태풍</td>
+</tr>
+<tr>
+<td>8</td>
+<td>9</td>
+<td>주이</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10</td>
+<td>송병준</td>
+</tr>
+</tbody>
+</table>
 <h4 id="네이버-실시간-검색어와-중복되는-키워드-추출하기"><a href="#네이버-실시간-검색어와-중복되는-키워드-추출하기" class="headerlink" title="네이버 실시간 검색어와 중복되는 키워드 추출하기"></a>네이버 실시간 검색어와 중복되는 키워드 추출하기</h4><ul>
 <li>여러가지 방법이 있음</li>
 </ul>
