@@ -440,64 +440,74 @@ skill function(){
 <pre><code>-2
 function
 </code></pre><h1 id="3-Scope"><a href="#3-Scope" class="headerlink" title="3. Scope"></a>3. Scope</h1><ul>
+<li>python의 scope와 같은 개념</li>
 <li>함수 안에서 local 변수를 var를 사용해서 선언  </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'hello'</span>;    <span class="comment">// global 변수</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">disp</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">"world"</span>;  <span class="comment">// local 변수 선언</span></span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">disp();</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'hello'</span>;    <span class="comment">// global 변수 선언</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">disp</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">"world"</span>;  <span class="comment">// local 변수 선언</span></span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">disp();</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
 <pre><code>world
 hello
 </code></pre><ul>
 <li>var를 안 써주면 global 변수에 접근  </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'hello'</span>;    <span class="comment">// global</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">disp</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  a = <span class="string">"world"</span>;      <span class="comment">// global 변수에 접근</span></span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">disp();</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'hello'</span>;    <span class="comment">// global 변수 선언</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">disp</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  a = <span class="string">"world"</span>;      <span class="comment">// global 변수에 접근</span></span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">disp();</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
 <pre><code>world
 world
 </code></pre><h1 id="4-즉시실행함수-익명함수"><a href="#4-즉시실행함수-익명함수" class="headerlink" title="4. 즉시실행함수, 익명함수"></a>4. 즉시실행함수, 익명함수</h1><ul>
 <li>즉시실행함수: 함수를 선언함과 동시에 실행함</li>
-<li>사용 이유<ul>
-<li>javascript는 frontend언어로 코드가 browser에 공개됨</li>
-<li>서비스에 접속한 이용자는 전역 함수를 실행할 수 있음</li>
+<li>사용하는 이유<ul>
+<li>javascript는 frontend 언어로 코드가 browser에 공개됨</li>
+<li>서비스에 접속한 이용자가 전역 함수를 실행할 수 있음</li>
 <li>이로 인해 보안에 문제가 생길 수 있으므로 모든 함수나 변수를 지역 함수/변수로 선언  </li>
 </ul>
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 아무 것도 실행되지 않음</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 아래와 같이 쓰면 함수를 선언하는 동시에 실행시킴</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"data"</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 함수를 선언하는 동시에 function 안의 코드를 실행시킴</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"data"</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 <pre><code>data
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// disp함수를 즉시실행</span><br><span class="line">// disp는 지역함수가 되어 글로벌 영역에서 맘대로 쓸 수 없게 됨</span><br><span class="line">(function()&#123;</span><br><span class="line">  var name = &quot;hyeshin&quot;;</span><br><span class="line">  function disp()&#123;</span><br><span class="line">    console.log(name);</span><br><span class="line">  &#125;</span><br><span class="line">  disp();</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 <pre><code>hyeshin
-</code></pre><h1 id="5-Module-pattern"><a href="#5-Module-pattern" class="headerlink" title="5. Module pattern"></a>5. Module pattern</h1><ul>
-<li>실제로 자바스크립트에서 module을 사용하는 방법 중 하나</li>
-<li>JS는 class가 없는데 OOP로 코딩해야 함 (캡슐화, 추상화, 은닉화 개념 사용)</li>
+</code></pre>
+<h1 id="5-Module-pattern"><a href="#5-Module-pattern" class="headerlink" title="5. Module pattern"></a>5. Module pattern</h1><ul>
+<li>실제로 JavaScript에서 module을 사용하는 방법 중 하나</li>
+<li>JavaScript는 class가 없는데 OOP로 코딩해야 함<br>(캡슐화, 추상화, 은닉화 개념 사용)</li>
 <li>getter, setter 구현</li>
 </ul>
 <h2 id="5-1-모듈-객체-변수-선언"><a href="#5-1-모듈-객체-변수-선언" class="headerlink" title="5.1 모듈 객체 변수 선언"></a>5.1 모듈 객체 변수 선언</h2><ul>
-<li>Module이라는 변수가 있으면 Module에 Module이 대입, 없으면 빈 객체를 만듦  </li>
+<li>Module이라는 변수가 있으면 Module이 Module에 대입, 없으면 빈 객체를 만듦  </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Module = Module || &#123;&#125;;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>즉시실행함수로 parameter로 module을 던지고 argument로 <code>_module</code>을 받음  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">_Module</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> _name = <span class="string">"hyeshin"</span>;   <span class="comment">// private 이므로 _를 붙임</span></span><br><span class="line"></span><br><span class="line">  _Module.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> _name;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  _Module.setName = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    _name = name;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">&#125;)(Module);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Module.getName());</span><br><span class="line"><span class="built_in">console</span>.log(Module._name);    <span class="comment">// 접근 불가</span></span><br></pre></td></tr></table></figure>
+<li><p>즉시실행함수로 parameter로 module을 던지고 argument로 <code>_module</code>을 받음<br> <i>(복습하며 보니 parameter와 argument가 바뀐 듯 한데???) </i></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">_Module</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> _name = <span class="string">"hyeshin"</span>;   <span class="comment">// private이므로 _를 붙임</span></span><br><span class="line"></span><br><span class="line">  _Module.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> _name;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  _Module.setName = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    _name = name;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">&#125;)(Module);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Module.getName());</span><br><span class="line"><span class="built_in">console</span>.log(Module._name);    <span class="comment">// 접근 불가</span></span><br></pre></td></tr></table></figure>
 <p>  hyeshin<br>  undefined</p>
 </li>
 </ul>
+<p>JavaScript를 더 깊이 공부하고 싶다면(중급 수준)</p>
 <ul>
 <li>closure 클로져, prototype 개념을 추가적으로 공부</li>
 <li>웹서비스 개발은 jquery를 공부하여 구현 가능할 것</li>
 </ul>
 <h1 id="6-callback-콜백함수"><a href="#6-callback-콜백함수" class="headerlink" title="6. callback - 콜백함수"></a>6. callback - 콜백함수</h1><ul>
-<li>모든 언어에서 사용되는 용어</li>
+<li>callback은 모든 언어에서 사용되는 용어</li>
 <li>함수에서 argument로 함수를 받아서 함수 안의 코드가 다 수행된 후에 argument로 받은 함수를 수행</li>
 <li>여기서 argument로 받은 함수를 콜백함수라고 함</li>
-<li>웹에서 비동기 통신을 할때 많이 사용됨  </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b, callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = a + b;</span><br><span class="line">    callback(result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">disp</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sq</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result*result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = add(<span class="number">2</span>, <span class="number">3</span>, disp); </span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = add(<span class="number">2</span>, <span class="number">3</span>, sq);</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b, callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = a + b;</span><br><span class="line">    callback(result);	<span class="comment">//callback으로 받은 함수를 마지막에 실행</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">disp</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sq</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result*result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = add(<span class="number">2</span>, <span class="number">3</span>, disp); </span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = add(<span class="number">2</span>, <span class="number">3</span>, sq);</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
 <pre><code>5
 undefined
 25
 undefined
 </code></pre><ul>
-<li>api를 주고 받을 때 주로 사용</li>
+<li>웹에서 비동기 통신을 할때 많이 사용됨  </li>
+<li>api를 주고 받을 때 주로 사용<ul>
 <li>api: request, response → 마지막으로 callback 함수를 수행</li>
+<li>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
 </ul>
 
         
@@ -806,7 +816,10 @@ hello html
 </code></pre><h2 id="5-8-배열-데이터-하나씩-사용하기"><a href="#5-8-배열-데이터-하나씩-사용하기" class="headerlink" title="5.8 배열 데이터 하나씩 사용하기"></a>5.8 배열 데이터 하나씩 사용하기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line"><span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>a
 b
-</code></pre>
+</code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
+</ul>
+
         
         </div>
         <footer class="article-footer">
@@ -1172,6 +1185,9 @@ b
 <li>tagname은 아무것도 붙이지 않고 쓰면 select할 수 있음</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .contents h1&#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .contents &gt; h1&#123;</span></span><br><span class="line"><span class="undefined">    font-size: 16px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    /*body &gt; div &gt; h1&#123;</span></span><br><span class="line"><span class="undefined">    color: yellow;</span></span><br><span class="line"><span class="undefined">    &#125;*/</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"contents"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>inner1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"txt"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>inner2<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
+</ul>
 
         
         </div>
@@ -1422,6 +1438,12 @@ b
 <p>적용시 아래와 같이 나타납니다.</p>
 <button type="button" name="button" onclick="javascript:(alert('alert msg'))">Click</button><br><button type="button" name="button" onclick="javascript:(location.href='http://naver.com')">네이버로 이동</button>
 
+
+
+<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
+</ul>
+
         
         </div>
         <footer class="article-footer">
@@ -1623,6 +1645,9 @@ b
 <p><span>글자배경이 <mark>노란색</mark> 입니다</span><br><span>문자열 <del>삭제</del>입니다</span><br><span>문자열 <ins>언더라인</ins>입니다</span></p>
 <p><span>코드: <code>code</code></span></p>
 </blockquote>
+<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
+</ul>
 
         
         </div>
