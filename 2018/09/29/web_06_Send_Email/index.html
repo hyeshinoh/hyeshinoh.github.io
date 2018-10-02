@@ -3,20 +3,25 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     
-    <title>2018-07-14-TIL | 우와팬더의 블로그</title>
+    <title>Send Email - Python으로 email 보내기 | 우와팬더의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="공부한 것 &amp;amp; 리뷰 DSS 수업: 분류성능평가, 로지스틱회귀분석, QDA &amp;amp; LDA 대학원에서 방법론으로 로짓회귀를 배웠을 때는 “이해는 제대로 못해도 논문 쓸때 분석 돌려서 사용할 수만 있으면 되지 뭐”하는 생각으로 했었는데, 기초가 되는 수학부터 제대로 배우고 나서 로짓회귀를 배우니 이해도 잘 되고 좋다   DSS 수업: 파이썬을 사용한">
-<meta name="keywords" content="TIL(Today I Learned)">
+    <meta name="description" content="자동화에 유용하게 사용할 수 있는 파이썬 라이브러리를 배워보자.python으로 이메일 보내기!  e.g. 광고메일 등을 보낼 수 있음 e.g. 머신러닝 모델을 학습시켜놓고 결과 데이터를 csv 파일로 메일을 받아볼 수 있음  1. Preparation파이썬으로 이메일을 보내기 위한 준비를 해준다. 1.1 Importing necessary libraries">
+<meta name="keywords" content="programming,web,email">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018-07-14-TIL">
-<meta property="og:url" content="http://yoursite.com/2018/07/14/2018-07-14-TIL/index.html">
+<meta property="og:title" content="Send Email - Python으로 email 보내기">
+<meta property="og:url" content="http://yoursite.com/2018/09/29/web_06_Send_Email/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="공부한 것 &amp;amp; 리뷰 DSS 수업: 분류성능평가, 로지스틱회귀분석, QDA &amp;amp; LDA 대학원에서 방법론으로 로짓회귀를 배웠을 때는 “이해는 제대로 못해도 논문 쓸때 분석 돌려서 사용할 수만 있으면 되지 뭐”하는 생각으로 했었는데, 기초가 되는 수학부터 제대로 배우고 나서 로짓회귀를 배우니 이해도 잘 되고 좋다   DSS 수업: 파이썬을 사용한">
+<meta property="og:description" content="자동화에 유용하게 사용할 수 있는 파이썬 라이브러리를 배워보자.python으로 이메일 보내기!  e.g. 광고메일 등을 보낼 수 있음 e.g. 머신러닝 모델을 학습시켜놓고 결과 데이터를 csv 파일로 메일을 받아볼 수 있음  1. Preparation파이썬으로 이메일을 보내기 위한 준비를 해준다. 1.1 Importing necessary libraries">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-15T02:23:39.000Z">
+<meta property="og:image" content="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_naver_mail_001.png?raw=true">
+<meta property="og:image" content="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_gmail_001.png?raw=true">
+<meta property="og:image" content="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_naver_mail_002.png?raw=true">
+<meta property="og:image" content="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_gmail_002.png?raw=true">
+<meta property="og:updated_time" content="2018-10-02T07:34:24.413Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018-07-14-TIL">
-<meta name="twitter:description" content="공부한 것 &amp;amp; 리뷰 DSS 수업: 분류성능평가, 로지스틱회귀분석, QDA &amp;amp; LDA 대학원에서 방법론으로 로짓회귀를 배웠을 때는 “이해는 제대로 못해도 논문 쓸때 분석 돌려서 사용할 수만 있으면 되지 뭐”하는 생각으로 했었는데, 기초가 되는 수학부터 제대로 배우고 나서 로짓회귀를 배우니 이해도 잘 되고 좋다   DSS 수업: 파이썬을 사용한">
+<meta name="twitter:title" content="Send Email - Python으로 email 보내기">
+<meta name="twitter:description" content="자동화에 유용하게 사용할 수 있는 파이썬 라이브러리를 배워보자.python으로 이메일 보내기!  e.g. 광고메일 등을 보낼 수 있음 e.g. 머신러닝 모델을 학습시켜놓고 결과 데이터를 csv 파일로 메일을 받아볼 수 있음  1. Preparation파이썬으로 이메일을 보내기 위한 준비를 해준다. 1.1 Importing necessary libraries">
+<meta name="twitter:image" content="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_naver_mail_001.png?raw=true">
     
 
     
@@ -215,7 +220,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-2018-07-14-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-web_06_Send_Email" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -223,7 +228,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            2018-07-14-TIL
+            Send Email - Python으로 email 보내기
         </h1>
     
 
@@ -232,8 +237,8 @@
                         
     <div class="article-date">
         <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/07/14/2018-07-14-TIL/">
-            <time datetime="2018-07-14T03:48:24.000Z" itemprop="datePublished">2018-07-14</time>
+        <a href="/2018/09/29/web_06_Send_Email/">
+            <time datetime="2018-09-29T04:47:26.000Z" itemprop="datePublished">2018-09-29</time>
         </a>
     </div>
 
@@ -241,13 +246,13 @@
                         
     <div class="article-category">
     	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
     </div>
 
                         
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+        <a class="tag-link" href="/tags/email/">email</a>, <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/web/">web</a>
     </div>
 
                     </div>
@@ -258,30 +263,69 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
-<li>DSS 수업: 분류성능평가, 로지스틱회귀분석, QDA &amp; LDA<ul>
-<li>대학원에서 방법론으로 로짓회귀를 배웠을 때는 “이해는 제대로 못해도 논문 쓸때 분석 돌려서 사용할 수만 있으면 되지 뭐”하는 생각으로 했었는데, 기초가 되는 수학부터 제대로 배우고 나서 로짓회귀를 배우니 이해도 잘 되고 좋다</li>
+            <p>자동화에 유용하게 사용할 수 있는 파이썬 라이브러리를 배워보자.<br>python으로 이메일 보내기!</p>
+<ul>
+<li>e.g. 광고메일 등을 보낼 수 있음</li>
+<li>e.g. 머신러닝 모델을 학습시켜놓고 결과 데이터를 csv 파일로 메일을 받아볼 수 있음</li>
 </ul>
-</li>
-<li>DSS 수업: 파이썬을 사용한 문서 프로세싱</li>
+<h1 id="1-Preparation"><a href="#1-Preparation" class="headerlink" title="1. Preparation"></a>1. Preparation</h1><p>파이썬으로 이메일을 보내기 위한 준비를 해준다.</p>
+<h2 id="1-1-Importing-necessary-libraries"><a href="#1-1-Importing-necessary-libraries" class="headerlink" title="1.1 Importing necessary libraries"></a>1.1 Importing necessary libraries</h2><p>필요한 패키지들을 import해준다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> smtplib, os, pickle  <span class="comment"># smtplib: 메일 전송을 위한 패키지</span></span><br><span class="line"><span class="keyword">from</span> email <span class="keyword">import</span> encoders  <span class="comment"># 파일전송을 할 때 이미지나 문서 동영상 등의 파일을 문자열로 변환할 때 사용할 패키지</span></span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText   <span class="comment"># 본문내용을 전송할 때 사용되는 모듈</span></span><br><span class="line"><span class="keyword">from</span> email.mime.multipart <span class="keyword">import</span> MIMEMultipart   <span class="comment"># 메시지를 보낼 때 메시지에 대한 모듈</span></span><br><span class="line"><span class="keyword">from</span> email.mime.base <span class="keyword">import</span> MIMEBase     <span class="comment"># 파일을 전송할 때 사용되는 모듈</span></span><br></pre></td></tr></table></figure>
+<p>메일을 보낼 주소들을 미리 저장해준다.<br>테스트를 위해 여러가지 주소로 보내고 싶은데, 나는 계정을 여러 개 갖고 있지 않으므로,<br>내 이메일 주소인 <a href="mailto:hyeshinoh@gmail.com" target="_blank" rel="noopener">hyeshinoh@gmail.com</a>에서 hyeshinoh 뒤에 ‘+’와 아무 글자를 넣어주면 마치 여러 개의 이메일 주소인 것처럼 사용할 수 있다. 이렇게 쓰면 메일은 모두 <a href="mailto:hyeshinoh@gmail.com" target="_blank" rel="noopener">hyeshinoh@gmail.com</a>로 전송된다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">toAddr = [<span class="string">"panda706@naver.com"</span>, <span class="string">"hyeshinoh+11@gmail.com"</span>, <span class="string">"hyeshinoh+h@gmail.com"</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-Setting-login-information-email-amp-password"><a href="#1-2-Setting-login-information-email-amp-password" class="headerlink" title="1.2 Setting login information: email &amp; password"></a>1.2 Setting login information: email &amp; password</h2><p>password는 직접 노출하면 유출의 위험이 있으므로 아래와 같이 pickle 파일로 저장해서 이용하는 것이 좋다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pw = "본인의 pw"    </span></span><br><span class="line"><span class="comment"># pickle.dump(pw, open("pw.pickle", 'wb'))</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">email = <span class="string">"hyeshinoh@gmail.com"</span></span><br><span class="line">pw = pickle.load(open(<span class="string">'pw.pickle'</span>, <span class="string">'rb'</span>))</span><br></pre></td></tr></table></figure>
+<h1 id="2-Send-text"><a href="#2-Send-text" class="headerlink" title="2. Send text"></a>2. Send text</h1><h2 id="2-1-Access-smtp-server"><a href="#2-1-Access-smtp-server" class="headerlink" title="2.1 Access smtp server"></a>2.1 Access smtp server</h2><p>smtp object를 생성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">smtp = smtplib.SMTP(<span class="string">'smtp.gmail.com'</span>, <span class="number">587</span>)   <span class="comment"># 587: 서버의 포트번호</span></span><br><span class="line">smtp.ehlo()</span><br><span class="line">smtp.starttls()   <span class="comment"># tls방식으로 접속, 그 포트번호가 587</span></span><br><span class="line"><span class="comment"># smtp.login('hyeshinoh@gmail.com', pickle.load( open('../pw.pickle', 'rb') ))</span></span><br><span class="line">smtp.login(<span class="string">'hyeshinoh@gmail.com'</span>, pw)</span><br></pre></td></tr></table></figure>
+<pre><code>(235, b&apos;2.7.0 Accepted&apos;)
+</code></pre><h2 id="2-2-Make-message"><a href="#2-2-Make-message" class="headerlink" title="2.2 Make message"></a>2.2 Make message</h2><p>msg object를 생성하고 제목을 넣어준다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg = MIMEMultipart()    <span class="comment">#msg obj.</span></span><br><span class="line">msg[<span class="string">'Subject'</span>] = <span class="string">'hyeshin의 SMTP Send Text 테스트'</span></span><br></pre></td></tr></table></figure>
+<p>msg object에 본문(text msg)을 추가해준다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># text msg</span></span><br><span class="line">part = MIMEText(<span class="string">'SMTP로 메일 보내기 본문 메시지입니다.'</span>)</span><br><span class="line">msg.attach(part)   <span class="comment">#msg에 part obj.를 추가해줌</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msg</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;email.mime.multipart.MIMEMultipart at 0x10d55d5f8&gt;
+</code></pre><h2 id="2-3-email-전송하기"><a href="#2-3-email-전송하기" class="headerlink" title="2.3 email 전송하기"></a>2.3 email 전송하기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> addr <span class="keyword">in</span> toAddr:</span><br><span class="line">    msg[<span class="string">"To"</span>] = addr</span><br><span class="line">    smtp.sendmail(<span class="string">"hyeshinoh@gmail.com"</span>, addr, msg.as_string())</span><br><span class="line">        <span class="comment">#msg는 object이기 때문에 전송을 위해 .as_string()으로 문자열로 바꿔야함(parsing)</span></span><br><span class="line">    print(addr)</span><br></pre></td></tr></table></figure>
+<pre><code>panda706@naver.com
+hyeshinoh+11@gmail.com
+hyeshinoh+h@gmail.com
+</code></pre><p>메일이 다음과 같이 잘 도착했다!</p>
+<ul>
+<li>naver메일<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_naver_mail_001.png?raw=true" alt=""></li>
+<li>gmail<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_gmail_001.png?raw=true" alt=""></li>
 </ul>
-<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
-<li>분류 프로젝트 주제 선정</li>
+<h2 id="2-4-HTML-code-추가하기"><a href="#2-4-HTML-code-추가하기" class="headerlink" title="2.4 HTML code 추가하기"></a>2.4 HTML code 추가하기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">part_html = MIMEText(<span class="string">'&lt;br&gt;&lt;a href="https://github.com/hyeshinoh/"&gt;hyeshin github&lt;/a&gt;'</span>, <span class="string">'html'</span>)</span><br><span class="line">msg.attach(part_html)</span><br><span class="line">msg  <span class="comment">#msg 상태: 제목, 본문(text), html 코드</span></span><br></pre></td></tr></table></figure>
+<pre><code>&lt;email.mime.multipart.MIMEMultipart at 0x10d55d5f8&gt;
+</code></pre><h2 id="2-5-email-전송하기"><a href="#2-5-email-전송하기" class="headerlink" title="2.5 email 전송하기"></a>2.5 email 전송하기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># email 전송</span></span><br><span class="line"><span class="keyword">for</span> addr <span class="keyword">in</span> toAddr:</span><br><span class="line">    msg[<span class="string">"To"</span>] = addr</span><br><span class="line">    smtp.sendmail(<span class="string">"hyeshinoh@gmail.com"</span>, addr, msg.as_string())</span><br><span class="line">    print(addr)</span><br></pre></td></tr></table></figure>
+<pre><code>panda706@naver.com
+hyeshinoh+11@gmail.com
+hyeshinoh+h@gmail.com
+</code></pre><h1 id="3-Send-File"><a href="#3-Send-File" class="headerlink" title="3. Send File"></a>3. Send File</h1><p>이제 파일을 첨부해서 이메일을 보내보자</p>
+<h2 id="3-1-Access-smtp-server"><a href="#3-1-Access-smtp-server" class="headerlink" title="3.1 Access smtp server"></a>3.1 Access smtp server</h2><p>smtp object를 다시 생성해보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># smtp close</span></span><br><span class="line">smtp.quit()</span><br></pre></td></tr></table></figure>
+<pre><code>(221, b&apos;2.0.0 closing connection o68-v6sm26409410pfi.180 - gsmtp&apos;)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Access smtp server</span></span><br><span class="line">smtp = smtplib.SMTP(<span class="string">'smtp.gmail.com'</span>, <span class="number">587</span>)   <span class="comment"># 587: 서버의 포트번호</span></span><br><span class="line">smtp.ehlo()</span><br><span class="line">smtp.starttls()   </span><br><span class="line">smtp.login(<span class="string">'hyeshinoh@gmail.com'</span>, pw)</span><br></pre></td></tr></table></figure>
+<pre><code>(235, b&apos;2.7.0 Accepted&apos;)
+</code></pre><h2 id="3-2-Make-message"><a href="#3-2-Make-message" class="headerlink" title="3.2 Make message"></a>3.2 Make message</h2><p>msg object를 생성하고 제목을 넣어준다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg = MIMEMultipart()</span><br><span class="line">msg[<span class="string">'Subject'</span>] = <span class="string">'SMTP send file 테스트'</span></span><br></pre></td></tr></table></figure>
+<p>msg object에 본문(text msg)을 추가해준다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">part = MIMEText(<span class="string">'SMTP로 send file 본문 메시지'</span>)</span><br><span class="line">msg.attach(part)</span><br></pre></td></tr></table></figure>
+<p>파일을 첨부해보자. 단, javascript file은 보안 상 이유로 보낼 수 없게 되어 있음</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Attach FILE</span></span><br><span class="line">path = <span class="string">'apple.mp4'</span></span><br><span class="line"><span class="comment"># ctype = 'application/octet-stream'</span></span><br><span class="line"><span class="comment"># maintype, subtype = ctype.split('/', 1)</span></span><br><span class="line"><span class="keyword">with</span> open(path, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    part = MIMEBase(<span class="string">"application"</span>, <span class="string">"octet-stream"</span>)</span><br><span class="line">    part.set_payload(f.read())    <span class="comment">#payload: osi 7-layers</span></span><br><span class="line">    encoders.encode_base64(part)  <span class="comment">#base64 encoding: 영상, 이미지 파일을 문자열 형태로 변환</span></span><br><span class="line">    part.add_header(<span class="string">'Content-Disposition'</span>, <span class="string">'attachment'</span>, filename=path)</span><br><span class="line">    msg.attach(part)</span><br><span class="line">msg  <span class="comment"># 제목, 본문, 파일</span></span><br></pre></td></tr></table></figure>
+<pre><code>&lt;email.mime.multipart.MIMEMultipart at 0x1159127f0&gt;
+</code></pre><h2 id="3-3-email-전송하기"><a href="#3-3-email-전송하기" class="headerlink" title="3.3 email 전송하기"></a>3.3 email 전송하기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> addr <span class="keyword">in</span> toAddr:</span><br><span class="line">    msg[<span class="string">"To"</span>] = addr</span><br><span class="line">    smtp.sendmail(<span class="string">"hyeshinoh@gmail.com"</span>, addr, msg.as_string())</span><br><span class="line">    print(addr)</span><br></pre></td></tr></table></figure>
+<pre><code>panda706@naver.com
+hyeshinoh+11@gmail.com
+hyeshinoh+h@gmail.com
+</code></pre><p>메일이 다음과 같이 잘 도착했다!</p>
+<ul>
+<li>naver메일<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_naver_mail_002.png?raw=true" alt=""></li>
+<li>gmail<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_gmail_002.png?raw=true" alt=""></li>
 </ul>
-<h4 id="이번-주에-공부할-것"><a href="#이번-주에-공부할-것" class="headerlink" title="이번 주에 공부할 것"></a>이번 주에 공부할 것</h4><ul>
-<li><del>DSS: CSS selector 수업 내용 복습하기</del></li>
-<li><del>DSS: javascript 수업 내용 복습하기</del></li>
-<li><del>DSS: Server cloud(AWS), pyenv/virtualenv/autoenv 복습</del></li>
-<li><del>DSS: crontab, rest API, flask 복습, slack 챗봇 만들기</del></li>
-<li>DSS: 통계 &lt;11장. 검정과 추정&gt; 복습하기</li>
-<li>DSS: 통계 &lt;34절. 선형회귀분석의 기초&gt; 복습하기</li>
-<li>DSS: 통계 &lt;35절. 입력변수가 카테고리값인 경우&gt; 복습하기</li>
-<li>DSS: 통계 &lt;36절. 예측성능의 진단과 비교&gt; 복습하기</li>
-<li>DSS: 통계 &lt;37절. 과최적화와 교차 검증&gt; 복습하기</li>
-<li>DSS: 통계 &lt;38절. 추천시스템&gt; 복습하기</li>
-<li>DSS: 통계 &lt;43절. 클러스터링&gt; 복습하기</li>
-<li>DSS: 통계 &lt;44절. 분류의 기초&gt; 복습하기</li>
-<li><del>블로그에 about 페이지 만들기</del></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># smtp close</span></span><br><span class="line">smtp.quit()</span><br></pre></td></tr></table></figure>
+<pre><code>(221, b&apos;2.0.0 closing connection d22-v6sm9509327pfk.69 - gsmtp&apos;)
+</code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
 </ul>
 
         
@@ -293,7 +337,7 @@
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/14/2018-07-14-TIL/" data-id="cjmnl21cp001ck11h743i25ay" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/29/web_06_Send_Email/" data-id="cjmreqq4p0000341htanlws9v" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -361,7 +405,7 @@
 
             
     
-        <a href="http://yoursite.com/2018/07/14/2018-07-14-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/07/14/2018-07-14-TIL/">Comments</a>
+        <a href="http://yoursite.com/2018/09/29/web_06_Send_Email/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/29/web_06_Send_Email/">Comments</a>
     
 
         </footer>
@@ -370,19 +414,19 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/07/16/python_05_class_basic/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2018/09/29/web_07_crawling/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    python 05. Python Class - Basic
+                    Web crawling 기초
                 
             </div>
         </a>
     
     
-        <a href="/2018/07/13/2018-07-13-TIL/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/09/28/2018-09-28-TIL/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">2018-07-13-TIL</div>
+            <div class="article-nav-title">2018-09-28-TIL</div>
         </a>
     
 </nav>
@@ -532,9 +576,9 @@
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://yoursite.com/2018/07/14/2018-07-14-TIL/';
+            this.page.url = 'http://yoursite.com/2018/09/29/web_06_Send_Email/';
         
-        this.page.identifier = '2018-07-14-TIL';
+        this.page.identifier = 'web_06_Send_Email';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
