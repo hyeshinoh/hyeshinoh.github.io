@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>Web crawling - Selenium Basic | 우와팬더의 블로그</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="다룰 내용 Selenium이란 Selenium 설치 Selenium 기본 사용법 Selenium 파일 업로드  1. Selenium이란 Selenium documentation (http://www.seleniumhq.org/)  웹 서비스를 테스트 하기 위해 만들어진 브라우저 자동화 라이브러리 (다른 목적으로도 사용할 수 있음) 동적인 웹페이지 크롤링에">
+<meta name="keywords" content="programming,web,crawling,web_crawling,웹크롤링,selenium">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web crawling - Selenium Basic">
+<meta property="og:url" content="http://yoursite.com/2018/10/02/web_09_selenium/index.html">
+<meta property="og:site_name" content="우와팬더의 블로그">
+<meta property="og:description" content="다룰 내용 Selenium이란 Selenium 설치 Selenium 기본 사용법 Selenium 파일 업로드  1. Selenium이란 Selenium documentation (http://www.seleniumhq.org/)  웹 서비스를 테스트 하기 위해 만들어진 브라우저 자동화 라이브러리 (다른 목적으로도 사용할 수 있음) 동적인 웹페이지 크롤링에">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-10-02T15:04:44.848Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web crawling - Selenium Basic">
+<meta name="twitter:description" content="다룰 내용 Selenium이란 Selenium 설치 Selenium 기본 사용법 Selenium 파일 업로드  1. Selenium이란 Selenium documentation (http://www.seleniumhq.org/)  웹 서비스를 테스트 하기 위해 만들어진 브라우저 자동화 라이브러리 (다른 목적으로도 사용할 수 있음) 동적인 웹페이지 크롤링에">
+    
+
+    
+        <link rel="alternate" href="/" title="우와팬더의 블로그" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome5/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/libs/font-awesome5/css/fa-brands.min.css">
+    <link rel="stylesheet" href="/libs/font-awesome5/css/fa-solid.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">우와팬더의 블로그</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about/index.html">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fas fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about/index.html">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile" class="profile-fixed">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">우와팬더(Hyeshin Oh)</h2>
+            <h3 id="title">Data Science를 공부합니다</h3>
+            <span id="location"><i class="fas fa-map-marker-alt" style="padding-right: 5px"></i>Seoul, Korea</span>
+            <a id="follow" target="_blank" href="https://github.com/hyeshinoh">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                89
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                19
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/hyeshinoh" target="_blank" title="github" class=tooltip>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fab fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-web_09_selenium" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Web crawling - Selenium Basic
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/10/02/web_09_selenium/">
+            <time datetime="2018-10-02T14:52:26.000Z" itemprop="datePublished">2018-10-02</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/crawling/">crawling</a>, <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/selenium/">selenium</a>, <a class="tag-link" href="/tags/web/">web</a>, <a class="tag-link" href="/tags/web-crawling/">web_crawling</a>, <a class="tag-link" href="/tags/웹크롤링/">웹크롤링</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h4 id="다룰-내용"><a href="#다룰-내용" class="headerlink" title="다룰 내용"></a>다룰 내용</h4><ol>
+<li>Selenium이란</li>
+<li>Selenium 설치</li>
+<li>Selenium 기본 사용법</li>
+<li>Selenium 파일 업로드</li>
+</ol>
+<h2 id="1-Selenium이란"><a href="#1-Selenium이란" class="headerlink" title="1. Selenium이란"></a>1. Selenium이란</h2><ul>
+<li>Selenium documentation (<a href="http://www.seleniumhq.org/" target="_blank" rel="noopener">http://www.seleniumhq.org/</a>) </li>
+<li>웹 서비스를 테스트 하기 위해 만들어진 브라우저 자동화 라이브러리 (다른 목적으로도 사용할 수 있음)</li>
+<li>동적인 웹페이지 크롤링에 이용</li>
+<li>여러가지 브라우저를 지원하지만 Firefox는 최신 버전 지원 X하는 등 문제가 있을 수도 <ul>
+<li>우리는 가장 많이 사용하는 Chrome driver 사용</li>
+</ul>
+</li>
+<li>여러가지 OS, 다른 언어에서도 사용 가능</li>
+</ul>
+<h2 id="2-Selenium-설치"><a href="#2-Selenium-설치" class="headerlink" title="2. Selenium 설치"></a>2. Selenium 설치</h2><h3 id="2-1-Install-chrome-driver"><a href="#2-1-Install-chrome-driver" class="headerlink" title="2.1 Install chrome driver"></a>2.1 Install chrome driver</h3><ul>
+<li><a href="https://sites.google.com/a/chromium.org/chromedriver/home" target="_blank" rel="noopener">다운로드 링크</a> ← 여기에서 다운로드</li>
+<li>Mac: chrome driver를 글로벌하게 사용하기 위해 경로 변경 <ul>
+<li><code>$ mv ~/Donwloads/chromedriver /usr/local/bin</code></li>
+</ul>
+</li>
+<li>Windows: 환경변수 추가</li>
+<li>환경변수 설정이 잘 되지 않을 때는 같은 폴더에 chromedriver.exe를 넣거나 코드에 path를 넣어주면 됨</li>
+</ul>
+<h3 id="2-2-Install-selenium"><a href="#2-2-Install-selenium" class="headerlink" title="2.2 Install selenium"></a>2.2 Install selenium</h3><ul>
+<li>Mac: <code>$ sudo pip3 install selenium</code></li>
+<li>Windows: <code>$ conda install -c conda-forge selenium</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br></pre></td></tr></table></figure>
+<h2 id="3-Selenium-기본-사용법"><a href="#3-Selenium-기본-사용법" class="headerlink" title="3. Selenium 기본 사용법"></a>3. Selenium 기본 사용법</h2><h3 id="3-1-브라우저-open"><a href="#3-1-브라우저-open" class="headerlink" title="3.1 브라우저 open"></a>3.1 브라우저 open</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver = webdriver.Chrome()     <span class="comment"># 객체를 만들어서 driver에 넣어줌</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-2-페이지-이동"><a href="#3-2-페이지-이동" class="headerlink" title="3.2 페이지 이동"></a>3.2 페이지 이동</h3><ul>
+<li>url에 꼭 http를 포함해야 함</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.get(<span class="string">"http://naver.com"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-window-size-조절"><a href="#3-3-window-size-조절" class="headerlink" title="3.3 window size 조절"></a>3.3 window size 조절</h3><ul>
+<li>반응형 웹페이지 테스트에 이용할 수 있음</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.set_window_size(<span class="number">600</span>, <span class="number">800</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="3-4-브라우저-스크롤-조절"><a href="#3-4-브라우저-스크롤-조절" class="headerlink" title="3.4 브라우저 스크롤 조절"></a>3.4 브라우저 스크롤 조절</h3><ul>
+<li>함수가 없는 경우에는 javascript 코드를 실행해서 컨트롤</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">script = <span class="string">"window.scrollTo(200,300);"</span></span><br><span class="line">driver.execute_script(script)</span><br></pre></td></tr></table></figure>
+<h3 id="3-5-윈도우-객체-저장"><a href="#3-5-윈도우-객체-저장" class="headerlink" title="3.5 윈도우 객체 저장"></a>3.5 윈도우 객체 저장</h3><ul>
+<li>윈도우 객체를 저장하면 브라우저에 여러 개의 탭이 있을 때 저장되어 있는 윈도우 객체의 탭으로 돌아올 수 있음</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">main_window = driver.current_window_handle</span><br><span class="line">main_window</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;CDwindow-1327F53EB33E1BF8CD1ECD3C85E4B347&apos;
+</code></pre><h3 id="3-6-새로운-윈도우-탭-열기"><a href="#3-6-새로운-윈도우-탭-열기" class="headerlink" title="3.6 새로운 윈도우 탭 열기"></a>3.6 새로운 윈도우 탭 열기</h3><p>javascript 코드로 새로운 탭을 열 수 있음</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">script = <span class="string">"window.open('http://google.com');"</span></span><br><span class="line">driver.execute_script(script)</span><br></pre></td></tr></table></figure>
+<p>새로운 탭을 열었지만 아래와 같이 current_window(포커스)가 자동으로 바뀌지는 않음</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.current_window_handle</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;CDwindow-1327F53EB33E1BF8CD1ECD3C85E4B347&apos;
+</code></pre><h3 id="3-7-현재-열려있는-윈도우-객체-확인"><a href="#3-7-현재-열려있는-윈도우-객체-확인" class="headerlink" title="3.7 현재 열려있는 윈도우 객체 확인"></a>3.7 현재 열려있는 윈도우 객체 확인</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">windows = driver.window_handles</span><br><span class="line">windows</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;CDwindow-1327F53EB33E1BF8CD1ECD3C85E4B347&apos;,
+ &apos;CDwindow-D8D228E9A26224583A54A676F95612EA&apos;]
+</code></pre><h3 id="3-8-윈도우-포커스-변경"><a href="#3-8-윈도우-포커스-변경" class="headerlink" title="3.8 윈도우 포커스 변경"></a>3.8 윈도우 포커스 변경</h3><ul>
+<li>current window가 자동으로 바뀌지 않았기 때문에 바꿔주기</li>
+<li>이 방법으로 탭을 이동하면서 작업할 수 있음</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.switch_to_window(windows[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.current_window_handle</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;CDwindow-D8D228E9A26224583A54A676F95612EA&apos;
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.switch_to_window(main_window)</span><br></pre></td></tr></table></figure>
+<h3 id="3-9-페이지-새로고침"><a href="#3-9-페이지-새로고침" class="headerlink" title="3.9 페이지 새로고침"></a>3.9 페이지 새로고침</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">script = <span class="string">"location.reload();"</span></span><br><span class="line">driver.execute_script(script)</span><br></pre></td></tr></table></figure>
+<h3 id="3-10-alert-messege-처리"><a href="#3-10-alert-messege-처리" class="headerlink" title="3.10 alert messege 처리"></a>3.10 alert messege 처리</h3><p>alert messege 만들기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">script = <span class="string">"alert('selenium test');"</span></span><br><span class="line">driver.execute_script(script)</span><br></pre></td></tr></table></figure>
+<p>switch_to_alert 함수로 alert 변수에 alert 객체를 저장할 수 있음<br>alert 객의 text 값을 확인해보면 alert의 메세지를 문자열로 확인 가능</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert = driver.switch_to_alert()</span><br><span class="line">alert.text</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;selenium test&apos;
+</code></pre><p>확인 버튼 누르기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert.accept()</span><br></pre></td></tr></table></figure>
+<h3 id="3-11-confirm-처리"><a href="#3-11-confirm-처리" class="headerlink" title="3.11 confirm 처리"></a>3.11 confirm 처리</h3><ul>
+<li>confirm은 alert과 달리 확인/취소 버튼이 함께 있음</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">script = <span class="string">"confirm('data')"</span></span><br><span class="line">driver.execute_script(script)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">confirm = driver.switch_to_alert()</span><br><span class="line">confirm.text</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;data&apos;
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># confirm.accept()   # 확인 버튼 클릭</span></span><br><span class="line">confirm.dismiss()    <span class="comment"># 취소 버튼 클릭</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-12-input창에-문자열-입력하기"><a href="#3-12-input창에-문자열-입력하기" class="headerlink" title="3.12 input창에 문자열 입력하기"></a>3.12 input창에 문자열 입력하기</h3><ul>
+<li>send_keys()를 이용하여 웹페이지의 input 태그에 문자열을 입력할 수 있음</li>
+<li>find_element_by_css_selector<ul>
+<li>html 코드의 태그 위치에 접근하는 함수</li>
+<li>파라미터로 css selector를 넣어주면 해당 selector의 태그 위치로 접근</li>
+</ul>
+</li>
+</ul>
+<p>네이버 검색창에 “데이터사이언스” 입력하기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="string">"#query"</span>).send_keys(<span class="string">"데이터사이언스"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="3-13-버튼-클릭하기-click-event-발생"><a href="#3-13-버튼-클릭하기-click-event-발생" class="headerlink" title="3.13 버튼 클릭하기 (click event 발생)"></a>3.13 버튼 클릭하기 (click event 발생)</h3><p>검색 버튼 눌러 “데이터사이언스” 검색 결과 확인하기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="string">"#search_btn"</span>).click()</span><br></pre></td></tr></table></figure>
+<h3 id="3-14-끝내기"><a href="#3-14-끝내기" class="headerlink" title="3.14 끝내기"></a>3.14 끝내기</h3><h4 id="창-닫기-하나의-윈도우-창을-닫음"><a href="#창-닫기-하나의-윈도우-창을-닫음" class="headerlink" title="창 닫기 - 하나의 윈도우 창을 닫음"></a>창 닫기 - 하나의 윈도우 창을 닫음</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.close()</span><br></pre></td></tr></table></figure>
+<h4 id="브라우저-닫기"><a href="#브라우저-닫기" class="headerlink" title="브라우저 닫기"></a>브라우저 닫기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+<h2 id="4-Selenium-파일-업로드"><a href="#4-Selenium-파일-업로드" class="headerlink" title="4. Selenium 파일 업로드"></a>4. Selenium 파일 업로드</h2><ul>
+<li>google vision api 페이지에 이미지 파일을 업로드</li>
+<li>iframe으로 이동</li>
+</ul>
+<h3 id="4-1-webdriver-실행하고-google-vision-api로-이동"><a href="#4-1-webdriver-실행하고-google-vision-api로-이동" class="headerlink" title="4.1 webdriver 실행하고 google vision api로 이동"></a>4.1 webdriver 실행하고 google vision api로 이동</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"https://cloud.google.com/vision/"</span></span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.get(url)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.set_window_size(<span class="number">800</span>, <span class="number">800</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">script = <span class="string">"window.scrollTo(0,1200);"</span></span><br><span class="line">driver.execute_script(script)</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-iframe으로-포커스-이동"><a href="#4-2-iframe으로-포커스-이동" class="headerlink" title="4.2 iframe으로 포커스 이동"></a>4.2 iframe으로 포커스 이동</h3><ul>
+<li>iframe 안에 있는 내용을 crawling하기 위해서는 꼭 iframe으로 focus switch!</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iframe = driver.find_element_by_css_selector(<span class="string">'#vision_demo_section &gt; iframe'</span>)</span><br><span class="line">driver.switch_to_frame(iframe)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## iframe에서 메인 프레임으로 돌아가기</span></span><br><span class="line"><span class="comment"># driver.switch_to_default_content()</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-3-파일-업로드"><a href="#4-3-파일-업로드" class="headerlink" title="4.3 파일 업로드"></a>4.3 파일 업로드</h3><ul>
+<li>절대경로로 작성해야 함</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">file_path = <span class="string">"/Users/hyeshinoh/Workspace/Study_Web/dog.png"</span></span><br><span class="line">driver.find_element_by_css_selector(<span class="string">'#input'</span>).send_keys(file_path)</span><br></pre></td></tr></table></figure>
+<h3 id="4-4-분석-결과-확인"><a href="#4-4-분석-결과-확인" class="headerlink" title="4.4 분석 결과 확인"></a>4.4 분석 결과 확인</h3><h4 id="1-Web-결과-가져오기"><a href="#1-Web-결과-가져오기" class="headerlink" title="(1) Web 결과 가져오기"></a>(1) Web 결과 가져오기</h4><p>이미지 분석 결과에서 Web 탭을 선택</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="string">'#webDetection'</span>).click()</span><br></pre></td></tr></table></figure>
+<p>분석 결과를 가져오기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">web_results = driver.find_elements_by_css_selector(<span class="string">'#card &gt; .container &gt; .row'</span>)[:<span class="number">15</span>]</span><br><span class="line"><span class="keyword">for</span> web_result <span class="keyword">in</span> web_results:</span><br><span class="line">    print(</span><br><span class="line">        web_result.find_element_by_css_selector(<span class="string">".name"</span>).text,</span><br><span class="line">        web_result.find_element_by_css_selector(<span class="string">".score"</span>).text</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+<pre><code>Puppy 1.31475
+French Bulldog 0.93836
+Bulldog 0.74869
+Shih Tzu 0.59496
+Beagle 0.58407
+Yorkshire Terrier 0.53742
+Dog training 0.5303
+ 0.5142
+Pet 0.4853
+Dog breed 0.3965
+stock.xchng 0.3691
+Dog breeding 0.3677
+Training 0.3125
+Cuteness 0.3003
+Dog 0
+</code></pre><h4 id="2-Document-결과-사진-속-text-가져오기"><a href="#2-Document-결과-사진-속-text-가져오기" class="headerlink" title="(2) Document 결과 (사진 속 text) 가져오기"></a>(2) Document 결과 (사진 속 text) 가져오기</h4><p>이미지 분석 결과에서 Document 탭을 선택</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="string">"#fullTextAnnotation"</span>).click()</span><br></pre></td></tr></table></figure>
+<p>text 데이터를 가져오기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document_results = driver.find_elements_by_css_selector(<span class="string">"#card &gt; fieldset &gt; div &gt; fieldset"</span>)</span><br><span class="line">len(document_results)</span><br></pre></td></tr></table></figure>
+<pre><code>2
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">documents = []</span><br><span class="line"><span class="keyword">for</span> document_result <span class="keyword">in</span> document_results:</span><br><span class="line">    words = document_result.find_elements_by_css_selector(<span class="string">".container .word"</span>)</span><br><span class="line">    print(len(words))</span><br><span class="line">    sentence_list = []</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">        word = word.text.replace(<span class="string">" "</span>, <span class="string">""</span>)</span><br><span class="line">        sentence_list.append(word)</span><br><span class="line">    documents.append(<span class="string">" "</span>.join(sentence_list))</span><br><span class="line">documents</span><br></pre></td></tr></table></figure>
+<pre><code>4
+6
+
+[&apos;In the dog house&apos;, &quot;&apos; 인기를 잃다 , 면목을 잃다&quot;]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/10/02/web_09_selenium/" data-id="cjmruz0h5006szx1huw0hj533" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/10/02/web_09_selenium/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/10/02/web_09_selenium/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/10/03/2018-10-02-TIL/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    2018-10-02-TIL
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2018/09/30/2018-09-29-TIL/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">2018-09-29-TIL</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
+                            <p class="item-title"><a href="/2018/10/03/2018-10-02-TIL/" class="title">2018-10-02-TIL</a></p>
+                            <p class="item-date"><time datetime="2018-10-02T15:06:25.000Z" itemprop="datePublished">2018-10-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a></p>
+                            <p class="item-title"><a href="/2018/10/02/web_09_selenium/" class="title">Web crawling - Selenium Basic</a></p>
+                            <p class="item-date"><time datetime="2018-10-02T14:52:26.000Z" itemprop="datePublished">2018-10-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
+                            <p class="item-title"><a href="/2018/09/30/2018-09-29-TIL/" class="title">2018-09-29-TIL</a></p>
+                            <p class="item-date"><time datetime="2018-09-29T15:04:51.000Z" itemprop="datePublished">2018-09-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a></p>
+                            <p class="item-title"><a href="/2018/09/29/web_08_requests/" class="title">Web crawling - Requests</a></p>
+                            <p class="item-date"><time datetime="2018-09-29T13:52:26.000Z" itemprop="datePublished">2018-09-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a></p>
+                            <p class="item-title"><a href="/2018/09/29/web_07_crawling/" class="title">Web crawling 기초</a></p>
+                            <p class="item-date"><time datetime="2018-09-29T06:47:26.000Z" itemprop="datePublished">2018-09-29</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">22</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">9</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">66</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">66</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 15px;">Database</a> <a href="/tags/MySQL/" style="font-size: 13.75px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 13.75px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.25px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 12.5px;">crawling</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/html/" style="font-size: 11.25px;">html</a> <a href="/tags/javascript/" style="font-size: 11.25px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/programming/" style="font-size: 18.75px;">programming</a> <a href="/tags/python/" style="font-size: 16.25px;">python</a> <a href="/tags/selenium/" style="font-size: 10px;">selenium</a> <a href="/tags/web/" style="font-size: 17.5px;">web</a> <a href="/tags/web-crawling/" style="font-size: 12.5px;">web_crawling</a> <a href="/tags/알고리즘/" style="font-size: 11.25px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 12.5px;">웹크롤링</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fas fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 우와팬더<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://yoursite.com/2018/10/02/web_09_selenium/';
+        
+        this.page.identifier = 'web_09_selenium';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
