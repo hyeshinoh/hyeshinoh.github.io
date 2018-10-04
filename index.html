@@ -621,7 +621,7 @@ Name: s price, dtype: object
 </code></pre><h3 id="3-3-스크린샷-이미지-편집"><a href="#3-3-스크린샷-이미지-편집" class="headerlink" title="3.3 스크린샷 이미지 편집"></a>3.3 스크린샷 이미지 편집</h3><h4 id="저장한-스크린샷-이미지-확인"><a href="#저장한-스크린샷-이미지-확인" class="headerlink" title="저장한 스크린샷 이미지 확인"></a>저장한 스크린샷 이미지 확인</h4><p>스크린샷을 뜬 이미지는 아래와 같이 브라우저 전체를 담고 있음</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil.open(<span class="string">"screenshot.png"</span>)</span><br><span class="line">print(pil_im.size)</span><br><span class="line">pil_im</span><br></pre></td></tr></table></figure>
 <pre><code>(2400, 1290)
-</code></pre><p><img src="web_10_selenium/output_60_1.png" alt="png"></p>
+</code></pre><p><img src="./web_10_selenium/output_60_1.png" alt="png"></p>
 <h4 id="영상이-나오는-영역만-자르기"><a href="#영상이-나오는-영역만-자르기" class="headerlink" title="영상이 나오는 영역만 자르기"></a>영상이 나오는 영역만 자르기</h4><p>영상이 재생되는 영역의 시작점과 크기를 구하기</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">element = driver.find_element_by_css_selector(<span class="string">"#player-container"</span>)</span><br><span class="line">location = element.location</span><br><span class="line">size = element.size</span><br><span class="line">location, size</span><br></pre></td></tr></table></figure>
 <pre><code>({&apos;x&apos;: 24, &apos;y&apos;: 80}, {&apos;height&apos;: 408, &apos;width&apos;: 726})
