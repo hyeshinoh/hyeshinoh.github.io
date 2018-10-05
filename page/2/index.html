@@ -172,7 +172,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                91
+                92
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -225,6 +225,247 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-web_05_javascript_intermediate" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/09/28/web_05_javascript_intermediate/">JavaScript - Intermediate</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/09/28/web_05_javascript_intermediate/">
+            <time datetime="2018-09-28T09:01:24.000Z" itemprop="datePublished">2018-09-28</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/javascript/">javascript</a>, <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/web/">web</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="1-Object-객체"><a href="#1-Object-객체" class="headerlink" title="1. Object(객체)"></a>1. Object(객체)</h1><ul>
+<li>python에서 class로 만드는 객체와 같은 의미</li>
+<li>python에서 dict type과도 같은 의미</li>
+</ul>
+<h2 id="1-1-객체-생성"><a href="#1-1-객체-생성" class="headerlink" title="1.1 객체 생성"></a>1.1 객체 생성</h2><ul>
+<li>가장 많이 쓰는 방법 (obj를 만들고 나서 값들을 하나씩 넣어줌)  </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;   <span class="comment">// 다음과 동일: var obj = new Object();</span></span><br><span class="line">obj.name = <span class="string">"hyeshin"</span>;</span><br><span class="line">    <span class="comment">// obj['addr'] = "seoul" 이런식으로도 가능하긴 함(더 좋진 x)</span></span><br><span class="line">obj.math = <span class="number">92</span>;</span><br><span class="line">obj.english = <span class="number">97</span>;</span><br><span class="line">obj.science = <span class="number">85</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="built_in">console</span>.log(obj.english);</span><br></pre></td></tr></table></figure>
+<pre><code>{ name: &apos;hyeshin&apos;, math: 92, english: 97, science: 85 }
+97
+</code></pre><ul>
+<li>다른 방법: 객체를 리터럴로 선언한다<ul>
+<li>리터럴: 변수에 대입해주는 값  </li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    name: <span class="string">"Jin"</span>,      <span class="comment">// key는 ""없어도 자동으로 문자열로 들어감</span></span><br><span class="line">    addr: <span class="string">"seoul"</span>,    <span class="comment">// js는 마지막 ',' 쓰면 낮은 ie에서 오류 가능성</span></span><br><span class="line">    skill: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"coding"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;   <span class="comment">// key값은 문자열만 가능</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-2-객체-출력"><a href="#1-2-객체-출력" class="headerlink" title="1.2 객체 출력"></a>1.2 객체 출력</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> obj2)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key, obj2[key]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>name Jin
+addr seoul
+skill function(){
+        console.log(&quot;coding&quot;);
+    }
+</code></pre><h2 id="1-3-객체에-함수-담기"><a href="#1-3-객체에-함수-담기" class="headerlink" title="1.3 객체에 함수 담기"></a>1.3 객체에 함수 담기</h2><ul>
+<li>Object.keys : 객체의 키값 리스트로 가져오기</li>
+<li>toFixed(number) : 반올림해서 number 자리수까지 출력</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pointsObj = &#123;</span><br><span class="line">    <span class="string">'points'</span>:&#123;<span class="string">'math'</span>: <span class="number">91</span>, <span class="string">'science'</span>: <span class="number">98</span>, <span class="string">'english'</span>: <span class="number">86</span>&#125;,</span><br><span class="line">    <span class="string">'total'</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> total = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> <span class="keyword">this</span>.points)&#123;</span><br><span class="line">            total += <span class="keyword">this</span>.points[key];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> total;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'avg'</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.total() / <span class="built_in">Object</span>.keys(<span class="keyword">this</span>.points).length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pointsObj);</span><br><span class="line"><span class="built_in">console</span>.log(pointsObj.total());</span><br><span class="line"><span class="built_in">console</span>.log(pointsObj.avg());</span><br><span class="line"><span class="built_in">console</span>.log(pointsObj.avg().toFixed(<span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+<pre><code>{ points: { math: 91, science: 98, english: 86 },    
+  total: [Function: total],
+  avg: [Function: avg] }
+275
+91.66666666666667
+91.67
+</code></pre><h1 id="2-function-함수"><a href="#2-function-함수" class="headerlink" title="2. function - 함수"></a>2. function - 함수</h1><h2 id="2-1-선언-및-호출"><a href="#2-1-선언-및-호출" class="headerlink" title="2.1 선언 및 호출"></a>2.1 선언 및 호출</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> result = sum(<span class="number">3</span>, <span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+<pre><code>8
+</code></pre><h2 id="2-2-함수를-변수에-담아서-선언"><a href="#2-2-함수를-변수에-담아서-선언" class="headerlink" title="2.2 함수를 변수에 담아서 선언"></a>2.2 함수를 변수에 담아서 선언</h2><ul>
+<li>hoisting: 변수를 선언하면 해당 scope의 최상단으로 올라감  </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> minus = <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a - b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = minus(<span class="number">3</span>, <span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> minus);</span><br></pre></td></tr></table></figure>
+<pre><code>-2
+function
+</code></pre><h1 id="3-Scope"><a href="#3-Scope" class="headerlink" title="3. Scope"></a>3. Scope</h1><ul>
+<li>python의 scope와 같은 개념</li>
+<li>함수 안에서 local 변수를 var를 사용해서 선언  </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'hello'</span>;    <span class="comment">// global 변수 선언</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">disp</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">"world"</span>;  <span class="comment">// local 변수 선언</span></span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">disp();</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+<pre><code>world
+hello
+</code></pre><ul>
+<li>var를 안 써주면 global 변수에 접근  </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'hello'</span>;    <span class="comment">// global 변수 선언</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">disp</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  a = <span class="string">"world"</span>;      <span class="comment">// global 변수에 접근</span></span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">disp();</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+<pre><code>world
+world
+</code></pre><h1 id="4-즉시실행함수-익명함수"><a href="#4-즉시실행함수-익명함수" class="headerlink" title="4. 즉시실행함수, 익명함수"></a>4. 즉시실행함수, 익명함수</h1><ul>
+<li>즉시실행함수: 함수를 선언함과 동시에 실행함</li>
+<li>사용하는 이유<ul>
+<li>javascript는 frontend 언어로 코드가 browser에 공개됨</li>
+<li>서비스에 접속한 이용자가 전역 함수를 실행할 수 있음</li>
+<li>이로 인해 보안에 문제가 생길 수 있으므로 모든 함수나 변수를 지역 함수/변수로 선언  </li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 아무 것도 실행되지 않음</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 함수를 선언하는 동시에 function 안의 코드를 실행시킴</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"data"</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<pre><code>data
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// disp함수를 즉시실행</span><br><span class="line">// disp는 지역함수가 되어 글로벌 영역에서 맘대로 쓸 수 없게 됨</span><br><span class="line">(function()&#123;</span><br><span class="line">  var name = &quot;hyeshin&quot;;</span><br><span class="line">  function disp()&#123;</span><br><span class="line">    console.log(name);</span><br><span class="line">  &#125;</span><br><span class="line">  disp();</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<pre><code>hyeshin
+</code></pre><p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_05_javascript_intermediate_001.JPG?raw=true" alt=""></p>
+<h1 id="5-Module-pattern"><a href="#5-Module-pattern" class="headerlink" title="5. Module pattern"></a>5. Module pattern</h1><ul>
+<li>실제로 JavaScript에서 module을 사용하는 방법 중 하나</li>
+<li>JavaScript는 class가 없는데 OOP로 코딩해야 함<br>(캡슐화, 추상화, 은닉화 개념 사용)</li>
+<li>getter, setter 구현</li>
+</ul>
+<h2 id="5-1-모듈-객체-변수-선언"><a href="#5-1-모듈-객체-변수-선언" class="headerlink" title="5.1 모듈 객체 변수 선언"></a>5.1 모듈 객체 변수 선언</h2><ul>
+<li>Module이라는 변수가 있으면 Module이 Module에 대입, 없으면 빈 객체를 만듦  </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Module = Module || &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>즉시실행함수 argument로 module을 던지고 parameter로 <code>_module</code>을 받음</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">_Module</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> _name = <span class="string">"hyeshin"</span>;   <span class="comment">// private이므로 _를 붙임</span></span><br><span class="line"></span><br><span class="line">  _Module.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> _name;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  _Module.setName = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    _name = name;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">&#125;)(Module);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Module.getName());</span><br><span class="line"><span class="built_in">console</span>.log(Module._name);    <span class="comment">// 접근 불가</span></span><br></pre></td></tr></table></figure>
+<p>  hyeshin<br>  undefined</p>
+</li>
+</ul>
+<p>JavaScript를 더 깊이 공부하고 싶다면(중급 수준)</p>
+<ul>
+<li>closure 클로져, prototype 개념을 추가적으로 공부</li>
+<li>웹서비스 개발은 jquery를 공부하여 구현 가능할 것</li>
+</ul>
+<h1 id="6-callback-콜백함수"><a href="#6-callback-콜백함수" class="headerlink" title="6. callback - 콜백함수"></a>6. callback - 콜백함수</h1><ul>
+<li>callback은 모든 언어에서 사용되는 용어</li>
+<li>함수에서 argument로 함수를 받아서 함수 안의 코드가 다 수행된 후에 argument로 받은 함수를 수행</li>
+<li>여기서 argument로 받은 함수를 콜백함수라고 함</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b, callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = a + b;</span><br><span class="line">    callback(result);	<span class="comment">//callback으로 받은 함수를 마지막에 실행</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">disp</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sq</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result*result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = add(<span class="number">2</span>, <span class="number">3</span>, disp); </span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = add(<span class="number">2</span>, <span class="number">3</span>, sq);</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br></pre></td></tr></table></figure>
+<pre><code>5
+undefined
+25
+undefined
+</code></pre><ul>
+<li>웹에서 비동기 통신을 할때 많이 사용됨  </li>
+<li>api를 주고 받을 때 주로 사용<ul>
+<li>api: request, response → 마지막으로 callback 함수를 수행<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_05_javascript_intermediate_002.JPG?raw=true" alt=""></li>
+</ul>
+</li>
+</ul>
+<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/09/28/web_05_javascript_intermediate/" data-id="cjmvyk8vk006jdl1h964be5yf" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/09/28/web_05_javascript_intermediate/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/28/web_05_javascript_intermediate/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-web_04_javascript_basic" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -458,7 +699,7 @@ b
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/28/web_04_javascript_basic/" data-id="cjmuh72q300aakp1h1ce4win8" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/28/web_04_javascript_basic/" data-id="cjmvyk8xb00addl1hunixgte3" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -608,7 +849,7 @@ b
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/27/2018-09-27-TIL/" data-id="cjmuh72od0058kp1htcr6sggf" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/27/2018-09-27-TIL/" data-id="cjmvyk8v20056dl1h5y2qec1m" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -827,7 +1068,7 @@ b
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/27/web_03_CSS_selector/" data-id="cjmuh72ov006ekp1hu6hgfph6" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/27/web_03_CSS_selector/" data-id="cjmvyk8vj006gdl1hde4a5m7s" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1082,7 +1323,7 @@ b
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/26/web_02_html_02_layout/" data-id="cjmuh72ot006ckp1h2wanbwzp" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/26/web_02_html_02_layout/" data-id="cjmvyk8vg006bdl1hlqlqlvcc" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1287,7 +1528,7 @@ b
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/26/web_01_html_01_basic/" data-id="cjmuh72or0068kp1h5sjsf7y7" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/26/web_01_html_01_basic/" data-id="cjmvyk8vi006fdl1h3c6s632z" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1434,7 +1675,7 @@ b
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/18/2018-09-18-TIL/" data-id="cjmuh72oc0055kp1hgdsip8hc" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/18/2018-09-18-TIL/" data-id="cjmvyk8v30059dl1hjdzfhbt2" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1582,7 +1823,7 @@ b
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/06/2018-09-06-TIL/" data-id="cjmuh72ob0052kp1hf1xgoz8c" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/06/2018-09-06-TIL/" data-id="cjmvyk8v00050dl1hcsx0ocw4" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1727,7 +1968,7 @@ b
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/06/2018-09-05-TIL/" data-id="cjmuh72oa004zkp1hm9jwj48n" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/06/2018-09-05-TIL/" data-id="cjmvyk8uz004xdl1hc8xwjgv5" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1876,7 +2117,7 @@ b
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/05/2018-09-04-TIL/" data-id="cjmuh72o9004wkp1hphv2iae1" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/05/2018-09-04-TIL/" data-id="cjmvyk8ux004rdl1hq7phjsh1" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1954,154 +2195,6 @@ b
 
 
 
-    <article id="post-2018-09-03-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/09/04/2018-09-03-TIL/">2018-09-03-TIL</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/09/04/2018-09-03-TIL/">
-            <time datetime="2018-09-03T15:46:10.000Z" itemprop="datePublished">2018-09-04</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
-<li>팀 프로젝트: 블레이드앤소울 유저 이탈 예측 (빅콘테스트2018)<ul>
-<li>하.. network 작업하는 data를 수정하게 되어 1/3 정도는 진행되었던 network relation 만들기를 처음부터 다시 시작 ㅜ 내일 노트북 여러 대로 돌려야겠다 ㅜㅜㅜ</li>
-</ul>
-</li>
-</ul>
-<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
-<li>개인 프로젝트: 여자아이돌 분류 모델링<ul>
-<li>시도해볼것: 여자아이돌 image augmentation, grey scaling</li>
-</ul>
-</li>
-<li>팀 프로젝트: 블레이드앤소울 유저 이탈 예측 (빅콘테스트2018)<ul>
-<li>party network relation list 만들기</li>
-</ul>
-</li>
-<li>이력서 정리</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/09/04/2018-09-03-TIL/" data-id="cjmuh72o8004tkp1ha8p0pj64" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/09/04/2018-09-03-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/04/2018-09-03-TIL/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
@@ -2115,6 +2208,15 @@ b
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a></p>
+                            <p class="item-title"><a href="/2018/10/05/web_11_selenium_exercise/" class="title">Web crawling exercise</a></p>
+                            <p class="item-date"><time datetime="2018-10-05T11:47:51.000Z" itemprop="datePublished">2018-10-05</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -2152,15 +2254,6 @@ b
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
-                            <p class="item-title"><a href="/2018/09/30/2018-09-29-TIL/" class="title">2018-09-29-TIL</a></p>
-                            <p class="item-date"><time datetime="2018-09-29T15:04:51.000Z" itemprop="datePublished">2018-09-30</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -2170,7 +2263,7 @@ b
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">67</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">24</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">11</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">67</span></li></ul>
         </div>
     </div>
 
@@ -2179,7 +2272,7 @@ b
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -2188,7 +2281,7 @@ b
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">67</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">4</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">67</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -2197,7 +2290,7 @@ b
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 14.29px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.86px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.86px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.43px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 12.86px;">crawling</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/html/" style="font-size: 11.43px;">html</a> <a href="/tags/javascript/" style="font-size: 11.43px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/programming/" style="font-size: 18.57px;">programming</a> <a href="/tags/python/" style="font-size: 15.71px;">python</a> <a href="/tags/selenium/" style="font-size: 11.43px;">selenium</a> <a href="/tags/web/" style="font-size: 17.14px;">web</a> <a href="/tags/web-crawling/" style="font-size: 12.86px;">web_crawling</a> <a href="/tags/알고리즘/" style="font-size: 11.43px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 12.86px;">웹크롤링</a>
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 15px;">Database</a> <a href="/tags/MySQL/" style="font-size: 13.75px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 13.75px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.25px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 15px;">crawling</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/html/" style="font-size: 11.25px;">html</a> <a href="/tags/javascript/" style="font-size: 11.25px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/programming/" style="font-size: 18.75px;">programming</a> <a href="/tags/python/" style="font-size: 16.25px;">python</a> <a href="/tags/selenium/" style="font-size: 12.5px;">selenium</a> <a href="/tags/web/" style="font-size: 17.5px;">web</a> <a href="/tags/web-crawling/" style="font-size: 15px;">web_crawling</a> <a href="/tags/알고리즘/" style="font-size: 11.25px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 15px;">웹크롤링</a>
         </div>
     </div>
 

@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>Web crawling exercise | 우와팬더의 블로그</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="1from selenium import webdriver Quiz 1 아래 URL의 NBA 데이터를 크롤링하여 판다스 데이터 프레임으로 나타내세요. http://stats.nba.com/teams/traditional/?sort=GP&amp;amp;dir=-1  1.1 webdriver를 실행하고 사이트에 접속하기1driver = webdriver.Chrome()">
+<meta name="keywords" content="programming,web,crawling,web_crawling,웹크롤링,selenium">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web crawling exercise">
+<meta property="og:url" content="http://yoursite.com/2018/10/05/web_11_selenium_exercise/index.html">
+<meta property="og:site_name" content="우와팬더의 블로그">
+<meta property="og:description" content="1from selenium import webdriver Quiz 1 아래 URL의 NBA 데이터를 크롤링하여 판다스 데이터 프레임으로 나타내세요. http://stats.nba.com/teams/traditional/?sort=GP&amp;amp;dir=-1  1.1 webdriver를 실행하고 사이트에 접속하기1driver = webdriver.Chrome()">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/hyeshinoh/Study_Web/blob/master/web_10_image_001.png?raw=true">
+<meta property="og:updated_time" content="2018-10-05T11:59:33.877Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web crawling exercise">
+<meta name="twitter:description" content="1from selenium import webdriver Quiz 1 아래 URL의 NBA 데이터를 크롤링하여 판다스 데이터 프레임으로 나타내세요. http://stats.nba.com/teams/traditional/?sort=GP&amp;amp;dir=-1  1.1 webdriver를 실행하고 사이트에 접속하기1driver = webdriver.Chrome()">
+<meta name="twitter:image" content="https://github.com/hyeshinoh/Study_Web/blob/master/web_10_image_001.png?raw=true">
+    
+
+    
+        <link rel="alternate" href="/" title="우와팬더의 블로그" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome5/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/libs/font-awesome5/css/fa-brands.min.css">
+    <link rel="stylesheet" href="/libs/font-awesome5/css/fa-solid.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-126954393-1', 'auto');
+ga('send', 'pageview');
+
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+    
+
+
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">우와팬더의 블로그</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about/index.html">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fas fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about/index.html">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile" class="profile-fixed">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">우와팬더(Hyeshin Oh)</h2>
+            <h3 id="title">Data Science를 공부합니다</h3>
+            <span id="location"><i class="fas fa-map-marker-alt" style="padding-right: 5px"></i>Seoul, Korea</span>
+            <a id="follow" target="_blank" href="https://github.com/hyeshinoh">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                92
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                19
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/hyeshinoh" target="_blank" title="github" class=tooltip>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fab fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-web_11_selenium_exercise" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Web crawling exercise
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/10/05/web_11_selenium_exercise/">
+            <time datetime="2018-10-05T11:47:51.000Z" itemprop="datePublished">2018-10-05</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/crawling/">crawling</a>, <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/selenium/">selenium</a>, <a class="tag-link" href="/tags/web/">web</a>, <a class="tag-link" href="/tags/web-crawling/">web_crawling</a>, <a class="tag-link" href="/tags/웹크롤링/">웹크롤링</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br></pre></td></tr></table></figure>
+<h2 id="Quiz-1"><a href="#Quiz-1" class="headerlink" title="Quiz 1"></a>Quiz 1</h2><ul>
+<li>아래 URL의 NBA 데이터를 크롤링하여 판다스 데이터 프레임으로 나타내세요.</li>
+<li><a href="http://stats.nba.com/teams/traditional/?sort=GP&amp;dir=-1" target="_blank" rel="noopener">http://stats.nba.com/teams/traditional/?sort=GP&amp;dir=-1</a></li>
+</ul>
+<h3 id="1-1-webdriver를-실행하고-사이트에-접속하기"><a href="#1-1-webdriver를-실행하고-사이트에-접속하기" class="headerlink" title="1.1 webdriver를 실행하고 사이트에 접속하기"></a>1.1 webdriver를 실행하고 사이트에 접속하기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver = webdriver.Chrome()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"http://stats.nba.com/teams/traditional/?sort=GP&amp;dir=-1"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.get(url)</span><br></pre></td></tr></table></figure>
+<p>링크로 들어가면 GP로 정렬되어 있는 상태임<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_10_image_001.png?raw=true" alt=""></p>
+<h3 id="1-2-표-데이터-받아오기"><a href="#1-2-표-데이터-받아오기" class="headerlink" title="1.2 표 데이터 받아오기"></a>1.2 표 데이터 받아오기</h3><h4 id="1-column-이름을-받아와서-pandas-dataframe-만들기"><a href="#1-column-이름을-받아와서-pandas-dataframe-만들기" class="headerlink" title="(1) column 이름을 받아와서 pandas dataframe 만들기"></a>(1) column 이름을 받아와서 pandas dataframe 만들기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">columns = driver.find_elements_by_css_selector(<span class="string">"div.nba-stat-table__overflow &gt; table &gt; thead &gt; tr &gt; th"</span>)[:<span class="number">28</span>]</span><br><span class="line">len(columns)</span><br></pre></td></tr></table></figure>
+<pre><code>28
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ls_column = []</span><br><span class="line"><span class="keyword">for</span> column <span class="keyword">in</span> columns:</span><br><span class="line">    ls_column.append(column.text)</span><br><span class="line">    </span><br><span class="line">ls_column</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;&apos;,
+ &apos;TEAM&apos;,
+ &apos;GP&apos;,
+ &apos;W&apos;,
+ &apos;L&apos;,
+ &apos;WIN%&apos;,
+ &apos;MIN&apos;,
+ &apos;PTS&apos;,
+ &apos;FGM&apos;,
+ &apos;FGA&apos;,
+ &apos;FG%&apos;,
+ &apos;3PM&apos;,
+ &apos;3PA&apos;,
+ &apos;3P%&apos;,
+ &apos;FTM&apos;,
+ &apos;FTA&apos;,
+ &apos;FT%&apos;,
+ &apos;OREB&apos;,
+ &apos;DREB&apos;,
+ &apos;REB&apos;,
+ &apos;AST&apos;,
+ &apos;TOV&apos;,
+ &apos;STL&apos;,
+ &apos;BLK&apos;,
+ &apos;BLKA&apos;,
+ &apos;PF&apos;,
+ &apos;PFD&apos;,
+ &apos;+/-&apos;]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = pd.DataFrame(columns = ls_column)</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>TEAM</th>
+<th>GP</th>
+<th>W</th>
+<th>L</th>
+<th>WIN%</th>
+<th>MIN</th>
+<th>PTS</th>
+<th>FGM</th>
+<th>FGA</th>
+<th>…</th>
+<th>DREB</th>
+<th>REB</th>
+<th>AST</th>
+<th>TOV</th>
+<th>STL</th>
+<th>BLK</th>
+<th>BLKA</th>
+<th>PF</th>
+<th>PFD</th>
+<th>+/-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-각-row의-팀별-데이터를-받아와서-dataframe에-넣기"><a href="#2-각-row의-팀별-데이터를-받아와서-dataframe에-넣기" class="headerlink" title="(2) 각 row의 팀별 데이터를 받아와서 dataframe에 넣기"></a>(2) 각 row의 팀별 데이터를 받아와서 dataframe에 넣기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">team_stat = driver.find_elements_by_css_selector(<span class="string">"div.nba-stat-table__overflow &gt; table &gt; tbody &gt; tr"</span>)</span><br><span class="line">len(team_stat)</span><br></pre></td></tr></table></figure>
+<pre><code>35
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> stat <span class="keyword">in</span> team_stat:</span><br><span class="line">    stats = stat.find_elements_by_css_selector(<span class="string">"td"</span>)</span><br><span class="line">    stat = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(stats)):</span><br><span class="line">        stat[ls_column[i]] = stats[i].text</span><br><span class="line">    df.loc[len(df)] = stat</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>TEAM</th>
+<th>GP</th>
+<th>W</th>
+<th>L</th>
+<th>WIN%</th>
+<th>MIN</th>
+<th>PTS</th>
+<th>FGM</th>
+<th>FGA</th>
+<th>…</th>
+<th>DREB</th>
+<th>REB</th>
+<th>AST</th>
+<th>TOV</th>
+<th>STL</th>
+<th>BLK</th>
+<th>BLKA</th>
+<th>PF</th>
+<th>PFD</th>
+<th>+/-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>Charlotte Hornets</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>.667</td>
+<td>48.0</td>
+<td>112.7</td>
+<td>38.0</td>
+<td>84.0</td>
+<td>…</td>
+<td>43.3</td>
+<td>49.0</td>
+<td>24.0</td>
+<td>15.3</td>
+<td>5.3</td>
+<td>7.3</td>
+<td>5.7</td>
+<td>24.0</td>
+<td>29.7</td>
+<td>4.3</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>Los Angeles Lakers</td>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+<td>.333</td>
+<td>48.0</td>
+<td>115.3</td>
+<td>41.3</td>
+<td>83.0</td>
+<td>…</td>
+<td>35.3</td>
+<td>41.0</td>
+<td>24.3</td>
+<td>21.0</td>
+<td>9.0</td>
+<td>6.7</td>
+<td>4.0</td>
+<td>28.7</td>
+<td>32.3</td>
+<td>-4.7</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>Boston Celtics</td>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+<td>.333</td>
+<td>48.0</td>
+<td>102.3</td>
+<td>37.7</td>
+<td>93.7</td>
+<td>…</td>
+<td>40.0</td>
+<td>50.0</td>
+<td>18.3</td>
+<td>12.3</td>
+<td>8.3</td>
+<td>6.7</td>
+<td>5.3</td>
+<td>30.7</td>
+<td>24.0</td>
+<td>-3.7</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>Minnesota Timberwolves</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>.500</td>
+<td>48.0</td>
+<td>107.5</td>
+<td>34.5</td>
+<td>87.5</td>
+<td>…</td>
+<td>32.5</td>
+<td>42.5</td>
+<td>13.5</td>
+<td>16.5</td>
+<td>7.5</td>
+<td>7.5</td>
+<td>8.0</td>
+<td>20.5</td>
+<td>30.5</td>
+<td>-11.5</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>Denver Nuggets</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1.000</td>
+<td>48.0</td>
+<td>118.5</td>
+<td>40.0</td>
+<td>85.5</td>
+<td>…</td>
+<td>32.5</td>
+<td>45.0</td>
+<td>27.0</td>
+<td>23.5</td>
+<td>12.0</td>
+<td>4.5</td>
+<td>7.0</td>
+<td>26.5</td>
+<td>30.5</td>
+<td>9.5</td>
+</tr>
+<tr>
+<td>5</td>
+<td>4</td>
+<td>Houston</td>
+<td>Rockets</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>.500</td>
+<td>48.0</td>
+<td>115.5</td>
+<td>37.5</td>
+<td>80.0</td>
+<td>…</td>
+<td>33.0</td>
+<td>41.0</td>
+<td>23.0</td>
+<td>24.0</td>
+<td>11.0</td>
+<td>7.5</td>
+<td>4.0</td>
+<td>31.5</td>
+<td>31.5</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>6</td>
+<td>4</td>
+<td>LA Clippers</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1.000</td>
+<td>48.0</td>
+<td>119.0</td>
+<td>45.0</td>
+<td>89.0</td>
+<td>…</td>
+<td>37.0</td>
+<td>45.5</td>
+<td>33.5</td>
+<td>16.5</td>
+<td>8.5</td>
+<td>7.5</td>
+<td>5.5</td>
+<td>32.0</td>
+<td>25.5</td>
+<td>23.0</td>
+</tr>
+<tr>
+<td>7</td>
+<td>4</td>
+<td>Miami Heat</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>.000</td>
+<td>48.0</td>
+<td>106.5</td>
+<td>37.0</td>
+<td>94.5</td>
+<td>…</td>
+<td>36.5</td>
+<td>52.0</td>
+<td>20.0</td>
+<td>16.0</td>
+<td>9.0</td>
+<td>4.5</td>
+<td>8.0</td>
+<td>27.5</td>
+<td>30.0</td>
+<td>-6.5</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4</td>
+<td>Chicago Bulls</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>.500</td>
+<td>48.0</td>
+<td>105.0</td>
+<td>41.0</td>
+<td>100.5</td>
+<td>…</td>
+<td>38.0</td>
+<td>47.5</td>
+<td>23.0</td>
+<td>9.5</td>
+<td>7.5</td>
+<td>3.0</td>
+<td>7.0</td>
+<td>19.5</td>
+<td>18.0</td>
+<td>-11.0</td>
+</tr>
+<tr>
+<td>9</td>
+<td>4</td>
+<td>New Orleans Pelicans</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>.000</td>
+<td>48.0</td>
+<td>109.0</td>
+<td>41.0</td>
+<td>100.5</td>
+<td>…</td>
+<td>38.5</td>
+<td>49.5</td>
+<td>24.5</td>
+<td>18.0</td>
+<td>5.0</td>
+<td>5.5</td>
+<td>8.0</td>
+<td>23.5</td>
+<td>24.0</td>
+<td>-13.0</td>
+</tr>
+<tr>
+<td>10</td>
+<td>4</td>
+<td>New York Knicks</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1.000</td>
+<td>50.5</td>
+<td>115.5</td>
+<td>38.5</td>
+<td>85.0</td>
+<td>…</td>
+<td>40.5</td>
+<td>50.0</td>
+<td>19.5</td>
+<td>22.5</td>
+<td>11.0</td>
+<td>6.5</td>
+<td>5.0</td>
+<td>36.5</td>
+<td>34.5</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>11</td>
+<td>4</td>
+<td>Philadelphia 76ers</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1.000</td>
+<td>48.0</td>
+<td>112.0</td>
+<td>39.5</td>
+<td>83.0</td>
+<td>…</td>
+<td>36.0</td>
+<td>48.0</td>
+<td>25.0</td>
+<td>18.5</td>
+<td>8.5</td>
+<td>8.0</td>
+<td>2.5</td>
+<td>24.5</td>
+<td>29.5</td>
+<td>13.0</td>
+</tr>
+<tr>
+<td>12</td>
+<td>4</td>
+<td>Phoenix Suns</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>.500</td>
+<td>48.0</td>
+<td>96.5</td>
+<td>31.5</td>
+<td>75.5</td>
+<td>…</td>
+<td>37.0</td>
+<td>48.0</td>
+<td>20.5</td>
+<td>20.0</td>
+<td>7.5</td>
+<td>9.0</td>
+<td>4.5</td>
+<td>32.0</td>
+<td>28.5</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>13</td>
+<td>4</td>
+<td>Sacramento Kings</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>.500</td>
+<td>48.0</td>
+<td>114.5</td>
+<td>42.0</td>
+<td>90.5</td>
+<td>…</td>
+<td>31.5</td>
+<td>40.5</td>
+<td>25.5</td>
+<td>16.0</td>
+<td>6.5</td>
+<td>3.5</td>
+<td>5.0</td>
+<td>38.0</td>
+<td>29.0</td>
+<td>-0.5</td>
+</tr>
+<tr>
+<td>14</td>
+<td>4</td>
+<td>Toronto Raptors</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>.500</td>
+<td>48.0</td>
+<td>106.0</td>
+<td>34.0</td>
+<td>89.0</td>
+<td>…</td>
+<td>35.5</td>
+<td>48.5</td>
+<td>13.0</td>
+<td>18.5</td>
+<td>8.5</td>
+<td>5.5</td>
+<td>4.0</td>
+<td>28.5</td>
+<td>35.5</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>15</td>
+<td>4</td>
+<td>Utah Jazz</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1.000</td>
+<td>48.0</td>
+<td>117.5</td>
+<td>44.0</td>
+<td>89.5</td>
+<td>…</td>
+<td>47.0</td>
+<td>56.5</td>
+<td>28.5</td>
+<td>19.0</td>
+<td>8.5</td>
+<td>5.5</td>
+<td>3.0</td>
+<td>27.0</td>
+<td>27.0</td>
+<td>36.5</td>
+</tr>
+<tr>
+<td>16</td>
+<td>17</td>
+<td>Memphis Grizzlies</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>.000</td>
+<td>48.0</td>
+<td>115.0</td>
+<td>40.0</td>
+<td>85.0</td>
+<td>…</td>
+<td>27.0</td>
+<td>40.0</td>
+<td>24.0</td>
+<td>23.0</td>
+<td>11.0</td>
+<td>2.0</td>
+<td>7.0</td>
+<td>37.0</td>
+<td>34.0</td>
+<td>-16.0</td>
+</tr>
+<tr>
+<td>17</td>
+<td>17</td>
+<td>Beijing Ducks</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>.000</td>
+<td>48.0</td>
+<td>63.0</td>
+<td>17.0</td>
+<td>71.0</td>
+<td>…</td>
+<td>22.0</td>
+<td>33.0</td>
+<td>12.0</td>
+<td>17.0</td>
+<td>4.0</td>
+<td>2.0</td>
+<td>10.0</td>
+<td>32.0</td>
+<td>29.0</td>
+<td>-53.0</td>
+</tr>
+<tr>
+<td>18</td>
+<td>17</td>
+<td>Milwaukee Bucks</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1.000</td>
+<td>48.0</td>
+<td>116.0</td>
+<td>44.0</td>
+<td>89.0</td>
+<td>…</td>
+<td>53.0</td>
+<td>64.0</td>
+<td>28.0</td>
+<td>13.0</td>
+<td>3.0</td>
+<td>7.0</td>
+<td>2.0</td>
+<td>12.0</td>
+<td>19.0</td>
+<td>34.0</td>
+</tr>
+<tr>
+<td>19</td>
+<td>17</td>
+<td>Atlanta Hawks</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1.000</td>
+<td>48.0</td>
+<td>116.0</td>
+<td>48.0</td>
+<td>105.0</td>
+<td>…</td>
+<td>44.0</td>
+<td>54.0</td>
+<td>32.0</td>
+<td>18.0</td>
+<td>7.0</td>
+<td>12.0</td>
+<td>4.0</td>
+<td>28.0</td>
+<td>23.0</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>20</td>
+<td>17</td>
+<td>Detroit Pistons</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1.000</td>
+<td>48.0</td>
+<td>97.0</td>
+<td>39.0</td>
+<td>84.0</td>
+<td>…</td>
+<td>35.0</td>
+<td>45.0</td>
+<td>19.0</td>
+<td>16.0</td>
+<td>6.0</td>
+<td>5.0</td>
+<td>3.0</td>
+<td>30.0</td>
+<td>25.0</td>
+<td>6.0</td>
+</tr>
+<tr>
+<td>21</td>
+<td>17</td>
+<td>Golden State Warriors</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>.000</td>
+<td>48.0</td>
+<td>110.0</td>
+<td>44.0</td>
+<td>93.0</td>
+<td>…</td>
+<td>41.0</td>
+<td>48.0</td>
+<td>33.0</td>
+<td>17.0</td>
+<td>9.0</td>
+<td>8.0</td>
+<td>6.0</td>
+<td>23.0</td>
+<td>16.0</td>
+<td>-4.0</td>
+</tr>
+<tr>
+<td>22</td>
+<td>17</td>
+<td>New Zealand Breakers</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>.000</td>
+<td>48.0</td>
+<td>86.0</td>
+<td>31.0</td>
+<td>87.0</td>
+<td>…</td>
+<td>32.0</td>
+<td>43.0</td>
+<td>16.0</td>
+<td>14.0</td>
+<td>9.0</td>
+<td>5.0</td>
+<td>14.0</td>
+<td>25.0</td>
+<td>31.0</td>
+<td>-5.0</td>
+</tr>
+<tr>
+<td>23</td>
+<td>17</td>
+<td>Oklahoma City Thunder</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>.000</td>
+<td>48.0</td>
+<td>91.0</td>
+<td>30.0</td>
+<td>82.0</td>
+<td>…</td>
+<td>33.0</td>
+<td>47.0</td>
+<td>21.0</td>
+<td>16.0</td>
+<td>6.0</td>
+<td>3.0</td>
+<td>5.0</td>
+<td>25.0</td>
+<td>30.0</td>
+<td>-6.0</td>
+</tr>
+<tr>
+<td>24</td>
+<td>17</td>
+<td>Orlando Magic</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>.000</td>
+<td>48.0</td>
+<td>114.0</td>
+<td>45.0</td>
+<td>91.0</td>
+<td>…</td>
+<td>30.0</td>
+<td>35.0</td>
+<td>27.0</td>
+<td>12.0</td>
+<td>6.0</td>
+<td>4.0</td>
+<td>7.0</td>
+<td>33.0</td>
+<td>30.0</td>
+<td>-6.0</td>
+</tr>
+<tr>
+<td>25</td>
+<td>17</td>
+<td>Perth Wildcats</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>.000</td>
+<td>48.0</td>
+<td>72.0</td>
+<td>23.0</td>
+<td>85.0</td>
+<td>…</td>
+<td>30.0</td>
+<td>41.0</td>
+<td>12.0</td>
+<td>19.0</td>
+<td>9.0</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>25.0</td>
+<td>28.0</td>
+<td>-58.0</td>
+</tr>
+<tr>
+<td>26</td>
+<td>17</td>
+<td>Brooklyn Nets</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>.000</td>
+<td>48.0</td>
+<td>102.0</td>
+<td>37.0</td>
+<td>95.0</td>
+<td>…</td>
+<td>29.0</td>
+<td>45.0</td>
+<td>21.0</td>
+<td>18.0</td>
+<td>12.0</td>
+<td>3.0</td>
+<td>11.0</td>
+<td>30.0</td>
+<td>29.0</td>
+<td>-5.0</td>
+</tr>
+<tr>
+<td>27</td>
+<td>17</td>
+<td>Indiana Pacers</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1.000</td>
+<td>48.0</td>
+<td>110.0</td>
+<td>40.0</td>
+<td>91.0</td>
+<td>…</td>
+<td>35.0</td>
+<td>48.0</td>
+<td>18.0</td>
+<td>21.0</td>
+<td>11.0</td>
+<td>6.0</td>
+<td>8.0</td>
+<td>26.0</td>
+<td>29.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>28</td>
+<td>17</td>
+<td>Portland Trail Blazers</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>.000</td>
+<td>48.0</td>
+<td>104.0</td>
+<td>37.0</td>
+<td>88.0</td>
+<td>…</td>
+<td>35.0</td>
+<td>46.0</td>
+<td>25.0</td>
+<td>24.0</td>
+<td>4.0</td>
+<td>2.0</td>
+<td>6.0</td>
+<td>45.0</td>
+<td>28.0</td>
+<td>-18.0</td>
+</tr>
+<tr>
+<td>29</td>
+<td>17</td>
+<td>Cleveland Cavaliers</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1.000</td>
+<td>48.0</td>
+<td>102.0</td>
+<td>33.0</td>
+<td>80.0</td>
+<td>…</td>
+<td>36.0</td>
+<td>49.0</td>
+<td>13.0</td>
+<td>18.0</td>
+<td>8.0</td>
+<td>4.0</td>
+<td>7.0</td>
+<td>30.0</td>
+<td>30.0</td>
+<td>7.0</td>
+</tr>
+<tr>
+<td>30</td>
+<td>17</td>
+<td>San Antonio Spurs</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1.000</td>
+<td>48.0</td>
+<td>104.0</td>
+<td>37.0</td>
+<td>85.0</td>
+<td>…</td>
+<td>39.0</td>
+<td>48.0</td>
+<td>23.0</td>
+<td>22.0</td>
+<td>8.0</td>
+<td>6.0</td>
+<td>5.0</td>
+<td>30.0</td>
+<td>28.0</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>31</td>
+<td>17</td>
+<td>Sydney Kings</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>.000</td>
+<td>48.0</td>
+<td>91.0</td>
+<td>35.0</td>
+<td>79.0</td>
+<td>…</td>
+<td>36.0</td>
+<td>46.0</td>
+<td>19.0</td>
+<td>26.0</td>
+<td>4.0</td>
+<td>2.0</td>
+<td>7.0</td>
+<td>26.0</td>
+<td>26.0</td>
+<td>-19.0</td>
+</tr>
+<tr>
+<td>32</td>
+<td>17</td>
+<td>Dallas Mavericks</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1.000</td>
+<td>48.0</td>
+<td>116.0</td>
+<td>39.0</td>
+<td>75.0</td>
+<td>…</td>
+<td>39.0</td>
+<td>51.0</td>
+<td>31.0</td>
+<td>13.0</td>
+<td>6.0</td>
+<td>10.0</td>
+<td>2.0</td>
+<td>29.0</td>
+<td>32.0</td>
+<td>53.0</td>
+</tr>
+<tr>
+<td>33</td>
+<td>17</td>
+<td>Melbourne United</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>.000</td>
+<td>48.0</td>
+<td>84.0</td>
+<td>31.0</td>
+<td>82.0</td>
+<td>…</td>
+<td>29.0</td>
+<td>37.0</td>
+<td>15.0</td>
+<td>23.0</td>
+<td>10.0</td>
+<td>1.0</td>
+<td>9.0</td>
+<td>26.0</td>
+<td>19.0</td>
+<td>-20.0</td>
+</tr>
+<tr>
+<td>34</td>
+<td>17</td>
+<td>Washington Wizards</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>.000</td>
+<td>53.0</td>
+<td>121.0</td>
+<td>40.0</td>
+<td>97.0</td>
+<td>…</td>
+<td>44.0</td>
+<td>57.0</td>
+<td>25.0</td>
+<td>24.0</td>
+<td>10.0</td>
+<td>7.0</td>
+<td>2.0</td>
+<td>39.0</td>
+<td>44.0</td>
+<td>-3.0</td>
+</tr>
+</tbody>
+</table>
+<pre><code>35 rows × 28 columns
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+<h2 id="Quiz-2"><a href="#Quiz-2" class="headerlink" title="Quiz 2"></a>Quiz 2</h2><ul>
+<li>Selenium을 이용하여 네이버 IT/과학 기사의 10 페이지 까지의 최신 제목 리스트를 크롤링하세요.</li>
+<li><a href="http://news.naver.com/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=105" target="_blank" rel="noopener">http://news.naver.com/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=105</a></li>
+</ul>
+<h3 id="2-1-webdriver를-실행하고-사이트에-접속하기"><a href="#2-1-webdriver를-실행하고-사이트에-접속하기" class="headerlink" title="2.1 webdriver를 실행하고 사이트에 접속하기"></a>2.1 webdriver를 실행하고 사이트에 접속하기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver = webdriver.Chrome()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_url</span><span class="params">(page=<span class="number">1</span>)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"http://news.naver.com/main/main.nhn?mode=LSD&amp;mid=shm&amp;sid1=105#&amp;date=%2000:00:00&amp;page="</span>\</span><br><span class="line"> + str(page)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url = make_url()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.get(url)</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-기사-제목-리스트-가져오기"><a href="#2-2-기사-제목-리스트-가져오기" class="headerlink" title="2.2 기사 제목 리스트 가져오기"></a>2.2 기사 제목 리스트 가져오기</h3><h4 id="1-1페이지에-대해-기사-제목-가져오기"><a href="#1-1페이지에-대해-기사-제목-가져오기" class="headerlink" title="(1) 1페이지에 대해 기사 제목 가져오기"></a>(1) 1페이지에 대해 기사 제목 가져오기</h4><h5 id="1페이지의-기사-리스트-가져오기"><a href="#1페이지의-기사-리스트-가져오기" class="headerlink" title="1페이지의 기사 리스트 가져오기"></a>1페이지의 기사 리스트 가져오기</h5><ul>
+<li>한 페이지에 20개의 기사가 있음</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">articles = driver.find_elements_by_css_selector(<span class="string">"#section_body &gt; ul &gt; li"</span>)</span><br><span class="line">len(articles)</span><br></pre></td></tr></table></figure>
+<pre><code>20
+</code></pre><h5 id="1페이지-안의-기사-제목-가져오기"><a href="#1페이지-안의-기사-제목-가져오기" class="headerlink" title="1페이지 안의 기사 제목 가져오기"></a>1페이지 안의 기사 제목 가져오기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dict_list = []</span><br><span class="line"><span class="keyword">for</span> article <span class="keyword">in</span> articles:</span><br><span class="line">    dict_list.append(&#123;</span><br><span class="line">        <span class="string">"title"</span>: article.find_element_by_css_selector(<span class="string">"dt:nth-child(2)"</span>).text     </span><br><span class="line">    &#125;)</span><br><span class="line">df = pd.DataFrame(dict_list)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15</td>
+<td>이동전화 소비자불만 ‘최다’…소비자불만 1위 이통사는?</td>
+</tr>
+<tr>
+<td>16</td>
+<td>네안데르탈인, 현대인류에게 병도 주고 약도 줬다</td>
+</tr>
+<tr>
+<td>17</td>
+<td>美 컨슈머리포트 “갤노트9 배터리, 아이폰Xs 보다 우수”</td>
+</tr>
+<tr>
+<td>18</td>
+<td>LG 스마트폰 또 1천억원대 적자…적자 폭은 줄어든 듯</td>
+</tr>
+<tr>
+<td>19</td>
+<td>닌텐도, 차세대 비디오 게임기 개발</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-1-10페이지에서-기사-제목-가져오기"><a href="#2-1-10페이지에서-기사-제목-가져오기" class="headerlink" title="(2) 1-10페이지에서 기사 제목 가져오기"></a>(2) 1-10페이지에서 기사 제목 가져오기</h4><ul>
+<li>2페이지와 7페이지에서 에러가 발생해서 try &amp; except 처리함</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">dict_list = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>):</span><br><span class="line">    driver.get(make_url(i))</span><br><span class="line">    articles = driver.find_elements_by_css_selector(<span class="string">"#section_body &gt; ul &gt; li"</span>)</span><br><span class="line">    print(len(articles))</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">for</span> article <span class="keyword">in</span> articles:</span><br><span class="line">            dict_list.append(&#123;<span class="string">"title"</span>: article.find_element_by_css_selector(<span class="string">"dl &gt; dt:nth-child(2)"</span>).text&#125;)</span><br><span class="line">    <span class="keyword">except</span>: </span><br><span class="line">        print(str(i)+<span class="string">"페이지 에러 발생"</span>)</span><br><span class="line">        </span><br><span class="line">df = pd.DataFrame(dict_list)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<pre><code>20
+20
+2페이지 에러 발생
+20
+20
+20
+20
+20
+7페이지 에러 발생
+20
+20
+20
+</code></pre><table>
+<thead>
+<tr>
+<th></th>
+<th>title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>163</td>
+<td>iOS 12.1에서 아이폰XS 충전 문제 해결될 듯</td>
+</tr>
+<tr>
+<td>164</td>
+<td>박원순 “서울, 블록체인 중심 되게 하겠다”</td>
+</tr>
+<tr>
+<td>165</td>
+<td>[人사이트]유인상 LG CNS 단장 “스마트시티, 데이터와 시민참여가 핵심”</td>
+</tr>
+<tr>
+<td>166</td>
+<td>[와우! 과학] 여성이 남성보다 오래 사는 이유 찾았다 (연구)</td>
+</tr>
+<tr>
+<td>167</td>
+<td>“V40, 카메라 기능 역랑 집중해 고객 편의최대한 끌어올렸다”</td>
+</tr>
+</tbody>
+</table>
+<p>총 168개의 기사 제목이 크롤링됨</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/10/05/web_11_selenium_exercise/" data-id="cjmvyk8xd00ajdl1hue4fm086" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/10/05/web_11_selenium_exercise/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/10/05/web_11_selenium_exercise/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/10/04/2018-10-04-TIL/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">2018-10-04-TIL</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a></p>
+                            <p class="item-title"><a href="/2018/10/05/web_11_selenium_exercise/" class="title">Web crawling exercise</a></p>
+                            <p class="item-date"><time datetime="2018-10-05T11:47:51.000Z" itemprop="datePublished">2018-10-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
+                            <p class="item-title"><a href="/2018/10/04/2018-10-04-TIL/" class="title">2018-10-04-TIL</a></p>
+                            <p class="item-date"><time datetime="2018-10-04T10:50:12.000Z" itemprop="datePublished">2018-10-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a></p>
+                            <p class="item-title"><a href="/2018/10/04/web_10_selenium/" class="title">Web crawling - Selenium Intermediate</a></p>
+                            <p class="item-date"><time datetime="2018-10-04T10:12:41.000Z" itemprop="datePublished">2018-10-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
+                            <p class="item-title"><a href="/2018/10/03/2018-10-02-TIL/" class="title">2018-10-02-TIL</a></p>
+                            <p class="item-date"><time datetime="2018-10-02T15:06:25.000Z" itemprop="datePublished">2018-10-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a></p>
+                            <p class="item-title"><a href="/2018/10/02/web_09_selenium/" class="title">Web crawling - Selenium Basic</a></p>
+                            <p class="item-date"><time datetime="2018-10-02T14:52:26.000Z" itemprop="datePublished">2018-10-02</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">24</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">11</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">67</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">67</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 15px;">Database</a> <a href="/tags/MySQL/" style="font-size: 13.75px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 13.75px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.25px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 15px;">crawling</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/html/" style="font-size: 11.25px;">html</a> <a href="/tags/javascript/" style="font-size: 11.25px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/programming/" style="font-size: 18.75px;">programming</a> <a href="/tags/python/" style="font-size: 16.25px;">python</a> <a href="/tags/selenium/" style="font-size: 12.5px;">selenium</a> <a href="/tags/web/" style="font-size: 17.5px;">web</a> <a href="/tags/web-crawling/" style="font-size: 15px;">web_crawling</a> <a href="/tags/알고리즘/" style="font-size: 11.25px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 15px;">웹크롤링</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fas fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 우와팬더<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://yoursite.com/2018/10/05/web_11_selenium_exercise/';
+        
+        this.page.identifier = 'web_11_selenium_exercise';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
