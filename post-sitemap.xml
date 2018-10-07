@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://yoursite.com</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/07/python_06_class_intermediate/</loc>
+        <lastmod>2018-10-07T03:12:24.699Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/16/python_05_class_basic/</loc>
+        <lastmod>2018-10-07T01:31:17.865Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/05/web_11_selenium_exercise/</loc>
+        <lastmod>2018-10-05T11:59:33.877Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/04/2018-10-04-TIL/</loc>
+        <lastmod>2018-10-04T13:23:59.548Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/03/2018-10-02-TIL/</loc>
+        <lastmod>2018-10-04T13:23:39.510Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/04/web_10_selenium/</loc>
+        <lastmod>2018-10-04T11:27:40.531Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/02/web_09_selenium/</loc>
+        <lastmod>2018-10-02T15:04:44.848Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/29/web_08_requests/</loc>
+        <lastmod>2018-10-02T11:09:31.209Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/29/web_06_Send_Email/</loc>
+        <lastmod>2018-10-02T07:34:24.413Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/30/2018-09-29-TIL/</loc>
+        <lastmod>2018-09-29T15:07:03.668Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/28/web_05_javascript_intermediate/</loc>
+        <lastmod>2018-09-29T15:04:20.789Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/29/web_07_crawling/</loc>
+        <lastmod>2018-09-29T08:13:18.345Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/28/web_04_javascript_basic/</loc>
+        <lastmod>2018-09-29T06:09:29.305Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/26/web_01_html_01_basic/</loc>
+        <lastmod>2018-09-29T05:53:06.327Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/26/web_02_html_02_layout/</loc>
+        <lastmod>2018-09-29T05:52:54.426Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/27/web_03_CSS_selector/</loc>
+        <lastmod>2018-09-29T05:52:39.630Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/28/2018-09-28-TIL/</loc>
+        <lastmod>2018-09-29T04:51:18.584Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/27/2018-09-27-TIL/</loc>
+        <lastmod>2018-09-27T13:45:24.740Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/25/Database_01/</loc>
+        <lastmod>2018-09-27T12:06:46.504Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/25/Database_02/</loc>
+        <lastmod>2018-09-27T12:06:39.533Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/27/Database_03_mysql_basic/</loc>
+        <lastmod>2018-09-27T12:06:31.381Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/28/Database_04_mysql%20basic%20syntax/</loc>
+        <lastmod>2018-09-27T12:06:24.179Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/30/Database_05_mysql%20intermediate%20syntax/</loc>
+        <lastmod>2018-09-27T12:06:17.271Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/01/python_00/</loc>
+        <lastmod>2018-09-27T12:06:09.459Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/07/python_01/</loc>
+        <lastmod>2018-09-27T12:06:01.929Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/08/python_02_condition,%20loop/</loc>
+        <lastmod>2018-09-27T12:05:53.979Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/10/python_03_function_basic/</loc>
+        <lastmod>2018-09-27T12:05:46.857Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/11/python_04_function_intermediate/</loc>
+        <lastmod>2018-09-27T12:05:40.754Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/12/algorithm_prob_001/</loc>
+        <lastmod>2018-09-27T12:01:46.867Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/10/algorithm_00/</loc>
+        <lastmod>2018-09-27T12:01:36.441Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/13/Blog_jupyter_tip/</loc>
+        <lastmod>2018-09-27T11:36:37.407Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/18/2018-09-18-TIL/</loc>
+        <lastmod>2018-09-18T07:53:17.825Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/06/2018-09-06-TIL/</loc>
+        <lastmod>2018-09-06T11:09:14.556Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/06/2018-09-05-TIL/</loc>
+        <lastmod>2018-09-06T10:58:20.164Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/05/2018-09-04-TIL/</loc>
+        <lastmod>2018-09-04T17:37:19.387Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/04/2018-09-03-TIL/</loc>
+        <lastmod>2018-09-03T15:48:56.735Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/03/2018-09-01-TIL/</loc>
+        <lastmod>2018-09-02T16:27:26.992Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/01/2018-08-31-TIL/</loc>
+        <lastmod>2018-09-01T12:17:04.063Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/31/2018-08-30-TIL/</loc>
+        <lastmod>2018-08-30T15:23:34.817Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/30/2018-08-29-TIL/</loc>
+        <lastmod>2018-08-29T15:25:54.463Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/28/2018-08-28-TIL/</loc>
+        <lastmod>2018-08-28T14:50:02.044Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/23/2018-08-23-TIL/</loc>
+        <lastmod>2018-08-23T14:55:02.910Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/21/2018-08-20-TIL/</loc>
+        <lastmod>2018-08-23T12:07:18.890Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/19/2018-08-19-TIL/</loc>
+        <lastmod>2018-08-21T02:20:41.803Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/18/2018-08-18-TIL/</loc>
+        <lastmod>2018-08-21T02:16:07.378Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/18/2018-08-17-TIL/</loc>
+        <lastmod>2018-08-17T15:34:55.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/17/2018-08-16-TIL/</loc>
+        <lastmod>2018-08-17T15:30:40.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/16/2018-08-15-TIL/</loc>
+        <lastmod>2018-08-15T16:06:43.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/14/2018-08-14-TIL/</loc>
+        <lastmod>2018-08-14T12:10:28.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/14/2018-08-13-TIL/</loc>
+        <lastmod>2018-08-13T15:17:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/12/2018-08-11-TIL/</loc>
+        <lastmod>2018-08-12T15:44:44.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/11/2018-08-10-TIL/</loc>
+        <lastmod>2018-08-10T15:25:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/10/2018-08-09-TIL/</loc>
+        <lastmod>2018-08-10T15:22:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/09/2018-08-08-TIL/</loc>
+        <lastmod>2018-08-08T17:03:24.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/07/2018-08-07-TIL/</loc>
+        <lastmod>2018-08-07T15:16:53.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/05/2018-08-06-TIL/</loc>
+        <lastmod>2018-08-07T15:16:21.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/05/2018-08-04-TIL/</loc>
+        <lastmod>2018-08-06T15:51:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/04/2018-08-03-TIL/</loc>
+        <lastmod>2018-08-03T16:27:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/03/2018-08-02-TIL/</loc>
+        <lastmod>2018-08-02T16:33:47.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/02/2018-08-01-TIL/</loc>
+        <lastmod>2018-08-01T17:05:25.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/31/2018-07-31-TIL/</loc>
+        <lastmod>2018-07-31T17:53:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/31/2018-07-30-TIL/</loc>
+        <lastmod>2018-07-30T15:57:27.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/27/2018-07-26-TIL/</loc>
+        <lastmod>2018-07-30T12:50:09.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/29/2018-07-28-TIL/</loc>
+        <lastmod>2018-07-28T15:25:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/28/2018-07-27-TIL/</loc>
+        <lastmod>2018-07-28T15:12:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/25/2018-07-25-TIL/</loc>
+        <lastmod>2018-07-25T14:20:59.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/24/2018-07-24-TIL/</loc>
+        <lastmod>2018-07-25T12:12:34.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/24/2018-07-23-TIL/</loc>
+        <lastmod>2018-07-23T17:17:54.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/23/2018-07-22-TIL/</loc>
+        <lastmod>2018-07-22T16:31:24.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/21/2018-07-21-TIL/</loc>
+        <lastmod>2018-07-21T15:00:43.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/21/2018-07-20-TIL/</loc>
+        <lastmod>2018-07-20T16:27:33.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/19/2018-07-19-TIL/</loc>
+        <lastmod>2018-07-19T15:50:01.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/19/2018-07-18-TIL/</loc>
+        <lastmod>2018-07-18T16:00:54.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/17/2018-07-16-TIL/</loc>
+        <lastmod>2018-07-17T15:12:27.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/18/2018-07-17-TIL/</loc>
+        <lastmod>2018-07-17T15:12:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/16/2018-07-15-TIL/</loc>
+        <lastmod>2018-07-16T15:41:57.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/14/2018-07-14-TIL/</loc>
+        <lastmod>2018-07-15T02:23:39.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/13/2018-07-13-TIL/</loc>
+        <lastmod>2018-07-14T04:11:04.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/12/2018-07-12-TIL/</loc>
+        <lastmod>2018-07-12T14:15:47.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/11/2018-07-11-TIL/</loc>
+        <lastmod>2018-07-11T16:38:16.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/10/2018-07-10-TIL/</loc>
+        <lastmod>2018-07-11T05:12:49.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/09/2018-07-09-TIL/</loc>
+        <lastmod>2018-07-10T07:00:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/07/2018-07-07-TIL/</loc>
+        <lastmod>2018-07-09T13:03:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/06/2018-07-06-TIL/</loc>
+        <lastmod>2018-07-07T07:34:59.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/05/2018-07-05-TIL/</loc>
+        <lastmod>2018-07-07T06:36:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/04/2018-07-04-TIL/</loc>
+        <lastmod>2018-07-05T03:13:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/03/2018-07-03-TIL/</loc>
+        <lastmod>2018-07-05T03:11:15.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/03/2018-07-02-TIL/</loc>
+        <lastmod>2018-07-03T02:33:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/01/2018-07-01-TIL/</loc>
+        <lastmod>2018-07-03T02:28:40.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/06/30/2018-06-30-TIL/</loc>
+        <lastmod>2018-06-30T15:59:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/06/29/2018-06-29-TIL/</loc>
+        <lastmod>2018-06-29T17:31:36.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/06/28/2018-06-28-TIL/</loc>
+        <lastmod>2018-06-28T14:29:36.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/06/28/2018-06-27-TIL/</loc>
+        <lastmod>2018-06-27T16:56:29.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+</urlset>
+<!-- XML Sitemap generated by Hexo SEO Friendly Sitemap Generator -->

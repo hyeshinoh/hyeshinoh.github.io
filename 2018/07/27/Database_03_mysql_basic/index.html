@@ -5,18 +5,18 @@
     
     <title>MySQL Basic - Data Type &amp; Constraint | 우와팬더의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="MySQL 문법을 익히기 전에 데이터베이스에서 테이블을 생성할 때 알아야하는 데이터 타입과 제약조건에 대해 알아보자 1. Data Typereference 1) Numbericreference (1) 정수 타입(integer types)   Type Storage  (Bytes) Minimum Value Signed Minimum Value Unsigned">
+    <meta name="description" content="MySQL 문법을 익히기 전에 데이터베이스에서 테이블을 생성할 때 알아야하는 데이터 타입과 제약조건에 대해 알아보자 1. Data Typereference 1) Numbericreference (1) 정수 타입(integer types)    Type Storage  (Bytes) Minimum Value Signed Minimum Value Unsigne">
 <meta name="keywords" content="Database,MySQL,SQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL Basic - Data Type &amp; Constraint">
 <meta property="og:url" content="http://yoursite.com/2018/07/27/Database_03_mysql_basic/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="MySQL 문법을 익히기 전에 데이터베이스에서 테이블을 생성할 때 알아야하는 데이터 타입과 제약조건에 대해 알아보자 1. Data Typereference 1) Numbericreference (1) 정수 타입(integer types)   Type Storage  (Bytes) Minimum Value Signed Minimum Value Unsigned">
+<meta property="og:description" content="MySQL 문법을 익히기 전에 데이터베이스에서 테이블을 생성할 때 알아야하는 데이터 타입과 제약조건에 대해 알아보자 1. Data Typereference 1) Numbericreference (1) 정수 타입(integer types)    Type Storage  (Bytes) Minimum Value Signed Minimum Value Unsigne">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-09-27T12:06:31.381Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL Basic - Data Type &amp; Constraint">
-<meta name="twitter:description" content="MySQL 문법을 익히기 전에 데이터베이스에서 테이블을 생성할 때 알아야하는 데이터 타입과 제약조건에 대해 알아보자 1. Data Typereference 1) Numbericreference (1) 정수 타입(integer types)   Type Storage  (Bytes) Minimum Value Signed Minimum Value Unsigned">
+<meta name="twitter:description" content="MySQL 문법을 익히기 전에 데이터베이스에서 테이블을 생성할 때 알아야하는 데이터 타입과 제약조건에 대해 알아보자 1. Data Typereference 1) Numbericreference (1) 정수 타입(integer types)    Type Storage  (Bytes) Minimum Value Signed Minimum Value Unsigne">
     
 
     
@@ -272,7 +272,8 @@ ga('send', 'pageview');
             <p>MySQL 문법을 익히기 전에 데이터베이스에서 테이블을 생성할 때 알아야하는 데이터 타입과 제약조건에 대해 알아보자</p>
 <h2 id="1-Data-Type"><a href="#1-Data-Type" class="headerlink" title="1. Data Type"></a>1. Data Type</h2><p><a href="https://dev.mysql.com/doc/refman/5.7/en/data-types.html" target="_blank" rel="noopener">reference</a></p>
 <h3 id="1-Numberic"><a href="#1-Numberic" class="headerlink" title="1) Numberic"></a>1) Numberic</h3><p><a href="https://dev.mysql.com/doc/refman/5.7/en/numeric-types.html" target="_blank" rel="noopener">reference</a></p>
-<h4 id="1-정수-타입-integer-types"><a href="#1-정수-타입-integer-types" class="headerlink" title="(1) 정수 타입(integer types)"></a>(1) 정수 타입(integer types)</h4><table>
+<h4 id="1-정수-타입-integer-types"><a href="#1-정수-타입-integer-types" class="headerlink" title="(1) 정수 타입(integer types)"></a>(1) 정수 타입(integer types)</h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th><center>Type</center></th>
@@ -326,6 +327,7 @@ ga('send', 'pageview');
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="2-고정-소수점-타입-fixed-point-types"><a href="#2-고정-소수점-타입-fixed-point-types" class="headerlink" title="(2) 고정 소수점 타입(fixed-point types)"></a>(2) 고정 소수점 타입(fixed-point types)</h4><ul>
 <li><p>DECIMAL(M, D)</p>
 <ul>
@@ -382,6 +384,7 @@ ga('send', 'pageview');
 <ul>
 <li>CHAR &amp; VARCHAR의 저장형식과 저장용량 비교</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -423,10 +426,12 @@ ga('send', 'pageview');
 </tr>
 </tbody>
 </table>
+</div>
 <h3 id="2-TEXT"><a href="#2-TEXT" class="headerlink" title="2) TEXT"></a>2) TEXT</h3><p>CHAR와 VARCHAR는 대체로 크기가 작은 문자열을 저장할때 사용<br>크기가 큰 문자열을 저장할 때는 TEXT를 사용</p>
 <ul>
 <li>TEXT의 타입에 따른 데이터 크기</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -458,6 +463,7 @@ ga('send', 'pageview');
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="2-Constraint"><a href="#2-Constraint" class="headerlink" title="2. Constraint"></a>2. Constraint</h2><p>데이터 베이스의 테이블을 생성할때 각 컬럼은 각각의 제약조건을 가짐</p>
 <h3 id="1-NOT-NULL"><a href="#1-NOT-NULL" class="headerlink" title="1) NOT NULL"></a>1) NOT NULL</h3><p>NOT NULL 제약조건이 있는 컬럼에 NULL 값(비어있는 값)을 저장할수 없음</p>
 <h3 id="2-UNIQUE"><a href="#2-UNIQUE" class="headerlink" title="2) UNIQUE"></a>2) UNIQUE</h3><p>UNIQUE 제약조건이 있는 컬럼에 같은 값을 저장할 수 없음</p>
@@ -480,7 +486,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/27/Database_03_mysql_basic/" data-id="cjmvyk8v8005odl1hfreo6lfh" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/27/Database_03_mysql_basic/" data-id="cjmybg0kr005t3w1hxg4iae8g" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

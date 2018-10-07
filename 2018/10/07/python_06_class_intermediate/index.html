@@ -6,7 +6,7 @@
     <title>python 06. Python Class - Intermediate | 우와팬더의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="jupyter notebook으로 보기 다룰 내용 intermediate getter &amp;amp; setter private is a / has a magic method    1. Getter &amp;amp; Setter 객체의 내부 변수에 접근할때 특정 로직을 거쳐서(특정 함수를 이용, 특정 코드를 거쳐서) 접근할수 있도록 하는 방법 property와 deco">
-<meta name="keywords" content="python,programming">
+<meta name="keywords" content="programming,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 06. Python Class - Intermediate">
 <meta property="og:url" content="http://yoursite.com/2018/10/07/python_06_class_intermediate/index.html">
@@ -289,33 +289,33 @@ ga('send', 'pageview');
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1</span><br></pre></td></tr></table></figure>
 <pre><code>disp_name1
 
-&apos;KSM&apos;
+&#39;KSM&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.hidden_name1</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;ksm&apos;
+<pre><code>&#39;ksm&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1 = <span class="string">"ppp"</span>         <span class="comment"># setter1을 통해 p에 이름 "ppp"를 저장함</span></span><br></pre></td></tr></table></figure>
 <pre><code>set_name1
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.hidden_name1          <span class="comment"># setter1을 통해 Mr. 를 붙여서 저장되었음</span></span><br></pre></td></tr></table></figure>
-<pre><code>&apos;Mr. ppp&apos;
+<pre><code>&#39;Mr. ppp&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.disp_name1()          <span class="comment"># getter1을 거쳐 대문자로 표시됨</span></span><br></pre></td></tr></table></figure>
 <pre><code>disp_name1
 
-&apos;MR. PPP&apos;
+&#39;MR. PPP&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1</span><br></pre></td></tr></table></figure>
 <pre><code>disp_name1
 
-&apos;MR. PPP&apos;
+&#39;MR. PPP&#39;
 </code></pre><h3 id="1-2-decorator-이용"><a href="#1-2-decorator-이용" class="headerlink" title="1.2 decorator 이용"></a>1.2 decorator 이용</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person2</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, input_name)</span>:</span></span><br><span class="line">        self.hidden_name = input_name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span>                      <span class="comment"># getter function</span></span><br><span class="line">        print(<span class="string">"inside the getter"</span>)</span><br><span class="line">        <span class="keyword">return</span> self.hidden_name.upper()</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @name.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self, input_name)</span>:</span>          <span class="comment"># setter function</span></span><br><span class="line">        print(<span class="string">"inside the setter"</span>)</span><br><span class="line">        self.hidden_name = <span class="string">"Mr. "</span> + input_name</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2 = Person2(<span class="string">"park"</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.hidden_name</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;park&apos;
+<pre><code>&#39;park&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.name = <span class="string">"kim"</span></span><br></pre></td></tr></table></figure>
 <pre><code>inside the setter
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.hidden_name</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;Mr. kim&apos;
+<pre><code>&#39;Mr. kim&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.name</span><br></pre></td></tr></table></figure>
 <pre><code>inside the getter
 
-&apos;MR. KIM&apos;
+&#39;MR. KIM&#39;
 </code></pre><h2 id="2-Private"><a href="#2-Private" class="headerlink" title="2. Private"></a>2. Private</h2><ul>
 <li>위 코드처럼 생성자 함수에 변수를 선언하면 객체를 만들었을 때 getter를 통하지 않고 접근이 가능</li>
 <li>python에서는 mangling이라는 방법을 사용하여 class 내부 변수에 다이렉트로 접근하지 못하게 하는 방법으로 private을 구현<ul>
@@ -336,18 +336,18 @@ AttributeError                            Traceback (most recent call last)
 ----&gt; 1 p3.__hidden_name
 
 
-AttributeError: &apos;Person3&apos; object has no attribute &apos;__hidden_name&apos;
+AttributeError: &#39;Person3&#39; object has no attribute &#39;__hidden_name&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># getter로만 접근 가능</span></span><br><span class="line">p3.name</span><br></pre></td></tr></table></figure>
 <pre><code>inside the getter
 
-&apos;LEE&apos;
+&#39;LEE&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3.mod()</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3.name</span><br></pre></td></tr></table></figure>
 <pre><code>inside the getter
 
-&apos;PARK&apos;
+&#39;PARK&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3._Person3__hidden_name    <span class="comment"># 접근은 가능</span></span><br></pre></td></tr></table></figure>
-<pre><code>&apos;Park&apos;
+<pre><code>&#39;Park&#39;
 </code></pre><h3 id="Private-function"><a href="#Private-function" class="headerlink" title="Private function"></a>Private function</h3><ul>
 <li>class 내에서만 사용되는 함수의 이름 중복이 우려될 때 사용</li>
 <li>mangling 사용</li>
@@ -422,17 +422,17 @@ True
 <li>리스트에 있는 값 여러개 삭제하는 코드</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"a"</span>, <span class="string">"c"</span>, <span class="string">"a"</span>]</span><br><span class="line">ls.remove(<span class="string">"a"</span>)</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;b&apos;, &apos;a&apos;, &apos;c&apos;, &apos;a&apos;]
+<pre><code>[&#39;b&#39;, &#39;a&#39;, &#39;c&#39;, &#39;a&#39;]
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"a"</span>, <span class="string">"c"</span>, <span class="string">"a"</span>]</span><br><span class="line">s = <span class="string">"a"</span></span><br><span class="line">result = [data <span class="keyword">for</span> data <span class="keyword">in</span> ls <span class="keyword">if</span> data != s]</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;b&apos;, &apos;c&apos;]
+<pre><code>[&#39;b&#39;, &#39;c&#39;]
 </code></pre><p><code>__ne__</code>를 이용하여 리스트에 있는 값 여러개 삭제하는 코드</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"Python"</span></span><br><span class="line"><span class="comment"># s.__ne__??</span></span><br><span class="line"></span><br><span class="line">ls = [<span class="string">"Hello"</span>,<span class="string">"Python"</span>,<span class="string">"Hello"</span>,<span class="string">"Python"</span>,<span class="string">"Hello"</span>,<span class="string">"Python"</span>]</span><br><span class="line">print(list(filter(s.__ne__, ls)))</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;Hello&apos;, &apos;Hello&apos;, &apos;Hello&apos;]
+<pre><code>[&#39;Hello&#39;, &#39;Hello&#39;, &#39;Hello&#39;]
 </code></pre><h3 id="4-3-add"><a href="#4-3-add" class="headerlink" title="4.3 __add__"></a>4.3 <code>__add__</code></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int.__add__??</span><br></pre></td></tr></table></figure>
 <pre><code>Signature:      int.__add__(self, value, /)
 Call signature: int.__add__(*args, **kwargs)
 Type:           wrapper_descriptor
-String form:    &lt;slot wrapper &apos;__add__&apos; of &apos;int&apos; objects&gt;
+String form:    &lt;slot wrapper &#39;__add__&#39; of &#39;int&#39; objects&gt;
 Namespace:      Python builtin
 Docstring:      Return self+value.
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">2</span>).__add__(<span class="number">3</span>), <span class="number">2</span> + <span class="number">3</span></span><br></pre></td></tr></table></figure>
@@ -481,7 +481,7 @@ Docstring:      Return self+value.
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/10/07/python_06_class_intermediate/" data-id="cjmyal56d0000z71hz9smdkjk" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/10/07/python_06_class_intermediate/" data-id="cjmybg0mk00ad3w1hax3mswgn" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

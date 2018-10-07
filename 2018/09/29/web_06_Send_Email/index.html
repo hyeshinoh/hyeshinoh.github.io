@@ -282,14 +282,14 @@ ga('send', 'pageview');
 <h1 id="1-Preparation"><a href="#1-Preparation" class="headerlink" title="1. Preparation"></a>1. Preparation</h1><p>파이썬으로 이메일을 보내기 위한 준비를 해준다.</p>
 <h2 id="1-1-Importing-necessary-libraries"><a href="#1-1-Importing-necessary-libraries" class="headerlink" title="1.1 Importing necessary libraries"></a>1.1 Importing necessary libraries</h2><p>필요한 패키지들을 import해준다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> smtplib, os, pickle  <span class="comment"># smtplib: 메일 전송을 위한 패키지</span></span><br><span class="line"><span class="keyword">from</span> email <span class="keyword">import</span> encoders  <span class="comment"># 파일전송을 할 때 이미지나 문서 동영상 등의 파일을 문자열로 변환할 때 사용할 패키지</span></span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText   <span class="comment"># 본문내용을 전송할 때 사용되는 모듈</span></span><br><span class="line"><span class="keyword">from</span> email.mime.multipart <span class="keyword">import</span> MIMEMultipart   <span class="comment"># 메시지를 보낼 때 메시지에 대한 모듈</span></span><br><span class="line"><span class="keyword">from</span> email.mime.base <span class="keyword">import</span> MIMEBase     <span class="comment"># 파일을 전송할 때 사용되는 모듈</span></span><br></pre></td></tr></table></figure>
-<p>메일을 보낼 주소들을 미리 저장해준다.<br>테스트를 위해 여러가지 주소로 보내고 싶은데, 나는 계정을 여러 개 갖고 있지 않으므로,<br>내 이메일 주소인 <a href="mailto:hyeshinoh@gmail.com" target="_blank" rel="noopener">hyeshinoh@gmail.com</a>에서 hyeshinoh 뒤에 ‘+’와 아무 글자를 넣어주면 마치 여러 개의 이메일 주소인 것처럼 사용할 수 있다. 이렇게 쓰면 메일은 모두 <a href="mailto:hyeshinoh@gmail.com" target="_blank" rel="noopener">hyeshinoh@gmail.com</a>로 전송된다.</p>
+<p>메일을 보낼 주소들을 미리 저장해준다.<br>테스트를 위해 여러가지 주소로 보내고 싶은데, 나는 계정을 여러 개 갖고 있지 않으므로,<br>내 이메일 주소인 hyeshinoh@gmail.com에서 hyeshinoh 뒤에 ‘+’와 아무 글자를 넣어주면 마치 여러 개의 이메일 주소인 것처럼 사용할 수 있다. 이렇게 쓰면 메일은 모두 hyeshinoh@gmail.com로 전송된다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">toAddr = [<span class="string">"panda706@naver.com"</span>, <span class="string">"hyeshinoh+11@gmail.com"</span>, <span class="string">"hyeshinoh+h@gmail.com"</span>]</span><br></pre></td></tr></table></figure>
 <h2 id="1-2-Setting-login-information-email-amp-password"><a href="#1-2-Setting-login-information-email-amp-password" class="headerlink" title="1.2 Setting login information: email &amp; password"></a>1.2 Setting login information: email &amp; password</h2><p>password는 직접 노출하면 유출의 위험이 있으므로 아래와 같이 pickle 파일로 저장해서 이용하는 것이 좋다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pw = "본인의 pw"    </span></span><br><span class="line"><span class="comment"># pickle.dump(pw, open("pw.pickle", 'wb'))</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">email = <span class="string">"hyeshinoh@gmail.com"</span></span><br><span class="line">pw = pickle.load(open(<span class="string">'pw.pickle'</span>, <span class="string">'rb'</span>))</span><br></pre></td></tr></table></figure>
 <h1 id="2-Send-text"><a href="#2-Send-text" class="headerlink" title="2. Send text"></a>2. Send text</h1><h2 id="2-1-Access-smtp-server"><a href="#2-1-Access-smtp-server" class="headerlink" title="2.1 Access smtp server"></a>2.1 Access smtp server</h2><p>smtp object를 생성한다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">smtp = smtplib.SMTP(<span class="string">'smtp.gmail.com'</span>, <span class="number">587</span>)   <span class="comment"># 587: 서버의 포트번호</span></span><br><span class="line">smtp.ehlo()</span><br><span class="line">smtp.starttls()   <span class="comment"># tls방식으로 접속, 그 포트번호가 587</span></span><br><span class="line"><span class="comment"># smtp.login('hyeshinoh@gmail.com', pickle.load( open('../pw.pickle', 'rb') ))</span></span><br><span class="line">smtp.login(<span class="string">'hyeshinoh@gmail.com'</span>, pw)</span><br></pre></td></tr></table></figure>
-<pre><code>(235, b&apos;2.7.0 Accepted&apos;)
+<pre><code>(235, b&#39;2.7.0 Accepted&#39;)
 </code></pre><h2 id="2-2-Make-message"><a href="#2-2-Make-message" class="headerlink" title="2.2 Make message"></a>2.2 Make message</h2><p>msg object를 생성하고 제목을 넣어준다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg = MIMEMultipart()    <span class="comment">#msg obj.</span></span><br><span class="line">msg[<span class="string">'Subject'</span>] = <span class="string">'hyeshin의 SMTP Send Text 테스트'</span></span><br></pre></td></tr></table></figure>
 <p>msg object에 본문(text msg)을 추가해준다.</p>
@@ -314,9 +314,9 @@ hyeshinoh+h@gmail.com
 </code></pre><h1 id="3-Send-File"><a href="#3-Send-File" class="headerlink" title="3. Send File"></a>3. Send File</h1><p>이제 파일을 첨부해서 이메일을 보내보자</p>
 <h2 id="3-1-Access-smtp-server"><a href="#3-1-Access-smtp-server" class="headerlink" title="3.1 Access smtp server"></a>3.1 Access smtp server</h2><p>smtp object를 다시 생성해보자.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># smtp close</span></span><br><span class="line">smtp.quit()</span><br></pre></td></tr></table></figure>
-<pre><code>(221, b&apos;2.0.0 closing connection o68-v6sm26409410pfi.180 - gsmtp&apos;)
+<pre><code>(221, b&#39;2.0.0 closing connection o68-v6sm26409410pfi.180 - gsmtp&#39;)
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Access smtp server</span></span><br><span class="line">smtp = smtplib.SMTP(<span class="string">'smtp.gmail.com'</span>, <span class="number">587</span>)   <span class="comment"># 587: 서버의 포트번호</span></span><br><span class="line">smtp.ehlo()</span><br><span class="line">smtp.starttls()   </span><br><span class="line">smtp.login(<span class="string">'hyeshinoh@gmail.com'</span>, pw)</span><br></pre></td></tr></table></figure>
-<pre><code>(235, b&apos;2.7.0 Accepted&apos;)
+<pre><code>(235, b&#39;2.7.0 Accepted&#39;)
 </code></pre><h2 id="3-2-Make-message"><a href="#3-2-Make-message" class="headerlink" title="3.2 Make message"></a>3.2 Make message</h2><p>msg object를 생성하고 제목을 넣어준다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg = MIMEMultipart()</span><br><span class="line">msg[<span class="string">'Subject'</span>] = <span class="string">'SMTP send file 테스트'</span></span><br></pre></td></tr></table></figure>
 <p>msg object에 본문(text msg)을 추가해준다.</p>
@@ -334,7 +334,7 @@ hyeshinoh+h@gmail.com
 <li>gmail<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_gmail_002.png?raw=true" alt=""></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># smtp close</span></span><br><span class="line">smtp.quit()</span><br></pre></td></tr></table></figure>
-<pre><code>(221, b&apos;2.0.0 closing connection d22-v6sm9509327pfk.69 - gsmtp&apos;)
+<pre><code>(221, b&#39;2.0.0 closing connection d22-v6sm9509327pfk.69 - gsmtp&#39;)
 </code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
 <li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
 </ul>
@@ -348,7 +348,7 @@ hyeshinoh+h@gmail.com
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/29/web_06_Send_Email/" data-id="cjmvyk8vl006kdl1hw7mh2ndc" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/29/web_06_Send_Email/" data-id="cjmybg0l1006e3w1hcdhhnuta" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

@@ -288,6 +288,7 @@ ga('send', 'pageview');
 <p></p><h4>4단계 제목</h4><p></p>
 <p></p><h5>5단계 제목</h5><p></p>
 <h6>6단계 제목</h6>
+
 </blockquote>
 <h3 id="2-2-p"><a href="#2-2-p" class="headerlink" title="2.2 p"></a>2.2 p</h3><ul>
 <li>paragraph의 약자로 문단을 분리하기 위한 태그</li>
@@ -296,7 +297,10 @@ ga('send', 'pageview');
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p_tag_1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p_tag_2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p_tag_3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>적용시 아래와 같이 나타납니다.</p>
 <blockquote>
-<p>p_tag_1</p><br><p>p_tag_2</p><br><p>p_tag_3</p>
+<p>p_tag_1</p>
+<p>p_tag_2</p>
+<p>p_tag_3</p>
+
 </blockquote>
 <h3 id="2-3-span"><a href="#2-3-span" class="headerlink" title="2.3 span"></a>2.3 span</h3><ul>
 <li>영역을 설정하는 태그로 div 태그처럼 주로 CSS와 함께 쓰임</li>
@@ -315,11 +319,16 @@ ga('send', 'pageview');
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    python</span><br><span class="line">    data</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line">    python</span><br><span class="line">    data</span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>적용시 아래와 같이 나타납니다. </p>
 <blockquote>
-<p></p><p><br>   python<br>   data<br></p><p></p>
+<p></p><p>
+   python
+   data
+</p><p></p>
 <pre>
    python
    data
 </pre>
+
+
 </blockquote>
 <h3 id="2-5-글씨체"><a href="#2-5-글씨체" class="headerlink" title="2.5 글씨체"></a>2.5 글씨체</h3><ul>
 <li>b, strong(굵은글씨)</li>
@@ -353,7 +362,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/26/web_01_html_01_basic/" data-id="cjmvyk8vi006fdl1h3c6s632z" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/26/web_01_html_01_basic/" data-id="cjmybg0kz006a3w1hetyxjrbv" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

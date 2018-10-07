@@ -316,29 +316,29 @@ ga('send', 'pageview');
 <li>윈도우 객체를 저장하면 브라우저에 여러 개의 탭이 있을 때 저장되어 있는 윈도우 객체의 탭으로 돌아올 수 있음</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">main_window = driver.current_window_handle</span><br><span class="line">main_window</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;CDwindow-1327F53EB33E1BF8CD1ECD3C85E4B347&apos;
+<pre><code>&#39;CDwindow-1327F53EB33E1BF8CD1ECD3C85E4B347&#39;
 </code></pre><h3 id="3-6-새로운-윈도우-탭-열기"><a href="#3-6-새로운-윈도우-탭-열기" class="headerlink" title="3.6 새로운 윈도우 탭 열기"></a>3.6 새로운 윈도우 탭 열기</h3><p>javascript 코드로 새로운 탭을 열 수 있음</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">script = <span class="string">"window.open('http://google.com');"</span></span><br><span class="line">driver.execute_script(script)</span><br></pre></td></tr></table></figure>
 <p>새로운 탭을 열었지만 아래와 같이 current_window(포커스)가 자동으로 바뀌지는 않음</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.current_window_handle</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;CDwindow-1327F53EB33E1BF8CD1ECD3C85E4B347&apos;
+<pre><code>&#39;CDwindow-1327F53EB33E1BF8CD1ECD3C85E4B347&#39;
 </code></pre><h3 id="3-7-현재-열려있는-윈도우-객체-확인"><a href="#3-7-현재-열려있는-윈도우-객체-확인" class="headerlink" title="3.7 현재 열려있는 윈도우 객체 확인"></a>3.7 현재 열려있는 윈도우 객체 확인</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">windows = driver.window_handles</span><br><span class="line">windows</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;CDwindow-1327F53EB33E1BF8CD1ECD3C85E4B347&apos;,
- &apos;CDwindow-D8D228E9A26224583A54A676F95612EA&apos;]
+<pre><code>[&#39;CDwindow-1327F53EB33E1BF8CD1ECD3C85E4B347&#39;,
+ &#39;CDwindow-D8D228E9A26224583A54A676F95612EA&#39;]
 </code></pre><h3 id="3-8-윈도우-포커스-변경"><a href="#3-8-윈도우-포커스-변경" class="headerlink" title="3.8 윈도우 포커스 변경"></a>3.8 윈도우 포커스 변경</h3><ul>
 <li>current window가 자동으로 바뀌지 않았기 때문에 바꿔주기</li>
 <li>이 방법으로 탭을 이동하면서 작업할 수 있음</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.switch_to_window(windows[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.current_window_handle</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;CDwindow-D8D228E9A26224583A54A676F95612EA&apos;
+<pre><code>&#39;CDwindow-D8D228E9A26224583A54A676F95612EA&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.switch_to_window(main_window)</span><br></pre></td></tr></table></figure>
 <h3 id="3-9-페이지-새로고침"><a href="#3-9-페이지-새로고침" class="headerlink" title="3.9 페이지 새로고침"></a>3.9 페이지 새로고침</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">script = <span class="string">"location.reload();"</span></span><br><span class="line">driver.execute_script(script)</span><br></pre></td></tr></table></figure>
 <h3 id="3-10-alert-messege-처리"><a href="#3-10-alert-messege-처리" class="headerlink" title="3.10 alert messege 처리"></a>3.10 alert messege 처리</h3><p>alert messege 만들기</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">script = <span class="string">"alert('selenium test');"</span></span><br><span class="line">driver.execute_script(script)</span><br></pre></td></tr></table></figure>
 <p>switch_to_alert 함수로 alert 변수에 alert 객체를 저장할 수 있음<br>alert 객의 text 값을 확인해보면 alert의 메세지를 문자열로 확인 가능</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert = driver.switch_to_alert()</span><br><span class="line">alert.text</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;selenium test&apos;
+<pre><code>&#39;selenium test&#39;
 </code></pre><p>확인 버튼 누르기</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert.accept()</span><br></pre></td></tr></table></figure>
 <h3 id="3-11-confirm-처리"><a href="#3-11-confirm-처리" class="headerlink" title="3.11 confirm 처리"></a>3.11 confirm 처리</h3><ul>
@@ -346,7 +346,7 @@ ga('send', 'pageview');
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">script = <span class="string">"confirm('data')"</span></span><br><span class="line">driver.execute_script(script)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">confirm = driver.switch_to_alert()</span><br><span class="line">confirm.text</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;data&apos;
+<pre><code>&#39;data&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># confirm.accept()   # 확인 버튼 클릭</span></span><br><span class="line">confirm.dismiss()    <span class="comment"># 취소 버튼 클릭</span></span><br></pre></td></tr></table></figure>
 <h3 id="3-12-input창에-문자열-입력하기"><a href="#3-12-input창에-문자열-입력하기" class="headerlink" title="3.12 input창에 문자열 입력하기"></a>3.12 input창에 문자열 입력하기</h3><ul>
 <li>send_keys()를 이용하여 웹페이지의 input 태그에 문자열을 입력할 수 있음</li>
@@ -406,7 +406,7 @@ Dog 0
 <pre><code>4
 6
 
-[&apos;In the dog house&apos;, &quot;&apos; 인기를 잃다 , 면목을 잃다&quot;]
+[&#39;In the dog house&#39;, &quot;&#39; 인기를 잃다 , 면목을 잃다&quot;]
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
 <h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
 <li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
@@ -421,7 +421,7 @@ Dog 0
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/10/02/web_09_selenium/" data-id="cjmvyk8vn006pdl1h3uyxwt6t" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/10/02/web_09_selenium/" data-id="cjmybg0l5006o3w1h5wfe5u28" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

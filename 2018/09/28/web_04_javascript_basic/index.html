@@ -426,25 +426,25 @@ hello html
 <li><code>push()</code>: 맨 뒤에 추가  </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.push(<span class="string">'f'</span>); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr.unshift(<span class="string">'z'</span>); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
-<pre><code>[ &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos; ]
-[ &apos;z&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos; ]
+<pre><code>[ &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39; ]
+[ &#39;z&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39; ]
 </code></pre><h2 id="5-5-제거"><a href="#5-5-제거" class="headerlink" title="5.5 제거"></a>5.5 제거</h2><ul>
 <li><code>shift()</code>: 첫번째 배열 제거</li>
 <li><code>pop()</code>: 마지막 배열 제거   </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.shift(); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr.pop();</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
-<pre><code>[ &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos; ]
-[ &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos; ]
+<pre><code>[ &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39; ]
+[ &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39; ]
 </code></pre><h2 id="5-6-정렬"><a href="#5-6-정렬" class="headerlink" title="5.6 정렬"></a>5.6 정렬</h2><ul>
 <li><code>reverse()</code>: 역순으로 정렬</li>
 <li><code>sort()</code>: 오름차순으로 정렬  </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.reverse(); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr.sort(); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
-<pre><code>[ &apos;e&apos;, &apos;d&apos;, &apos;c&apos;, &apos;b&apos;, &apos;a&apos; ]
-[ &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos; ]
+<pre><code>[ &#39;e&#39;, &#39;d&#39;, &#39;c&#39;, &#39;b&#39;, &#39;a&#39; ]
+[ &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39; ]
 </code></pre><h2 id="5-7-배열-자르기"><a href="#5-7-배열-자르기" class="headerlink" title="5.7 배열 자르기"></a>5.7 배열 자르기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr2 = arr.splice(<span class="number">2</span>,<span class="number">3</span>); <span class="comment">// 2번에서 3개 자름</span></span><br><span class="line"><span class="built_in">console</span>.log(arr, arr.length);</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> arr[<span class="number">2</span>]; <span class="comment">// 2번이 삭제 하지만 데이터만 삭제, 공간은 남아있음</span></span><br><span class="line"><span class="built_in">console</span>.log(arr, arr.length);</span><br></pre></td></tr></table></figure>
-<pre><code>[ &apos;a&apos;, &apos;b&apos; ] 2
-[ &apos;a&apos;, &apos;b&apos; ] 2
+<pre><code>[ &#39;a&#39;, &#39;b&#39; ] 2
+[ &#39;a&#39;, &#39;b&#39; ] 2
 </code></pre><h2 id="5-8-배열-데이터-하나씩-사용하기"><a href="#5-8-배열-데이터-하나씩-사용하기" class="headerlink" title="5.8 배열 데이터 하나씩 사용하기"></a>5.8 배열 데이터 하나씩 사용하기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line"><span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>a
 b
@@ -461,7 +461,7 @@ b
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/28/web_04_javascript_basic/" data-id="cjmvyk8xb00addl1hunixgte3" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/28/web_04_javascript_basic/" data-id="cjmybg0ml00ag3w1ht4809m61" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

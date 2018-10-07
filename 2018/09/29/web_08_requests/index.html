@@ -289,12 +289,13 @@ ga('send', 'pageview');
 <li>page_size와 page를 parameter로 받아 url을 만드는 함수</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_url</span><span class="params">(page_size=<span class="number">10</span>, page=<span class="number">1</span>)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"http://m.stock.naver.com/api/json/sise/siseListJson.nhn?\</span></span><br><span class="line"><span class="string">menu=market_sum&amp;sosok=0&amp;pageSize="</span>+str(page_size)+<span class="string">"&amp;page="</span>+str(page)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">make_url()</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;http://m.stock.naver.com/api/json/sise/siseListJson.nhn?menu=market_sum&amp;sosok=0&amp;pageSize=10&amp;page=1&apos;
+<pre><code>&#39;http://m.stock.naver.com/api/json/sise/siseListJson.nhn?menu=market_sum&amp;sosok=0&amp;pageSize=10&amp;page=1&#39;
 </code></pre><h3 id="1-2-get-data-함수"><a href="#1-2-get-data-함수" class="headerlink" title="1.2 get_data 함수"></a>1.2 get_data 함수</h3><ul>
 <li>url을 parameter로 받아 pandas dataframe으로 만들어주는 함수</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_data</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    URL을 받으면 json으로 데이터를 가져와서 pandas dataframe 로 만들어주는 함수</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    response = requests.get(url)   <span class="comment"># response라는 obj. 안에 결과 데이터를 받아옴</span></span><br><span class="line">    json_info = response.json()    <span class="comment"># json함수: 문자열 데이터를 json 형태로 parsing</span></span><br><span class="line">    companies = json_info[<span class="string">"result"</span>][<span class="string">"itemList"</span>]</span><br><span class="line">    df = pd.DataFrame(columns = [<span class="string">"종목"</span>,<span class="string">"시세"</span>,<span class="string">"전일비"</span>,<span class="string">"등락율"</span>,<span class="string">"시가총액"</span>,<span class="string">"거래량"</span>])</span><br><span class="line">    <span class="keyword">for</span> company <span class="keyword">in</span> companies:</span><br><span class="line">        df.loc[len(df)] = &#123;</span><br><span class="line">            <span class="string">"종목"</span>:company[<span class="string">"nm"</span>],</span><br><span class="line">            <span class="string">"시세"</span>:company[<span class="string">"nv"</span>],</span><br><span class="line">            <span class="string">"전일비"</span>:company[<span class="string">"cv"</span>],</span><br><span class="line">            <span class="string">"등락율"</span>:company[<span class="string">"cr"</span>],</span><br><span class="line">            <span class="string">"시가총액"</span>:company[<span class="string">"mks"</span>],</span><br><span class="line">            <span class="string">"거래량"</span>:company[<span class="string">"aq"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = make_url(<span class="number">100</span>, <span class="number">1</span>)</span><br><span class="line">df = get_data(url)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -355,11 +356,13 @@ ga('send', 'pageview');
 </tr>
 </tbody>
 </table>
+</div>
 <h3 id="1-3-json-normalize"><a href="#1-3-json-normalize" class="headerlink" title="1.3 json_normalize"></a>1.3 json_normalize</h3><ul>
 <li>더 편하게 json format 데이터를 pandas dataframe에 넣어주는 방법</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pandas.io.json <span class="keyword">import</span> json_normalize</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_data</span><span class="params">(url)</span>:</span></span><br><span class="line">    </span><br><span class="line">    response = requests.get(url)</span><br><span class="line">    json_info = response.json()    <span class="comment"># parsing</span></span><br><span class="line">    companies = json_info[<span class="string">"result"</span>][<span class="string">"itemList"</span>]</span><br><span class="line">    <span class="keyword">return</span> json_normalize(companies)</span><br><span class="line"></span><br><span class="line">url = make_url(<span class="number">100</span>, <span class="number">2</span>)</span><br><span class="line">df = get_data(url)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -450,12 +453,13 @@ ga('send', 'pageview');
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="2-공식적으로-제공되는-API-사용하기-Dark-Sky-API"><a href="#2-공식적으로-제공되는-API-사용하기-Dark-Sky-API" class="headerlink" title="2. 공식적으로 제공되는 API 사용하기 - Dark Sky API"></a>2. 공식적으로 제공되는 API 사용하기 - Dark Sky API</h2><ul>
 <li><p>날씨 정보를 알려주는 api - <a href="https://darksky.net/dev" target="_blank" rel="noopener">https://darksky.net/dev</a></p>
 <ul>
 <li>회원가입 필요, 하루에 1000건까지 무료로 사용 가능</li>
 <li>사용법(<a href="https://darksky.net/dev/docs" target="_blank" rel="noopener">Docs</a>)<ul>
-<li>Forecast Request: <a href="https://api.darksky.net/forecast/[key]/[latitude],[longitude]" target="_blank" rel="noopener">https://api.darksky.net/forecast/[key]/[latitude],[longitude]</a></li>
+<li>Forecast Request: <a href="https://api.darksky.net/forecast/[key]/[latitude],[longitude" target="_blank" rel="noopener">https://api.darksky.net/forecast/[key]/[latitude],[longitude</a>]</li>
 <li>[key]: 회원가입시 부여받은 secret key 사용<ul>
 <li>요청할 때 token 값을 같이 query에 보내주어 API를 요청하는 사람이 누구인지 서비스 제공자가 판별</li>
 </ul>
@@ -485,10 +489,10 @@ ga('send', 'pageview');
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">forecast</span><span class="params">(lat, lng)</span>:</span></span><br><span class="line">    url = <span class="string">"https://api.darksky.net/forecast/&#123;&#125;/&#123;&#125;,&#123;&#125;"</span>.format(FORECAST_TOKEN, lat, lng)</span><br><span class="line">    response = requests.get(url)</span><br><span class="line">    json_info = response.json()</span><br><span class="line">    <span class="keyword">return</span> json_info[<span class="string">"hourly"</span>][<span class="string">"summary"</span>], json_info[<span class="string">"timezone"</span>]</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lat = <span class="number">37.512</span></span><br><span class="line">lng = <span class="number">126.954</span></span><br><span class="line">forecast(lat, lng)</span><br></pre></td></tr></table></figure>
-<pre><code>(&apos;Partly cloudy tomorrow afternoon.&apos;, &apos;Asia/Seoul&apos;)
+<pre><code>(&#39;Partly cloudy tomorrow afternoon.&#39;, &#39;Asia/Seoul&#39;)
 </code></pre><h3 id="2-3-forecastio-패키지-사용"><a href="#2-3-forecastio-패키지-사용" class="headerlink" title="2.3 forecastio 패키지 사용"></a>2.3 forecastio 패키지 사용</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">forecast2</span><span class="params">(lat, lng)</span>:</span></span><br><span class="line">    forecast = forecastio.load_forecast(FORECAST_TOKEN, lat, lng, lang = <span class="string">'ko'</span>)</span><br><span class="line">    byHour = forecast.hourly()</span><br><span class="line">    <span class="keyword">return</span> byHour.summary</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lat = <span class="number">37.512</span></span><br><span class="line">lng = <span class="number">126.954</span></span><br><span class="line">forecast2(lat, lng)</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;내일 오후동안 약간 흐림&apos;
+<pre><code>&#39;내일 오후동안 약간 흐림&#39;
 </code></pre><h2 id="3-BeautifulSoup"><a href="#3-BeautifulSoup" class="headerlink" title="3. BeautifulSoup"></a>3. BeautifulSoup</h2><ul>
 <li>BeautifulSoup Doc (<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank" rel="noopener">https://www.crummy.com/software/BeautifulSoup/bs4/doc/</a>)</li>
 <li>문자열로 되어있는 html 코드를 css selector나 xpath를 이용해서 특정 element의 데이터를 쉽게 가져올 수 있도록 하는 서비스 패키지</li>
@@ -502,6 +506,7 @@ ga('send', 'pageview');
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">naver_top20</span><span class="params">()</span>:</span></span><br><span class="line">    df = pd.DataFrame(columns=[<span class="string">"rank"</span>,<span class="string">"keyword"</span>])</span><br><span class="line">    response = requests.get(<span class="string">"http://naver.com"</span>)</span><br><span class="line">    dom = BeautifulSoup(response.content, <span class="string">"html.parser"</span>)   <span class="comment">#html.parser   # dom 객체</span></span><br><span class="line">    keywords = dom.select(<span class="string">".ah_roll .ah_l .ah_item"</span>)   </span><br><span class="line">        <span class="comment"># CSS selector - selecting하는 방법은 다양</span></span><br><span class="line">        <span class="comment"># select 쓰면 list로 리턴 (요소가 하나라도) | select_one은 하나의 element만 리턴</span></span><br><span class="line">        <span class="comment"># len()을 찍어봐서 갯수가 맞게 나오는지 확인할 것</span></span><br><span class="line">    <span class="comment"># keywords = dom.select(".ah_roll_area &gt; .ah_l &gt; .ah_item")  </span></span><br><span class="line">    <span class="keyword">for</span> keyword <span class="keyword">in</span> keywords:</span><br><span class="line">        df.loc[len(df)] = &#123;</span><br><span class="line">            <span class="string">"rank"</span>: keyword.select_one(<span class="string">".ah_r"</span>).text,       </span><br><span class="line">            <span class="string">"keyword"</span>: keyword.select_one(<span class="string">".ah_k"</span>).text,</span><br><span class="line">            <span class="comment"># .text - element 안의 시작태그와 끝 태그 사이 내용을 가져옴</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = naver_top20()</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -538,12 +543,14 @@ ga('send', 'pageview');
 </tr>
 </tbody>
 </table>
+</div>
 <p>10초마다 실시간 검색어를 크롤링해서 리스트로 저장하기</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">ls = []</span><br><span class="line"><span class="keyword">for</span> idx <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">    print(idx)</span><br><span class="line">    df = naver_top20()</span><br><span class="line">    ls.append(df)</span><br><span class="line">    time.sleep(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>0
 1
 2
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls[<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -655,6 +662,7 @@ ga('send', 'pageview');
 </tr>
 </tbody>
 </table>
+</div>
 <h3 id="3-2-다음-검색어-순위"><a href="#3-2-다음-검색어-순위" class="headerlink" title="3.2 다음 검색어 순위"></a>3.2 다음 검색어 순위</h3><ul>
 <li>다음 검색어 순위를 가져와서 네이버 검색어 순위와 중복되는 키워드만 출력하기</li>
 <li><a href="http://daum.net" target="_blank" rel="noopener">http://daum.net</a></li>
@@ -662,7 +670,8 @@ ga('send', 'pageview');
 <h4 id="다음-실시간-검색어-순위-가져오기"><a href="#다음-실시간-검색어-순위-가져오기" class="headerlink" title="다음 실시간 검색어 순위 가져오기"></a>다음 실시간 검색어 순위 가져오기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">daum_top10</span><span class="params">()</span>:</span></span><br><span class="line">    df = pd.DataFrame(columns=[<span class="string">"rank"</span>,<span class="string">"keyword"</span>])</span><br><span class="line">    response = requests.get(<span class="string">"http://daum.net"</span>)</span><br><span class="line">    dom = BeautifulSoup(response.content, <span class="string">"html.parser"</span>)   </span><br><span class="line">    keywords = dom.select(<span class="string">"#mArticle &gt; div.cmain_tmp &gt; div.section_media &gt; div.hotissue_builtin &gt; div.realtime_part &gt; ol &gt; li"</span>)</span><br><span class="line">    print(len(keywords))</span><br><span class="line">    <span class="keyword">for</span> keyword <span class="keyword">in</span> keywords:</span><br><span class="line">        df.loc[len(df)] = &#123;</span><br><span class="line">            <span class="string">"rank"</span>:keyword.select_one(<span class="string">".ir_wa"</span>).text.replace(<span class="string">"위"</span>,<span class="string">""</span>),</span><br><span class="line">            <span class="string">"keyword"</span>:keyword.select_one(<span class="string">".link_issue"</span>).text,</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_daum = daum_top10()</span><br><span class="line">df_daum</span><br></pre></td></tr></table></figure>
 <pre><code>10
-</code></pre><table>
+</code></pre><div class="table-container">
+<table>
 <thead>
 <tr>
 <th></th>
@@ -723,15 +732,16 @@ ga('send', 'pageview');
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="네이버-실시간-검색어와-중복되는-키워드-추출하기"><a href="#네이버-실시간-검색어와-중복되는-키워드-추출하기" class="headerlink" title="네이버 실시간 검색어와 중복되는 키워드 추출하기"></a>네이버 실시간 검색어와 중복되는 키워드 추출하기</h4><ul>
 <li>여러가지 방법이 있음</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df_naver = df</span><br><span class="line"></span><br><span class="line">result = [keyword <span class="keyword">for</span> keyword <span class="keyword">in</span> df_daum[<span class="string">"keyword"</span>] </span><br><span class="line">          <span class="keyword">if</span> keyword <span class="keyword">in</span> df_naver[<span class="string">"keyword"</span>].tolist()]</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;중국 샤먼&apos;, &apos;플레이어&apos;]
+<pre><code>[&#39;중국 샤먼&#39;, &#39;플레이어&#39;]
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">result = [keyword <span class="keyword">for</span> keyword <span class="keyword">in</span> df_daum[<span class="string">"keyword"</span>] </span><br><span class="line">          <span class="keyword">if</span> df_naver[<span class="string">"keyword"</span>].str.contains(keyword).any()]</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;중국 샤먼&apos;, &apos;플레이어&apos;]
+<pre><code>[&#39;중국 샤먼&#39;, &#39;플레이어&#39;]
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list(set(df_daum[<span class="string">"keyword"</span>]) &amp; set(df_naver[<span class="string">"keyword"</span>]))</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;중국 샤먼&apos;, &apos;플레이어&apos;]
+<pre><code>[&#39;중국 샤먼&#39;, &#39;플레이어&#39;]
 </code></pre><h2 id="4-url-링크로-파일-다운로드-받는-방법"><a href="#4-url-링크로-파일-다운로드-받는-방법" class="headerlink" title="4. url 링크로 파일 다운로드 받는 방법"></a>4. url 링크로 파일 다운로드 받는 방법</h2><ul>
 <li>이미지 파일이나 영상 파일을 다운로드 받고 싶으면 이 방법 사용</li>
 <li>용량이 큰 파일을 받을 때는 chunk를 이용해서 파일을 쪼개서 다운로드 <ul>
@@ -756,7 +766,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/29/web_08_requests/" data-id="cjmvyk8xe00amdl1h8w81y251" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/29/web_08_requests/" data-id="cjmybg0mn00am3w1hfovkluaq" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

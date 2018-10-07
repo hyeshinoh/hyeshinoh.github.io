@@ -283,35 +283,36 @@ ga('send', 'pageview');
 <h3 id="1-2-표-데이터-받아오기"><a href="#1-2-표-데이터-받아오기" class="headerlink" title="1.2 표 데이터 받아오기"></a>1.2 표 데이터 받아오기</h3><h4 id="1-column-이름을-받아와서-pandas-dataframe-만들기"><a href="#1-column-이름을-받아와서-pandas-dataframe-만들기" class="headerlink" title="(1) column 이름을 받아와서 pandas dataframe 만들기"></a>(1) column 이름을 받아와서 pandas dataframe 만들기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">columns = driver.find_elements_by_css_selector(<span class="string">"div.nba-stat-table__overflow &gt; table &gt; thead &gt; tr &gt; th"</span>)[:<span class="number">28</span>]</span><br><span class="line">len(columns)</span><br></pre></td></tr></table></figure>
 <pre><code>28
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ls_column = []</span><br><span class="line"><span class="keyword">for</span> column <span class="keyword">in</span> columns:</span><br><span class="line">    ls_column.append(column.text)</span><br><span class="line">    </span><br><span class="line">ls_column</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;&apos;,
- &apos;TEAM&apos;,
- &apos;GP&apos;,
- &apos;W&apos;,
- &apos;L&apos;,
- &apos;WIN%&apos;,
- &apos;MIN&apos;,
- &apos;PTS&apos;,
- &apos;FGM&apos;,
- &apos;FGA&apos;,
- &apos;FG%&apos;,
- &apos;3PM&apos;,
- &apos;3PA&apos;,
- &apos;3P%&apos;,
- &apos;FTM&apos;,
- &apos;FTA&apos;,
- &apos;FT%&apos;,
- &apos;OREB&apos;,
- &apos;DREB&apos;,
- &apos;REB&apos;,
- &apos;AST&apos;,
- &apos;TOV&apos;,
- &apos;STL&apos;,
- &apos;BLK&apos;,
- &apos;BLKA&apos;,
- &apos;PF&apos;,
- &apos;PFD&apos;,
- &apos;+/-&apos;]
+<pre><code>[&#39;&#39;,
+ &#39;TEAM&#39;,
+ &#39;GP&#39;,
+ &#39;W&#39;,
+ &#39;L&#39;,
+ &#39;WIN%&#39;,
+ &#39;MIN&#39;,
+ &#39;PTS&#39;,
+ &#39;FGM&#39;,
+ &#39;FGA&#39;,
+ &#39;FG%&#39;,
+ &#39;3PM&#39;,
+ &#39;3PA&#39;,
+ &#39;3P%&#39;,
+ &#39;FTM&#39;,
+ &#39;FTA&#39;,
+ &#39;FT%&#39;,
+ &#39;OREB&#39;,
+ &#39;DREB&#39;,
+ &#39;REB&#39;,
+ &#39;AST&#39;,
+ &#39;TOV&#39;,
+ &#39;STL&#39;,
+ &#39;BLK&#39;,
+ &#39;BLKA&#39;,
+ &#39;PF&#39;,
+ &#39;PFD&#39;,
+ &#39;+/-&#39;]
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = pd.DataFrame(columns = ls_column)</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -344,9 +345,11 @@ ga('send', 'pageview');
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="2-각-row의-팀별-데이터를-받아와서-dataframe에-넣기"><a href="#2-각-row의-팀별-데이터를-받아와서-dataframe에-넣기" class="headerlink" title="(2) 각 row의 팀별 데이터를 받아와서 dataframe에 넣기"></a>(2) 각 row의 팀별 데이터를 받아와서 dataframe에 넣기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">team_stat = driver.find_elements_by_css_selector(<span class="string">"div.nba-stat-table__overflow &gt; table &gt; tbody &gt; tr"</span>)</span><br><span class="line">len(team_stat)</span><br></pre></td></tr></table></figure>
 <pre><code>35
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> stat <span class="keyword">in</span> team_stat:</span><br><span class="line">    stats = stat.find_elements_by_css_selector(<span class="string">"td"</span>)</span><br><span class="line">    stat = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(stats)):</span><br><span class="line">        stat[ls_column[i]] = stats[i].text</span><br><span class="line">    df.loc[len(df)] = stat</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1217,6 +1220,7 @@ ga('send', 'pageview');
 </tr>
 </tbody>
 </table>
+</div>
 <pre><code>35 rows × 28 columns
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
 <h2 id="Quiz-2"><a href="#Quiz-2" class="headerlink" title="Quiz 2"></a>Quiz 2</h2><ul>
@@ -1233,6 +1237,7 @@ ga('send', 'pageview');
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">articles = driver.find_elements_by_css_selector(<span class="string">"#section_body &gt; ul &gt; li"</span>)</span><br><span class="line">len(articles)</span><br></pre></td></tr></table></figure>
 <pre><code>20
 </code></pre><h5 id="1페이지-안의-기사-제목-가져오기"><a href="#1페이지-안의-기사-제목-가져오기" class="headerlink" title="1페이지 안의 기사 제목 가져오기"></a>1페이지 안의 기사 제목 가져오기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dict_list = []</span><br><span class="line"><span class="keyword">for</span> article <span class="keyword">in</span> articles:</span><br><span class="line">    dict_list.append(&#123;</span><br><span class="line">        <span class="string">"title"</span>: article.find_element_by_css_selector(<span class="string">"dt:nth-child(2)"</span>).text     </span><br><span class="line">    &#125;)</span><br><span class="line">df = pd.DataFrame(dict_list)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1263,6 +1268,7 @@ ga('send', 'pageview');
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="2-1-10페이지에서-기사-제목-가져오기"><a href="#2-1-10페이지에서-기사-제목-가져오기" class="headerlink" title="(2) 1-10페이지에서 기사 제목 가져오기"></a>(2) 1-10페이지에서 기사 제목 가져오기</h4><ul>
 <li>2페이지와 7페이지에서 에러가 발생해서 try &amp; except 처리함</li>
 </ul>
@@ -1279,7 +1285,8 @@ ga('send', 'pageview');
 20
 20
 20
-</code></pre><table>
+</code></pre><div class="table-container">
+<table>
 <thead>
 <tr>
 <th></th>
@@ -1309,6 +1316,7 @@ ga('send', 'pageview');
 </tr>
 </tbody>
 </table>
+</div>
 <p>총 168개의 기사 제목이 크롤링됨</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
 <h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
@@ -1324,7 +1332,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/10/05/web_11_selenium_exercise/" data-id="cjmvyk8xd00ajdl1hue4fm086" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/10/05/web_11_selenium_exercise/" data-id="cjmybg0mm00aj3w1h078hjzhl" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

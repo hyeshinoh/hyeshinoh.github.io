@@ -277,7 +277,14 @@ ga('send', 'pageview');
 </ul>
 <p>적용시 아래와 같이 나타납니다.</p>
 <blockquote>
-<div style="width:500px; height:200px; background-color: grey;">div1<br>   <p>div1</p><br></div><br><div>div2</div><br><div>div3</div>
+<div style="width:500px; height:200px; background-color: grey;">div1
+   <p>div1</p>
+</div>
+<div>div2</div>
+<div>div3</div>
+
+
+
 </blockquote>
 <h2 id="2-table"><a href="#2-table" class="headerlink" title="2. table"></a>2. table</h2><ul>
 <li>row &amp; column이 있는 table 모양을 나타낼 때 사용하는 element</li>
@@ -305,7 +312,25 @@ ga('send', 'pageview');
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">table&gt;caption&#123;table title&#125;+thead&gt;tr&gt;th&#123;col$&#125;*4^^tbody&gt;tr&gt;td&#123;value$@3&#125;*4 --&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">caption</span>&gt;</span>table title<span class="tag">&lt;/<span class="name">caption</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>col1<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>col2<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>col3<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>col4<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>value3<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>value4<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>value5<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>value6<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>적용시 아래와 같이 나타납니다.</p>
-<table><br>  <caption>table title</caption><br>  <thead><br>    <tr><br>      <th>col1</th><br>      <th>col2</th><br>      <th>col3</th><br>      <th>col4</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <td>value3</td><br>      <td>value4</td><br>      <td>value5</td><br>      <td>value6</td><br>    </tr><br>  </tbody><br></table>
+<table>
+  <caption>table title</caption>
+  <thead>
+    <tr>
+      <th>col1</th>
+      <th>col2</th>
+      <th>col3</th>
+      <th>col4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>value3</td>
+      <td>value4</td>
+      <td>value5</td>
+      <td>value6</td>
+    </tr>
+  </tbody>
+</table>
 
 
 <h2 id="3-ul-li"><a href="#3-ul-li" class="headerlink" title="3. ul, li"></a>3. ul, li</h2><ul>
@@ -315,7 +340,11 @@ ga('send', 'pageview');
 </li>
 </ul>
 <p>적용시 아래와 같이 나타납니다.</p>
-<ul><br>    <li>ul_li_1</li><br>    <li>ul_li_2</li><br>    <li>ul_li_3</li><br></ul>
+<ul>
+    <li>ul_li_1</li>
+    <li>ul_li_2</li>
+    <li>ul_li_3</li>
+</ul>
 
 <h2 id="4-a"><a href="#4-a" class="headerlink" title="4. a"></a>4. a</h2><ul>
 <li>link element</li>
@@ -359,11 +388,29 @@ ga('send', 'pageview');
 </li>
 </ul>
 <p>적용시 아래와 같이 나타납니다.</p>
-<input type="text" name="" value="" placeholder="이메일"><br><input type="password" name="" value="" placeholder="패스워드"><br><br><br><span><h3>7.2 radio: 여러개 중에 선택하는 박스</h3></span><br><ul><br>  <span><li>버튼은 name 속성의 값으로 그룹핑 (그룹핑되면 그 중에 택1하게 만들어짐)</li></span><br>  <span><li>요즘에 웹 개발에선 많이 사용되지는 않음</li></span><br></ul><br><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio_1"</span> <span class="attr">value</span>=<span class="string">"b1"</span>&gt;</span>버튼1<span class="tag">&lt;/<span class="name">input</span>&gt;</span>    </span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio_1"</span> <span class="attr">value</span>=<span class="string">"b2"</span>&gt;</span>버튼2<span class="tag">&lt;/<span class="name">input</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio_2"</span> <span class="attr">value</span>=<span class="string">"b3"</span>&gt;</span>버튼3<span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio_2"</span> <span class="attr">value</span>=<span class="string">"b3"</span>&gt;</span>버튼4<span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio_2"</span> <span class="attr">value</span>=<span class="string">"b5"</span>&gt;</span>버튼5<span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br>적용시 아래와 같이 나타납니다.<br><input type="radio" name="radio_1" value="b1">버튼1<br><input type="radio" name="radio_1" value="b2">버튼2<br><br><br><input type="radio" name="radio_2" value="b3">버튼3<br><input type="radio" name="radio_2" value="b3">버튼4<br><input type="radio" name="radio_2" value="b5">버튼5
+<input type="text" name="" value="" placeholder="이메일">
+<input type="password" name="" value="" placeholder="패스워드"><br>
+
+<span><h3>7.2 radio: 여러개 중에 선택하는 박스</h3></span>
+<ul>
+  <span><li>버튼은 name 속성의 값으로 그룹핑 (그룹핑되면 그 중에 택1하게 만들어짐)</li></span>
+  <span><li>요즘에 웹 개발에선 많이 사용되지는 않음</li></span>
+</ul>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio_1"</span> <span class="attr">value</span>=<span class="string">"b1"</span>&gt;</span>버튼1<span class="tag">&lt;/<span class="name">input</span>&gt;</span>    </span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio_1"</span> <span class="attr">value</span>=<span class="string">"b2"</span>&gt;</span>버튼2<span class="tag">&lt;/<span class="name">input</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio_2"</span> <span class="attr">value</span>=<span class="string">"b3"</span>&gt;</span>버튼3<span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio_2"</span> <span class="attr">value</span>=<span class="string">"b3"</span>&gt;</span>버튼4<span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio_2"</span> <span class="attr">value</span>=<span class="string">"b5"</span>&gt;</span>버튼5<span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+적용시 아래와 같이 나타납니다.
+<input type="radio" name="radio_1" value="b1">버튼1    
+<input type="radio" name="radio_1" value="b2">버튼2<br>
+
+<input type="radio" name="radio_2" value="b3">버튼3
+<input type="radio" name="radio_2" value="b3">버튼4
+<input type="radio" name="radio_2" value="b5">버튼5
 
 <h3 id="7-3-checkbox-해당사항을-체크하는-박스"><a href="#7-3-checkbox-해당사항을-체크하는-박스" class="headerlink" title="7.3 checkbox: 해당사항을 체크하는 박스"></a>7.3 checkbox: 해당사항을 체크하는 박스</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">"c1"</span>&gt;</span> 체크박스1<span class="tag">&lt;/<span class="name">input</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">"c2"</span>&gt;</span> 체크박스2<span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>적용시 아래와 같이 나타납니다.</p>
-<input type="checkbox" name="" value="c1"> 체크박스1<br><input type="checkbox" name="" value="c2"> 체크박스2
+<input type="checkbox" name="" value="c1"> 체크박스1
+<input type="checkbox" name="" value="c2"> 체크박스2
 
 
 <h2 id="8-textarea"><a href="#8-textarea" class="headerlink" title="8. textarea"></a>8. textarea</h2><ul>
@@ -381,14 +428,25 @@ ga('send', 'pageview');
 </li>
 </ul>
 <p>적용시 아래와 같이 나타납니다.</p>
-<select><br>    <option value="1">option 1</option><br>    <option value="2">option 2</option><br>    <option value="3">option 3</option><br></select><br><br><!-- select>option[value=$][style=color:red]{option $}*3 --><br><select name="" id=""><br>    <option value="1" style="color:red">option 1</option><br>    <option value="2" style="color:red">option 2</option><br>    <option value="3" style="color:red">option 3</option><br></select>
+<select>
+    <option value="1">option 1</option>
+    <option value="2">option 2</option>
+    <option value="3">option 3</option>
+</select><br>
+<!-- select>option[value=$][style=color:red]{option $}*3 -->
+<select name="" id="">
+    <option value="1" style="color:red">option 1</option>
+    <option value="2" style="color:red">option 2</option>
+    <option value="3" style="color:red">option 3</option>
+</select>
 
 <h2 id="10-button"><a href="#10-button" class="headerlink" title="10. button"></a>10. button</h2><ul>
 <li>onclick 속성: 클릭했을 때 event. javascript 코드를 넣어줄 수 있음<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">name</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"javascript:(alert('alert msg'))"</span>&gt;</span>Click<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">name</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"javascript:(location.href = 'http://naver.com')"</span>&gt;</span>네이버로 이동<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>적용시 아래와 같이 나타납니다.</p>
-<button type="button" name="button" onclick="javascript:(alert('alert msg'))">Click</button><br><button type="button" name="button" onclick="javascript:(location.href='http://naver.com')">네이버로 이동</button>
+<button type="button" name="button" onclick="javascript:(alert('alert msg'))">Click</button>
+<button type="button" name="button" onclick="javascript:(location.href='http://naver.com')">네이버로 이동</button>
 
 
 
@@ -405,7 +463,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/26/web_02_html_02_layout/" data-id="cjmvyk8vg006bdl1hlqlqlvcc" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/26/web_02_html_02_layout/" data-id="cjmybg0l0006d3w1h4gwyfzle" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

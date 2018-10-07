@@ -6,6 +6,7 @@
     <title>우와팬더의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="데이터사이언스를 공부합니다">
+<meta name="keywords" content="data science">
 <meta property="og:type" content="website">
 <meta property="og:title" content="우와팬더의 블로그">
 <meta property="og:url" content="http://yoursite.com/index.html">
@@ -288,33 +289,33 @@ ga('send', 'pageview');
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1</span><br></pre></td></tr></table></figure>
 <pre><code>disp_name1
 
-&apos;KSM&apos;
+&#39;KSM&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.hidden_name1</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;ksm&apos;
+<pre><code>&#39;ksm&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1 = <span class="string">"ppp"</span>         <span class="comment"># setter1을 통해 p에 이름 "ppp"를 저장함</span></span><br></pre></td></tr></table></figure>
 <pre><code>set_name1
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.hidden_name1          <span class="comment"># setter1을 통해 Mr. 를 붙여서 저장되었음</span></span><br></pre></td></tr></table></figure>
-<pre><code>&apos;Mr. ppp&apos;
+<pre><code>&#39;Mr. ppp&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.disp_name1()          <span class="comment"># getter1을 거쳐 대문자로 표시됨</span></span><br></pre></td></tr></table></figure>
 <pre><code>disp_name1
 
-&apos;MR. PPP&apos;
+&#39;MR. PPP&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1</span><br></pre></td></tr></table></figure>
 <pre><code>disp_name1
 
-&apos;MR. PPP&apos;
+&#39;MR. PPP&#39;
 </code></pre><h3 id="1-2-decorator-이용"><a href="#1-2-decorator-이용" class="headerlink" title="1.2 decorator 이용"></a>1.2 decorator 이용</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person2</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, input_name)</span>:</span></span><br><span class="line">        self.hidden_name = input_name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span>                      <span class="comment"># getter function</span></span><br><span class="line">        print(<span class="string">"inside the getter"</span>)</span><br><span class="line">        <span class="keyword">return</span> self.hidden_name.upper()</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @name.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self, input_name)</span>:</span>          <span class="comment"># setter function</span></span><br><span class="line">        print(<span class="string">"inside the setter"</span>)</span><br><span class="line">        self.hidden_name = <span class="string">"Mr. "</span> + input_name</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2 = Person2(<span class="string">"park"</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.hidden_name</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;park&apos;
+<pre><code>&#39;park&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.name = <span class="string">"kim"</span></span><br></pre></td></tr></table></figure>
 <pre><code>inside the setter
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.hidden_name</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;Mr. kim&apos;
+<pre><code>&#39;Mr. kim&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.name</span><br></pre></td></tr></table></figure>
 <pre><code>inside the getter
 
-&apos;MR. KIM&apos;
+&#39;MR. KIM&#39;
 </code></pre><h2 id="2-Private"><a href="#2-Private" class="headerlink" title="2. Private"></a>2. Private</h2><ul>
 <li>위 코드처럼 생성자 함수에 변수를 선언하면 객체를 만들었을 때 getter를 통하지 않고 접근이 가능</li>
 <li>python에서는 mangling이라는 방법을 사용하여 class 내부 변수에 다이렉트로 접근하지 못하게 하는 방법으로 private을 구현<ul>
@@ -335,18 +336,18 @@ AttributeError                            Traceback (most recent call last)
 ----&gt; 1 p3.__hidden_name
 
 
-AttributeError: &apos;Person3&apos; object has no attribute &apos;__hidden_name&apos;
+AttributeError: &#39;Person3&#39; object has no attribute &#39;__hidden_name&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># getter로만 접근 가능</span></span><br><span class="line">p3.name</span><br></pre></td></tr></table></figure>
 <pre><code>inside the getter
 
-&apos;LEE&apos;
+&#39;LEE&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3.mod()</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3.name</span><br></pre></td></tr></table></figure>
 <pre><code>inside the getter
 
-&apos;PARK&apos;
+&#39;PARK&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3._Person3__hidden_name    <span class="comment"># 접근은 가능</span></span><br></pre></td></tr></table></figure>
-<pre><code>&apos;Park&apos;
+<pre><code>&#39;Park&#39;
 </code></pre><h3 id="Private-function"><a href="#Private-function" class="headerlink" title="Private function"></a>Private function</h3><ul>
 <li>class 내에서만 사용되는 함수의 이름 중복이 우려될 때 사용</li>
 <li>mangling 사용</li>
@@ -421,17 +422,17 @@ True
 <li>리스트에 있는 값 여러개 삭제하는 코드</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"a"</span>, <span class="string">"c"</span>, <span class="string">"a"</span>]</span><br><span class="line">ls.remove(<span class="string">"a"</span>)</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;b&apos;, &apos;a&apos;, &apos;c&apos;, &apos;a&apos;]
+<pre><code>[&#39;b&#39;, &#39;a&#39;, &#39;c&#39;, &#39;a&#39;]
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"a"</span>, <span class="string">"c"</span>, <span class="string">"a"</span>]</span><br><span class="line">s = <span class="string">"a"</span></span><br><span class="line">result = [data <span class="keyword">for</span> data <span class="keyword">in</span> ls <span class="keyword">if</span> data != s]</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;b&apos;, &apos;c&apos;]
+<pre><code>[&#39;b&#39;, &#39;c&#39;]
 </code></pre><p><code>__ne__</code>를 이용하여 리스트에 있는 값 여러개 삭제하는 코드</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"Python"</span></span><br><span class="line"><span class="comment"># s.__ne__??</span></span><br><span class="line"></span><br><span class="line">ls = [<span class="string">"Hello"</span>,<span class="string">"Python"</span>,<span class="string">"Hello"</span>,<span class="string">"Python"</span>,<span class="string">"Hello"</span>,<span class="string">"Python"</span>]</span><br><span class="line">print(list(filter(s.__ne__, ls)))</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;Hello&apos;, &apos;Hello&apos;, &apos;Hello&apos;]
+<pre><code>[&#39;Hello&#39;, &#39;Hello&#39;, &#39;Hello&#39;]
 </code></pre><h3 id="4-3-add"><a href="#4-3-add" class="headerlink" title="4.3 __add__"></a>4.3 <code>__add__</code></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int.__add__??</span><br></pre></td></tr></table></figure>
 <pre><code>Signature:      int.__add__(self, value, /)
 Call signature: int.__add__(*args, **kwargs)
 Type:           wrapper_descriptor
-String form:    &lt;slot wrapper &apos;__add__&apos; of &apos;int&apos; objects&gt;
+String form:    &lt;slot wrapper &#39;__add__&#39; of &#39;int&#39; objects&gt;
 Namespace:      Python builtin
 Docstring:      Return self+value.
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">2</span>).__add__(<span class="number">3</span>), <span class="number">2</span> + <span class="number">3</span></span><br></pre></td></tr></table></figure>
@@ -480,7 +481,7 @@ Docstring:      Return self+value.
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/10/07/python_06_class_intermediate/" data-id="cjmyal56d0000z71hz9smdkjk" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/10/07/python_06_class_intermediate/" data-id="cjmybg0mk00ad3w1hax3mswgn" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -613,35 +614,36 @@ Docstring:      Return self+value.
 <h3 id="1-2-표-데이터-받아오기"><a href="#1-2-표-데이터-받아오기" class="headerlink" title="1.2 표 데이터 받아오기"></a>1.2 표 데이터 받아오기</h3><h4 id="1-column-이름을-받아와서-pandas-dataframe-만들기"><a href="#1-column-이름을-받아와서-pandas-dataframe-만들기" class="headerlink" title="(1) column 이름을 받아와서 pandas dataframe 만들기"></a>(1) column 이름을 받아와서 pandas dataframe 만들기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">columns = driver.find_elements_by_css_selector(<span class="string">"div.nba-stat-table__overflow &gt; table &gt; thead &gt; tr &gt; th"</span>)[:<span class="number">28</span>]</span><br><span class="line">len(columns)</span><br></pre></td></tr></table></figure>
 <pre><code>28
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ls_column = []</span><br><span class="line"><span class="keyword">for</span> column <span class="keyword">in</span> columns:</span><br><span class="line">    ls_column.append(column.text)</span><br><span class="line">    </span><br><span class="line">ls_column</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;&apos;,
- &apos;TEAM&apos;,
- &apos;GP&apos;,
- &apos;W&apos;,
- &apos;L&apos;,
- &apos;WIN%&apos;,
- &apos;MIN&apos;,
- &apos;PTS&apos;,
- &apos;FGM&apos;,
- &apos;FGA&apos;,
- &apos;FG%&apos;,
- &apos;3PM&apos;,
- &apos;3PA&apos;,
- &apos;3P%&apos;,
- &apos;FTM&apos;,
- &apos;FTA&apos;,
- &apos;FT%&apos;,
- &apos;OREB&apos;,
- &apos;DREB&apos;,
- &apos;REB&apos;,
- &apos;AST&apos;,
- &apos;TOV&apos;,
- &apos;STL&apos;,
- &apos;BLK&apos;,
- &apos;BLKA&apos;,
- &apos;PF&apos;,
- &apos;PFD&apos;,
- &apos;+/-&apos;]
+<pre><code>[&#39;&#39;,
+ &#39;TEAM&#39;,
+ &#39;GP&#39;,
+ &#39;W&#39;,
+ &#39;L&#39;,
+ &#39;WIN%&#39;,
+ &#39;MIN&#39;,
+ &#39;PTS&#39;,
+ &#39;FGM&#39;,
+ &#39;FGA&#39;,
+ &#39;FG%&#39;,
+ &#39;3PM&#39;,
+ &#39;3PA&#39;,
+ &#39;3P%&#39;,
+ &#39;FTM&#39;,
+ &#39;FTA&#39;,
+ &#39;FT%&#39;,
+ &#39;OREB&#39;,
+ &#39;DREB&#39;,
+ &#39;REB&#39;,
+ &#39;AST&#39;,
+ &#39;TOV&#39;,
+ &#39;STL&#39;,
+ &#39;BLK&#39;,
+ &#39;BLKA&#39;,
+ &#39;PF&#39;,
+ &#39;PFD&#39;,
+ &#39;+/-&#39;]
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = pd.DataFrame(columns = ls_column)</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -674,9 +676,11 @@ Docstring:      Return self+value.
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="2-각-row의-팀별-데이터를-받아와서-dataframe에-넣기"><a href="#2-각-row의-팀별-데이터를-받아와서-dataframe에-넣기" class="headerlink" title="(2) 각 row의 팀별 데이터를 받아와서 dataframe에 넣기"></a>(2) 각 row의 팀별 데이터를 받아와서 dataframe에 넣기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">team_stat = driver.find_elements_by_css_selector(<span class="string">"div.nba-stat-table__overflow &gt; table &gt; tbody &gt; tr"</span>)</span><br><span class="line">len(team_stat)</span><br></pre></td></tr></table></figure>
 <pre><code>35
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> stat <span class="keyword">in</span> team_stat:</span><br><span class="line">    stats = stat.find_elements_by_css_selector(<span class="string">"td"</span>)</span><br><span class="line">    stat = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(stats)):</span><br><span class="line">        stat[ls_column[i]] = stats[i].text</span><br><span class="line">    df.loc[len(df)] = stat</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1547,6 +1551,7 @@ Docstring:      Return self+value.
 </tr>
 </tbody>
 </table>
+</div>
 <pre><code>35 rows × 28 columns
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
 <h2 id="Quiz-2"><a href="#Quiz-2" class="headerlink" title="Quiz 2"></a>Quiz 2</h2><ul>
@@ -1563,6 +1568,7 @@ Docstring:      Return self+value.
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">articles = driver.find_elements_by_css_selector(<span class="string">"#section_body &gt; ul &gt; li"</span>)</span><br><span class="line">len(articles)</span><br></pre></td></tr></table></figure>
 <pre><code>20
 </code></pre><h5 id="1페이지-안의-기사-제목-가져오기"><a href="#1페이지-안의-기사-제목-가져오기" class="headerlink" title="1페이지 안의 기사 제목 가져오기"></a>1페이지 안의 기사 제목 가져오기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dict_list = []</span><br><span class="line"><span class="keyword">for</span> article <span class="keyword">in</span> articles:</span><br><span class="line">    dict_list.append(&#123;</span><br><span class="line">        <span class="string">"title"</span>: article.find_element_by_css_selector(<span class="string">"dt:nth-child(2)"</span>).text     </span><br><span class="line">    &#125;)</span><br><span class="line">df = pd.DataFrame(dict_list)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1593,6 +1599,7 @@ Docstring:      Return self+value.
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="2-1-10페이지에서-기사-제목-가져오기"><a href="#2-1-10페이지에서-기사-제목-가져오기" class="headerlink" title="(2) 1-10페이지에서 기사 제목 가져오기"></a>(2) 1-10페이지에서 기사 제목 가져오기</h4><ul>
 <li>2페이지와 7페이지에서 에러가 발생해서 try &amp; except 처리함</li>
 </ul>
@@ -1609,7 +1616,8 @@ Docstring:      Return self+value.
 20
 20
 20
-</code></pre><table>
+</code></pre><div class="table-container">
+<table>
 <thead>
 <tr>
 <th></th>
@@ -1639,6 +1647,7 @@ Docstring:      Return self+value.
 </tr>
 </tbody>
 </table>
+</div>
 <p>총 168개의 기사 제목이 크롤링됨</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
 <h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
@@ -1654,7 +1663,7 @@ Docstring:      Return self+value.
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/10/05/web_11_selenium_exercise/" data-id="cjmvyk8xd00ajdl1hue4fm086" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/10/05/web_11_selenium_exercise/" data-id="cjmybg0mm00aj3w1h078hjzhl" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1795,7 +1804,7 @@ Docstring:      Return self+value.
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/10/04/2018-10-04-TIL/" data-id="cjmvyk8v6005idl1h5d4rty2u" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/10/04/2018-10-04-TIL/" data-id="cjmybg0kn005c3w1h2itsqifg" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1931,6 +1940,7 @@ Docstring:      Return self+value.
 <h3 id="1-2-best-200-상품의-정보-스크래핑"><a href="#1-2-best-200-상품의-정보-스크래핑" class="headerlink" title="1.2 best 200 상품의 정보 스크래핑"></a>1.2 best 200 상품의 정보 스크래핑</h3><h4 id="200개-상품-정보-저장하기"><a href="#200개-상품-정보-저장하기" class="headerlink" title="200개 상품 정보 저장하기"></a>200개 상품 정보 저장하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">items = driver.find_elements_by_css_selector(<span class="string">".best-list:nth-child(3) &gt; ul &gt; li"</span>)</span><br><span class="line"></span><br><span class="line">len(items)</span><br></pre></td></tr></table></figure>
 <pre><code>200
 </code></pre><h4 id="200개-상품의-이름-가격-할인가격-링크-pandas-dataframe으로-만들기"><a href="#200개-상품의-이름-가격-할인가격-링크-pandas-dataframe으로-만들기" class="headerlink" title="200개 상품의 이름/가격/할인가격/링크 pandas dataframe으로 만들기"></a>200개 상품의 이름/가격/할인가격/링크 pandas dataframe으로 만들기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dict_list = []</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">    dict_list.append(&#123;</span><br><span class="line">        <span class="string">"title"</span>: item.find_element_by_css_selector(<span class="string">".itemname"</span>).text,</span><br><span class="line">        <span class="string">"s price"</span>: item.find_element_by_css_selector(<span class="string">".s-price"</span>).text.split(<span class="string">" "</span>)[<span class="number">0</span>].replace(<span class="string">","</span>,<span class="string">""</span>)[:<span class="number">-1</span>],</span><br><span class="line">        <span class="string">"o price"</span>: item.find_element_by_css_selector(<span class="string">".o-price"</span>).text.split(<span class="string">" "</span>)[<span class="number">0</span>].replace(<span class="string">","</span>,<span class="string">""</span>)[:<span class="number">-1</span>],</span><br><span class="line">        <span class="string">"link"</span>: item.find_element_by_css_selector(<span class="string">".itemname"</span>).get_attribute(<span class="string">"href"</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(dict_list)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1944,41 +1954,42 @@ Docstring:      Return self+value.
 <tbody>
 <tr>
 <td>195</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=24630.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=24630..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=24630" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=24630</a>…</td>
 <td>22900</td>
 <td>6900</td>
 <td>애견패딩 겨울옷 모음/애견의류/강아지옷/애견옷</td>
 </tr>
 <tr>
 <td>196</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=11011.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=11011..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=11011" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=11011</a>…</td>
 <td>50000</td>
 <td>32900</td>
 <td>[맥심]맥심 화이트 골드 커피믹스 320T 김연아커피/모카골드</td>
 </tr>
 <tr>
 <td>197</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=14767.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=14767..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=14767" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=14767</a>…</td>
 <td>38400</td>
 <td>32900</td>
 <td>[맥심]화이트골드 320T/커피믹스/커피</td>
 </tr>
 <tr>
 <td>198</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=17872.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=17872..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=17872" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=17872</a>…</td>
 <td></td>
 <td>69000</td>
 <td>윤남텍 간편세척 초음파 다목적 가습기/YN-101/G마켓</td>
 </tr>
 <tr>
 <td>199</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=93244.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=93244..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=93244" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=93244</a>…</td>
 <td>26300</td>
 <td>7900</td>
 <td>소녀나라 10%쿠폰/맨투맨/후드티/아우터/팬츠/스커트</td>
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="sale하지-않는-품목에-o-price-채우기"><a href="#sale하지-않는-품목에-o-price-채우기" class="headerlink" title="sale하지 않는 품목에 o price 채우기"></a>sale하지 않는 품목에 o price 채우기</h4><p>o price가 NaN인지(True) 아닌지 (False) is_nodata에 저장 </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">is_nodata = df[<span class="string">"o price"</span>] == <span class="string">""</span></span><br></pre></td></tr></table></figure>
 <p>비어있는 o price 칸에 s price의 값을 넣기</p>
@@ -2016,6 +2027,7 @@ Docstring:      Return self+value.
 198     69000
 Name: s price, dtype: object
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"o price"</span>][is_nodata] = df[<span class="string">"s price"</span>][is_nodata]</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -2029,44 +2041,46 @@ Name: s price, dtype: object
 <tbody>
 <tr>
 <td>195</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=24630.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=24630..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=24630" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=24630</a>…</td>
 <td>22900</td>
 <td>6900</td>
 <td>애견패딩 겨울옷 모음/애견의류/강아지옷/애견옷</td>
 </tr>
 <tr>
 <td>196</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=11011.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=11011..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=11011" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=11011</a>…</td>
 <td>50000</td>
 <td>32900</td>
 <td>[맥심]맥심 화이트 골드 커피믹스 320T 김연아커피/모카골드</td>
 </tr>
 <tr>
 <td>197</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=14767.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=14767..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=14767" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=14767</a>…</td>
 <td>38400</td>
 <td>32900</td>
 <td>[맥심]화이트골드 320T/커피믹스/커피</td>
 </tr>
 <tr>
 <td>198</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=17872.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=17872..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=17872" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=17872</a>…</td>
 <td>69000</td>
 <td>69000</td>
 <td>윤남텍 간편세척 초음파 다목적 가습기/YN-101/G마켓</td>
 </tr>
 <tr>
 <td>199</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=93244.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=93244..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=93244" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=93244</a>…</td>
 <td>26300</td>
 <td>7900</td>
 <td>소녀나라 10%쿠폰/맨투맨/후드티/아우터/팬츠/스커트</td>
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="할인율-column-추가하기"><a href="#할인율-column-추가하기" class="headerlink" title="할인율 column 추가하기"></a>할인율 column 추가하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"o price"</span>] = df[<span class="string">"o price"</span>].astype(<span class="string">"int"</span>)</span><br><span class="line">df[<span class="string">"s price"</span>] = df[<span class="string">"s price"</span>].astype(<span class="string">"int"</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"sale"</span>] = round((<span class="number">1</span> - (df[<span class="string">"s price"</span>] / df[<span class="string">"o price"</span>])), <span class="number">2</span>)*<span class="number">100</span></span><br><span class="line">df[<span class="string">"sale"</span>] = df[<span class="string">"sale"</span>].astype(<span class="string">"int"</span>).astype(<span class="string">"str"</span>)+<span class="string">"%"</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -2081,7 +2095,7 @@ Name: s price, dtype: object
 <tbody>
 <tr>
 <td>195</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=24630.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=24630..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=24630" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=24630</a>…</td>
 <td>22900</td>
 <td>6900</td>
 <td>애견패딩 겨울옷 모음/애견의류/강아지옷/애견옷</td>
@@ -2089,7 +2103,7 @@ Name: s price, dtype: object
 </tr>
 <tr>
 <td>196</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=11011.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=11011..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=11011" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=11011</a>…</td>
 <td>50000</td>
 <td>32900</td>
 <td>[맥심]맥심 화이트 골드 커피믹스 320T 김연아커피/모카골드</td>
@@ -2097,7 +2111,7 @@ Name: s price, dtype: object
 </tr>
 <tr>
 <td>197</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=14767.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=14767..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=14767" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=14767</a>…</td>
 <td>38400</td>
 <td>32900</td>
 <td>[맥심]화이트골드 320T/커피믹스/커피</td>
@@ -2105,7 +2119,7 @@ Name: s price, dtype: object
 </tr>
 <tr>
 <td>198</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=17872.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=17872..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=17872" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=17872</a>…</td>
 <td>69000</td>
 <td>69000</td>
 <td>윤남텍 간편세척 초음파 다목적 가습기/YN-101/G마켓</td>
@@ -2113,7 +2127,7 @@ Name: s price, dtype: object
 </tr>
 <tr>
 <td>199</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=93244.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=93244..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=93244" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=93244</a>…</td>
 <td>26300</td>
 <td>7900</td>
 <td>소녀나라 10%쿠폰/맨투맨/후드티/아우터/팬츠/스커트</td>
@@ -2121,6 +2135,7 @@ Name: s price, dtype: object
 </tr>
 </tbody>
 </table>
+</div>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
 <h2 id="2-Selenium-네이버-메일-크롤링"><a href="#2-Selenium-네이버-메일-크롤링" class="headerlink" title="2. Selenium 네이버 메일 크롤링"></a>2. Selenium 네이버 메일 크롤링</h2><ul>
 <li>네이버 페이지로 이동</li>
@@ -2145,10 +2160,11 @@ Name: s price, dtype: object
 <h3 id="2-3-네이버-메일로-이동해서-메일-데이터-가져오기"><a href="#2-3-네이버-메일로-이동해서-메일-데이터-가져오기" class="headerlink" title="2.3 네이버 메일로 이동해서 메일 데이터 가져오기"></a>2.3 네이버 메일로 이동해서 메일 데이터 가져오기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.get(mail_url)</span><br></pre></td></tr></table></figure>
 <p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_005.png?raw=true" alt=""></p>
 <h4 id="전체-메일-갯수-가져오기"><a href="#전체-메일-갯수-가져오기" class="headerlink" title="전체 메일 갯수 가져오기"></a>전체 메일 갯수 가져오기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">total_mail_count = driver.find_element_by_css_selector(<span class="string">"#headTotalNum"</span>).text</span><br><span class="line">total_mail_count</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;110&apos;
+<pre><code>&#39;110&#39;
 </code></pre><h4 id="안-읽은-메일-갯수-가져오기"><a href="#안-읽은-메일-갯수-가져오기" class="headerlink" title="안 읽은 메일 갯수 가져오기"></a>안 읽은 메일 갯수 가져오기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unread_mail_count = driver.find_element_by_css_selector(<span class="string">"#headUnreadNum"</span>).text</span><br><span class="line">unread_mail_count</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;105&apos;
+<pre><code>&#39;105&#39;
 </code></pre><h4 id="메일-데이터-가져오기-제목-보낸사람-메일링크"><a href="#메일-데이터-가져오기-제목-보낸사람-메일링크" class="headerlink" title="메일 데이터 가져오기 - 제목, 보낸사람, 메일링크"></a>메일 데이터 가져오기 - 제목, 보낸사람, 메일링크</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mails = driver.find_elements_by_css_selector(<span class="string">".mailList &gt; li"</span>)</span><br><span class="line">df = pd.DataFrame(columns = [<span class="string">"제목"</span>, <span class="string">"보낸사람"</span>, <span class="string">"메일링크"</span>])</span><br><span class="line"><span class="keyword">for</span> mail <span class="keyword">in</span> mails:</span><br><span class="line">    title = mail.find_element_by_css_selector(<span class="string">".mail_title"</span>).text</span><br><span class="line">    name = mail.find_element_by_css_selector(<span class="string">".name"</span>).text</span><br><span class="line">    link = mail.find_element_by_css_selector(<span class="string">".subject &gt; a"</span>).get_attribute(<span class="string">"href"</span>)</span><br><span class="line">    df.loc[len(df)] = &#123;<span class="string">"제목"</span>:title, <span class="string">"보낸사람"</span>:name, <span class="string">"메일링크"</span>:link&#125;</span><br><span class="line">    </span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -2204,53 +2220,54 @@ Name: s price, dtype: object
 <tr>
 <td>7</td>
 <td>SMTP send file 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8397" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8397</a></td>
 </tr>
 <tr>
 <td>8</td>
 <td>SMTP send file 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8396" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8396</a></td>
 </tr>
 <tr>
 <td>9</td>
 <td>hyeshin의 SMTP Send Text 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8395" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8395</a></td>
 </tr>
 <tr>
 <td>10</td>
 <td>hyeshin의 SMTP Send Text 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8394" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8394</a></td>
 </tr>
 <tr>
 <td>11</td>
 <td>hyeshin의 SMTP Send Text 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8393" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8393</a></td>
 </tr>
 <tr>
 <td>12</td>
 <td>hyeshin의 SMTP Send Text 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8392" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8392</a></td>
 </tr>
 <tr>
 <td>13</td>
 <td>hyeshin의 SMTP Send Text 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8391" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8391</a></td>
 </tr>
 <tr>
 <td>14</td>
 <td>hyeshin의 SMTP Send Text 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8390" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8390</a></td>
 </tr>
 </tbody>
 </table>
+</div>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
 <h2 id="3-Selenium-이미지-스크린샷"><a href="#3-Selenium-이미지-스크린샷" class="headerlink" title="3. Selenium 이미지 스크린샷"></a>3. Selenium 이미지 스크린샷</h2><ul>
 <li>youtube 페이지를 이미지로 스크린샷을 만들기</li>
@@ -2283,7 +2300,7 @@ Name: s price, dtype: object
 </code></pre><img src="/2018/10/04/web_10_selenium/output_60_1.png">
 <h4 id="영상이-나오는-영역만-자르기"><a href="#영상이-나오는-영역만-자르기" class="headerlink" title="영상이 나오는 영역만 자르기"></a>영상이 나오는 영역만 자르기</h4><p>영상이 재생되는 영역의 시작점과 크기를 구하기</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">element = driver.find_element_by_css_selector(<span class="string">"#player-container"</span>)</span><br><span class="line">location = element.location</span><br><span class="line">size = element.size</span><br><span class="line">location, size</span><br></pre></td></tr></table></figure>
-<pre><code>({&apos;x&apos;: 24, &apos;y&apos;: 80}, {&apos;height&apos;: 408, &apos;width&apos;: 726})
+<pre><code>({&#39;x&#39;: 24, &#39;y&#39;: 80}, {&#39;height&#39;: 408, &#39;width&#39;: 726})
 </code></pre><p>이미지 잘라내기</p>
 <ul>
 <li>top, bottom, left, right를 구해서 잘라낼 area 지정<br>(retina display의 경우: 각각 곱하기 2)</li>
@@ -2322,7 +2339,7 @@ Name: s price, dtype: object
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/10/04/web_10_selenium/" data-id="cjmvyk8xc00agdl1hbll11ioq" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/10/04/web_10_selenium/" data-id="cjmybg0mo00ap3w1hdcssz686" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -2463,7 +2480,7 @@ Name: s price, dtype: object
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/10/03/2018-10-02-TIL/" data-id="cjmvyk8v5005fdl1hfel4xr56" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/10/03/2018-10-02-TIL/" data-id="cjmybg0km00593w1h6je71b5m" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -2631,29 +2648,29 @@ Name: s price, dtype: object
 <li>윈도우 객체를 저장하면 브라우저에 여러 개의 탭이 있을 때 저장되어 있는 윈도우 객체의 탭으로 돌아올 수 있음</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">main_window = driver.current_window_handle</span><br><span class="line">main_window</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;CDwindow-1327F53EB33E1BF8CD1ECD3C85E4B347&apos;
+<pre><code>&#39;CDwindow-1327F53EB33E1BF8CD1ECD3C85E4B347&#39;
 </code></pre><h3 id="3-6-새로운-윈도우-탭-열기"><a href="#3-6-새로운-윈도우-탭-열기" class="headerlink" title="3.6 새로운 윈도우 탭 열기"></a>3.6 새로운 윈도우 탭 열기</h3><p>javascript 코드로 새로운 탭을 열 수 있음</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">script = <span class="string">"window.open('http://google.com');"</span></span><br><span class="line">driver.execute_script(script)</span><br></pre></td></tr></table></figure>
 <p>새로운 탭을 열었지만 아래와 같이 current_window(포커스)가 자동으로 바뀌지는 않음</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.current_window_handle</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;CDwindow-1327F53EB33E1BF8CD1ECD3C85E4B347&apos;
+<pre><code>&#39;CDwindow-1327F53EB33E1BF8CD1ECD3C85E4B347&#39;
 </code></pre><h3 id="3-7-현재-열려있는-윈도우-객체-확인"><a href="#3-7-현재-열려있는-윈도우-객체-확인" class="headerlink" title="3.7 현재 열려있는 윈도우 객체 확인"></a>3.7 현재 열려있는 윈도우 객체 확인</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">windows = driver.window_handles</span><br><span class="line">windows</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;CDwindow-1327F53EB33E1BF8CD1ECD3C85E4B347&apos;,
- &apos;CDwindow-D8D228E9A26224583A54A676F95612EA&apos;]
+<pre><code>[&#39;CDwindow-1327F53EB33E1BF8CD1ECD3C85E4B347&#39;,
+ &#39;CDwindow-D8D228E9A26224583A54A676F95612EA&#39;]
 </code></pre><h3 id="3-8-윈도우-포커스-변경"><a href="#3-8-윈도우-포커스-변경" class="headerlink" title="3.8 윈도우 포커스 변경"></a>3.8 윈도우 포커스 변경</h3><ul>
 <li>current window가 자동으로 바뀌지 않았기 때문에 바꿔주기</li>
 <li>이 방법으로 탭을 이동하면서 작업할 수 있음</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.switch_to_window(windows[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.current_window_handle</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;CDwindow-D8D228E9A26224583A54A676F95612EA&apos;
+<pre><code>&#39;CDwindow-D8D228E9A26224583A54A676F95612EA&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.switch_to_window(main_window)</span><br></pre></td></tr></table></figure>
 <h3 id="3-9-페이지-새로고침"><a href="#3-9-페이지-새로고침" class="headerlink" title="3.9 페이지 새로고침"></a>3.9 페이지 새로고침</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">script = <span class="string">"location.reload();"</span></span><br><span class="line">driver.execute_script(script)</span><br></pre></td></tr></table></figure>
 <h3 id="3-10-alert-messege-처리"><a href="#3-10-alert-messege-처리" class="headerlink" title="3.10 alert messege 처리"></a>3.10 alert messege 처리</h3><p>alert messege 만들기</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">script = <span class="string">"alert('selenium test');"</span></span><br><span class="line">driver.execute_script(script)</span><br></pre></td></tr></table></figure>
 <p>switch_to_alert 함수로 alert 변수에 alert 객체를 저장할 수 있음<br>alert 객의 text 값을 확인해보면 alert의 메세지를 문자열로 확인 가능</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert = driver.switch_to_alert()</span><br><span class="line">alert.text</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;selenium test&apos;
+<pre><code>&#39;selenium test&#39;
 </code></pre><p>확인 버튼 누르기</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert.accept()</span><br></pre></td></tr></table></figure>
 <h3 id="3-11-confirm-처리"><a href="#3-11-confirm-처리" class="headerlink" title="3.11 confirm 처리"></a>3.11 confirm 처리</h3><ul>
@@ -2661,7 +2678,7 @@ Name: s price, dtype: object
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">script = <span class="string">"confirm('data')"</span></span><br><span class="line">driver.execute_script(script)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">confirm = driver.switch_to_alert()</span><br><span class="line">confirm.text</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;data&apos;
+<pre><code>&#39;data&#39;
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># confirm.accept()   # 확인 버튼 클릭</span></span><br><span class="line">confirm.dismiss()    <span class="comment"># 취소 버튼 클릭</span></span><br></pre></td></tr></table></figure>
 <h3 id="3-12-input창에-문자열-입력하기"><a href="#3-12-input창에-문자열-입력하기" class="headerlink" title="3.12 input창에 문자열 입력하기"></a>3.12 input창에 문자열 입력하기</h3><ul>
 <li>send_keys()를 이용하여 웹페이지의 input 태그에 문자열을 입력할 수 있음</li>
@@ -2721,7 +2738,7 @@ Dog 0
 <pre><code>4
 6
 
-[&apos;In the dog house&apos;, &quot;&apos; 인기를 잃다 , 면목을 잃다&quot;]
+[&#39;In the dog house&#39;, &quot;&#39; 인기를 잃다 , 면목을 잃다&quot;]
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
 <h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
 <li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
@@ -2736,7 +2753,7 @@ Dog 0
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/10/02/web_09_selenium/" data-id="cjmvyk8vn006pdl1h3uyxwt6t" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/10/02/web_09_selenium/" data-id="cjmybg0l5006o3w1h5wfe5u28" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -2877,7 +2894,7 @@ Dog 0
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/30/2018-09-29-TIL/" data-id="cjmvyk8v4005cdl1huk51c8zt" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/30/2018-09-29-TIL/" data-id="cjmybg0kk00563w1hglgmlbz4" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -3018,12 +3035,13 @@ Dog 0
 <li>page_size와 page를 parameter로 받아 url을 만드는 함수</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_url</span><span class="params">(page_size=<span class="number">10</span>, page=<span class="number">1</span>)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"http://m.stock.naver.com/api/json/sise/siseListJson.nhn?\</span></span><br><span class="line"><span class="string">menu=market_sum&amp;sosok=0&amp;pageSize="</span>+str(page_size)+<span class="string">"&amp;page="</span>+str(page)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">make_url()</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;http://m.stock.naver.com/api/json/sise/siseListJson.nhn?menu=market_sum&amp;sosok=0&amp;pageSize=10&amp;page=1&apos;
+<pre><code>&#39;http://m.stock.naver.com/api/json/sise/siseListJson.nhn?menu=market_sum&amp;sosok=0&amp;pageSize=10&amp;page=1&#39;
 </code></pre><h3 id="1-2-get-data-함수"><a href="#1-2-get-data-함수" class="headerlink" title="1.2 get_data 함수"></a>1.2 get_data 함수</h3><ul>
 <li>url을 parameter로 받아 pandas dataframe으로 만들어주는 함수</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_data</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    URL을 받으면 json으로 데이터를 가져와서 pandas dataframe 로 만들어주는 함수</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    response = requests.get(url)   <span class="comment"># response라는 obj. 안에 결과 데이터를 받아옴</span></span><br><span class="line">    json_info = response.json()    <span class="comment"># json함수: 문자열 데이터를 json 형태로 parsing</span></span><br><span class="line">    companies = json_info[<span class="string">"result"</span>][<span class="string">"itemList"</span>]</span><br><span class="line">    df = pd.DataFrame(columns = [<span class="string">"종목"</span>,<span class="string">"시세"</span>,<span class="string">"전일비"</span>,<span class="string">"등락율"</span>,<span class="string">"시가총액"</span>,<span class="string">"거래량"</span>])</span><br><span class="line">    <span class="keyword">for</span> company <span class="keyword">in</span> companies:</span><br><span class="line">        df.loc[len(df)] = &#123;</span><br><span class="line">            <span class="string">"종목"</span>:company[<span class="string">"nm"</span>],</span><br><span class="line">            <span class="string">"시세"</span>:company[<span class="string">"nv"</span>],</span><br><span class="line">            <span class="string">"전일비"</span>:company[<span class="string">"cv"</span>],</span><br><span class="line">            <span class="string">"등락율"</span>:company[<span class="string">"cr"</span>],</span><br><span class="line">            <span class="string">"시가총액"</span>:company[<span class="string">"mks"</span>],</span><br><span class="line">            <span class="string">"거래량"</span>:company[<span class="string">"aq"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = make_url(<span class="number">100</span>, <span class="number">1</span>)</span><br><span class="line">df = get_data(url)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -3084,11 +3102,13 @@ Dog 0
 </tr>
 </tbody>
 </table>
+</div>
 <h3 id="1-3-json-normalize"><a href="#1-3-json-normalize" class="headerlink" title="1.3 json_normalize"></a>1.3 json_normalize</h3><ul>
 <li>더 편하게 json format 데이터를 pandas dataframe에 넣어주는 방법</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pandas.io.json <span class="keyword">import</span> json_normalize</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_data</span><span class="params">(url)</span>:</span></span><br><span class="line">    </span><br><span class="line">    response = requests.get(url)</span><br><span class="line">    json_info = response.json()    <span class="comment"># parsing</span></span><br><span class="line">    companies = json_info[<span class="string">"result"</span>][<span class="string">"itemList"</span>]</span><br><span class="line">    <span class="keyword">return</span> json_normalize(companies)</span><br><span class="line"></span><br><span class="line">url = make_url(<span class="number">100</span>, <span class="number">2</span>)</span><br><span class="line">df = get_data(url)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -3179,12 +3199,13 @@ Dog 0
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="2-공식적으로-제공되는-API-사용하기-Dark-Sky-API"><a href="#2-공식적으로-제공되는-API-사용하기-Dark-Sky-API" class="headerlink" title="2. 공식적으로 제공되는 API 사용하기 - Dark Sky API"></a>2. 공식적으로 제공되는 API 사용하기 - Dark Sky API</h2><ul>
 <li><p>날씨 정보를 알려주는 api - <a href="https://darksky.net/dev" target="_blank" rel="noopener">https://darksky.net/dev</a></p>
 <ul>
 <li>회원가입 필요, 하루에 1000건까지 무료로 사용 가능</li>
 <li>사용법(<a href="https://darksky.net/dev/docs" target="_blank" rel="noopener">Docs</a>)<ul>
-<li>Forecast Request: <a href="https://api.darksky.net/forecast/[key]/[latitude],[longitude]" target="_blank" rel="noopener">https://api.darksky.net/forecast/[key]/[latitude],[longitude]</a></li>
+<li>Forecast Request: <a href="https://api.darksky.net/forecast/[key]/[latitude],[longitude" target="_blank" rel="noopener">https://api.darksky.net/forecast/[key]/[latitude],[longitude</a>]</li>
 <li>[key]: 회원가입시 부여받은 secret key 사용<ul>
 <li>요청할 때 token 값을 같이 query에 보내주어 API를 요청하는 사람이 누구인지 서비스 제공자가 판별</li>
 </ul>
@@ -3214,10 +3235,10 @@ Dog 0
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">forecast</span><span class="params">(lat, lng)</span>:</span></span><br><span class="line">    url = <span class="string">"https://api.darksky.net/forecast/&#123;&#125;/&#123;&#125;,&#123;&#125;"</span>.format(FORECAST_TOKEN, lat, lng)</span><br><span class="line">    response = requests.get(url)</span><br><span class="line">    json_info = response.json()</span><br><span class="line">    <span class="keyword">return</span> json_info[<span class="string">"hourly"</span>][<span class="string">"summary"</span>], json_info[<span class="string">"timezone"</span>]</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lat = <span class="number">37.512</span></span><br><span class="line">lng = <span class="number">126.954</span></span><br><span class="line">forecast(lat, lng)</span><br></pre></td></tr></table></figure>
-<pre><code>(&apos;Partly cloudy tomorrow afternoon.&apos;, &apos;Asia/Seoul&apos;)
+<pre><code>(&#39;Partly cloudy tomorrow afternoon.&#39;, &#39;Asia/Seoul&#39;)
 </code></pre><h3 id="2-3-forecastio-패키지-사용"><a href="#2-3-forecastio-패키지-사용" class="headerlink" title="2.3 forecastio 패키지 사용"></a>2.3 forecastio 패키지 사용</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">forecast2</span><span class="params">(lat, lng)</span>:</span></span><br><span class="line">    forecast = forecastio.load_forecast(FORECAST_TOKEN, lat, lng, lang = <span class="string">'ko'</span>)</span><br><span class="line">    byHour = forecast.hourly()</span><br><span class="line">    <span class="keyword">return</span> byHour.summary</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lat = <span class="number">37.512</span></span><br><span class="line">lng = <span class="number">126.954</span></span><br><span class="line">forecast2(lat, lng)</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;내일 오후동안 약간 흐림&apos;
+<pre><code>&#39;내일 오후동안 약간 흐림&#39;
 </code></pre><h2 id="3-BeautifulSoup"><a href="#3-BeautifulSoup" class="headerlink" title="3. BeautifulSoup"></a>3. BeautifulSoup</h2><ul>
 <li>BeautifulSoup Doc (<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank" rel="noopener">https://www.crummy.com/software/BeautifulSoup/bs4/doc/</a>)</li>
 <li>문자열로 되어있는 html 코드를 css selector나 xpath를 이용해서 특정 element의 데이터를 쉽게 가져올 수 있도록 하는 서비스 패키지</li>
@@ -3231,6 +3252,7 @@ Dog 0
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">naver_top20</span><span class="params">()</span>:</span></span><br><span class="line">    df = pd.DataFrame(columns=[<span class="string">"rank"</span>,<span class="string">"keyword"</span>])</span><br><span class="line">    response = requests.get(<span class="string">"http://naver.com"</span>)</span><br><span class="line">    dom = BeautifulSoup(response.content, <span class="string">"html.parser"</span>)   <span class="comment">#html.parser   # dom 객체</span></span><br><span class="line">    keywords = dom.select(<span class="string">".ah_roll .ah_l .ah_item"</span>)   </span><br><span class="line">        <span class="comment"># CSS selector - selecting하는 방법은 다양</span></span><br><span class="line">        <span class="comment"># select 쓰면 list로 리턴 (요소가 하나라도) | select_one은 하나의 element만 리턴</span></span><br><span class="line">        <span class="comment"># len()을 찍어봐서 갯수가 맞게 나오는지 확인할 것</span></span><br><span class="line">    <span class="comment"># keywords = dom.select(".ah_roll_area &gt; .ah_l &gt; .ah_item")  </span></span><br><span class="line">    <span class="keyword">for</span> keyword <span class="keyword">in</span> keywords:</span><br><span class="line">        df.loc[len(df)] = &#123;</span><br><span class="line">            <span class="string">"rank"</span>: keyword.select_one(<span class="string">".ah_r"</span>).text,       </span><br><span class="line">            <span class="string">"keyword"</span>: keyword.select_one(<span class="string">".ah_k"</span>).text,</span><br><span class="line">            <span class="comment"># .text - element 안의 시작태그와 끝 태그 사이 내용을 가져옴</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = naver_top20()</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -3267,12 +3289,14 @@ Dog 0
 </tr>
 </tbody>
 </table>
+</div>
 <p>10초마다 실시간 검색어를 크롤링해서 리스트로 저장하기</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">ls = []</span><br><span class="line"><span class="keyword">for</span> idx <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">    print(idx)</span><br><span class="line">    df = naver_top20()</span><br><span class="line">    ls.append(df)</span><br><span class="line">    time.sleep(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>0
 1
 2
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls[<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -3384,6 +3408,7 @@ Dog 0
 </tr>
 </tbody>
 </table>
+</div>
 <h3 id="3-2-다음-검색어-순위"><a href="#3-2-다음-검색어-순위" class="headerlink" title="3.2 다음 검색어 순위"></a>3.2 다음 검색어 순위</h3><ul>
 <li>다음 검색어 순위를 가져와서 네이버 검색어 순위와 중복되는 키워드만 출력하기</li>
 <li><a href="http://daum.net" target="_blank" rel="noopener">http://daum.net</a></li>
@@ -3391,7 +3416,8 @@ Dog 0
 <h4 id="다음-실시간-검색어-순위-가져오기"><a href="#다음-실시간-검색어-순위-가져오기" class="headerlink" title="다음 실시간 검색어 순위 가져오기"></a>다음 실시간 검색어 순위 가져오기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">daum_top10</span><span class="params">()</span>:</span></span><br><span class="line">    df = pd.DataFrame(columns=[<span class="string">"rank"</span>,<span class="string">"keyword"</span>])</span><br><span class="line">    response = requests.get(<span class="string">"http://daum.net"</span>)</span><br><span class="line">    dom = BeautifulSoup(response.content, <span class="string">"html.parser"</span>)   </span><br><span class="line">    keywords = dom.select(<span class="string">"#mArticle &gt; div.cmain_tmp &gt; div.section_media &gt; div.hotissue_builtin &gt; div.realtime_part &gt; ol &gt; li"</span>)</span><br><span class="line">    print(len(keywords))</span><br><span class="line">    <span class="keyword">for</span> keyword <span class="keyword">in</span> keywords:</span><br><span class="line">        df.loc[len(df)] = &#123;</span><br><span class="line">            <span class="string">"rank"</span>:keyword.select_one(<span class="string">".ir_wa"</span>).text.replace(<span class="string">"위"</span>,<span class="string">""</span>),</span><br><span class="line">            <span class="string">"keyword"</span>:keyword.select_one(<span class="string">".link_issue"</span>).text,</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_daum = daum_top10()</span><br><span class="line">df_daum</span><br></pre></td></tr></table></figure>
 <pre><code>10
-</code></pre><table>
+</code></pre><div class="table-container">
+<table>
 <thead>
 <tr>
 <th></th>
@@ -3452,15 +3478,16 @@ Dog 0
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="네이버-실시간-검색어와-중복되는-키워드-추출하기"><a href="#네이버-실시간-검색어와-중복되는-키워드-추출하기" class="headerlink" title="네이버 실시간 검색어와 중복되는 키워드 추출하기"></a>네이버 실시간 검색어와 중복되는 키워드 추출하기</h4><ul>
 <li>여러가지 방법이 있음</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df_naver = df</span><br><span class="line"></span><br><span class="line">result = [keyword <span class="keyword">for</span> keyword <span class="keyword">in</span> df_daum[<span class="string">"keyword"</span>] </span><br><span class="line">          <span class="keyword">if</span> keyword <span class="keyword">in</span> df_naver[<span class="string">"keyword"</span>].tolist()]</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;중국 샤먼&apos;, &apos;플레이어&apos;]
+<pre><code>[&#39;중국 샤먼&#39;, &#39;플레이어&#39;]
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">result = [keyword <span class="keyword">for</span> keyword <span class="keyword">in</span> df_daum[<span class="string">"keyword"</span>] </span><br><span class="line">          <span class="keyword">if</span> df_naver[<span class="string">"keyword"</span>].str.contains(keyword).any()]</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;중국 샤먼&apos;, &apos;플레이어&apos;]
+<pre><code>[&#39;중국 샤먼&#39;, &#39;플레이어&#39;]
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list(set(df_daum[<span class="string">"keyword"</span>]) &amp; set(df_naver[<span class="string">"keyword"</span>]))</span><br></pre></td></tr></table></figure>
-<pre><code>[&apos;중국 샤먼&apos;, &apos;플레이어&apos;]
+<pre><code>[&#39;중국 샤먼&#39;, &#39;플레이어&#39;]
 </code></pre><h2 id="4-url-링크로-파일-다운로드-받는-방법"><a href="#4-url-링크로-파일-다운로드-받는-방법" class="headerlink" title="4. url 링크로 파일 다운로드 받는 방법"></a>4. url 링크로 파일 다운로드 받는 방법</h2><ul>
 <li>이미지 파일이나 영상 파일을 다운로드 받고 싶으면 이 방법 사용</li>
 <li>용량이 큰 파일을 받을 때는 chunk를 이용해서 파일을 쪼개서 다운로드 <ul>
@@ -3485,7 +3512,7 @@ Dog 0
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/29/web_08_requests/" data-id="cjmvyk8xe00amdl1h8w81y251" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/29/web_08_requests/" data-id="cjmybg0mn00am3w1hfovkluaq" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -3649,7 +3676,7 @@ Dog 0
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/29/web_07_crawling/" data-id="cjmvyk8vm006mdl1hl0qgb8d3" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/29/web_07_crawling/" data-id="cjmybg0l3006h3w1h3hayjoyl" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -3778,14 +3805,14 @@ Dog 0
 <h1 id="1-Preparation"><a href="#1-Preparation" class="headerlink" title="1. Preparation"></a>1. Preparation</h1><p>파이썬으로 이메일을 보내기 위한 준비를 해준다.</p>
 <h2 id="1-1-Importing-necessary-libraries"><a href="#1-1-Importing-necessary-libraries" class="headerlink" title="1.1 Importing necessary libraries"></a>1.1 Importing necessary libraries</h2><p>필요한 패키지들을 import해준다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> smtplib, os, pickle  <span class="comment"># smtplib: 메일 전송을 위한 패키지</span></span><br><span class="line"><span class="keyword">from</span> email <span class="keyword">import</span> encoders  <span class="comment"># 파일전송을 할 때 이미지나 문서 동영상 등의 파일을 문자열로 변환할 때 사용할 패키지</span></span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText   <span class="comment"># 본문내용을 전송할 때 사용되는 모듈</span></span><br><span class="line"><span class="keyword">from</span> email.mime.multipart <span class="keyword">import</span> MIMEMultipart   <span class="comment"># 메시지를 보낼 때 메시지에 대한 모듈</span></span><br><span class="line"><span class="keyword">from</span> email.mime.base <span class="keyword">import</span> MIMEBase     <span class="comment"># 파일을 전송할 때 사용되는 모듈</span></span><br></pre></td></tr></table></figure>
-<p>메일을 보낼 주소들을 미리 저장해준다.<br>테스트를 위해 여러가지 주소로 보내고 싶은데, 나는 계정을 여러 개 갖고 있지 않으므로,<br>내 이메일 주소인 <a href="mailto:hyeshinoh@gmail.com" target="_blank" rel="noopener">hyeshinoh@gmail.com</a>에서 hyeshinoh 뒤에 ‘+’와 아무 글자를 넣어주면 마치 여러 개의 이메일 주소인 것처럼 사용할 수 있다. 이렇게 쓰면 메일은 모두 <a href="mailto:hyeshinoh@gmail.com" target="_blank" rel="noopener">hyeshinoh@gmail.com</a>로 전송된다.</p>
+<p>메일을 보낼 주소들을 미리 저장해준다.<br>테스트를 위해 여러가지 주소로 보내고 싶은데, 나는 계정을 여러 개 갖고 있지 않으므로,<br>내 이메일 주소인 hyeshinoh@gmail.com에서 hyeshinoh 뒤에 ‘+’와 아무 글자를 넣어주면 마치 여러 개의 이메일 주소인 것처럼 사용할 수 있다. 이렇게 쓰면 메일은 모두 hyeshinoh@gmail.com로 전송된다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">toAddr = [<span class="string">"panda706@naver.com"</span>, <span class="string">"hyeshinoh+11@gmail.com"</span>, <span class="string">"hyeshinoh+h@gmail.com"</span>]</span><br></pre></td></tr></table></figure>
 <h2 id="1-2-Setting-login-information-email-amp-password"><a href="#1-2-Setting-login-information-email-amp-password" class="headerlink" title="1.2 Setting login information: email &amp; password"></a>1.2 Setting login information: email &amp; password</h2><p>password는 직접 노출하면 유출의 위험이 있으므로 아래와 같이 pickle 파일로 저장해서 이용하는 것이 좋다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pw = "본인의 pw"    </span></span><br><span class="line"><span class="comment"># pickle.dump(pw, open("pw.pickle", 'wb'))</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">email = <span class="string">"hyeshinoh@gmail.com"</span></span><br><span class="line">pw = pickle.load(open(<span class="string">'pw.pickle'</span>, <span class="string">'rb'</span>))</span><br></pre></td></tr></table></figure>
 <h1 id="2-Send-text"><a href="#2-Send-text" class="headerlink" title="2. Send text"></a>2. Send text</h1><h2 id="2-1-Access-smtp-server"><a href="#2-1-Access-smtp-server" class="headerlink" title="2.1 Access smtp server"></a>2.1 Access smtp server</h2><p>smtp object를 생성한다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">smtp = smtplib.SMTP(<span class="string">'smtp.gmail.com'</span>, <span class="number">587</span>)   <span class="comment"># 587: 서버의 포트번호</span></span><br><span class="line">smtp.ehlo()</span><br><span class="line">smtp.starttls()   <span class="comment"># tls방식으로 접속, 그 포트번호가 587</span></span><br><span class="line"><span class="comment"># smtp.login('hyeshinoh@gmail.com', pickle.load( open('../pw.pickle', 'rb') ))</span></span><br><span class="line">smtp.login(<span class="string">'hyeshinoh@gmail.com'</span>, pw)</span><br></pre></td></tr></table></figure>
-<pre><code>(235, b&apos;2.7.0 Accepted&apos;)
+<pre><code>(235, b&#39;2.7.0 Accepted&#39;)
 </code></pre><h2 id="2-2-Make-message"><a href="#2-2-Make-message" class="headerlink" title="2.2 Make message"></a>2.2 Make message</h2><p>msg object를 생성하고 제목을 넣어준다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg = MIMEMultipart()    <span class="comment">#msg obj.</span></span><br><span class="line">msg[<span class="string">'Subject'</span>] = <span class="string">'hyeshin의 SMTP Send Text 테스트'</span></span><br></pre></td></tr></table></figure>
 <p>msg object에 본문(text msg)을 추가해준다.</p>
@@ -3810,9 +3837,9 @@ hyeshinoh+h@gmail.com
 </code></pre><h1 id="3-Send-File"><a href="#3-Send-File" class="headerlink" title="3. Send File"></a>3. Send File</h1><p>이제 파일을 첨부해서 이메일을 보내보자</p>
 <h2 id="3-1-Access-smtp-server"><a href="#3-1-Access-smtp-server" class="headerlink" title="3.1 Access smtp server"></a>3.1 Access smtp server</h2><p>smtp object를 다시 생성해보자.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># smtp close</span></span><br><span class="line">smtp.quit()</span><br></pre></td></tr></table></figure>
-<pre><code>(221, b&apos;2.0.0 closing connection o68-v6sm26409410pfi.180 - gsmtp&apos;)
+<pre><code>(221, b&#39;2.0.0 closing connection o68-v6sm26409410pfi.180 - gsmtp&#39;)
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Access smtp server</span></span><br><span class="line">smtp = smtplib.SMTP(<span class="string">'smtp.gmail.com'</span>, <span class="number">587</span>)   <span class="comment"># 587: 서버의 포트번호</span></span><br><span class="line">smtp.ehlo()</span><br><span class="line">smtp.starttls()   </span><br><span class="line">smtp.login(<span class="string">'hyeshinoh@gmail.com'</span>, pw)</span><br></pre></td></tr></table></figure>
-<pre><code>(235, b&apos;2.7.0 Accepted&apos;)
+<pre><code>(235, b&#39;2.7.0 Accepted&#39;)
 </code></pre><h2 id="3-2-Make-message"><a href="#3-2-Make-message" class="headerlink" title="3.2 Make message"></a>3.2 Make message</h2><p>msg object를 생성하고 제목을 넣어준다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg = MIMEMultipart()</span><br><span class="line">msg[<span class="string">'Subject'</span>] = <span class="string">'SMTP send file 테스트'</span></span><br></pre></td></tr></table></figure>
 <p>msg object에 본문(text msg)을 추가해준다.</p>
@@ -3830,7 +3857,7 @@ hyeshinoh+h@gmail.com
 <li>gmail<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_gmail_002.png?raw=true" alt=""></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># smtp close</span></span><br><span class="line">smtp.quit()</span><br></pre></td></tr></table></figure>
-<pre><code>(221, b&apos;2.0.0 closing connection d22-v6sm9509327pfk.69 - gsmtp&apos;)
+<pre><code>(221, b&#39;2.0.0 closing connection d22-v6sm9509327pfk.69 - gsmtp&#39;)
 </code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
 <li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
 </ul>
@@ -3844,7 +3871,7 @@ hyeshinoh+h@gmail.com
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/09/29/web_06_Send_Email/" data-id="cjmvyk8vl006kdl1hw7mh2ndc" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/09/29/web_06_Send_Email/" data-id="cjmybg0l1006e3w1hcdhhnuta" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

@@ -293,6 +293,7 @@ ga('send', 'pageview');
 <h3 id="1-2-best-200-상품의-정보-스크래핑"><a href="#1-2-best-200-상품의-정보-스크래핑" class="headerlink" title="1.2 best 200 상품의 정보 스크래핑"></a>1.2 best 200 상품의 정보 스크래핑</h3><h4 id="200개-상품-정보-저장하기"><a href="#200개-상품-정보-저장하기" class="headerlink" title="200개 상품 정보 저장하기"></a>200개 상품 정보 저장하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">items = driver.find_elements_by_css_selector(<span class="string">".best-list:nth-child(3) &gt; ul &gt; li"</span>)</span><br><span class="line"></span><br><span class="line">len(items)</span><br></pre></td></tr></table></figure>
 <pre><code>200
 </code></pre><h4 id="200개-상품의-이름-가격-할인가격-링크-pandas-dataframe으로-만들기"><a href="#200개-상품의-이름-가격-할인가격-링크-pandas-dataframe으로-만들기" class="headerlink" title="200개 상품의 이름/가격/할인가격/링크 pandas dataframe으로 만들기"></a>200개 상품의 이름/가격/할인가격/링크 pandas dataframe으로 만들기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dict_list = []</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">    dict_list.append(&#123;</span><br><span class="line">        <span class="string">"title"</span>: item.find_element_by_css_selector(<span class="string">".itemname"</span>).text,</span><br><span class="line">        <span class="string">"s price"</span>: item.find_element_by_css_selector(<span class="string">".s-price"</span>).text.split(<span class="string">" "</span>)[<span class="number">0</span>].replace(<span class="string">","</span>,<span class="string">""</span>)[:<span class="number">-1</span>],</span><br><span class="line">        <span class="string">"o price"</span>: item.find_element_by_css_selector(<span class="string">".o-price"</span>).text.split(<span class="string">" "</span>)[<span class="number">0</span>].replace(<span class="string">","</span>,<span class="string">""</span>)[:<span class="number">-1</span>],</span><br><span class="line">        <span class="string">"link"</span>: item.find_element_by_css_selector(<span class="string">".itemname"</span>).get_attribute(<span class="string">"href"</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(dict_list)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -306,41 +307,42 @@ ga('send', 'pageview');
 <tbody>
 <tr>
 <td>195</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=24630.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=24630..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=24630" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=24630</a>…</td>
 <td>22900</td>
 <td>6900</td>
 <td>애견패딩 겨울옷 모음/애견의류/강아지옷/애견옷</td>
 </tr>
 <tr>
 <td>196</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=11011.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=11011..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=11011" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=11011</a>…</td>
 <td>50000</td>
 <td>32900</td>
 <td>[맥심]맥심 화이트 골드 커피믹스 320T 김연아커피/모카골드</td>
 </tr>
 <tr>
 <td>197</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=14767.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=14767..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=14767" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=14767</a>…</td>
 <td>38400</td>
 <td>32900</td>
 <td>[맥심]화이트골드 320T/커피믹스/커피</td>
 </tr>
 <tr>
 <td>198</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=17872.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=17872..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=17872" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=17872</a>…</td>
 <td></td>
 <td>69000</td>
 <td>윤남텍 간편세척 초음파 다목적 가습기/YN-101/G마켓</td>
 </tr>
 <tr>
 <td>199</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=93244.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=93244..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=93244" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=93244</a>…</td>
 <td>26300</td>
 <td>7900</td>
 <td>소녀나라 10%쿠폰/맨투맨/후드티/아우터/팬츠/스커트</td>
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="sale하지-않는-품목에-o-price-채우기"><a href="#sale하지-않는-품목에-o-price-채우기" class="headerlink" title="sale하지 않는 품목에 o price 채우기"></a>sale하지 않는 품목에 o price 채우기</h4><p>o price가 NaN인지(True) 아닌지 (False) is_nodata에 저장 </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">is_nodata = df[<span class="string">"o price"</span>] == <span class="string">""</span></span><br></pre></td></tr></table></figure>
 <p>비어있는 o price 칸에 s price의 값을 넣기</p>
@@ -378,6 +380,7 @@ ga('send', 'pageview');
 198     69000
 Name: s price, dtype: object
 </code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"o price"</span>][is_nodata] = df[<span class="string">"s price"</span>][is_nodata]</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -391,44 +394,46 @@ Name: s price, dtype: object
 <tbody>
 <tr>
 <td>195</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=24630.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=24630..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=24630" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=24630</a>…</td>
 <td>22900</td>
 <td>6900</td>
 <td>애견패딩 겨울옷 모음/애견의류/강아지옷/애견옷</td>
 </tr>
 <tr>
 <td>196</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=11011.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=11011..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=11011" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=11011</a>…</td>
 <td>50000</td>
 <td>32900</td>
 <td>[맥심]맥심 화이트 골드 커피믹스 320T 김연아커피/모카골드</td>
 </tr>
 <tr>
 <td>197</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=14767.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=14767..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=14767" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=14767</a>…</td>
 <td>38400</td>
 <td>32900</td>
 <td>[맥심]화이트골드 320T/커피믹스/커피</td>
 </tr>
 <tr>
 <td>198</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=17872.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=17872..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=17872" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=17872</a>…</td>
 <td>69000</td>
 <td>69000</td>
 <td>윤남텍 간편세척 초음파 다목적 가습기/YN-101/G마켓</td>
 </tr>
 <tr>
 <td>199</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=93244.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=93244..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=93244" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=93244</a>…</td>
 <td>26300</td>
 <td>7900</td>
 <td>소녀나라 10%쿠폰/맨투맨/후드티/아우터/팬츠/스커트</td>
 </tr>
 </tbody>
 </table>
+</div>
 <h4 id="할인율-column-추가하기"><a href="#할인율-column-추가하기" class="headerlink" title="할인율 column 추가하기"></a>할인율 column 추가하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"o price"</span>] = df[<span class="string">"o price"</span>].astype(<span class="string">"int"</span>)</span><br><span class="line">df[<span class="string">"s price"</span>] = df[<span class="string">"s price"</span>].astype(<span class="string">"int"</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"sale"</span>] = round((<span class="number">1</span> - (df[<span class="string">"s price"</span>] / df[<span class="string">"o price"</span>])), <span class="number">2</span>)*<span class="number">100</span></span><br><span class="line">df[<span class="string">"sale"</span>] = df[<span class="string">"sale"</span>].astype(<span class="string">"int"</span>).astype(<span class="string">"str"</span>)+<span class="string">"%"</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -443,7 +448,7 @@ Name: s price, dtype: object
 <tbody>
 <tr>
 <td>195</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=24630.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=24630..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=24630" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=24630</a>…</td>
 <td>22900</td>
 <td>6900</td>
 <td>애견패딩 겨울옷 모음/애견의류/강아지옷/애견옷</td>
@@ -451,7 +456,7 @@ Name: s price, dtype: object
 </tr>
 <tr>
 <td>196</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=11011.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=11011..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=11011" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=11011</a>…</td>
 <td>50000</td>
 <td>32900</td>
 <td>[맥심]맥심 화이트 골드 커피믹스 320T 김연아커피/모카골드</td>
@@ -459,7 +464,7 @@ Name: s price, dtype: object
 </tr>
 <tr>
 <td>197</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=14767.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=14767..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=14767" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=14767</a>…</td>
 <td>38400</td>
 <td>32900</td>
 <td>[맥심]화이트골드 320T/커피믹스/커피</td>
@@ -467,7 +472,7 @@ Name: s price, dtype: object
 </tr>
 <tr>
 <td>198</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=17872.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=17872..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=17872" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=17872</a>…</td>
 <td>69000</td>
 <td>69000</td>
 <td>윤남텍 간편세척 초음파 다목적 가습기/YN-101/G마켓</td>
@@ -475,7 +480,7 @@ Name: s price, dtype: object
 </tr>
 <tr>
 <td>199</td>
-<td><a href="http://item.gmarket.co.kr/Item?goodscode=93244.." target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=93244..</a>.</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=93244" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=93244</a>…</td>
 <td>26300</td>
 <td>7900</td>
 <td>소녀나라 10%쿠폰/맨투맨/후드티/아우터/팬츠/스커트</td>
@@ -483,6 +488,7 @@ Name: s price, dtype: object
 </tr>
 </tbody>
 </table>
+</div>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
 <h2 id="2-Selenium-네이버-메일-크롤링"><a href="#2-Selenium-네이버-메일-크롤링" class="headerlink" title="2. Selenium 네이버 메일 크롤링"></a>2. Selenium 네이버 메일 크롤링</h2><ul>
 <li>네이버 페이지로 이동</li>
@@ -507,10 +513,11 @@ Name: s price, dtype: object
 <h3 id="2-3-네이버-메일로-이동해서-메일-데이터-가져오기"><a href="#2-3-네이버-메일로-이동해서-메일-데이터-가져오기" class="headerlink" title="2.3 네이버 메일로 이동해서 메일 데이터 가져오기"></a>2.3 네이버 메일로 이동해서 메일 데이터 가져오기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.get(mail_url)</span><br></pre></td></tr></table></figure>
 <p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_005.png?raw=true" alt=""></p>
 <h4 id="전체-메일-갯수-가져오기"><a href="#전체-메일-갯수-가져오기" class="headerlink" title="전체 메일 갯수 가져오기"></a>전체 메일 갯수 가져오기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">total_mail_count = driver.find_element_by_css_selector(<span class="string">"#headTotalNum"</span>).text</span><br><span class="line">total_mail_count</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;110&apos;
+<pre><code>&#39;110&#39;
 </code></pre><h4 id="안-읽은-메일-갯수-가져오기"><a href="#안-읽은-메일-갯수-가져오기" class="headerlink" title="안 읽은 메일 갯수 가져오기"></a>안 읽은 메일 갯수 가져오기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unread_mail_count = driver.find_element_by_css_selector(<span class="string">"#headUnreadNum"</span>).text</span><br><span class="line">unread_mail_count</span><br></pre></td></tr></table></figure>
-<pre><code>&apos;105&apos;
+<pre><code>&#39;105&#39;
 </code></pre><h4 id="메일-데이터-가져오기-제목-보낸사람-메일링크"><a href="#메일-데이터-가져오기-제목-보낸사람-메일링크" class="headerlink" title="메일 데이터 가져오기 - 제목, 보낸사람, 메일링크"></a>메일 데이터 가져오기 - 제목, 보낸사람, 메일링크</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mails = driver.find_elements_by_css_selector(<span class="string">".mailList &gt; li"</span>)</span><br><span class="line">df = pd.DataFrame(columns = [<span class="string">"제목"</span>, <span class="string">"보낸사람"</span>, <span class="string">"메일링크"</span>])</span><br><span class="line"><span class="keyword">for</span> mail <span class="keyword">in</span> mails:</span><br><span class="line">    title = mail.find_element_by_css_selector(<span class="string">".mail_title"</span>).text</span><br><span class="line">    name = mail.find_element_by_css_selector(<span class="string">".name"</span>).text</span><br><span class="line">    link = mail.find_element_by_css_selector(<span class="string">".subject &gt; a"</span>).get_attribute(<span class="string">"href"</span>)</span><br><span class="line">    df.loc[len(df)] = &#123;<span class="string">"제목"</span>:title, <span class="string">"보낸사람"</span>:name, <span class="string">"메일링크"</span>:link&#125;</span><br><span class="line">    </span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -566,53 +573,54 @@ Name: s price, dtype: object
 <tr>
 <td>7</td>
 <td>SMTP send file 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8397" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8397</a></td>
 </tr>
 <tr>
 <td>8</td>
 <td>SMTP send file 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8396" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8396</a></td>
 </tr>
 <tr>
 <td>9</td>
 <td>hyeshin의 SMTP Send Text 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8395" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8395</a></td>
 </tr>
 <tr>
 <td>10</td>
 <td>hyeshin의 SMTP Send Text 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8394" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8394</a></td>
 </tr>
 <tr>
 <td>11</td>
 <td>hyeshin의 SMTP Send Text 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8393" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8393</a></td>
 </tr>
 <tr>
 <td>12</td>
 <td>hyeshin의 SMTP Send Text 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8392" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8392</a></td>
 </tr>
 <tr>
 <td>13</td>
 <td>hyeshin의 SMTP Send Text 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8391" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8391</a></td>
 </tr>
 <tr>
 <td>14</td>
 <td>hyeshin의 SMTP Send Text 테스트</td>
-<td><a href="mailto:hyeshinoh@gmail.co" target="_blank" rel="noopener">hyeshinoh@gmail.co</a>..</td>
+<td>hyeshinoh@gmail.co..</td>
 <td><a href="https://mail.naver.com/read/popup/?nMailId=8390" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8390</a></td>
 </tr>
 </tbody>
 </table>
+</div>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
 <h2 id="3-Selenium-이미지-스크린샷"><a href="#3-Selenium-이미지-스크린샷" class="headerlink" title="3. Selenium 이미지 스크린샷"></a>3. Selenium 이미지 스크린샷</h2><ul>
 <li>youtube 페이지를 이미지로 스크린샷을 만들기</li>
@@ -645,7 +653,7 @@ Name: s price, dtype: object
 </code></pre><img src="/2018/10/04/web_10_selenium/output_60_1.png">
 <h4 id="영상이-나오는-영역만-자르기"><a href="#영상이-나오는-영역만-자르기" class="headerlink" title="영상이 나오는 영역만 자르기"></a>영상이 나오는 영역만 자르기</h4><p>영상이 재생되는 영역의 시작점과 크기를 구하기</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">element = driver.find_element_by_css_selector(<span class="string">"#player-container"</span>)</span><br><span class="line">location = element.location</span><br><span class="line">size = element.size</span><br><span class="line">location, size</span><br></pre></td></tr></table></figure>
-<pre><code>({&apos;x&apos;: 24, &apos;y&apos;: 80}, {&apos;height&apos;: 408, &apos;width&apos;: 726})
+<pre><code>({&#39;x&#39;: 24, &#39;y&#39;: 80}, {&#39;height&#39;: 408, &#39;width&#39;: 726})
 </code></pre><p>이미지 잘라내기</p>
 <ul>
 <li>top, bottom, left, right를 구해서 잘라낼 area 지정<br>(retina display의 경우: 각각 곱하기 2)</li>
@@ -684,7 +692,7 @@ Name: s price, dtype: object
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/10/04/web_10_selenium/" data-id="cjmvyk8xc00agdl1hbll11ioq" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/10/04/web_10_selenium/" data-id="cjmybg0mo00ap3w1hdcssz686" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

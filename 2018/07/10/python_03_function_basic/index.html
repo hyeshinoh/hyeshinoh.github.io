@@ -5,18 +5,18 @@
     
     <title>python 03. Python Function - Basic | 우와팬더의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="jupyter notebook으로 보기 다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return *args, **kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법은 (1)함수 (2)객체 (3)모듈이 있는데 그">
-<meta name="keywords" content="python,programming">
+    <meta name="description" content="jupyter notebook으로 보기 다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return args, *kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법은 (1)함수 (2)객체 (3)모듈이 있는데 그 중에">
+<meta name="keywords" content="programming,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 03. Python Function - Basic">
 <meta property="og:url" content="http://yoursite.com/2018/07/10/python_03_function_basic/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="jupyter notebook으로 보기 다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return *args, **kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법은 (1)함수 (2)객체 (3)모듈이 있는데 그">
+<meta property="og:description" content="jupyter notebook으로 보기 다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return args, *kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법은 (1)함수 (2)객체 (3)모듈이 있는데 그 중에">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-09-27T12:05:46.857Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 03. Python Function - Basic">
-<meta name="twitter:description" content="jupyter notebook으로 보기 다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return *args, **kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법은 (1)함수 (2)객체 (3)모듈이 있는데 그">
+<meta name="twitter:description" content="jupyter notebook으로 보기 다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return args, *kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법은 (1)함수 (2)객체 (3)모듈이 있는데 그 중에">
     
 
     
@@ -275,7 +275,7 @@ ga('send', 'pageview');
 <li>함수 선언, 호출</li>
 <li>parameter &amp; argument 개념</li>
 <li>return</li>
-<li>*args, **kwargs</li>
+<li><em>args, *</em>kwargs</li>
 <li>docstring</li>
 </ul>
 <p>여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법은 (1)함수 (2)객체 (3)모듈이 있는데 그 중에서 먼저 함수에 대해서 살펴보도록 하자</p>
@@ -360,6 +360,7 @@ After:  10
 </ul>
 <p>Out[11]:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure></p>
 <h3 id="1-5-함수의-형태"><a href="#1-5-함수의-형태" class="headerlink" title="1.5 함수의 형태"></a>1.5 함수의 형태</h3><p>parameter의 유무, return value의 유무에 따라 함수 형태가 다름</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -381,6 +382,7 @@ After:  10
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="2-Variable-length-arguments"><a href="#2-Variable-length-arguments" class="headerlink" title="2. Variable-length arguments"></a>2. Variable-length arguments</h2><ul>
 <li>개수가 정해지지 않은 변수를 함수의 parameter로 사용하는 방법</li>
 <li>asterisk(*): 전부, 모두, all</li>
@@ -396,7 +398,7 @@ After:  10
 <p>Out[5]:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">15</span><br></pre></td></tr></table></figure></p>
 <p>In [12]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_func</span><span class="params">(*args)</span>:</span></span><br><span class="line">    print(args)</span><br><span class="line">    print(type(args))</span><br><span class="line">    print(args[<span class="number">2</span>])</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">sum_func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>) <span class="comment"># 묶여서 tuple형태로 들어감</span></span><br></pre></td></tr></table></figure></p>
 <pre><code>(1, 2, 3, 4, 5)
-&lt;class &apos;tuple&apos;&gt;
+&lt;class &#39;tuple&#39;&gt;
 3
 </code></pre><h3 id="2-2-키워드-가변인자-kwargs"><a href="#2-2-키워드-가변인자-kwargs" class="headerlink" title="2.2 키워드 가변인자: **kwargs"></a>2.2 키워드 가변인자: **kwargs</h3><ul>
 <li>parameter의 이름을 따로 지정하지 않고 입력하는 방법</li>
@@ -408,20 +410,20 @@ After:  10
 </li>
 </ul>
 <p>In [13]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">points</span><span class="params">(**kwargs)</span>:</span></span><br><span class="line">    print(kwargs)</span><br><span class="line">    print(type(kwargs))</span><br><span class="line">    print(kwargs[<span class="string">'math'</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">points(math = <span class="number">90</span>, science = <span class="number">70</span>)</span><br></pre></td></tr></table></figure></p>
-<pre><code>{&apos;math&apos;: 90, &apos;science&apos;: 70}
-&lt;class &apos;dict&apos;&gt;
+<pre><code>{&#39;math&#39;: 90, &#39;science&#39;: 70}
+&lt;class &#39;dict&#39;&gt;
 90
 </code></pre><p>In [14]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dss</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    print(args)</span><br><span class="line">    print(kwargs)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">dss(<span class="number">2</span>, <span class="number">3</span>, num1 = <span class="number">10</span>, num2 = <span class="number">20</span>)</span><br></pre></td></tr></table></figure></p>
 <pre><code>(2, 3)
-{&apos;num1&apos;: 10, &apos;num2&apos;: 20}
+{&#39;num1&#39;: 10, &#39;num2&#39;: 20}
 </code></pre><p>In [15]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dss</span><span class="params">(*args)</span>:</span></span><br><span class="line">    print(args)</span><br><span class="line">    </span><br><span class="line">ls = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">dss(ls)              <span class="comment"># ls가 *args의 0번째 데이터로 들어감</span></span><br></pre></td></tr></table></figure></p>
 <pre><code>([1, 2, 3, 4],)
 </code></pre><h4 id="argument에-가변인자-사용하기"><a href="#argument에-가변인자-사용하기" class="headerlink" title="argument에 가변인자 사용하기"></a>argument에 가변인자 사용하기</h4><p>In [16]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dss</span><span class="params">(*args)</span>:</span></span><br><span class="line">    print(args)</span><br><span class="line">    print(type(args))</span><br><span class="line">    </span><br><span class="line">ls = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">dss(*ls)   <span class="comment"># list 가 argument로 하나씩 들어가게 됨</span></span><br></pre></td></tr></table></figure></p>
 <pre><code>(1, 2, 3, 4)
-&lt;class &apos;tuple&apos;&gt;
+&lt;class &#39;tuple&#39;&gt;
 </code></pre><p>In [17]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 그냥 보낼 경우 args의 0번째 데이터로 보내게 됨</span></span><br><span class="line">dss(ls)</span><br></pre></td></tr></table></figure></p>
 <pre><code>([1, 2, 3, 4],)
-&lt;class &apos;tuple&apos;&gt;
+&lt;class &#39;tuple&#39;&gt;
 </code></pre><h2 id="3-docstring"><a href="#3-docstring" class="headerlink" title="3. docstring"></a>3. docstring</h2><p>함수에 대한 설명을 넣는 것 (함수와 parameter에 관한 설명은 필수)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dss</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="string">"description"</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">or</span></span><br><span class="line"></span><br><span class="line">  <span class="string">"""</span></span><br><span class="line"><span class="string">  description</span></span><br><span class="line"><span class="string">  description</span></span><br><span class="line"><span class="string">  """</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>PEP 20: The Zen of Python - “Readability counts”</li>
@@ -430,7 +432,7 @@ After:  10
 <p>In [18]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># PEP 20</span></span><br><span class="line"><span class="keyword">import</span> this</span><br></pre></td></tr></table></figure></p>
 <p><strong>The Zen of Python, by Tim Peters</strong></p>
 <blockquote>
-<p>Beautiful is better than ugly.<br>Explicit is better than implicit.<br>Simple is better than complex.<br>Complex is better than complicated.<br>Flat is better than nested.<br>Sparse is better than dense.<br>Readability counts.<br>Special cases aren’t special enough to break the rules.<br>Although practicality beats purity.<br>Errors should never pass silently.<br>Unless explicitly silenced.<br>In the face of ambiguity, refuse the temptation to guess.<br>There should be one– and preferably only one –obvious way to do it.<br>Although that way may not be obvious at first unless you’re Dutch.<br>Now is better than never.<br>Although never is often better than <em>right</em> now.<br>If the implementation is hard to explain, it’s a bad idea.<br>If the implementation is easy to explain, it may be a good idea.<br>Namespaces are one honking great idea – let’s do more of those!</p>
+<p>Beautiful is better than ugly.<br>Explicit is better than implicit.<br>Simple is better than complex.<br>Complex is better than complicated.<br>Flat is better than nested.<br>Sparse is better than dense.<br>Readability counts.<br>Special cases aren’t special enough to break the rules.<br>Although practicality beats purity.<br>Errors should never pass silently.<br>Unless explicitly silenced.<br>In the face of ambiguity, refuse the temptation to guess.<br>There should be one— and preferably only one —obvious way to do it.<br>Although that way may not be obvious at first unless you’re Dutch.<br>Now is better than never.<br>Although never is often better than <em>right</em> now.<br>If the implementation is hard to explain, it’s a bad idea.<br>If the implementation is easy to explain, it may be a good idea.<br>Namespaces are one honking great idea — let’s do more of those!</p>
 </blockquote>
 <h4 id="naming-convention-함수의-경우는-주로-snake-case-사용"><a href="#naming-convention-함수의-경우는-주로-snake-case-사용" class="headerlink" title="naming convention - 함수의 경우는 주로 snake case 사용"></a>naming convention - 함수의 경우는 주로 snake case 사용</h4><ul>
 <li>snake case: first_name</li>
@@ -447,7 +449,7 @@ Type:      function
 <pre><code>Signature: echo(anything)
 Source:   
 def echo(anything):
-    &apos;echo returns its input argument&apos;
+    &#39;echo returns its input argument&#39;
     return anything
 File:      ~/Workspace/Python_Study/&lt;ipython-input-19-387cc7da3925&gt;
 Type:      function
@@ -460,7 +462,7 @@ echo(anything)
     echo returns its input argument
 </code></pre><p>In [24]:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print?</span><br></pre></td></tr></table></figure></p>
 <pre><code>Docstring:
-print(value, ..., sep=&apos; &apos;, end=&apos;\n&apos;, file=sys.stdout, flush=False)
+print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
 
 Prints the values to a stream, or to sys.stdout by default.
 Optional keyword arguments:
@@ -483,7 +485,7 @@ Type:      builtin_function_or_method
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/10/python_03_function_basic/" data-id="cjmvyk8xa00abdl1hwpkz70l7" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/07/10/python_03_function_basic/" data-id="cjmybg0mj00ab3w1h5wg2dzcj" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
