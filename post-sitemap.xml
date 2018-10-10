@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/10/11/python_07_module%20&%20package/</loc>
+        <lastmod>2018-10-10T15:25:13.001Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/10/07/python_06_class_intermediate/</loc>
         <lastmod>2018-10-07T03:12:24.699Z</lastmod>
         <changefreq>weekly</changefreq>
