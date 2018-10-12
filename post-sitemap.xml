@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/10/13/2018-10-12-TIL/</loc>
+        <lastmod>2018-10-12T15:17:41.771Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/10/12/python_09_OS/</loc>
         <lastmod>2018-10-12T11:18:48.875Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -16,7 +24,7 @@
 
     <url>
         <loc>http://yoursite.com/2018/10/12/python_08_file%20&%20pickle/</loc>
-        <lastmod>2018-10-12T08:57:27.574Z</lastmod>
+        <lastmod>2018-10-12T11:18:07.614Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
