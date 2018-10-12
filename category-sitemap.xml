@@ -43,14 +43,14 @@
 
     <url>
         <loc>http://yoursite.com/categories/Programming-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2018-10-12T08:57:27.574Z</lastmod>
+        <lastmod>2018-10-12T11:18:48.875Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/categories/Programming-%EA%B3%B5%EB%B6%80/Python-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2018-10-12T08:57:27.574Z</lastmod>
+        <lastmod>2018-10-12T11:18:48.875Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

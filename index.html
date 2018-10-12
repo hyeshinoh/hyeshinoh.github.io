@@ -230,11 +230,47 @@ ga('send', 'pageview');
     <div class="article-inner">
         
         
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/10/12/python_09_OS/">python 09. OS</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/10/12/python_09_OS/">
+            <time datetime="2018-10-12T11:07:46.000Z" itemprop="datePublished">2018-10-12</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
         
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h1><ul>
+            <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_09_OS.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
+<h1 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h1><ul>
 <li>python에서 파일 시스템을 control하기 위한 python package</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
@@ -246,18 +282,19 @@ Untitled.ipynb                        python_07_module &amp; package.ipynb
 [08] try &amp; exception.ipynb            python_08_file &amp; pickle.ipynb
 [09] Thread.ipynb                     python_09_OS.ipynb
 [10] Regex.ipynb                      range.b
-[1m[36m__pycache__[m[m                           [1m[36mschool[m[m
+__pycache__                           school
 obj.pkl                               test1.txt
 python_01_basic_syntax.ipynb          test2.txt
 python_02_condition &amp; loop.ipynb      test3.txt
 python_03_function_basic.ipynb
 </code></pre><h2 id="1-폴더-만들기"><a href="#1-폴더-만들기" class="headerlink" title="1. 폴더 만들기"></a>1. 폴더 만들기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.makedirs(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="2-파일쓰기"><a href="#2-파일쓰기" class="headerlink" title="2. 파일쓰기"></a>2. 파일쓰기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"data science"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test.txt"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br><span class="line"></span><br><span class="line">s2 = <span class="string">"data science2"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test2.txt"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br><span class="line"></span><br><span class="line">s3 = <span class="string">"data,science3"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test3.csv"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br></pre></td></tr></table></figure>
+<h2 id="2-파일-쓰기"><a href="#2-파일-쓰기" class="headerlink" title="2. 파일 쓰기"></a>2. 파일 쓰기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"data science"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test.txt"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br><span class="line"></span><br><span class="line">s2 = <span class="string">"data science2"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test2.txt"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br><span class="line"></span><br><span class="line">s3 = <span class="string">"data,science3"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test3.csv"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!tree os_dir</span><br></pre></td></tr></table></figure>
 <pre><code>os_dir
 ├── test.txt
 ├── test2.txt
 └── test3.csv
+
 
 0 directories, 3 files
 </code></pre><h2 id="3-파일-리스트-읽기"><a href="#3-파일-리스트-읽기" class="headerlink" title="3. 파일 리스트 읽기"></a>3. 파일 리스트 읽기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.listdir(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
@@ -288,7 +325,7 @@ OSError: [Errno 66] Directory not empty: &#39;os_dir&#39;
 <h2 id="6-파일-존재여부-확인"><a href="#6-파일-존재여부-확인" class="headerlink" title="6. 파일 존재여부 확인"></a>6. 파일 존재여부 확인</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">os.makedirs(<span class="string">"os_dir"</span>)</span><br><span class="line">s = <span class="string">"data science"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test.txt"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br><span class="line"></span><br><span class="line">s2 = <span class="string">"data science2"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test2.txt"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br><span class="line"></span><br><span class="line">s3 = <span class="string">"data,science3"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test3.csv"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.path.exists(<span class="string">"os_dir/test.txt"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>True
-</code></pre><h2 id="7-타입확인"><a href="#7-타입확인" class="headerlink" title="7. 타입확인"></a>7. 타입확인</h2><ul>
+</code></pre><h2 id="7-타입-확인"><a href="#7-타입-확인" class="headerlink" title="7. 타입 확인"></a>7. 타입 확인</h2><ul>
 <li>isfile</li>
 <li>isdir</li>
 </ul>
@@ -326,6 +363,7 @@ OSError: [Errno 66] Directory not empty: &#39;os_dir&#39;
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.chmod(<span class="string">"os_dir/renamed.txt"</span>, <span class="number">0o734</span>)</span><br></pre></td></tr></table></figure>
 <p>모든 권한 제거: —————</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.chmod(<span class="string">"os_dir/renamed.txt"</span>, <span class="number">0o000</span>)</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_09_OS.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
 <h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
 <li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
 </ul>
@@ -3712,9 +3750,9 @@ Dog 0
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/10/12/python_09_OS/" class="title"></a></p>
-                            <p class="item-date"><time datetime="2018-10-12T11:04:40.871Z" itemprop="datePublished">2018-10-12</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a></p>
+                            <p class="item-title"><a href="/2018/10/12/python_09_OS/" class="title">python 09. OS</a></p>
+                            <p class="item-date"><time datetime="2018-10-12T11:07:46.000Z" itemprop="datePublished">2018-10-12</time></p>
                         </div>
                     </li>
                 
@@ -3763,7 +3801,7 @@ Dog 0
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">11</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">68</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">28</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">11</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">68</span></li></ul>
         </div>
     </div>
 
@@ -3781,7 +3819,7 @@ Dog 0
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">68</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">5</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">68</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -3790,7 +3828,7 @@ Dog 0
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 15.71px;">Database</a> <a href="/tags/MySQL/" style="font-size: 14.29px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 14.29px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.43px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 15.71px;">crawling</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/html/" style="font-size: 11.43px;">html</a> <a href="/tags/javascript/" style="font-size: 11.43px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/programming/" style="font-size: 18.57px;">programming</a> <a href="/tags/python/" style="font-size: 17.14px;">python</a> <a href="/tags/selenium/" style="font-size: 12.86px;">selenium</a> <a href="/tags/web/" style="font-size: 17.14px;">web</a> <a href="/tags/web-crawling/" style="font-size: 15.71px;">web_crawling</a> <a href="/tags/알고리즘/" style="font-size: 11.43px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 15.71px;">웹크롤링</a>
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 15px;">Database</a> <a href="/tags/MySQL/" style="font-size: 13.75px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 13.75px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.25px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 15px;">crawling</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/html/" style="font-size: 11.25px;">html</a> <a href="/tags/javascript/" style="font-size: 11.25px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/programming/" style="font-size: 18.75px;">programming</a> <a href="/tags/python/" style="font-size: 17.5px;">python</a> <a href="/tags/selenium/" style="font-size: 12.5px;">selenium</a> <a href="/tags/web/" style="font-size: 16.25px;">web</a> <a href="/tags/web-crawling/" style="font-size: 15px;">web_crawling</a> <a href="/tags/알고리즘/" style="font-size: 11.25px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 15px;">웹크롤링</a>
         </div>
     </div>
 
