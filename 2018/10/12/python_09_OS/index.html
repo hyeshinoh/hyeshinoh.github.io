@@ -3,20 +3,20 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     
-    <title>2018-08-13-TIL | 우와팬더의 블로그</title>
+    <title>우와팬더의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="공부한 것 &amp;amp; 리뷰 DSS 수업: 수학 시계열분석 시계열 분석은 일단은 우선시 관심을 두고 있는 분야는 아니지만 종강 전에 마지막으로 수업을 들을 수 있는 부분은 좋은 것 같다.    SQL syntax 복습 블로그 관리 포스팅을 정리해나가면서 markdown 사용법에 좀 더 익숙해짐    내일 공부할 것 개인 프로젝트: 사진 데이터 웹크롤링 알고리">
-<meta name="keywords" content="TIL(Today I Learned)">
+    <meta name="description" content="OS python에서 파일 시스템을 control하기 위한 python package  1import os 1!ls 1984.txt                              python_04_function_intermediate.ipynb LICENSE                               python_05_class_basic">
+<meta name="keywords" content="data science">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018-08-13-TIL">
-<meta property="og:url" content="http://yoursite.com/2018/08/14/2018-08-13-TIL/index.html">
+<meta property="og:title" content="우와팬더의 블로그">
+<meta property="og:url" content="http://yoursite.com/2018/10/12/python_09_OS/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="공부한 것 &amp;amp; 리뷰 DSS 수업: 수학 시계열분석 시계열 분석은 일단은 우선시 관심을 두고 있는 분야는 아니지만 종강 전에 마지막으로 수업을 들을 수 있는 부분은 좋은 것 같다.    SQL syntax 복습 블로그 관리 포스팅을 정리해나가면서 markdown 사용법에 좀 더 익숙해짐    내일 공부할 것 개인 프로젝트: 사진 데이터 웹크롤링 알고리">
+<meta property="og:description" content="OS python에서 파일 시스템을 control하기 위한 python package  1import os 1!ls 1984.txt                              python_04_function_intermediate.ipynb LICENSE                               python_05_class_basic">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-13T15:17:11.000Z">
+<meta property="og:updated_time" content="2018-10-12T11:04:40.871Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018-08-13-TIL">
-<meta name="twitter:description" content="공부한 것 &amp;amp; 리뷰 DSS 수업: 수학 시계열분석 시계열 분석은 일단은 우선시 관심을 두고 있는 분야는 아니지만 종강 전에 마지막으로 수업을 들을 수 있는 부분은 좋은 것 같다.    SQL syntax 복습 블로그 관리 포스팅을 정리해나가면서 markdown 사용법에 좀 더 익숙해짐    내일 공부할 것 개인 프로젝트: 사진 데이터 웹크롤링 알고리">
+<meta name="twitter:title" content="우와팬더의 블로그">
+<meta name="twitter:description" content="OS python에서 파일 시스템을 control하기 위한 python package  1import os 1!ls 1984.txt                              python_04_function_intermediate.ipynb LICENSE                               python_05_class_basic">
     
 
     
@@ -226,77 +226,108 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><article id="post-2018-08-13-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-python_09_OS" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
-        
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-            2018-08-13-TIL
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/08/14/2018-08-13-TIL/">
-            <time datetime="2018-08-13T15:10:30.000Z" itemprop="datePublished">2018-08-14</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                    </div>
-                
-            </header>
         
         
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
-<li>DSS 수업: 수학 <code>시계열분석</code><ul>
-<li>시계열 분석은 일단은 우선시 관심을 두고 있는 분야는 아니지만 종강 전에 마지막으로 수업을 들을 수 있는 부분은 좋은 것 같다. </li>
+            <h1 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h1><ul>
+<li>python에서 파일 시스템을 control하기 위한 python package</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!ls</span><br></pre></td></tr></table></figure>
+<pre><code>1984.txt                              python_04_function_intermediate.ipynb
+LICENSE                               python_05_class_basic.ipynb
+README.md                             python_06_class_intermediate.ipynb
+Untitled.ipynb                        python_07_module &amp; package.ipynb
+[08] try &amp; exception.ipynb            python_08_file &amp; pickle.ipynb
+[09] Thread.ipynb                     python_09_OS.ipynb
+[10] Regex.ipynb                      range.b
+[1m[36m__pycache__[m[m                           [1m[36mschool[m[m
+obj.pkl                               test1.txt
+python_01_basic_syntax.ipynb          test2.txt
+python_02_condition &amp; loop.ipynb      test3.txt
+python_03_function_basic.ipynb
+</code></pre><h2 id="1-폴더-만들기"><a href="#1-폴더-만들기" class="headerlink" title="1. 폴더 만들기"></a>1. 폴더 만들기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.makedirs(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="2-파일쓰기"><a href="#2-파일쓰기" class="headerlink" title="2. 파일쓰기"></a>2. 파일쓰기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"data science"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test.txt"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br><span class="line"></span><br><span class="line">s2 = <span class="string">"data science2"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test2.txt"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br><span class="line"></span><br><span class="line">s3 = <span class="string">"data,science3"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test3.csv"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!tree os_dir</span><br></pre></td></tr></table></figure>
+<pre><code>os_dir
+├── test.txt
+├── test2.txt
+└── test3.csv
+
+0 directories, 3 files
+</code></pre><h2 id="3-파일-리스트-읽기"><a href="#3-파일-리스트-읽기" class="headerlink" title="3. 파일 리스트 읽기"></a>3. 파일 리스트 읽기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.listdir(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>[&#39;test2.txt&#39;, &#39;test3.csv&#39;, &#39;test.txt&#39;]
+</code></pre><h2 id="4-파일-삭제"><a href="#4-파일-삭제" class="headerlink" title="4. 파일 삭제"></a>4. 파일 삭제</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.remove(<span class="string">"os_dir/test3.csv"</span>)</span><br><span class="line">os.listdir(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>[&#39;test2.txt&#39;, &#39;test.txt&#39;]
+</code></pre><h2 id="5-디렉토리-삭제"><a href="#5-디렉토리-삭제" class="headerlink" title="5. 디렉토리 삭제"></a>5. 디렉토리 삭제</h2><p>디렉토리 안에 파일이 있으면 삭제되지 않음</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.removedirs(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>---------------------------------------------------------------------------
+
+OSError                                   Traceback (most recent call last)
+
+&lt;ipython-input-9-b28c6d42127c&gt; in &lt;module&gt;()
+----&gt; 1 os.removedirs(&quot;os_dir&quot;)
+
+
+/usr/local/Cellar/python/3.6.5_1/Frameworks/Python.framework/Versions/3.6/lib/python3.6/os.py in removedirs(name)
+    236 
+    237     &quot;&quot;&quot;
+--&gt; 238     rmdir(name)
+    239     head, tail = path.split(name)
+    240     if not tail:
+
+
+OSError: [Errno 66] Directory not empty: &#39;os_dir&#39;
+</code></pre><p>rmtree: 디렉토리 안에 파일이 있어도 삭제 가능</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.rmtree(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="6-파일-존재여부-확인"><a href="#6-파일-존재여부-확인" class="headerlink" title="6. 파일 존재여부 확인"></a>6. 파일 존재여부 확인</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">os.makedirs(<span class="string">"os_dir"</span>)</span><br><span class="line">s = <span class="string">"data science"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test.txt"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br><span class="line"></span><br><span class="line">s2 = <span class="string">"data science2"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test2.txt"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br><span class="line"></span><br><span class="line">s3 = <span class="string">"data,science3"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test3.csv"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.path.exists(<span class="string">"os_dir/test.txt"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>True
+</code></pre><h2 id="7-타입확인"><a href="#7-타입확인" class="headerlink" title="7. 타입확인"></a>7. 타입확인</h2><ul>
+<li>isfile</li>
+<li>isdir</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.path.isdir(<span class="string">"os_dir"</span>), os.path.isfile(<span class="string">"os_dir/test.txt"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>(True, True)
+</code></pre><h2 id="8-복사하기"><a href="#8-복사하기" class="headerlink" title="8. 복사하기"></a>8. 복사하기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutil.copy(<span class="string">"os_dir/test.txt"</span>, <span class="string">"os_dir/copy.txt"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;os_dir/copy.txt&#39;
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.listdir(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>[&#39;test2.txt&#39;, &#39;test3.csv&#39;, &#39;copy.txt&#39;, &#39;test.txt&#39;]
+</code></pre><h2 id="9-이름-바꾸기"><a href="#9-이름-바꾸기" class="headerlink" title="9. 이름 바꾸기"></a>9. 이름 바꾸기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.rename(<span class="string">"os_dir/copy.txt"</span>, <span class="string">"os_dir/renamed.txt"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.listdir(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>[&#39;test2.txt&#39;, &#39;renamed.txt&#39;, &#39;test3.csv&#39;, &#39;test.txt&#39;]
+</code></pre><h2 id="10-권한설정-chmod"><a href="#10-권한설정-chmod" class="headerlink" title="10. 권한설정(chmod)"></a>10. 권한설정(chmod)</h2><ul>
+<li>10자리의 문자로 되어 있음 (e.g. -rw-r—r—)<ul>
+<li>[:1]: type (“-“ 파일, “d” 디렉토리)</li>
+<li>[1:4]: 소유자의 권한</li>
+<li>[4:7]: 그룹에 대한 권한</li>
+<li>[7:]: 모든 사용자에 대한 권한</li>
 </ul>
 </li>
-<li>SQL syntax 복습</li>
-<li>블로그 관리<ul>
-<li>포스팅을 정리해나가면서 markdown 사용법에 좀 더 익숙해짐</li>
+<li>소유자/그룹/모든 사용자의 권한은 rwx로 나뉨<ul>
+<li>rwx: r(읽기), w(쓰기), x(실행)</li>
+<li>rwx 각 권한이 있으면 1, 없으면 0의 2진수로 표시 ⇒ 3자리의 2진수를 8진수로 변환<ul>
+<li>rwx: 111(2진수) → 7(8진수)</li>
+<li>r—: 100(2진수) → 4(8진수) </li>
+<li>-wx: 011(2진수) → 3(8진수)</li>
 </ul>
 </li>
 </ul>
-<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
-<li>개인 프로젝트: 사진 데이터 웹크롤링</li>
-<li>알고리즘 공부</li>
-</ul>
-<h4 id="이번-주에-공부할-것"><a href="#이번-주에-공부할-것" class="headerlink" title="이번 주에 공부할 것"></a>이번 주에 공부할 것</h4><ul>
-<li>[ ] 분류 팀 프로젝트 <code>&lt;블레이드앤소울 유저 이탈 예측&gt;</code><ul>
-<li>[ ] activity에서 새로운 변수 만들어 분석하기</li>
-</ul>
 </li>
-<li>[ ] DSS: 프로그래밍 <code>&lt;Database - SQL&gt;</code> 복습하기</li>
-<li>[ ] DSS: 프로그래밍 <code>&lt;Database - noSQL&gt;</code> 복습하기</li>
-<li>[ ] DSS: 프로그래밍 <code>&lt;웹 크롤링&gt;</code> 복습하기</li>
-<li>[ ] DSS: 수학 <code>&lt;54절. 신경망 성능 개선&gt;</code> 복습하기</li>
-<li>[ ] DSS: 수학 <code>&lt;55절. CNN&gt;</code> 복습하기</li>
-<li>[ ] DSS: 수학 <code>&lt;57절. GAN&gt;</code> 복습하기</li>
-<li>[ ] 인성면접 답안 대비 (개인 신상, 취미, 특기 관련 질문)</li>
-<li>[ ] 관심 기업 조사</li>
+</ul>
+<p>모든 사용자가 read권한만 갖도록: -r—r—r—</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.chmod(<span class="string">"os_dir/renamed.txt"</span>, <span class="number">0o444</span>)</span><br></pre></td></tr></table></figure>
+<p>파일소유자가 작성권한을 갖도록: -rw-r—r—</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.chmod(<span class="string">"os_dir/renamed.txt"</span>, <span class="number">0o734</span>)</span><br></pre></td></tr></table></figure>
+<p>모든 권한 제거: —————</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.chmod(<span class="string">"os_dir/renamed.txt"</span>, <span class="number">0o000</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
 </ul>
 
         
@@ -308,7 +339,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/08/14/2018-08-13-TIL/" data-id="cjn5rgvek003kii1hz2hmq754" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/10/12/python_09_OS/" data-id="cjn5x03qy0000521hfw9vc3au" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -376,7 +407,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://yoursite.com/2018/08/14/2018-08-13-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/08/14/2018-08-13-TIL/">Comments</a>
+        <a href="http://yoursite.com/2018/10/12/python_09_OS/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/10/12/python_09_OS/">Comments</a>
     
 
         </footer>
@@ -385,19 +416,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2018/08/14/2018-08-14-TIL/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    2018-08-14-TIL
-                
-            </div>
-        </a>
     
-    
-        <a href="/2018/08/13/Blog_jupyter_tip/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/10/12/python_08_file & pickle/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">Jupyter Notebook Tip - 여러 개 output을 한번에 보는 방법</div>
+            <div class="article-nav-title">python 08. Python File &amp; Pickle</div>
         </a>
     
 </nav>
@@ -547,9 +569,9 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://yoursite.com/2018/08/14/2018-08-13-TIL/';
+            this.page.url = 'http://yoursite.com/2018/10/12/python_09_OS/';
         
-        this.page.identifier = '2018-08-13-TIL';
+        this.page.identifier = 'python_09_OS';
     };
     (function() { 
         var d = document, s = d.createElement('script');  

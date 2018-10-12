@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/10/12/python_09_OS/</loc>
+        <lastmod>2018-10-12T11:04:40.871Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/10/12/python_08_file%20&%20pickle/</loc>
         <lastmod>2018-10-12T08:57:27.574Z</lastmod>
         <changefreq>weekly</changefreq>

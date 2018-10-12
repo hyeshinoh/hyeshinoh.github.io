@@ -173,7 +173,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                96
+                97
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -226,6 +226,147 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-2018-09-29-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/09/30/2018-09-29-TIL/">2018-09-29-TIL</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/09/30/2018-09-29-TIL/">
+            <time datetime="2018-09-29T15:04:51.000Z" itemprop="datePublished">2018-09-30</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
+<li>web crawling - requests 복습 &amp; 포스팅<ul>
+<li>복습을 여러번할수록 확실히 익숙해지는 것 같다. 개인 프로젝트를 위해서도 크롤링을 쭉 제대로 복습해봐야겠다. 그래도 scrapy는 걱정ㅜ ㅎㅎ</li>
+</ul>
+</li>
+</ul>
+<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
+<li>dss8기 주말 스터디 시작!</li>
+<li>web crawling - selenium 복습</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/09/30/2018-09-29-TIL/" data-id="cjn5rgvfc005eii1hrrepdqoy" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/09/30/2018-09-29-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/30/2018-09-29-TIL/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-web_08_requests" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -2577,220 +2718,6 @@ b
 
 
 
-    <article id="post-web_01_html_01_basic" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/09/26/web_01_html_01_basic/">HTML Basic</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/09/26/web_01_html_01_basic/">
-            <time datetime="2018-09-26T06:24:14.000Z" itemprop="datePublished">2018-09-26</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/html/">html</a>, <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/web/">web</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h2 id="1-HTML이란"><a href="#1-HTML이란" class="headerlink" title="1. HTML이란"></a>1. HTML이란</h2><h3 id="1-1-HTML의-개념"><a href="#1-1-HTML의-개념" class="headerlink" title="1.1 HTML의 개념"></a>1.1 HTML의 개념</h3><ul>
-<li>HTML은 Hyper text Markup Language의 약자로, 월드와이드웹 문서를 작성하는 Markup Language</li>
-<li>Markup Language: 시작과 종료태그가 있는 language (대표적 예: XML)</li>
-<li>HTML은 여러 태그들로 구성되어 있으며 각 태그들을 사용하여 원하는 형태의 문서를 만들어갈 수 있음</li>
-</ul>
-<h3 id="1-2-HTML의-구성요소"><a href="#1-2-HTML의-구성요소" class="headerlink" title="1.2 HTML의 구성요소"></a>1.2 HTML의 구성요소</h3><p>(1) elements(요소): 시작태그와 종료태그로 이루어진 코드<br>(2) Tag(태그): 요소의 일부로 <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code> 등, 시작태그와 종료태그가 있음<br>(3) Attribute(속성): 태그 안에 키와 값으로 이루어진 코드</p>
-<h2 id="2-HTML-elements"><a href="#2-HTML-elements" class="headerlink" title="2. HTML elements"></a>2. HTML elements</h2><h3 id="2-1-Head-타이틀을-표현하기-위한-element"><a href="#2-1-Head-타이틀을-표현하기-위한-element" class="headerlink" title="2.1 Head: 타이틀을 표현하기 위한 element"></a>2.1 Head: 타이틀을 표현하기 위한 element</h3><ul>
-<li>h1~h6로 여섯단계가 표현 가능</li>
-<li>emmet 문법: <code>h${$단계 제목}*6</code></li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1단계 제목<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>2단계 제목<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>3단계 제목<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>4단계 제목<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h5</span>&gt;</span>5단계 제목<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span>6단계 제목<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>적용시 아래와 같이 나타납니다.</p>
-<blockquote>
-<p></p><h1>1단계 제목</h1><p></p>
-<p></p><h2>2단계 제목</h2><p></p>
-<p></p><h3>3단계 제목</h3><p></p>
-<p></p><h4>4단계 제목</h4><p></p>
-<p></p><h5>5단계 제목</h5><p></p>
-<h6>6단계 제목</h6>
-
-</blockquote>
-<h3 id="2-2-p"><a href="#2-2-p" class="headerlink" title="2.2 p"></a>2.2 p</h3><ul>
-<li>paragraph의 약자로 문단을 분리하기 위한 태그</li>
-<li>emmet 문법: <code>p{p_tag_$}*3</code></li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p_tag_1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p_tag_2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p_tag_3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>적용시 아래와 같이 나타납니다.</p>
-<blockquote>
-<p>p_tag_1</p>
-<p>p_tag_2</p>
-<p>p_tag_3</p>
-
-</blockquote>
-<h3 id="2-3-span"><a href="#2-3-span" class="headerlink" title="2.3 span"></a>2.3 span</h3><ul>
-<li>영역을 설정하는 태그로 div 태그처럼 주로 CSS와 함께 쓰임</li>
-<li>div와 달리 줄바꿈이 되지 않고, 문장 단위로 지정(inline 속성)</li>
-<li>emmet 문법: <code>span{span_tag_$}*3</code></li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>span_tag_1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>span_tag_2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>span_tag_3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>적용시 아래와 같이 나타납니다.</p>
-<blockquote>
-<p><span>span_tag_1</span><br><span>span_tag_2</span><br><span>span_tag_3</span></p>
-</blockquote>
-<h3 id="2-4-pre"><a href="#2-4-pre" class="headerlink" title="2.4. pre"></a>2.4. pre</h3><ul>
-<li>preformatted text의 약자로, 입력한 그대로 화면 출력하는 태그</li>
-<li>줄바꿈이나 띄어쓰기가 그대로 적용되는 element</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    python</span><br><span class="line">    data</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line">    python</span><br><span class="line">    data</span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>적용시 아래와 같이 나타납니다. </p>
-<blockquote>
-<p></p><p>
-   python
-   data
-</p><p></p>
-<pre>
-   python
-   data
-</pre>
-
-
-</blockquote>
-<h3 id="2-5-글씨체"><a href="#2-5-글씨체" class="headerlink" title="2.5 글씨체"></a>2.5 글씨체</h3><ul>
-<li>b, strong(굵은글씨)</li>
-<li>i,em(이탤릭체)</li>
-<li>sup,sub(윗첨자, 아래첨자)</li>
-<li>small(작은 글씨)</li>
-<li>mark(배경이 노랑색)</li>
-<li>del(삭제문자열 - 가로줄)</li>
-<li>ins(언더라인 문자열)</li>
-<li>code(코드 문자열)</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>굵은글씨: <span class="tag">&lt;<span class="name">b</span>&gt;</span>굵은글씨<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>굵은글씨: <span class="tag">&lt;<span class="name">strong</span>&gt;</span>굵은글씨<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>이탤릭체: <span class="tag">&lt;<span class="name">i</span>&gt;</span>이탤릭체<span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>이탤릭체: <span class="tag">&lt;<span class="name">em</span>&gt;</span>이탤릭체<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>윗첨자: <span class="tag">&lt;<span class="name">sup</span>&gt;</span>윗첨자<span class="tag">&lt;/<span class="name">sup</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>아래첨자: <span class="tag">&lt;<span class="name">sub</span>&gt;</span>아래첨자<span class="tag">&lt;/<span class="name">sub</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>작은글씨: <span class="tag">&lt;<span class="name">small</span>&gt;</span>작은글씨<span class="tag">&lt;/<span class="name">small</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>글자배경이 <span class="tag">&lt;<span class="name">mark</span>&gt;</span>노란색<span class="tag">&lt;/<span class="name">mark</span>&gt;</span> 입니다<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>문자열 <span class="tag">&lt;<span class="name">del</span>&gt;</span>삭제<span class="tag">&lt;/<span class="name">del</span>&gt;</span>입니다<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>문자열 <span class="tag">&lt;<span class="name">ins</span>&gt;</span>언더라인<span class="tag">&lt;/<span class="name">ins</span>&gt;</span>입니다<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>코드: <span class="tag">&lt;<span class="name">code</span>&gt;</span>code<span class="tag">&lt;/<span class="name">code</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>적용시 아래와 같이 나타납니다.</p>
-<blockquote>
-<p><span>굵은글씨: <b>굵은글씨</b></span><br><span>굵은글씨: <strong>굵은글씨</strong></span></p>
-<p><span>이탤릭체: <i>이탤릭체</i></span><br><span>이탤릭체: <em>이탤릭체</em></span></p>
-<p><span>윗첨자: <sup>윗첨자</sup></span><br><span>아래첨자: <sub>아래첨자</sub></span><br><span>작은글씨: <small>작은글씨</small></span></p>
-<p><span>글자배경이 <mark>노란색</mark> 입니다</span><br><span>문자열 <del>삭제</del>입니다</span><br><span>문자열 <ins>언더라인</ins>입니다</span></p>
-<p><span>코드: <code>code</code></span></p>
-</blockquote>
-<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
-<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/09/26/web_01_html_01_basic/" data-id="cjn5rgvfr006hii1hqu3u1bto" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/09/26/web_01_html_01_basic/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/26/web_01_html_01_basic/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
@@ -2804,6 +2731,15 @@ b
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/10/12/python_09_OS/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2018-10-12T11:04:40.871Z" itemprop="datePublished">2018-10-12</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -2841,15 +2777,6 @@ b
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a></p>
-                            <p class="item-title"><a href="/2018/10/05/web_11_selenium_exercise/" class="title">Web crawling exercise</a></p>
-                            <p class="item-date"><time datetime="2018-10-05T11:47:51.000Z" itemprop="datePublished">2018-10-05</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -2868,7 +2795,7 @@ b
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
