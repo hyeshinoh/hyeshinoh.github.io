@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/10/13/python_10_try%20&%20except/</loc>
+        <lastmod>2018-10-13T06:09:52.062Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/10/13/2018-10-12-TIL/</loc>
         <lastmod>2018-10-12T15:17:41.771Z</lastmod>
         <changefreq>weekly</changefreq>

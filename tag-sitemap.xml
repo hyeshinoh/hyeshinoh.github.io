@@ -114,22 +114,22 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/tags/TIL-Today-I-Learned/</loc>
+        <lastmod>2018-10-12T15:17:41.771Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/tags/python/</loc>
-        <lastmod>2018-10-12T11:18:48.875Z</lastmod>
+        <lastmod>2018-10-13T06:09:52.062Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/programming/</loc>
-        <lastmod>2018-10-12T11:18:48.875Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/TIL-Today-I-Learned/</loc>
-        <lastmod>2018-10-12T15:17:41.771Z</lastmod>
+        <lastmod>2018-10-13T06:09:52.062Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
