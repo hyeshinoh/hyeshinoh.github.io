@@ -173,7 +173,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                99
+                100
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -226,6 +226,541 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-web_10_selenium" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/10/04/web_10_selenium/">Web crawling - Selenium Intermediate</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/10/04/web_10_selenium/">
+            <time datetime="2018-10-04T10:12:41.000Z" itemprop="datePublished">2018-10-04</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/crawling/">crawling</a>, <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/selenium/">selenium</a>, <a class="tag-link" href="/tags/web/">web</a>, <a class="tag-link" href="/tags/web-crawling/">web_crawling</a>, <a class="tag-link" href="/tags/웹크롤링/">웹크롤링</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Selenium-Intermediate"><a href="#Selenium-Intermediate" class="headerlink" title="Selenium - Intermediate"></a>Selenium - Intermediate</h1><h4 id="다룰-내용"><a href="#다룰-내용" class="headerlink" title="다룰 내용"></a>다룰 내용</h4><ol>
+<li>Selenium 웹 데이터 스크래핑</li>
+<li>Selenium 네이버 메일 크롤링</li>
+<li>Selenium 이미지 스크린샷</li>
+</ol>
+<h2 id="1-Selenium-웹-데이터-스크래핑"><a href="#1-Selenium-웹-데이터-스크래핑" class="headerlink" title="1. Selenium 웹 데이터 스크래핑"></a>1. Selenium 웹 데이터 스크래핑</h2><ul>
+<li>gmarket 베스트셀러 데이터 수집하기</li>
+<li>gmarket best의 200개 상품의 이름/가격/할인가격/링크 가져오기</li>
+</ul>
+<h3 id="1-1-webdriver-실행하고-gmarket-best-페이지로-이동"><a href="#1-1-webdriver-실행하고-gmarket-best-페이지로-이동" class="headerlink" title="1.1 webdriver 실행하고 gmarket best 페이지로 이동"></a>1.1 webdriver 실행하고 gmarket best 페이지로 이동</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"http://corners.gmarket.co.kr/Bestsellers"</span></span><br><span class="line">driver = webdriver.Chrome() </span><br><span class="line">driver.get(url)</span><br></pre></td></tr></table></figure>
+<p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_001.png?raw=true" alt=""></p>
+<h3 id="1-2-best-200-상품의-정보-스크래핑"><a href="#1-2-best-200-상품의-정보-스크래핑" class="headerlink" title="1.2 best 200 상품의 정보 스크래핑"></a>1.2 best 200 상품의 정보 스크래핑</h3><h4 id="200개-상품-정보-저장하기"><a href="#200개-상품-정보-저장하기" class="headerlink" title="200개 상품 정보 저장하기"></a>200개 상품 정보 저장하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">items = driver.find_elements_by_css_selector(<span class="string">".best-list:nth-child(3) &gt; ul &gt; li"</span>)</span><br><span class="line"></span><br><span class="line">len(items)</span><br></pre></td></tr></table></figure>
+<pre><code>200
+</code></pre><h4 id="200개-상품의-이름-가격-할인가격-링크-pandas-dataframe으로-만들기"><a href="#200개-상품의-이름-가격-할인가격-링크-pandas-dataframe으로-만들기" class="headerlink" title="200개 상품의 이름/가격/할인가격/링크 pandas dataframe으로 만들기"></a>200개 상품의 이름/가격/할인가격/링크 pandas dataframe으로 만들기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dict_list = []</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">    dict_list.append(&#123;</span><br><span class="line">        <span class="string">"title"</span>: item.find_element_by_css_selector(<span class="string">".itemname"</span>).text,</span><br><span class="line">        <span class="string">"s price"</span>: item.find_element_by_css_selector(<span class="string">".s-price"</span>).text.split(<span class="string">" "</span>)[<span class="number">0</span>].replace(<span class="string">","</span>,<span class="string">""</span>)[:<span class="number">-1</span>],</span><br><span class="line">        <span class="string">"o price"</span>: item.find_element_by_css_selector(<span class="string">".o-price"</span>).text.split(<span class="string">" "</span>)[<span class="number">0</span>].replace(<span class="string">","</span>,<span class="string">""</span>)[:<span class="number">-1</span>],</span><br><span class="line">        <span class="string">"link"</span>: item.find_element_by_css_selector(<span class="string">".itemname"</span>).get_attribute(<span class="string">"href"</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(dict_list)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>link</th>
+<th>o price</th>
+<th>s price</th>
+<th>title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>195</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=24630" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=24630</a>…</td>
+<td>22900</td>
+<td>6900</td>
+<td>애견패딩 겨울옷 모음/애견의류/강아지옷/애견옷</td>
+</tr>
+<tr>
+<td>196</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=11011" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=11011</a>…</td>
+<td>50000</td>
+<td>32900</td>
+<td>[맥심]맥심 화이트 골드 커피믹스 320T 김연아커피/모카골드</td>
+</tr>
+<tr>
+<td>197</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=14767" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=14767</a>…</td>
+<td>38400</td>
+<td>32900</td>
+<td>[맥심]화이트골드 320T/커피믹스/커피</td>
+</tr>
+<tr>
+<td>198</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=17872" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=17872</a>…</td>
+<td></td>
+<td>69000</td>
+<td>윤남텍 간편세척 초음파 다목적 가습기/YN-101/G마켓</td>
+</tr>
+<tr>
+<td>199</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=93244" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=93244</a>…</td>
+<td>26300</td>
+<td>7900</td>
+<td>소녀나라 10%쿠폰/맨투맨/후드티/아우터/팬츠/스커트</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="sale하지-않는-품목에-o-price-채우기"><a href="#sale하지-않는-품목에-o-price-채우기" class="headerlink" title="sale하지 않는 품목에 o price 채우기"></a>sale하지 않는 품목에 o price 채우기</h4><p>o price가 NaN인지(True) 아닌지 (False) is_nodata에 저장 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">is_nodata = df[<span class="string">"o price"</span>] == <span class="string">""</span></span><br></pre></td></tr></table></figure>
+<p>비어있는 o price 칸에 s price의 값을 넣기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"s price"</span>][is_nodata] <span class="comment"># `df["s price"]`에서 is_nodata가 true인 행</span></span><br></pre></td></tr></table></figure>
+<pre><code>9       13800
+27      24900
+30       5900
+42       5900
+43      14990
+49      34000
+59       6900
+60      34000
+70      39600
+74       7900
+75      12900
+78      12900
+85      25000
+88      12900
+101    164000
+105     13800
+106     10900
+119     12700
+124     25900
+136      6400
+137     12900
+142     41600
+143     43900
+150     24900
+151     23900
+153     12700
+164    199000
+176     25580
+178     47900
+192     12700
+198     69000
+Name: s price, dtype: object
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"o price"</span>][is_nodata] = df[<span class="string">"s price"</span>][is_nodata]</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>link</th>
+<th>o price</th>
+<th>s price</th>
+<th>title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>195</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=24630" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=24630</a>…</td>
+<td>22900</td>
+<td>6900</td>
+<td>애견패딩 겨울옷 모음/애견의류/강아지옷/애견옷</td>
+</tr>
+<tr>
+<td>196</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=11011" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=11011</a>…</td>
+<td>50000</td>
+<td>32900</td>
+<td>[맥심]맥심 화이트 골드 커피믹스 320T 김연아커피/모카골드</td>
+</tr>
+<tr>
+<td>197</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=14767" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=14767</a>…</td>
+<td>38400</td>
+<td>32900</td>
+<td>[맥심]화이트골드 320T/커피믹스/커피</td>
+</tr>
+<tr>
+<td>198</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=17872" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=17872</a>…</td>
+<td>69000</td>
+<td>69000</td>
+<td>윤남텍 간편세척 초음파 다목적 가습기/YN-101/G마켓</td>
+</tr>
+<tr>
+<td>199</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=93244" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=93244</a>…</td>
+<td>26300</td>
+<td>7900</td>
+<td>소녀나라 10%쿠폰/맨투맨/후드티/아우터/팬츠/스커트</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="할인율-column-추가하기"><a href="#할인율-column-추가하기" class="headerlink" title="할인율 column 추가하기"></a>할인율 column 추가하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"o price"</span>] = df[<span class="string">"o price"</span>].astype(<span class="string">"int"</span>)</span><br><span class="line">df[<span class="string">"s price"</span>] = df[<span class="string">"s price"</span>].astype(<span class="string">"int"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"sale"</span>] = round((<span class="number">1</span> - (df[<span class="string">"s price"</span>] / df[<span class="string">"o price"</span>])), <span class="number">2</span>)*<span class="number">100</span></span><br><span class="line">df[<span class="string">"sale"</span>] = df[<span class="string">"sale"</span>].astype(<span class="string">"int"</span>).astype(<span class="string">"str"</span>)+<span class="string">"%"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>link</th>
+<th>o price</th>
+<th>s price</th>
+<th>title</th>
+<th>sale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>195</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=24630" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=24630</a>…</td>
+<td>22900</td>
+<td>6900</td>
+<td>애견패딩 겨울옷 모음/애견의류/강아지옷/애견옷</td>
+<td>70%</td>
+</tr>
+<tr>
+<td>196</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=11011" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=11011</a>…</td>
+<td>50000</td>
+<td>32900</td>
+<td>[맥심]맥심 화이트 골드 커피믹스 320T 김연아커피/모카골드</td>
+<td>34%</td>
+</tr>
+<tr>
+<td>197</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=14767" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=14767</a>…</td>
+<td>38400</td>
+<td>32900</td>
+<td>[맥심]화이트골드 320T/커피믹스/커피</td>
+<td>14%</td>
+</tr>
+<tr>
+<td>198</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=17872" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=17872</a>…</td>
+<td>69000</td>
+<td>69000</td>
+<td>윤남텍 간편세척 초음파 다목적 가습기/YN-101/G마켓</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>199</td>
+<td><a href="http://item.gmarket.co.kr/Item?goodscode=93244" target="_blank" rel="noopener">http://item.gmarket.co.kr/Item?goodscode=93244</a>…</td>
+<td>26300</td>
+<td>7900</td>
+<td>소녀나라 10%쿠폰/맨투맨/후드티/아우터/팬츠/스커트</td>
+<td>70%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+<h2 id="2-Selenium-네이버-메일-크롤링"><a href="#2-Selenium-네이버-메일-크롤링" class="headerlink" title="2. Selenium 네이버 메일 크롤링"></a>2. Selenium 네이버 메일 크롤링</h2><ul>
+<li>네이버 페이지로 이동</li>
+<li>아이디 패스워드로 로그인</li>
+<li>전체 메일 수, 안읽은 메일 수를 가져오기</li>
+<li>메일 제목과 요약을 데이터프레임으로 만들기</li>
+</ul>
+<h3 id="2-1-webdriver-실행하고-naver로-이동"><a href="#2-1-webdriver-실행하고-naver로-이동" class="headerlink" title="2.1 webdriver 실행하고 naver로 이동"></a>2.1 webdriver 실행하고 naver로 이동</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">main_url = <span class="string">"http://naver.com"</span></span><br><span class="line">mail_url = <span class="string">"http://mail.naver.com"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 네이버 페이지로 이동</span></span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.get(main_url)</span><br></pre></td></tr></table></figure>
+<p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_002.png?raw=true" alt=""></p>
+<h3 id="2-2-네이버-로그인하기"><a href="#2-2-네이버-로그인하기" class="headerlink" title="2.2 네이버 로그인하기"></a>2.2 네이버 로그인하기</h3><h4 id="아이디-패스워드-입력"><a href="#아이디-패스워드-입력" class="headerlink" title="아이디 패스워드 입력"></a>아이디 패스워드 입력</h4><p>비밀번호는 노출해서는 안되므로 pickle 파일로 저장해서 불러오기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># with open("naver_pw.plk", "wb") as f:</span></span><br><span class="line"><span class="comment">#     pickle.dump("본인의 네이버 pw", f)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">my_id = <span class="string">"panda706"</span></span><br><span class="line">my_pw = pickle.load(open(<span class="string">"naver_pw.plk"</span>, <span class="string">"rb"</span>))</span><br></pre></td></tr></table></figure>
+<p>로그인 버튼 클릭 &amp; 로그인 페이지로 이동</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="string">".lg_local_btn"</span>).click()</span><br></pre></td></tr></table></figure>
+<p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_003.png?raw=true" alt=""></p>
+<p>아이디와 패스워드 넣고 로그인 버튼 클릭하기  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="string">"#id"</span>).send_keys(my_id)</span><br><span class="line">driver.find_element_by_css_selector(<span class="string">"#pw"</span>).send_keys(my_pw)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="string">".btn_global"</span>).click()</span><br></pre></td></tr></table></figure>
+<p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_004.png?raw=true" alt=""></p>
+<h3 id="2-3-네이버-메일로-이동해서-메일-데이터-가져오기"><a href="#2-3-네이버-메일로-이동해서-메일-데이터-가져오기" class="headerlink" title="2.3 네이버 메일로 이동해서 메일 데이터 가져오기"></a>2.3 네이버 메일로 이동해서 메일 데이터 가져오기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.get(mail_url)</span><br></pre></td></tr></table></figure>
+<p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_005.png?raw=true" alt=""></p>
+<h4 id="전체-메일-갯수-가져오기"><a href="#전체-메일-갯수-가져오기" class="headerlink" title="전체 메일 갯수 가져오기"></a>전체 메일 갯수 가져오기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">total_mail_count = driver.find_element_by_css_selector(<span class="string">"#headTotalNum"</span>).text</span><br><span class="line">total_mail_count</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;110&#39;
+</code></pre><h4 id="안-읽은-메일-갯수-가져오기"><a href="#안-읽은-메일-갯수-가져오기" class="headerlink" title="안 읽은 메일 갯수 가져오기"></a>안 읽은 메일 갯수 가져오기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unread_mail_count = driver.find_element_by_css_selector(<span class="string">"#headUnreadNum"</span>).text</span><br><span class="line">unread_mail_count</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;105&#39;
+</code></pre><h4 id="메일-데이터-가져오기-제목-보낸사람-메일링크"><a href="#메일-데이터-가져오기-제목-보낸사람-메일링크" class="headerlink" title="메일 데이터 가져오기 - 제목, 보낸사람, 메일링크"></a>메일 데이터 가져오기 - 제목, 보낸사람, 메일링크</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mails = driver.find_elements_by_css_selector(<span class="string">".mailList &gt; li"</span>)</span><br><span class="line">df = pd.DataFrame(columns = [<span class="string">"제목"</span>, <span class="string">"보낸사람"</span>, <span class="string">"메일링크"</span>])</span><br><span class="line"><span class="keyword">for</span> mail <span class="keyword">in</span> mails:</span><br><span class="line">    title = mail.find_element_by_css_selector(<span class="string">".mail_title"</span>).text</span><br><span class="line">    name = mail.find_element_by_css_selector(<span class="string">".name"</span>).text</span><br><span class="line">    link = mail.find_element_by_css_selector(<span class="string">".subject &gt; a"</span>).get_attribute(<span class="string">"href"</span>)</span><br><span class="line">    df.loc[len(df)] = &#123;<span class="string">"제목"</span>:title, <span class="string">"보낸사람"</span>:name, <span class="string">"메일링크"</span>:link&#125;</span><br><span class="line">    </span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>제목</th>
+<th>보낸사람</th>
+<th>메일링크</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>(광고) 화려한 마케팅보다 병원의 브렌드보다 수술결과 최고의 만족을 드리겠습니다.</td>
+<td>Namepr</td>
+<td><a href="https://mail.naver.com/read/popup/?nMailId=8404" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8404</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>(광고) 룰렛돌리고 1억만드는비법 무료로 받아보세요~</td>
+<td>이벤트메일</td>
+<td><a href="https://mail.naver.com/read/popup/?nMailId=8403" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8403</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>(광고) 창업을 생각중이라면 추천하고 싶은 성공창업을 위한 무점포1인창업과 창업정보…</td>
+<td>창업신문</td>
+<td><a href="https://mail.naver.com/read/popup/?nMailId=8402" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8402</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>(광고) 임플란트, 치아교정 지원자를 찾습니다~</td>
+<td>이벤트메일</td>
+<td><a href="https://mail.naver.com/read/popup/?nMailId=8401" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8401</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>(광고) 1년안에 1억만들기 이것만 알고있으면 가능하다?~(무료정보제공)</td>
+<td>이벤트메일</td>
+<td><a href="https://mail.naver.com/read/popup/?nMailId=8400" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8400</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>내 평생 가장 맛있는 음식</td>
+<td>따뜻한하루</td>
+<td><a href="https://mail.naver.com/read/popup/?nMailId=8399" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8399</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>N스토어 주식회사 분할 신설에 따른 개인정보 이전 안내</td>
+<td>N스토어</td>
+<td><a href="https://mail.naver.com/read/popup/?nMailId=8398" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8398</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>SMTP send file 테스트</td>
+<td>hyeshinoh@gmail.co..</td>
+<td><a href="https://mail.naver.com/read/popup/?nMailId=8397" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8397</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>SMTP send file 테스트</td>
+<td>hyeshinoh@gmail.co..</td>
+<td><a href="https://mail.naver.com/read/popup/?nMailId=8396" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8396</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>hyeshin의 SMTP Send Text 테스트</td>
+<td>hyeshinoh@gmail.co..</td>
+<td><a href="https://mail.naver.com/read/popup/?nMailId=8395" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8395</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>hyeshin의 SMTP Send Text 테스트</td>
+<td>hyeshinoh@gmail.co..</td>
+<td><a href="https://mail.naver.com/read/popup/?nMailId=8394" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8394</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>hyeshin의 SMTP Send Text 테스트</td>
+<td>hyeshinoh@gmail.co..</td>
+<td><a href="https://mail.naver.com/read/popup/?nMailId=8393" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8393</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>hyeshin의 SMTP Send Text 테스트</td>
+<td>hyeshinoh@gmail.co..</td>
+<td><a href="https://mail.naver.com/read/popup/?nMailId=8392" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8392</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>hyeshin의 SMTP Send Text 테스트</td>
+<td>hyeshinoh@gmail.co..</td>
+<td><a href="https://mail.naver.com/read/popup/?nMailId=8391" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8391</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>hyeshin의 SMTP Send Text 테스트</td>
+<td>hyeshinoh@gmail.co..</td>
+<td><a href="https://mail.naver.com/read/popup/?nMailId=8390" target="_blank" rel="noopener">https://mail.naver.com/read/popup/?nMailId=8390</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+<h2 id="3-Selenium-이미지-스크린샷"><a href="#3-Selenium-이미지-스크린샷" class="headerlink" title="3. Selenium 이미지 스크린샷"></a>3. Selenium 이미지 스크린샷</h2><ul>
+<li>youtube 페이지를 이미지로 스크린샷을 만들기</li>
+<li>영상 있는 부분의 위치를 파악</li>
+<li>영상이 있는 부분을 pillow를 이용해서 자르기</li>
+<li>영상을 저장해서 위에서 실습했던 google vision api에 넣어서 결과를 확인 </li>
+</ul>
+<h3 id="3-1-pillow-패키지"><a href="#3-1-pillow-패키지" class="headerlink" title="3.1 pillow 패키지"></a>3.1 pillow 패키지</h3><ul>
+<li>python에서 사용하는 이미지 처리 패키지</li>
+<li>설치<ul>
+<li>mac: <code>$ pip3 install pillow</code></li>
+<li>window: 5.1 버전은 jupyter에 문제 없음<ul>
+<li><code>$ conda install -c anaconda pillow</code></li>
+<li><code>$ conda uninstall pillow</code></li>
+<li><code>$ conda install -c conda-forge pillow</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image <span class="keyword">as</span> pil</span><br><span class="line"><span class="keyword">import</span> time</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-webdriver-실행하고-youtube-영상-스크린샷-저장"><a href="#3-2-webdriver-실행하고-youtube-영상-스크린샷-저장" class="headerlink" title="3.2 webdriver 실행하고 youtube 영상 스크린샷 저장"></a>3.2 webdriver 실행하고 youtube 영상 스크린샷 저장</h3><p>스크린샷을 저장할 “WWDC 2018 Keynote - Apple” 영상의 url을 저장</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"https://www.youtube.com/watch?v=UThGcWBIMpU&amp;t=500s"</span></span><br></pre></td></tr></table></figure>
+<p>webdriver 실행하고 영상 실행 화면을 스크린샷</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.get(url)</span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line">driver.save_screenshot(<span class="string">"screenshot.png"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> idx <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    driver.save_screenshot(<span class="string">"screenshot"</span> + str(idx) + <span class="string">".png"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>True
+</code></pre><h3 id="3-3-스크린샷-이미지-편집"><a href="#3-3-스크린샷-이미지-편집" class="headerlink" title="3.3 스크린샷 이미지 편집"></a>3.3 스크린샷 이미지 편집</h3><h4 id="저장한-스크린샷-이미지-확인"><a href="#저장한-스크린샷-이미지-확인" class="headerlink" title="저장한 스크린샷 이미지 확인"></a>저장한 스크린샷 이미지 확인</h4><p>스크린샷을 뜬 이미지는 아래와 같이 브라우저 전체를 담고 있음</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil.open(<span class="string">"screenshot.png"</span>)</span><br><span class="line">print(pil_im.size)</span><br><span class="line">pil_im</span><br></pre></td></tr></table></figure>
+<pre><code>(2400, 1290)
+</code></pre><img src="/2018/10/04/web_10_selenium/output_60_1.png">
+<h4 id="영상이-나오는-영역만-자르기"><a href="#영상이-나오는-영역만-자르기" class="headerlink" title="영상이 나오는 영역만 자르기"></a>영상이 나오는 영역만 자르기</h4><p>영상이 재생되는 영역의 시작점과 크기를 구하기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">element = driver.find_element_by_css_selector(<span class="string">"#player-container"</span>)</span><br><span class="line">location = element.location</span><br><span class="line">size = element.size</span><br><span class="line">location, size</span><br></pre></td></tr></table></figure>
+<pre><code>({&#39;x&#39;: 24, &#39;y&#39;: 80}, {&#39;height&#39;: 408, &#39;width&#39;: 726})
+</code></pre><p>이미지 잘라내기</p>
+<ul>
+<li>top, bottom, left, right를 구해서 잘라낼 area 지정<br>(retina display의 경우: 각각 곱하기 2)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">left = location[<span class="string">"x"</span>]*<span class="number">2</span></span><br><span class="line">top = location [<span class="string">"y"</span>]*<span class="number">2</span></span><br><span class="line">right = left + size[<span class="string">"width"</span>]*<span class="number">2</span></span><br><span class="line">bottom = top + size[<span class="string">"height"</span>]*<span class="number">2</span></span><br><span class="line">area = (left, top, right, bottom)</span><br><span class="line">area</span><br></pre></td></tr></table></figure>
+<pre><code>(48, 160, 1500, 976)
+</code></pre><p>이미지 잘라내기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil_im.crop(area)</span><br><span class="line">pil_im.save(<span class="string">"screenshot_element.png"</span>)</span><br></pre></td></tr></table></figure>
+<p>잘라낸 결과 이미지</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil.open(<span class="string">"screenshot_element.png"</span>)</span><br><span class="line">pil_im</span><br></pre></td></tr></table></figure>
+<img src="/2018/10/04/web_10_selenium/output_69_0.png">
+<p>잘라낸 부분에서 하단의 메뉴바 부분까지 잘라내기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">element = driver.find_element_by_css_selector(<span class="string">".ytp-chrome-bottom"</span>)</span><br><span class="line">playbar_height = element.size[<span class="string">"height"</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">left = location[<span class="string">"x"</span>] * <span class="number">2</span></span><br><span class="line">top = location [<span class="string">"y"</span>] * <span class="number">2</span></span><br><span class="line">right = left + size[<span class="string">"width"</span>] * <span class="number">2</span></span><br><span class="line">bottom = top + size[<span class="string">"height"</span>] *<span class="number">2</span> - playbar_height *<span class="number">2</span></span><br><span class="line">area = (left, top, right, bottom)</span><br><span class="line">area</span><br></pre></td></tr></table></figure>
+<pre><code>(48, 160, 1500, 898)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil.open(<span class="string">"screenshot.png"</span>)</span><br><span class="line">pil_im = pil_im.crop(area)</span><br><span class="line">pil_im.save(<span class="string">"screenshot_element2.png"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil.open(<span class="string">"screenshot_element2.png"</span>)</span><br><span class="line">pil_im</span><br></pre></td></tr></table></figure>
+<img src="/2018/10/04/web_10_selenium/output_74_0.png">
+<h4 id="썸네일로-만들기"><a href="#썸네일로-만들기" class="headerlink" title="썸네일로 만들기"></a>썸네일로 만들기</h4><ul>
+<li>서비스할 때 작은 사이즈의 썸네일을 만들어서 씀으로써 트래픽 비용 절감</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pil_im.size</span><br></pre></td></tr></table></figure>
+<pre><code>(1452, 738)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pil_im.thumbnail((<span class="number">320</span>,<span class="number">160</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/10/04/web_10_selenium/" data-id="cjn65p4qm00b4s61hv0lb66ud" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/10/04/web_10_selenium/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/10/04/web_10_selenium/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-2018-10-02-TIL" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -2450,156 +2985,6 @@ b
 
 
 
-    <article id="post-2018-09-27-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/09/27/2018-09-27-TIL/">2018-09-27-TIL (9/19 ~ 9/27)</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/09/27/2018-09-27-TIL/">
-            <time datetime="2018-09-27T13:34:03.000Z" itemprop="datePublished">2018-09-27</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>추석 연휴를 끼면서 그 동안 또 밀렸던 TIL ㅎㅎ</p>
-<h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
-<li>첫번째 기술면접!<ul>
-<li>면접관들이 나의 맥북 화면을 tv 중계처럼 지켜보는 가운데 실시한 나의 첫번째 기술면접. 공부와 연습을 많이 해야겠다고 느끼게 되었다 ㅜ </li>
-</ul>
-</li>
-<li>패스트캠퍼스 모의면접3<ul>
-<li>첫 모의면접보다는 나아졌다는 평가를 들었지만 역시 ‘왜 이 회사인가’, ‘데이터사이언티스트가 되어 뭘 하고 싶은가’와 같은 질문에 대해 더 어필을 하고 열정을 보여줘야한다는 피드백을 들었다. 특히 데이터 사이언티스트로서 그리는 나의 미래 같은 질문은 나에겐 너무 어려운 것 ㅜ </li>
-</ul>
-</li>
-<li>web 복습<ul>
-<li>html과 css selector 복습은 해도 해도 헷갈리는 것 같다 ㅎㅎㅎ </li>
-</ul>
-</li>
-</ul>
-<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
-<li>java script 복습</li>
-<li>web crawling 복습</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/09/27/2018-09-27-TIL/" data-id="cjn65p4ob004zs61hlw5yun4g" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/09/27/2018-09-27-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/27/2018-09-27-TIL/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
@@ -2613,6 +2998,15 @@ b
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a></p>
+                            <p class="item-title"><a href="/2018/10/15/web_12_scrapy/" class="title">Web crawling - Scrapy</a></p>
+                            <p class="item-date"><time datetime="2018-10-15T12:27:51.000Z" itemprop="datePublished">2018-10-15</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -2650,15 +3044,6 @@ b
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
-                            <p class="item-title"><a href="/2018/10/11/2018-10-10-TIL/" class="title">2018-10-10-TIL</a></p>
-                            <p class="item-date"><time datetime="2018-10-10T15:39:02.000Z" itemprop="datePublished">2018-10-11</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -2668,7 +3053,7 @@ b
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">29</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">11</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">69</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">69</span></li></ul>
         </div>
     </div>
 
@@ -2677,7 +3062,7 @@ b
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -2686,7 +3071,7 @@ b
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">69</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">5</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">69</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">6</span></li></ul>
         </div>
     </div>
 
@@ -2695,7 +3080,7 @@ b
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 15px;">Database</a> <a href="/tags/MySQL/" style="font-size: 13.75px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 13.75px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.25px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 15px;">crawling</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/html/" style="font-size: 11.25px;">html</a> <a href="/tags/javascript/" style="font-size: 11.25px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/programming/" style="font-size: 18.75px;">programming</a> <a href="/tags/python/" style="font-size: 17.5px;">python</a> <a href="/tags/selenium/" style="font-size: 12.5px;">selenium</a> <a href="/tags/web/" style="font-size: 16.25px;">web</a> <a href="/tags/web-crawling/" style="font-size: 15px;">web_crawling</a> <a href="/tags/알고리즘/" style="font-size: 11.25px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 15px;">웹크롤링</a>
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.75px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.5px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.5px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.25px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 15px;">crawling</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/html/" style="font-size: 11.25px;">html</a> <a href="/tags/javascript/" style="font-size: 11.25px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/programming/" style="font-size: 18.75px;">programming</a> <a href="/tags/python/" style="font-size: 17.5px;">python</a> <a href="/tags/selenium/" style="font-size: 12.5px;">selenium</a> <a href="/tags/web/" style="font-size: 16.25px;">web</a> <a href="/tags/web-crawling/" style="font-size: 15px;">web_crawling</a> <a href="/tags/알고리즘/" style="font-size: 11.25px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 15px;">웹크롤링</a>
         </div>
     </div>
 
