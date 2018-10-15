@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/10/15/2018-10-15-TIL/</loc>
+        <lastmod>2018-10-15T14:57:38.137Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/10/15/web_12_scrapy/</loc>
         <lastmod>2018-10-15T13:09:42.940Z</lastmod>
         <changefreq>weekly</changefreq>
