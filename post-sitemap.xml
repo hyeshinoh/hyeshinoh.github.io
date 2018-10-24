@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/08/13/Blog_jupyter_tip/</loc>
+        <lastmod>2018-10-24T07:16:23.936Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/10/24/2018-10-24-TIL/</loc>
         <lastmod>2018-10-24T07:13:37.701Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -337,14 +345,6 @@
     <url>
         <loc>http://yoursite.com/2018/07/10/algorithm_00/</loc>
         <lastmod>2018-09-27T12:01:36.441Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/08/13/Blog_jupyter_tip/</loc>
-        <lastmod>2018-09-27T11:36:37.407Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
