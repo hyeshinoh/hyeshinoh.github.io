@@ -14,14 +14,14 @@
     </url>
     
     <url>
-        <loc>http://yoursite.com/categories/</loc>
+        <loc>http://yoursite.com/tags/</loc>
         <lastmod>2018-06-26T16:32:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://yoursite.com/tags/</loc>
+        <loc>http://yoursite.com/categories/</loc>
         <lastmod>2018-06-26T16:32:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

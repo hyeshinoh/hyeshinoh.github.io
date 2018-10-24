@@ -7,6 +7,30 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/10/24/math-001/</loc>
+        <lastmod>2018-10-24T08:20:09.671Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/24/math-002/</loc>
+        <lastmod>2018-10-24T08:19:56.831Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/24/hexo_mathjax_00/</loc>
+        <lastmod>2018-10-24T07:28:59.749Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/08/13/Blog_jupyter_tip/</loc>
         <lastmod>2018-10-24T07:16:23.936Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,22 +41,6 @@
     <url>
         <loc>http://yoursite.com/2018/10/24/2018-10-24-TIL/</loc>
         <lastmod>2018-10-24T07:13:37.701Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/24/hexo_mathjax_00/</loc>
-        <lastmod>2018-10-24T07:10:11.411Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/24/math-01/</loc>
-        <lastmod>2018-10-24T05:46:37.157Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
