@@ -149,20 +149,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/hexo/</loc>
-        <lastmod>2018-10-24T07:28:59.749Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/mathjax/</loc>
-        <lastmod>2018-10-24T07:28:59.749Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/tags/data-analysis/</loc>
         <lastmod>2018-10-24T08:20:09.671Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -179,6 +165,20 @@
     <url>
         <loc>http://yoursite.com/tags/%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98/</loc>
         <lastmod>2018-10-24T08:20:09.671Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/hexo/</loc>
+        <lastmod>2018-10-24T09:06:59.348Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/mathjax/</loc>
+        <lastmod>2018-10-24T09:06:59.348Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
