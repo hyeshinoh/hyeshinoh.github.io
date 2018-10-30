@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 5편입니다.  E5. Three-dimentional linear transformations1. 3차원의 선형변환 3차원 기저벡터: $\hat i=\begin{bmatrix} 1\\0\\0\end{bmatrix},">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-30T12:24:06.834Z">
+<meta property="og:updated_time" content="2018-10-30T14:01:19.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E5">
 <meta name="twitter:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 5편입니다.  E5. Three-dimentional linear transformations1. 3차원의 선형변환 3차원 기저벡터: $\hat i=\begin{bmatrix} 1\\0\\0\end{bmatrix},">
@@ -271,7 +271,7 @@ ga('send', 'pageview');
             
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 5편입니다.</p>
 <div class="video-container"><iframe src="//www.youtube.com/embed/rHLEWRxRGiM" frameborder="0" allowfullscreen></iframe></div>
-<h1 id="E5-Three-dimentional-linear-transformations"><a href="#E5-Three-dimentional-linear-transformations" class="headerlink" title="E5. Three-dimentional linear transformations"></a>E5. Three-dimentional linear transformations</h1><h2 id="1-3차원의-선형변환"><a href="#1-3차원의-선형변환" class="headerlink" title="1. 3차원의 선형변환"></a>1. 3차원의 선형변환</h2><ul>
+<h2 id="E5-Three-dimentional-linear-transformations"><a href="#E5-Three-dimentional-linear-transformations" class="headerlink" title="E5. Three-dimentional linear transformations"></a>E5. Three-dimentional linear transformations</h2><h2 id="1-3차원의-선형변환"><a href="#1-3차원의-선형변환" class="headerlink" title="1. 3차원의 선형변환"></a>1. 3차원의 선형변환</h2><ul>
 <li>3차원 기저벡터: $\hat i=\begin{bmatrix} 1\\0\\0\end{bmatrix}, \hat j=\begin{bmatrix} 0\\1\\0\end{bmatrix}, \hat k=\begin{bmatrix} 0\\0\\1\end{bmatrix}$</li>
 <li>2차원에서와 마찬가지로 각 기저벡터들이 어디로 이동하는지 좌표값을 알면 특정 벡터 $\vec v=\begin{bmatrix} x\\y\\z\end{bmatrix}=x\hat i+y\hat j+z\hat k$가 어떤 벡터로 변형되는지 파악할 수 있음</li>
 <li>e.g. 기저벡터: $\hat i, \hat j, \hat k$가 $\begin{bmatrix} 1\\0\\1\end{bmatrix}, \begin{bmatrix} 1\\1\\0\end{bmatrix}, \begin{bmatrix} 0\\0\\1\end{bmatrix}$로 이동한다고 할 때의 선형변환<ul>
@@ -577,7 +577,23 @@ ga('send', 'pageview');
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -595,5 +611,6 @@ ga('send', 'pageview');
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
 </body>
 </html>

@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 4편입니다.  E4. Matrix multiplication as composition1. Composition of linear transformation 선형변환을 한 번 하고 다시 선형변환을 하면 그 결과는 새로">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-30T11:53:48.442Z">
+<meta property="og:updated_time" content="2018-10-30T14:01:25.616Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E4">
 <meta name="twitter:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 4편입니다.  E4. Matrix multiplication as composition1. Composition of linear transformation 선형변환을 한 번 하고 다시 선형변환을 하면 그 결과는 새로">
@@ -271,7 +271,7 @@ ga('send', 'pageview');
             
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 4편입니다.</p>
 <div class="video-container"><iframe src="//www.youtube.com/embed/XkY2DOUCWMU" frameborder="0" allowfullscreen></iframe></div>
-<h1 id="E4-Matrix-multiplication-as-composition"><a href="#E4-Matrix-multiplication-as-composition" class="headerlink" title="E4. Matrix multiplication as composition"></a>E4. Matrix multiplication as composition</h1><h2 id="1-Composition-of-linear-transformation"><a href="#1-Composition-of-linear-transformation" class="headerlink" title="1. Composition of linear transformation"></a>1. Composition of linear transformation</h2><ul>
+<h2 id="E4-Matrix-multiplication-as-composition"><a href="#E4-Matrix-multiplication-as-composition" class="headerlink" title="E4. Matrix multiplication as composition"></a>E4. Matrix multiplication as composition</h2><h2 id="1-Composition-of-linear-transformation"><a href="#1-Composition-of-linear-transformation" class="headerlink" title="1. Composition of linear transformation"></a>1. Composition of linear transformation</h2><ul>
 <li>선형변환을 한 번 하고 다시 선형변환을 하면 그 결과는 새로운 하나의 선현변환이 됨</li>
 <li>이를 행렬의 곱으로 나타낼 수 있음, 단 함수의 합성처럼 식의 왼쪽으로 곱해나가야 함</li>
 <li>e.g. 첫번째 선형변환을 $\begin{bmatrix} 0 &amp; -1 \\ 1 &amp; 0\end{bmatrix}$(rotation), 두번째 선형변환을 $\begin{bmatrix} 1 &amp; 1 \\ 0 &amp; 1\end{bmatrix}$(shear)라고 할 때 그 composition<script type="math/tex; mode=display">
@@ -575,7 +575,23 @@ ga('send', 'pageview');
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -593,5 +609,6 @@ ga('send', 'pageview');
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
 </body>
 </html>

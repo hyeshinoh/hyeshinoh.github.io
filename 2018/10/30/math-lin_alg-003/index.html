@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 3편입니다.  E3. Linear transformation and matrices1. Linear transformation란 특정 벡터를 다른 벡터로 바꾸는 변환 (input vector → output vecto">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-30T08:16:46.025Z">
+<meta property="og:updated_time" content="2018-10-30T14:01:32.951Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E3">
 <meta name="twitter:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 3편입니다.  E3. Linear transformation and matrices1. Linear transformation란 특정 벡터를 다른 벡터로 바꾸는 변환 (input vector → output vecto">
@@ -271,7 +271,7 @@ ga('send', 'pageview');
             
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 3편입니다.</p>
 <div class="video-container"><iframe src="//www.youtube.com/embed/kYB8IZa5AuE" frameborder="0" allowfullscreen></iframe></div>
-<h1 id="E3-Linear-transformation-and-matrices"><a href="#E3-Linear-transformation-and-matrices" class="headerlink" title="E3. Linear transformation and matrices"></a>E3. Linear transformation and matrices</h1><h2 id="1-Linear-transformation란"><a href="#1-Linear-transformation란" class="headerlink" title="1. Linear transformation란"></a>1. Linear transformation란</h2><ul>
+<h2 id="E3-Linear-transformation-and-matrices"><a href="#E3-Linear-transformation-and-matrices" class="headerlink" title="E3. Linear transformation and matrices"></a>E3. Linear transformation and matrices</h2><h2 id="1-Linear-transformation란"><a href="#1-Linear-transformation란" class="headerlink" title="1. Linear transformation란"></a>1. Linear transformation란</h2><ul>
 <li>특정 벡터를 다른 벡터로 바꾸는 변환 (input vector → output vector)</li>
 <li>Linear 변환의 속성<ul>
 <li>Lines remain lines </li>
@@ -589,7 +589,23 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -607,5 +623,6 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
 </body>
 </html>

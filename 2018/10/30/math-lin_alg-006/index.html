@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 6편입니다.  E6. The determinant1. Determinant of transformation의 개념 Determinant(행렬식): 선형변형 후 단위면적을 scaling하는 factor 2차원 변환의 d">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-30T12:43:05.981Z">
+<meta property="og:updated_time" content="2018-10-30T14:01:12.644Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E6">
 <meta name="twitter:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 6편입니다.  E6. The determinant1. Determinant of transformation의 개념 Determinant(행렬식): 선형변형 후 단위면적을 scaling하는 factor 2차원 변환의 d">
@@ -271,7 +271,7 @@ ga('send', 'pageview');
             
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 6편입니다.</p>
 <div class="video-container"><iframe src="//www.youtube.com/embed/Ip3X9LOh2dk" frameborder="0" allowfullscreen></iframe></div>
-<h1 id="E6-The-determinant"><a href="#E6-The-determinant" class="headerlink" title="E6. The determinant"></a>E6. The determinant</h1><h2 id="1-Determinant-of-transformation의-개념"><a href="#1-Determinant-of-transformation의-개념" class="headerlink" title="1. Determinant of transformation의 개념"></a>1. Determinant of transformation의 개념</h2><ul>
+<h2 id="E6-The-determinant"><a href="#E6-The-determinant" class="headerlink" title="E6. The determinant"></a>E6. The determinant</h2><h2 id="1-Determinant-of-transformation의-개념"><a href="#1-Determinant-of-transformation의-개념" class="headerlink" title="1. Determinant of transformation의 개념"></a>1. Determinant of transformation의 개념</h2><ul>
 <li>Determinant(행렬식): 선형변형 후 단위면적을 scaling하는 factor<ul>
 <li>2차원 변환의 determinant 값이 3이라면 특정 면적의 크기는 3배가 됨 </li>
 <li>2차원 변환의 determinant 값이 0이라면 차원을 축소시켜 직선이나 점이 됨 (면적은 0이됨)</li>
@@ -580,7 +580,23 @@ ga('send', 'pageview');
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -598,5 +614,6 @@ ga('send', 'pageview');
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
 </body>
 </html>
