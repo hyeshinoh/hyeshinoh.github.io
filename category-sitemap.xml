@@ -49,22 +49,22 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/categories/%EA%B8%B0%ED%83%80/</loc>
+        <lastmod>2018-10-24T09:06:59.348Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/categories/Data-Analysis-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2018-10-24T08:20:09.671Z</lastmod>
+        <lastmod>2018-10-25T03:44:54.019Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/categories/Data-Analysis-%EA%B3%B5%EB%B6%80/%EC%88%98%ED%95%99-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2018-10-24T08:20:09.671Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/categories/%EA%B8%B0%ED%83%80/</loc>
-        <lastmod>2018-10-24T09:06:59.348Z</lastmod>
+        <lastmod>2018-10-25T03:44:54.019Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
