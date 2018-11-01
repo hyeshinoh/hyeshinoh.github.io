@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/11/01/math-lin_alg-008/</loc>
+        <lastmod>2018-11-01T12:14:49.260Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/30/math-lin_alg-007/</loc>
+        <lastmod>2018-11-01T11:55:08.515Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/10/30/math-lin_alg-003/</loc>
         <lastmod>2018-10-30T14:01:32.951Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -33,14 +49,6 @@
     <url>
         <loc>http://yoursite.com/2018/10/30/math-lin_alg-006/</loc>
         <lastmod>2018-10-30T14:01:12.644Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/30/math-lin_alg-007/</loc>
-        <lastmod>2018-10-30T13:57:34.905Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
