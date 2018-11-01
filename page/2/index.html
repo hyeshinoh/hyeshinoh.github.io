@@ -173,7 +173,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                113
+                114
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -226,6 +226,169 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-hexo_mathjax_00" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/10/24/hexo_mathjax_00/">Hexo 블로그에 수식 사용하기 - mathjax 설정</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/10/24/hexo_mathjax_00/">
+            <time datetime="2018-10-24T06:11:52.000Z" itemprop="datePublished">2018-10-24</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/기타/">기타</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/mathjax/">mathjax</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>앞으로 Hexo 블로그에 수학 공부 내용도 정리하기 위해서 열심히 구글링을 해서 mathjax 설정을 마쳤습니다!<br>그럼 어렵게 알아낸 내용을 기억해두기 위해 Hexo 블로그에서 LaTex로 수식을 작성할 수 있도록 mathjax를 설정하는 방법을 정리해보겠습니다.</p>
+<h2 id="1-설치"><a href="#1-설치" class="headerlink" title="1. 설치"></a>1. 설치</h2><h3 id="1-renderer-설치-및-세팅"><a href="#1-renderer-설치-및-세팅" class="headerlink" title="1) renderer 설치 및 세팅"></a>1) renderer 설치 및 세팅</h3><p>Hexo의 기본 renderer인 hexo-renderer-marked는 mathjax 문법을 지원하지 않는다고 합니다. 따라서 다음과 같이 새로운 rendering engine으로 교체해줍니다.</p>
+<p><code>$ npm uninstall hexo-renderer-marked --save</code><br><code>$ npm install hexo-renderer-kramed --save</code></p>
+<p>그리고 <code>&lt;your-project-dir&gt;/node_modules/hexo-reneder-kramed/lib/renderer.js</code>를 열어 다음과 같이 return 값을 text로 수정합니다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Change inline math rule</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatText</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Fit kramed's rule: $$ + \1 + $$</span></span><br><span class="line">  <span class="comment">// return text.replace(/`\$(.*?)\$`/g, '$$$$$1$$$$');</span></span><br><span class="line">  <span class="keyword">return</span> text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-mathjax-설치"><a href="#2-mathjax-설치" class="headerlink" title="2) mathjax 설치"></a>2) mathjax 설치</h3><p>다음으로는 mathjax plugin을 설치합니다.<br><code>npm install hexo-renderer-mathjax --save</code></p>
+<p>그리고 <code>&lt;your-project-dir&gt;/node_modules/hexo-reneder-mathjax/mathjax.html</code>을 열고 CDN URL을 아래와 같이 수정합니다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;&lt;/script&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-LaTex와-markdown의-문법-충돌-fix하기"><a href="#2-LaTex와-markdown의-문법-충돌-fix하기" class="headerlink" title="2. LaTex와 markdown의 문법 충돌 fix하기"></a>2. LaTex와 markdown의 문법 충돌 fix하기</h2><p>LaTex와 markdown에는 다음과 같이 문법이 충돌하는 부분이 있습니다. </p>
+<ul>
+<li>markdown: <code>*</code>과 <code>_</code>는 bold와 italic</li>
+<li>LaTex: <code>_</code>는 subscript</li>
+</ul>
+<p>따라서 <code>_</code>는 LaTex의 문법만을 따라서 아랫첨자를 나타내도록 하기위해<code>node_modules\kramed\lib\rules\inline.js</code>를 열고 다음과 같이 수정합니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span><br><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure>
+<h2 id="3-Mathjax-사용하기"><a href="#3-Mathjax-사용하기" class="headerlink" title="3. Mathjax 사용하기"></a>3. Mathjax 사용하기</h2><p>사용하고 있는 theme의 <code>_config.yml</code> 파일을 열고 다음과 같이 mathjax를 enabling 해줍니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+<h2 id="4-markdown-post-작성하기"><a href="#4-markdown-post-작성하기" class="headerlink" title="4. markdown post 작성하기"></a>4. markdown post 작성하기</h2><p>이제 hexo 블로그에 수식을 사용하기 위한 설정은 모두 마쳤습니다.<br>마지막으로 post 작성시 header 부분에 <code>mathjax: true</code>를 넣어주면 아래처럼 블로그에 수식이 잘 표현되게 됩니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;pmatrix&#125;</span><br><span class="line"> 1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \\</span><br><span class="line"> 1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \\</span><br><span class="line"> \vdots  &amp; \vdots&amp; \vdots &amp; \ddots &amp; \vdots \\</span><br><span class="line"> 1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n    </span><br><span class="line"> \end&#123;pmatrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">
+\begin{pmatrix}
+ 1 & a_1 & a_1^2 & \cdots & a_1^n \\
+ 1 & a_2 & a_2^2 & \cdots & a_2^n \\
+ \vdots  & \vdots& \vdots & \ddots & \vdots \\
+ 1 & a_m & a_m^2 & \cdots & a_m^n    
+ \end{pmatrix}</script><h4 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h4><ul>
+<li>블로그 <a href="https://www.infiniteft.xyz/2018/03/21/make-hexo-support-latex/" target="_blank" rel="noopener">Make Hexo Support Latex</a></li>
+<li>블로그 <a href="https://irongaea.github.io/2018/08/21/hexo-inline-math/" target="_blank" rel="noopener">hexo-inline-math</a></li>
+<li>블로그 <a href="https://johngrib.github.io/wiki/mathjax-latex/#3-%EB%8F%84%EA%B5%AC" target="_blank" rel="noopener">MathJax로 LaTeX 사용하기</a></li>
+<li><a href="https://www.mathjax.org/#gettingstarted" target="_blank" rel="noopener">www.mathjax.org</a></li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/10/24/hexo_mathjax_00/" data-id="cjnmw04kf006kka1hhj6x4r08" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/10/24/hexo_mathjax_00/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/10/24/hexo_mathjax_00/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-math-lin_alg-001" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -2187,294 +2350,6 @@ school
 
 
 
-    <article id="post-python_07_module &amp; package" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/10/11/python_07_module & package/">python 07. Python Module  &amp; Package</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/10/11/python_07_module & package/">
-            <time datetime="2018-10-10T15:22:27.000Z" itemprop="datePublished">2018-10-11</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_07_module%20%26%20package.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
-<h2 id="1-Module-모듈"><a href="#1-Module-모듈" class="headerlink" title="1. Module - 모듈"></a>1. Module - 모듈</h2><p>여럿이 함께 프로그램을 개발하기 위한 방법인 (1) 함수 (2) 객체 (3) 모듈 중 모듈에 대해 알아보자.</p>
-<ul>
-<li>모듈: 변수, 함수, 클래스를 모아놓은 파일</li>
-<li>사용 이유: 하나의 파일로 모든 코드를 작성해서 서비스를 만들 수 없기 때문에 코드의 규모가 커지면 기능별로 분리해 모듈 형태로 저장하고, 모듈을 모아서 하나의 큰 프로그램을 개발</li>
-<li>모듈의 확장자는 py</li>
-<li>import를 이용하여 모듈을 호출</li>
-<li>naming:<ul>
-<li>module의 식별자(이름)은 짧은 소문자로 구성, 합성어를 사용할 경우에는 밑줄로 구분(snake_case)</li>
-<li>CamelCase도 혼재</li>
-<li>C/C++모듈은 이름이 밑줄로 시작</li>
-</ul>
-</li>
-</ul>
-<p>magic command를 이용하여 module로 사용할 dsm.py 파일을 만들어 저장</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">%%writefile dsm.py</span><br><span class="line"></span><br><span class="line">var = <span class="number">1234</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">disp1</span><span class="params">(s)</span>:</span></span><br><span class="line">    print(<span class="string">"dsm_f1:"</span>, s)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">disp2</span><span class="params">(s)</span>:</span></span><br><span class="line">    print(<span class="string">"dsm_f2:"</span>, s)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">disp3</span><span class="params">(s)</span>:</span></span><br><span class="line">    print(<span class="string">"dsm_f3:"</span>, s)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calc</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plus</span><span class="params">(self, *args)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> sum(args)</span><br></pre></td></tr></table></figure>
-<pre><code>Writing dsm.py
-</code></pre><h3 id="1-1-모듈-호출"><a href="#1-1-모듈-호출" class="headerlink" title="1.1 모듈 호출"></a>1.1 모듈 호출</h3><h4 id="1-dsm-모듈-호출"><a href="#1-dsm-모듈-호출" class="headerlink" title="(1) dsm 모듈 호출"></a>(1) dsm 모듈 호출</h4><p>같은 폴더 내에 모듈이 위치한 경우 바로 import가 가능</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> dsm</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
-<pre><code>Variable   Type      Data/Info
-------------------------------
-dsm        module    &lt;module &#39;dsm&#39; from &#39;/User&lt;...&gt;ace/Study_Python/dsm.py&#39;&gt;
-</code></pre><h4 id="2-dsm-모듈의-변수-호출"><a href="#2-dsm-모듈의-변수-호출" class="headerlink" title="(2) dsm 모듈의 변수 호출"></a>(2) dsm 모듈의 변수 호출</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dsm.var</span><br></pre></td></tr></table></figure>
-<pre><code>1234
-</code></pre><h4 id="3-dsm-모듈의-함수-호출"><a href="#3-dsm-모듈의-함수-호출" class="headerlink" title="(3) dsm 모듈의 함수 호출"></a>(3) dsm 모듈의 함수 호출</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dsm.disp1(<span class="string">"test"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>dsm_f1: test
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dsm.disp1(<span class="string">"test1"</span>)</span><br><span class="line">dsm.disp2(<span class="string">"test2"</span>)</span><br><span class="line">dsm.disp3(<span class="string">"test3"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>dsm_f1: test1
-dsm_f2: test2
-dsm_f3: test3
-</code></pre><h4 id="4-dsm-모듈의-클래스-호출"><a href="#4-dsm-모듈의-클래스-호출" class="headerlink" title="(4) dsm 모듈의 클래스 호출"></a>(4) dsm 모듈의 클래스 호출</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c = dsm.Calc()</span><br><span class="line">c.plus(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>15
-</code></pre><h3 id="1-2-모듈에-있는-함수만-호출하기"><a href="#1-2-모듈에-있는-함수만-호출하기" class="headerlink" title="1.2 모듈에 있는 함수만 호출하기"></a>1.2 모듈에 있는 함수만 호출하기</h3><ul>
-<li>모듈에 있는 함수만 호출하면 (모듈이름).(함수이름) 에서 (함수이름)만 사용하기 때문에 함수를 사용할때 코드의 양을 줄일수 있음</li>
-<li>from을 사용하여 모듈을 호출하고 import를 이용하여 모듈안에 있는 함수나 변수나 클래스를 호출할수 있음</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%reset</span><br></pre></td></tr></table></figure>
-<pre><code>Once deleted, variables cannot be recovered. Proceed (y/[n])?  y
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dsm <span class="keyword">import</span> disp1, disp2</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
-<pre><code>Variable   Type        Data/Info
---------------------------------
-disp1      function    &lt;function disp1 at 0x1078f6d08&gt;
-disp2      function    &lt;function disp2 at 0x10de1e950&gt;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disp1(<span class="string">"test"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>dsm_f1: test
-</code></pre><h3 id="1-3-모듈의-모든-함수-호출"><a href="#1-3-모듈의-모든-함수-호출" class="headerlink" title="1.3 모듈의 모든 함수 호출"></a>1.3 모듈의 모든 함수 호출</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dsm <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
-<pre><code>Variable   Type        Data/Info
---------------------------------
-Calc       type        &lt;class &#39;dsm.Calc&#39;&gt;
-disp1      function    &lt;function disp1 at 0x1078f6d08&gt;
-disp2      function    &lt;function disp2 at 0x10de1e950&gt;
-disp3      function    &lt;function disp3 at 0x10de9a378&gt;
-var        int         1234
-</code></pre><h2 id="2-Package-패키지"><a href="#2-Package-패키지" class="headerlink" title="2. Package - 패키지"></a>2. Package - 패키지</h2><ul>
-<li>하나의 큰 프로젝트를 만드는 코드의 묶음</li>
-<li>디렉토리와 모듈로 이루어져 있음</li>
-<li><code>__init__.py</code><ul>
-<li>현재 폴더가 패키지임을 알리는 초기화 스크립트로, 없을 경우 패키지로 간주하지 않음</li>
-<li><code>python3.3</code> 이후 버전에서는 없어도 동작에 문제가 없지만 호환성을 위해서 파일을 만들어 주는 것이 좋음</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-1-school-패키지-만들기"><a href="#2-1-school-패키지-만들기" class="headerlink" title="2.1 school 패키지 만들기"></a>2.1 school 패키지 만들기</h3><h4 id="디렉토리-구성하기"><a href="#디렉토리-구성하기" class="headerlink" title="디렉토리 구성하기"></a>디렉토리 구성하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!mkdir school</span><br><span class="line">!mkdir school/datascience</span><br><span class="line">!mkdir school/web</span><br></pre></td></tr></table></figure>
-<h4 id="init-py-만들기"><a href="#init-py-만들기" class="headerlink" title="__init__.py 만들기"></a><code>__init__.py</code> 만들기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!touch school/datascience/__init__.py</span><br><span class="line">!touch school/web/__init__.py</span><br></pre></td></tr></table></figure>
-<h4 id="directory-structure-체크"><a href="#directory-structure-체크" class="headerlink" title="directory structure 체크"></a>directory structure 체크</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!tree school</span><br></pre></td></tr></table></figure>
-<pre><code>school
-├── datascience
-│   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-36.pyc
-│   │   └── data.cpython-36.pyc
-│   └── data.py
-└── web
-    ├── __init__.py
-    ├── __pycache__
-    │   ├── __init__.cpython-36.pyc
-    │   └── url.cpython-36.pyc
-    └── url.py
-
-4 directories, 8 files
-</code></pre><h4 id="data-모듈-작성"><a href="#data-모듈-작성" class="headerlink" title="data 모듈 작성"></a>data 모듈 작성</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/datascience/data.py</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plus</span><span class="params">(*args)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sum(args)</span><br></pre></td></tr></table></figure>
-<pre><code>Writing school/datascience/data.py
-</code></pre><h4 id="url-모듈-작성"><a href="#url-모듈-작성" class="headerlink" title="url 모듈 작성"></a>url 모듈 작성</h4><ul>
-<li>url의 프로토콜을 확인해서 붙여주는 함수를 포함</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/web/url.py</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_url</span><span class="params">(url)</span>:</span></span><br><span class="line">    protocol = <span class="string">"http://"</span></span><br><span class="line">    <span class="keyword">return</span> url <span class="keyword">if</span> url[:<span class="number">7</span>] == protocol <span class="keyword">else</span> protocol + url</span><br></pre></td></tr></table></figure>
-<pre><code>Writing school/web/url.py
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!tree school</span><br></pre></td></tr></table></figure>
-<pre><code>school
-├── datascience
-│   ├── __init__.py
-│   └── data.py
-└── web
-    ├── __init__.py
-    └── url.py
-
-2 directories, 4 files
-</code></pre><h3 id="2-2-모듈-호출하기"><a href="#2-2-모듈-호출하기" class="headerlink" title="2.2 모듈 호출하기"></a>2.2 모듈 호출하기</h3><h4 id="1-import-사용해서-호출하기"><a href="#1-import-사용해서-호출하기" class="headerlink" title="(1) import 사용해서 호출하기"></a>(1) import 사용해서 호출하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%reset</span><br></pre></td></tr></table></figure>
-<pre><code>Once deleted, variables cannot be recovered. Proceed (y/[n])?  y
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 아래처럼 import할 때 마지막은 module이 와야함</span></span><br><span class="line"><span class="keyword">import</span> school.web.url</span><br><span class="line">school.web.url.make_url(<span class="string">"naver.com"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>&#39;http://naver.com&#39;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
-<pre><code>Variable   Type      Data/Info
-------------------------------
-school     module    &lt;module &#39;school&#39; (namespace)&gt;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> school.web.url <span class="keyword">as</span> url</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
-<pre><code>Variable   Type      Data/Info
-------------------------------
-school     module    &lt;module &#39;school&#39; (namespace)&gt;
-url        module    &lt;module &#39;school.web.url&#39; &lt;...&gt;ython/school/web/url.py&#39;&gt;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url.make_url(<span class="string">"fastcampus.com"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>&#39;http://fastcampus.com&#39;
-</code></pre><h4 id="2-from과-import-사용해서-호출하기"><a href="#2-from과-import-사용해서-호출하기" class="headerlink" title="(2) from과 import 사용해서 호출하기"></a>(2) from과 import 사용해서 호출하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%reset</span><br></pre></td></tr></table></figure>
-<pre><code>Once deleted, variables cannot be recovered. Proceed (y/[n])?  y
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> school.datascience <span class="keyword">import</span> data</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/datascience/data2.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sqrt_data</span><span class="params">(*args)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> reduce(<span class="keyword">lambda</span> x, y: x ** y, args)</span><br></pre></td></tr></table></figure>
-<pre><code>Writing school/datascience/data2.py
-</code></pre><h4 id="3-init-py-파일"><a href="#3-init-py-파일" class="headerlink" title="(3) __init__.py 파일"></a>(3) <code>__init__.py</code> 파일</h4><ul>
-<li><code>__init__.py</code>를 아래와 같이 작성하면 패키지를 호출시 <code>*</code>로 모든 모듈을 호출할 경우 import할 모듈을 정해줄 수 있음 </li>
-<li>수정 후엔 kernel restart</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/datascience/__init__.py</span><br><span class="line"></span><br><span class="line">__all__ = [<span class="string">'data'</span>, <span class="string">'data2'</span>]</span><br></pre></td></tr></table></figure>
-<pre><code>Overwriting school/datascience/__init__.py
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> school.datascience <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
-<pre><code>Variable   Type      Data/Info
-------------------------------
-data       module    &lt;module &#39;school.datascien&lt;...&gt;ool/datascience/data.py&#39;&gt;
-data2      module    &lt;module &#39;school.datascien&lt;...&gt;ol/datascience/data2.py&#39;&gt;
-</code></pre><h3 id="2-2-global-영역-path-확인하기"><a href="#2-2-global-영역-path-확인하기" class="headerlink" title="2.2 global 영역 path 확인하기"></a>2.2 global 영역 path 확인하기</h3><ul>
-<li>jupyter notebook을 실행한 환경의 python에서 참고하고 있는 path들 체크</li>
-<li>같은 경로에 있지 않아도 이 path에 있으면 바로 import해서 사용 가능</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> path <span class="keyword">in</span> sys.path:</span><br><span class="line">    print(path)</span><br><span class="line">```     </span><br><span class="line">   	/usr/local/Cellar/python/<span class="number">3.6</span><span class="number">.5</span>_1/Frameworks/Python.framework/Versions/<span class="number">3.6</span>/lib/python36.zip</span><br><span class="line">  	/usr/local/Cellar/python/<span class="number">3.6</span><span class="number">.5</span>_1/Frameworks/Python.framework/Versions/<span class="number">3.6</span>/lib/python3<span class="number">.6</span></span><br><span class="line">  	/usr/local/Cellar/python/<span class="number">3.6</span><span class="number">.5</span>_1/Frameworks/Python.framework/Versions/<span class="number">3.6</span>/lib/python3<span class="number">.6</span>/lib-dynload</span><br><span class="line">	/usr/local/lib/python3<span class="number">.6</span>/site-packages</span><br><span class="line">	/usr/local/lib/python3<span class="number">.6</span>/site-packages/IPython/extensions</span><br><span class="line">	/Users/hyeshinoh/.ipython</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">!ls /usr/local/lib/python3<span class="number">.6</span>/site-packages</span><br></pre></td></tr></table></figure>
-<pre><code>IPython
-Jinja2-2.10.dist-info
-Keras-2.2.2.dist-info
-Keras_Applications-1.0.4.dist-info
-Keras_Preprocessing-1.0.2.dist-info
-.
-.
-.
-wheel-0.31.1-py3.6.egg-info
-widgetsnbextension
-widgetsnbextension-3.4.0.dist-info
-yaml
-zmq
-</code></pre><p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_07_module%20%26%20package.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
-<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
-<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/10/11/python_07_module & package/" data-id="cjnmw04mw00c9ka1h0mg7zil4" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/10/11/python_07_module & package/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/10/11/python_07_module &amp; package/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
@@ -2488,6 +2363,15 @@ zmq
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a></p>
+                            <p class="item-title"><a href="/2018/11/01/math-lin_alg-010/" class="title">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E10</a></p>
+                            <p class="item-date"><time datetime="2018-11-01T13:15:04.000Z" itemprop="datePublished">2018-11-01</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -2525,15 +2409,6 @@ zmq
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a></p>
-                            <p class="item-title"><a href="/2018/10/30/math-lin_alg-005/" class="title">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E5</a></p>
-                            <p class="item-date"><time datetime="2018-10-30T11:55:04.000Z" itemprop="datePublished">2018-10-30</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -2543,7 +2418,7 @@ zmq
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">71</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a><span class="category-list-count">11</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">71</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -2552,7 +2427,7 @@ zmq
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -2561,7 +2436,7 @@ zmq
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">71</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-analysis/">data analysis</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mathjax/">mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/미적분/">미적분</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/선형대수/">선형대수</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/확률통계/">확률통계</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">71</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-analysis/">data analysis</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mathjax/">mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/미적분/">미적분</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/선형대수/">선형대수</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/확률통계/">확률통계</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
