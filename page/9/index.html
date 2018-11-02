@@ -173,7 +173,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                116
+                117
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -226,6 +226,365 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-Database_01" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/07/25/Database_01/">Database 개념 및 기초</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/07/25/Database_01/">
+            <time datetime="2018-07-25T12:33:48.000Z" itemprop="datePublished">2018-07-25</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Database/">Database</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="1-Database-개요"><a href="#1-Database-개요" class="headerlink" title="1. Database 개요"></a>1. Database 개요</h2><h3 id="1-1-데이터베이스의-개념"><a href="#1-1-데이터베이스의-개념" class="headerlink" title="1.1 데이터베이스의 개념"></a>1.1 데이터베이스의 개념</h3><p>DB(Database)</p>
+<ul>
+<li>방대한 데이터를 효율적으로 관리하기 위해 컴퓨터에 통합·저장한 것</li>
+<li>통합하여 관리되는 데이터들의 집합</li>
+</ul>
+<p>DBMS(Database Management System)</p>
+<ul>
+<li>데이터베이스를 관리하는 미들웨어 시스템</li>
+<li>데이터베이스에 데이터를 저장하고, 효율적으로 검색하고 수정할 수 있는 환경을 제공</li>
+<li>권한이 없는 사용자가 접근하거나 시스템에 장애가 생겼을 때에도 데이터를 안전하게 보호하며, 여러 사용자가 데이터베이스에 동시에 접근할 수 있도록 제어</li>
+<li>대표적인 DBMS: Oracle, MySQL 등</li>
+</ul>
+<h3 id="1-2-데이터베이스의-특징"><a href="#1-2-데이터베이스의-특징" class="headerlink" title="1.2 데이터베이스의 특징"></a>1.2 데이터베이스의 특징</h3><ul>
+<li><p>한 조직의 여러 응용 프로그램이 저장된 데이터를 공유할 수 있도록 데이터를 통합하여 관리</p>
+</li>
+<li><p>데이터베이스에 저장된 데이터의 특징</p>
+<ul>
+<li>통합되어 저장됨</li>
+<li>물리적인 기억장치에 보관됨</li>
+<li>필요에 따라 삽입, 삭제, 변경됨</li>
+<li>여러 사람이 사용함</li>
+</ul>
+</li>
+<li><p>데이터베이스의 특징</p>
+<ul>
+<li>실시간으로 접근 가능</li>
+<li>계속 변화함</li>
+<li>동시 공유가 가능</li>
+<li>내용에 따라 참조</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-데이터베이스-언어"><a href="#1-3-데이터베이스-언어" class="headerlink" title="1.3 데이터베이스 언어"></a>1.3 데이터베이스 언어</h3><ol>
+<li><p>데이터 정의어(DDL, Data Definition Language)</p>
+<ul>
+<li>데이터 저장 구조, 데이터 접근 방법, 데이터 형식 등 데이터베이스를 구축하거나 수정할 때 사용하는 언어</li>
+</ul>
+</li>
+<li><p>데이터 조직어(DML, Data Manipulation Language)</p>
+<ul>
+<li>데이터 베이스에 저장된 데이터를 검색, 수정, 삽입, 삭제할 때 사용하는 언어로, 사용자와 DBMS 사이의 인터페이스를 제공</li>
+<li>대표적 데이터 조직어: query</li>
+<li>절차적언어 &amp; 비절차적 언어로 구분<ul>
+<li>절차적 언어(procedural language): 필요한 데이터와 검색 방법까지 명시</li>
+<li>비절차적 언어(non-procedural language): 필요한 데이터만 명시하고 검색 방법은 명시하지 않음<ul>
+<li>SQL이 대표적 비절차적 언어  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>데이터 제어어(DCL, Data Control Language)</p>
+<ul>
+<li>데이터를 보호하고 관리할 때 사용하는 언어</li>
+<li>데이터의 무결성 유지, 보안 및 접근 제어, 시스템 장애로부터의 복구, 병행 수행 제어 기능 등을 담당 </li>
+</ul>
+</li>
+</ol>
+<h3 id="1-4-데이터베이스-사용자"><a href="#1-4-데이터베이스-사용자" class="headerlink" title="1.4 데이터베이스 사용자"></a>1.4 데이터베이스 사용자</h3><p>DBMS 활용 형태에 따라 세 가지 유형으로 구분</p>
+<ul>
+<li><p>응용프로그래머</p>
+<ul>
+<li>일반 프로그래밍언어와 데이터조작어를 이용하여 프로그램을 만듦</li>
+</ul>
+</li>
+<li><p>최종 사용자</p>
+<ul>
+<li>데이터의 검색, 삽입, 삭제, 갱신 등을 위해 DBMS를 사용하는 사람</li>
+<li>데이터베이스 질의어를 사요아여 데이터베이스 시스템에 접근한 후 원하는 정보를 찾음   </li>
+</ul>
+</li>
+<li><p>데이터베이스 관리자</p>
+<ul>
+<li>데이터 정의어와 데이터 제어어를 사용하여 데이터베이스 스키마를 생성하고 관리</li>
+<li>주요 업무: 데이터베이스 스키마의 생성과 변경, 무결성 제약 조건 명시, 보안 정책 수립(사용자의 권한 설정 및 역할 관리), 저장 구조 및 접근 방법 정의, 백업과 복구 절차 수립, 표준화 시행 등 </li>
+</ul>
+</li>
+</ul>
+<h3 id="1-5-데이터베이스의-구분"><a href="#1-5-데이터베이스의-구분" class="headerlink" title="1.5 데이터베이스의 구분"></a>1.5 데이터베이스의 구분</h3><ol>
+<li><p>관계형 데이터베이스(RDBMS, Relational Database Management System)</p>
+<ul>
+<li>관계형 데이터 모델을 기반으로 하며 가장 널리 사용되는 데이터베이스</li>
+<li>Oracle, <strong>MySQL</strong>, Postgresql, Sqlite 등</li>
+<li>데이터 테이블 사이에 키값으로 관계를 가지고 있는 데이터베이스</li>
+<li>데이터 사이의 관계 설정으로 최적화된 스키마를 설계 가능</li>
+</ul>
+</li>
+<li><p>NoSQL</p>
+<ul>
+<li><strong>Mongodb</strong>, Hvase, Cassandra 등</li>
+<li>데이터 테이블 사이에 관계가 없이 저장하는 데이터베이스</li>
+<li>데이터 사이의 관계가 없으므로 복잡성이 줄고 많은 데이터를 저장가능하고 데이터 수정도 용이</li>
+<li>RDBMS와 달리 data가 중복되어 저장되므로 row수가 늘어나지만 insert 속도가 빨라 big data 처리와 관련해 최근 주목 받게 됨    </li>
+</ul>
+</li>
+</ol>
+<h2 id="2-RDBMS-관계형-데이터베이스"><a href="#2-RDBMS-관계형-데이터베이스" class="headerlink" title="2. RDBMS(관계형 데이터베이스)"></a>2. RDBMS(관계형 데이터베이스)</h2><h3 id="2-1-RDBMS의-개요"><a href="#2-1-RDBMS의-개요" class="headerlink" title="2.1 RDBMS의 개요"></a>2.1 RDBMS의 개요</h3><p>특징</p>
+<ul>
+<li>구조가 단순하고 데이터 분류, 정렬, 탐색속도가 빠름</li>
+<li>오래 사용된 만큼 신뢰성이 높음</li>
+<li>스키마 수정이 어려움  </li>
+</ul>
+<p>구조</p>
+<ul>
+<li>Server &gt; Database &gt; Table &gt; Row &gt; Value</li>
+</ul>
+<h3 id="2-2-RDBMS의-구조"><a href="#2-2-RDBMS의-구조" class="headerlink" title="2.2 RDBMS의 구조"></a>2.2 RDBMS의 구조</h3><ol>
+<li><p>Table</p>
+<ul>
+<li>row와 column으로 이루어진 데이터베이스를 구성하는 기본 단위</li>
+<li>python pandas의 DataFrame에 해당</li>
+<li>Storage Engine<ul>
+<li>어떤 data를 쓸지에 따라 결정 (보통 InnoDB 많이 사용)</li>
+</ul>
+<ol>
+<li>MyISAM: full text index 지원, table 단위 lock(단점), select가 빠름, 구조 단순</li>
+<li>InnoDB: transaction 지원, row 단위 lock(장점), 자원을 만이 사용, 구조 복잡 </li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>Row</p>
+<ul>
+<li>테이블의 각 행, tuple 또는 record라고도 함</li>
+<li>cardinality: row(tuple)의 개수</li>
+</ul>
+</li>
+<li><p>Column</p>
+<ul>
+<li>데이터의 각 열, field 또는 attribute라고도 함</li>
+<li>degree(차수): tuple을 구성하는 attribute의 개수 (column수)</li>
+<li>domain: attirube 하나가 가질 수 있는 <strong>값</strong>의 집합</li>
+</ul>
+</li>
+<li><p>Value</p>
+<ul>
+<li>row와 column에 포함되어 있는 데이터</li>
+</ul>
+</li>
+<li><p>Key</p>
+<ul>
+<li>row에서 unique한 값으로, row의 식별자로 사용</li>
+<li>key의 종류<ol>
+<li>후보키(candidate key):<ul>
+<li>각 row를 구별할 수 있는 최소한의 속성으로 구성된 키</li>
+<li>두 개 column의 조합이 후보 키가 될 수도 있음 (이 경우 어떤 한 속성을 제거하면 구별 능력을 상실)</li>
+</ul>
+</li>
+<li>기본키(primary key): 후보키 중 대표로 선정한 key </li>
+<li>대체키(alternate key): 기본키가 아닌 후보키</li>
+<li>외래키(foreign key): 다른 테이블의 기본키를 참조하며, 테이블 사이의 관계를 나타내는 키</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>Relation</p>
+<ul>
+<li>두 개의 table은 일대일(1:1, one-to-one), 일대다(1:n, one-to-many), 다대다(n:n, many-to-many)의 관계를 가질 수 있음</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-3-Schema"><a href="#2-3-Schema" class="headerlink" title="2.3 Schema"></a>2.3 Schema</h3><ol>
+<li><p>Schema</p>
+<ul>
+<li>Schema: 데이터베이스의 구조에 대한 디자인</li>
+</ul>
+</li>
+<li><p>무결성 제약 조건(integrity constraint)</p>
+<ul>
+<li>데이터베이스 상태가 만족해야 하는 조건으로, 사용자가 데이터베이스를 갱신할 때 데이터베이스의 일관성을 손상하지 않도록 보장하는 수단</li>
+<li>schema를 정의할 때 한 번만 명시하면 데이터베이스가 갱신될 때 DBMS가 자동으로 검사</li>
+<li>무결성 제약조건의 구분<ul>
+<li>도메인 무결성 제약 조건<ul>
+<li>각 속성값은 반드시 도메인에 속한 값을 가져야 함</li>
+<li>속성의 default, 가능한 값의 범위, null값 허용 여부 등을 지정</li>
+</ul>
+</li>
+<li>개체 무결성 제약 조건<ul>
+<li>기본키를 구성하는 속성은 null값을 가질 수 없음</li>
+</ul>
+</li>
+<li>참조 무결성 제약 조건<ul>
+<li>외래키 값은 참조된 테이블의 기본키와 도메인이 동일해야 함 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-NoSQL"><a href="#3-NoSQL" class="headerlink" title="3. NoSQL"></a>3. NoSQL</h2><h3 id="3-1-NoSQL의-개요"><a href="#3-1-NoSQL의-개요" class="headerlink" title="3.1 NoSQL의 개요"></a>3.1 NoSQL의 개요</h3><p>NoSQL의 개념</p>
+<ul>
+<li>NoSQL: Not Only SQL</li>
+<li>RDBMS의 한계(확장성이 낮음)를 극복하기 위해 만들어진 데이터베이스</li>
+</ul>
+<p>NoSQL의 특징</p>
+<ul>
+<li>확장성이 좋음 → 데이터의 분산처리 용이</li>
+<li>데이터 저장이 유연: RDBMS와 다르게 구조의 변경이 불필요</li>
+<li>Schema 및 join이 없음</li>
+<li>collection 별로 관계가 없이 때문에 모든 데이터가 들어있어야 함</li>
+<li>저장되는 데이터는 key-value 형태의 JSON 포맷 사용</li>
+<li>select는 RDBMS보다 느리지만 Insert는 빨라 대용량 데이터베이스에 많이 사용됨</li>
+<li>Transaction이 지원되지 않음(동시수정에 대한 신뢰성이 지원되지 않음)<ul>
+<li>금융권 같은 곳에서는 사용할 수 없음</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-Mongodb"><a href="#3-2-Mongodb" class="headerlink" title="3.2 Mongodb"></a>3.2 Mongodb</h3><p>Mongodb</p>
+<ul>
+<li>C++로 작성된 오픈소스 데이터 베이스</li>
+<li>뛰어난 확장성과 성능을 가짐</li>
+<li>NoSQL에서는 인지도가 가장 높음</li>
+</ul>
+<p>Mongodb의 구조</p>
+<ul>
+<li>Server &gt; Database &gt; Collection &gt; Document &gt; key:value</li>
+<li>Collection: RDBMS의 Table과 같은 개념</li>
+<li>Document: RDBMS의 Row와 같은 개념</li>
+<li>Key: RDBMS의 Column과 같은 개념</li>
+</ul>
+<hr>
+<h4 id="※-참고-자료"><a href="#※-참고-자료" class="headerlink" title="※ 참고 자료"></a>※ 참고 자료</h4><ul>
+<li>패스트캠퍼스 ‘데이터 사이언스 스쿨 Python 8기’ 수업자료</li>
+<li>이동명, 권오현, 고정국, 「컴퓨터 사이언스 개정판」</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/07/25/Database_01/" data-id="cjnmw04k6005zka1hc79fmbbd" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/07/25/Database_01/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/07/25/Database_01/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-2018-07-25-TIL" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1670,162 +2029,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-2018-07-16-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/07/17/2018-07-16-TIL/">2018-07-16-TIL</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/07/17/2018-07-16-TIL/">
-            <time datetime="2018-07-16T15:34:13.000Z" itemprop="datePublished">2018-07-17</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
-<li>DSS 모의 인성면접<ul>
-<li>역시 준비가 부족해서 깊이 있는 답변을 하지 못했다. 조금씩 면접 답변에 대한 준비를 해봐야겠다. 말하기의 연습도 필요하겠다.</li>
-</ul>
-</li>
-<li>DSS 수업: 나이브 베이즈 분류 모형</li>
-</ul>
-<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
-<li>DSS: 데이터베이스 복습</li>
-<li>빅콘테스트 2018 설명회 참가하기</li>
-</ul>
-<h4 id="이번-주에-공부할-것"><a href="#이번-주에-공부할-것" class="headerlink" title="이번 주에 공부할 것"></a>이번 주에 공부할 것</h4><ul>
-<li>DSS: 통계 <11장. 검정과="" 추정=""> 복습하기</11장.></li>
-<li>DSS: 통계 <34절. 선형회귀분석의="" 기초=""> 복습하기</34절.></li>
-<li>DSS: 통계 <35절. 입력변수가="" 카테고리값인="" 경우=""> 복습하기</35절.></li>
-<li>DSS: 통계 <36절. 예측성능의="" 진단과="" 비교=""> 복습하기</36절.></li>
-<li>DSS: 통계 <37절. 과최적화와="" 교차="" 검증=""> 복습하기</37절.></li>
-<li>DSS: 통계 <38절. 추천시스템=""> 복습하기</38절.></li>
-<li>DSS: 통계 <43절. 클러스터링=""> 복습하기</43절.></li>
-<li>DSS: 통계 <44절. 분류의="" 기초=""> 복습하기</44절.></li>
-<li>DSS: 통계 <45절. 로지스틱="" 회귀분석=""> 복습하기</45절.></li>
-<li>DSS: 통계 &lt;46절. QDA와 나이브 베이즈 모형 복습하기</li>
-<li>DSS: 인성면접 답안 대비 (개인 신상, 취미, 특기 관련 질문)</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/07/17/2018-07-16-TIL/" data-id="cjnmw04ib001hka1hmcy2eav1" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/07/17/2018-07-16-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/07/17/2018-07-16-TIL/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
     </nav>
@@ -1839,6 +2042,15 @@ ga('send', 'pageview');
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a></p>
+                            <p class="item-title"><a href="/2018/11/02/math-lin_alg-012/" class="title">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E12</a></p>
+                            <p class="item-date"><time datetime="2018-11-02T04:28:04.000Z" itemprop="datePublished">2018-11-02</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1876,15 +2088,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a></p>
-                            <p class="item-title"><a href="/2018/11/01/math-lin_alg-008/" class="title">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E8</a></p>
-                            <p class="item-date"><time datetime="2018-11-01T11:56:04.000Z" itemprop="datePublished">2018-11-01</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1894,7 +2097,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">72</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a><span class="category-list-count">13</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">72</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1903,7 +2106,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -1912,7 +2115,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-analysis/">data analysis</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mathjax/">mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/미적분/">미적분</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/선형대수/">선형대수</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/확률통계/">확률통계</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-analysis/">data analysis</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mathjax/">mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/미적분/">미적분</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/선형대수/">선형대수</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/확률통계/">확률통계</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1921,7 +2124,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.75px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.5px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.5px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.25px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 15px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 16.25px;">data analysis</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11.25px;">html</a> <a href="/tags/javascript/" style="font-size: 11.25px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 16.25px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 18.75px;">programming</a> <a href="/tags/python/" style="font-size: 17.5px;">python</a> <a href="/tags/selenium/" style="font-size: 12.5px;">selenium</a> <a href="/tags/web/" style="font-size: 16.25px;">web</a> <a href="/tags/web-crawling/" style="font-size: 15px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 16.25px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11.25px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 15px;">웹크롤링</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.75px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.5px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.5px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.25px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 15px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.5px;">data analysis</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11.25px;">html</a> <a href="/tags/javascript/" style="font-size: 11.25px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 17.5px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 18.75px;">programming</a> <a href="/tags/python/" style="font-size: 17.5px;">python</a> <a href="/tags/selenium/" style="font-size: 12.5px;">selenium</a> <a href="/tags/web/" style="font-size: 16.25px;">web</a> <a href="/tags/web-crawling/" style="font-size: 15px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 17.5px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11.25px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 15px;">웹크롤링</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
         </div>
     </div>
 
