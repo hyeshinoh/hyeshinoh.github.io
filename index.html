@@ -173,7 +173,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                119
+                120
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -226,6 +226,260 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-math-lin_alg-015" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/11/16/math-lin_alg-015/">&lt;선형대수&gt; 선형대수 기초 with python NumPy</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/11/16/math-lin_alg-015/">
+            <time datetime="2018-11-16T01:26:04.000Z" itemprop="datePublished">2018-11-16</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/data-analysis/">data analysis</a>, <a class="tag-link" href="/tags/math/">math</a>, <a class="tag-link" href="/tags/선형대수/">선형대수</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><em>이거슨 내가 복습하기 위한 선형대수 정리…</em></p>
+<p>선형대수의 기초 개념과 파이썬 numpy로 구현해보는 내용을 정리해보았다.</p>
+<h2 id="데이터의-유형"><a href="#데이터의-유형" class="headerlink" title="데이터의 유형"></a>데이터의 유형</h2><h3 id="1-스칼라-scalar"><a href="#1-스칼라-scalar" class="headerlink" title="1) 스칼라(scalar)"></a>1) 스칼라(scalar)</h3><ul>
+<li>실수인 숫자 하나로 이루어진 데이터</li>
+</ul>
+<h3 id="2-벡터-vector"><a href="#2-벡터-vector" class="headerlink" title="2) 벡터(vector)"></a>2) 벡터(vector)</h3><ul>
+<li>여러 개의 숫자가 특정한 순서대로 모여있는 것</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>], [<span class="number">3</span>], [<span class="number">2</span>], [<span class="number">4</span>]])</span><br><span class="line">x</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1],
+       [3],
+       [2],
+       [4]])
+</code></pre><h3 id="3-행렬-matrix"><a href="#3-행렬-matrix" class="headerlink" title="3) 행렬(matrix)"></a>3) 행렬(matrix)</h3><ul>
+<li>벡터들의 모임, 2D array of numbers</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = np.array([[<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>], [<span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>]])</span><br><span class="line">A</span><br></pre></td></tr></table></figure>
+<pre><code>array([[11, 12, 13],
+       [21, 22, 23]])
+</code></pre><h2 id="전치연산-transpose"><a href="#전치연산-transpose" class="headerlink" title="전치연산(transpose)"></a>전치연산(transpose)</h2><ul>
+<li>행렬의 행과 열을 바꾸는 연산</li>
+<li>벡터나 행렬에 $T$라는 위첨자(super-script)를 붙여서 표기</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># T는 method가 아닌 attribute이므로 소괄호()를 붙여서 호출하지 않는다.</span></span><br><span class="line">A.T</span><br></pre></td></tr></table></figure>
+<pre><code>array([[11, 21],
+       [12, 22],
+       [13, 23]])
+</code></pre><h2 id="특수한-벡터와-행렬"><a href="#특수한-벡터와-행렬" class="headerlink" title="특수한 벡터와 행렬"></a>특수한 벡터와 행렬</h2><h3 id="1-영벡터"><a href="#1-영벡터" class="headerlink" title="1) 영벡터"></a>1) 영벡터</h3><ul>
+<li>모든 원소가 0인 N차원 벡터</li>
+</ul>
+<h3 id="2-일벡터"><a href="#2-일벡터" class="headerlink" title="2) 일벡터"></a>2) 일벡터</h3><ul>
+<li>모든 원소가 1인 N차원 벡터</li>
+</ul>
+<h3 id="3-정방-행렬-square-matrix"><a href="#3-정방-행렬-square-matrix" class="headerlink" title="3) 정방 행렬(square matrix)"></a>3) 정방 행렬(square matrix)</h3><ul>
+<li>행의 개수와 열의 개수가 같은 행렬</li>
+</ul>
+<h3 id="4-대각-행렬-diagonal-matrix"><a href="#4-대각-행렬-diagonal-matrix" class="headerlink" title="4) 대각 행렬(diagonal matrix)"></a>4) 대각 행렬(diagonal matrix)</h3><ul>
+<li>모든 비대각(off-diagonal) 요소가 0인 정방 행렬</li>
+<li>numpy에서는 diag 명령을 사용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.diag([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1, 0, 0],
+       [0, 2, 0],
+       [0, 0, 3]])
+</code></pre><h3 id="5-단위-행렬-identity-matrix"><a href="#5-단위-행렬-identity-matrix" class="headerlink" title="5) 단위 행렬(identity matrix)"></a>5) 단위 행렬(identity matrix)</h3><ul>
+<li>모든 대각 성분의 값이 1인 대각 행렬</li>
+<li>numpy에서는 identity, 혹은 eye 명령을 사용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.identity(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.eye(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1., 0., 0., 0.],
+       [0., 1., 0., 0.],
+       [0., 0., 1., 0.],
+       [0., 0., 0., 1.]])
+</code></pre><h3 id="6-대칭-행렬-symmetric-matrix"><a href="#6-대칭-행렬-symmetric-matrix" class="headerlink" title="6) 대칭 행렬(symmetric matrix)"></a>6) 대칭 행렬(symmetric matrix)</h3><ul>
+<li>정방 행렬 중 전치 행렬과 원래의 행렬이 같은 행렬</li>
+<li>$S^T = S$</li>
+</ul>
+<h2 id="벡터와-행렬의-연산"><a href="#벡터와-행렬의-연산" class="headerlink" title="벡터와 행렬의 연산"></a>벡터와 행렬의 연산</h2><h3 id="1-벡터와-행렬의-덧셈과-뺄셈"><a href="#1-벡터와-행렬의-덧셈과-뺄셈" class="headerlink" title="1) 벡터와 행렬의 덧셈과 뺄셈"></a>1) 벡터와 행렬의 덧셈과 뺄셈</h3><ul>
+<li>같은 크기의 벡터와 행렬에서 계산이 가능하며, 같은 위치의 원소끼리(element-wise) 더하거나 뺌 </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x1 = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line">x2 = np.array([<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x1 + x2</span><br></pre></td></tr></table></figure>
+<pre><code>array([ 7,  9, 11, 13, 15])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x2 - x1</span><br></pre></td></tr></table></figure>
+<pre><code>array([5, 5, 5, 5, 5])
+</code></pre><h3 id="2-스칼라와-벡터-행렬의-곱셈"><a href="#2-스칼라와-벡터-행렬의-곱셈" class="headerlink" title="2) 스칼라와 벡터/행렬의 곱셈"></a>2) 스칼라와 벡터/행렬의 곱셈</h3><ul>
+<li>벡터($x$)나 행렬($A$)의 모든 원소에 스칼라($c$)를 곱하는 것과 같음 (스칼라배)  </li>
+</ul>
+<script type="math/tex; mode=display">c \begin{bmatrix} x_1 \\x_2 \end{bmatrix} = \begin{bmatrix} cx_1 \\cx_2 \end{bmatrix}</script><p><br></p>
+<script type="math/tex; mode=display">c \begin{bmatrix} a_{11} & a_{12}\\a_{21} & a_{22} \end{bmatrix} = \begin{bmatrix} ca_{11} & ca_{12}\\ca_{21} & ca_{22}  \end{bmatrix}</script><h3 id="3-선형-조합-linear-combination"><a href="#3-선형-조합-linear-combination" class="headerlink" title="3) 선형 조합(linear combination)"></a>3) 선형 조합(linear combination)</h3><ul>
+<li>벡터/행렬을 스칼라배한 후 더하거나 뺀 것으로, 벡터나 행렬을 선형조합해도 그 크기는 변하지 않음</li>
+</ul>
+<script type="math/tex; mode=display">c_1x_1 + c_2x_2 + \cdots + c_Lx_L = x</script><script type="math/tex; mode=display">c_1A_1 + c_2A_2 + \cdots + c_LA_L = x</script><h3 id="4-벡터와-벡터의-곱셈"><a href="#4-벡터와-벡터의-곱셈" class="headerlink" title="4) 벡터와 벡터의 곱셈"></a>4) 벡터와 벡터의 곱셈</h3><ul>
+<li>내적(inner product, dot product)</li>
+<li>$x^Ty$ 혹은 $x \cdot y$</li>
+<li>앞을 행벡터, 뒤를 열벡터로 두고 같은 위치의 원소들을 각각 곱해 모두 더해 스칼라 값으로 만듦</li>
+</ul>
+<script type="math/tex; mode=display">x^Ty = \begin{bmatrix}x_1 & x_2 & \cdots&  x_N \end{bmatrix}\begin{bmatrix}y_1 \\ y_2 \\ \vdots \\  y_N \end{bmatrix} = x_1y_1 + \cdots + x_Ny_N = \sum_{i=1}^N x_iy_i</script><ul>
+<li>가중합(weighted sum)을 벡터와 벡터의 곱셈으로 계산할 수 있음</li>
+</ul>
+<script type="math/tex; mode=display">w_1x_1 + \cdots + w_Nx_N = \sum_{i=1}^N w_ix_i = w^Tx</script><ul>
+<li>벡터의 내적은 두 벡터간의 유사도(similarity)를 계산하는 데에도 이용 (유사할수록 내적이 커짐)</li>
+</ul>
+<h3 id="5-행렬과-행렬의-곱셈"><a href="#5-행렬과-행렬의-곱셈" class="headerlink" title="5) 행렬과 행렬의 곱셈"></a>5) 행렬과 행렬의 곱셈</h3><ul>
+<li>행렬 $A$와 $B$의 곱을 행렬 $C$라고 할 때, $c_{ij}$의 값은 A행렬의 i번째 행벡터 $a_i^T$와 $B$행렬의 $j$번째 열벡터 $b_j$의 내적</li>
+</ul>
+<script type="math/tex; mode=display">C = AB \to c_{ij} = a_i^Tb_j</script><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line">B = np.array([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>]])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1, 2, 3],
+       [4, 5, 6]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1, 2],
+       [3, 4],
+       [5, 6]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C = np.dot(A, B)</span><br><span class="line">C</span><br></pre></td></tr></table></figure>
+<pre><code>array([[22, 28],
+       [49, 64]])
+</code></pre><h3 id="6-행렬의-계산-법칙"><a href="#6-행렬의-계산-법칙" class="headerlink" title="6) 행렬의 계산 법칙"></a>6) 행렬의 계산 법칙</h3><ul>
+<li>행렬의 곱셈은 교환법칙이 성립하지 않음</li>
+</ul>
+<script type="math/tex; mode=display">AB \neq BA</script><ul>
+<li>행렬의 덧셈에 대한 분배 법칙은 성립함</li>
+</ul>
+<script type="math/tex; mode=display">A(B+C) = AB + AC</script><script type="math/tex; mode=display">(A+B)C = AC + BC</script><ul>
+<li>전치 연산도 덧셈/뺄셈에 대해 분배 법칙이 성립</li>
+</ul>
+<script type="math/tex; mode=display">(A + B)^T = A^T + B^T</script><ul>
+<li>전체 연산의 곱셈의 경우 분배법칙이 성립하지만 전치 연산이 분배되면서 곱셈의 순서가 바뀜</li>
+</ul>
+<script type="math/tex; mode=display">(AB)^T = B^TA^T</script><script type="math/tex; mode=display">(ABC)^T = C^TB^TA^T</script><ul>
+<li>연속된 행렬의 곱셈은 계산 순서를 임의로 해도 상관 없음</li>
+</ul>
+<script type="math/tex; mode=display">ABC = (AB)C = A(BC)</script><script type="math/tex; mode=display">ABCD = ((AB)C)D = (AB)(CD) = A(BCD) = A(BC)D</script><ul>
+<li>어떤 정방 행렬이든 단위 행렬을 곱하면 그 행렬의 값이 변하지 않음</li>
+</ul>
+<script type="math/tex; mode=display">AI = IA = A</script><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li><a href="https://datascienceschool.net/view-notebook/cd600e9627cd4f16bc4f6078231ab28c/" target="_blank" rel="noopener">데이터 사이언스 스쿨</a></li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/11/16/math-lin_alg-015/" data-id="cjopswgcn0000ux1hlkcmd8fu" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/11/16/math-lin_alg-015/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/11/16/math-lin_alg-015/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-math-lin_alg-014" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -880,7 +1134,7 @@ det(A - \lambda I) & = 0 \quad (squishification) \\
             
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 11편입니다.</p>
 <div class="video-container"><iframe src="//www.youtube.com/embed/BaM7OCEm3G0?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E11-Cross-products-in-the-light-of-linear-trnasformations"><a href="#E11-Cross-products-in-the-light-of-linear-trnasformations" class="headerlink" title="E11. Cross products in the light of linear trnasformations"></a>E11. Cross products in the light of linear trnasformations</h2><p>11강의 내용은 요약을 아래의 캡쳐 이미지로 대신합니다.</p>
+<h2 id="E11-Cross-products-in-the-light-of-linear-transformations"><a href="#E11-Cross-products-in-the-light-of-linear-transformations" class="headerlink" title="E11. Cross products in the light of linear transformations"></a>E11. Cross products in the light of linear transformations</h2><p>11강의 내용은 요약을 아래의 캡쳐 이미지로 대신합니다.</p>
 <img src="/2018/11/01/math-lin_alg-011/3b1b_11.jpeg">
         
         </div>
@@ -1575,158 +1829,6 @@ A^{-1}A \vec x & = A^{-1}\vec v \\
 
 
 
-    <article id="post-math-lin_alg-006" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/10/30/math-lin_alg-006/">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E6</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/10/30/math-lin_alg-006/">
-            <time datetime="2018-10-30T12:24:04.000Z" itemprop="datePublished">2018-10-30</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/data-analysis/">data analysis</a>, <a class="tag-link" href="/tags/math/">math</a>, <a class="tag-link" href="/tags/선형대수/">선형대수</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 6편입니다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/Ip3X9LOh2dk" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E6-The-determinant"><a href="#E6-The-determinant" class="headerlink" title="E6. The determinant"></a>E6. The determinant</h2><h2 id="1-Determinant-of-transformation의-개념"><a href="#1-Determinant-of-transformation의-개념" class="headerlink" title="1. Determinant of transformation의 개념"></a>1. Determinant of transformation의 개념</h2><ul>
-<li>Determinant(행렬식): 선형변형 후 단위면적을 scaling하는 factor<ul>
-<li>2차원 변환의 determinant 값이 3이라면 특정 면적의 크기는 3배가 됨 </li>
-<li>2차원 변환의 determinant 값이 0이라면 차원을 축소시켜 직선이나 점이 됨 (면적은 0이됨)</li>
-<li>determinant 값이 음수인 경우는 방향(orientation)이 뒤집히는 것으로 볼 수 있음</li>
-</ul>
-</li>
-<li>3차원의 determinant는 단위정육면체의 부피를 scaling하는 factor<ul>
-<li>determinant 값이 음수인 경우 오른손의 규칙의 방향이 뒤집히는 것(왼손으로)으로 볼 수 있음<ul>
-<li>오른손의 규칙: 오른손의 엄지, 검지, 중지를 폈을 때 각각 $\hat k, \hat i, \hat k$에 대응함</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-Determinant-computation"><a href="#2-Determinant-computation" class="headerlink" title="2. Determinant computation"></a>2. Determinant computation</h2><ul>
-<li>2차원 행렬의 determinant: $det\Bigl(\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}\Bigr) = ad - cd$</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/10/30/math-lin_alg-006/" data-id="cjnvq5hzb000bj81halzw7yok" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/10/30/math-lin_alg-006/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/10/30/math-lin_alg-006/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
@@ -1740,6 +1842,15 @@ A^{-1}A \vec x & = A^{-1}\vec v \\
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a></p>
+                            <p class="item-title"><a href="/2018/11/16/math-lin_alg-015/" class="title">&lt;선형대수&gt; 선형대수 기초 with python NumPy</a></p>
+                            <p class="item-date"><time datetime="2018-11-16T01:26:04.000Z" itemprop="datePublished">2018-11-16</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1777,15 +1888,6 @@ A^{-1}A \vec x & = A^{-1}\vec v \\
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a></p>
-                            <p class="item-title"><a href="/2018/11/01/math-lin_alg-011/" class="title">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E11</a></p>
-                            <p class="item-date"><time datetime="2018-11-01T13:28:04.000Z" itemprop="datePublished">2018-11-01</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1795,7 +1897,7 @@ A^{-1}A \vec x & = A^{-1}\vec v \\
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a><span class="category-list-count">15</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">72</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a><span class="category-list-count">16</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">72</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1804,7 +1906,7 @@ A^{-1}A \vec x & = A^{-1}\vec v \\
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -1813,7 +1915,7 @@ A^{-1}A \vec x & = A^{-1}\vec v \\
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-analysis/">data analysis</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mathjax/">mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/미적분/">미적분</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/선형대수/">선형대수</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/확률통계/">확률통계</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-analysis/">data analysis</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mathjax/">mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/미적분/">미적분</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/선형대수/">선형대수</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/확률통계/">확률통계</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 

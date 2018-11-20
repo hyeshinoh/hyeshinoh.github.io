@@ -3,20 +3,20 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     
-    <title>2018-07-13-TIL | 우와팬더의 블로그</title>
+    <title>&lt;선형대수&gt; 선형대수 기초 with python NumPy | 우와팬더의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="공부한 것 &amp;amp; 리뷰 DSS 수업: database sql basic syntax workbench를 이용하여 sql의 기본 문법을 학습함    내일 공부할 것 DSS 수업: classification DSS: classification project 주제 정하기  이번 주에 공부할 것 DSS: CSS selector 수업 내용 복습하기 DSS: ja">
-<meta name="keywords" content="TIL(Today I Learned)">
+    <meta name="description" content="이거슨 내가 복습하기 위한 선형대수 정리… 선형대수의 기초 개념과 파이썬 numpy로 구현해보는 내용을 정리해보았다. 데이터의 유형1) 스칼라(scalar) 실수인 숫자 하나로 이루어진 데이터  2) 벡터(vector) 여러 개의 숫자가 특정한 순서대로 모여있는 것  1234import numpy as npx = np.array([[1], [3], [2],">
+<meta name="keywords" content="data analysis,math,선형대수">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018-07-13-TIL">
-<meta property="og:url" content="http://yoursite.com/2018/07/13/2018-07-13-TIL/index.html">
+<meta property="og:title" content="&lt;선형대수&gt; 선형대수 기초 with python NumPy">
+<meta property="og:url" content="http://yoursite.com/2018/11/16/math-lin_alg-015/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="공부한 것 &amp;amp; 리뷰 DSS 수업: database sql basic syntax workbench를 이용하여 sql의 기본 문법을 학습함    내일 공부할 것 DSS 수업: classification DSS: classification project 주제 정하기  이번 주에 공부할 것 DSS: CSS selector 수업 내용 복습하기 DSS: ja">
+<meta property="og:description" content="이거슨 내가 복습하기 위한 선형대수 정리… 선형대수의 기초 개념과 파이썬 numpy로 구현해보는 내용을 정리해보았다. 데이터의 유형1) 스칼라(scalar) 실수인 숫자 하나로 이루어진 데이터  2) 벡터(vector) 여러 개의 숫자가 특정한 순서대로 모여있는 것  1234import numpy as npx = np.array([[1], [3], [2],">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-14T04:11:04.000Z">
+<meta property="og:updated_time" content="2018-11-20T14:21:00.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018-07-13-TIL">
-<meta name="twitter:description" content="공부한 것 &amp;amp; 리뷰 DSS 수업: database sql basic syntax workbench를 이용하여 sql의 기본 문법을 학습함    내일 공부할 것 DSS 수업: classification DSS: classification project 주제 정하기  이번 주에 공부할 것 DSS: CSS selector 수업 내용 복습하기 DSS: ja">
+<meta name="twitter:title" content="&lt;선형대수&gt; 선형대수 기초 with python NumPy">
+<meta name="twitter:description" content="이거슨 내가 복습하기 위한 선형대수 정리… 선형대수의 기초 개념과 파이썬 numpy로 구현해보는 내용을 정리해보았다. 데이터의 유형1) 스칼라(scalar) 실수인 숫자 하나로 이루어진 데이터  2) 벡터(vector) 여러 개의 숫자가 특정한 순서대로 모여있는 것  1234import numpy as npx = np.array([[1], [3], [2],">
     
 
     
@@ -226,7 +226,7 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><article id="post-2018-07-13-TIL" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-math-lin_alg-015" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -234,7 +234,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-            2018-07-13-TIL
+            &lt;선형대수&gt; 선형대수 기초 with python NumPy
         </h1>
     
 
@@ -243,8 +243,8 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/07/13/2018-07-13-TIL/">
-            <time datetime="2018-07-13T13:16:49.000Z" itemprop="datePublished">2018-07-13</time>
+        <a href="/2018/11/16/math-lin_alg-015/">
+            <time datetime="2018-11-16T01:26:04.000Z" itemprop="datePublished">2018-11-16</time>
         </a>
     </div>
 
@@ -252,13 +252,13 @@ ga('send', 'pageview');
                         
     <div class="article-category">
     	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+        <a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
     </div>
 
                         
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+        <a class="tag-link" href="/tags/data-analysis/">data analysis</a>, <a class="tag-link" href="/tags/math/">math</a>, <a class="tag-link" href="/tags/선형대수/">선형대수</a>
     </div>
 
                     </div>
@@ -269,30 +269,127 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
-<li>DSS 수업: database sql basic syntax<ul>
-<li>workbench를 이용하여 sql의 기본 문법을 학습함</li>
+            <p><em>이거슨 내가 복습하기 위한 선형대수 정리…</em></p>
+<p>선형대수의 기초 개념과 파이썬 numpy로 구현해보는 내용을 정리해보았다.</p>
+<h2 id="데이터의-유형"><a href="#데이터의-유형" class="headerlink" title="데이터의 유형"></a>데이터의 유형</h2><h3 id="1-스칼라-scalar"><a href="#1-스칼라-scalar" class="headerlink" title="1) 스칼라(scalar)"></a>1) 스칼라(scalar)</h3><ul>
+<li>실수인 숫자 하나로 이루어진 데이터</li>
 </ul>
-</li>
+<h3 id="2-벡터-vector"><a href="#2-벡터-vector" class="headerlink" title="2) 벡터(vector)"></a>2) 벡터(vector)</h3><ul>
+<li>여러 개의 숫자가 특정한 순서대로 모여있는 것</li>
 </ul>
-<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
-<li>DSS 수업: classification</li>
-<li>DSS: classification project 주제 정하기</li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>], [<span class="number">3</span>], [<span class="number">2</span>], [<span class="number">4</span>]])</span><br><span class="line">x</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1],
+       [3],
+       [2],
+       [4]])
+</code></pre><h3 id="3-행렬-matrix"><a href="#3-행렬-matrix" class="headerlink" title="3) 행렬(matrix)"></a>3) 행렬(matrix)</h3><ul>
+<li>벡터들의 모임, 2D array of numbers</li>
 </ul>
-<h4 id="이번-주에-공부할-것"><a href="#이번-주에-공부할-것" class="headerlink" title="이번 주에 공부할 것"></a>이번 주에 공부할 것</h4><ul>
-<li><del>DSS: CSS selector 수업 내용 복습하기</del></li>
-<li><del>DSS: javascript 수업 내용 복습하기</del></li>
-<li><del>DSS: Server cloud(AWS), pyenv/virtualenv/autoenv 복습</del></li>
-<li><del>DSS: crontab, rest API, flask 복습, slack 챗봇 만들기</del></li>
-<li>DSS: 통계 <11장. 검정과="" 추정=""> 복습하기</11장.></li>
-<li>DSS: 통계 <34절. 선형회귀분석의="" 기초=""> 복습하기</34절.></li>
-<li>DSS: 통계 <35절. 입력변수가="" 카테고리값인="" 경우=""> 복습하기</35절.></li>
-<li>DSS: 통계 <36절. 예측성능의="" 진단과="" 비교=""> 복습하기</36절.></li>
-<li>DSS: 통계 <37절. 과최적화와="" 교차="" 검증=""> 복습하기</37절.></li>
-<li>DSS: 통계 <38절. 추천시스템=""> 복습하기</38절.></li>
-<li>DSS: 통계 <43절. 클러스터링=""> 복습하기</43절.></li>
-<li>DSS: 통계 <44절. 분류의="" 기초=""> 복습하기</44절.></li>
-<li><del>블로그에 about 페이지 만들기</del></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = np.array([[<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>], [<span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>]])</span><br><span class="line">A</span><br></pre></td></tr></table></figure>
+<pre><code>array([[11, 12, 13],
+       [21, 22, 23]])
+</code></pre><h2 id="전치연산-transpose"><a href="#전치연산-transpose" class="headerlink" title="전치연산(transpose)"></a>전치연산(transpose)</h2><ul>
+<li>행렬의 행과 열을 바꾸는 연산</li>
+<li>벡터나 행렬에 $T$라는 위첨자(super-script)를 붙여서 표기</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># T는 method가 아닌 attribute이므로 소괄호()를 붙여서 호출하지 않는다.</span></span><br><span class="line">A.T</span><br></pre></td></tr></table></figure>
+<pre><code>array([[11, 21],
+       [12, 22],
+       [13, 23]])
+</code></pre><h2 id="특수한-벡터와-행렬"><a href="#특수한-벡터와-행렬" class="headerlink" title="특수한 벡터와 행렬"></a>특수한 벡터와 행렬</h2><h3 id="1-영벡터"><a href="#1-영벡터" class="headerlink" title="1) 영벡터"></a>1) 영벡터</h3><ul>
+<li>모든 원소가 0인 N차원 벡터</li>
+</ul>
+<h3 id="2-일벡터"><a href="#2-일벡터" class="headerlink" title="2) 일벡터"></a>2) 일벡터</h3><ul>
+<li>모든 원소가 1인 N차원 벡터</li>
+</ul>
+<h3 id="3-정방-행렬-square-matrix"><a href="#3-정방-행렬-square-matrix" class="headerlink" title="3) 정방 행렬(square matrix)"></a>3) 정방 행렬(square matrix)</h3><ul>
+<li>행의 개수와 열의 개수가 같은 행렬</li>
+</ul>
+<h3 id="4-대각-행렬-diagonal-matrix"><a href="#4-대각-행렬-diagonal-matrix" class="headerlink" title="4) 대각 행렬(diagonal matrix)"></a>4) 대각 행렬(diagonal matrix)</h3><ul>
+<li>모든 비대각(off-diagonal) 요소가 0인 정방 행렬</li>
+<li>numpy에서는 diag 명령을 사용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.diag([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1, 0, 0],
+       [0, 2, 0],
+       [0, 0, 3]])
+</code></pre><h3 id="5-단위-행렬-identity-matrix"><a href="#5-단위-행렬-identity-matrix" class="headerlink" title="5) 단위 행렬(identity matrix)"></a>5) 단위 행렬(identity matrix)</h3><ul>
+<li>모든 대각 성분의 값이 1인 대각 행렬</li>
+<li>numpy에서는 identity, 혹은 eye 명령을 사용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.identity(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.eye(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1., 0., 0., 0.],
+       [0., 1., 0., 0.],
+       [0., 0., 1., 0.],
+       [0., 0., 0., 1.]])
+</code></pre><h3 id="6-대칭-행렬-symmetric-matrix"><a href="#6-대칭-행렬-symmetric-matrix" class="headerlink" title="6) 대칭 행렬(symmetric matrix)"></a>6) 대칭 행렬(symmetric matrix)</h3><ul>
+<li>정방 행렬 중 전치 행렬과 원래의 행렬이 같은 행렬</li>
+<li>$S^T = S$</li>
+</ul>
+<h2 id="벡터와-행렬의-연산"><a href="#벡터와-행렬의-연산" class="headerlink" title="벡터와 행렬의 연산"></a>벡터와 행렬의 연산</h2><h3 id="1-벡터와-행렬의-덧셈과-뺄셈"><a href="#1-벡터와-행렬의-덧셈과-뺄셈" class="headerlink" title="1) 벡터와 행렬의 덧셈과 뺄셈"></a>1) 벡터와 행렬의 덧셈과 뺄셈</h3><ul>
+<li>같은 크기의 벡터와 행렬에서 계산이 가능하며, 같은 위치의 원소끼리(element-wise) 더하거나 뺌 </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x1 = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line">x2 = np.array([<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x1 + x2</span><br></pre></td></tr></table></figure>
+<pre><code>array([ 7,  9, 11, 13, 15])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x2 - x1</span><br></pre></td></tr></table></figure>
+<pre><code>array([5, 5, 5, 5, 5])
+</code></pre><h3 id="2-스칼라와-벡터-행렬의-곱셈"><a href="#2-스칼라와-벡터-행렬의-곱셈" class="headerlink" title="2) 스칼라와 벡터/행렬의 곱셈"></a>2) 스칼라와 벡터/행렬의 곱셈</h3><ul>
+<li>벡터($x$)나 행렬($A$)의 모든 원소에 스칼라($c$)를 곱하는 것과 같음 (스칼라배)  </li>
+</ul>
+<script type="math/tex; mode=display">c \begin{bmatrix} x_1 \\x_2 \end{bmatrix} = \begin{bmatrix} cx_1 \\cx_2 \end{bmatrix}</script><p><br></p>
+<script type="math/tex; mode=display">c \begin{bmatrix} a_{11} & a_{12}\\a_{21} & a_{22} \end{bmatrix} = \begin{bmatrix} ca_{11} & ca_{12}\\ca_{21} & ca_{22}  \end{bmatrix}</script><h3 id="3-선형-조합-linear-combination"><a href="#3-선형-조합-linear-combination" class="headerlink" title="3) 선형 조합(linear combination)"></a>3) 선형 조합(linear combination)</h3><ul>
+<li>벡터/행렬을 스칼라배한 후 더하거나 뺀 것으로, 벡터나 행렬을 선형조합해도 그 크기는 변하지 않음</li>
+</ul>
+<script type="math/tex; mode=display">c_1x_1 + c_2x_2 + \cdots + c_Lx_L = x</script><script type="math/tex; mode=display">c_1A_1 + c_2A_2 + \cdots + c_LA_L = x</script><h3 id="4-벡터와-벡터의-곱셈"><a href="#4-벡터와-벡터의-곱셈" class="headerlink" title="4) 벡터와 벡터의 곱셈"></a>4) 벡터와 벡터의 곱셈</h3><ul>
+<li>내적(inner product, dot product)</li>
+<li>$x^Ty$ 혹은 $x \cdot y$</li>
+<li>앞을 행벡터, 뒤를 열벡터로 두고 같은 위치의 원소들을 각각 곱해 모두 더해 스칼라 값으로 만듦</li>
+</ul>
+<script type="math/tex; mode=display">x^Ty = \begin{bmatrix}x_1 & x_2 & \cdots&  x_N \end{bmatrix}\begin{bmatrix}y_1 \\ y_2 \\ \vdots \\  y_N \end{bmatrix} = x_1y_1 + \cdots + x_Ny_N = \sum_{i=1}^N x_iy_i</script><ul>
+<li>가중합(weighted sum)을 벡터와 벡터의 곱셈으로 계산할 수 있음</li>
+</ul>
+<script type="math/tex; mode=display">w_1x_1 + \cdots + w_Nx_N = \sum_{i=1}^N w_ix_i = w^Tx</script><ul>
+<li>벡터의 내적은 두 벡터간의 유사도(similarity)를 계산하는 데에도 이용 (유사할수록 내적이 커짐)</li>
+</ul>
+<h3 id="5-행렬과-행렬의-곱셈"><a href="#5-행렬과-행렬의-곱셈" class="headerlink" title="5) 행렬과 행렬의 곱셈"></a>5) 행렬과 행렬의 곱셈</h3><ul>
+<li>행렬 $A$와 $B$의 곱을 행렬 $C$라고 할 때, $c_{ij}$의 값은 A행렬의 i번째 행벡터 $a_i^T$와 $B$행렬의 $j$번째 열벡터 $b_j$의 내적</li>
+</ul>
+<script type="math/tex; mode=display">C = AB \to c_{ij} = a_i^Tb_j</script><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line">B = np.array([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>]])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1, 2, 3],
+       [4, 5, 6]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1, 2],
+       [3, 4],
+       [5, 6]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C = np.dot(A, B)</span><br><span class="line">C</span><br></pre></td></tr></table></figure>
+<pre><code>array([[22, 28],
+       [49, 64]])
+</code></pre><h3 id="6-행렬의-계산-법칙"><a href="#6-행렬의-계산-법칙" class="headerlink" title="6) 행렬의 계산 법칙"></a>6) 행렬의 계산 법칙</h3><ul>
+<li>행렬의 곱셈은 교환법칙이 성립하지 않음</li>
+</ul>
+<script type="math/tex; mode=display">AB \neq BA</script><ul>
+<li>행렬의 덧셈에 대한 분배 법칙은 성립함</li>
+</ul>
+<script type="math/tex; mode=display">A(B+C) = AB + AC</script><script type="math/tex; mode=display">(A+B)C = AC + BC</script><ul>
+<li>전치 연산도 덧셈/뺄셈에 대해 분배 법칙이 성립</li>
+</ul>
+<script type="math/tex; mode=display">(A + B)^T = A^T + B^T</script><ul>
+<li>전체 연산의 곱셈의 경우 분배법칙이 성립하지만 전치 연산이 분배되면서 곱셈의 순서가 바뀜</li>
+</ul>
+<script type="math/tex; mode=display">(AB)^T = B^TA^T</script><script type="math/tex; mode=display">(ABC)^T = C^TB^TA^T</script><ul>
+<li>연속된 행렬의 곱셈은 계산 순서를 임의로 해도 상관 없음</li>
+</ul>
+<script type="math/tex; mode=display">ABC = (AB)C = A(BC)</script><script type="math/tex; mode=display">ABCD = ((AB)C)D = (AB)(CD) = A(BCD) = A(BC)D</script><ul>
+<li>어떤 정방 행렬이든 단위 행렬을 곱하면 그 행렬의 값이 변하지 않음</li>
+</ul>
+<script type="math/tex; mode=display">AI = IA = A</script><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li><a href="https://datascienceschool.net/view-notebook/cd600e9627cd4f16bc4f6078231ab28c/" target="_blank" rel="noopener">데이터 사이언스 스쿨</a></li>
 </ul>
 
         
@@ -304,7 +401,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/07/13/2018-07-13-TIL/" data-id="cjnmw04i9001bka1h2upyuixu" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2018/11/16/math-lin_alg-015/" data-id="cjopswgcn0000ux1hlkcmd8fu" class="article-share-link"><i class="fas fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -372,7 +469,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://yoursite.com/2018/07/13/2018-07-13-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/07/13/2018-07-13-TIL/">Comments</a>
+        <a href="http://yoursite.com/2018/11/16/math-lin_alg-015/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/11/16/math-lin_alg-015/">Comments</a>
     
 
         </footer>
@@ -381,19 +478,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2018/07/14/2018-07-14-TIL/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    2018-07-14-TIL
-                
-            </div>
-        </a>
     
-    
-        <a href="/2018/07/12/2018-07-12-TIL/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/11/02/math-lin_alg-014/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">2018-07-12-TIL</div>
+            <div class="article-nav-title">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E14</div>
         </a>
     
 </nav>
@@ -544,9 +632,9 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://yoursite.com/2018/07/13/2018-07-13-TIL/';
+            this.page.url = 'http://yoursite.com/2018/11/16/math-lin_alg-015/';
         
-        this.page.identifier = '2018-07-13-TIL';
+        this.page.identifier = 'math-lin_alg-015';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
