@@ -149,27 +149,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/data-analysis/</loc>
-        <lastmod>2018-11-21T06:26:07.219Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/math/</loc>
-        <lastmod>2018-11-21T06:26:07.219Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98/</loc>
-        <lastmod>2018-11-21T06:26:07.219Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/tags/%EB%AF%B8%EC%A0%81%EB%B6%84/</loc>
         <lastmod>2018-11-21T06:26:07.219Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -179,6 +158,27 @@
     <url>
         <loc>http://yoursite.com/tags/%ED%99%95%EB%A5%A0%ED%86%B5%EA%B3%84/</loc>
         <lastmod>2018-11-21T06:26:07.219Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/data-analysis/</loc>
+        <lastmod>2018-11-21T06:30:58.576Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/math/</loc>
+        <lastmod>2018-11-21T06:30:58.576Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98/</loc>
+        <lastmod>2018-11-21T06:30:58.576Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
