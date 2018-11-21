@@ -7,6 +7,30 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/10/24/math_000_guide/</loc>
+        <lastmod>2018-11-21T06:26:07.219Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/11/16/math-lin_alg-016/</loc>
+        <lastmod>2018-11-21T06:24:42.925Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/11/02/math-lin_alg-012/</loc>
+        <lastmod>2018-11-21T05:55:00.076Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/10/24/hexo_mathjax_00/</loc>
         <lastmod>2018-11-20T14:28:00.333Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -111,14 +135,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/11/02/math-lin_alg-012/</loc>
-        <lastmod>2018-11-20T14:25:03.194Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://yoursite.com/2018/11/01/math-lin_alg-011/</loc>
         <lastmod>2018-11-20T14:24:54.567Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -153,14 +169,6 @@
     <url>
         <loc>http://yoursite.com/2018/10/24/2018-10-24-TIL/</loc>
         <lastmod>2018-10-24T07:13:37.701Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/24/math_000_guide/</loc>
-        <lastmod>2018-10-24T05:18:35.566Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

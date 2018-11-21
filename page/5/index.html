@@ -173,7 +173,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                120
+                121
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -226,6 +226,318 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-web_04_javascript_basic" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/09/28/web_04_javascript_basic/">JavaScript - Basic</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/09/28/web_04_javascript_basic/">
+            <time datetime="2018-09-28T07:35:20.000Z" itemprop="datePublished">2018-09-28</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/javascript/">javascript</a>, <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/web/">web</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="1-JavaScript"><a href="#1-JavaScript" class="headerlink" title="1. JavaScript"></a>1. JavaScript</h1><h2 id="1-1-JavaScript란"><a href="#1-1-JavaScript란" class="headerlink" title="1.1 JavaScript란"></a>1.1 JavaScript란</h2><ul>
+<li>JavaScript란 객체 기반의 스크립트 프로그래밍 언어로, 웹 브라우저 내에서 주로 사용</li>
+<li>HTML, CSS와 함께 웹을 지탱하는 계층 구조에서 많은 역할을 차지<ul>
+<li>HTML 은 웹 페이지상에서 문단, 제목, 표, 이미지, 동영상등을 정의하고 그 구조와 의미를 부여하는 마크업 언어</li>
+<li>CSS 는 배경색, 폰트, 컨텐츠의 레이아웃등을 지정하여, HTML 컨텐츠를 꾸며주는 스타일 규칙 언어</li>
+<li>JavaScript 는 동적으로 컨텐츠를 바꾸고, 멀티미디어를 다루고, 움직이는 이미지등 웹 페이지를 꾸며주도록 하는 프로그래밍 언어</li>
+<li>출처: <a href="https://developer.mozilla.org/ko/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank" rel="noopener">MDN web docs</a></li>
+</ul>
+</li>
+<li>JavaScript는 자유도가 높은 언어로 규칙에 조금 어긋나는 코드도 실행이됨 (error가 생길수는 있음)</li>
+<li>javascript package 관리 매니져(npm)인 nodejs를 설치할 것</li>
+</ul>
+<h1 id="2-JavaScript-Basic-Syntax"><a href="#2-JavaScript-Basic-Syntax" class="headerlink" title="2. JavaScript Basic Syntax"></a>2. JavaScript Basic Syntax</h1><ul>
+<li>JavaScript 주석처리<ul>
+<li>한줄 주석: <code>// code</code></li>
+<li>여러줄 주석: <code>/* code ... */</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="2-1-출력"><a href="#2-1-출력" class="headerlink" title="2.1 출력"></a>2.1 출력</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"print"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>print
+</code></pre><ul>
+<li>이 외에도 여러가지 방법이 있음</li>
+</ul>
+<h2 id="2-2-식별자-규칙-사용하는-곳마다-차이-존재"><a href="#2-2-식별자-규칙-사용하는-곳마다-차이-존재" class="headerlink" title="2.2 식별자 규칙 (사용하는 곳마다 차이 존재)"></a>2.2 식별자 규칙 (사용하는 곳마다 차이 존재)</h2><ul>
+<li>상수명: snake_case(대문자)</li>
+<li>변수명: camelCase 많이 사용</li>
+<li>모듈: PascalCase</li>
+<li>많이 쓰이는 convention: google js style, airbnb js style 등<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> TOTAL_COUNT = <span class="number">50</span>;</span><br><span class="line"><span class="keyword">var</span> firstName = <span class="string">"Doojin"</span>,</span><br><span class="line">	lastName = <span class="string">"Park"</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="2-3-변수-선언"><a href="#2-3-변수-선언" class="headerlink" title="2.3 변수 선언"></a>2.3 변수 선언</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b =<span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a + b);</span><br></pre></td></tr></table></figure>
+<pre><code>3
+</code></pre><h2 id="2-4-연산자"><a href="#2-4-연산자" class="headerlink" title="2.4 연산자"></a>2.4 연산자</h2><ul>
+<li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>++</code>, <code>--</code> (제곱이 없음)</li>
+<li><code>++</code> &amp; <code>--</code>: 다른 언어에서도 사용되는 연산자</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> result = a++;   <span class="comment">// a 가 result로 대입되고 1 증가</span></span><br><span class="line"><span class="built_in">console</span>.log(a, result);  </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> result = ++a;   <span class="comment">// a를 1 증가시키고 result에 대입</span></span><br><span class="line"><span class="built_in">console</span>.log(a, result);</span><br></pre></td></tr></table></figure>
+<pre><code>6 5
+   6 6
+</code></pre><h2 id="2-5-데이터-타입"><a href="#2-5-데이터-타입" class="headerlink" title="2.5 데이터 타입"></a>2.5 데이터 타입</h2><ul>
+<li>동적타이핑: 변수를 선언할 때 값에 따라 데이터 타입이 나중에 설정</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>,           <span class="comment">// number</span></span><br><span class="line">b = <span class="number">1.9</span>,             <span class="comment">// number</span></span><br><span class="line">c = <span class="string">"data"</span>,          <span class="comment">// string</span></span><br><span class="line">d = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],         <span class="comment">// object</span></span><br><span class="line">e = &#123;<span class="string">"a"</span>:<span class="number">1</span>, <span class="string">"b"</span>:<span class="number">2</span>&#125;,  <span class="comment">// object</span></span><br><span class="line">f = <span class="literal">true</span>,            <span class="comment">// boolean</span></span><br><span class="line">g = <span class="literal">false</span>;           <span class="comment">// boolean</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a, <span class="keyword">typeof</span> b, <span class="keyword">typeof</span> c, <span class="keyword">typeof</span> d,</span><br><span class="line">    <span class="keyword">typeof</span> e , <span class="keyword">typeof</span> f, <span class="keyword">typeof</span> g);</span><br></pre></td></tr></table></figure>
+<pre><code>number number string object object boolean boolean
+</code></pre><h2 id="2-6-null-undefined-NaN"><a href="#2-6-null-undefined-NaN" class="headerlink" title="2.6 null, undefined, NaN"></a>2.6 null, undefined, NaN</h2><ul>
+<li>null: 변수에 값이 없음을 정의</li>
+<li>undefined: 값이 지정되지 않음</li>
+<li>NaN: 존재하지 않는 데이터</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 값이 없음을 지정</span></span><br><span class="line"><span class="keyword">var</span> b;</span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 값이 지정되지 않음</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="number">0</span>/<span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 존재하지 않는 데이터 형태</span></span><br></pre></td></tr></table></figure>
+<pre><code>null
+undefined
+NaN
+</code></pre><h3 id="※-null의-활용-GC-garbage-collector"><a href="#※-null의-활용-GC-garbage-collector" class="headerlink" title="※ null의 활용: GC(garbage collector)"></a>※ null의 활용: GC(garbage collector)</h3><p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_04_javascript_basic_001.JPG?raw=true" alt=""></p>
+<h2 id="2-7-비교-연산자-lt-gt-gt-lt"><a href="#2-7-비교-연산자-lt-gt-gt-lt" class="headerlink" title="2.7 비교 연산자: &lt;, &gt;, &gt;=, &lt;=, ==, !=, ===, !=="></a>2.7 비교 연산자: <code>&lt;</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code>, <code>===</code>, <code>!==</code></h2><h3 id="1-amp-값을-비교"><a href="#1-amp-값을-비교" class="headerlink" title="1) == &amp; ===: 값을 비교"></a>1) <code>==</code> &amp; <code>===</code>: 값을 비교</h3><ul>
+<li><code>==</code>와 <code>===</code>의 차이: <code>===</code>는 데이터타입까지 비교</li>
+<li><code>===</code> 사용 권장</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>==<span class="number">1</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>==<span class="string">'1'</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>===<span class="number">1</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>===<span class="string">'1'</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<pre><code>true
+true
+true
+false
+</code></pre><h3 id="2-lt-gt-lt-gt-값을-비교"><a href="#2-lt-gt-lt-gt-값을-비교" class="headerlink" title="2) !=, &lt;, &gt;, &lt;=, &gt;=: 값을 비교"></a>2) <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>: 값을 비교</h3><ul>
+<li><code>&#39;==</code> 사용시 데이터타입까지 비교</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>!=<span class="number">1</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>!=<span class="string">'1'</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>!==<span class="number">1</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>!==<span class="string">'1'</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>&gt;<span class="number">2</span>); <span class="comment">// fasle</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>&lt;<span class="number">2</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>&gt;=<span class="number">1</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>&lt;=<span class="number">2</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<pre><code>false
+false
+false
+true
+false
+true
+true
+true
+</code></pre><h3 id="3-NaN은-비교연산으로-사용되지-않음"><a href="#3-NaN은-비교연산으로-사용되지-않음" class="headerlink" title="3) NaN은 비교연산으로 사용되지 않음"></a>3) NaN은 비교연산으로 사용되지 않음</h3><ul>
+<li>비교연산에서 어느 한쪽이 NaN이면 무조건 false</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">NaN</span>===<span class="literal">NaN</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">NaN</span>==<span class="literal">NaN</span>);</span><br></pre></td></tr></table></figure>
+<pre><code>false
+false
+</code></pre><h2 id="2-8-할당-연산자"><a href="#2-8-할당-연산자" class="headerlink" title="2.8 할당 연산자"></a>2.8 할당 연산자</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">a += <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 3</span></span><br><span class="line">a -= <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 2</span></span><br><span class="line">a *= <span class="number">6</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 12</span></span><br><span class="line">a /= <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 6</span></span><br><span class="line">a %= <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<pre><code>3
+2
+12
+6
+1
+</code></pre><h2 id="2-9-논리-연산자"><a href="#2-9-논리-연산자" class="headerlink" title="2.9 논리 연산자"></a>2.9 논리 연산자</h2><ul>
+<li><code>&amp;&amp;</code> : 모두 참일때 참 (and)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> &amp;&amp; <span class="literal">true</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> &amp;&amp; <span class="literal">false</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">false</span> &amp;&amp; <span class="literal">false</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<pre><code>true
+false
+false
+</code></pre><ul>
+<li><code>||</code> : 하나라도 참이면 참 (or)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> || <span class="literal">true</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> || <span class="literal">false</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">false</span> || <span class="literal">false</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<pre><code>true
+true
+false
+</code></pre><h1 id="3-Condition-조건문"><a href="#3-Condition-조건문" class="headerlink" title="3. Condition - 조건문"></a>3. Condition - 조건문</h1><h2 id="3-1-if-else-if-else"><a href="#3-1-if-else-if-else" class="headerlink" title="3.1 if, else if, else"></a>3.1 if, else if, else</h2><ul>
+<li>문법: <code>if(조건){code} else if(조건){code} else{code}</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello javascript"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">false</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello javascript"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello datascience"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">false</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello javascript"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello html"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello datascience"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>hello javascript
+hello datascience
+hello html
+</code></pre><h2 id="3-2-false로-간주되는-데이터형"><a href="#3-2-false로-간주되는-데이터형" class="headerlink" title="3.2 false로 간주되는 데이터형"></a>3.2 false로 간주되는 데이터형</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">null</span> || <span class="literal">undefined</span> || <span class="literal">NaN</span> || <span class="number">0</span> || <span class="string">""</span>)&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello true"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello false"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>hello false
+</code></pre><h2 id="3-3-true로-간주되는-데이터형"><a href="#3-3-true로-간주되는-데이터형" class="headerlink" title="3.3 true로 간주되는 데이터형"></a>3.3 true로 간주되는 데이터형</h2><ul>
+<li><code>[]</code>, <code>{}</code> (비어있는 object) - 객체이기 때문<ul>
+<li>python에서는 False였음</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>([] &amp;&amp; &#123;&#125;)&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello true"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>hello true
+</code></pre><h2 id="Quiz-점수를-입력하면-학점이-나오는-코드를-작성하시오"><a href="#Quiz-점수를-입력하면-학점이-나오는-코드를-작성하시오" class="headerlink" title="Quiz: 점수를 입력하면 학점이 나오는 코드를 작성하시오"></a>Quiz: 점수를 입력하면 학점이 나오는 코드를 작성하시오</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> point = <span class="number">76</span>;</span><br><span class="line"><span class="keyword">var</span> result = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(point &gt;= <span class="number">90</span>)&#123;</span><br><span class="line">  result = <span class="string">'A'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(point &gt;= <span class="number">80</span>)&#123;</span><br><span class="line">  result = <span class="string">'B'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(point &gt;= <span class="number">70</span>)&#123;</span><br><span class="line">  result = <span class="string">'C'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(point &gt;= <span class="number">60</span>)&#123;</span><br><span class="line">  result = <span class="string">'D'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  result = <span class="string">'F'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">//'C'</span></span><br></pre></td></tr></table></figure>
+<pre><code>C
+</code></pre><h1 id="4-Loop-반복문-while-for-do-while-실제로-거의-사용x"><a href="#4-Loop-반복문-while-for-do-while-실제로-거의-사용x" class="headerlink" title="4. Loop - 반복문: while, for, do while(실제로 거의 사용x)"></a>4. Loop - 반복문: while, for, do while(실제로 거의 사용x)</h1><h2 id="4-1-while"><a href="#4-1-while" class="headerlink" title="4.1 while"></a>4.1 while</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(a &lt; <span class="number">5</span>)&#123;</span><br><span class="line">    a++;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>1
+2
+3
+4
+5
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    a++;</span><br><span class="line">    <span class="keyword">if</span>(a === <span class="number">3</span>)&#123;</span><br><span class="line">        <span class="keyword">continue</span>;   <span class="comment">// 3은 console.log가 되지 않음</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (a &gt;= <span class="number">5</span>)&#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>1
+2
+4
+</code></pre><h2 id="4-2-for"><a href="#4-2-for" class="headerlink" title="4.2 for"></a>4.2 for</h2><ul>
+<li>python: iterable data 갯수만큼 반복</li>
+<li>js: for(초기값; 조건; 증감)</li>
+<li>in: es6에서 추가됨 (es6에 class, 화살표함수(=lambda) 등 추가)<ul>
+<li>es6를 사용할 경우 버전이 낮은 ie에서는 제대로 동작하지 않을 수 있음    </li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>0
+1
+2
+3
+4
+</code></pre><h1 id="5-Array-배열"><a href="#5-Array-배열" class="headerlink" title="5. Array - 배열"></a>5. Array - 배열</h1><h2 id="5-1-배열-선언"><a href="#5-1-배열-선언" class="headerlink" title="5.1 배열 선언"></a>5.1 배열 선언</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>];</span><br></pre></td></tr></table></figure>
+<h2 id="5-2-특정-위치-데이터-가져오기"><a href="#5-2-특정-위치-데이터-가져오기" class="headerlink" title="5.2 특정 위치 데이터 가져오기"></a>5.2 특정 위치 데이터 가져오기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">2</span>]);</span><br></pre></td></tr></table></figure>
+<pre><code>c
+</code></pre><h2 id="5-3-배열의-크기-length"><a href="#5-3-배열의-크기-length" class="headerlink" title="5.3 배열의 크기 (length)"></a>5.3 배열의 크기 (length)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(arr.length);</span><br></pre></td></tr></table></figure>
+<pre><code>5
+</code></pre><h2 id="5-4-배열-추가"><a href="#5-4-배열-추가" class="headerlink" title="5.4 배열 추가"></a>5.4 배열 추가</h2><ul>
+<li><code>unshift()</code>: 맨 앞에 추가 </li>
+<li><code>push()</code>: 맨 뒤에 추가  </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.push(<span class="string">'f'</span>); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr.unshift(<span class="string">'z'</span>); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+<pre><code>[ &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39; ]
+[ &#39;z&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39; ]
+</code></pre><h2 id="5-5-제거"><a href="#5-5-제거" class="headerlink" title="5.5 제거"></a>5.5 제거</h2><ul>
+<li><code>shift()</code>: 첫번째 배열 제거</li>
+<li><code>pop()</code>: 마지막 배열 제거   </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.shift(); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr.pop();</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+<pre><code>[ &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39; ]
+[ &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39; ]
+</code></pre><h2 id="5-6-정렬"><a href="#5-6-정렬" class="headerlink" title="5.6 정렬"></a>5.6 정렬</h2><ul>
+<li><code>reverse()</code>: 역순으로 정렬</li>
+<li><code>sort()</code>: 오름차순으로 정렬  </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.reverse(); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr.sort(); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+<pre><code>[ &#39;e&#39;, &#39;d&#39;, &#39;c&#39;, &#39;b&#39;, &#39;a&#39; ]
+[ &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39; ]
+</code></pre><h2 id="5-7-배열-자르기"><a href="#5-7-배열-자르기" class="headerlink" title="5.7 배열 자르기"></a>5.7 배열 자르기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr2 = arr.splice(<span class="number">2</span>,<span class="number">3</span>); <span class="comment">// 2번에서 3개 자름</span></span><br><span class="line"><span class="built_in">console</span>.log(arr, arr.length);</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> arr[<span class="number">2</span>]; <span class="comment">// 2번이 삭제 하지만 데이터만 삭제, 공간은 남아있음</span></span><br><span class="line"><span class="built_in">console</span>.log(arr, arr.length);</span><br></pre></td></tr></table></figure>
+<pre><code>[ &#39;a&#39;, &#39;b&#39; ] 2
+[ &#39;a&#39;, &#39;b&#39; ] 2
+</code></pre><h2 id="5-8-배열-데이터-하나씩-사용하기"><a href="#5-8-배열-데이터-하나씩-사용하기" class="headerlink" title="5.8 배열 데이터 하나씩 사용하기"></a>5.8 배열 데이터 하나씩 사용하기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line"><span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>a
+b
+</code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/09/28/web_04_javascript_basic/" data-id="cjnmw04my00ccka1hs3ayxfzi" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/09/28/web_04_javascript_basic/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/28/web_04_javascript_basic/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-2018-09-27-TIL" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1868,160 +2180,8 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-2018-09-01-TIL" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/09/03/2018-09-01-TIL/">2018-09-01-TIL</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/09/03/2018-09-01-TIL/">
-            <time datetime="2018-09-02T16:23:31.000Z" itemprop="datePublished">2018-09-03</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h4 id="공부한-것-amp-리뷰"><a href="#공부한-것-amp-리뷰" class="headerlink" title="공부한 것 &amp; 리뷰"></a>공부한 것 &amp; 리뷰</h4><ul>
-<li>팀 프로젝트: 블레이드앤소울 유저 이탈 예측 (빅콘테스트2018)<ul>
-<li>party data network graph는 여전히 애를 먹고 있다. 10000개씩 나눠서 돌리고 pickle로 저장하고를 반복 중</li>
-</ul>
-</li>
-<li>개인 프로젝트: 3대 기획사 아이돌 얼굴 분류<ul>
-<li>사진에서 얼굴 비율을 90%로 높이고 다시 모델링. train 점수는 조금만 만져봐도 꽤 쉽게 올라가는데, validation 점수는 50% 언저리에서 잘 올라가질 않는다. 아무래도 data가 적긴한 것 같으니 내일은 image augmentation을 해봐야겠다</li>
-</ul>
-</li>
-</ul>
-<h4 id="내일-공부할-것"><a href="#내일-공부할-것" class="headerlink" title="내일 공부할 것"></a>내일 공부할 것</h4><ul>
-<li>개인 프로젝트: 여자아이돌 분류 모델링<ul>
-<li>시도해볼것: 여자아이돌 image augmentation, grey scaling</li>
-</ul>
-</li>
-<li>팀 프로젝트: 블레이드앤소울 유저 이탈 예측 (빅콘테스트2018)<ul>
-<li>팀플 모임</li>
-</ul>
-</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/09/03/2018-09-01-TIL/" data-id="cjnmw04jl004nka1hi3p27gdg" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/09/03/2018-09-01-TIL/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/09/03/2018-09-01-TIL/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+        <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
 </section>
             
@@ -2033,6 +2193,15 @@ ga('send', 'pageview');
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a></p>
+                            <p class="item-title"><a href="/2018/11/16/math-lin_alg-016/" class="title">&lt;선형대수&gt; 행렬의 성질 with python</a></p>
+                            <p class="item-date"><time datetime="2018-11-16T02:26:04.000Z" itemprop="datePublished">2018-11-16</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -2070,15 +2239,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
-                            <p class="item-title"><a href="/2018/11/01/2018-11-01-TIL/" class="title">2018-11-01-TIL</a></p>
-                            <p class="item-date"><time datetime="2018-11-01T14:11:15.000Z" itemprop="datePublished">2018-11-01</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -2088,7 +2248,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a><span class="category-list-count">16</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">72</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><span class="category-list-count">17</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a><span class="category-list-count">17</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">72</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -2097,7 +2257,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -2106,7 +2266,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-analysis/">data analysis</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mathjax/">mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/미적분/">미적분</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/선형대수/">선형대수</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/확률통계/">확률통계</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-analysis/">data analysis</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mathjax/">mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/미적분/">미적분</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/선형대수/">선형대수</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/확률통계/">확률통계</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
