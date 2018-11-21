@@ -3,20 +3,22 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     
-    <title>Categories | 우와팬더의 블로그</title>
+    <title>&lt;선형대수&gt; 벡터와 유사도 | 우와팬더의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="데이터사이언스를 공부합니다">
-<meta name="keywords" content="data science">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+    <meta name="description" content="1. 유클리드 유사도(Euclidean Similarity) 유클리드 거리(Euclidean distance): 두 벡터가 가리키는 점 사이의 거리 두 벡터의 차의 길이로 구할 수 있음   \begin{eqnarray}  \| a - b \| &amp;=&amp; \sqrt{\sum_{i=1} (a_i - b_i)^2} \\ &amp;=&amp; \sqrt{\sum_{i=1} ( a_">
+<meta name="keywords" content="data analysis,math,선형대수">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&lt;선형대수&gt; 벡터와 유사도">
+<meta property="og:url" content="http://yoursite.com/2018/11/21/math-lin_alg-018/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="데이터사이언스를 공부합니다">
+<meta property="og:description" content="1. 유클리드 유사도(Euclidean Similarity) 유클리드 거리(Euclidean distance): 두 벡터가 가리키는 점 사이의 거리 두 벡터의 차의 길이로 구할 수 있음   \begin{eqnarray}  \| a - b \| &amp;=&amp; \sqrt{\sum_{i=1} (a_i - b_i)^2} \\ &amp;=&amp; \sqrt{\sum_{i=1} ( a_">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-26T16:32:24.000Z">
+<meta property="og:image" content="http://yoursite.com/2018/11/21/math-lin_alg-018/triangle.png">
+<meta property="og:updated_time" content="2018-11-21T13:27:44.373Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Categories">
-<meta name="twitter:description" content="데이터사이언스를 공부합니다">
+<meta name="twitter:title" content="&lt;선형대수&gt; 벡터와 유사도">
+<meta name="twitter:description" content="1. 유클리드 유사도(Euclidean Similarity) 유클리드 거리(Euclidean distance): 두 벡터가 가리키는 점 사이의 거리 두 벡터의 차의 길이로 구할 수 있음   \begin{eqnarray}  \| a - b \| &amp;=&amp; \sqrt{\sum_{i=1} (a_i - b_i)^2} \\ &amp;=&amp; \sqrt{\sum_{i=1} ( a_">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/21/math-lin_alg-018/triangle.png">
     
 
     
@@ -226,16 +228,205 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><section class="layout-wrap">
-    <div class="layout-title">
-        <span>Categories</span>
-    </div>
-    <div class="layout-wrap-inner list-categories">
+            <section id="main"><article id="post-math-lin_alg-018" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a><span class="category-list-count">19</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">72</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">2</span></li></ul>
         
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            &lt;선형대수&gt; 벡터와 유사도
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/11/21/math-lin_alg-018/">
+            <time datetime="2018-11-21T09:26:04.000Z" itemprop="datePublished">2018-11-21</time>
+        </a>
     </div>
-</section></section>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/data-analysis/">data analysis</a>, <a class="tag-link" href="/tags/math/">math</a>, <a class="tag-link" href="/tags/선형대수/">선형대수</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="1-유클리드-유사도-Euclidean-Similarity"><a href="#1-유클리드-유사도-Euclidean-Similarity" class="headerlink" title="1. 유클리드 유사도(Euclidean Similarity)"></a>1. 유클리드 유사도(Euclidean Similarity)</h2><ul>
+<li>유클리드 거리(Euclidean distance): 두 벡터가 가리키는 점 사이의 거리</li>
+<li>두 벡터의 차의 길이로 구할 수 있음</li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{eqnarray} 
+\| a - b \|
+&=& \sqrt{\sum_{i=1} (a_i - b_i)^2} \\
+&=& \sqrt{\sum_{i=1} ( a_i^2 - 2 a_i b_i + b_i^2 )} \\
+&=& \sqrt{\sum_{i=1} a_i^2 + \sum_{i=1} b_i^2 - 2 \sum_{i=1} a_i b_i} \\
+&=& \sqrt{\| a \|^2 + \| b \|^2  - 2 a^Tb }
+\end{eqnarray}</script><script type="math/tex; mode=display">
+\| a - b \|^2 = \| a \|^2 + \| b \|^2 - 2 a^T b</script><ul>
+<li>유클리드 유사도: 유클리드 거리와 반비례하는 값으로 정의할 수 있음</li>
+</ul>
+<h2 id="2-코사인-유사도-Cosine-Similarity"><a href="#2-코사인-유사도-Cosine-Similarity" class="headerlink" title="2. 코사인 유사도(Cosine Similarity)"></a>2. 코사인 유사도(Cosine Similarity)</h2><h3 id="2-1-벡터의-내적과-코사인"><a href="#2-1-벡터의-내적과-코사인" class="headerlink" title="2.1 벡터의 내적과 코사인"></a>2.1 벡터의 내적과 코사인</h3><ul>
+<li>두 벡터의 내적은 다음과 같이 벡터의 길이 $\Vert a \Vert, \Vert b \Vert$와 두 벡터 사이의 각도 $\theta$로 계산할 수 있음</li>
+</ul>
+<script type="math/tex; mode=display">a^Tb = \Vert a \Vert \Vert b \Vert \cos \theta</script><ul>
+<li>$\cos \theta$: $\theta$ 각을 가지는 직각삼각형에서 빗변 $a$와 아랫변 $b$의 길이의 비율<ul>
+<li>$\cos\theta$의 값은 $\theta$가 0에 가까워질수록 1에 가까워지고 $\theta$가 $90{}^{\circ}$에 가까워질수록 0에 가까워짐     </li>
+</ul>
+</li>
+</ul>
+<script type="math/tex; mode=display">\cos\theta = \dfrac{\text{밑변}}{\text{빗변}}</script><script type="math/tex; mode=display">\cos 0^{\circ} = 1</script><script type="math/tex; mode=display">\cos 90^{\circ} = 0</script><img src="/2018/11/21/math-lin_alg-018/triangle.png" class="slug">
+<h3 id="2-2-직교-orthogonal"><a href="#2-2-직교-orthogonal" class="headerlink" title="2.2 직교(orthogonal)"></a>2.2 직교(orthogonal)</h3><ul>
+<li>직교: 두 벡터 $a$와 $b$가 이루는 각이 90도인 경우 직교한다고 하며 $a \perp b$로 표기</li>
+<li>$\cos 90^{\circ} = 0$이므로  서로 직교인 두 벡터의 내적은 0<script type="math/tex; mode=display">a^T b = b^T a = 0   \;\;\;\; \leftrightarrow \;\;\;\; a \perp b</script></li>
+</ul>
+<h3 id="2-3-코사인-유사도-cosine-similarity"><a href="#2-3-코사인-유사도-cosine-similarity" class="headerlink" title="2.3 코사인 유사도(cosine similarity)"></a>2.3 코사인 유사도(cosine similarity)</h3><ul>
+<li>두 벡터의 유클리드 거리 대신 두 벡터가 비슷한 방향을 가리키는 것을 유사하다고 볼 수도 있음</li>
+<li>코사인 유사도: 두 벡터가 이루는 각의 코사인 값<ul>
+<li>두 벡터가 같은 방향을 가리키면(각도가 0) 최대값 1을 가짐</li>
+</ul>
+</li>
+</ul>
+<script type="math/tex; mode=display">\text{cosine similarity} = \cos\theta = \dfrac{x^Ty}{\|x\|\|y\|}</script><ul>
+<li><p>추천시스템(recommend system)에서 사용자 취향의 유사성을 계산할 때 사용됨</p>
+</li>
+<li><p>코사인 거리(cosine distance)</p>
+<script type="math/tex; mode=display">\text{cosine distance} = 1 - \text{cosine similarity} = 1 - \dfrac{x^Ty}{\|x\|\|y\|}</script></li>
+</ul>
+<h4 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h4><ul>
+<li><a href="https://datascienceschool.net/view-notebook/3f44cfdda2874080a9aa6b034c71d5ec/" target="_blank" rel="noopener">데이터 사이언스 스쿨 - 선형대수와 해석기하의 기초</a></li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/11/21/math-lin_alg-018/" data-id="cjor06p9t0000lw1h07lf0n8p" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/11/21/math-lin_alg-018/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/11/21/math-lin_alg-018/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/11/21/math-lin_alg-017/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">&lt;선형대수&gt; 선형대수와 선형회귀모형(linear regression)</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
+
+</section>
             
                 
 <aside id="sidebar">
@@ -366,9 +557,9 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://yoursite.com/categories/index.html';
+            this.page.url = 'http://yoursite.com/2018/11/21/math-lin_alg-018/';
         
-        this.page.identifier = '';
+        this.page.identifier = 'math-lin_alg-018';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
