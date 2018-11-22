@@ -173,7 +173,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                124
+                125
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -226,6 +226,243 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-math-lin_alg-020" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/11/22/math-lin_alg-020/">&lt;선형대수&gt; 선형종속/선형독립 &amp; 좌표변환</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/11/22/math-lin_alg-020/">
+            <time datetime="2018-11-22T09:26:04.000Z" itemprop="datePublished">2018-11-22</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/data-analysis/">data analysis</a>, <a class="tag-link" href="/tags/math/">math</a>, <a class="tag-link" href="/tags/선형대수/">선형대수</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="1-선형-종속과-선형-독립"><a href="#1-선형-종속과-선형-독립" class="headerlink" title="1. 선형 종속과 선형 독립"></a>1. 선형 종속과 선형 독립</h1><h2 id="벡터의-선형-종속과-선형-독립"><a href="#벡터의-선형-종속과-선형-독립" class="headerlink" title="벡터의 선형 종속과 선형 독립"></a>벡터의 선형 종속과 선형 독립</h2><ul>
+<li>선형조합이 0벡터가 되는 경우로 선형 독립과 선형 종속을 판단함</li>
+</ul>
+<script type="math/tex; mode=display">c_1x_1 + c_2x_2 + \cdots + c_Nx_N = 0</script><ul>
+<li>선형 독립(linearly independent): 위 식을 만족하는 모두 0이 아닌 스칼라값 $c_1, c_2, \cdots, x_N$이 존재하지 않는 경우 그 벡터들이 선형 독립임<ul>
+<li>즉, 선형조합이 영벡터가 되려면 모든 스칼라가 0이어야 한다는 의미</li>
+</ul>
+</li>
+<li>선형 종속(linearly dependent): 위 식을 만족하는 모두 0이 아닌 스칼라값 $c_1, c_2, \cdots, x_N$    이 존재할 경우 그 벡터들이 선형 종속임<ul>
+<li>스칼라와 벡터를 잘 조합하면 $0$을 만들 수 있는 <u><em>특수한 경우</em></u>임 </li>
+</ul>
+</li>
+</ul>
+<h2 id="선형독립과-선형연립방정식"><a href="#선형독립과-선형연립방정식" class="headerlink" title="선형독립과 선형연립방정식"></a>선형독립과 선형연립방정식</h2><ul>
+<li><p>matrix와 vector의 곱은 다음의 두 가지 방법으로 생각해 볼 수 있음<br>(1) inner product를 여러개 모아서 표현</p>
+<img src="/2018/11/22/math-lin_alg-020/matrixvector1.jpeg">
+<p>(2) 선형조합을 모아서 표현   </p>
+<img src="/2018/11/22/math-lin_alg-020/matrixvector2.jpeg">
+</li>
+<li><p>여기서 (2)의 관점으로 보면, 선형조합을 알아내는 문제는 선형 연립방정식을 푸는 문제와 같음</p>
+<ul>
+<li>$c$: 가중치 스칼라 값 $c_i$가 모인 가중치 벡터</li>
+<li>$X$: 열벡터 $x_i$가 모인 행렬       </li>
+</ul>
+</li>
+</ul>
+<script type="math/tex; mode=display">\begin{align}
+c_1x_1 + c_2x_2 + \cdots + c_Nx_N & = \begin{bmatrix} x_1 & x_2 & \cdots & x_N \end{bmatrix} \begin{bmatrix} c_1 \\ c_2 \\ \vdots \\ c_N \end{bmatrix} \\
+& = Xc
+\end{align}</script><ul>
+<li><p>$X$행렬의 역행렬이 존재하면 0벡터가 유일한 해이므로 선형독립</p>
+<script type="math/tex; mode=display">\begin{align}
+Xc & = 0 \\
+X^{-1}Xc & = X^{-1}0 \\
+c & = 0
+\end{align}</script></li>
+<li><p>$X$ 행렬에 0벡터가 아닌 해 $c$가 존재하면 선형 종속</p>
+</li>
+</ul>
+<center><mark>$det(A) \neq 0$역행렬이 존재함 ⇔ 선형독립</mark></center>
+<center><mark>$det(A) = 0$, 즉 역행렬이 존재하지 않음 ⇔ 선형종속</mark></center>
+
+
+<h2 id="랭크"><a href="#랭크" class="headerlink" title="랭크"></a>랭크</h2><ul>
+<li>열 랭크(column rank): 행렬의 열벡터 중 서로 독립인 벡터의 최대 갯수</li>
+<li>행 랭크(row rank): 행렬의 행 벡터 중 서로 독립인 벡터의 최대 갯수</li>
+<li>행 랭크와 열 랭크는 항상 같음</li>
+</ul>
+<h2 id="벡터-공간과-기저-벡터"><a href="#벡터-공간과-기저-벡터" class="headerlink" title="벡터 공간과 기저 벡터"></a>벡터 공간과 기저 벡터</h2><ul>
+<li>벡터 공간(vector space): 서로 독립인 벡터를 선형 조합하여 만들어지는 모든 벡터의 집합</li>
+<li>기저 벡터(basis vector): 벡터 공간을 만드는 서로 독립인 벡터 (선형종속인 벡터는 기저 벡터가 될 수 없음)<ul>
+<li>표준 기저 벡터(standard basis vector): 기저 벡터 중 원소의 하나만 값이 1인 벡터 (단위행렬 $I$를 이루는 벡터들) </li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="2-좌표-변환-coordinate-transform"><a href="#2-좌표-변환-coordinate-transform" class="headerlink" title="2. 좌표 변환(coordinate transform)"></a>2. 좌표 변환(coordinate transform)</h1><h2 id="좌표-표현"><a href="#좌표-표현" class="headerlink" title="좌표 표현"></a>좌표 표현</h2><ul>
+<li>좌표표현(coordinate representation) 또는 좌표(coordinate): 기저벡터를 선형 조합하여 해당 벡터를 나타냈을 때 선형 조합 가중치<script type="math/tex; mode=display">x = r_1e_1 + r_2e_2</script></li>
+<li>위와 같이 기저 벡터 $e_1, e_2$를 선형 조합하여 벡터 $x$를 나타낼 경우 벡터 $\begin{bmatrix} r_1 \\ r_2 \end{bmatrix}$를 벡터 $x$의 기저벡터 $e_1, e_2$에 대한 좌표라고 함</li>
+<li>표준 기저 벡터에 대한 좌표는 원래 벡터와 같음</li>
+</ul>
+<h2 id="변환-행렬"><a href="#변환-행렬" class="headerlink" title="변환 행렬"></a>변환 행렬</h2><ul>
+<li>기저벡터를 바꾸면 벡터의 coordinate이 어떻게 바뀌는가를 계산하기 위한 행렬</li>
+<li>변환 행렬(transform matrix, $T$로 표기): $T = A^T$<ul>
+<li>행렬 $A$: 새로운 기저 벡터의 (기존 기저 벡터에 대한) 좌표를 열벡터로 두고 행렬로 묶은 것<script type="math/tex; mode=display">g_1 = ae_1 + ce_2</script><script type="math/tex; mode=display">g_2 = be_1 + de_2</script></li>
+<li>기존 기저벡터($e_1, e_2$)와 새로운 기저 벡터($g_1, g_2$)의 관계가 위와 같을 때 새로운 기저벡터의 좌표와 행렬 $A$<script type="math/tex; mode=display">g_1\text{의 좌표}: \begin{bmatrix} a \\ c \end{bmatrix} \text {,} \quad g_2 \text{의 좌표}: \begin{bmatrix} b \\ d \end{bmatrix}</script><script type="math/tex; mode=display">A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}</script></li>
+</ul>
+</li>
+</ul>
+<h2 id="좌표-변환"><a href="#좌표-변환" class="headerlink" title="좌표 변환"></a>좌표 변환</h2><ul>
+<li>좌표 변환(coordinate transform): 새로운 기저 벡터에 대해 좌표를 계산하는 것</li>
+<li><mark>좌표 변환은 행렬의 곱셈으로 구할 수 있음</mark></li>
+<li><p>벡터 $a$의 기존 기저벡터($e_1, e_2$)에 대한 좌표 $a_1$를 새로운 기저 벡터($g_1, g_2$)에 대한 좌표 $a_2$로 변환하기</p>
+<ul>
+<li>기존 기저벡터에 대한 좌표값과 새로운 기저벡터에 대한 좌표값이 가리키는 실제 위치는 같아야 함 <script type="math/tex; mode=display">a = a_1e_1 + a_2e_2  = a'_1g_1 + a'_2g_2</script><script type="math/tex; mode=display">a = \begin{bmatrix} e_1 & e_2 \end{bmatrix}a_1 
+= \begin{bmatrix} g_1 & g_2 \end{bmatrix}a'</script></li>
+<li>이 식에서 $a’_1, a’_2$가 새로운 기저 벡터에 대한 좌표임<script type="math/tex; mode=display">\begin{align}
+a'_1g_1 + a'_2g_2 & = 
+\begin{bmatrix} g_1 & g_2 \end{bmatrix}\begin{bmatrix} a'_1 \\ a'_2 \end{bmatrix} \\
+& = \begin{bmatrix} g_1 & g_2 \end{bmatrix}a' \\
+& = Aa'
+\end{align}</script></li>
+<li>이 때, $A$는 역행렬이 존재하므로 다음과 같이 새로운 좌표계를 계산 가능<script type="math/tex; mode=display">\begin{align}
+Aa' & = a \\
+a' & = A^{-1}a \\
+& = Ta
+\end{align}</script></li>
+</ul>
+</li>
+<li><p>좌표 변환 예제</p>
+<ul>
+<li>벡터 $a$의 표준 기저 벡터에 대한 좌표: $a = 2e_1+2e_2 = \begin{bmatrix} 2 \\ 2 \end{bmatrix}$</li>
+<li>새로운 기저 벡터의 (표준 기저 벡터에 대한) 좌표: $g_1 = \begin{bmatrix} \frac{1}{\sqrt 2} \\ \frac{1}{\sqrt 2} \end{bmatrix}$, $g_2 = \begin{bmatrix} -\frac{1}{\sqrt 2} \\ \frac{1}{\sqrt 2} \end{bmatrix}$</li>
+<li>이 때, 새로운 기저 벡터에 대한 벡터 $a$의 좌표는?<script type="math/tex; mode=display">\begin{align}
+a' & = A^{-1}a \\
+& = \begin{bmatrix} \frac{1}{\sqrt 2} & -\frac{1}{\sqrt 2}\\ \frac{1}{\sqrt 2} & \frac{1}{\sqrt 2} \end{bmatrix}^{-1} \begin{bmatrix} 2 \\2 \end{bmatrix} \\
+& = \begin{bmatrix} \frac{1}{\sqrt 2} & \frac{1}{\sqrt 2}\\ -\frac{1}{\sqrt 2} & \frac{1}{\sqrt 2} \end{bmatrix} \begin{bmatrix} 2 \\2 \end{bmatrix} \\
+& = \begin{bmatrix} 2 \sqrt 2 \\ 0 \end{bmatrix} \\
+\end{align}</script></li>
+</ul>
+</li>
+</ul>
+<h4 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h4><ul>
+<li><a href="https://datascienceschool.net/view-notebook/41138b1b54454caf819d9288d26560c7/" target="_blank" rel="noopener">데이터 사이언스 스쿨 - 좌표와 변환</a></li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/11/22/math-lin_alg-020/" data-id="cjosk0sbl0000fw1hwg27qp49" class="article-share-link"><i class="fas fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/11/22/math-lin_alg-020/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/11/22/math-lin_alg-020/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-math-lin_alg-019" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1899,141 +2136,6 @@ det(A - \lambda I) & = 0 \quad (squishification) \\
 
 
 
-    <article id="post-math-lin_alg-011" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/11/01/math-lin_alg-011/">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E11</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/11/01/math-lin_alg-011/">
-            <time datetime="2018-11-01T13:28:04.000Z" itemprop="datePublished">2018-11-01</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/data-analysis/">data analysis</a>, <a class="tag-link" href="/tags/math/">math</a>, <a class="tag-link" href="/tags/선형대수/">선형대수</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 11편 내용을 간략하게 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/BaM7OCEm3G0?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E11-Cross-products-in-the-light-of-linear-transformations"><a href="#E11-Cross-products-in-the-light-of-linear-transformations" class="headerlink" title="E11. Cross products in the light of linear transformations"></a>E11. Cross products in the light of linear transformations</h2><p>11강의 내용은 요약을 아래의 캡쳐 이미지로 대신합니다.</p>
-<img src="/2018/11/01/math-lin_alg-011/3b1b_11.jpeg">
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/11/01/math-lin_alg-011/" data-id="cjnynjx8y00008v1hujwgg7b7" class="article-share-link"><i class="fas fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/11/01/math-lin_alg-011/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/11/01/math-lin_alg-011/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
@@ -2047,6 +2149,15 @@ det(A - \lambda I) & = 0 \quad (squishification) \\
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a></p>
+                            <p class="item-title"><a href="/2018/11/22/math-lin_alg-020/" class="title">&lt;선형대수&gt; 선형종속/선형독립 &amp; 좌표변환</a></p>
+                            <p class="item-date"><time datetime="2018-11-22T09:26:04.000Z" itemprop="datePublished">2018-11-22</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -2084,15 +2195,6 @@ det(A - \lambda I) & = 0 \quad (squishification) \\
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a></p>
-                            <p class="item-title"><a href="/2018/11/16/math-lin_alg-015/" class="title">&lt;선형대수&gt; 선형대수 기초 with python NumPy</a></p>
-                            <p class="item-date"><time datetime="2018-11-16T01:26:04.000Z" itemprop="datePublished">2018-11-16</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -2102,7 +2204,7 @@ det(A - \lambda I) & = 0 \quad (squishification) \\
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><span class="category-list-count">20</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a><span class="category-list-count">20</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">72</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><span class="category-list-count">21</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a><span class="category-list-count">21</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">72</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -2111,7 +2213,7 @@ det(A - \lambda I) & = 0 \quad (squishification) \\
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -2120,7 +2222,7 @@ det(A - \lambda I) & = 0 \quad (squishification) \\
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-analysis/">data analysis</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mathjax/">mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/미적분/">미적분</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/선형대수/">선형대수</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/확률통계/">확률통계</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-analysis/">data analysis</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mathjax/">mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/미적분/">미적분</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/선형대수/">선형대수</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/확률통계/">확률통계</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
