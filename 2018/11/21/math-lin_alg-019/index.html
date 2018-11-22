@@ -3,22 +3,23 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     
-    <title>&lt;선형대수&gt; 벡터의 분해와 프로젝션(projection) | 우와팬더의 블로그</title>
+    <title>&lt;선형대수&gt; 직선과 점의 거리 | 우와팬더의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="벡터의 분해와 성분 어떤 두 벡터 $a$, $b$의 합이 다른 벡터 $c$가 될 때 $c$가 두 벡터 성분(vector component) $a$, $b$으로 분해(decomposition)된다고 함  프로젝션(projection, 투영) 벡터 $a$를 다른 벡터 $b$에 직교하는 성분과 벡터 $b$에 평행한 성분으로 분해할 때 평행한 성분을 벡터 $b$에">
+    <meta name="description" content="직선과 점의 거리는 분류 알고리즘인 서포트 벡터 머신(SVM: Support Vector Machine) 과 관련해 알아두어야 할 부분이다. 직선의 방정식  어떤 벡터 $w$가 있을 때, 다음의 조건을 만족하는 직선 $x$의 방정식  (1) 벡터 $w$와 수직  (2) 벡터 $w$가 가리키는 점을 지남   벡터 $x$가 해당 직선 위의 한 점일 때, 벡터">
 <meta name="keywords" content="data analysis,math,선형대수">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&lt;선형대수&gt; 벡터의 분해와 프로젝션(projection)">
+<meta property="og:title" content="&lt;선형대수&gt; 직선과 점의 거리">
 <meta property="og:url" content="http://yoursite.com/2018/11/21/math-lin_alg-019/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="벡터의 분해와 성분 어떤 두 벡터 $a$, $b$의 합이 다른 벡터 $c$가 될 때 $c$가 두 벡터 성분(vector component) $a$, $b$으로 분해(decomposition)된다고 함  프로젝션(projection, 투영) 벡터 $a$를 다른 벡터 $b$에 직교하는 성분과 벡터 $b$에 평행한 성분으로 분해할 때 평행한 성분을 벡터 $b$에">
+<meta property="og:description" content="직선과 점의 거리는 분류 알고리즘인 서포트 벡터 머신(SVM: Support Vector Machine) 과 관련해 알아두어야 할 부분이다. 직선의 방정식  어떤 벡터 $w$가 있을 때, 다음의 조건을 만족하는 직선 $x$의 방정식  (1) 벡터 $w$와 수직  (2) 벡터 $w$가 가리키는 점을 지남   벡터 $x$가 해당 직선 위의 한 점일 때, 벡터">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2018/11/21/math-lin_alg-019/projection_rejection.jpg">
-<meta property="og:updated_time" content="2018-11-21T14:22:59.024Z">
+<meta property="og:image" content="http://yoursite.com/2018/11/21/math-lin_alg-019/line.jpeg">
+<meta property="og:image" content="http://yoursite.com/2018/11/21/math-lin_alg-019/distance.jpeg">
+<meta property="og:updated_time" content="2018-11-22T09:25:18.080Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&lt;선형대수&gt; 벡터의 분해와 프로젝션(projection)">
-<meta name="twitter:description" content="벡터의 분해와 성분 어떤 두 벡터 $a$, $b$의 합이 다른 벡터 $c$가 될 때 $c$가 두 벡터 성분(vector component) $a$, $b$으로 분해(decomposition)된다고 함  프로젝션(projection, 투영) 벡터 $a$를 다른 벡터 $b$에 직교하는 성분과 벡터 $b$에 평행한 성분으로 분해할 때 평행한 성분을 벡터 $b$에">
-<meta name="twitter:image" content="http://yoursite.com/2018/11/21/math-lin_alg-019/projection_rejection.jpg">
+<meta name="twitter:title" content="&lt;선형대수&gt; 직선과 점의 거리">
+<meta name="twitter:description" content="직선과 점의 거리는 분류 알고리즘인 서포트 벡터 머신(SVM: Support Vector Machine) 과 관련해 알아두어야 할 부분이다. 직선의 방정식  어떤 벡터 $w$가 있을 때, 다음의 조건을 만족하는 직선 $x$의 방정식  (1) 벡터 $w$와 수직  (2) 벡터 $w$가 가리키는 점을 지남   벡터 $x$가 해당 직선 위의 한 점일 때, 벡터">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/21/math-lin_alg-019/line.jpeg">
     
 
     
@@ -236,7 +237,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-            &lt;선형대수&gt; 벡터의 분해와 프로젝션(projection)
+            &lt;선형대수&gt; 직선과 점의 거리
         </h1>
     
 
@@ -271,31 +272,43 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h2 id="벡터의-분해와-성분"><a href="#벡터의-분해와-성분" class="headerlink" title="벡터의 분해와 성분"></a>벡터의 분해와 성분</h2><ul>
-<li>어떤 두 벡터 $a$, $b$의 합이 다른 벡터 $c$가 될 때 $c$가 두 벡터 <u>성분(vector component)</u> $a$, $b$으로 <u>분해(decomposition)</u>된다고 함</li>
+            <p>직선과 점의 거리는 분류 알고리즘인 <strong>서포트 벡터 머신(SVM: Support Vector Machine)</strong> 과 관련해 알아두어야 할 부분이다.</p>
+<h2 id="직선의-방정식"><a href="#직선의-방정식" class="headerlink" title="직선의 방정식"></a>직선의 방정식</h2><img src="/2018/11/21/math-lin_alg-019/line.jpeg">
+<ul>
+<li>어떤 벡터 $w$가 있을 때, 다음의 조건을 만족하는 직선 $x$의 방정식<br>  (1) 벡터 $w$와 수직<br>  (2) 벡터 $w$가 가리키는 점을 지남</li>
 </ul>
-<h2 id="프로젝션-projection-투영"><a href="#프로젝션-projection-투영" class="headerlink" title="프로젝션(projection, 투영)"></a>프로젝션(projection, 투영)</h2><ul>
-<li>벡터 $a$를 다른 벡터 $b$에 직교하는 성분과 벡터 $b$에 평행한 성분으로 분해할 때<ul>
-<li>평행한 성분을 벡터 $b$에 대한 <u>프로젝션(projection, 투영)</u>,</li>
-<li>수직인 성분을 벡터 $b$에 대한 <u>리젝션(rejection)</u>이라고 함</li>
+<ul>
+<li>벡터 $x$가 해당 직선 위의 한 점일 때, 벡터 $x$가 가리키는 점과 벡터 $w$가 가리키는 점을 이은 벡터 $x-w$가 벡터 $w$와 직교해야 함을 이용하여 풀이</li>
+</ul>
+<script type="math/tex; mode=display">w^T(x-w) = 0</script><script type="math/tex; mode=display">\begin{align}
+w^T(x-w) & = w^Tx-w^Tw \\
+& = w^Tx-\Vert w \Vert^2 \\
+\end{align}</script><script type="math/tex; mode=display">w^Tx-\Vert w \Vert^2  = 0</script><ul>
+<li>e.g.) $w= \begin{bmatrix} 3 \\1 \end{bmatrix}$일 경우 $w$를 수직으로 지나는 직선의 방정식</li>
+</ul>
+<script type="math/tex; mode=display">\begin{bmatrix} 3 & 1 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = 3x_1 + x_2 -10 = 0</script><script type="math/tex; mode=display">3x_1 + x_2 = 10</script><ul>
+<li>조건을 한 가지로 줄여 단순히 벡터 $w$에 수직인 직선의 방정식은 다음과 같이 나타냄<script type="math/tex; mode=display">w^Tx- w_0 = 0</script><ul>
+<li>$w_0$: 원점으로부터 직선에 내린 수선의 길이의 제곱</li>
+<li>$w_0 = 0$이면 원점을 지나는 직선의 방정식 </li>
+<li>이 직선과 원점 사이의 거리: $\dfrac{w_0}{\Vert w\Vert}$</li>
 </ul>
 </li>
 </ul>
-<script type="math/tex; mode=display">\text{projection vector:} \;a^{\Vert b}</script><script type="math/tex; mode=display">\text{rejection vector:} \;a^{\perp b}</script><img src="/2018/11/21/math-lin_alg-019/projection_rejection.jpg" class="slug">
+<h2 id="직선과-점의-거리"><a href="#직선과-점의-거리" class="headerlink" title="직선과 점의 거리"></a>직선과 점의 거리</h2><img src="/2018/11/21/math-lin_alg-019/distance.jpeg">
 <ul>
-<li>프로젝션 벡터의 길이</li>
+<li>직선 $w^Tx-\Vert w \Vert^2 = 0$과 직선 위에 있지 않은 점 $x’$ 사이의 거리: $x’^{\Vert w}$ 의 길이와 $\Vert w \Vert$의 차이 <br> (점이 직선의 안쪽에 있을 수도, 바깥쪽에 있을 수도 있으므로 절대값을 취함)<ul>
+<li>$x’$의 프로젝션 벡터의 길이: $ \Vert x’^{\Vert w}\Vert = \dfrac{w^Tx’}{\Vert w\Vert} $</li>
 </ul>
-<script type="math/tex; mode=display">
-\| a^{\Vert b} \| = \|a\|\cos\theta = \dfrac{\|a\|\|b\|\cos\theta}{\|b\|}  = \dfrac{a^Tb}{\|b\|} = \dfrac{b^Ta}{\|b\|}</script><ul>
-<li>만약 벡터 $b$ 자체가 이미 단위벡터이면 <strong>단위벡터에 대한 투영길이는 내적</strong></li>
+</li>
 </ul>
-<script type="math/tex; mode=display">\| a^{\Vert b} \| = a^Tb</script><ul>
-<li>프로젝션 성분 벡터: <u>프로젝션 길이</u>와 <u>벡터 $b$ 방향의 단위 벡터</u>의 곱</li>
+<script type="math/tex; mode=display">\begin{align}
+d & = \left|  \|x'^{\Vert w}\| - \|w\| \right| \\
+& = \left| \dfrac{w^Tx'}{\|w\|} - \|w\| \right| \\
+& = \dfrac{\left|w^Tx' - \|w\|^2 \right|}{\|w\|} \\
+\end{align}</script><ul>
+<li>직선의 방정식이 $w^Tx - w_0 = 0$인 경우 직선과 점의 거리</li>
 </ul>
-<script type="math/tex; mode=display">a^{\Vert b} = \dfrac{a^Tb}{\|b\|} \dfrac{b}{\|b\|}= \dfrac{a^Tb}{\|b\|^2}b</script><ul>
-<li>리젝션 성분 벡터: 원래의 벡터에서 프로젝션 성분 벡터를 뺀 나머지</li>
-</ul>
-<script type="math/tex; mode=display">a^{\perp b} = a - a^{\Vert b}</script><h4 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h4><ul>
+<script type="math/tex; mode=display">d = \dfrac{\left|w^Tx' - w_0 \right|}{\|w\|}</script><h4 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h4><ul>
 <li><a href="https://datascienceschool.net/view-notebook/3f44cfdda2874080a9aa6b034c71d5ec/" target="_blank" rel="noopener">데이터 사이언스 스쿨 - 선형대수와 해석기하의 기초</a></li>
 </ul>
 
@@ -423,7 +436,7 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a></p>
-                            <p class="item-title"><a href="/2018/11/21/math-lin_alg-019/" class="title">&lt;선형대수&gt; 벡터의 분해와 프로젝션(projection)</a></p>
+                            <p class="item-title"><a href="/2018/11/21/math-lin_alg-019/" class="title">&lt;선형대수&gt; 직선과 점의 거리</a></p>
                             <p class="item-date"><time datetime="2018-11-21T13:26:04.000Z" itemprop="datePublished">2018-11-21</time></p>
                         </div>
                     </li>
@@ -580,7 +593,23 @@ ga('send', 'pageview');
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -598,5 +627,6 @@ ga('send', 'pageview');
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
 </body>
 </html>
