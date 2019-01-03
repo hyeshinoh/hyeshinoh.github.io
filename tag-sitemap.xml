@@ -128,13 +128,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/TIL-Today-I-Learned/</loc>
-        <lastmod>2018-11-02T04:30:06.073Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/tags/hexo/</loc>
         <lastmod>2018-11-20T14:28:00.333Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -179,6 +172,13 @@
     <url>
         <loc>http://yoursite.com/tags/%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98/</loc>
         <lastmod>2018-12-03T11:06:30.076Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/TIL-Today-I-Learned/</loc>
+        <lastmod>2019-01-03T15:10:19.636Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
