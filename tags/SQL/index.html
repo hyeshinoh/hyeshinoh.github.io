@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang=en>
+<html  lang="en">
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    
-    <title>Tag: SQL | 우와팬더의 블로그</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Tag: SQL - 우와팬더의 블로그</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+
     <meta name="description" content="데이터사이언스를 공부합니다">
 <meta name="keywords" content="data science">
 <meta property="og:type" content="website">
@@ -16,538 +18,2364 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="우와팬더의 블로그">
 <meta name="twitter:description" content="데이터사이언스를 공부합니다">
+
+
+
+<link rel="alternative" href="hyeshinoh" title="우와팬더의 블로그" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
     
 
     
-        <link rel="alternate" href="/" title="우와팬더의 블로그" type="application/atom+xml" />
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
     
 
     
-        <link rel="icon" href="/css/images/favicon.png" />
     
 
-    <link rel="stylesheet" href="/libs/font-awesome5/css/fontawesome.min.css">
-    <link rel="stylesheet" href="/libs/font-awesome5/css/fa-brands.min.css">
-    <link rel="stylesheet" href="/libs/font-awesome5/css/fa-solid.min.css">
-    <link rel="stylesheet" href="/libs/open-sans/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
 
-    <link rel="stylesheet" href="/css/style.css">
 
-    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
     
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
-        <script type="text/javascript">
-(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-126954393-1', 'auto');
-ga('send', 'pageview');
-
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
     
     
 
+<link rel="stylesheet" href="/css/back-to-top.css">
 
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
-
-<body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
-        <header id="header">
-    <div id="header-main" class="header-inner">
-        <div class="outer">
-            <a href="/" id="logo">
-                <i class="logo"></i>
-                <span class="site-title">우와팬더의 블로그</span>
+<body class="is-3-column">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="우와팬더의 블로그" height="28">
+            
             </a>
-            <nav id="main-nav">
-                
-                    <a class="main-nav-link" href="/.">Home</a>
-                
-                    <a class="main-nav-link" href="/archives">Archives</a>
-                
-                    <a class="main-nav-link" href="/categories">Categories</a>
-                
-                    <a class="main-nav-link" href="/tags">Tags</a>
-                
-                    <a class="main-nav-link" href="/about/index.html">About</a>
-                
-            </nav>
-            
-                
-                <nav id="sub-nav">
-                    <div class="profile" id="profile-nav">
-                        <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="/css/images/avatar.png" />
-                            <i class="fas fa-caret-down"></i>
-                        </a>
-                    </div>
-                </nav>
-            
-            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
-            <span class="ins-close ins-selectable"><i class="fas fa-times-circle"></i></span>
         </div>
-        <div class="ins-section-wrapper">
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">Tags</a></li>
+            <li class="is-active"><a href="#" aria-current="page">SQL</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-07-29T15:40:26.000Z">2018-07-30</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Database-공부/">Database 공부</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    9 minutes read (About 1389 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/07/30/Database_05_mysql intermediate syntax/">MySQL Intermediate Syntax</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="1-숫자-올림-반올림-내림"><a href="#1-숫자-올림-반올림-내림" class="headerlink" title="1. 숫자 올림, 반올림, 내림"></a>1. 숫자 올림, 반올림, 내림</h2><h3 id="1-올림"><a href="#1-올림" class="headerlink" title="1) 올림"></a>1) 올림</h3><ul>
+<li>syntax: <code>ceil(숫자)</code></li>
+<li>자릿수를 지정할 수 없기 때문에 아래와 같은 trick이 필요 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ceil</span>(<span class="number">12.345</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 올림 자릿수 지정</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">ceil</span>(<span class="number">12.345</span>*<span class="number">10</span>)*<span class="number">0.1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 올림 활용</span></span><br><span class="line"><span class="keyword">use</span> world</span><br><span class="line"><span class="keyword">select</span> percentage, <span class="keyword">ceil</span>(percentage)</span><br><span class="line"><span class="keyword">from</span> countrylanguage</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-반올림"><a href="#2-반올림" class="headerlink" title="2) 반올림"></a>2) 반올림</h3><ul>
+<li>syntax: <code>round(숫자, 결과 소수점 자릿수)</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select round(12.345, 2)</span><br><span class="line">select percentage, round(percentage,0)</span><br><span class="line">from countrylanguage</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-내림"><a href="#3-내림" class="headerlink" title="3) 내림"></a>3) 내림</h3><ul>
+<li>syntax: <code>truncate(숫자, 결과 소수점 자릿수)</code></li>
+<li>참고: truncate은 table을 삭제할 때도 사용하는데, delete table과 달리 truncate table은 아예 테이블을 초기화시킴<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select truncate(12.345, 1)</span><br><span class="line">select percentage, truncate(percentage,1)</span><br><span class="line">from countrylanguage</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="2-조건문"><a href="#2-조건문" class="headerlink" title="2. 조건문"></a>2. 조건문</h2><h3 id="1-if"><a href="#1-if" class="headerlink" title="1) if"></a>1) if</h3><ul>
+<li>syntax: <code>if(조건, 참인 경우, 거짓인 경우)</code> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 도시의 인구가 100만이 넘으면 big city, 그렇지 않으면 small city를 scale 컬럼에 출력</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, population, <span class="keyword">if</span>(population &gt;= <span class="number">1000000</span>, <span class="string">"big city"</span>, <span class="string">"small city"</span>) <span class="keyword">as</span> scale</span><br><span class="line"><span class="keyword">from</span> city</span><br><span class="line"><span class="keyword">having</span> scale = <span class="string">"small city"</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> population <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-ifnull"><a href="#2-ifnull" class="headerlink" title="2) ifnull"></a>2) ifnull</h3><ul>
+<li>syntax: <code>ifnull(컬럼이름, 디폴트 데이터)</code> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 독립연도가 없는 데이터를 0으로 출력</span></span><br><span class="line"><span class="keyword">select</span> indepyear, <span class="keyword">ifnull</span>(indepyear, <span class="number">0</span>)</span><br><span class="line"><span class="keyword">from</span> country</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-case-when-then-else-end"><a href="#3-case-when-then-else-end" class="headerlink" title="3) case when then else end"></a>3) case when then else end</h3><ul>
+<li>python의 if문과 비슷하게 사용 </li>
+<li>syntax: <code>case when 조건 then 결과 else 결과 end</code><ul>
+<li><code>when, then</code>은 반복 가능     <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 나라별로 인구 10억 이상/1억~10억/1억 이하를 "big, medium, small"로 표시</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">name</span>, population</span><br><span class="line">, <span class="keyword">case</span> </span><br><span class="line">    <span class="keyword">when</span> population &gt; <span class="number">1000000000</span> <span class="keyword">then</span> <span class="string">"big"</span></span><br><span class="line">    <span class="keyword">when</span> population &gt; <span class="number">100000000</span> <span class="keyword">then</span> <span class="string">"medium"</span></span><br><span class="line">    <span class="keyword">else</span> <span class="string">"small"</span></span><br><span class="line"><span class="keyword">end</span> <span class="keyword">as</span> scale</span><br><span class="line"><span class="keyword">from</span> country</span><br><span class="line"><span class="keyword">having</span> scale = <span class="string">"medium"</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> population <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-Date-Format"><a href="#3-Date-Format" class="headerlink" title="3. Date Format"></a>3. Date Format</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> sakila</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">date_format</span>(payment_date, <span class="string">"%Y-%m"</span>) <span class="keyword">as</span> monthly, <span class="keyword">sum</span>(amount)</span><br><span class="line"><span class="keyword">from</span> payment</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> monthly</span><br></pre></td></tr></table></figure>
+<h2 id="4-Join"><a href="#4-Join" class="headerlink" title="4. Join"></a>4. Join</h2><ul>
+<li>join실습에 쓸 test1 database와 user table, addr table 생성<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> test1</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">user</span> (</span><br><span class="line">user_id <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">unsigned</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line"><span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">30</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> (user_id)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> addr (</span><br><span class="line"><span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">unsigned</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">addr <span class="built_in">varchar</span>(<span class="number">30</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">user_id <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> (<span class="keyword">id</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">user</span>(<span class="keyword">name</span>)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">"jane"</span>),</span><br><span class="line">(<span class="string">"po"</span>),</span><br><span class="line">(<span class="string">"alice"</span>),</span><br><span class="line">(<span class="string">"peter"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> addr(addr, user_id)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">"seoul"</span>, <span class="number">1</span>),</span><br><span class="line">(<span class="string">"pusan"</span>, <span class="number">2</span>),</span><br><span class="line">(<span class="string">"deajeon"</span>, <span class="number">3</span>),</span><br><span class="line">(<span class="string">"deagu"</span>, <span class="number">5</span>),</span><br><span class="line">(<span class="string">"seoul"</span>, <span class="number">6</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="1-Inner-Join"><a href="#1-Inner-Join" class="headerlink" title="1) Inner Join"></a>1) Inner Join</h3><ul>
+<li>그냥 inner join을 사용할 경우 <ul>
+<li>user의 5개 데이터에 addr의 4개 데이터를 각각 mapping해 20 row의 데이터 생성</li>
+</ul>
+</li>
+<li><code>on</code>에 매칭시킬 컬럼을 지정할 경우 <ul>
+<li>일치하는 데이터만 찾아서 join (두 테이블에 다 있는 데이터만 join)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select *</span><br><span class="line">from user</span><br><span class="line">inner join addr</span><br><span class="line"></span><br><span class="line">select * </span><br><span class="line">from user</span><br><span class="line">inner join addr</span><br><span class="line">on user.user_id = addr.user_id</span><br></pre></td></tr></table></figure>
+<h3 id="2-Left-Join"><a href="#2-Left-Join" class="headerlink" title="2) Left Join"></a>2) Left Join</h3><ul>
+<li>user에 있는 user_id에만 주소를 join함 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select user.user_id, user.name, addr.addr </span><br><span class="line">from user</span><br><span class="line">left join addr</span><br><span class="line">on user.user_id = addr.user_id</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-Right-Join"><a href="#3-Right-Join" class="headerlink" title="3) Right Join"></a>3) Right Join</h3><ul>
+<li>주소만 있고 user_id, user.name이 null값인 row 생성<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select user.user_id, user.name, addr.addr </span><br><span class="line">from user</span><br><span class="line">right join addr</span><br><span class="line">on user.user_id = addr.user_id</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="5-Union"><a href="#5-Union" class="headerlink" title="5. Union"></a>5. Union</h2><ul>
+<li><p>union</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> <span class="keyword">user</span></span><br><span class="line"><span class="keyword">union</span></span><br><span class="line"><span class="keyword">select</span> addr</span><br><span class="line"><span class="keyword">from</span> addr</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>union all: 중복이 제거되지 않음</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span></span><br><span class="line"><span class="keyword">from</span> <span class="keyword">user</span></span><br><span class="line"><span class="keyword">union</span> all</span><br><span class="line"><span class="keyword">select</span> addr</span><br><span class="line"><span class="keyword">from</span> addr</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>union을 이용한 full outer join</p>
+<ul>
+<li>syntax: <code>left join 결과 union right join 결과</code><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  user.name, addr.addr </span><br><span class="line"><span class="keyword">from</span> <span class="keyword">user</span></span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> addr</span><br><span class="line"><span class="keyword">on</span> user.user_id = addr.user_id</span><br><span class="line"><span class="keyword">union</span></span><br><span class="line"><span class="keyword">select</span> user.name, addr.addr </span><br><span class="line"><span class="keyword">from</span> <span class="keyword">user</span></span><br><span class="line"><span class="keyword">right</span> <span class="keyword">join</span> addr</span><br><span class="line"><span class="keyword">on</span> user.user_id = addr.user_id</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-Sub-query"><a href="#6-Sub-query" class="headerlink" title="6. Sub-query"></a>6. Sub-query</h2><ul>
+<li>sub-query는 query문 안에 사용하는 query</li>
+<li>select절, from절, where절 등에서 사용이 가능</li>
+</ul>
+<h3 id="1-select절에-사용"><a href="#1-select절에-사용" class="headerlink" title="1) select절에 사용"></a>1) select절에 사용</h3><p>전체 나라수, 도시수, 언어수를 하나의 row로 출력하기<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> world</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">    (<span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> country) <span class="keyword">as</span> country_count,</span><br><span class="line">    (<span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> city) <span class="keyword">as</span> city_count,</span><br><span class="line">    (<span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">distinct</span>(<span class="keyword">language</span>)) <span class="keyword">from</span> countrylanguage) <span class="keyword">as</span> language_count</span><br><span class="line"><span class="keyword">from</span> dual    <span class="comment">-- from dual은 안 써줘도 ok</span></span><br><span class="line"><span class="string">``</span><span class="string">`    </span></span><br><span class="line"><span class="string">### 2) from절에 사용</span></span><br><span class="line"><span class="string">800만 이상이 되는 도시의 국가코드 이름, 도시인구수를 출력하기</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span><span class="keyword">sql</span></span><br><span class="line"><span class="comment">-- 사용할 sub-query</span></span><br><span class="line"><span class="keyword">select</span> countrycode, <span class="keyword">name</span>, population</span><br><span class="line"><span class="keyword">from</span> city</span><br><span class="line"><span class="keyword">where</span> population &gt; <span class="number">8000000</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>filtering을 먼저 한 후에 join </p>
+<ul>
+<li>join할 때는 최대한 적은 데이터끼리 하는 것이 쿼리 성능 향상에 도움<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> city.countrycode, city.name, country.name, city.population</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">    (<span class="keyword">select</span> countrycode, <span class="keyword">name</span>, population</span><br><span class="line">    <span class="keyword">from</span> city</span><br><span class="line">    <span class="keyword">where</span> population &gt; <span class="number">8000000</span>) <span class="keyword">as</span> city</span><br><span class="line"><span class="keyword">join</span> country</span><br><span class="line"><span class="keyword">on</span> city.countrycode = coutry.code</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>join을 한 후에 filtering</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> city.countrycode, city.name, country.name, city.population</span><br><span class="line"><span class="keyword">from</span> city</span><br><span class="line"><span class="keyword">join</span> country</span><br><span class="line"><span class="keyword">on</span> city.countrycode = coutry.code</span><br><span class="line"><span class="keyword">having</span> city.population &gt; <span class="number">8000000</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-where절에-사용"><a href="#3-where절에-사용" class="headerlink" title="3) where절에 사용"></a>3) where절에 사용</h3><p>인구 800만 이상 도시의 국가코드, 국가이름, 대통령 이름을 출력<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> code, <span class="keyword">name</span>, headofstate </span><br><span class="line"><span class="keyword">from</span> country</span><br><span class="line"><span class="keyword">where</span> code <span class="keyword">in</span> (</span><br><span class="line">	<span class="keyword">select</span> countrycode <span class="keyword">from</span> city <span class="keyword">where</span> population &gt; <span class="number">8000000</span> </span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<h2 id="7-Index"><a href="#7-Index" class="headerlink" title="7. Index"></a>7. Index</h2><ul>
+<li>테이블에서 데이터를 검색할 때 빠르게 찾을 수 있도록 해주는 기능</li>
+<li>where절에 들어가는 컬럼을 index로 설정해 놓으면 설정한 컬럼을 조건으로 검색할 때 빠르게 검색할 수 있음</li>
+<li>너무 많은 index가 설정되면 데이터가 입력될 때마다 index에 데이터를 넣어야하므로 데이터 입력시 속도가 느려질 수 있음</li>
+<li>그러므로 검색조건으로 자주 사용하는 컬럼에 설정하는 것이 좋음</li>
+</ul>
+<h3 id="1-syntax"><a href="#1-syntax" class="headerlink" title="1) syntax"></a>1) syntax</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> 인덱스이름</span><br><span class="line"><span class="keyword">ON</span> 테이블이름 (컬럼이름<span class="number">1</span>, 컬럼이름<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="2-example"><a href="#2-example" class="headerlink" title="2) example"></a>2) example</h3><p>city 테이블에 population 컬럼을 index로 추가<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> Population</span><br><span class="line"><span class="keyword">on</span> city (population)</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-explain"><a href="#3-explain" class="headerlink" title="3) explain"></a>3) explain</h3><p>query를 실행하기 전에 index로 검색을 하는지 확인 가능<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 100만이 넘는 도시의 데이터의 출력 실행계획을 확인</span><br><span class="line"><span class="keyword">explain</span></span><br><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> city</span><br><span class="line"><span class="keyword">where</span> population &gt;= <span class="number">1000000</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-employees-db로-테스트"><a href="#4-employees-db로-테스트" class="headerlink" title="4) employees db로 테스트"></a>4) employees db로 테스트</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> employees</span><br><span class="line"></span><br><span class="line"><span class="keyword">explain</span></span><br><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> salaries</span><br><span class="line"><span class="keyword">where</span> salary &gt; <span class="number">60000</span> <span class="keyword">and</span> <span class="keyword">to_date</span> &gt; <span class="string">"2000-01-01"</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> salary</span><br><span class="line"><span class="keyword">limit</span> <span class="number">1000</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> salaries</span><br><span class="line"><span class="keyword">on</span> salaries (salary)</span><br></pre></td></tr></table></figure>
+<h2 id="8-View"><a href="#8-View" class="headerlink" title="8. View"></a>8. View</h2><ul>
+<li>가상의 테이블로 특정 데이터만 보고자할 때 사용 (특정 컬럼의 데이터를 보여주는 역할만 수행)</li>
+<li>view를 사용함으로써 query를 더 간단하게 만들 수 있음</li>
+<li>컬럼의 수정이나 인덱스 설정 같은 명령을 할 수 없음</li>
+</ul>
+<h3 id="1-syntax-1"><a href="#1-syntax-1" class="headerlink" title="1) syntax"></a>1) syntax</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> &lt;<span class="keyword">view</span> 이름&gt; <span class="keyword">AS</span></span><br><span class="line">(<span class="keyword">QUERY</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="2-example-1"><a href="#2-example-1" class="headerlink" title="2) example"></a>2) example</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> world</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> countrylanguage</span><br><span class="line"><span class="keyword">join</span>(</span><br><span class="line">    <span class="keyword">select</span> country.code, country.name <span class="keyword">as</span> country_name, city.name <span class="keyword">as</span> city_name</span><br><span class="line">    <span class="keyword">from</span> country</span><br><span class="line">    <span class="keyword">join</span> city</span><br><span class="line">    <span class="keyword">on</span> country.code = city.countrycode</span><br><span class="line">) <span class="keyword">as</span> s1</span><br><span class="line"><span class="keyword">on</span> s1.code = countrylanguage.countrycode</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">view</span> code_name <span class="keyword">as</span> </span><br><span class="line"><span class="keyword">select</span> country.code, country.name <span class="keyword">as</span> country_name, city.name <span class="keyword">as</span> city_name</span><br><span class="line"><span class="keyword">from</span> country</span><br><span class="line"><span class="keyword">join</span> city</span><br><span class="line"><span class="keyword">on</span> country.code = city.countrycode</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> countrylanguage</span><br><span class="line"><span class="keyword">join</span> code_name</span><br><span class="line"><span class="keyword">on</span> code_name.code = countrylanguage.countrycode</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-07-27T15:48:26.000Z">2018-07-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Database-공부/">Database 공부</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    12 minutes read (About 1809 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/07/28/Database_04_mysql basic syntax/">MySQL Basic Syntax</a>
+            
+        </h1>
+        <div class="content">
+            <p>본격적으로 RDBMS(나의 경우는 workbench)를 사용하여 MySQL 문법을 익혀보자</p>
+<ul>
+<li>명령어는 대문자로 쓰는 것이 컨벤션이나 소문자로 써도 실행에는 문제가 없음</li>
+<li>마지막에 세미콜론(;) 또한 쓰지 않아도 실행에는 문제가 없음</li>
+</ul>
+<h2 id="1-Create"><a href="#1-Create" class="headerlink" title="1. Create"></a>1. Create</h2><h3 id="1-Create-Database"><a href="#1-Create-Database" class="headerlink" title="1) Create Database"></a>1) Create Database</h3><ul>
+<li><p>Database 생성</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Database 선택</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>현재 database 확인</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DATABASE</span>();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-Create-Table"><a href="#2-Create-Table" class="headerlink" title="2) Create Table"></a>2) Create Table</h3><p>Table을 생성할 때에는 컬럼이름, 데이터타입, 제약조건에 대한 내용이 들어감</p>
+<ul>
+<li><p>Table 생성</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> &lt;table_name&gt;(</span><br><span class="line">    column_name_1 column_datatype_1 column_constraint_1,</span><br><span class="line">    column_name_2 column_datatype_2 column_constraint_2,</span><br><span class="line">    ...</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>제약조건이 없는 user1 Table 생성</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> user1(</span><br><span class="line">    user_id <span class="built_in">INT</span>,</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">Varchar</span>(<span class="number">20</span>),</span><br><span class="line">    email <span class="built_in">Varchar</span>(<span class="number">30</span>),</span><br><span class="line">    age <span class="built_in">INT</span>(<span class="number">3</span>),</span><br><span class="line">    rdate <span class="built_in">DATE</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>제약조건이 있는 user2 Table 생성</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> user2(</span><br><span class="line">    user_id <span class="built_in">INT</span> PRIMARY <span class="keyword">KEY</span> AUTO_INCREMENT,</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">Varchar</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    email <span class="built_in">Varchar</span>(<span class="number">30</span>) <span class="keyword">UNIQUE</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    age <span class="built_in">INT</span>(<span class="number">3</span>) <span class="keyword">DEFAULT</span> <span class="string">'30'</span>,</span><br><span class="line">    rdate <span class="keyword">TIMESTAMP</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Database 선택</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>현재 database 확인</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DATABASE</span>();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="2-Alter"><a href="#2-Alter" class="headerlink" title="2. Alter"></a>2. Alter</h2><h3 id="1-Database"><a href="#1-Database" class="headerlink" title="1) Database"></a>1) Database</h3><p>ALTER를 이용하여 database encoding 변경</p>
+<ul>
+<li><p>현재 문자열 인코딩 확인</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">"character_set_database"</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>test 데이터베이스의 문자열 인코딩을 utf8로 변경</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">test</span> <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> = utf8;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">test</span> <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> = <span class="keyword">ascii</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>문자열 encoding 변경 결과 확인</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">"character_set_database"</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-Table"><a href="#2-Table" class="headerlink" title="2) Table"></a>2) Table</h3><p>ALTER를 이용하여 table의 column 추가, 삭제, 수정</p>
+<ul>
+<li><p>ADD</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- user2 테이블에 TEXT 데이터 타입을 갖는 tmp column 추가</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user2 <span class="keyword">ADD</span> tmp <span class="built_in">TEXT</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>MODIFY</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- user2 테이블에 tmp column을 INT(3) 데이터 타입으로 수정</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user2 <span class="keyword">MODIFY</span> <span class="keyword">COLUMN</span> tmp <span class="built_in">INT</span>(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DROP</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- user2 테이블의 tmp column을 삭제</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user2 <span class="keyword">DROP</span> tmp;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="3-DROP"><a href="#3-DROP" class="headerlink" title="3. DROP"></a>3. DROP</h2><h3 id="1-Database-1"><a href="#1-Database-1" class="headerlink" title="1) Database"></a>1) Database</h3><ul>
+<li>Database 삭제<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-Table-1"><a href="#2-Table-1" class="headerlink" title="2) Table"></a>2) Table</h3><ul>
+<li>Table 삭제<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> &lt;table_name&gt;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-INSERT"><a href="#4-INSERT" class="headerlink" title="4. INSERT"></a>4. INSERT</h2><h3 id="1-Syntax"><a href="#1-Syntax" class="headerlink" title="1) Syntax"></a>1) Syntax</h3><ul>
+<li><p>Table 뒤에 오는 column이름은 생략 가능, 대신 VALUES 뒤에 value값이 순서대로 와야 함</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_1&gt;, ...)</span><br><span class="line"><span class="keyword">VALUES</span>(&lt;value_1&gt;, &lt;value_2&gt; ...)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>여러 row를 한번에 insert하기</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_1&gt;, ...)</span><br><span class="line"><span class="keyword">VALUES</span>(&lt;value_1&gt;, &lt;value_2&gt; ...),</span><br><span class="line">(&lt;value_1&gt;, &lt;value_2&gt; ...),</span><br><span class="line">...</span><br><span class="line">(&lt;value_1&gt;, &lt;value_2&gt; ...);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-Example"><a href="#2-Example" class="headerlink" title="2) Example"></a>2) Example</h3><ul>
+<li>user1 테이블에 user_id, name, email, age, rdate를 입력<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user1(user_id, <span class="keyword">name</span>, email, age, rdate)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="number">1</span>, <span class="string">"jane"</span>, <span class="string">"jane@gmail.com"</span>, <span class="number">30</span>, <span class="keyword">now</span>()),</span><br><span class="line">(<span class="number">2</span>, <span class="string">"peter"</span>, <span class="string">"peter@gmail.com"</span>, <span class="number">33</span>, <span class="string">'2017-02-20'</span>),</span><br><span class="line">(<span class="number">3</span>, <span class="string">"alice"</span>, <span class="string">"alice@gmail.com"</span>, <span class="number">23</span>, <span class="string">'2018-01-15'</span>),</span><br><span class="line">(<span class="number">4</span>, <span class="string">"po"</span>, <span class="string">"po@gmail.com"</span>, <span class="number">43</span>, <span class="string">'2002-09-16'</span>),</span><br><span class="line">(<span class="number">5</span>, <span class="string">"andy"</span>, <span class="string">"andy@gmail.com"</span>, <span class="number">17</span>, <span class="string">'2016-04-28'</span>),</span><br><span class="line">(<span class="number">6</span>, <span class="string">"jane"</span>, <span class="string">"jane1234@gmail.com"</span>, <span class="number">33</span>, <span class="string">'2013-09-02'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-SELECT"><a href="#4-SELECT" class="headerlink" title="4. SELECT"></a>4. SELECT</h2><h3 id="1-Basic"><a href="#1-Basic" class="headerlink" title="1) Basic"></a>1) Basic</h3><ul>
+<li><p>basic syntax</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> &lt;column_name_1&gt;, &lt;<span class="keyword">column</span>)name_2&gt;, ...</span><br><span class="line"><span class="keyword">FROM</span> &lt;table_name&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>전체 컬럼 데이터 조회하기 (table 전체)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>일부 컬럼 조회하기</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> user_id, <span class="keyword">name</span>, rdate</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-ALIAS"><a href="#2-ALIAS" class="headerlink" title="2) ALIAS"></a>2) ALIAS</h3><p>alias(as)를 이용하여 컬럼명을 변경할 수 있음<br>as는 생략 가능<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> user_id <span class="keyword">as</span> <span class="string">"아이디"</span>, <span class="keyword">name</span> <span class="keyword">as</span> <span class="string">"이름"</span>, rdate <span class="keyword">as</span> <span class="string">"등록일"</span></span><br><span class="line"><span class="keyword">FROM</span> user1</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-DISTINCT"><a href="#3-DISTINCT" class="headerlink" title="3) DISTINCT"></a>3) DISTINCT</h3><p>DISTINCT를 이용하여 특정 컬럼의 중복 데이터를 제거 가능</p>
+<ul>
+<li>name 컬럼을 중복 제거하여 조회<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span>(<span class="keyword">name</span>)</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="4-WHERE"><a href="#4-WHERE" class="headerlink" title="4) WHERE"></a>4) WHERE</h3><p>WHERE절을 이용해서 검색 조건을 추가<br>AND, OR, 연산자 등의 기능을 사용</p>
+<ul>
+<li><p>나이가 30살 이상인 user를 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> age &gt;= <span class="number">30</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>등록일이 2016-01-01일 이후의 user를 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> rdate &gt;= <span class="string">"2016-01-01"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>등록일이 2010-01-01에서 2017-12-31 사이인 user를 조회 (AND는 둘다 true이면 true, OR도 사용가능)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> rdate &gt;= <span class="string">"2010-01-01"</span> <span class="keyword">AND</span> rdate &lt;= <span class="string">"2017-12-13"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>BETWEEN을 사용하여 기간 조회 (숫자데이터도 사용 가능)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> rdate <span class="keyword">BETWEEN</span> <span class="string">"2010-01-01"</span> <span class="keyword">AND</span> <span class="string">"2017-12-13"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="5-ORDER-BY"><a href="#5-ORDER-BY" class="headerlink" title="5) ORDER BY"></a>5) ORDER BY</h3><p>ORDER BY를 이용하여 특정 컬럼으로 데이터 정렬 가능</p>
+<ul>
+<li><p>age로 오름차순 정렬 (ASC는 생략이 가능)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">ASC</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>age로 내림차순 정렬</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>age로 내림차순 정렬하고 rdate를 오름차순 정렬</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">DESC</span>, rdate</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="6-CONCAT"><a href="#6-CONCAT" class="headerlink" title="6) CONCAT"></a>6) CONCAT</h3><p>CONCAT을 사용하여 select한 데이터를 합쳐서 새로운 컬럼으로 보여줄 수 있음</p>
+<ul>
+<li>name과 age를 같이 보여주도록 조회<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> email, <span class="keyword">CONCAT</span>(<span class="keyword">name</span>, <span class="string">"("</span>, age, <span class="string">")"</span>) <span class="keyword">AS</span> <span class="string">"name_age"</span></span><br><span class="line"><span class="keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="7-LIKE"><a href="#7-LIKE" class="headerlink" title="7) LIKE"></a>7) LIKE</h3><p>LIKE를 이용하여 특정 문자열이 들어간 데이터 조회 가능<br>%는 ‘어떤 문자나’와 같은 의미로 “%gmail” 은 gmail 문자열 앞에 아무 문자나 올수 있음을 의미<br>NOT LIKE를 사용하여 특정 문자가 들어가지 않는 데이터 조회 가능</p>
+<ul>
+<li><p>email에 gmail이 들어간 데이터 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> email <span class="keyword">LIKE</span> <span class="string">"%@gmail%"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>email에 gmail이 들어가지 않는 데이터 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> email <span class="keyword">NOT</span> <span class="keyword">LIKE</span> <span class="string">"%@gmail%"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="8-IN"><a href="#8-IN" class="headerlink" title="8) IN"></a>8) IN</h3><p>여러개의 조건을 만족하는 데이터를 조회하고 싶을때 사용<br>WHERE 절의 조건을 여러개 사용하는것을 간단하게 만들 수 있음</p>
+<ul>
+<li><p>name이 peter와 alice인 데이터 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span>=<span class="string">"peter"</span> <span class="keyword">OR</span> <span class="keyword">name</span>=<span class="string">"alice"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>name이 peter와 alice인 데이터 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">IN</span> (<span class="string">"peter"</span>, <span class="string">"alice"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="9-LIMIT"><a href="#9-LIMIT" class="headerlink" title="9) LIMIT"></a>9) LIMIT</h3><p>LIMIT은 조회하는 데이터의 수를 제한할 때 사용<br><em>데이터가 너무 많은 경우에는 항상 limit을 사용하여 적은 데이터를 조회해야 조회 시간이나 업데이트시의 실수를 줄일수 있음</em></p>
+<ul>
+<li><p>user1 테이블에서 3개의 데이터 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>user1 테이블에서 두번째에서 네번째까지의 3개의 데이터 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">1</span>,<span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="6-UPDATE"><a href="#6-UPDATE" class="headerlink" title="6. UPDATE"></a>6. UPDATE</h2><p>업데이트시에는 항상 select-where로 변경할 데이터를 확인하고 update 해줘야 실수를 줄일 수 있음<br>limit도 함께 사용해주는 것이 좋음</p>
+<h3 id="1-syntax"><a href="#1-syntax" class="headerlink" title="1) syntax"></a>1) syntax</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE &lt;table_name&gt;</span><br><span class="line">SET &lt;column_name_1&gt; = &lt;value_1&gt;, &lt;column_name_2&gt; = &lt;value_2&gt;,</span><br><span class="line">WHERE &lt;condition&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-example"><a href="#2-example" class="headerlink" title="2) example"></a>2) example</h3><ul>
+<li>jane 이름을 가지고 있는 사람의 나이를 20, 이메일을 jane000@daum.net으로 변경<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> user1</span><br><span class="line"><span class="keyword">SET</span> age=<span class="number">20</span>, email=<span class="string">"jane000@daum.net"</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span>=<span class="string">"jane"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="7-DELETE"><a href="#7-DELETE" class="headerlink" title="7. DELETE"></a>7. DELETE</h2><h3 id="1-syntax-1"><a href="#1-syntax-1" class="headerlink" title="1) syntax"></a>1) syntax</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> &lt;table_name&gt;</span><br><span class="line"><span class="keyword">WHERE</span> &lt;condition&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-example-1"><a href="#2-example-1" class="headerlink" title="2) example"></a>2) example</h3><ul>
+<li>2016-01-01 이전 데이터 삭제<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> rdate &lt; <span class="string">"2016-01-01"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="8-GROUP-BY"><a href="#8-GROUP-BY" class="headerlink" title="8. GROUP BY"></a>8. GROUP BY</h2><p>GROUP BY는 여러개의 동일한 데이터를 가지는 특정 컬럼을 합쳐주는 역할을 하는 명령<br>sql의 그룹함수: count, min, max, sum, avg</p>
+<ul>
+<li>world 데이터 베이스로 이동<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- world 데이터 베이스는 city, country, countrylanguage 테이블이 있는 데이터 베이스 </span></span><br><span class="line"><span class="keyword">use</span> world</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="1-GROUP-BY-함수"><a href="#1-GROUP-BY-함수" class="headerlink" title="1) GROUP BY 함수"></a>1) GROUP BY 함수</h3><h4 id="1-COUNT"><a href="#1-COUNT" class="headerlink" title="(1) COUNT"></a>(1) COUNT</h4><ul>
+<li><p>city 테이블의 CountryCode를 묶고 각 코드마다 몇개의 데이터가 있는지 확인</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> CountryCode, <span class="keyword">COUNT</span>(CountryCode)</span><br><span class="line"><span class="keyword">FROM</span> city</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> CountryCode</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>countrylanguage 테이블에서 전체 언어가 몇개 있는지 구하시오.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span>(<span class="keyword">Language</span>)) <span class="keyword">as</span> language_count</span><br><span class="line"><span class="keyword">FROM</span> countrylanguage</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="2-MAX"><a href="#2-MAX" class="headerlink" title="(2) MAX"></a>(2) MAX</h4><ul>
+<li>대륙별 인구수와 GNP 최대 값을 조회<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">MAX</span>(Population) <span class="keyword">as</span> Population, <span class="keyword">MAX</span>(GNP) <span class="keyword">as</span> GNP</span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="3-MIN"><a href="#3-MIN" class="headerlink" title="(3) MIN"></a>(3) MIN</h4><ul>
+<li>대륙별 인구수와 GNP 최소 값을 조회 (GNP와 인구수가 0이 아닌 데이터 중에서)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">MIN</span>(Population) <span class="keyword">as</span> Population, <span class="keyword">MIN</span>(GNP) <span class="keyword">as</span> GNP</span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">WHERE</span> GNP != <span class="number">0</span> <span class="keyword">AND</span> Population != <span class="number">0</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="4-SUM"><a href="#4-SUM" class="headerlink" title="(4) SUM"></a>(4) SUM</h4><ul>
+<li>대륙별 총 인구수와 총 GNP<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">SUM</span>(Population) <span class="keyword">as</span> Population, <span class="keyword">SUM</span>(GNP) <span class="keyword">as</span> GNP</span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">WHERE</span> GNP != <span class="number">0</span> <span class="keyword">AND</span> Population != <span class="number">0</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="5-AVG"><a href="#5-AVG" class="headerlink" title="(5) AVG"></a>(5) AVG</h4><ul>
+<li>대륙별 평균 인구수와 평균 GNP 결과를 인구수로 내림차순 정렬<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">AVG</span>(Population) <span class="keyword">as</span> Population, <span class="keyword">AVG</span>(GNP) <span class="keyword">as</span> GNP</span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">WHERE</span> GNP != <span class="number">0</span> <span class="keyword">AND</span> Population != <span class="number">0</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Population DESCs</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-HAVING"><a href="#2-HAVING" class="headerlink" title="2) HAVING"></a>2) HAVING</h3><p>GROUP BY에서 반환되는 결과에 조건을 줄 수 있음</p>
+<ul>
+<li><p>대륙별 전체인구를 구하고 5억이상인 대륙만 조회</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">SUM</span>(Population) <span class="keyword">as</span> Population</span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br><span class="line"><span class="keyword">HAVING</span> Population &gt; <span class="number">500000000</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>대륙별 평균 인구수, 평균 GNP, 1인당 GNP한 결과를 1인당 GNP가 0.01 이상인 데이터를 조회하고 1인당 GNP를 내림차순으로 정렬</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">AVG</span>(Population) <span class="keyword">as</span> Population, <span class="keyword">AVG</span>(GNP) <span class="keyword">as</span> GNP,</span><br><span class="line"><span class="keyword">AVG</span>(GNP) / <span class="keyword">AVG</span>(Population) * <span class="number">1000</span> <span class="keyword">as</span> <span class="keyword">AVG</span></span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">WHERE</span> GNP != <span class="number">0</span> <span class="keyword">AND</span> Population != <span class="number">0</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br><span class="line"><span class="keyword">HAVING</span> <span class="keyword">AVG</span> &gt; <span class="number">0.01</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">AVG</span> <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="※-참고-자료"><a href="#※-참고-자료" class="headerlink" title="※ 참고 자료"></a>※ 참고 자료</h4><ul>
+<li>패스트캠퍼스 ‘데이터 사이언스 스쿨 Python 8기’ 수업자료</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-07-26T15:22:28.000Z">2018-07-27</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Database-공부/">Database 공부</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes read (About 859 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/07/27/Database_03_mysql_basic/">MySQL Basic - Data Type &amp; Constraint</a>
+            
+        </h1>
+        <div class="content">
+            <p>MySQL 문법을 익히기 전에 데이터베이스에서 테이블을 생성할 때 알아야하는 데이터 타입과 제약조건에 대해 알아보자</p>
+<h2 id="1-Data-Type"><a href="#1-Data-Type" class="headerlink" title="1. Data Type"></a>1. Data Type</h2><p><a href="https://dev.mysql.com/doc/refman/5.7/en/data-types.html" target="_blank" rel="noopener">reference</a></p>
+<h3 id="1-Numberic"><a href="#1-Numberic" class="headerlink" title="1) Numberic"></a>1) Numberic</h3><p><a href="https://dev.mysql.com/doc/refman/5.7/en/numeric-types.html" target="_blank" rel="noopener">reference</a></p>
+<h4 id="1-정수-타입-integer-types"><a href="#1-정수-타입-integer-types" class="headerlink" title="(1) 정수 타입(integer types)"></a>(1) 정수 타입(integer types)</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><center>Type</center></th>
+<th style="text-align:center"><center>Storage  (Bytes)</center></th>
+<th style="text-align:right"><center>Minimum Value Signed</center></th>
+<th style="text-align:center"><center>Minimum Value Unsigned</center></th>
+<th style="text-align:right"><center>Maximum Value Signed</center></th>
+<th style="text-align:right"><center>Maximum Value Unsigned</center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TINYINT</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">-128</td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">127</td>
+<td style="text-align:right">255</td>
+</tr>
+<tr>
+<td>SMALLINT</td>
+<td style="text-align:center">2</td>
+<td style="text-align:right">-32,768</td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">32,767</td>
+<td style="text-align:right">65,535</td>
+</tr>
+<tr>
+<td>MEDIUMINT</td>
+<td style="text-align:center">3</td>
+<td style="text-align:right">-8,388,608</td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">8,388,607</td>
+<td style="text-align:right">16,777,215</td>
+</tr>
+<tr>
+<td>INT</td>
+<td style="text-align:center">4</td>
+<td style="text-align:right">-2,147,483,648</td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">2,147,483,647</td>
+<td style="text-align:right">4,294,967,295</td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td style="text-align:center">8</td>
+<td style="text-align:right">-2<sup>63</sup></td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">2<sup>63</sup>-1</td>
+<td style="text-align:right">2<sup>64</sup>-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="2-고정-소수점-타입-fixed-point-types"><a href="#2-고정-소수점-타입-fixed-point-types" class="headerlink" title="(2) 고정 소수점 타입(fixed-point types)"></a>(2) 고정 소수점 타입(fixed-point types)</h4><ul>
+<li><p>DECIMAL(M, D)</p>
+<ul>
+<li>M : 소수점을 포함한 전체 자리수</li>
+<li>D : 소수 부분 자리수<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user1</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">COLUMN</span> deci <span class="built_in">DECIMAL</span>(<span class="number">5</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>NUMERIC(M, D)</p>
+</li>
+</ul>
+<h4 id="3-실수-floating-point-types"><a href="#3-실수-floating-point-types" class="headerlink" title="(3) 실수 (floating-point types)"></a>(3) 실수 (floating-point types)</h4><p>소수점을 나타내기 위한 데이터 타입으로 아래의 두 타입이 있음(데이터 저장공간의 차이가 있음)</p>
+<ul>
+<li>FLOAT (4byte)</li>
+<li>DOUBLE (8byte)  </li>
+</ul>
+<p>아래와 같이 고정 소수점 타입으로도 사용 가능</p>
+<ul>
+<li>FLOAT(M,D)</li>
+<li>DOUBLE(M,D)</li>
+</ul>
+<h4 id="4-비트-값-타입-bit-value-type"><a href="#4-비트-값-타입-bit-value-type" class="headerlink" title="(4) 비트 값 타입 ( bit value type )"></a>(4) 비트 값 타입 ( bit value type )</h4><p>0과 1로 구성이 되는 2진수(binary) 데이터</p>
+<ul>
+<li>BIT(M)<ul>
+<li>M: 비트의 범위</li>
+<li>예) M을 5로 작성하면 00000(2) ~ 11111(2) 까지 표현 가능</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-Date-amp-Time"><a href="#2-Date-amp-Time" class="headerlink" title="2 Date &amp; Time"></a>2 Date &amp; Time</h2><p><a href="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-types.html" target="_blank" rel="noopener">reference</a></p>
+<h3 id="1-DATE"><a href="#1-DATE" class="headerlink" title="1) DATE"></a>1) DATE</h3><p>DATE는 날짜를 저장하는 데이터 타입</p>
+<ul>
+<li>기본 포맷: “년-월-일”</li>
+</ul>
+<h3 id="2-DATETIME"><a href="#2-DATETIME" class="headerlink" title="2) DATETIME"></a>2) DATETIME</h3><p>DATETIME은 날짜와 시간을 저장하는 데이터 타입</p>
+<ul>
+<li>기본 포맷: “년-월-일 시:분:초”</li>
+</ul>
+<h3 id="3-TIMESTAME"><a href="#3-TIMESTAME" class="headerlink" title="3) TIMESTAME"></a>3) TIMESTAME</h3><p>TIMESTAME는 날짜와 시간을 저장하는 데이터 타입<br>DATETIME과 다르게 날짜를 입력하지 않으면 현재 날짜와 시간을 자동으로 저장</p>
+<h3 id="4-TIME"><a href="#4-TIME" class="headerlink" title="4) TIME"></a>4) TIME</h3><p>TIME은 시간을 저장하는 데이터 타입</p>
+<ul>
+<li>기본 포맷: “시:분:초” </li>
+</ul>
+<h3 id="5-YEAR"><a href="#5-YEAR" class="headerlink" title="5) YEAR"></a>5) YEAR</h3><p>YEAR는 연도를 저장할수 있는 데이터 타입</p>
+<ul>
+<li>YEAR(2)는 2자리의 연도를 저장</li>
+<li>YEAR(4)는 4자리의 연도를 저장</li>
+</ul>
+<h2 id="3-String"><a href="#3-String" class="headerlink" title="3. String"></a>3. String</h2><p><a href="https://dev.mysql.com/doc/refman/5.7/en/string-types.html" target="_blank" rel="noopener">reference</a></p>
+<h3 id="1-CHAR-amp-VARCHAR"><a href="#1-CHAR-amp-VARCHAR" class="headerlink" title="1) CHAR &amp; VARCHAR"></a>1) CHAR &amp; VARCHAR</h3><ol>
+<li>CHAR: 고정형 문자열</li>
+<li>VARCHAR: 가변형 문자열</li>
+</ol>
+<ul>
+<li>CHAR &amp; VARCHAR의 저장형식과 저장용량 비교</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Value</th>
+<th style="text-align:center">CHAR(4)</th>
+<th style="text-align:center">Storage Required</th>
+<th style="text-align:left">VARCHAR(4)</th>
+<th style="text-align:center">Storage Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">‘’</td>
+<td style="text-align:center">‘　　‘</td>
+<td style="text-align:center">4 bytes</td>
+<td style="text-align:left">‘’</td>
+<td style="text-align:center">1 byte</td>
+</tr>
+<tr>
+<td style="text-align:left">‘ab’</td>
+<td style="text-align:center">‘ab　‘</td>
+<td style="text-align:center">4 bytes</td>
+<td style="text-align:left">‘ab’</td>
+<td style="text-align:center">3 bytes</td>
+</tr>
+<tr>
+<td style="text-align:left">‘abcd’</td>
+<td style="text-align:center">‘abcd’</td>
+<td style="text-align:center">4 bytes</td>
+<td style="text-align:left">‘abcd’</td>
+<td style="text-align:center">5 bytes</td>
+</tr>
+<tr>
+<td style="text-align:left">‘abcdefgh’</td>
+<td style="text-align:center">‘abcd’</td>
+<td style="text-align:center">4 bytes</td>
+<td style="text-align:left">‘abcd’</td>
+<td style="text-align:center">5 bytes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="2-TEXT"><a href="#2-TEXT" class="headerlink" title="2) TEXT"></a>2) TEXT</h3><p>CHAR와 VARCHAR는 대체로 크기가 작은 문자열을 저장할때 사용<br>크기가 큰 문자열을 저장할 때는 TEXT를 사용</p>
+<ul>
+<li>TEXT의 타입에 따른 데이터 크기</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:right">Maximum Length</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TINYTEXT</td>
+<td style="text-align:right">255(2<sup>8</sup>-1) bytes</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">TEXT</td>
+<td style="text-align:right">65,535(2<sup>16</sup>-1) bytes</td>
+<td style="text-align:left">= 64KB</td>
+</tr>
+<tr>
+<td style="text-align:left">MEDIUMTEXT</td>
+<td style="text-align:right">16,777,215 (2<sup>24</sup>-1) bytes</td>
+<td style="text-align:left">= 16MB</td>
+</tr>
+<tr>
+<td style="text-align:left">LONGTEXT</td>
+<td style="text-align:right">4,294,967,295 (2<sup>32</sup>-1) bytes</td>
+<td style="text-align:left">= 4GB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="2-Constraint"><a href="#2-Constraint" class="headerlink" title="2. Constraint"></a>2. Constraint</h2><p>데이터 베이스의 테이블을 생성할때 각 컬럼은 각각의 제약조건을 가짐</p>
+<h3 id="1-NOT-NULL"><a href="#1-NOT-NULL" class="headerlink" title="1) NOT NULL"></a>1) NOT NULL</h3><p>NOT NULL 제약조건이 있는 컬럼에 NULL 값(비어있는 값)을 저장할수 없음</p>
+<h3 id="2-UNIQUE"><a href="#2-UNIQUE" class="headerlink" title="2) UNIQUE"></a>2) UNIQUE</h3><p>UNIQUE 제약조건이 있는 컬럼에 같은 값을 저장할 수 없음</p>
+<h3 id="3-PRIMARY-KEY"><a href="#3-PRIMARY-KEY" class="headerlink" title="3) PRIMARY KEY"></a>3) PRIMARY KEY</h3><p>컬럼을 기본키로 설정하기 위해서는 NOT NULL과 UNIQUE 제약조건을 동시에 만족해야 함<br>즉, 컬럼에 비어 있는 값, 중복되는 값을 저장할수 없음<br><strong><em>하나의 테이블에 하나의 컬럼에만 이 조건을 설정 가능</em></strong></p>
+<h3 id="4-FOREIGN-KEY"><a href="#4-FOREIGN-KEY" class="headerlink" title="4) FOREIGN KEY"></a>4) FOREIGN KEY</h3><p>다른 테이블과 연결되는 값이 저장됩니다.</p>
+<h3 id="5-DEFAULT"><a href="#5-DEFAULT" class="headerlink" title="5) DEFAULT"></a>5) DEFAULT</h3><p>데이터를 저장할때 해당 컬럼에 별도의 저장값이 없으면 DEFAULT로 설정된 값이 저장</p>
+<h3 id="6-AUTO-INCREMENT"><a href="#6-AUTO-INCREMENT" class="headerlink" title="6) AUTO_INCREMENT"></a>6) AUTO_INCREMENT</h3><p>주로 테이블의 PRIMARY KEY 데이터를 저장할때 자동으로 숫자를 1씩 증가시켜 주는 기능으로 사용</p>
+<hr>
+<h4 id="※-참고-자료"><a href="#※-참고-자료" class="headerlink" title="※ 참고 자료"></a>※ 참고 자료</h4><ul>
+<li>패스트캠퍼스 ‘데이터 사이언스 스쿨 Python 8기’ 수업자료</li>
+<li>이동명, 권오현, 고정국, 「컴퓨터 사이언스 개정판」</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-07-25T13:13:26.000Z">2018-07-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Database-공부/">Database 공부</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 590 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/07/25/Database_02/">MySQL</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="1-SQL-소개"><a href="#1-SQL-소개" class="headerlink" title="1. SQL 소개"></a>1. SQL 소개</h2><p>SQL(Structured Query Language)</p>
+<ul>
+<li>관계형 데이터베이스를 조작하고 관리할 때 사용하는 데이터베이스 질의용 언어</li>
+<li>1970년대 IBM에서 개발하여 IBM의 관계형 DBMS에 처음으로 사용</li>
+<li>1986년 미국표준협회(ANSI)가 SQL 표준으로 채택하면서 현재까지 다양한 DBMS의 구조화 질의어로 널리 사용되고 있음</li>
+<li>비절차적 언어이기 때문에 절차적언어에 비해 배우기 쉬움</li>
+<li>자연어에 가까운 구문을 사용해 query를 표현하며 관계형 대수나 관계형 해석에 비해 표현력이 우수함</li>
+</ul>
+<p>SQL의 기능</p>
+<ol>
+<li>데이터 정의 기능<ul>
+<li>데이터 정의어(DDL)를 이용하여 테이블 생성 및 제거, 속성의 추가 및 삭제, view의 생성 및 제거, index의 생성 및 제거 등의 작업 수행</li>
+<li>테이블을 생성하면서 여러 가지 무결성 제약 조건 기술</li>
+</ul>
+</li>
+<li>데이터 조작 기능<ul>
+<li>데이터 조작어(DML)를 이용하여 데이터의 검색, 삽입, 삭제, 수정 등의 연산을 수행</li>
+</ul>
+</li>
+<li>데이터 제어 기능<ul>
+<li>데이터 제어어(DCL)를 이용하여 transaction의 시작, 철회, 완료 등을 명시하고 table에 대해 권한을 부여하거나 취소</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-MySQL-Basic-Command"><a href="#2-MySQL-Basic-Command" class="headerlink" title="2. MySQL Basic Command"></a>2. MySQL Basic Command</h2><p>MySQL shell을 이용한 기본 명령</p>
+<h3 id="1-Dabatase"><a href="#1-Dabatase" class="headerlink" title="1) Dabatase"></a>1) Dabatase</h3><ul>
+<li><p>DB 목록 보기</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show databases;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DB 만들기</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create databases db_name;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DB 접속</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use databases db_name;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>현재 접속 중인 DB 확인</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select database();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DB 삭제</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; drop databases db_name;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-Table"><a href="#2-Table" class="headerlink" title="2) Table"></a>2) Table</h3><ul>
+<li><p>Table 만들기</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- name(문자열 20자), age (숫자 3자) column이 있는 user 테이블 생성 </span></span><br><span class="line">mysql&gt; create table user(name char(20), age int(3));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Table 목록 확인 </p>
+<ul>
+<li>테이블 추가나 삭제 후 table 목록 확인<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show tables;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Table 구조 확인</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- table name: user</span></span><br><span class="line">mysql&gt; desc table user;</span><br><span class="line">mysql&gt; describe table user;</span><br><span class="line">mysql&gt; explain table user;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Table 이름 바꾸기</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- user에서 user1로 이름 변경</span></span><br><span class="line">mysql&gt; rename table user to user1;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Table에 데이터 추가</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; insert into user1(name, age) values("alice", 23);</span><br><span class="line">mysql&gt; insert into user1(name, age) values("peter", 30);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>추가된 데이터 확인</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from user1;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Table 삭제</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; drop table user1;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="※-참고-자료"><a href="#※-참고-자료" class="headerlink" title="※ 참고 자료"></a>※ 참고 자료</h4><ul>
+<li>패스트캠퍼스 ‘데이터 사이언스 스쿨 Python 8기’ 수업자료</li>
+<li>이동명, 권오현, 고정국, 「컴퓨터 사이언스 개정판」</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="/images/avatar.png" alt="Your name">
+                    
+                    <p class="is-size-4 is-block">
+                        Your name
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Your title
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Your location</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        129
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        9
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        26
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/ppoffice">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="http://github.com/hyeshinoh">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Facebook" href="http://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Twitter" href="http://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Dribbble" href="http://dribbble.com">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Data-Analysis-공부/">
+            <span class="level-start">
+                <span class="level-item">Data Analysis 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Data-Analysis-공부/수학-공부/">
+            <span class="level-start">
+                <span class="level-item">수학 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Programming-공부/">
+            <span class="level-start">
+                <span class="level-item">Programming 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">30</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Programming-공부/Algorithm-공부/">
+            <span class="level-start">
+                <span class="level-item">Algorithm 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming-공부/Database-공부/">
+            <span class="level-start">
+                <span class="level-item">Database 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming-공부/Python-공부/">
+            <span class="level-start">
+                <span class="level-item">Python 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">11</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Programming-공부/Web-공부/">
+            <span class="level-start">
+                <span class="level-item">Web 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">12</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/TIL-Today-I-Learned/">
+            <span class="level-start">
+                <span class="level-item">TIL(Today I Learned)</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">74</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/기타/">
+            <span class="level-start">
+                <span class="level-item">기타</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.44px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.78px;">data analysis</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11.11px;">html</a> <a href="/tags/javascript/" style="font-size: 11.11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 17.78px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 18.89px;">programming</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/selenium/" style="font-size: 12.22px;">selenium</a> <a href="/tags/web/" style="font-size: 15.56px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.44px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 17.78px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11.11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.44px;">웹크롤링</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/01/06/2019-01-06-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-06-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-06T14:55:15.000Z">2019-01-06</time></div>
+                    <a href="/2019/01/06/2019-01-06-TIL/" class="has-link-black-ter is-size-6">2019-01-06-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/03/2019-01-03-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-03-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-03T14:55:15.000Z">2019-01-03</time></div>
+                    <a href="/2019/01/03/2019-01-03-TIL/" class="has-link-black-ter is-size-6">2019-01-03-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/02/math-lin_alg-022/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="&lt;선형대수&gt; 고윳값 분해 (2)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-02T03:59:04.000Z">2018-12-02</time></div>
+                    <a href="/2018/12/02/math-lin_alg-022/" class="has-link-black-ter is-size-6">&lt;선형대수&gt; 고윳값 분해 (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/02/math-lin_alg-021/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="&lt;선형대수&gt; 고윳값 분해 (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-02T02:26:04.000Z">2018-12-02</time></div>
+                    <a href="/2018/12/02/math-lin_alg-021/" class="has-link-black-ter is-size-6">&lt;선형대수&gt; 고윳값 분해 (1)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/22/math-lin_alg-020/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="&lt;선형대수&gt; 선형종속/선형독립 &amp; 좌표변환">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-22T09:26:04.000Z">2018-11-22</time></div>
+                    <a href="/2018/11/22/math-lin_alg-020/" class="has-link-black-ter is-size-6">&lt;선형대수&gt; 선형종속/선형독립 &amp; 좌표변환</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">24</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">18</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">23</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">42</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <ul class="menu-list">
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/CSS/">
+                        <span class="level-start">
+                            <span class="level-item">CSS</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Database/">
+                        <span class="level-start">
+                            <span class="level-item">Database</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">5</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/MySQL/">
+                        <span class="level-start">
+                            <span class="level-item">MySQL</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">4</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/SQL/">
+                        <span class="level-start">
+                            <span class="level-item">SQL</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">4</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/TIL-Today-I-Learned/">
+                        <span class="level-start">
+                            <span class="level-item">TIL(Today I Learned)</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">74</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/algorithm/">
+                        <span class="level-start">
+                            <span class="level-item">algorithm</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/crawling/">
+                        <span class="level-start">
+                            <span class="level-item">crawling</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">6</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/data-analysis/">
+                        <span class="level-start">
+                            <span class="level-item">data analysis</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">23</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/email/">
+                        <span class="level-start">
+                            <span class="level-item">email</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/hexo/">
+                        <span class="level-start">
+                            <span class="level-item">hexo</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/html/">
+                        <span class="level-start">
+                            <span class="level-item">html</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/javascript/">
+                        <span class="level-start">
+                            <span class="level-item">javascript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/jupyter-notebook/">
+                        <span class="level-start">
+                            <span class="level-item">jupyter notebook</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/math/">
+                        <span class="level-start">
+                            <span class="level-item">math</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">23</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/mathjax/">
+                        <span class="level-start">
+                            <span class="level-item">mathjax</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/programming/">
+                        <span class="level-start">
+                            <span class="level-item">programming</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">25</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/python/">
+                        <span class="level-start">
+                            <span class="level-item">python</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">13</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/selenium/">
+                        <span class="level-start">
+                            <span class="level-item">selenium</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">4</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/web/">
+                        <span class="level-start">
+                            <span class="level-item">web</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">12</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/web-crawling/">
+                        <span class="level-start">
+                            <span class="level-item">web_crawling</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">6</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/미적분/">
+                        <span class="level-start">
+                            <span class="level-item">미적분</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/선형대수/">
+                        <span class="level-start">
+                            <span class="level-item">선형대수</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">23</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/알고리즘/">
+                        <span class="level-start">
+                            <span class="level-item">알고리즘</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/알고리즘-문제/">
+                        <span class="level-start">
+                            <span class="level-item">알고리즘_문제</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/웹크롤링/">
+                        <span class="level-start">
+                            <span class="level-item">웹크롤링</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">6</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/확률통계/">
+                        <span class="level-start">
+                            <span class="level-item">확률통계</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/01/06/2019-01-06-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-06-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-06T14:55:15.000Z">2019-01-06</time></div>
+                    <a href="/2019/01/06/2019-01-06-TIL/" class="has-link-black-ter is-size-6">2019-01-06-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/03/2019-01-03-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-03-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-03T14:55:15.000Z">2019-01-03</time></div>
+                    <a href="/2019/01/03/2019-01-03-TIL/" class="has-link-black-ter is-size-6">2019-01-03-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/02/math-lin_alg-022/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="&lt;선형대수&gt; 고윳값 분해 (2)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-02T03:59:04.000Z">2018-12-02</time></div>
+                    <a href="/2018/12/02/math-lin_alg-022/" class="has-link-black-ter is-size-6">&lt;선형대수&gt; 고윳값 분해 (2)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/12/02/math-lin_alg-021/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="&lt;선형대수&gt; 고윳값 분해 (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-02T02:26:04.000Z">2018-12-02</time></div>
+                    <a href="/2018/12/02/math-lin_alg-021/" class="has-link-black-ter is-size-6">&lt;선형대수&gt; 고윳값 분해 (1)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/22/math-lin_alg-020/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="&lt;선형대수&gt; 선형종속/선형독립 &amp; 좌표변환">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-22T09:26:04.000Z">2018-11-22</time></div>
+                    <a href="/2018/11/22/math-lin_alg-020/" class="has-link-black-ter is-size-6">&lt;선형대수&gt; 선형종속/선형독립 &amp; 좌표변환</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">24</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">18</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">23</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">42</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <ul class="menu-list">
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/CSS/">
+                        <span class="level-start">
+                            <span class="level-item">CSS</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Database/">
+                        <span class="level-start">
+                            <span class="level-item">Database</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">5</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/MySQL/">
+                        <span class="level-start">
+                            <span class="level-item">MySQL</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">4</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/SQL/">
+                        <span class="level-start">
+                            <span class="level-item">SQL</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">4</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/TIL-Today-I-Learned/">
+                        <span class="level-start">
+                            <span class="level-item">TIL(Today I Learned)</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">74</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/algorithm/">
+                        <span class="level-start">
+                            <span class="level-item">algorithm</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/crawling/">
+                        <span class="level-start">
+                            <span class="level-item">crawling</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">6</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/data-analysis/">
+                        <span class="level-start">
+                            <span class="level-item">data analysis</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">23</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/email/">
+                        <span class="level-start">
+                            <span class="level-item">email</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/hexo/">
+                        <span class="level-start">
+                            <span class="level-item">hexo</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/html/">
+                        <span class="level-start">
+                            <span class="level-item">html</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/javascript/">
+                        <span class="level-start">
+                            <span class="level-item">javascript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/jupyter-notebook/">
+                        <span class="level-start">
+                            <span class="level-item">jupyter notebook</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/math/">
+                        <span class="level-start">
+                            <span class="level-item">math</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">23</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/mathjax/">
+                        <span class="level-start">
+                            <span class="level-item">mathjax</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/programming/">
+                        <span class="level-start">
+                            <span class="level-item">programming</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">25</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/python/">
+                        <span class="level-start">
+                            <span class="level-item">python</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">13</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/selenium/">
+                        <span class="level-start">
+                            <span class="level-item">selenium</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">4</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/web/">
+                        <span class="level-start">
+                            <span class="level-item">web</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">12</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/web-crawling/">
+                        <span class="level-start">
+                            <span class="level-item">web_crawling</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">6</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/미적분/">
+                        <span class="level-start">
+                            <span class="level-item">미적분</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/선형대수/">
+                        <span class="level-start">
+                            <span class="level-item">선형대수</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">23</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/알고리즘/">
+                        <span class="level-start">
+                            <span class="level-item">알고리즘</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/알고리즘-문제/">
+                        <span class="level-start">
+                            <span class="level-item">알고리즘_문제</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/웹크롤링/">
+                        <span class="level-start">
+                            <span class="level-item">웹크롤링</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">6</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/확률통계/">
+                        <span class="level-start">
+                            <span class="level-item">확률통계</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="우와팬더의 블로그" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 우와팬더&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
             <div class="ins-section-container"></div>
         </div>
     </div>
 </div>
 <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
 </script>
-<script src="/js/insight.js"></script>
-
-</div>
-        </div>
-    </div>
-    <div id="main-nav-mobile" class="header-sub header-inner">
-        <table class="menu outer">
-            <tr>
-                
-                    <td><a class="main-nav-link" href="/.">Home</a></td>
-                
-                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
-                
-                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
-                
-                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
-                
-                    <td><a class="main-nav-link" href="/about/index.html">About</a></td>
-                
-                <td>
-                    
-    <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
-    </div>
-
-                </td>
-            </tr>
-        </table>
-    </div>
-</header>
-
-        <div class="outer">
-            
-                
-
-<aside id="profile" class="profile-fixed">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
-            <img id="avatar" src="/css/images/avatar.png" />
-            <h2 id="name">우와팬더(Hyeshin Oh)</h2>
-            <h3 id="title">Data Science를 공부합니다</h3>
-            <span id="location"><i class="fas fa-map-marker-alt" style="padding-right: 5px"></i>Seoul, Korea</span>
-            <a id="follow" target="_blank" href="https://github.com/hyeshinoh">FOLLOW</a>
-        </div>
-        <div class="article-info profile-block">
-            <div class="article-info-block">
-                129
-                <span>posts</span>
-            </div>
-            <div class="article-info-block">
-                26
-                <span>tags</span>
-            </div>
-        </div>
-        
-        <div class="profile-block social-links">
-            <table>
-                <tr>
-                    
-                    
-                    <td>
-                        <a href="http://github.com/hyeshinoh" target="_blank" title="github" class=tooltip>
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="/" target="_blank" title="twitter" class=tooltip>
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="/" target="_blank" title="facebook" class=tooltip>
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="/" target="_blank" title="dribbble" class=tooltip>
-                            <i class="fab fa-dribbble"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="/" target="_blank" title="rss" class=tooltip>
-                            <i class="fab fa-rss"></i>
-                        </a>
-                    </td>
-                    
-                </tr>
-            </table>
-        </div>
-        
-    </div>
-</aside>
-
-            
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fas fa-tag"></i></span>
-        <h1 class="title">#SQL</h1>
-    </div>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
     
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/07/30/Database_05_mysql intermediate syntax/">MySQL Intermediate Syntax</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/07/30/Database_05_mysql intermediate syntax/">
-            <time datetime="2018-07-29T15:40:26.000Z" itemprop="datePublished">2018-07-30</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/Database/">Database</a>, <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/SQL/">SQL</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/07/28/Database_04_mysql basic syntax/">MySQL Basic Syntax</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/07/28/Database_04_mysql basic syntax/">
-            <time datetime="2018-07-27T15:48:26.000Z" itemprop="datePublished">2018-07-28</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/Database/">Database</a>, <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/SQL/">SQL</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/07/27/Database_03_mysql_basic/">MySQL Basic - Data Type &amp; Constraint</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/07/27/Database_03_mysql_basic/">
-            <time datetime="2018-07-26T15:22:28.000Z" itemprop="datePublished">2018-07-27</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/Database/">Database</a>, <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/SQL/">SQL</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/07/25/Database_02/">MySQL</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/07/25/Database_02/">
-            <time datetime="2018-07-25T13:13:26.000Z" itemprop="datePublished">2018-07-25</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/categories/Programming-공부/">Programming 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/Database/">Database</a>, <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/SQL/">SQL</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-</div>
-</section>
-            
-                
-<aside id="sidebar">
-   
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">recent</h3>
-        <div class="widget">
-            <ul id="recent-post" class="no-thumbnail">
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
-                            <p class="item-title"><a href="/2019/01/06/2019-01-06-TIL/" class="title">2019-01-06-TIL</a></p>
-                            <p class="item-date"><time datetime="2019-01-06T14:55:15.000Z" itemprop="datePublished">2019-01-06</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a></p>
-                            <p class="item-title"><a href="/2019/01/03/2019-01-03-TIL/" class="title">2019-01-03-TIL</a></p>
-                            <p class="item-date"><time datetime="2019-01-03T14:55:15.000Z" itemprop="datePublished">2019-01-03</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a></p>
-                            <p class="item-title"><a href="/2018/12/02/math-lin_alg-022/" class="title">&lt;선형대수&gt; 고윳값 분해 (2)</a></p>
-                            <p class="item-date"><time datetime="2018-12-02T03:59:04.000Z" itemprop="datePublished">2018-12-02</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a></p>
-                            <p class="item-title"><a href="/2018/12/02/math-lin_alg-021/" class="title">&lt;선형대수&gt; 고윳값 분해 (1)</a></p>
-                            <p class="item-date"><time datetime="2018-12-02T02:26:04.000Z" itemprop="datePublished">2018-12-02</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><i class="fas fa-angle-right"></i><a class="article-category-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a></p>
-                            <p class="item-title"><a href="/2018/11/22/math-lin_alg-020/" class="title">&lt;선형대수&gt; 선형종속/선형독립 &amp; 좌표변환</a></p>
-                            <p class="item-date"><time datetime="2018-11-22T09:26:04.000Z" itemprop="datePublished">2018-11-22</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">categories</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a><span class="category-list-count">23</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/">Programming 공부</a><span class="category-list-count">30</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Algorithm-공부/">Algorithm 공부</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Database-공부/">Database 공부</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Python-공부/">Python 공부</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming-공부/Web-공부/">Web 공부</a><span class="category-list-count">12</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="category-list-count">74</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/기타/">기타</a><span class="category-list-count">2</span></li></ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">archives</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">4</span></li></ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">tags</h3>
-        <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TIL-Today-I-Learned/">TIL(Today I Learned)</a><span class="tag-list-count">74</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crawling/">crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-analysis/">data analysis</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/email/">email</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/">jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mathjax/">mathjax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/programming/">programming</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-crawling/">web_crawling</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/미적분/">미적분</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/선형대수/">선형대수</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘-문제/">알고리즘_문제</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/웹크롤링/">웹크롤링</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/확률통계/">확률통계</a><span class="tag-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">tag cloud</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.44px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.78px;">data analysis</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11.11px;">html</a> <a href="/tags/javascript/" style="font-size: 11.11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 17.78px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 18.89px;">programming</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/selenium/" style="font-size: 12.22px;">selenium</a> <a href="/tags/web/" style="font-size: 15.56px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.44px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 17.78px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11.11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.44px;">웹크롤링</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://hexo.io">Hexo</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-    
-    <div id="toTop" class="fas fa-angle-up"></div>
-</aside>
-
-            
-        </div>
-        <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2019 우와팬더<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
-        </div>
-    </div>
-</footer>
-        
-    
-    <script>
-    var disqus_config = function () {
-        
-        this.page.identifier = '';
-    };
-    (function() { 
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hyeshinoh' + '.disqus.com/count.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
 </script>
-
-
-
-
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-    
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-    
-    
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    
-
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-
-    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -565,5 +2393,6 @@ ga('send', 'pageview');
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
 </body>
 </html>
