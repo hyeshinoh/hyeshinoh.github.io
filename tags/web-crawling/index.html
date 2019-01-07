@@ -98,7 +98,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="우와팬더의 블로그" height="28">
+                <img src="/images/logo.png" alt="우와팬더의 블로그" height="28">
             
             </a>
         </div>
@@ -2857,89 +2857,32 @@ Dog 0
 
 
 
-    <div class="card">
+
     
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-09-29T06:47:26.000Z">2018-09-29</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 363 words)
-                </span>
-                
-            </div>
+<div class="card card-transparent">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous is-invisible is-hidden-mobile">
+            <a class="is-flex-grow has-text-black-ter" href="/tags/web-crawling/page/0/">Previous</a>
         </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/09/29/web_07_crawling/">Web crawling 기초</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="1-Python을-사용한-crawling의-방법"><a href="#1-Python을-사용한-crawling의-방법" class="headerlink" title="1. Python을 사용한 crawling의 방법"></a>1. Python을 사용한 crawling의 방법</h1><p>아래의 네 가지 방법이 사용되는데, 가능한 한 간단한 앞 번호의 방법을 사용하는 것이 효율적</p>
-<ol>
-<li>requests</li>
-<li>requests + bs4(BeautifulSoup)</li>
-<li>selenium</li>
-<li>scrapy</li>
-</ol>
-<h1 id="2-Requests-패키지를-이용한-crawling"><a href="#2-Requests-패키지를-이용한-crawling" class="headerlink" title="2. Requests 패키지를 이용한 crawling"></a>2. Requests 패키지를 이용한 crawling</h1><p>python의 requests 패키지를 이용해서 코드상으로 request를 보내고 reponse를 받을 수 있음</p>
-<h2 id="2-1-API가-제공되는-경우"><a href="#2-1-API가-제공되는-경우" class="headerlink" title="2.1 API가 제공되는 경우"></a>2.1 API가 제공되는 경우</h2><ul>
-<li>API로 request를 던지고 JSON format으로 데이터를 받아 pandas/csv로 저장</li>
-</ul>
-<h2 id="2-2-API가-제공되지-않는-경우"><a href="#2-2-API가-제공되지-않는-경우" class="headerlink" title="2.2 API가 제공되지 않는 경우"></a>2.2 API가 제공되지 않는 경우</h2><ul>
-<li>request를 던지고 response로 받은 HTML 코드(문자열 형태)를 CSS selector를 이용해 특정 element의 정보만 가져와서 pandas/csv로 데이터 저장</li>
-<li>BeautifulSoup: str을 CSS selector로 크롤링할 수 있게 만들어주는 패키지<ul>
-<li>HTML 문자열을 parsing해서 변환해주면 CSS selector로 데이터를 가져올 수 있음</li>
-</ul>
-</li>
-</ul>
-<h1 id="3-Selenium-패키지를-이용한-crawling"><a href="#3-Selenium-패키지를-이용한-crawling" class="headerlink" title="3. Selenium 패키지를 이용한 crawling"></a>3. Selenium 패키지를 이용한 crawling</h1><ul>
-<li>request로 crawling이 불가능한 동적웹페이지에 사용<ul>
-<li>버튼을 클릭했을 때 나타난 페이지의 특정 element 가져오기 가능</li>
-</ul>
-</li>
-<li>CSS selector나 xpath를 사용<br>(강사님은 CSS selector가 더 쉽고 자주 이용)</li>
-</ul>
-<h1 id="4-Scrapy를-이용한-crawling"><a href="#4-Scrapy를-이용한-crawling" class="headerlink" title="4. Scrapy를 이용한 crawling"></a>4. Scrapy를 이용한 crawling</h1><ul>
-<li>scrapy: python library for web crawling, 사용이 좀 더 복잡</li>
-<li>CSS selector, xpath를 사용함</li>
-<li>requests와 selenium을 모아서 전략적으로 사용하는 라이브러리</li>
-</ul>
-<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
-<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
-</ul>
-
+        <div class="pagination-next">
+            <a class="is-flex-grow has-text-black-ter" href="/tags/web-crawling/page/2/">Next</a>
         </div>
-        
-        
-        
-    </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link is-current" href="/tags/web-crawling/">1</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/tags/web-crawling/page/2/">2</a></li>
+            
+        </ul>
+    </nav>
 </div>
-
-
-
-
-
-
-
-
 </div>
                 
 
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
     
         
 <div class="card widget">
@@ -3140,7 +3083,7 @@ Dog 0
 
     
     
-        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        <div class="column-right-shadow is-hidden-widescreen ">
         
             
 <div class="card widget">
@@ -3349,305 +3292,6 @@ Dog 0
     </div>
 </div>
         
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Tags
-            </h3>
-            <ul class="menu-list">
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/CSS/">
-                        <span class="level-start">
-                            <span class="level-item">CSS</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Database/">
-                        <span class="level-start">
-                            <span class="level-item">Database</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">5</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/MySQL/">
-                        <span class="level-start">
-                            <span class="level-item">MySQL</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">4</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/SQL/">
-                        <span class="level-start">
-                            <span class="level-item">SQL</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">4</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/TIL-Today-I-Learned/">
-                        <span class="level-start">
-                            <span class="level-item">TIL(Today I Learned)</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">74</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/algorithm/">
-                        <span class="level-start">
-                            <span class="level-item">algorithm</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/crawling/">
-                        <span class="level-start">
-                            <span class="level-item">crawling</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">6</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/data-analysis/">
-                        <span class="level-start">
-                            <span class="level-item">data analysis</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">23</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/email/">
-                        <span class="level-start">
-                            <span class="level-item">email</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/hexo/">
-                        <span class="level-start">
-                            <span class="level-item">hexo</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/html/">
-                        <span class="level-start">
-                            <span class="level-item">html</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/javascript/">
-                        <span class="level-start">
-                            <span class="level-item">javascript</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/jupyter-notebook/">
-                        <span class="level-start">
-                            <span class="level-item">jupyter notebook</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/math/">
-                        <span class="level-start">
-                            <span class="level-item">math</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">23</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/mathjax/">
-                        <span class="level-start">
-                            <span class="level-item">mathjax</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/programming/">
-                        <span class="level-start">
-                            <span class="level-item">programming</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">25</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/python/">
-                        <span class="level-start">
-                            <span class="level-item">python</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">13</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/selenium/">
-                        <span class="level-start">
-                            <span class="level-item">selenium</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">4</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/web/">
-                        <span class="level-start">
-                            <span class="level-item">web</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">12</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/web-crawling/">
-                        <span class="level-start">
-                            <span class="level-item">web_crawling</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">6</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/미적분/">
-                        <span class="level-start">
-                            <span class="level-item">미적분</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/선형대수/">
-                        <span class="level-start">
-                            <span class="level-item">선형대수</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">23</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/알고리즘/">
-                        <span class="level-start">
-                            <span class="level-item">알고리즘</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/알고리즘-문제/">
-                        <span class="level-start">
-                            <span class="level-item">알고리즘_문제</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/웹크롤링/">
-                        <span class="level-start">
-                            <span class="level-item">웹크롤링</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">6</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/확률통계/">
-                        <span class="level-start">
-                            <span class="level-item">확률통계</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-        
         </div>
     
 </div>
@@ -3657,7 +3301,7 @@ Dog 0
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right is-sticky">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
     
         
 <div class="card widget">
@@ -3862,305 +3506,6 @@ Dog 0
         </li>
         
         </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Tags
-            </h3>
-            <ul class="menu-list">
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/CSS/">
-                        <span class="level-start">
-                            <span class="level-item">CSS</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Database/">
-                        <span class="level-start">
-                            <span class="level-item">Database</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">5</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/MySQL/">
-                        <span class="level-start">
-                            <span class="level-item">MySQL</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">4</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/SQL/">
-                        <span class="level-start">
-                            <span class="level-item">SQL</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">4</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/TIL-Today-I-Learned/">
-                        <span class="level-start">
-                            <span class="level-item">TIL(Today I Learned)</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">74</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/algorithm/">
-                        <span class="level-start">
-                            <span class="level-item">algorithm</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/crawling/">
-                        <span class="level-start">
-                            <span class="level-item">crawling</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">6</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/data-analysis/">
-                        <span class="level-start">
-                            <span class="level-item">data analysis</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">23</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/email/">
-                        <span class="level-start">
-                            <span class="level-item">email</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/hexo/">
-                        <span class="level-start">
-                            <span class="level-item">hexo</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/html/">
-                        <span class="level-start">
-                            <span class="level-item">html</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/javascript/">
-                        <span class="level-start">
-                            <span class="level-item">javascript</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/jupyter-notebook/">
-                        <span class="level-start">
-                            <span class="level-item">jupyter notebook</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/math/">
-                        <span class="level-start">
-                            <span class="level-item">math</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">23</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/mathjax/">
-                        <span class="level-start">
-                            <span class="level-item">mathjax</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/programming/">
-                        <span class="level-start">
-                            <span class="level-item">programming</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">25</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/python/">
-                        <span class="level-start">
-                            <span class="level-item">python</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">13</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/selenium/">
-                        <span class="level-start">
-                            <span class="level-item">selenium</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">4</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/web/">
-                        <span class="level-start">
-                            <span class="level-item">web</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">12</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/web-crawling/">
-                        <span class="level-start">
-                            <span class="level-item">web_crawling</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">6</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/미적분/">
-                        <span class="level-start">
-                            <span class="level-item">미적분</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/선형대수/">
-                        <span class="level-start">
-                            <span class="level-item">선형대수</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">23</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/알고리즘/">
-                        <span class="level-start">
-                            <span class="level-item">알고리즘</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/알고리즘-문제/">
-                        <span class="level-start">
-                            <span class="level-item">알고리즘_문제</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/웹크롤링/">
-                        <span class="level-start">
-                            <span class="level-item">웹크롤링</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">6</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/확률통계/">
-                        <span class="level-start">
-                            <span class="level-item">확률통계</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-            </ul>
         </div>
     </div>
 </div>
@@ -4177,7 +3522,7 @@ Dog 0
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="우와팬더의 블로그" height="28">
+                    <img src="/images/logo.png" alt="우와팬더의 블로그" height="28">
                 
                 </a>
                 <p class="is-size-7">

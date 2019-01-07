@@ -98,7 +98,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="우와팬더의 블로그" height="28">
+                <img src="/images/logo.png" alt="우와팬더의 블로그" height="28">
             
             </a>
         </div>
@@ -156,7 +156,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-11-02T04:30:04.000Z">2018-11-02</time>
+                <time class="level-item has-text-grey" datetime="2018-11-21T02:26:04.000Z">2018-11-21</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
@@ -166,7 +166,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 350 words)
+                    8 minutes read (About 1175 words)
                 </span>
                 
             </div>
@@ -174,582 +174,552 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/11/02/math-lin_alg-012/">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E12</a>
+                <a class="has-link-black-ter" href="/2018/11/21/math-lin_alg-017/">&lt;선형대수&gt; 선형대수와 선형회귀모형(linear regression)</a>
             
         </h1>
         <div class="content">
-            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 12편 내용을 간략하게 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/P2LTAUO1TdA" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E12-Change-of-basis"><a href="#E12-Change-of-basis" class="headerlink" title="E12. Change of basis"></a>E12. Change of basis</h2><h2 id="1-개념"><a href="#1-개념" class="headerlink" title="1. 개념"></a>1. 개념</h2><ul>
-<li>우리의 basis vector(표준 좌표계): $\hat i, \hat j$<ul>
-<li>$\hat i, \hat j$에 scalar를 곱하고 서로 더해(scaling) 특정 벡터를 나타낼 수 있음</li>
+            <h2 id="1-선형-회귀-모형-linear-regression"><a href="#1-선형-회귀-모형-linear-regression" class="headerlink" title="1. 선형 회귀 모형(linear regression)"></a><strong>1. 선형 회귀 모형(linear regression)</strong></h2><h3 id="1-1-선형-회귀-모형이란"><a href="#1-1-선형-회귀-모형이란" class="headerlink" title="1.1 선형 회귀 모형이란"></a>1.1 선형 회귀 모형이란</h3><ul>
+<li>선형 회귀 모형이란 독립 변수 $x$에서 종속 변수 $y$를 예측하기 위한 방법의 하나로 독립 변수 벡터 $x$와 가중치 벡터 $w$의 가중합으로 $y$와 가장 비슷한 값 $\hat y$을 계산</li>
 </ul>
-</li>
-<li>Jennifer의 basis vector(alternative coordinate system) $\hat b_1, \hat b_2$를 이용해 특정 벡터를 나타내면 좌표값이 완전히 달라짐</li>
+<script type="math/tex; mode=display">\hat y = w_1x_1 + \cdots + w_Nx_N</script><script type="math/tex; mode=display">\hat y = w^Tx</script><h3 id="1-2-잔차"><a href="#1-2-잔차" class="headerlink" title="1.2 잔차"></a>1.2 잔차</h3><ul>
+<li>선형 회귀 분석의 결과는 가중치 벡터 $w$로 나타나고 예측치는 이 가중치 벡터를 사용한 벡터 $x_i$의 가중합 $w_Tx_i$가됨</li>
+<li>잔차(residual) 혹은 오차(error): 예측치 $\hat {y_i}$와 실제값(target) $y_i$의 차이</li>
 </ul>
-<h2 id="2-좌표계-변환"><a href="#2-좌표계-변환" class="headerlink" title="2. 좌표계 변환"></a>2. 좌표계 변환</h2><ul>
-<li><p>Jennifer가 말하는 좌표를 우리의 좌표계로 표현/이해하려면?</p>
-<ul>
-<li>우리의 basis vector에서 Jennifer의 basis vector로의 “선형변환”</li>
-<li>e.g. Jennifer의 basis vector가 표준좌표계에서$\begin{bmatrix}2\\1\end{bmatrix}, \begin{bmatrix}-1\\1\end{bmatrix}$일 경우($A = \begin{bmatrix}2&amp;-1\\1&amp;1 \end{bmatrix}$) 제니퍼가 말하는 벡터 $\begin{bmatrix}2\\1\end{bmatrix}$는 표준좌표계의 어떤 벡터인가?<script type="math/tex; mode=display">\begin{bmatrix}2&-1\\1&1 \end{bmatrix}\begin{bmatrix}2\\1\end{bmatrix}=\begin{bmatrix}3\\3\end{bmatrix}</script></li>
+<script type="math/tex; mode=display">e_i = y_i - \hat {y_i} = y_i - w^Tx_i</script><h3 id="1-3-잔차-제곱합-RSS-residual-sum-of-squares"><a href="#1-3-잔차-제곱합-RSS-residual-sum-of-squares" class="headerlink" title="1.3 잔차 제곱합(RSS: residual sum of squares)"></a>1.3 잔차 제곱합(RSS: residual sum of squares)</h3><ul>
+<li>잔차의 크기는 잔차 벡터의 잔차제곱합을 이용하여 구하며, $e^Te$로 나타냄</li>
 </ul>
-</li>
-<li><p>우리의 좌표계의 벡터(좌표)가 Jennifer의 좌표계에서는 어떻게 표현/이해되나?</p>
-<ul>
-<li>위의 “선형변환” matrix의 역을 취함 (Inverse change of basis matrix)</li>
-<li>e.g. 우리 표준좌표계의 $\begin{bmatrix}3\\2\end{bmatrix}$는 Jennifer의 좌표계에서는 어떤 벡터인가?<script type="math/tex; mode=display">\begin{bmatrix}2&-1\\1&1 \end{bmatrix}^{-1}\begin{bmatrix}3\\2\end{bmatrix}=\begin{bmatrix}5/3\\1/3\end{bmatrix}</script></li>
+<script type="math/tex; mode=display">\sum_{i=1}^N e_i^2 = \sum_{i=1}^N {(y_i - w^Tx_i)^2} = e^Te = (y-Xw)^T(y-Xw)</script><h2 id="2-연립방정식과-역행렬"><a href="#2-연립방정식과-역행렬" class="headerlink" title="2. 연립방정식과 역행렬"></a><strong>2. 연립방정식과 역행렬</strong></h2><p>그렇다면 가중치 벡터 $w$는 어떻게 구하는가? 연립방정식과 (의사)역행렬을 이용해 선형 예측 모형의 가중치 벡터를 구하는 방법을 알아보자.</p>
+<h3 id="2-1-선형-연립-방정식-system-of-linear-equations"><a href="#2-1-선형-연립-방정식-system-of-linear-equations" class="headerlink" title="2.1 선형 연립 방정식(system of linear equations)"></a>2.1 선형 연립 방정식(system of linear equations)</h3><ul>
+<li>선형연립 방정식: $x_1, x_2, \cdots, x_M$이라는 $M$개의 미지수를 가지는 $N$개의 선형 방정식</li>
 </ul>
-</li>
-</ul>
-<p>우리 좌표계의 행렬 변환 ⇆ Jennifer의 행렬 변환: $A^{-1}MA$</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-11-01T13:28:04.000Z">2018-11-01</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 90 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/11/01/math-lin_alg-011/">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E11</a>
-            
-        </h1>
-        <div class="content">
-            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 11편 내용을 간략하게 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/BaM7OCEm3G0?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E11-Cross-products-in-the-light-of-linear-transformations"><a href="#E11-Cross-products-in-the-light-of-linear-transformations" class="headerlink" title="E11. Cross products in the light of linear transformations"></a>E11. Cross products in the light of linear transformations</h2><p>11강의 내용은 요약을 아래의 캡쳐 이미지로 대신합니다.</p>
-<img src="/2018/11/01/math-lin_alg-011/3b1b_11.jpeg">
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-11-01T13:15:04.000Z">2018-11-01</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 342 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/11/01/math-lin_alg-010/">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E10</a>
-            
-        </h1>
-        <div class="content">
-            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 10편 내용을 간략하게 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/Leu6i7WJeinw?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E10-Cross-products-vec-v-times-vec-w"><a href="#E10-Cross-products-vec-v-times-vec-w" class="headerlink" title="E10. Cross products: $\vec v \times \vec w$"></a>E10. Cross products: $\vec v \times \vec w$</h2><h2 id="1-What-is-cross-product"><a href="#1-What-is-cross-product" class="headerlink" title="1. What is cross product?"></a>1. What is cross product?</h2><ul>
-<li>2차원 벡터의 경우, $\vec v \times \vec w = Area \; of\; parallelogram$</li>
-<li>$\vec v$가 $\vec w$의 오른쪽에 위치하면 $\vec v \times \vec w \gt 0$</li>
-<li>$\vec v$가 $\vec w$의 왼쪽에 위치하면 $\vec v \times \vec w \lt 0$</li>
-<li>$\vec v \times \vec w = - \; \vec w \times \vec v$</li>
-</ul>
-<h2 id="2-Cross-product-computation"><a href="#2-Cross-product-computation" class="headerlink" title="2. Cross product computation"></a>2. Cross product computation</h2><ul>
-<li>$\vec v$와 $\vec w$의 좌표를 행렬의 column으로 넣고 행렬식 계산</li>
-<li>e.g. $\vec v = \begin{bmatrix} 3 \\ 1 \end{bmatrix}, \vec v = \begin{bmatrix} 2 \\ -1 \end{bmatrix}$일 경우:  $\;\vec v \times \vec w = det\Bigl(\begin{bmatrix}3 &amp; 2 \\ 1 &amp; -1 \end{bmatrix}\Bigr)$</li>
-<li>두 벡터가 직교에 가까울수록 외적값이 커짐</li>
-</ul>
-<h2 id="3-외적의-정확한-의미-vec-v-times-vec-w-vec-p"><a href="#3-외적의-정확한-의미-vec-v-times-vec-w-vec-p" class="headerlink" title="3. 외적의 정확한 의미: $\vec v \times \vec w = \vec p$"></a>3. 외적의 정확한 의미: $\vec v \times \vec w = \vec p$</h2><ul>
-<li>개념적으로는 두 벡터가 이루는 평행사변형의 면적이라고 볼 수 있지만 정확한 외적의 개념은 두 개의 3차원 벡터로 새로운 3차원 벡터를 만들어내는 것(결과가 면적이 아닌 벡터임)</li>
-<li>$\vec p$의 길이가 두 벡터의 면적과 같고, $\vec p$의 방향은 평행사변형에 직교함(perpendicular)<ul>
-<li>직교의 규칙: 오른손 규칙 (엄지, 검지, 중지가 $\vec p, \vec v, \vec w$)</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-11-01T12:15:04.000Z">2018-11-01</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 248 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/11/01/math-lin_alg-009/">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E9</a>
-            
-        </h1>
-        <div class="content">
-            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 9편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/LyGKycYT2v0?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E9-Dot-products-and-duality"><a href="#E9-Dot-products-and-duality" class="headerlink" title="E9. Dot products and duality"></a>E9. Dot products and duality</h2><h2 id="1-Dot-product-내적-vec-v-cdot-vec-w"><a href="#1-Dot-product-내적-vec-v-cdot-vec-w" class="headerlink" title="1. Dot product(내적): $\vec v \cdot \vec w$"></a>1. Dot product(내적): $\vec v \cdot \vec w$</h2><ul>
-<li>Dot product 개념: 두 벡터 $\vec v, \vec w$의 같은 위치의 원소끼리 곱해 더함, 결과는 scalar</li>
-<li>기하학적인 의미: $\vec w$를 $\vec v$에 project한 벡터의 길이와 $\vec v$의 길이를 곱합<ul>
-<li>$\vec v \cdot \vec w = (length \;of\; projected\; \vec w)(length \; of \; \vec v)$</li>
-<li>이때 순서는 중요하지 않음($\vec w$에 $\vec v$를 투사해도 결과는 같음)</li>
-</ul>
-</li>
-<li>projected $\vec w$가 $\vec v$의 방향과 반대이면 dot product는 음수</li>
-<li>projected $\vec w$가 $\vec v$의 방향과 같으면 dot product는 양수</li>
-<li>projected $\vec w$가 $\vec v$의 방향과 수직(perpendicular)이면 dot product는 음수</li>
-</ul>
-<h2 id="2-Duality"><a href="#2-Duality" class="headerlink" title="2. Duality"></a>2. Duality</h2><ul>
-<li>Duality: netural-but surprising correspondence between two mathematical thing</li>
-<li>$matrix-vector\; product \Leftrightarrow Dot\;product$<ul>
-<li>$1 \cdot 2$ matrix와 2차원 vector를 생각할 것  </li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-11-01T11:56:04.000Z">2018-11-01</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 166 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/11/01/math-lin_alg-008/">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E8</a>
-            
-        </h1>
-        <div class="content">
-            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 8편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/v8VSDg_WQlA" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E8-Nonsquare-matrices-as-transformation-between-dimensions"><a href="#E8-Nonsquare-matrices-as-transformation-between-dimensions" class="headerlink" title="E8. Nonsquare matrices as transformation between dimensions"></a>E8. Nonsquare matrices as transformation between dimensions</h2><ul>
-<li>$n \times m$ 행렬에서 column $m$은 입력 기저벡터의 수, row $n$은 기저벡터의 변환 후 좌표값 개수(차원수)를 나타냄</li>
-<li>2차원에서 3차원으로 가는 $3 \times 2$ matrix 곱은 평면이 3차원상에서 비틀려 나타나는 것과 유사하고, 3차원에서 2차원으로 가는 $3 \times 2$ matrix 곱은 3차원을 투사해서 평면으로 찌그러트려보는 것과 유사</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-30T12:48:04.000Z">2018-10-30</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 331 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/30/math-lin_alg-007/">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E7</a>
-            
-        </h1>
-        <div class="content">
-            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 7편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/uQhTuRlWMxw" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E7-Inverse-matrices-column-space-and-null-space"><a href="#E7-Inverse-matrices-column-space-and-null-space" class="headerlink" title="E7. Inverse matrices, column space and null space"></a>E7. Inverse matrices, column space and null space</h2><h2 id="1-Usefulness-of-matrices"><a href="#1-Usefulness-of-matrices" class="headerlink" title="1. Usefulness of matrices"></a>1. Usefulness of matrices</h2><ul>
-<li>특정 방정식계(system of equations)를 풀 수 있음 ⇦ Linear system of equations</li>
-<li>system of equations: unknown variables &amp; equations     <script type="math/tex; mode=display">
-\begin{matrix} 2x+5y+3z = -3 \\ 4x+0y+8z=0 \\ 1x+3y+0z=2 \end{matrix} \to \begin{bmatrix} 2&5&3 \\ 4&0&8 \\ 1&3&0 \end{bmatrix}\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} -3 \\ 0 \\ 2 \end{bmatrix} \to A\vec x = \vec v</script></li>
-</ul>
-<h2 id="2-A-vec-x-vec-v-의-해-vec-x-를-구하는-방법"><a href="#2-A-vec-x-vec-v-의-해-vec-x-를-구하는-방법" class="headerlink" title="2. $A\vec x = \vec v$의 해 $\vec x$를 구하는 방법"></a>2. $A\vec x = \vec v$의 해 $\vec x$를 구하는 방법</h2><h3 id="1-when-det-A-neq-0-A-의-역행렬이-존재-⇨-Inverse-transformation"><a href="#1-when-det-A-neq-0-A-의-역행렬이-존재-⇨-Inverse-transformation" class="headerlink" title="1) when $det(A) \neq 0$: $A$의 역행렬이 존재 ⇨ Inverse transformation"></a>1) when $det(A) \neq 0$: $A$의 역행렬이 존재 ⇨ Inverse transformation</h3><ul>
-<li>Inverse matrices(역행렬) $A^{-1}$: $A^{-1}A = I$</li>
-</ul>
-<script type="math/tex; mode=display">
-\begin{align}
-A^{-1}A \vec x & = A^{-1}\vec v \\
-\vec x & = A^{-1}\vec v \\
-\end{align}</script><h3 id="2-when-det-A-0-A-의-역행렬이-존재하지-않음"><a href="#2-when-det-A-0-A-의-역행렬이-존재하지-않음" class="headerlink" title="2) when $det(A) = 0$: $A$의 역행렬이 존재하지 않음"></a>2) when $det(A) = 0$: $A$의 역행렬이 존재하지 않음</h3><ul>
-<li>rank: number of dimensions in the output of transformation<ul>
-<li>변환의 결과가 선, 즉 1차원이라면 rank = 1</li>
-<li>변환의 결과가 평면 상의 벡터들이라면 rank = 2 </li>
-</ul>
-</li>
-<li><p>$n \times n$ 행렬에서 rank가 $n$보다 작을 경우, 즉 full rank가 아닐 경우, 공간이 더 작은 차원으로 축소했음을 의미</p>
-</li>
-<li><p>Column space of $A$: set of all possible outputs of $A \vec v$</p>
-<ul>
-<li>span of columns ⟺ column space</li>
-</ul>
-</li>
-<li><p>Null space(Kernel): 차원이 축소할 때 원점으로 이동되는 벡터들의 집합</p>
-</li>
-<li>$A \vec x= \begin{bmatrix} 0 \\ 0 \end{bmatrix}$인 경우 null space 모두가 해가 될 수 있음 </li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-30T12:24:04.000Z">2018-10-30</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 256 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/30/math-lin_alg-006/">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E6</a>
-            
-        </h1>
-        <div class="content">
-            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 6편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/Ip3X9LOh2dk" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E6-The-determinant"><a href="#E6-The-determinant" class="headerlink" title="E6. The determinant"></a>E6. The determinant</h2><h2 id="1-Determinant-of-transformation의-개념"><a href="#1-Determinant-of-transformation의-개념" class="headerlink" title="1. Determinant of transformation의 개념"></a>1. Determinant of transformation의 개념</h2><ul>
-<li>Determinant(행렬식): 선형변형 후 단위면적을 scaling하는 factor<ul>
-<li>2차원 변환의 determinant 값이 3이라면 특정 면적의 크기는 3배가 됨 </li>
-<li>2차원 변환의 determinant 값이 0이라면 차원을 축소시켜 직선이나 점이 됨 (면적은 0이됨)</li>
-<li>determinant 값이 음수인 경우는 방향(orientation)이 뒤집히는 것으로 볼 수 있음</li>
-</ul>
-</li>
-<li>3차원의 determinant는 단위정육면체의 부피를 scaling하는 factor<ul>
-<li>determinant 값이 음수인 경우 오른손의 규칙의 방향이 뒤집히는 것(왼손으로)으로 볼 수 있음<ul>
-<li>오른손의 규칙: 오른손의 엄지, 검지, 중지를 폈을 때 각각 $\hat k, \hat i, \hat k$에 대응함</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-Determinant-computation"><a href="#2-Determinant-computation" class="headerlink" title="2. Determinant computation"></a>2. Determinant computation</h2><ul>
-<li>2차원 행렬의 determinant: $det\Bigl(\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}\Bigr) = ad - cd$</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-30T11:55:04.000Z">2018-10-30</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 248 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/30/math-lin_alg-005/">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E5</a>
-            
-        </h1>
-        <div class="content">
-            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 5편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/rHLEWRxRGiM" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E5-Three-dimentional-linear-transformations"><a href="#E5-Three-dimentional-linear-transformations" class="headerlink" title="E5. Three-dimentional linear transformations"></a>E5. Three-dimentional linear transformations</h2><h2 id="1-3차원의-선형변환"><a href="#1-3차원의-선형변환" class="headerlink" title="1. 3차원의 선형변환"></a>1. 3차원의 선형변환</h2><ul>
-<li>3차원 기저벡터: $\hat i=\begin{bmatrix} 1\\0\\0\end{bmatrix}, \hat j=\begin{bmatrix} 0\\1\\0\end{bmatrix}, \hat k=\begin{bmatrix} 0\\0\\1\end{bmatrix}$</li>
-<li>2차원에서와 마찬가지로 각 기저벡터들이 어디로 이동하는지 좌표값을 알면 특정 벡터 $\vec v=\begin{bmatrix} x\\y\\z\end{bmatrix}=x\hat i+y\hat j+z\hat k$가 어떤 벡터로 변형되는지 파악할 수 있음</li>
-<li>e.g. 기저벡터: $\hat i, \hat j, \hat k$가 $\begin{bmatrix} 1\\0\\1\end{bmatrix}, \begin{bmatrix} 1\\1\\0\end{bmatrix}, \begin{bmatrix} 0\\0\\1\end{bmatrix}$로 이동한다고 할 때의 선형변환<ul>
-<li>각 이동한 좌표값이 행렬의 열을 구성함 </li>
+<script type="math/tex; mode=display">\begin{matrix}
+a_{11} x_1 & + \;& a_{12} x_2   &\; + \cdots + \;& a_{1M} x_M &\; = \;& b_1 \\
+a_{21} x_1 & + \;& a_{22} x_2   &\; + \cdots + \;& a_{2M} x_M &\; = \;& b_2 \\
+\vdots\;\;\; &   & \vdots\;\;\; &                & \vdots\;\;\; &     & \;\vdots \\
+a_{N1} x_1 & + \;& a_{N2} x_2   &\; + \cdots + \;& a_{NM} x_M &\; = \;& b_N \\
+\end{matrix}</script><ul>
+<li>행렬을 사용하면 아래와 같이 간단하게 표현할 수 있음<ul>
+<li>$A$: 계수행렬(coefficient matrix)</li>
+<li>$x$: 미지수벡터(unknown vector)</li>
+<li>$b$: 상수벡터(constant vector)</li>
 </ul>
 </li>
 </ul>
 <script type="math/tex; mode=display">
-\begin{align}
-  \begin{bmatrix} 1&1&0\\0&1&0\\1&0&1\end{bmatrix}
-  \begin{bmatrix}x\\y\\z\end{bmatrix} & = x\begin{bmatrix}1\\0\\1\end{bmatrix}
-  +y\begin{bmatrix}1\\1\\0\end{bmatrix}
-  +z\begin{bmatrix} 0\\0\\1\end{bmatrix} \\
-   & = \begin{bmatrix} 1x+1y+0z\\ 0x+1y+0z \\1x+0y+1z \end{bmatrix} \\
-\end{align}</script>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-30T10:37:04.000Z">2018-10-30</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 292 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/30/math-lin_alg-004/">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E4</a>
-            
-        </h1>
-        <div class="content">
-            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 4편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/XkY2DOUCWMU" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E4-Matrix-multiplication-as-composition"><a href="#E4-Matrix-multiplication-as-composition" class="headerlink" title="E4. Matrix multiplication as composition"></a>E4. Matrix multiplication as composition</h2><h2 id="1-Composition-of-linear-transformation"><a href="#1-Composition-of-linear-transformation" class="headerlink" title="1. Composition of linear transformation"></a>1. Composition of linear transformation</h2><ul>
-<li>선형변환을 한 번 하고 다시 선형변환을 하면 그 결과는 새로운 하나의 선현변환이 됨</li>
-<li>이를 행렬의 곱으로 나타낼 수 있음, 단 함수의 합성처럼 식의 왼쪽으로 곱해나가야 함</li>
-<li>e.g. 첫번째 선형변환을 $\begin{bmatrix} 0 &amp; -1 \\ 1 &amp; 0\end{bmatrix}$(rotation), 두번째 선형변환을 $\begin{bmatrix} 1 &amp; 1 \\ 0 &amp; 1\end{bmatrix}$(shear)라고 할 때 그 composition<script type="math/tex; mode=display">
-\begin{bmatrix} 1 & 1 \\ 0 & 1\end{bmatrix}\Bigl(\begin{bmatrix} 0 & -1 \\ 1 & 0\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix} \Bigr) = \begin{bmatrix} 1 & -1 \\ 1 & 0\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}</script></li>
-<li>이 때 composition 행렬을 두 원본 행렬의 곱(product)이라고 할 수 있음 </li>
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1M} \\
+a_{21} & a_{22} & \cdots & a_{2M} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{N1} & a_{N2} & \cdots & a_{NM} \\
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_M
+\end{bmatrix}
+ =
+\begin{bmatrix}
+b_1 \\ b_2 \\ \vdots \\ b_N
+\end{bmatrix}</script><script type="math/tex; mode=display">Ax  = b</script><h3 id="2-2-역행렬"><a href="#2-2-역행렬" class="headerlink" title="2.2 역행렬"></a>2.2 역행렬</h3><ul>
+<li>역행렬($A^{-1}$): 정방행렬 A에 대해 다음 관계를 만족하는 정방 행렬 ($I$는 단위 행렬)</li>
 </ul>
-<h2 id="2-Matrix-multiplication"><a href="#2-Matrix-multiplication" class="headerlink" title="2. Matrix multiplication"></a>2. Matrix multiplication</h2><ul>
-<li>$M_1 = \begin{bmatrix} e &amp; f \\ g &amp; h\end{bmatrix}$과 $M_2 = \begin{bmatrix} a &amp; b \\ c &amp; d\end{bmatrix}$의 곱:<script type="math/tex; mode=display">
-\begin{bmatrix} a & b \\ c & d\end{bmatrix} \begin{bmatrix} e & f \\ g & h\end{bmatrix} = \begin{bmatrix} ae+bg & af+bh \\ ce+dg & cf+dh \end{bmatrix}</script></li>
-<li>교환법칙은 성립하지 않음: $AB \neq BA$ (곱하는 순서는 중요하다!)</li>
-<li>결합법칙은 성립함: $(AB)C = A(BC)$ (Assiciativity)</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-30T06:12:04.000Z">2018-10-30</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 308 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/30/math-lin_alg-003/">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E3</a>
-            
-        </h1>
-        <div class="content">
-            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 3편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/kYB8IZa5AuE" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E3-Linear-transformation-and-matrices"><a href="#E3-Linear-transformation-and-matrices" class="headerlink" title="E3. Linear transformation and matrices"></a>E3. Linear transformation and matrices</h2><h2 id="1-Linear-transformation란"><a href="#1-Linear-transformation란" class="headerlink" title="1. Linear transformation란"></a>1. Linear transformation란</h2><ul>
-<li>특정 벡터를 다른 벡터로 바꾸는 변환 (input vector → output vector)</li>
-<li>Linear 변환의 속성<ul>
-<li>Lines remain lines </li>
-<li>Origin remains fixed</li>
-<li>Grid lines remain parallel and evenly spaced</li>
+<script type="math/tex; mode=display">A^{-1}A = AA^{-1} = I</script><ul>
+<li>역행렬의 성질 ($A, B, C$모두 역행렬이 존재한다고 가정)<ul>
+<li>전치 행렬의 역행렬은 역행렬의 전치 행렬과 같다. 따라서 대칭 행렬의 역행렬도 대칭 행렬이다.<script type="math/tex; mode=display">(A^T)^{-1} = (A^{-1})^T</script></li>
+<li>두 개 이상의 정방 행렬의 곱은 같은 크기의 정방 행렬이 되는데, 이러한 행렬의 곱의 역행렬은 다음 성질이 성립한다.<script type="math/tex; mode=display">(AB)^{-1} = B^{-1}A^{-1}</script><script type="math/tex; mode=display">(ABC)^{-1} = C^{-1}B^{-1}A^{-1}</script></li>
+<li>역행렬은 행렬식이 0이 아닌 경우에만 존재한다.</li>
 </ul>
 </li>
 </ul>
-<h2 id="2-Linear-transformation-계산"><a href="#2-Linear-transformation-계산" class="headerlink" title="2. Linear transformation 계산"></a>2. Linear transformation 계산</h2><ul>
-<li>기저벡터 $\hat i$와 $\hat j$의 변형위치를 알면 임의의 벡터 $\vec v$를 추론할 수 있음<ul>
-<li>e.g. $\vec v = -1\hat i + 2\hat j$에서 $\hat i$와 $\hat j$가 $\begin{bmatrix} 1 \\ 2 \end{bmatrix},  \begin{bmatrix} 3 \\ 0 \end{bmatrix}$로 변형된 경우 변환된 $\vec v$ 구하기</li>
+<h3 id="2-3-역행렬과-선형-연립-방정식의-해"><a href="#2-3-역행렬과-선형-연립-방정식의-해" class="headerlink" title="2.3 역행렬과 선형 연립 방정식의 해"></a>2.3 역행렬과 선형 연립 방정식의 해</h3><ul>
+<li>행렬 $A$의 역행렬이 존재한다면 선형 연립 방정식의 해는 다음과 같이 구함</li>
 </ul>
-</li>
-</ul>
-<script type="math/tex; mode=display">
-\begin{align}
-\vec v & = -1(Transformed \; \hat i) + 2(Transformed\; \hat j)\\
- & = -1\begin{bmatrix}1\\2\end{bmatrix} + -2\begin{bmatrix}3\\0\end{bmatrix}\\
- & = \begin{bmatrix} -1(1)+2(3) \\ 1(-2)+2(0) \end{bmatrix}\\
- & = \begin{bmatrix} 5 \\ 2 \end{bmatrix}
+<script type="math/tex; mode=display">\begin{align}
+Ax & = b \\
+A^{-1}Ax & = A^{-1}b \\
+Ix & = A^{-1}b \\
+x & = A^{-1}b \\
 \end{align}</script><ul>
-<li>일반화: $\vec v = x\hat i + y\hat j = \begin{bmatrix} x \\ y \end{bmatrix}$에서 $\hat i$와 $\hat j$가 $\begin{bmatrix} a \\ c \end{bmatrix},  \begin{bmatrix} b \\ d \end{bmatrix}$로 변형된 경우 변환된 벡터 구하기</li>
+<li>역행렬이 존재할 때만 (행렬식이 0이 아닌 경우에만) 구할 수 있음</li>
 </ul>
-<script type="math/tex; mode=display">
-\begin{bmatrix} a & b \\ c & d\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix} = 
-x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} = \begin{bmatrix} ax+by \\ cx+dy \end{bmatrix}</script><p><code>⇒ 행렬-벡터 곱셈은 선형 변환을 계산하는 방법이라고 할 수 있음</code></p>
+<h3 id="2-4-최소-자승-문제-Least-Square-Problem"><a href="#2-4-최소-자승-문제-Least-Square-Problem" class="headerlink" title="2.4 최소 자승 문제 (Least Square Problem)"></a>2.4 최소 자승 문제 (Least Square Problem)</h3><h4 id="미지수의-수와-방정식의-수를-고려한-연립-방정식의-종류"><a href="#미지수의-수와-방정식의-수를-고려한-연립-방정식의-종류" class="headerlink" title="미지수의 수와 방정식의 수를 고려한 연립 방정식의 종류"></a>미지수의 수와 방정식의 수를 고려한 연립 방정식의 종류</h4><ol>
+<li>방정식의 수와 미지수의 수가 같음 ($N = M$)<ul>
+<li>정방행렬의 경우</li>
+</ul>
+</li>
+<li>방정식의 수 &lt; 미지수의 수 ($N &lt; M$)<ul>
+<li>무수히 많은 해가 존재할 수 있음</li>
+</ul>
+</li>
+<li>방정식의 수 &gt; 미지수의 수 ($N &gt; M$)<ul>
+<li>해가 존재하지 않을 수 있음</li>
+</ul>
+</li>
+</ol>
+<h4 id="최소-자승-문제"><a href="#최소-자승-문제" class="headerlink" title="최소 자승 문제"></a>최소 자승 문제</h4><ul>
+<li>데이터 분석에서는 대부분 큰 데이터를 다루게 되므로 3번의 경우가 일반적이기때문에 정확한 해를 구할 수 없음</li>
+<li>아무런 답도 구할 수 없는 것 보다는 좌변과 우변을 가장 비슷하게라도 만들어주는 수를 구하는 것이 좋음</li>
+</ul>
+<script type="math/tex; mode=display">Ax \approx b</script><ul>
+<li>따라서 잔차의 크기를 최소화하는 문제로 바꾸어 풀어야 함 <br> 이는 잔차 벡터의 크기, 즉 놈을 최소화하는 것과 같음</li>
+</ul>
+<script type="math/tex; mode=display">e = Ax -b</script><script type="math/tex; mode=display">e^Te = \Vert e \Vert^2 = (Ax -b)^T(Ax-b)</script><script type="math/tex; mode=display">x = arg \min_x e^Te = arg \min_x \Vert e \Vert^2 = (Ax -b)^T(Ax-b)</script><h4 id="의사-역행렬-pseudo-inverse"><a href="#의사-역행렬-pseudo-inverse" class="headerlink" title="의사 역행렬(pseudo inverse)"></a>의사 역행렬(pseudo inverse)</h4><ul>
+<li>전치행렬을 원래 행렬에 곱해주면 정방행렬 형태가 됨 ($A^TA$ or $AA^T$)</li>
+<li>이를 이용해 최소 자승 문제를 다음과 같이 의사 역행렬 $A^+$로 풀 수 있음 </li>
+</ul>
+<script type="math/tex; mode=display">\begin{align}
+Ax & = b \\
+A^TAx & = A^Tb \\
+(A^TA)^{-1}A^TAx & = (A^TA)^{-1}A^Tb \\
+x & = (A^TA)^{-1}A^Tb \\
+x & = A^+b \\
+\end{align}</script><ul>
+<li>의사 역행렬: $A^+ = (A^TA)^{-1}A^T$</li>
+</ul>
+<h4 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h4><ul>
+<li><a href="https://datascienceschool.net/view-notebook/3f44cfdda2874080a9aa6b034c71d5ec/" target="_blank" rel="noopener">데이터 사이언스 스쿨 - 벡터와 행렬의 연산</a></li>
+<li><a href="https://datascienceschool.net/view-notebook/927d7f7972dd434ead9d294169ae7f34/" target="_blank" rel="noopener">데이터 사이언스 스쿨 - 선형 연립방정식과 역행렬</a></li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-11-16T02:26:04.000Z">2018-11-16</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1037 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/11/16/math-lin_alg-016/">&lt;선형대수&gt; 행렬의 성질 with python</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="행렬의-부호"><a href="#행렬의-부호" class="headerlink" title="행렬의 부호"></a>행렬의 부호</h2><h3 id="1-행렬의-양-정부호-positive-definite-특성"><a href="#1-행렬의-양-정부호-positive-definite-특성" class="headerlink" title="1) 행렬의 양-정부호(positive definite) 특성"></a>1) 행렬의 양-정부호(positive definite) 특성</h3><ul>
+<li><u>영벡터가 아닌</u> 모든 벡터 $x$에 대해 다음 부등식이 성립하면 행렬 $A$가 양-정부호(positive definite)이라고 함</li>
+</ul>
+<script type="math/tex; mode=display">x^TAx>0</script><ul>
+<li>식이 등호를 포함하는 경우 양-준정부호(positive semi-definite)</li>
+</ul>
+<script type="math/tex; mode=display">x^TAx \geq 0</script><ul>
+<li>단위 행렬은 양-정부호</li>
+</ul>
+<h2 id="행렬의-크기"><a href="#행렬의-크기" class="headerlink" title="행렬의 크기"></a>행렬의 크기</h2><h3 id="1-놈-norm"><a href="#1-놈-norm" class="headerlink" title="1) 놈(norm)"></a>1) 놈(norm)</h3><ul>
+<li>행렬 $A$에 대해 다음처럼 정의되는 숫자로, 보통 $\Vert A \Vert_L$로 표기 <br>($L$은 1, 2, 또는 무한대를 많이 사용)</li>
+<li>벡터의 길이</li>
+</ul>
+<script type="math/tex; mode=display">\Vert A \Vert_L = \left( \sum_{i=1}^N \sum_{j=1}^M |a_{ij}|^L \right)^{1/L}</script><ul>
+<li>$L=2$인 $L2$놈이 많이 쓰이며, 프로베니우스 놈(Frobenius norm)이라고 불리기도 함 ($\Vert A \Vert_F$로 표기)</li>
+</ul>
+<script type="math/tex; mode=display">\Vert A \Vert = \Vert A \Vert_2 = \Vert A \Vert_F = \sqrt{\sum_{i=1}^N \sum_{j=1}^M a_{ij}^2}</script><ul>
+<li>행렬과 벡터의 놈은 항상 0과 같거나 0보다 큰 값을 가짐</li>
+<li>numpy에서는 linalg 서브패키지의 norm 명령으로 계산</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = (np.arange(<span class="number">9</span>) - <span class="number">4</span>).reshape((<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">A</span><br></pre></td></tr></table></figure>
+<pre><code>array([[-4, -3, -2],
+       [-1,  0,  1],
+       [ 2,  3,  4]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.linalg.norm(A)</span><br></pre></td></tr></table></figure>
+<pre><code>7.745966692414834
+</code></pre><h3 id="2-대각합-trace"><a href="#2-대각합-trace" class="headerlink" title="2) 대각합(trace)"></a>2) 대각합(trace)</h3><ul>
+<li>정방행렬의 대각 원소들의 합</li>
+</ul>
+<script type="math/tex; mode=display">tr(A) = a_{11} + a_{22} + \cdots + a_{NN} = \sum_{i=1}^N a_{ii}</script><ul>
+<li>대각합의 성질<ul>
+<li>스칼라를 곱하면 대각합은 스칼라와 원래의 대각합의 곱이다.<script type="math/tex; mode=display">\text{tr} (cA) = c\;\text{tr} (A)</script></li>
+<li>전치연산을 해도 대각합이 달라지지 않는다.<script type="math/tex; mode=display">\text{tr} (A^T) = \text{tr} (A)</script></li>
+<li>두 행렬의 합의 대각합은 두 행렬의 대각합의 합이다.<script type="math/tex; mode=display">\text{tr} (A + B) = \text{tr} (A) + \text{tr} (B)</script></li>
+<li>두 행렬의 곱의 대각합은 행렬의 순서를 바꾸어도 달라지지 않는다.<script type="math/tex; mode=display">\text{tr} (AB) = \text{tr} (BA)</script></li>
+<li>세 행렬의 곱의 대각합은 다음과 같이 순서를 순환시켜도 달라지지 않는다.<script type="math/tex; mode=display">\text{tr} (ABC) = \text{tr} (BCA) = \text{tr} (CAB)</script></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>마지막 두 성질은 trace trick이라고 하여 이차 형식(quadratic form)의 미분을 구하는데 유용하게 사용됨<ul>
+<li>이 두 수식에서는 $A, B, C$가 각각 정방행렬일 필요는 없고 대각합을 구하는 행렬이 정방 행렬이면 됨  </li>
+<li>이차형식의 trace trick 공식 (이차형식은 스칼라 값이기 때문에 대각합을 취해도 원래의 값과 같음)</li>
+</ul>
+</li>
+</ul>
+<script type="math/tex; mode=display">x^TAx = \text{tr}(x^TAx) = \text{tr}(Axx^T) = \text{tr}(xx^TA)</script><ul>
+<li>numpy에서는 linalg 서브패키지의 trace 명령으로 계산</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.trace(np.eye(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>3.0
+</code></pre><h3 id="3-행렬식-determinant"><a href="#3-행렬식-determinant" class="headerlink" title="3) 행렬식(determinant)"></a>3) 행렬식(determinant)</h3><ul>
+<li>정방행렬의 행렬식은 $det(A), |A|$로 표기</li>
+<li>코팩터 전개(cofactor expansion)라고 불리는 재귀적인 방법으로 정의 <br> (이 복잡한 수식과 계산 방법을 외우는 것 보다는 이해하고 넘어가는 것이 좋다고 생각된다. 어차피 손계산으로 행렬식을 구할 일은 거의 없을 것이니.)<script type="math/tex; mode=display">\det(A) = \sum_{i=1}^N \left\{ (-1)^{i+j_0}M_{i,j_0} \right\} a_{i,j_0}</script></li>
+</ul>
+<center>또는</center>
+
+<script type="math/tex; mode=display">\det(A) = \sum_{j=1}^N \left\{ (-1)^{i_0+j} M_{i_0,j} \right\} a_{i_0,j}</script><ul>
+<li><p>2차, 3차 정방행렬의 행렬식 공식<br>(특히 2×2의 행렬식 정도는 기억해두어야 한다.)</p>
+<ul>
+<li><p>2×2 행렬의 행렬식</p>
+<script type="math/tex; mode=display">\det \left( \begin{bmatrix}a&b\\c&d\end{bmatrix} \right) = ad-bc</script></li>
+<li><p>3×3 행렬의 행렬식</p>
+<script type="math/tex; mode=display">\det \left( \begin{bmatrix}a&b&c\\d&e&f\\g&h&i\end{bmatrix} \right) =aei+bfg+cdh-ceg-bdi-afh</script></li>
+</ul>
+</li>
+<li><p>행렬식의 기하학적 의미</p>
+<ul>
+<li>기하학적으로 2x2 행렬의 행렬식은 평행사변형의 넓이, 3x3 행렬의 행렬식은 육면체의 부피와 관련을 가짐</li>
+<li>자세한 내용은 다음의 포스팅을 참고 <a href="/2018/10/30/math-lin_alg-006/" title="<선형대수> 3Blue1Brown - Essence of linear algebra E6"><선형대수> 3Blue1Brown - Essence of linear algebra E6</선형대수></a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>행렬식의 성질</p>
+<ul>
+<li>전치 행렬의 행렬식은 원래의 행렬의 행렬식과 같다. </li>
+</ul>
+<script type="math/tex; mode=display">\det(A^{T}) = \det(A)</script><ul>
+<li>단위 행렬의 행렬식은 1이다.</li>
+</ul>
+<script type="math/tex; mode=display">\det(I) = 1</script><ul>
+<li>두 행렬의 곱의 행렬식은 각 행렬의 행렬식의 곱과 같다. </li>
+</ul>
+<script type="math/tex; mode=display">\det(AB) = \det(A)\det(B)</script><ul>
+<li>역행렬의 행렬식은 원래의 행렬의 행렬식의 역수와 같다. </li>
+</ul>
+<script type="math/tex; mode=display">\det(A^{-1}) = \dfrac{1}{\det(A)}</script></li>
+</ul>
+<ul>
+<li>numpy에서는 linalg 서브패키지의 det 명령으로 계산</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = np.array([[<span class="number">1</span>,<span class="number">2</span>], [<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">A</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1, 2],
+       [3, 4]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.linalg.det(A)</span><br></pre></td></tr></table></figure>
+<pre><code>-2.0000000000000004
+</code></pre><h4 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h4><ul>
+<li><a href="https://datascienceschool.net/view-notebook/d6205659aff0413797c22552947aec83/" target="_blank" rel="noopener">데이터 사이언스 스쿨 - 행렬의 성질</a></li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-11-16T01:26:04.000Z">2018-11-16</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1006 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/11/16/math-lin_alg-015/">&lt;선형대수&gt; 선형대수 기초 with python NumPy</a>
+            
+        </h1>
+        <div class="content">
+            <p>선형대수의 기초 개념과 파이썬 numpy로 구현해보는 내용을 정리해보았다.</p>
+<h2 id="데이터의-유형"><a href="#데이터의-유형" class="headerlink" title="데이터의 유형"></a>데이터의 유형</h2><h3 id="1-스칼라-scalar"><a href="#1-스칼라-scalar" class="headerlink" title="1) 스칼라(scalar)"></a>1) 스칼라(scalar)</h3><ul>
+<li>실수인 숫자 하나로 이루어진 데이터</li>
+</ul>
+<h3 id="2-벡터-vector"><a href="#2-벡터-vector" class="headerlink" title="2) 벡터(vector)"></a>2) 벡터(vector)</h3><ul>
+<li>여러 개의 숫자가 특정한 순서대로 모여있는 것</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>], [<span class="number">3</span>], [<span class="number">2</span>], [<span class="number">4</span>]])</span><br><span class="line">x</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1],
+       [3],
+       [2],
+       [4]])
+</code></pre><h3 id="3-행렬-matrix"><a href="#3-행렬-matrix" class="headerlink" title="3) 행렬(matrix)"></a>3) 행렬(matrix)</h3><ul>
+<li>벡터들의 모임, 2D array of numbers</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = np.array([[<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>], [<span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>]])</span><br><span class="line">A</span><br></pre></td></tr></table></figure>
+<pre><code>array([[11, 12, 13],
+       [21, 22, 23]])
+</code></pre><h2 id="전치연산-transpose"><a href="#전치연산-transpose" class="headerlink" title="전치연산(transpose)"></a>전치연산(transpose)</h2><ul>
+<li>행렬의 행과 열을 바꾸는 연산</li>
+<li>벡터나 행렬에 $T$라는 위첨자(super-script)를 붙여서 표기</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># T는 method가 아닌 attribute이므로 소괄호()를 붙여서 호출하지 않는다.</span></span><br><span class="line">A.T</span><br></pre></td></tr></table></figure>
+<pre><code>array([[11, 21],
+       [12, 22],
+       [13, 23]])
+</code></pre><h2 id="특수한-벡터와-행렬"><a href="#특수한-벡터와-행렬" class="headerlink" title="특수한 벡터와 행렬"></a>특수한 벡터와 행렬</h2><h3 id="1-영벡터"><a href="#1-영벡터" class="headerlink" title="1) 영벡터"></a>1) 영벡터</h3><ul>
+<li>모든 원소가 0인 N차원 벡터</li>
+</ul>
+<h3 id="2-일벡터"><a href="#2-일벡터" class="headerlink" title="2) 일벡터"></a>2) 일벡터</h3><ul>
+<li>모든 원소가 1인 N차원 벡터</li>
+</ul>
+<h3 id="3-정방-행렬-square-matrix"><a href="#3-정방-행렬-square-matrix" class="headerlink" title="3) 정방 행렬(square matrix)"></a>3) 정방 행렬(square matrix)</h3><ul>
+<li>행의 개수와 열의 개수가 같은 행렬</li>
+</ul>
+<h3 id="4-대각-행렬-diagonal-matrix"><a href="#4-대각-행렬-diagonal-matrix" class="headerlink" title="4) 대각 행렬(diagonal matrix)"></a>4) 대각 행렬(diagonal matrix)</h3><ul>
+<li>모든 비대각(off-diagonal) 요소가 0인 정방 행렬</li>
+<li>numpy에서는 diag 명령을 사용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.diag([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1, 0, 0],
+       [0, 2, 0],
+       [0, 0, 3]])
+</code></pre><h3 id="5-단위-행렬-identity-matrix"><a href="#5-단위-행렬-identity-matrix" class="headerlink" title="5) 단위 행렬(identity matrix)"></a>5) 단위 행렬(identity matrix)</h3><ul>
+<li>모든 대각 성분의 값이 1인 대각 행렬</li>
+<li>numpy에서는 identity, 혹은 eye 명령을 사용</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.identity(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.eye(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1., 0., 0., 0.],
+       [0., 1., 0., 0.],
+       [0., 0., 1., 0.],
+       [0., 0., 0., 1.]])
+</code></pre><h3 id="6-대칭-행렬-symmetric-matrix"><a href="#6-대칭-행렬-symmetric-matrix" class="headerlink" title="6) 대칭 행렬(symmetric matrix)"></a>6) 대칭 행렬(symmetric matrix)</h3><ul>
+<li>정방 행렬 중 전치 행렬과 원래의 행렬이 같은 행렬</li>
+<li>$S^T = S$</li>
+</ul>
+<h2 id="벡터와-행렬의-연산"><a href="#벡터와-행렬의-연산" class="headerlink" title="벡터와 행렬의 연산"></a>벡터와 행렬의 연산</h2><h3 id="1-벡터와-행렬의-덧셈과-뺄셈"><a href="#1-벡터와-행렬의-덧셈과-뺄셈" class="headerlink" title="1) 벡터와 행렬의 덧셈과 뺄셈"></a>1) 벡터와 행렬의 덧셈과 뺄셈</h3><ul>
+<li>같은 크기의 벡터와 행렬에서 계산이 가능하며, 같은 위치의 원소끼리(element-wise) 더하거나 뺌 </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x1 = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line">x2 = np.array([<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x1 + x2</span><br></pre></td></tr></table></figure>
+<pre><code>array([ 7,  9, 11, 13, 15])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x2 - x1</span><br></pre></td></tr></table></figure>
+<pre><code>array([5, 5, 5, 5, 5])
+</code></pre><h3 id="2-스칼라와-벡터-행렬의-곱셈"><a href="#2-스칼라와-벡터-행렬의-곱셈" class="headerlink" title="2) 스칼라와 벡터/행렬의 곱셈"></a>2) 스칼라와 벡터/행렬의 곱셈</h3><ul>
+<li>벡터($x$)나 행렬($A$)의 모든 원소에 스칼라($c$)를 곱하는 것과 같음 (스칼라배)  </li>
+</ul>
+<script type="math/tex; mode=display">c \begin{bmatrix} x_1 \\x_2 \end{bmatrix} = \begin{bmatrix} cx_1 \\cx_2 \end{bmatrix}</script><p><br></p>
+<script type="math/tex; mode=display">c \begin{bmatrix} a_{11} & a_{12}\\a_{21} & a_{22} \end{bmatrix} = \begin{bmatrix} ca_{11} & ca_{12}\\ca_{21} & ca_{22}  \end{bmatrix}</script><h3 id="3-선형-조합-linear-combination"><a href="#3-선형-조합-linear-combination" class="headerlink" title="3) 선형 조합(linear combination)"></a>3) 선형 조합(linear combination)</h3><ul>
+<li>벡터/행렬을 스칼라배한 후 더하거나 뺀 것으로, 벡터나 행렬을 선형조합해도 그 크기는 변하지 않음</li>
+</ul>
+<script type="math/tex; mode=display">c_1x_1 + c_2x_2 + \cdots + c_Lx_L = x</script><script type="math/tex; mode=display">c_1A_1 + c_2A_2 + \cdots + c_LA_L = x</script><h3 id="4-벡터와-벡터의-곱셈"><a href="#4-벡터와-벡터의-곱셈" class="headerlink" title="4) 벡터와 벡터의 곱셈"></a>4) 벡터와 벡터의 곱셈</h3><ul>
+<li>내적(inner product, dot product)</li>
+<li>$x^Ty$ 혹은 $x \cdot y$</li>
+<li>앞을 행벡터, 뒤를 열벡터로 두고 같은 위치의 원소들을 각각 곱해 모두 더해 스칼라 값으로 만듦</li>
+</ul>
+<script type="math/tex; mode=display">x^Ty = \begin{bmatrix}x_1 & x_2 & \cdots&  x_N \end{bmatrix}\begin{bmatrix}y_1 \\ y_2 \\ \vdots \\  y_N \end{bmatrix} = x_1y_1 + \cdots + x_Ny_N = \sum_{i=1}^N x_iy_i</script><ul>
+<li>가중합(weighted sum)을 벡터와 벡터의 곱셈으로 계산할 수 있음</li>
+</ul>
+<script type="math/tex; mode=display">w_1x_1 + \cdots + w_Nx_N = \sum_{i=1}^N w_ix_i = w^Tx</script><ul>
+<li>벡터의 내적은 두 벡터간의 유사도(similarity)를 계산하는 데에도 이용 (유사할수록 내적이 커짐)</li>
+</ul>
+<h3 id="5-행렬과-행렬의-곱셈"><a href="#5-행렬과-행렬의-곱셈" class="headerlink" title="5) 행렬과 행렬의 곱셈"></a>5) 행렬과 행렬의 곱셈</h3><ul>
+<li>행렬 $A$와 $B$의 곱을 행렬 $C$라고 할 때, $c_{ij}$의 값은 A행렬의 i번째 행벡터 $a_i^T$와 $B$행렬의 $j$번째 열벡터 $b_j$의 내적</li>
+</ul>
+<script type="math/tex; mode=display">C = AB \to c_{ij} = a_i^Tb_j</script><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line">B = np.array([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>]])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1, 2, 3],
+       [4, 5, 6]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1, 2],
+       [3, 4],
+       [5, 6]])
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C = np.dot(A, B)</span><br><span class="line">C</span><br></pre></td></tr></table></figure>
+<pre><code>array([[22, 28],
+       [49, 64]])
+</code></pre><h3 id="6-행렬의-계산-법칙"><a href="#6-행렬의-계산-법칙" class="headerlink" title="6) 행렬의 계산 법칙"></a>6) 행렬의 계산 법칙</h3><ul>
+<li>행렬의 곱셈은 교환법칙이 성립하지 않음</li>
+</ul>
+<script type="math/tex; mode=display">AB \neq BA</script><ul>
+<li>행렬의 덧셈에 대한 분배 법칙은 성립함</li>
+</ul>
+<script type="math/tex; mode=display">A(B+C) = AB + AC</script><script type="math/tex; mode=display">(A+B)C = AC + BC</script><ul>
+<li>전치 연산도 덧셈/뺄셈에 대해 분배 법칙이 성립</li>
+</ul>
+<script type="math/tex; mode=display">(A + B)^T = A^T + B^T</script><ul>
+<li>전체 연산의 곱셈의 경우 분배법칙이 성립하지만 전치 연산이 분배되면서 곱셈의 순서가 바뀜</li>
+</ul>
+<script type="math/tex; mode=display">(AB)^T = B^TA^T</script><script type="math/tex; mode=display">(ABC)^T = C^TB^TA^T</script><ul>
+<li>연속된 행렬의 곱셈은 계산 순서를 임의로 해도 상관 없음</li>
+</ul>
+<script type="math/tex; mode=display">ABC = (AB)C = A(BC)</script><script type="math/tex; mode=display">ABCD = ((AB)C)D = (AB)(CD) = A(BCD) = A(BC)D</script><ul>
+<li>어떤 정방 행렬이든 단위 행렬을 곱하면 그 행렬의 값이 변하지 않음</li>
+</ul>
+<script type="math/tex; mode=display">AI = IA = A</script><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li><a href="https://datascienceschool.net/view-notebook/cd600e9627cd4f16bc4f6078231ab28c/" target="_blank" rel="noopener">데이터 사이언스 스쿨</a></li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-11-02T08:26:04.000Z">2018-11-02</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 164 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/11/02/math-lin_alg-014/">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E14</a>
+            
+        </h1>
+        <div class="content">
+            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 14편(마지막) 내용을 간략하게 정리해본다.</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/TgKwz5Ikpc8?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="E14-Abstract-vector-space"><a href="#E14-Abstract-vector-space" class="headerlink" title="E14. Abstract vector space"></a>E14. Abstract vector space</h2><ul>
+<li>Formal definition of Linearity<ul>
+<li>Linear transformations preserve addition and scalar multiplication</li>
+<li>Additivity: $L(\vec v + \vec w) = L(\vec v) + L(\vec w)$<ul>
+<li>두 벡터를 더한 후에 변환한 것과 두 벡터를 각각 변환 후 더한 것이 같음 </li>
+</ul>
+</li>
+<li>Scaling: $L(c\vec v) + cL(\vec v)$<ul>
+<li>벡터를 scaling하고 변환한 것과 벡터를 변환하고 scaling한 것이 같음</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Vector space: linearity의 조건을 만족하는 모든 것들 (추상적인 개념)</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-11-02T05:47:04.000Z">2018-11-02</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Data-Analysis-공부/">Data Analysis 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Analysis-공부/수학-공부/">수학 공부</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 355 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/11/02/math-lin_alg-013/">&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E13</a>
+            
+        </h1>
+        <div class="content">
+            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 13편 내용을 간략하게 정리해본다.</p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/PFDu9oVAE-g" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="E13-Eigenvectors-and-eigenvalues-고유벡터와-고유값"><a href="#E13-Eigenvectors-and-eigenvalues-고유벡터와-고유값" class="headerlink" title="E13. Eigenvectors and eigenvalues(고유벡터와 고유값)"></a>E13. Eigenvectors and eigenvalues(고유벡터와 고유값)</h2><h2 id="1-개념"><a href="#1-개념" class="headerlink" title="1. 개념"></a>1. 개념</h2><ul>
+<li>eigenvector와 eigenvalue를 이해하려면 앞에서 다룬 개념들에 대한 시각적 이해, 특히 행렬을 선형변환으로 생각하는 방법에 대한 이해가 선행되어야 함</li>
+<li>2차원 선형변환에서 대부분의 경우 특정 벡터는 그 벡터의 span을 벗어나게 되지만, 변형 후에도 고유한 span을 벗어나지 않는 경우가 있음<ul>
+<li>행렬을 곱하는 것이 마치 scalar처럼 vector를 늘이고 줄이기(scaling)만 하는 것</li>
+</ul>
+</li>
+<li>이 span에 놓여있는 벡터를 변환의 eigenvectors, 변환 도중 원래 벡터를 scaling하는 배수를 eigenvalue라고 함</li>
+<li>3차원 rotation에서 eigenvector를 찾을 수 있다면 그것이 바로 회전축이 됨</li>
+</ul>
+<h2 id="2-계산"><a href="#2-계산" class="headerlink" title="2. 계산"></a>2. 계산</h2><ul>
+<li>계산식: $A \vec v = \lambda \vec v$<ul>
+<li>$A$: 임의의 변환을 나타내는 행렬(transformation matrix)</li>
+<li>$\vec v$: 고유벡터(eigenvector)</li>
+<li>$\lambda$: 고유값(eigenvalue)</li>
+</ul>
+</li>
+<li>$scaling \; by \; \lambda \Leftrightarrow Matrix \; multiplication by \begin {bmatrix} \lambda &amp;0&amp;0 \\ 0&amp;\lambda&amp;0 \\ 0&amp;0&amp;\lambda\end{bmatrix}(=\lambda I)$</li>
+<li>풀이<script type="math/tex; mode=display">
+\begin{align}
+A \vec v & = \lambda \vec v \\
+A \vec v & = (\lambda I) \vec v \\
+(A - \lambda I)\vec v & = 0 \\
+det(A - \lambda I) & = 0 \quad (squishification) \\
+\end{align}</script></li>
+</ul>
+<h2 id="3-Eigenbasis-고유기저"><a href="#3-Eigenbasis-고유기저" class="headerlink" title="3. Eigenbasis(고유기저)"></a>3. Eigenbasis(고유기저)</h2><ul>
+<li>Eigenbasis: 기저벡터이기도 한 고유벡터의 쌍</li>
+</ul>
 
         </div>
         
@@ -783,6 +753,10 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
             
             <li><a class="pagination-link has-text-black-ter" href="/tags/선형대수/page/3/">3</a></li>
             
+            <li><a class="pagination-link has-text-black-ter" href="/tags/선형대수/page/4/">4</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/tags/선형대수/page/5/">5</a></li>
+            
         </ul>
     </nav>
 </div>
@@ -792,7 +766,7 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
     
         
 <div class="card widget">
@@ -993,7 +967,7 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
 
     
     
-        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        <div class="column-right-shadow is-hidden-widescreen ">
         
             
 <div class="card widget">
@@ -1202,305 +1176,6 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
     </div>
 </div>
         
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Tags
-            </h3>
-            <ul class="menu-list">
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/CSS/">
-                        <span class="level-start">
-                            <span class="level-item">CSS</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Database/">
-                        <span class="level-start">
-                            <span class="level-item">Database</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">5</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/MySQL/">
-                        <span class="level-start">
-                            <span class="level-item">MySQL</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">4</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/SQL/">
-                        <span class="level-start">
-                            <span class="level-item">SQL</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">4</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/TIL-Today-I-Learned/">
-                        <span class="level-start">
-                            <span class="level-item">TIL(Today I Learned)</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">74</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/algorithm/">
-                        <span class="level-start">
-                            <span class="level-item">algorithm</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/crawling/">
-                        <span class="level-start">
-                            <span class="level-item">crawling</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">6</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/data-analysis/">
-                        <span class="level-start">
-                            <span class="level-item">data analysis</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">23</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/email/">
-                        <span class="level-start">
-                            <span class="level-item">email</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/hexo/">
-                        <span class="level-start">
-                            <span class="level-item">hexo</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/html/">
-                        <span class="level-start">
-                            <span class="level-item">html</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/javascript/">
-                        <span class="level-start">
-                            <span class="level-item">javascript</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/jupyter-notebook/">
-                        <span class="level-start">
-                            <span class="level-item">jupyter notebook</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/math/">
-                        <span class="level-start">
-                            <span class="level-item">math</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">23</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/mathjax/">
-                        <span class="level-start">
-                            <span class="level-item">mathjax</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/programming/">
-                        <span class="level-start">
-                            <span class="level-item">programming</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">25</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/python/">
-                        <span class="level-start">
-                            <span class="level-item">python</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">13</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/selenium/">
-                        <span class="level-start">
-                            <span class="level-item">selenium</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">4</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/web/">
-                        <span class="level-start">
-                            <span class="level-item">web</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">12</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/web-crawling/">
-                        <span class="level-start">
-                            <span class="level-item">web_crawling</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">6</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/미적분/">
-                        <span class="level-start">
-                            <span class="level-item">미적분</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/선형대수/">
-                        <span class="level-start">
-                            <span class="level-item">선형대수</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">23</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/알고리즘/">
-                        <span class="level-start">
-                            <span class="level-item">알고리즘</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/알고리즘-문제/">
-                        <span class="level-start">
-                            <span class="level-item">알고리즘_문제</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/웹크롤링/">
-                        <span class="level-start">
-                            <span class="level-item">웹크롤링</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">6</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/확률통계/">
-                        <span class="level-start">
-                            <span class="level-item">확률통계</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-        
         </div>
     
 </div>
@@ -1510,7 +1185,7 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right is-sticky">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
     
         
 <div class="card widget">
@@ -1715,305 +1390,6 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
         </li>
         
         </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Tags
-            </h3>
-            <ul class="menu-list">
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/CSS/">
-                        <span class="level-start">
-                            <span class="level-item">CSS</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Database/">
-                        <span class="level-start">
-                            <span class="level-item">Database</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">5</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/MySQL/">
-                        <span class="level-start">
-                            <span class="level-item">MySQL</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">4</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/SQL/">
-                        <span class="level-start">
-                            <span class="level-item">SQL</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">4</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/TIL-Today-I-Learned/">
-                        <span class="level-start">
-                            <span class="level-item">TIL(Today I Learned)</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">74</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/algorithm/">
-                        <span class="level-start">
-                            <span class="level-item">algorithm</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/crawling/">
-                        <span class="level-start">
-                            <span class="level-item">crawling</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">6</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/data-analysis/">
-                        <span class="level-start">
-                            <span class="level-item">data analysis</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">23</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/email/">
-                        <span class="level-start">
-                            <span class="level-item">email</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/hexo/">
-                        <span class="level-start">
-                            <span class="level-item">hexo</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/html/">
-                        <span class="level-start">
-                            <span class="level-item">html</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/javascript/">
-                        <span class="level-start">
-                            <span class="level-item">javascript</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/jupyter-notebook/">
-                        <span class="level-start">
-                            <span class="level-item">jupyter notebook</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/math/">
-                        <span class="level-start">
-                            <span class="level-item">math</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">23</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/mathjax/">
-                        <span class="level-start">
-                            <span class="level-item">mathjax</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/programming/">
-                        <span class="level-start">
-                            <span class="level-item">programming</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">25</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/python/">
-                        <span class="level-start">
-                            <span class="level-item">python</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">13</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/selenium/">
-                        <span class="level-start">
-                            <span class="level-item">selenium</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">4</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/web/">
-                        <span class="level-start">
-                            <span class="level-item">web</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">12</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/web-crawling/">
-                        <span class="level-start">
-                            <span class="level-item">web_crawling</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">6</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/미적분/">
-                        <span class="level-start">
-                            <span class="level-item">미적분</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/선형대수/">
-                        <span class="level-start">
-                            <span class="level-item">선형대수</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">23</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/알고리즘/">
-                        <span class="level-start">
-                            <span class="level-item">알고리즘</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/알고리즘-문제/">
-                        <span class="level-start">
-                            <span class="level-item">알고리즘_문제</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/웹크롤링/">
-                        <span class="level-start">
-                            <span class="level-item">웹크롤링</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">6</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/확률통계/">
-                        <span class="level-start">
-                            <span class="level-item">확률통계</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-            </ul>
         </div>
     </div>
 </div>
@@ -2030,7 +1406,7 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="우와팬더의 블로그" height="28">
+                    <img src="/images/logo.png" alt="우와팬더의 블로그" height="28">
                 
                 </a>
                 <p class="is-size-7">
