@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/12/02/math-lin_alg-022/symmetric.jpeg">
 <meta property="og:image" content="http://yoursite.com/2018/12/02/math-lin_alg-022/forPCA.jpeg">
 <meta property="og:image" content="http://yoursite.com/2018/12/02/math-lin_alg-022/summary.png">
-<meta property="og:updated_time" content="2019-01-07T14:38:44.262Z">
+<meta property="og:updated_time" content="2019-01-07T14:51:08.434Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 고윳값 분해 (2)">
 <meta name="twitter:description" content="고윳값행렬과 고유벡터행렬 $N$차원의 정방행렬 $A$가 $N$개의 고윳값과 이에 대응하는 고유벡터를 가질 때, 그 고윳값과 고유벡터를 다음과 같이 표시하자 고윳값: $\lambda_1, \lambda_2, \cdots, \lambda_N$ 고윳벡터: $v_1, v_2, \cdots, v_N$   이 고윳값과 고유벡터를 묶어서 아래와 같이 고유벡터 행렬, 고">
@@ -180,41 +180,20 @@
 </ul>
 </li>
 <li>이 고윳값과 고유벡터를 묶어서 아래와 같이 고유벡터 행렬, 고윳값 행렬을 정의<ul>
-<li>고유벡터 행렬 $V$: 고유벡터를 옆으로 쌓아서 만든 행렬<script type="math/tex; mode=display">V = \begin{bmatrix} v_1 & \cdots & v_N \end{bmatrix},\quad  V \in R^{N \times N}</script><img src="/2018/12/02/math-lin_alg-022/eigenmatrix.jpeg">
+<li>고유벡터 행렬 $V$: 고유벡터를 옆으로 쌓아서 만든 행렬<br>$$ V = \begin{bmatrix} v_1 &amp; \cdots &amp; v_N \end{bmatrix},\quad  V \in R^{N \times N} $$<img src="/2018/12/02/math-lin_alg-022/eigenmatrix.jpeg">
 <a id="more"></a> </li>
-<li>고윳값 행렬 $\Lambda$: 고윳값을 대각성분으로 가지는 대각행렬<script type="math/tex; mode=display">\Lambda = \begin{bmatrix}
-\lambda_1 & 0 & \cdots & 0 \\
-0 & \lambda_2 & \cdots & 0 \\
-\\
-\vdots & \vdots & \ddots & \vdots \\
-\\
-0 & 0 & \cdots & \lambda_N
-\end{bmatrix}, \quad  \Lambda \in R^{N \times N}</script></li>
+<li>고윳값 행렬 $\Lambda$: 고윳값을 대각성분으로 가지는 대각행렬<br>$$ \Lambda = \begin{bmatrix}<br>\lambda_1 &amp; 0 &amp; \cdots &amp; 0 \<br>0 &amp; \lambda_2 &amp; \cdots &amp; 0 \<br>\<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>\<br>0 &amp; 0 &amp; \cdots &amp; \lambda_N<br>\end{bmatrix}, \quad  \Lambda \in R^{N \times N}<br>$$</li>
 </ul>
 </li>
 </ul>
 <h2 id="행렬의-대각화-diagonalization"><a href="#행렬의-대각화-diagonalization" class="headerlink" title="행렬의 대각화(diagonalization)"></a>행렬의 대각화(diagonalization)</h2><ul>
-<li><p>위와 같이 고유벡터행렬과 고윳값행렬을 정의하면 <u>행렬과 고유벡터행렬의 곱</u>은 <u>고유벡터행렬과 고윳값행렬의 곱</u>과 같음</p>
-<script type="math/tex; mode=display">AV = V\Lambda</script><ul>
-<li>유도 과정<script type="math/tex; mode=display">\begin{align}
-AV & = A \begin{bmatrix} v_1 & \cdots & v_N \end{bmatrix} \\
-& = \begin{bmatrix} Av_1 & \cdots & Av_N \end{bmatrix} \\
-& = \begin{bmatrix} \lambda_1 v_1 & \cdots & \lambda_2 v_N \end{bmatrix} \\
-& = \begin{bmatrix} v_1 & \cdots & v_N \end{bmatrix}
-\begin{bmatrix}
-\lambda_1 & 0 & \cdots & 0 \\
-0 & \lambda_2 & \cdots & 0 \\
-\\
-\vdots & \vdots & \ddots & \vdots \\
-\\
-0 & 0 & \cdots & \lambda_N
-\end{bmatrix} \\
-& = V \Lambda
-\end{align}</script></li>
+<li><p>위와 같이 고유벡터행렬과 고윳값행렬을 정의하면 <u>행렬과 고유벡터행렬의 곱</u>은 <u>고유벡터행렬과 고윳값행렬의 곱</u>과 같음<br>$$ AV = V\Lambda $$</p>
+<ul>
+<li>유도 과정<br>$$ \begin{align}<br>AV &amp; = A \begin{bmatrix} v_1 &amp; \cdots &amp; v_N \end{bmatrix} \<br>&amp; = \begin{bmatrix} Av_1 &amp; \cdots &amp; Av_N \end{bmatrix} \<br>&amp; = \begin{bmatrix} \lambda_1 v_1 &amp; \cdots &amp; \lambda_2 v_N \end{bmatrix} \<br>&amp; = \begin{bmatrix} v_1 &amp; \cdots &amp; v_N \end{bmatrix}<br>\begin{bmatrix}<br>\lambda_1 &amp; 0 &amp; \cdots &amp; 0 \<br>0 &amp; \lambda_2 &amp; \cdots &amp; 0 \<br>\<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>\<br>0 &amp; 0 &amp; \cdots &amp; \lambda_N<br>\end{bmatrix} \<br>&amp; = V \Lambda<br>\end{align}$$</li>
 </ul>
 </li>
-<li><p>행렬의 대각화: 고유벡터행렬  $V$의 역행렬이 존재한다면 행렬을 다음처럼 고유벡터행렬과 고윳값행렬의 곱으로 표현 가능</p>
-<script type="math/tex; mode=display">A = V\Lambda V^{-1}</script></li>
+<li><p>행렬의 대각화: 고유벡터행렬  $V$의 역행렬이 존재한다면 행렬을 다음처럼 고유벡터행렬과 고윳값행렬의 곱으로 표현 가능<br>$$ A = V\Lambda V^{-1} $$</p>
+</li>
 </ul>
 <h2 id="대각화가능-diagonalizable"><a href="#대각화가능-diagonalizable" class="headerlink" title="대각화가능(diagonalizable)"></a>대각화가능(diagonalizable)</h2><ul>
 <li>행렬이 대각화가능하려면 고유벡터가 선형독립이어야 함(= 고유벡터행렬 $V$에 역행렬이 존재)</li>
@@ -231,47 +210,27 @@ AV & = A \begin{bmatrix} v_1 & \cdots & v_N \end{bmatrix} \\
 <hr>
 <h2 id="대칭행렬의-고유분해"><a href="#대칭행렬의-고유분해" class="headerlink" title="대칭행렬의 고유분해"></a>대칭행렬의 고유분해</h2><ul>
 <li><u>행렬 $A$가 실수인 대칭행렬이면 고윳값이 실수이고 고유벡터는 직교(orthogonal)</u>함</li>
-<li>만약 고유벡터가 크기가 1이 되도록 정규화된 상태라면 고유벡터 행렬 $V$는 다음과 같이 전치 행렬이 역행렬임<script type="math/tex; mode=display">V^TV = VV^T = 1</script><script type="math/tex; mode=display">V^{-1} = V^T</script></li>
+<li>만약 고유벡터가 크기가 1이 되도록 정규화된 상태라면 고유벡터 행렬 $V$는 다음과 같이 전치 행렬이 역행렬임<br>$$ V^TV = VV^T = 1$$<br>$$ V^{-1} = V^T $$</li>
 <li>따라서, <mark>대칭행렬은 항상 대각화가능</mark></li>
 </ul>
 <h2 id="대칭행렬을-랭크-1-행렬의-합으로-분해"><a href="#대칭행렬을-랭크-1-행렬의-합으로-분해" class="headerlink" title="대칭행렬을 랭크-1 행렬의 합으로 분해"></a>대칭행렬을 랭크-1 행렬의 합으로 분해</h2><ul>
-<li>$N$차원 대칭행렬 $A$는 다음처럼 $N$개의 랭크-1 행렬 $A_i = v_i v_i^T$의 합으로 표시할 수 있음<script type="math/tex; mode=display">\begin{align}
-A & = V \Lambda V^T \\
-& = \begin{bmatrix} v_1 & v_2 & \cdots & v_N  \end{bmatrix}
-\begin{bmatrix} 
-\lambda_1 & 0 & \cdots & 0 \\ 
-0 & \lambda_2 & \cdots & 0 \\   
-\\
-\vdots & \vdots & \ddots & \vdots \\  
-\\  
-0 & 0 & \cdots & \lambda_N 
-\end{bmatrix}
-\begin{bmatrix} v_1^T \\ v_2^T \\ \vdots \\ v_N^T \end{bmatrix} \\
-& = \begin{bmatrix} \lambda_1 v_1 & \lambda_2 v_2 & \cdots & \lambda_N v_N  \end{bmatrix}
-\begin{bmatrix} v_1^T \\ v_2^T \\ \vdots \\ v_N^T \end{bmatrix} \\
-& = \sum_{i=1}^N \lambda_i v_i v_i^T \\
-& = \sum_{i=1}^N \lambda_i A_i \\
-& = \lambda_1 A_1 + \cdots + \lambda_N A_N \\
-\end{align}</script></li>
+<li>$N$차원 대칭행렬 $A$는 다음처럼 $N$개의 랭크-1 행렬 $A_i = v_i v_i^T$의 합으로 표시할 수 있음<br>$$ \begin{align}<br>A &amp; = V \Lambda V^T \<br>&amp; = \begin{bmatrix} v_1 &amp; v_2 &amp; \cdots &amp; v_N  \end{bmatrix}<br>\begin{bmatrix}<br>\lambda_1 &amp; 0 &amp; \cdots &amp; 0 \<br>0 &amp; \lambda_2 &amp; \cdots &amp; 0 \<br>\<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>\<br>0 &amp; 0 &amp; \cdots &amp; \lambda_N<br>\end{bmatrix}<br>\begin{bmatrix} v_1^T \ v_2^T \ \vdots \ v_N^T \end{bmatrix} \<br>&amp; = \begin{bmatrix} \lambda_1 v_1 &amp; \lambda_2 v_2 &amp; \cdots &amp; \lambda_N v_N  \end{bmatrix}<br>\begin{bmatrix} v_1^T \ v_2^T \ \vdots \ v_N^T \end{bmatrix} \<br>&amp; = \sum_{i=1}^N \lambda_i v_i v_i^T \<br>&amp; = \sum_{i=1}^N \lambda_i A_i \<br>&amp; = \lambda_1 A_1 + \cdots + \lambda_N A_N \<br>\end{align}$$</li>
 <li><p>아래와 같은 이미지로 나타낼 수 있음</p>
 <img src="/2018/12/02/math-lin_alg-022/symmetric.jpeg">
 </li>
-<li><p>만약 0인 고윳값이 없다면 역행렬도 아래처럼 표시할 수 있음</p>
-<script type="math/tex; mode=display">A^{-1} = V \Lambda^{-1}V^T = \sum_{i=1}^N \dfrac{1}{\lambda_i}v_iv_i^T = \dfrac{1}{\lambda_1}A_! + \cdots + \dfrac{1}{\lambda_N}A_N</script></li>
+<li><p>만약 0인 고윳값이 없다면 역행렬도 아래처럼 표시할 수 있음<br>$$ A^{-1} = V \Lambda^{-1}V^T = \sum_{i=1}^N \dfrac{1}{\lambda_i}v_iv_i^T = \dfrac{1}{\lambda_1}A_! + \cdots + \dfrac{1}{\lambda_N}A_N $$</p>
+</li>
 </ul>
 <h2 id="대칭행렬의-간략화"><a href="#대칭행렬의-간략화" class="headerlink" title="대칭행렬의 간략화"></a>대칭행렬의 간략화</h2><ul>
 <li>대칭행렬을 랭크-1 행렬의 합으로 분해할 때 각 요소는 모두 단위벡터인 고유벡터로 만들어진 행렬이므로 행렬의 놈이 1이 됨</li>
 <li>하지만 고윳값은 크기가 다양하게 나타날 수 있음</li>
-<li>따라서 고윳값이 작은 항을 몇 개 생략해도 원래의 행렬과 큰 차이가 나지 않을 것<script type="math/tex; mode=display">\begin{align}
-A & = \lambda_1A_1 + \cdots + \lambda_NA_N \; (\lambda_1 > \cdots > \lambda_N) \\
-& \approx \lambda_1A_1 + \cdots + \lambda_MA_M \; (N > M)
-\end{align}</script></li>
+<li>따라서 고윳값이 작은 항을 몇 개 생략해도 원래의 행렬과 큰 차이가 나지 않을 것<br>$$ \begin{align}<br>A &amp; = \lambda_1A_1 + \cdots + \lambda_NA_N \; (\lambda_1 &gt; \cdots &gt; \lambda_N) \<br>&amp; \approx \lambda_1A_1 + \cdots + \lambda_MA_M \; (N &gt; M)<br>\end{align}<br>$$</li>
 </ul>
 <img src="/2018/12/02/math-lin_alg-022/forPCA.jpeg">
 <hr>
 <h2 id="공분산행렬-covariance-matrix"><a href="#공분산행렬-covariance-matrix" class="headerlink" title="공분산행렬(covariance matrix)"></a>공분산행렬(covariance matrix)</h2><ul>
 <li>공분산행렬: 임의의 실수 행렬 $X$에 대해 $X^TX$인 정방행렬</li>
-<li>공분산행렬은 양의 준정부호임(positive semidefinite) - 음수인 고윳값은 없음<script type="math/tex; mode=display">v^T(X^TX)v = (Xv)^T(Xv) = u^Tu \ge 0</script><ul>
+<li>공분산행렬은 양의 준정부호임(positive semidefinite) - 음수인 고윳값은 없음<br>$$ v^T(X^TX)v = (Xv)^T(Xv) = u^Tu \ge 0$$<ul>
 <li>모든 벡터 $v$에 대해 공분산행렬에 대한 이차형식은 어떤 벡터의 제곱합이 됨</li>
 <li>따라서 0 또는 양수인 고윳값만 가짐</li>
 </ul>

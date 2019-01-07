@@ -28,20 +28,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Data-Analysis-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2019-01-07T14:43:26.633Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/categories/Data-Analysis-%EA%B3%B5%EB%B6%80/%EC%88%98%ED%95%99-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2019-01-07T14:43:26.633Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/categories/Programming-%EA%B3%B5%EB%B6%80/Database-%EA%B3%B5%EB%B6%80/</loc>
         <lastmod>2019-01-07T14:44:13.381Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -65,6 +51,20 @@
     <url>
         <loc>http://yoursite.com/categories/Programming-%EA%B3%B5%EB%B6%80/Algorithm-%EA%B3%B5%EB%B6%80/</loc>
         <lastmod>2019-01-07T14:44:44.304Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/Data-Analysis-%EA%B3%B5%EB%B6%80/</loc>
+        <lastmod>2019-01-07T14:51:08.434Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/Data-Analysis-%EA%B3%B5%EB%B6%80/%EC%88%98%ED%95%99-%EA%B3%B5%EB%B6%80/</loc>
+        <lastmod>2019-01-07T14:51:08.434Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
