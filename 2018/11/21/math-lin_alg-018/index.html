@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="1. 유클리드 유사도(Euclidean Similarity) 유클리드 거리(Euclidean distance): 두 벡터가 가리키는 점 사이의 거리 두 벡터의 차의 길이로 구할 수 있음   \begin{eqnarray}  \| a - b \| &amp;=&amp; \sqrt{\sum_{i=1} (a_i - b_i)^2} \\ &amp;=&amp; \sqrt{\sum_{i=1} ( a_">
+    <meta name="description" content="1. 유클리드 유사도(Euclidean Similarity) 유클리드 거리(Euclidean distance): 두 벡터가 가리키는 점 사이의 거리 두 벡터의 차의 길이로 구할 수 있음">
 <meta name="keywords" content="data analysis,math,선형대수">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&lt;선형대수&gt; 벡터와 유사도">
 <meta property="og:url" content="http://yoursite.com/2018/11/21/math-lin_alg-018/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="1. 유클리드 유사도(Euclidean Similarity) 유클리드 거리(Euclidean distance): 두 벡터가 가리키는 점 사이의 거리 두 벡터의 차의 길이로 구할 수 있음   \begin{eqnarray}  \| a - b \| &amp;=&amp; \sqrt{\sum_{i=1} (a_i - b_i)^2} \\ &amp;=&amp; \sqrt{\sum_{i=1} ( a_">
+<meta property="og:description" content="1. 유클리드 유사도(Euclidean Similarity) 유클리드 거리(Euclidean distance): 두 벡터가 가리키는 점 사이의 거리 두 벡터의 차의 길이로 구할 수 있음">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2018/11/21/math-lin_alg-018/triangle.png">
-<meta property="og:updated_time" content="2018-11-22T15:16:30.944Z">
+<meta property="og:updated_time" content="2019-01-07T14:40:45.554Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 벡터와 유사도">
-<meta name="twitter:description" content="1. 유클리드 유사도(Euclidean Similarity) 유클리드 거리(Euclidean distance): 두 벡터가 가리키는 점 사이의 거리 두 벡터의 차의 길이로 구할 수 있음   \begin{eqnarray}  \| a - b \| &amp;=&amp; \sqrt{\sum_{i=1} (a_i - b_i)^2} \\ &amp;=&amp; \sqrt{\sum_{i=1} ( a_">
+<meta name="twitter:description" content="1. 유클리드 유사도(Euclidean Similarity) 유클리드 거리(Euclidean distance): 두 벡터가 가리키는 점 사이의 거리 두 벡터의 차의 길이로 구할 수 있음">
 <meta name="twitter:image" content="http://yoursite.com/2018/11/21/math-lin_alg-018/triangle.png">
 
 
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 513 words)
+                    3 minutes read (About 514 words)
                 </span>
                 
             </div>
@@ -174,30 +174,29 @@
 <li>유클리드 거리(Euclidean distance): 두 벡터가 가리키는 점 사이의 거리</li>
 <li>두 벡터의 차의 길이로 구할 수 있음</li>
 </ul>
-<script type="math/tex; mode=display">
-\begin{eqnarray} 
-\| a - b \|
-&=& \sqrt{\sum_{i=1} (a_i - b_i)^2} \\
-&=& \sqrt{\sum_{i=1} ( a_i^2 - 2 a_i b_i + b_i^2 )} \\
-&=& \sqrt{\sum_{i=1} a_i^2 + \sum_{i=1} b_i^2 - 2 \sum_{i=1} a_i b_i} \\
-&=& \sqrt{\| a \|^2 + \| b \|^2  - 2 a^Tb }
-\end{eqnarray}</script><script type="math/tex; mode=display">
-\| a - b \|^2 = \| a \|^2 + \| b \|^2 - 2 a^T b</script><ul>
+<a id="more"></a> 
+<p>$$<br>\begin{eqnarray}<br>| a - b |<br>&amp;=&amp; \sqrt{\sum_{i=1} (a_i - b_i)^2} \<br>&amp;=&amp; \sqrt{\sum_{i=1} ( a_i^2 - 2 a_i b_i + b_i^2 )} \<br>&amp;=&amp; \sqrt{\sum_{i=1} a_i^2 + \sum_{i=1} b_i^2 - 2 \sum_{i=1} a_i b_i} \<br>&amp;=&amp; \sqrt{| a |^2 + | b |^2  - 2 a^Tb }<br>\end{eqnarray}<br>$$</p>
+<p>$$<br>| a - b |^2 = | a |^2 + | b |^2 - 2 a^T b<br>$$</p>
+<ul>
 <li>유클리드 유사도: 유클리드 거리와 반비례하는 값으로 정의할 수 있음</li>
 </ul>
 <h2 id="2-코사인-유사도-Cosine-Similarity"><a href="#2-코사인-유사도-Cosine-Similarity" class="headerlink" title="2. 코사인 유사도(Cosine Similarity)"></a>2. 코사인 유사도(Cosine Similarity)</h2><h3 id="2-1-벡터의-내적과-코사인"><a href="#2-1-벡터의-내적과-코사인" class="headerlink" title="2.1 벡터의 내적과 코사인"></a>2.1 벡터의 내적과 코사인</h3><ul>
 <li>두 벡터의 내적은 다음과 같이 벡터의 길이 $\Vert a \Vert, \Vert b \Vert$와 두 벡터 사이의 각도 $\theta$로 계산할 수 있음</li>
 </ul>
-<script type="math/tex; mode=display">a^Tb = \Vert a \Vert \Vert b \Vert \cos \theta</script><ul>
+<p>$$ a^Tb = \Vert a \Vert \Vert b \Vert \cos \theta $$</p>
+<ul>
 <li>$\cos \theta$: $\theta$ 각을 가지는 직각삼각형에서 빗변 $a$와 아랫변 $b$의 길이의 비율<ul>
 <li>$\cos\theta$의 값은 $\theta$가 0에 가까워질수록 1에 가까워지고 $\theta$가 $90{}^{\circ}$에 가까워질수록 0에 가까워짐     </li>
 </ul>
 </li>
 </ul>
-<script type="math/tex; mode=display">\cos\theta = \dfrac{\text{밑변}}{\text{빗변}}</script><script type="math/tex; mode=display">\cos 0^{\circ} = 1</script><script type="math/tex; mode=display">\cos 90^{\circ} = 0</script><img src="/2018/11/21/math-lin_alg-018/triangle.png" class="slug">
+<p>$$ \cos\theta = \dfrac{\text{밑변}}{\text{빗변}} $$</p>
+<p>$$ \cos 0^{\circ} = 1  $$</p>
+<p>$$ \cos 90^{\circ} = 0  $$</p>
+<img src="/2018/11/21/math-lin_alg-018/triangle.png" class="slug">
 <h3 id="2-2-직교-orthogonal"><a href="#2-2-직교-orthogonal" class="headerlink" title="2.2 직교(orthogonal)"></a>2.2 직교(orthogonal)</h3><ul>
 <li>직교: 두 벡터 $a$와 $b$가 이루는 각이 90도인 경우 직교한다고 하며 $a \perp b$로 표기</li>
-<li>$\cos 90^{\circ} = 0$이므로  서로 직교인 두 벡터의 내적은 0<script type="math/tex; mode=display">a^T b = b^T a = 0   \;\;\;\; \leftrightarrow \;\;\;\; a \perp b</script></li>
+<li>$\cos 90^{\circ} = 0$이므로  서로 직교인 두 벡터의 내적은 0<br>$$ a^T b = b^T a = 0   \;\;\;\; \leftrightarrow \;\;\;\; a \perp b   $$</li>
 </ul>
 <h3 id="2-3-코사인-유사도-cosine-similarity"><a href="#2-3-코사인-유사도-cosine-similarity" class="headerlink" title="2.3 코사인 유사도(cosine similarity)"></a>2.3 코사인 유사도(cosine similarity)</h3><ul>
 <li>두 벡터의 유클리드 거리 대신 두 벡터가 비슷한 방향을 가리키는 것을 유사하다고 볼 수도 있음</li>
@@ -206,11 +205,12 @@
 </ul>
 </li>
 </ul>
-<script type="math/tex; mode=display">\text{cosine similarity} = \cos\theta = \dfrac{x^Ty}{\|x\|\|y\|}</script><ul>
+<p>$$ \text{cosine similarity} = \cos\theta = \dfrac{x^Ty}{|x||y|}  $$</p>
+<ul>
 <li><p>추천시스템(recommend system)에서 사용자 취향의 유사성을 계산할 때 사용됨</p>
 </li>
-<li><p>코사인 거리(cosine distance)</p>
-<script type="math/tex; mode=display">\text{cosine distance} = 1 - \text{cosine similarity} = 1 - \dfrac{x^Ty}{\|x\|\|y\|}</script></li>
+<li><p>코사인 거리(cosine distance)<br>$$ \text{cosine distance} = 1 - \text{cosine similarity} = 1 - \dfrac{x^Ty}{|x||y|} $$</p>
+</li>
 </ul>
 <h4 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h4><ul>
 <li><a href="https://datascienceschool.net/view-notebook/3f44cfdda2874080a9aa6b034c71d5ec/" target="_blank" rel="noopener">데이터 사이언스 스쿨 - 선형대수와 해석기하의 기초</a></li>
@@ -267,24 +267,15 @@
 <div class="card">
     <div class="card-content">
         <h3 class="title is-5 has-text-weight-normal">Comments</h3>
-        
-<script>
-    var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/11/21/math-lin_alg-018/';
-        this.page.identifier = '2018/11/21/math-lin_alg-018/';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
+        <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-width="100%" data-href="http://yoursite.com/2018/11/21/math-lin_alg-018/" data-num-posts="5"></div>
 
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
     </div>
 </div>
 </div>

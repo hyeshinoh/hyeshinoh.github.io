@@ -7,29 +7,8 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Programming-%EA%B3%B5%EB%B6%80/Algorithm-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2018-09-27T12:01:46.867Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/categories/Programming-%EA%B3%B5%EB%B6%80/Database-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2018-09-27T12:06:46.504Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/categories/Programming-%EA%B3%B5%EB%B6%80/Python-%EA%B3%B5%EB%B6%80/</loc>
         <lastmod>2018-10-13T06:09:52.062Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/categories/Programming-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2018-10-15T13:09:42.940Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -42,29 +21,50 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/%EA%B8%B0%ED%83%80/</loc>
-        <lastmod>2018-11-20T14:28:00.333Z</lastmod>
+        <loc>http://yoursite.com/categories/TIL-Today-I-Learned/</loc>
+        <lastmod>2019-01-06T14:30:42.338Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/categories/Data-Analysis-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2018-12-03T11:06:30.076Z</lastmod>
+        <lastmod>2019-01-07T14:43:26.633Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/categories/Data-Analysis-%EA%B3%B5%EB%B6%80/%EC%88%98%ED%95%99-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2018-12-03T11:06:30.076Z</lastmod>
+        <lastmod>2019-01-07T14:43:26.633Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/TIL-Today-I-Learned/</loc>
-        <lastmod>2019-01-06T14:30:42.338Z</lastmod>
+        <loc>http://yoursite.com/categories/Programming-%EA%B3%B5%EB%B6%80/Database-%EA%B3%B5%EB%B6%80/</loc>
+        <lastmod>2019-01-07T14:44:13.381Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/%EA%B8%B0%ED%83%80/</loc>
+        <lastmod>2019-01-07T14:44:19.799Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/Programming-%EA%B3%B5%EB%B6%80/</loc>
+        <lastmod>2019-01-07T14:44:44.304Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/Programming-%EA%B3%B5%EB%B6%80/Algorithm-%EA%B3%B5%EB%B6%80/</loc>
+        <lastmod>2019-01-07T14:44:44.304Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

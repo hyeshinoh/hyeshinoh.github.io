@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="1. SQL 소개SQL(Structured Query Language)  관계형 데이터베이스를 조작하고 관리할 때 사용하는 데이터베이스 질의용 언어 1970년대 IBM에서 개발하여 IBM의 관계형 DBMS에 처음으로 사용 1986년 미국표준협회(ANSI)가 SQL 표준으로 채택하면서 현재까지 다양한 DBMS의 구조화 질의어로 널리 사용되고 있음 비절차적 언">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-27T12:06:39.533Z">
+<meta property="og:updated_time" content="2019-01-07T14:44:07.376Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL">
 <meta name="twitter:description" content="1. SQL 소개SQL(Structured Query Language)  관계형 데이터베이스를 조작하고 관리할 때 사용하는 데이터베이스 질의용 언어 1970년대 IBM에서 개발하여 IBM의 관계형 DBMS에 처음으로 사용 1986년 미국표준협회(ANSI)가 SQL 표준으로 채택하면서 현재까지 다양한 DBMS의 구조화 질의어로 널리 사용되고 있음 비절차적 언">
@@ -156,7 +156,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 590 words)
+                    4 minutes read (About 591 words)
                 </span>
                 
             </div>
@@ -176,6 +176,7 @@
 <li>비절차적 언어이기 때문에 절차적언어에 비해 배우기 쉬움</li>
 <li>자연어에 가까운 구문을 사용해 query를 표현하며 관계형 대수나 관계형 해석에 비해 표현력이 우수함</li>
 </ul>
+<a id="more"></a> 
 <p>SQL의 기능</p>
 <ol>
 <li>데이터 정의 기능<ul>
@@ -195,45 +196,45 @@
 <h2 id="2-MySQL-Basic-Command"><a href="#2-MySQL-Basic-Command" class="headerlink" title="2. MySQL Basic Command"></a>2. MySQL Basic Command</h2><p>MySQL shell을 이용한 기본 명령</p>
 <h3 id="1-Dabatase"><a href="#1-Dabatase" class="headerlink" title="1) Dabatase"></a>1) Dabatase</h3><ul>
 <li><p>DB 목록 보기</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show databases;</span><br></pre></td></tr></table></figure>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show databases;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>DB 만들기</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create databases db_name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create databases db_name;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>DB 접속</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use databases db_name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use databases db_name;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>현재 접속 중인 DB 확인</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select database();</span><br></pre></td></tr></table></figure>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select database();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>DB 삭제</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; drop databases db_name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; drop databases db_name;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="2-Table"><a href="#2-Table" class="headerlink" title="2) Table"></a>2) Table</h3><ul>
 <li><p>Table 만들기</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- name(문자열 20자), age (숫자 3자) column이 있는 user 테이블 생성 </span></span><br><span class="line">mysql&gt; create table user(name char(20), age int(3));</span><br></pre></td></tr></table></figure>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">-- name(문자열 20자), age (숫자 3자) column이 있는 user 테이블 생성 </span></span><br><span class="line">mysql&gt; create table user(name char(20), age int(3));</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Table 목록 확인 </p>
 <ul>
-<li>테이블 추가나 삭제 후 table 목록 확인<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show tables;</span><br></pre></td></tr></table></figure>
+<li>테이블 추가나 삭제 후 table 목록 확인<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show tables;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>Table 구조 확인</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- table name: user</span></span><br><span class="line">mysql&gt; desc table user;</span><br><span class="line">mysql&gt; describe table user;</span><br><span class="line">mysql&gt; explain table user;</span><br></pre></td></tr></table></figure>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">-- table name: user</span></span><br><span class="line">mysql&gt; desc table user;</span><br><span class="line">mysql&gt; describe table user;</span><br><span class="line">mysql&gt; explain table user;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Table 이름 바꾸기</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- user에서 user1로 이름 변경</span></span><br><span class="line">mysql&gt; rename table user to user1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">-- user에서 user1로 이름 변경</span></span><br><span class="line">mysql&gt; rename table user to user1;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Table에 데이터 추가</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; insert into user1(name, age) values("alice", 23);</span><br><span class="line">mysql&gt; insert into user1(name, age) values("peter", 30);</span><br></pre></td></tr></table></figure>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; insert into user1(name, age) values("alice", 23);</span><br><span class="line">mysql&gt; insert into user1(name, age) values("peter", 30);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>추가된 데이터 확인</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from user1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from user1;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Table 삭제</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; drop table user1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; drop table user1;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -293,24 +294,15 @@
 <div class="card">
     <div class="card-content">
         <h3 class="title is-5 has-text-weight-normal">Comments</h3>
-        
-<script>
-    var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/07/25/Database_02/';
-        this.page.identifier = '2018/07/25/Database_02/';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
+        <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-width="100%" data-href="http://yoursite.com/2018/07/25/Database_02/" data-num-posts="5"></div>
 
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
     </div>
 </div>
 </div>

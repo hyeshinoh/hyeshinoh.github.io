@@ -16,7 +16,7 @@
 <meta property="og:description" content="고윳값 분해 고윳값 분해(eigenvalue decomposition) or 고유 분해(eigen-decomposition) 고윳값과 고유벡터를 찾는 작업을 의미함  고윳값(eigenvalue)과 고유벡터(eigenvector) 정방 행렬 $A$에 대해 다음 식을 만족하는 벡터 $v$, 실수 $\lambda$를 찾을 수 있다고 가정Av = \lambda v">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2018/12/02/math-lin_alg-021/eigen_001.jpeg">
-<meta property="og:updated_time" content="2018-12-03T11:06:18.623Z">
+<meta property="og:updated_time" content="2019-01-07T14:38:59.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 고윳값 분해 (1)">
 <meta name="twitter:description" content="고윳값 분해 고윳값 분해(eigenvalue decomposition) or 고유 분해(eigen-decomposition) 고윳값과 고유벡터를 찾는 작업을 의미함  고윳값(eigenvalue)과 고유벡터(eigenvector) 정방 행렬 $A$에 대해 다음 식을 만족하는 벡터 $v$, 실수 $\lambda$를 찾을 수 있다고 가정Av = \lambda v">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 661 words)
+                    4 minutes read (About 662 words)
                 </span>
                 
             </div>
@@ -177,7 +177,8 @@
 <h2 id="고윳값-eigenvalue-과-고유벡터-eigenvector"><a href="#고윳값-eigenvalue-과-고유벡터-eigenvector" class="headerlink" title="고윳값(eigenvalue)과 고유벡터(eigenvector)"></a>고윳값(eigenvalue)과 고유벡터(eigenvector)</h2><ul>
 <li>정방 행렬 $A$에 대해 다음 식을 만족하는 벡터 $v$, 실수 $\lambda$를 찾을 수 있다고 가정<script type="math/tex; mode=display">Av = \lambda v</script><ul>
 <li>벡터를 선형 변환(행렬x벡터)해도 방향이 같은 벡터(실수x벡터)가 된다는 의미</li>
-<li>계산의 형태를 생각해보면 다음과 같음<img src="/2018/12/02/math-lin_alg-021/eigen_001.jpeg"></li>
+<li>계산의 형태를 생각해보면 다음과 같음<a id="more"></a> 
+<img src="/2018/12/02/math-lin_alg-021/eigen_001.jpeg"></li>
 </ul>
 </li>
 <li>위 식을 만족하는 실수 $\lambda$를 고윳값, 벡터 $v$를 고유벡터라고 함</li>
@@ -267,24 +268,15 @@ det(A- \lambda I) & = det(\begin{bmatrix} 2 & 3 \\ 2 & 1 \end{bmatrix} - \begin{
 <div class="card">
     <div class="card-content">
         <h3 class="title is-5 has-text-weight-normal">Comments</h3>
-        
-<script>
-    var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/12/02/math-lin_alg-021/';
-        this.page.identifier = '2018/12/02/math-lin_alg-021/';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
+        <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-width="100%" data-href="http://yoursite.com/2018/12/02/math-lin_alg-021/" data-num-posts="5"></div>
 
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
     </div>
 </div>
 </div>

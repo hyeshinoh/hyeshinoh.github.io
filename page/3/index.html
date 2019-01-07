@@ -156,7 +156,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 248 words)
+                    2 minutes read (About 249 words)
                 </span>
                 
             </div>
@@ -169,25 +169,16 @@
         </h1>
         <div class="content">
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 5편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/rHLEWRxRGiM" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E5-Three-dimentional-linear-transformations"><a href="#E5-Three-dimentional-linear-transformations" class="headerlink" title="E5. Three-dimentional linear transformations"></a>E5. Three-dimentional linear transformations</h2><h2 id="1-3차원의-선형변환"><a href="#1-3차원의-선형변환" class="headerlink" title="1. 3차원의 선형변환"></a>1. 3차원의 선형변환</h2><ul>
-<li>3차원 기저벡터: $\hat i=\begin{bmatrix} 1\\0\\0\end{bmatrix}, \hat j=\begin{bmatrix} 0\\1\\0\end{bmatrix}, \hat k=\begin{bmatrix} 0\\0\\1\end{bmatrix}$</li>
-<li>2차원에서와 마찬가지로 각 기저벡터들이 어디로 이동하는지 좌표값을 알면 특정 벡터 $\vec v=\begin{bmatrix} x\\y\\z\end{bmatrix}=x\hat i+y\hat j+z\hat k$가 어떤 벡터로 변형되는지 파악할 수 있음</li>
-<li>e.g. 기저벡터: $\hat i, \hat j, \hat k$가 $\begin{bmatrix} 1\\0\\1\end{bmatrix}, \begin{bmatrix} 1\\1\\0\end{bmatrix}, \begin{bmatrix} 0\\0\\1\end{bmatrix}$로 이동한다고 할 때의 선형변환<ul>
-<li>각 이동한 좌표값이 행렬의 열을 구성함 </li>
-</ul>
-</li>
-</ul>
-<script type="math/tex; mode=display">
-\begin{align}
-  \begin{bmatrix} 1&1&0\\0&1&0\\1&0&1\end{bmatrix}
-  \begin{bmatrix}x\\y\\z\end{bmatrix} & = x\begin{bmatrix}1\\0\\1\end{bmatrix}
-  +y\begin{bmatrix}1\\1\\0\end{bmatrix}
-  +z\begin{bmatrix} 0\\0\\1\end{bmatrix} \\
-   & = \begin{bmatrix} 1x+1y+0z\\ 0x+1y+0z \\1x+0y+1z \end{bmatrix} \\
-\end{align}</script>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/30/math-lin_alg-005/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -216,7 +207,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 292 words)
+                    2 minutes read (About 293 words)
                 </span>
                 
             </div>
@@ -229,23 +220,16 @@
         </h1>
         <div class="content">
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 4편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/XkY2DOUCWMU" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E4-Matrix-multiplication-as-composition"><a href="#E4-Matrix-multiplication-as-composition" class="headerlink" title="E4. Matrix multiplication as composition"></a>E4. Matrix multiplication as composition</h2><h2 id="1-Composition-of-linear-transformation"><a href="#1-Composition-of-linear-transformation" class="headerlink" title="1. Composition of linear transformation"></a>1. Composition of linear transformation</h2><ul>
-<li>선형변환을 한 번 하고 다시 선형변환을 하면 그 결과는 새로운 하나의 선현변환이 됨</li>
-<li>이를 행렬의 곱으로 나타낼 수 있음, 단 함수의 합성처럼 식의 왼쪽으로 곱해나가야 함</li>
-<li>e.g. 첫번째 선형변환을 $\begin{bmatrix} 0 &amp; -1 \\ 1 &amp; 0\end{bmatrix}$(rotation), 두번째 선형변환을 $\begin{bmatrix} 1 &amp; 1 \\ 0 &amp; 1\end{bmatrix}$(shear)라고 할 때 그 composition<script type="math/tex; mode=display">
-\begin{bmatrix} 1 & 1 \\ 0 & 1\end{bmatrix}\Bigl(\begin{bmatrix} 0 & -1 \\ 1 & 0\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix} \Bigr) = \begin{bmatrix} 1 & -1 \\ 1 & 0\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}</script></li>
-<li>이 때 composition 행렬을 두 원본 행렬의 곱(product)이라고 할 수 있음 </li>
-</ul>
-<h2 id="2-Matrix-multiplication"><a href="#2-Matrix-multiplication" class="headerlink" title="2. Matrix multiplication"></a>2. Matrix multiplication</h2><ul>
-<li>$M_1 = \begin{bmatrix} e &amp; f \\ g &amp; h\end{bmatrix}$과 $M_2 = \begin{bmatrix} a &amp; b \\ c &amp; d\end{bmatrix}$의 곱:<script type="math/tex; mode=display">
-\begin{bmatrix} a & b \\ c & d\end{bmatrix} \begin{bmatrix} e & f \\ g & h\end{bmatrix} = \begin{bmatrix} ae+bg & af+bh \\ ce+dg & cf+dh \end{bmatrix}</script></li>
-<li>교환법칙은 성립하지 않음: $AB \neq BA$ (곱하는 순서는 중요하다!)</li>
-<li>결합법칙은 성립함: $(AB)C = A(BC)$ (Assiciativity)</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/30/math-lin_alg-004/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -274,7 +258,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 308 words)
+                    2 minutes read (About 309 words)
                 </span>
                 
             </div>
@@ -287,37 +271,16 @@
         </h1>
         <div class="content">
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 3편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/kYB8IZa5AuE" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E3-Linear-transformation-and-matrices"><a href="#E3-Linear-transformation-and-matrices" class="headerlink" title="E3. Linear transformation and matrices"></a>E3. Linear transformation and matrices</h2><h2 id="1-Linear-transformation란"><a href="#1-Linear-transformation란" class="headerlink" title="1. Linear transformation란"></a>1. Linear transformation란</h2><ul>
-<li>특정 벡터를 다른 벡터로 바꾸는 변환 (input vector → output vector)</li>
-<li>Linear 변환의 속성<ul>
-<li>Lines remain lines </li>
-<li>Origin remains fixed</li>
-<li>Grid lines remain parallel and evenly spaced</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-Linear-transformation-계산"><a href="#2-Linear-transformation-계산" class="headerlink" title="2. Linear transformation 계산"></a>2. Linear transformation 계산</h2><ul>
-<li>기저벡터 $\hat i$와 $\hat j$의 변형위치를 알면 임의의 벡터 $\vec v$를 추론할 수 있음<ul>
-<li>e.g. $\vec v = -1\hat i + 2\hat j$에서 $\hat i$와 $\hat j$가 $\begin{bmatrix} 1 \\ 2 \end{bmatrix},  \begin{bmatrix} 3 \\ 0 \end{bmatrix}$로 변형된 경우 변환된 $\vec v$ 구하기</li>
-</ul>
-</li>
-</ul>
-<script type="math/tex; mode=display">
-\begin{align}
-\vec v & = -1(Transformed \; \hat i) + 2(Transformed\; \hat j)\\
- & = -1\begin{bmatrix}1\\2\end{bmatrix} + -2\begin{bmatrix}3\\0\end{bmatrix}\\
- & = \begin{bmatrix} -1(1)+2(3) \\ 1(-2)+2(0) \end{bmatrix}\\
- & = \begin{bmatrix} 5 \\ 2 \end{bmatrix}
-\end{align}</script><ul>
-<li>일반화: $\vec v = x\hat i + y\hat j = \begin{bmatrix} x \\ y \end{bmatrix}$에서 $\hat i$와 $\hat j$가 $\begin{bmatrix} a \\ c \end{bmatrix},  \begin{bmatrix} b \\ d \end{bmatrix}$로 변형된 경우 변환된 벡터 구하기</li>
-</ul>
-<script type="math/tex; mode=display">
-\begin{bmatrix} a & b \\ c & d\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix} = 
-x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} = \begin{bmatrix} ax+by \\ cx+dy \end{bmatrix}</script><p><code>⇒ 행렬-벡터 곱셈은 선형 변환을 계산하는 방법이라고 할 수 있음</code></p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/30/math-lin_alg-003/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -346,7 +309,7 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 335 words)
+                    2 minutes read (About 336 words)
                 </span>
                 
             </div>
@@ -359,42 +322,16 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
         </h1>
         <div class="content">
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 2편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/k7RM-ot2NWY?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E2-Linear-combinations-span-and-basis-vectors"><a href="#E2-Linear-combinations-span-and-basis-vectors" class="headerlink" title="E2. Linear combinations, span, and basis vectors"></a>E2. Linear combinations, span, and basis vectors</h2><h2 id="1-Basis-vectors-기저-벡터"><a href="#1-Basis-vectors-기저-벡터" class="headerlink" title="1. Basis vectors (기저 벡터)"></a>1. Basis vectors (기저 벡터)</h2><ul>
-<li>basis: the basis of a vector is a set of linearly independent vectors that span the full space </li>
-<li><p>xy coordinate system의 basis vector는 $\hat i$과 $\hat j$</p>
-<ul>
-<li>$\hat i = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \, \hat j = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$</li>
-</ul>
-</li>
-<li><p>vector의 coordinate(좌표)은 scalar</p>
-<ul>
-<li>basis vectors $\hat i$와 $\hat j$를 scale함</li>
-<li>e. g. $\begin{bmatrix} -5 \\ 2 \end{bmatrix} = (-5)\hat i + (2)\hat j$</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-Linear-combination-선형-조합"><a href="#2-Linear-combination-선형-조합" class="headerlink" title="2. Linear combination (선형 조합)"></a>2. Linear combination (선형 조합)</h2><ul>
-<li>linear combination of $\vec v$ and $\vec w$: $a\vec v + b\vec w$</li>
-</ul>
-<h2 id="3-Span"><a href="#3-Span" class="headerlink" title="3. Span"></a>3. Span</h2><ul>
-<li>$\vec v$와 $\vec w$의 span이란 두 벡터의 모든 가능한 linear combination 조합 </li>
-<li>선형독립인 두개의 2차원 벡터의 span은 2차원 평면 전체가 되고, 두 벡터가 일직선상에 놓인 경우, 즉 선형종속인 경우 두 벡터의 span은 직선이 됨</li>
-</ul>
-<h2 id="4-Linearly-dependent-선형-종속"><a href="#4-Linearly-dependent-선형-종속" class="headerlink" title="4. Linearly dependent(선형 종속)"></a>4. Linearly dependent(선형 종속)</h2><ul>
-<li>선형종속: 한 벡터가 다른 두 벡터의 선형조합으로 표현될 경우<ul>
-<li>$\vec u = a\vec v + b\vec w$</li>
-<li>선형종속인 벡터는 redundant함 (이 벡터를 없애도 span이 줄어들지 않음)</li>
-</ul>
-</li>
-<li>선형독립: 한 벡터가 다른 두 벡터의 선형조합으로 표현되지 않는 경우<ul>
-<li>$\vec u \neq a\vec v + b\vec w$</li>
-</ul>
-</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/24/math-lin_alg-002/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -473,7 +410,7 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 552 words)
+                    4 minutes read (About 553 words)
                 </span>
                 
             </div>
@@ -486,39 +423,16 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
         </h1>
         <div class="content">
             <p>앞으로 Hexo 블로그에 수학 공부 내용도 정리하기 위해서 열심히 구글링을 해서 mathjax 설정을 마쳤다!<br>이렇게 알아낸 내용을 기억해두기 위해 Hexo 블로그에서 LaTex로 수식을 작성할 수 있도록 mathjax를 설정하는 방법을 정리해보겠다.</p>
-<h2 id="1-설치"><a href="#1-설치" class="headerlink" title="1. 설치"></a>1. 설치</h2><h3 id="1-renderer-설치-및-세팅"><a href="#1-renderer-설치-및-세팅" class="headerlink" title="1) renderer 설치 및 세팅"></a>1) renderer 설치 및 세팅</h3><p>Hexo의 기본 renderer인 hexo-renderer-marked는 mathjax 문법을 지원하지 않는다고 한다. 따라서 다음과 같이 새로운 rendering engine으로 교체해준다.</p>
-<p><code>$ npm uninstall hexo-renderer-marked --save</code><br><code>$ npm install hexo-renderer-kramed --save</code></p>
-<p>그리고 <code>&lt;your-project-dir&gt;/node_modules/hexo-reneder-kramed/lib/renderer.js</code>를 열어 다음과 같이 return 값을 text로 수정한다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Change inline math rule</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatText</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Fit kramed's rule: $$ + \1 + $$</span></span><br><span class="line">  <span class="comment">// return text.replace(/`\$(.*?)\$`/g, '$$$$$1$$$$');</span></span><br><span class="line">  <span class="keyword">return</span> text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-mathjax-설치"><a href="#2-mathjax-설치" class="headerlink" title="2) mathjax 설치"></a>2) mathjax 설치</h3><p>다음으로는 mathjax plugin을 설치한다.<br><code>npm install hexo-renderer-mathjax --save</code></p>
-<p>그리고 <code>&lt;your-project-dir&gt;/node_modules/hexo-reneder-mathjax/mathjax.html</code>을 열고 CDN URL을 아래와 같이 수정한다.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;&lt;/script&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-LaTex와-markdown의-문법-충돌-fix하기"><a href="#2-LaTex와-markdown의-문법-충돌-fix하기" class="headerlink" title="2. LaTex와 markdown의 문법 충돌 fix하기"></a>2. LaTex와 markdown의 문법 충돌 fix하기</h2><p>LaTex와 markdown에는 다음과 같이 문법이 충돌하는 부분이 있다. </p>
-<ul>
-<li>markdown: <code>*</code>과 <code>_</code>는 bold와 italic</li>
-<li>LaTex: <code>_</code>는 subscript</li>
-</ul>
-<p>따라서 <code>_</code>는 LaTex의 문법만을 따라서 아랫첨자를 나타내도록 하기위해<code>node_modules\kramed\lib\rules\inline.js</code>를 열고 다음과 같이 수정한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span><br><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure>
-<h2 id="3-Mathjax-사용하기"><a href="#3-Mathjax-사용하기" class="headerlink" title="3. Mathjax 사용하기"></a>3. Mathjax 사용하기</h2><p>사용하고 있는 theme의 <code>_config.yml</code> 파일을 열고 다음과 같이 mathjax를 enabling 해준다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
-<h2 id="4-markdown-post-작성하기"><a href="#4-markdown-post-작성하기" class="headerlink" title="4. markdown post 작성하기"></a>4. markdown post 작성하기</h2><p>이제 hexo 블로그에 수식을 사용하기 위한 설정은 모두 마쳤다!<br>마지막으로 post 작성시 header 부분에 <code>mathjax: true</code>를 넣어주면 아래처럼 블로그에 수식이 잘 표현된다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;pmatrix&#125;</span><br><span class="line"> 1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \\</span><br><span class="line"> 1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \\</span><br><span class="line"> \vdots  &amp; \vdots&amp; \vdots &amp; \ddots &amp; \vdots \\</span><br><span class="line"> 1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n    </span><br><span class="line"> \end&#123;pmatrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">
-\begin{pmatrix}
- 1 & a_1 & a_1^2 & \cdots & a_1^n \\
- 1 & a_2 & a_2^2 & \cdots & a_2^n \\
- \vdots  & \vdots& \vdots & \ddots & \vdots \\
- 1 & a_m & a_m^2 & \cdots & a_m^n    
- \end{pmatrix}</script><h4 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h4><ul>
-<li>블로그 <a href="https://www.infiniteft.xyz/2018/03/21/make-hexo-support-latex/" target="_blank" rel="noopener">Make Hexo Support Latex</a></li>
-<li>블로그 <a href="https://irongaea.github.io/2018/08/21/hexo-inline-math/" target="_blank" rel="noopener">hexo-inline-math</a></li>
-<li>블로그 <a href="https://johngrib.github.io/wiki/mathjax-latex/#3-%EB%8F%84%EA%B5%AC" target="_blank" rel="noopener">MathJax로 LaTeX 사용하기</a></li>
-<li><a href="https://www.mathjax.org/#gettingstarted" target="_blank" rel="noopener">www.mathjax.org</a></li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/24/hexo_mathjax_00/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -547,7 +461,7 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 290 words)
+                    2 minutes read (About 291 words)
                 </span>
                 
             </div>
@@ -560,29 +474,16 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
         </h1>
         <div class="content">
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 1편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/fNk_zzaMoSs?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E1-Vectors-what-even-are-they"><a href="#E1-Vectors-what-even-are-they" class="headerlink" title="E1. Vectors, what even are they?"></a>E1. Vectors, what even are they?</h2><h2 id="1-vector를-보는-세-가지-관점"><a href="#1-vector를-보는-세-가지-관점" class="headerlink" title="1. vector를 보는 세 가지 관점"></a>1. vector를 보는 세 가지 관점</h2><h4 id="1-물리학-관점"><a href="#1-물리학-관점" class="headerlink" title="1) 물리학 관점"></a>1) 물리학 관점</h4><ul>
-<li>벡터는 공간에서의 화살표</li>
-<li>길이와 방향을 가짐  </li>
-</ul>
-<h4 id="2-컴퓨터-사이언스-관점"><a href="#2-컴퓨터-사이언스-관점" class="headerlink" title="2) 컴퓨터 사이언스 관점"></a>2) 컴퓨터 사이언스 관점</h4><ul>
-<li>벡터는 순차 숫자 리스트 (ordered lists of numbers)</li>
-<li>차원 = 리스트의 길이  </li>
-</ul>
-<h4 id="3-수학의-관점"><a href="#3-수학의-관점" class="headerlink" title="3) 수학의 관점"></a>3) 수학의 관점</h4><ul>
-<li>벡터의 합과 벡터에 숫자를 곱한다는 개념에 맞으면 벡터 <br> ⇨ 수학의 관점은 시리즈 마지막에 제대로 정의함</li>
-</ul>
-<h2 id="2-vector에-대한-새로운-개념을-배울-때는"><a href="#2-vector에-대한-새로운-개념을-배울-때는" class="headerlink" title="2. vector에 대한 새로운 개념을 배울 때는"></a>2. vector에 대한 새로운 개념을 배울 때는</h2><ul>
-<li>‘벡터’라 함은 xy평면 같은 좌표계 안에 있으며 꼬리는 원점인 화살표로 떠올리자</li>
-<li>이 화살표가 가리키는 좌표가 컴퓨터 사이언스 관점의 벡터인 ‘숫자 리스트’가 됨</li>
-</ul>
-<h2 id="3-벡터의-연산"><a href="#3-벡터의-연산" class="headerlink" title="3. 벡터의 연산"></a>3. 벡터의 연산</h2><ul>
-<li>벡터 합(vector addition): 한 화살표의 끝에서 다음 화살표를 이어서 최종적으로 가리키는 곳</li>
-<li>multiplication by number(scalar): scaling</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/24/math-lin_alg-001/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -611,7 +512,7 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 267 words)
+                    2 minutes read (About 268 words)
                 </span>
                 
             </div>
@@ -625,16 +526,16 @@ x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} 
         <div class="content">
             <p>데이터 사이언스를 공부하는 데 있어 필수적이고 기초적인 부분이 바로 선형대수, 미적분, 확률 통계 등의 수학일 것이다.</p>
 <p>지금까지 공부해 온, 그리고 앞으로 공부할 컨텐츠 등을 바탕으로 데이터 사이언스를 위한 수학 공부에 유용한 컨텐츠를 정리해보려고 한다. (내용은 계속 업데이트된다)</p>
-<h2 id="1-선형대수-Linear-Algebra"><a href="#1-선형대수-Linear-Algebra" class="headerlink" title="1. 선형대수 (Linear Algebra)"></a>1. 선형대수 (Linear Algebra)</h2><ul>
-<li>3Blue1Brown - Essence of linear algebra<ul>
-<li>youtube 채널 3Blue1Brown에서 제공하는 선형대수 기초 영상. 기본적인 내용을 다루고 있지만, 직접 코드로 구현된 그래프 등을 영상으로 보면서 선형대수의 기초적인 내용을 직관적으로 이해하는데 엄청난 도움이 된다. 강력 추천!</li>
-<li>14편의 영상으로 이루어져있는데 대부분 15분 미만의 길이로 부담없이 시청할 수 있고, 여러번 반복해서 보기에도 좋다. </li>
-</ul>
-</li>
-</ul>
-<h2 id="2-미적분"><a href="#2-미적분" class="headerlink" title="2. 미적분"></a>2. 미적분</h2><h2 id="3-확률과-통계"><a href="#3-확률과-통계" class="headerlink" title="3. 확률과 통계"></a>3. 확률과 통계</h2>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/24/math_000_guide/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>

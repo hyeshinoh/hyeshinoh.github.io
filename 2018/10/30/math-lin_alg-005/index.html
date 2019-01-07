@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 5편 내용을 간략히 정리해본다.  E5. Three-dimentional linear transformations1. 3차원의 선형변환 3차원 기저벡터: $\hat i=\begin{bmatrix} 1\\0\\0\end">
+    <meta name="description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 5편 내용을 간략히 정리해본다.">
 <meta name="keywords" content="data analysis,math,선형대수">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E5">
 <meta property="og:url" content="http://yoursite.com/2018/10/30/math-lin_alg-005/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 5편 내용을 간략히 정리해본다.  E5. Three-dimentional linear transformations1. 3차원의 선형변환 3차원 기저벡터: $\hat i=\begin{bmatrix} 1\\0\\0\end">
+<meta property="og:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 5편 내용을 간략히 정리해본다.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-20T14:26:03.765Z">
+<meta property="og:updated_time" content="2019-01-07T14:42:43.901Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E5">
-<meta name="twitter:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 5편 내용을 간략히 정리해본다.  E5. Three-dimentional linear transformations1. 3차원의 선형변환 3차원 기저벡터: $\hat i=\begin{bmatrix} 1\\0\\0\end">
+<meta name="twitter:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 5편 내용을 간략히 정리해본다.">
 
 
 
@@ -156,7 +156,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 248 words)
+                    2 minutes read (About 249 words)
                 </span>
                 
             </div>
@@ -169,23 +169,18 @@
         </h1>
         <div class="content">
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 5편 내용을 간략히 정리해본다.</p>
+<a id="more"></a> 
 <div class="video-container"><iframe src="//www.youtube.com/embed/rHLEWRxRGiM" frameborder="0" allowfullscreen></iframe></div>
 <h2 id="E5-Three-dimentional-linear-transformations"><a href="#E5-Three-dimentional-linear-transformations" class="headerlink" title="E5. Three-dimentional linear transformations"></a>E5. Three-dimentional linear transformations</h2><h2 id="1-3차원의-선형변환"><a href="#1-3차원의-선형변환" class="headerlink" title="1. 3차원의 선형변환"></a>1. 3차원의 선형변환</h2><ul>
-<li>3차원 기저벡터: $\hat i=\begin{bmatrix} 1\\0\\0\end{bmatrix}, \hat j=\begin{bmatrix} 0\\1\\0\end{bmatrix}, \hat k=\begin{bmatrix} 0\\0\\1\end{bmatrix}$</li>
-<li>2차원에서와 마찬가지로 각 기저벡터들이 어디로 이동하는지 좌표값을 알면 특정 벡터 $\vec v=\begin{bmatrix} x\\y\\z\end{bmatrix}=x\hat i+y\hat j+z\hat k$가 어떤 벡터로 변형되는지 파악할 수 있음</li>
-<li>e.g. 기저벡터: $\hat i, \hat j, \hat k$가 $\begin{bmatrix} 1\\0\\1\end{bmatrix}, \begin{bmatrix} 1\\1\\0\end{bmatrix}, \begin{bmatrix} 0\\0\\1\end{bmatrix}$로 이동한다고 할 때의 선형변환<ul>
+<li>3차원 기저벡터: $\hat i=\begin{bmatrix} 1\0\0\end{bmatrix}, \hat j=\begin{bmatrix} 0\1\0\end{bmatrix}, \hat k=\begin{bmatrix} 0\0\1\end{bmatrix}$</li>
+<li>2차원에서와 마찬가지로 각 기저벡터들이 어디로 이동하는지 좌표값을 알면 특정 벡터 $\vec v=\begin{bmatrix} x\y\z\end{bmatrix}=x\hat i+y\hat j+z\hat k$가 어떤 벡터로 변형되는지 파악할 수 있음</li>
+<li>e.g. 기저벡터: $\hat i, \hat j, \hat k$가 $\begin{bmatrix} 1\0\1\end{bmatrix}, \begin{bmatrix} 1\1\0\end{bmatrix}, \begin{bmatrix} 0\0\1\end{bmatrix}$로 이동한다고 할 때의 선형변환<ul>
 <li>각 이동한 좌표값이 행렬의 열을 구성함 </li>
 </ul>
 </li>
 </ul>
-<script type="math/tex; mode=display">
-\begin{align}
-  \begin{bmatrix} 1&1&0\\0&1&0\\1&0&1\end{bmatrix}
-  \begin{bmatrix}x\\y\\z\end{bmatrix} & = x\begin{bmatrix}1\\0\\1\end{bmatrix}
-  +y\begin{bmatrix}1\\1\\0\end{bmatrix}
-  +z\begin{bmatrix} 0\\0\\1\end{bmatrix} \\
-   & = \begin{bmatrix} 1x+1y+0z\\ 0x+1y+0z \\1x+0y+1z \end{bmatrix} \\
-\end{align}</script>
+<p>$$<br>\begin{align}<br>  \begin{bmatrix} 1&amp;1&amp;0\0&amp;1&amp;0\1&amp;0&amp;1\end{bmatrix}<br>  \begin{bmatrix}x\y\z\end{bmatrix} &amp; = x\begin{bmatrix}1\0\1\end{bmatrix}<br>  +y\begin{bmatrix}1\1\0\end{bmatrix}<br>  +z\begin{bmatrix} 0\0\1\end{bmatrix} \<br>   &amp; = \begin{bmatrix} 1x+1y+0z\ 0x+1y+0z \1x+0y+1z \end{bmatrix} \<br>\end{align}<br>$$</p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -237,24 +232,15 @@
 <div class="card">
     <div class="card-content">
         <h3 class="title is-5 has-text-weight-normal">Comments</h3>
-        
-<script>
-    var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/10/30/math-lin_alg-005/';
-        this.page.identifier = '2018/10/30/math-lin_alg-005/';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
+        <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-width="100%" data-href="http://yoursite.com/2018/10/30/math-lin_alg-005/" data-num-posts="5"></div>
 
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
     </div>
 </div>
 </div>

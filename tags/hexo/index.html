@@ -166,7 +166,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 552 words)
+                    4 minutes read (About 553 words)
                 </span>
                 
             </div>
@@ -179,39 +179,16 @@
         </h1>
         <div class="content">
             <p>앞으로 Hexo 블로그에 수학 공부 내용도 정리하기 위해서 열심히 구글링을 해서 mathjax 설정을 마쳤다!<br>이렇게 알아낸 내용을 기억해두기 위해 Hexo 블로그에서 LaTex로 수식을 작성할 수 있도록 mathjax를 설정하는 방법을 정리해보겠다.</p>
-<h2 id="1-설치"><a href="#1-설치" class="headerlink" title="1. 설치"></a>1. 설치</h2><h3 id="1-renderer-설치-및-세팅"><a href="#1-renderer-설치-및-세팅" class="headerlink" title="1) renderer 설치 및 세팅"></a>1) renderer 설치 및 세팅</h3><p>Hexo의 기본 renderer인 hexo-renderer-marked는 mathjax 문법을 지원하지 않는다고 한다. 따라서 다음과 같이 새로운 rendering engine으로 교체해준다.</p>
-<p><code>$ npm uninstall hexo-renderer-marked --save</code><br><code>$ npm install hexo-renderer-kramed --save</code></p>
-<p>그리고 <code>&lt;your-project-dir&gt;/node_modules/hexo-reneder-kramed/lib/renderer.js</code>를 열어 다음과 같이 return 값을 text로 수정한다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Change inline math rule</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatText</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Fit kramed's rule: $$ + \1 + $$</span></span><br><span class="line">  <span class="comment">// return text.replace(/`\$(.*?)\$`/g, '$$$$$1$$$$');</span></span><br><span class="line">  <span class="keyword">return</span> text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-mathjax-설치"><a href="#2-mathjax-설치" class="headerlink" title="2) mathjax 설치"></a>2) mathjax 설치</h3><p>다음으로는 mathjax plugin을 설치한다.<br><code>npm install hexo-renderer-mathjax --save</code></p>
-<p>그리고 <code>&lt;your-project-dir&gt;/node_modules/hexo-reneder-mathjax/mathjax.html</code>을 열고 CDN URL을 아래와 같이 수정한다.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;&lt;/script&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-LaTex와-markdown의-문법-충돌-fix하기"><a href="#2-LaTex와-markdown의-문법-충돌-fix하기" class="headerlink" title="2. LaTex와 markdown의 문법 충돌 fix하기"></a>2. LaTex와 markdown의 문법 충돌 fix하기</h2><p>LaTex와 markdown에는 다음과 같이 문법이 충돌하는 부분이 있다. </p>
-<ul>
-<li>markdown: <code>*</code>과 <code>_</code>는 bold와 italic</li>
-<li>LaTex: <code>_</code>는 subscript</li>
-</ul>
-<p>따라서 <code>_</code>는 LaTex의 문법만을 따라서 아랫첨자를 나타내도록 하기위해<code>node_modules\kramed\lib\rules\inline.js</code>를 열고 다음과 같이 수정한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span><br><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure>
-<h2 id="3-Mathjax-사용하기"><a href="#3-Mathjax-사용하기" class="headerlink" title="3. Mathjax 사용하기"></a>3. Mathjax 사용하기</h2><p>사용하고 있는 theme의 <code>_config.yml</code> 파일을 열고 다음과 같이 mathjax를 enabling 해준다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
-<h2 id="4-markdown-post-작성하기"><a href="#4-markdown-post-작성하기" class="headerlink" title="4. markdown post 작성하기"></a>4. markdown post 작성하기</h2><p>이제 hexo 블로그에 수식을 사용하기 위한 설정은 모두 마쳤다!<br>마지막으로 post 작성시 header 부분에 <code>mathjax: true</code>를 넣어주면 아래처럼 블로그에 수식이 잘 표현된다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;pmatrix&#125;</span><br><span class="line"> 1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \\</span><br><span class="line"> 1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \\</span><br><span class="line"> \vdots  &amp; \vdots&amp; \vdots &amp; \ddots &amp; \vdots \\</span><br><span class="line"> 1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n    </span><br><span class="line"> \end&#123;pmatrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">
-\begin{pmatrix}
- 1 & a_1 & a_1^2 & \cdots & a_1^n \\
- 1 & a_2 & a_2^2 & \cdots & a_2^n \\
- \vdots  & \vdots& \vdots & \ddots & \vdots \\
- 1 & a_m & a_m^2 & \cdots & a_m^n    
- \end{pmatrix}</script><h4 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h4><ul>
-<li>블로그 <a href="https://www.infiniteft.xyz/2018/03/21/make-hexo-support-latex/" target="_blank" rel="noopener">Make Hexo Support Latex</a></li>
-<li>블로그 <a href="https://irongaea.github.io/2018/08/21/hexo-inline-math/" target="_blank" rel="noopener">hexo-inline-math</a></li>
-<li>블로그 <a href="https://johngrib.github.io/wiki/mathjax-latex/#3-%EB%8F%84%EA%B5%AC" target="_blank" rel="noopener">MathJax로 LaTeX 사용하기</a></li>
-<li><a href="https://www.mathjax.org/#gettingstarted" target="_blank" rel="noopener">www.mathjax.org</a></li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/24/hexo_mathjax_00/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>

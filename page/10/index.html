@@ -156,7 +156,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 859 words)
+                    6 minutes read (About 860 words)
                 </span>
                 
             </div>
@@ -169,215 +169,16 @@
         </h1>
         <div class="content">
             <p>MySQL 문법을 익히기 전에 데이터베이스에서 테이블을 생성할 때 알아야하는 데이터 타입과 제약조건에 대해 알아보자</p>
-<h2 id="1-Data-Type"><a href="#1-Data-Type" class="headerlink" title="1. Data Type"></a>1. Data Type</h2><p><a href="https://dev.mysql.com/doc/refman/5.7/en/data-types.html" target="_blank" rel="noopener">reference</a></p>
-<h3 id="1-Numberic"><a href="#1-Numberic" class="headerlink" title="1) Numberic"></a>1) Numberic</h3><p><a href="https://dev.mysql.com/doc/refman/5.7/en/numeric-types.html" target="_blank" rel="noopener">reference</a></p>
-<h4 id="1-정수-타입-integer-types"><a href="#1-정수-타입-integer-types" class="headerlink" title="(1) 정수 타입(integer types)"></a>(1) 정수 타입(integer types)</h4><div class="table-container">
-<table>
-<thead>
-<tr>
-<th><center>Type</center></th>
-<th style="text-align:center"><center>Storage  (Bytes)</center></th>
-<th style="text-align:right"><center>Minimum Value Signed</center></th>
-<th style="text-align:center"><center>Minimum Value Unsigned</center></th>
-<th style="text-align:right"><center>Maximum Value Signed</center></th>
-<th style="text-align:right"><center>Maximum Value Unsigned</center></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>TINYINT</td>
-<td style="text-align:center">1</td>
-<td style="text-align:right">-128</td>
-<td style="text-align:center">0</td>
-<td style="text-align:right">127</td>
-<td style="text-align:right">255</td>
-</tr>
-<tr>
-<td>SMALLINT</td>
-<td style="text-align:center">2</td>
-<td style="text-align:right">-32,768</td>
-<td style="text-align:center">0</td>
-<td style="text-align:right">32,767</td>
-<td style="text-align:right">65,535</td>
-</tr>
-<tr>
-<td>MEDIUMINT</td>
-<td style="text-align:center">3</td>
-<td style="text-align:right">-8,388,608</td>
-<td style="text-align:center">0</td>
-<td style="text-align:right">8,388,607</td>
-<td style="text-align:right">16,777,215</td>
-</tr>
-<tr>
-<td>INT</td>
-<td style="text-align:center">4</td>
-<td style="text-align:right">-2,147,483,648</td>
-<td style="text-align:center">0</td>
-<td style="text-align:right">2,147,483,647</td>
-<td style="text-align:right">4,294,967,295</td>
-</tr>
-<tr>
-<td>BIGINT</td>
-<td style="text-align:center">8</td>
-<td style="text-align:right">-2<sup>63</sup></td>
-<td style="text-align:center">0</td>
-<td style="text-align:right">2<sup>63</sup>-1</td>
-<td style="text-align:right">2<sup>64</sup>-1</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h4 id="2-고정-소수점-타입-fixed-point-types"><a href="#2-고정-소수점-타입-fixed-point-types" class="headerlink" title="(2) 고정 소수점 타입(fixed-point types)"></a>(2) 고정 소수점 타입(fixed-point types)</h4><ul>
-<li><p>DECIMAL(M, D)</p>
-<ul>
-<li>M : 소수점을 포함한 전체 자리수</li>
-<li>D : 소수 부분 자리수<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user1</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">COLUMN</span> deci <span class="built_in">DECIMAL</span>(<span class="number">5</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>NUMERIC(M, D)</p>
-</li>
-</ul>
-<h4 id="3-실수-floating-point-types"><a href="#3-실수-floating-point-types" class="headerlink" title="(3) 실수 (floating-point types)"></a>(3) 실수 (floating-point types)</h4><p>소수점을 나타내기 위한 데이터 타입으로 아래의 두 타입이 있음(데이터 저장공간의 차이가 있음)</p>
-<ul>
-<li>FLOAT (4byte)</li>
-<li>DOUBLE (8byte)  </li>
-</ul>
-<p>아래와 같이 고정 소수점 타입으로도 사용 가능</p>
-<ul>
-<li>FLOAT(M,D)</li>
-<li>DOUBLE(M,D)</li>
-</ul>
-<h4 id="4-비트-값-타입-bit-value-type"><a href="#4-비트-값-타입-bit-value-type" class="headerlink" title="(4) 비트 값 타입 ( bit value type )"></a>(4) 비트 값 타입 ( bit value type )</h4><p>0과 1로 구성이 되는 2진수(binary) 데이터</p>
-<ul>
-<li>BIT(M)<ul>
-<li>M: 비트의 범위</li>
-<li>예) M을 5로 작성하면 00000(2) ~ 11111(2) 까지 표현 가능</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-Date-amp-Time"><a href="#2-Date-amp-Time" class="headerlink" title="2 Date &amp; Time"></a>2 Date &amp; Time</h2><p><a href="https://dev.mysql.com/doc/refman/5.7/en/date-and-time-types.html" target="_blank" rel="noopener">reference</a></p>
-<h3 id="1-DATE"><a href="#1-DATE" class="headerlink" title="1) DATE"></a>1) DATE</h3><p>DATE는 날짜를 저장하는 데이터 타입</p>
-<ul>
-<li>기본 포맷: “년-월-일”</li>
-</ul>
-<h3 id="2-DATETIME"><a href="#2-DATETIME" class="headerlink" title="2) DATETIME"></a>2) DATETIME</h3><p>DATETIME은 날짜와 시간을 저장하는 데이터 타입</p>
-<ul>
-<li>기본 포맷: “년-월-일 시:분:초”</li>
-</ul>
-<h3 id="3-TIMESTAME"><a href="#3-TIMESTAME" class="headerlink" title="3) TIMESTAME"></a>3) TIMESTAME</h3><p>TIMESTAME는 날짜와 시간을 저장하는 데이터 타입<br>DATETIME과 다르게 날짜를 입력하지 않으면 현재 날짜와 시간을 자동으로 저장</p>
-<h3 id="4-TIME"><a href="#4-TIME" class="headerlink" title="4) TIME"></a>4) TIME</h3><p>TIME은 시간을 저장하는 데이터 타입</p>
-<ul>
-<li>기본 포맷: “시:분:초” </li>
-</ul>
-<h3 id="5-YEAR"><a href="#5-YEAR" class="headerlink" title="5) YEAR"></a>5) YEAR</h3><p>YEAR는 연도를 저장할수 있는 데이터 타입</p>
-<ul>
-<li>YEAR(2)는 2자리의 연도를 저장</li>
-<li>YEAR(4)는 4자리의 연도를 저장</li>
-</ul>
-<h2 id="3-String"><a href="#3-String" class="headerlink" title="3. String"></a>3. String</h2><p><a href="https://dev.mysql.com/doc/refman/5.7/en/string-types.html" target="_blank" rel="noopener">reference</a></p>
-<h3 id="1-CHAR-amp-VARCHAR"><a href="#1-CHAR-amp-VARCHAR" class="headerlink" title="1) CHAR &amp; VARCHAR"></a>1) CHAR &amp; VARCHAR</h3><ol>
-<li>CHAR: 고정형 문자열</li>
-<li>VARCHAR: 가변형 문자열</li>
-</ol>
-<ul>
-<li>CHAR &amp; VARCHAR의 저장형식과 저장용량 비교</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Value</th>
-<th style="text-align:center">CHAR(4)</th>
-<th style="text-align:center">Storage Required</th>
-<th style="text-align:left">VARCHAR(4)</th>
-<th style="text-align:center">Storage Required</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">‘’</td>
-<td style="text-align:center">‘　　‘</td>
-<td style="text-align:center">4 bytes</td>
-<td style="text-align:left">‘’</td>
-<td style="text-align:center">1 byte</td>
-</tr>
-<tr>
-<td style="text-align:left">‘ab’</td>
-<td style="text-align:center">‘ab　‘</td>
-<td style="text-align:center">4 bytes</td>
-<td style="text-align:left">‘ab’</td>
-<td style="text-align:center">3 bytes</td>
-</tr>
-<tr>
-<td style="text-align:left">‘abcd’</td>
-<td style="text-align:center">‘abcd’</td>
-<td style="text-align:center">4 bytes</td>
-<td style="text-align:left">‘abcd’</td>
-<td style="text-align:center">5 bytes</td>
-</tr>
-<tr>
-<td style="text-align:left">‘abcdefgh’</td>
-<td style="text-align:center">‘abcd’</td>
-<td style="text-align:center">4 bytes</td>
-<td style="text-align:left">‘abcd’</td>
-<td style="text-align:center">5 bytes</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="2-TEXT"><a href="#2-TEXT" class="headerlink" title="2) TEXT"></a>2) TEXT</h3><p>CHAR와 VARCHAR는 대체로 크기가 작은 문자열을 저장할때 사용<br>크기가 큰 문자열을 저장할 때는 TEXT를 사용</p>
-<ul>
-<li>TEXT의 타입에 따른 데이터 크기</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:right">Maximum Length</th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">TINYTEXT</td>
-<td style="text-align:right">255(2<sup>8</sup>-1) bytes</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">TEXT</td>
-<td style="text-align:right">65,535(2<sup>16</sup>-1) bytes</td>
-<td style="text-align:left">= 64KB</td>
-</tr>
-<tr>
-<td style="text-align:left">MEDIUMTEXT</td>
-<td style="text-align:right">16,777,215 (2<sup>24</sup>-1) bytes</td>
-<td style="text-align:left">= 16MB</td>
-</tr>
-<tr>
-<td style="text-align:left">LONGTEXT</td>
-<td style="text-align:right">4,294,967,295 (2<sup>32</sup>-1) bytes</td>
-<td style="text-align:left">= 4GB</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="2-Constraint"><a href="#2-Constraint" class="headerlink" title="2. Constraint"></a>2. Constraint</h2><p>데이터 베이스의 테이블을 생성할때 각 컬럼은 각각의 제약조건을 가짐</p>
-<h3 id="1-NOT-NULL"><a href="#1-NOT-NULL" class="headerlink" title="1) NOT NULL"></a>1) NOT NULL</h3><p>NOT NULL 제약조건이 있는 컬럼에 NULL 값(비어있는 값)을 저장할수 없음</p>
-<h3 id="2-UNIQUE"><a href="#2-UNIQUE" class="headerlink" title="2) UNIQUE"></a>2) UNIQUE</h3><p>UNIQUE 제약조건이 있는 컬럼에 같은 값을 저장할 수 없음</p>
-<h3 id="3-PRIMARY-KEY"><a href="#3-PRIMARY-KEY" class="headerlink" title="3) PRIMARY KEY"></a>3) PRIMARY KEY</h3><p>컬럼을 기본키로 설정하기 위해서는 NOT NULL과 UNIQUE 제약조건을 동시에 만족해야 함<br>즉, 컬럼에 비어 있는 값, 중복되는 값을 저장할수 없음<br><strong><em>하나의 테이블에 하나의 컬럼에만 이 조건을 설정 가능</em></strong></p>
-<h3 id="4-FOREIGN-KEY"><a href="#4-FOREIGN-KEY" class="headerlink" title="4) FOREIGN KEY"></a>4) FOREIGN KEY</h3><p>다른 테이블과 연결되는 값이 저장됩니다.</p>
-<h3 id="5-DEFAULT"><a href="#5-DEFAULT" class="headerlink" title="5) DEFAULT"></a>5) DEFAULT</h3><p>데이터를 저장할때 해당 컬럼에 별도의 저장값이 없으면 DEFAULT로 설정된 값이 저장</p>
-<h3 id="6-AUTO-INCREMENT"><a href="#6-AUTO-INCREMENT" class="headerlink" title="6) AUTO_INCREMENT"></a>6) AUTO_INCREMENT</h3><p>주로 테이블의 PRIMARY KEY 데이터를 저장할때 자동으로 숫자를 1씩 증가시켜 주는 기능으로 사용</p>
-<hr>
-<h4 id="※-참고-자료"><a href="#※-참고-자료" class="headerlink" title="※ 참고 자료"></a>※ 참고 자료</h4><ul>
-<li>패스트캠퍼스 ‘데이터 사이언스 스쿨 Python 8기’ 수업자료</li>
-<li>이동명, 권오현, 고정국, 「컴퓨터 사이언스 개정판」</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/07/27/Database_03_mysql_basic/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -406,7 +207,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 590 words)
+                    4 minutes read (About 591 words)
                 </span>
                 
             </div>
@@ -426,74 +227,16 @@
 <li>비절차적 언어이기 때문에 절차적언어에 비해 배우기 쉬움</li>
 <li>자연어에 가까운 구문을 사용해 query를 표현하며 관계형 대수나 관계형 해석에 비해 표현력이 우수함</li>
 </ul>
-<p>SQL의 기능</p>
-<ol>
-<li>데이터 정의 기능<ul>
-<li>데이터 정의어(DDL)를 이용하여 테이블 생성 및 제거, 속성의 추가 및 삭제, view의 생성 및 제거, index의 생성 및 제거 등의 작업 수행</li>
-<li>테이블을 생성하면서 여러 가지 무결성 제약 조건 기술</li>
-</ul>
-</li>
-<li>데이터 조작 기능<ul>
-<li>데이터 조작어(DML)를 이용하여 데이터의 검색, 삽입, 삭제, 수정 등의 연산을 수행</li>
-</ul>
-</li>
-<li>데이터 제어 기능<ul>
-<li>데이터 제어어(DCL)를 이용하여 transaction의 시작, 철회, 완료 등을 명시하고 table에 대해 권한을 부여하거나 취소</li>
-</ul>
-</li>
-</ol>
-<h2 id="2-MySQL-Basic-Command"><a href="#2-MySQL-Basic-Command" class="headerlink" title="2. MySQL Basic Command"></a>2. MySQL Basic Command</h2><p>MySQL shell을 이용한 기본 명령</p>
-<h3 id="1-Dabatase"><a href="#1-Dabatase" class="headerlink" title="1) Dabatase"></a>1) Dabatase</h3><ul>
-<li><p>DB 목록 보기</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show databases;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>DB 만들기</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create databases db_name;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>DB 접속</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use databases db_name;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>현재 접속 중인 DB 확인</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select database();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>DB 삭제</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; drop databases db_name;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="2-Table"><a href="#2-Table" class="headerlink" title="2) Table"></a>2) Table</h3><ul>
-<li><p>Table 만들기</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- name(문자열 20자), age (숫자 3자) column이 있는 user 테이블 생성 </span></span><br><span class="line">mysql&gt; create table user(name char(20), age int(3));</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Table 목록 확인 </p>
-<ul>
-<li>테이블 추가나 삭제 후 table 목록 확인<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show tables;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>Table 구조 확인</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- table name: user</span></span><br><span class="line">mysql&gt; desc table user;</span><br><span class="line">mysql&gt; describe table user;</span><br><span class="line">mysql&gt; explain table user;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Table 이름 바꾸기</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- user에서 user1로 이름 변경</span></span><br><span class="line">mysql&gt; rename table user to user1;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Table에 데이터 추가</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; insert into user1(name, age) values("alice", 23);</span><br><span class="line">mysql&gt; insert into user1(name, age) values("peter", 30);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>추가된 데이터 확인</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from user1;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Table 삭제</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; drop table user1;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h4 id="※-참고-자료"><a href="#※-참고-자료" class="headerlink" title="※ 참고 자료"></a>※ 참고 자료</h4><ul>
-<li>패스트캠퍼스 ‘데이터 사이언스 스쿨 Python 8기’ 수업자료</li>
-<li>이동명, 권오현, 고정국, 「컴퓨터 사이언스 개정판」</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/07/25/Database_02/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -522,7 +265,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    14 minutes read (About 2045 words)
+                    14 minutes read (About 2046 words)
                 </span>
                 
             </div>
@@ -539,231 +282,16 @@
 <li>방대한 데이터를 효율적으로 관리하기 위해 컴퓨터에 통합·저장한 것</li>
 <li>통합하여 관리되는 데이터들의 집합</li>
 </ul>
-<p>DBMS(Database Management System)</p>
-<ul>
-<li>데이터베이스를 관리하는 미들웨어 시스템</li>
-<li>데이터베이스에 데이터를 저장하고, 효율적으로 검색하고 수정할 수 있는 환경을 제공</li>
-<li>권한이 없는 사용자가 접근하거나 시스템에 장애가 생겼을 때에도 데이터를 안전하게 보호하며, 여러 사용자가 데이터베이스에 동시에 접근할 수 있도록 제어</li>
-<li>대표적인 DBMS: Oracle, MySQL 등</li>
-</ul>
-<h3 id="1-2-데이터베이스의-특징"><a href="#1-2-데이터베이스의-특징" class="headerlink" title="1.2 데이터베이스의 특징"></a>1.2 데이터베이스의 특징</h3><ul>
-<li><p>한 조직의 여러 응용 프로그램이 저장된 데이터를 공유할 수 있도록 데이터를 통합하여 관리</p>
-</li>
-<li><p>데이터베이스에 저장된 데이터의 특징</p>
-<ul>
-<li>통합되어 저장됨</li>
-<li>물리적인 기억장치에 보관됨</li>
-<li>필요에 따라 삽입, 삭제, 변경됨</li>
-<li>여러 사람이 사용함</li>
-</ul>
-</li>
-<li><p>데이터베이스의 특징</p>
-<ul>
-<li>실시간으로 접근 가능</li>
-<li>계속 변화함</li>
-<li>동시 공유가 가능</li>
-<li>내용에 따라 참조</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-3-데이터베이스-언어"><a href="#1-3-데이터베이스-언어" class="headerlink" title="1.3 데이터베이스 언어"></a>1.3 데이터베이스 언어</h3><ol>
-<li><p>데이터 정의어(DDL, Data Definition Language)</p>
-<ul>
-<li>데이터 저장 구조, 데이터 접근 방법, 데이터 형식 등 데이터베이스를 구축하거나 수정할 때 사용하는 언어</li>
-</ul>
-</li>
-<li><p>데이터 조직어(DML, Data Manipulation Language)</p>
-<ul>
-<li>데이터 베이스에 저장된 데이터를 검색, 수정, 삽입, 삭제할 때 사용하는 언어로, 사용자와 DBMS 사이의 인터페이스를 제공</li>
-<li>대표적 데이터 조직어: query</li>
-<li>절차적언어 &amp; 비절차적 언어로 구분<ul>
-<li>절차적 언어(procedural language): 필요한 데이터와 검색 방법까지 명시</li>
-<li>비절차적 언어(non-procedural language): 필요한 데이터만 명시하고 검색 방법은 명시하지 않음<ul>
-<li>SQL이 대표적 비절차적 언어  </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>데이터 제어어(DCL, Data Control Language)</p>
-<ul>
-<li>데이터를 보호하고 관리할 때 사용하는 언어</li>
-<li>데이터의 무결성 유지, 보안 및 접근 제어, 시스템 장애로부터의 복구, 병행 수행 제어 기능 등을 담당 </li>
-</ul>
-</li>
-</ol>
-<h3 id="1-4-데이터베이스-사용자"><a href="#1-4-데이터베이스-사용자" class="headerlink" title="1.4 데이터베이스 사용자"></a>1.4 데이터베이스 사용자</h3><p>DBMS 활용 형태에 따라 세 가지 유형으로 구분</p>
-<ul>
-<li><p>응용프로그래머</p>
-<ul>
-<li>일반 프로그래밍언어와 데이터조작어를 이용하여 프로그램을 만듦</li>
-</ul>
-</li>
-<li><p>최종 사용자</p>
-<ul>
-<li>데이터의 검색, 삽입, 삭제, 갱신 등을 위해 DBMS를 사용하는 사람</li>
-<li>데이터베이스 질의어를 사요아여 데이터베이스 시스템에 접근한 후 원하는 정보를 찾음   </li>
-</ul>
-</li>
-<li><p>데이터베이스 관리자</p>
-<ul>
-<li>데이터 정의어와 데이터 제어어를 사용하여 데이터베이스 스키마를 생성하고 관리</li>
-<li>주요 업무: 데이터베이스 스키마의 생성과 변경, 무결성 제약 조건 명시, 보안 정책 수립(사용자의 권한 설정 및 역할 관리), 저장 구조 및 접근 방법 정의, 백업과 복구 절차 수립, 표준화 시행 등 </li>
-</ul>
-</li>
-</ul>
-<h3 id="1-5-데이터베이스의-구분"><a href="#1-5-데이터베이스의-구분" class="headerlink" title="1.5 데이터베이스의 구분"></a>1.5 데이터베이스의 구분</h3><ol>
-<li><p>관계형 데이터베이스(RDBMS, Relational Database Management System)</p>
-<ul>
-<li>관계형 데이터 모델을 기반으로 하며 가장 널리 사용되는 데이터베이스</li>
-<li>Oracle, <strong>MySQL</strong>, Postgresql, Sqlite 등</li>
-<li>데이터 테이블 사이에 키값으로 관계를 가지고 있는 데이터베이스</li>
-<li>데이터 사이의 관계 설정으로 최적화된 스키마를 설계 가능</li>
-</ul>
-</li>
-<li><p>NoSQL</p>
-<ul>
-<li><strong>Mongodb</strong>, Hvase, Cassandra 등</li>
-<li>데이터 테이블 사이에 관계가 없이 저장하는 데이터베이스</li>
-<li>데이터 사이의 관계가 없으므로 복잡성이 줄고 많은 데이터를 저장가능하고 데이터 수정도 용이</li>
-<li>RDBMS와 달리 data가 중복되어 저장되므로 row수가 늘어나지만 insert 속도가 빨라 big data 처리와 관련해 최근 주목 받게 됨    </li>
-</ul>
-</li>
-</ol>
-<h2 id="2-RDBMS-관계형-데이터베이스"><a href="#2-RDBMS-관계형-데이터베이스" class="headerlink" title="2. RDBMS(관계형 데이터베이스)"></a>2. RDBMS(관계형 데이터베이스)</h2><h3 id="2-1-RDBMS의-개요"><a href="#2-1-RDBMS의-개요" class="headerlink" title="2.1 RDBMS의 개요"></a>2.1 RDBMS의 개요</h3><p>특징</p>
-<ul>
-<li>구조가 단순하고 데이터 분류, 정렬, 탐색속도가 빠름</li>
-<li>오래 사용된 만큼 신뢰성이 높음</li>
-<li>스키마 수정이 어려움  </li>
-</ul>
-<p>구조</p>
-<ul>
-<li>Server &gt; Database &gt; Table &gt; Row &gt; Value</li>
-</ul>
-<h3 id="2-2-RDBMS의-구조"><a href="#2-2-RDBMS의-구조" class="headerlink" title="2.2 RDBMS의 구조"></a>2.2 RDBMS의 구조</h3><ol>
-<li><p>Table</p>
-<ul>
-<li>row와 column으로 이루어진 데이터베이스를 구성하는 기본 단위</li>
-<li>python pandas의 DataFrame에 해당</li>
-<li>Storage Engine<ul>
-<li>어떤 data를 쓸지에 따라 결정 (보통 InnoDB 많이 사용)</li>
-</ul>
-<ol>
-<li>MyISAM: full text index 지원, table 단위 lock(단점), select가 빠름, 구조 단순</li>
-<li>InnoDB: transaction 지원, row 단위 lock(장점), 자원을 만이 사용, 구조 복잡 </li>
-</ol>
-</li>
-</ul>
-</li>
-<li><p>Row</p>
-<ul>
-<li>테이블의 각 행, tuple 또는 record라고도 함</li>
-<li>cardinality: row(tuple)의 개수</li>
-</ul>
-</li>
-<li><p>Column</p>
-<ul>
-<li>데이터의 각 열, field 또는 attribute라고도 함</li>
-<li>degree(차수): tuple을 구성하는 attribute의 개수 (column수)</li>
-<li>domain: attirube 하나가 가질 수 있는 <strong>값</strong>의 집합</li>
-</ul>
-</li>
-<li><p>Value</p>
-<ul>
-<li>row와 column에 포함되어 있는 데이터</li>
-</ul>
-</li>
-<li><p>Key</p>
-<ul>
-<li>row에서 unique한 값으로, row의 식별자로 사용</li>
-<li>key의 종류<ol>
-<li>후보키(candidate key):<ul>
-<li>각 row를 구별할 수 있는 최소한의 속성으로 구성된 키</li>
-<li>두 개 column의 조합이 후보 키가 될 수도 있음 (이 경우 어떤 한 속성을 제거하면 구별 능력을 상실)</li>
-</ul>
-</li>
-<li>기본키(primary key): 후보키 중 대표로 선정한 key </li>
-<li>대체키(alternate key): 기본키가 아닌 후보키</li>
-<li>외래키(foreign key): 다른 테이블의 기본키를 참조하며, 테이블 사이의 관계를 나타내는 키</li>
-</ol>
-</li>
-</ul>
-</li>
-<li><p>Relation</p>
-<ul>
-<li>두 개의 table은 일대일(1:1, one-to-one), 일대다(1:n, one-to-many), 다대다(n:n, many-to-many)의 관계를 가질 수 있음</li>
-</ul>
-</li>
-</ol>
-<h3 id="2-3-Schema"><a href="#2-3-Schema" class="headerlink" title="2.3 Schema"></a>2.3 Schema</h3><ol>
-<li><p>Schema</p>
-<ul>
-<li>Schema: 데이터베이스의 구조에 대한 디자인</li>
-</ul>
-</li>
-<li><p>무결성 제약 조건(integrity constraint)</p>
-<ul>
-<li>데이터베이스 상태가 만족해야 하는 조건으로, 사용자가 데이터베이스를 갱신할 때 데이터베이스의 일관성을 손상하지 않도록 보장하는 수단</li>
-<li>schema를 정의할 때 한 번만 명시하면 데이터베이스가 갱신될 때 DBMS가 자동으로 검사</li>
-<li>무결성 제약조건의 구분<ul>
-<li>도메인 무결성 제약 조건<ul>
-<li>각 속성값은 반드시 도메인에 속한 값을 가져야 함</li>
-<li>속성의 default, 가능한 값의 범위, null값 허용 여부 등을 지정</li>
-</ul>
-</li>
-<li>개체 무결성 제약 조건<ul>
-<li>기본키를 구성하는 속성은 null값을 가질 수 없음</li>
-</ul>
-</li>
-<li>참조 무결성 제약 조건<ul>
-<li>외래키 값은 참조된 테이블의 기본키와 도메인이 동일해야 함 </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="3-NoSQL"><a href="#3-NoSQL" class="headerlink" title="3. NoSQL"></a>3. NoSQL</h2><h3 id="3-1-NoSQL의-개요"><a href="#3-1-NoSQL의-개요" class="headerlink" title="3.1 NoSQL의 개요"></a>3.1 NoSQL의 개요</h3><p>NoSQL의 개념</p>
-<ul>
-<li>NoSQL: Not Only SQL</li>
-<li>RDBMS의 한계(확장성이 낮음)를 극복하기 위해 만들어진 데이터베이스</li>
-</ul>
-<p>NoSQL의 특징</p>
-<ul>
-<li>확장성이 좋음 → 데이터의 분산처리 용이</li>
-<li>데이터 저장이 유연: RDBMS와 다르게 구조의 변경이 불필요</li>
-<li>Schema 및 join이 없음</li>
-<li>collection 별로 관계가 없이 때문에 모든 데이터가 들어있어야 함</li>
-<li>저장되는 데이터는 key-value 형태의 JSON 포맷 사용</li>
-<li>select는 RDBMS보다 느리지만 Insert는 빨라 대용량 데이터베이스에 많이 사용됨</li>
-<li>Transaction이 지원되지 않음(동시수정에 대한 신뢰성이 지원되지 않음)<ul>
-<li>금융권 같은 곳에서는 사용할 수 없음</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-2-Mongodb"><a href="#3-2-Mongodb" class="headerlink" title="3.2 Mongodb"></a>3.2 Mongodb</h3><p>Mongodb</p>
-<ul>
-<li>C++로 작성된 오픈소스 데이터 베이스</li>
-<li>뛰어난 확장성과 성능을 가짐</li>
-<li>NoSQL에서는 인지도가 가장 높음</li>
-</ul>
-<p>Mongodb의 구조</p>
-<ul>
-<li>Server &gt; Database &gt; Collection &gt; Document &gt; key:value</li>
-<li>Collection: RDBMS의 Table과 같은 개념</li>
-<li>Document: RDBMS의 Row와 같은 개념</li>
-<li>Key: RDBMS의 Column과 같은 개념</li>
-</ul>
-<hr>
-<h4 id="※-참고-자료"><a href="#※-참고-자료" class="headerlink" title="※ 참고 자료"></a>※ 참고 자료</h4><ul>
-<li>패스트캠퍼스 ‘데이터 사이언스 스쿨 Python 8기’ 수업자료</li>
-<li>이동명, 권오현, 고정국, 「컴퓨터 사이언스 개정판」</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/07/25/Database_01/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>

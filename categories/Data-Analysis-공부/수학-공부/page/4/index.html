@@ -169,7 +169,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 331 words)
+                    2 minutes read (About 332 words)
                 </span>
                 
             </div>
@@ -182,39 +182,16 @@
         </h1>
         <div class="content">
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 7편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/uQhTuRlWMxw" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E7-Inverse-matrices-column-space-and-null-space"><a href="#E7-Inverse-matrices-column-space-and-null-space" class="headerlink" title="E7. Inverse matrices, column space and null space"></a>E7. Inverse matrices, column space and null space</h2><h2 id="1-Usefulness-of-matrices"><a href="#1-Usefulness-of-matrices" class="headerlink" title="1. Usefulness of matrices"></a>1. Usefulness of matrices</h2><ul>
-<li>특정 방정식계(system of equations)를 풀 수 있음 ⇦ Linear system of equations</li>
-<li>system of equations: unknown variables &amp; equations     <script type="math/tex; mode=display">
-\begin{matrix} 2x+5y+3z = -3 \\ 4x+0y+8z=0 \\ 1x+3y+0z=2 \end{matrix} \to \begin{bmatrix} 2&5&3 \\ 4&0&8 \\ 1&3&0 \end{bmatrix}\begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} -3 \\ 0 \\ 2 \end{bmatrix} \to A\vec x = \vec v</script></li>
-</ul>
-<h2 id="2-A-vec-x-vec-v-의-해-vec-x-를-구하는-방법"><a href="#2-A-vec-x-vec-v-의-해-vec-x-를-구하는-방법" class="headerlink" title="2. $A\vec x = \vec v$의 해 $\vec x$를 구하는 방법"></a>2. $A\vec x = \vec v$의 해 $\vec x$를 구하는 방법</h2><h3 id="1-when-det-A-neq-0-A-의-역행렬이-존재-⇨-Inverse-transformation"><a href="#1-when-det-A-neq-0-A-의-역행렬이-존재-⇨-Inverse-transformation" class="headerlink" title="1) when $det(A) \neq 0$: $A$의 역행렬이 존재 ⇨ Inverse transformation"></a>1) when $det(A) \neq 0$: $A$의 역행렬이 존재 ⇨ Inverse transformation</h3><ul>
-<li>Inverse matrices(역행렬) $A^{-1}$: $A^{-1}A = I$</li>
-</ul>
-<script type="math/tex; mode=display">
-\begin{align}
-A^{-1}A \vec x & = A^{-1}\vec v \\
-\vec x & = A^{-1}\vec v \\
-\end{align}</script><h3 id="2-when-det-A-0-A-의-역행렬이-존재하지-않음"><a href="#2-when-det-A-0-A-의-역행렬이-존재하지-않음" class="headerlink" title="2) when $det(A) = 0$: $A$의 역행렬이 존재하지 않음"></a>2) when $det(A) = 0$: $A$의 역행렬이 존재하지 않음</h3><ul>
-<li>rank: number of dimensions in the output of transformation<ul>
-<li>변환의 결과가 선, 즉 1차원이라면 rank = 1</li>
-<li>변환의 결과가 평면 상의 벡터들이라면 rank = 2 </li>
-</ul>
-</li>
-<li><p>$n \times n$ 행렬에서 rank가 $n$보다 작을 경우, 즉 full rank가 아닐 경우, 공간이 더 작은 차원으로 축소했음을 의미</p>
-</li>
-<li><p>Column space of $A$: set of all possible outputs of $A \vec v$</p>
-<ul>
-<li>span of columns ⟺ column space</li>
-</ul>
-</li>
-<li><p>Null space(Kernel): 차원이 축소할 때 원점으로 이동되는 벡터들의 집합</p>
-</li>
-<li>$A \vec x= \begin{bmatrix} 0 \\ 0 \end{bmatrix}$인 경우 null space 모두가 해가 될 수 있음 </li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/30/math-lin_alg-007/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -243,7 +220,7 @@ A^{-1}A \vec x & = A^{-1}\vec v \\
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 256 words)
+                    2 minutes read (About 257 words)
                 </span>
                 
             </div>
@@ -256,28 +233,16 @@ A^{-1}A \vec x & = A^{-1}\vec v \\
         </h1>
         <div class="content">
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 6편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/Ip3X9LOh2dk" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E6-The-determinant"><a href="#E6-The-determinant" class="headerlink" title="E6. The determinant"></a>E6. The determinant</h2><h2 id="1-Determinant-of-transformation의-개념"><a href="#1-Determinant-of-transformation의-개념" class="headerlink" title="1. Determinant of transformation의 개념"></a>1. Determinant of transformation의 개념</h2><ul>
-<li>Determinant(행렬식): 선형변형 후 단위면적을 scaling하는 factor<ul>
-<li>2차원 변환의 determinant 값이 3이라면 특정 면적의 크기는 3배가 됨 </li>
-<li>2차원 변환의 determinant 값이 0이라면 차원을 축소시켜 직선이나 점이 됨 (면적은 0이됨)</li>
-<li>determinant 값이 음수인 경우는 방향(orientation)이 뒤집히는 것으로 볼 수 있음</li>
-</ul>
-</li>
-<li>3차원의 determinant는 단위정육면체의 부피를 scaling하는 factor<ul>
-<li>determinant 값이 음수인 경우 오른손의 규칙의 방향이 뒤집히는 것(왼손으로)으로 볼 수 있음<ul>
-<li>오른손의 규칙: 오른손의 엄지, 검지, 중지를 폈을 때 각각 $\hat k, \hat i, \hat k$에 대응함</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-Determinant-computation"><a href="#2-Determinant-computation" class="headerlink" title="2. Determinant computation"></a>2. Determinant computation</h2><ul>
-<li>2차원 행렬의 determinant: $det\Bigl(\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}\Bigr) = ad - cd$</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/30/math-lin_alg-006/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -306,7 +271,7 @@ A^{-1}A \vec x & = A^{-1}\vec v \\
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 248 words)
+                    2 minutes read (About 249 words)
                 </span>
                 
             </div>
@@ -319,25 +284,16 @@ A^{-1}A \vec x & = A^{-1}\vec v \\
         </h1>
         <div class="content">
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 5편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/rHLEWRxRGiM" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E5-Three-dimentional-linear-transformations"><a href="#E5-Three-dimentional-linear-transformations" class="headerlink" title="E5. Three-dimentional linear transformations"></a>E5. Three-dimentional linear transformations</h2><h2 id="1-3차원의-선형변환"><a href="#1-3차원의-선형변환" class="headerlink" title="1. 3차원의 선형변환"></a>1. 3차원의 선형변환</h2><ul>
-<li>3차원 기저벡터: $\hat i=\begin{bmatrix} 1\\0\\0\end{bmatrix}, \hat j=\begin{bmatrix} 0\\1\\0\end{bmatrix}, \hat k=\begin{bmatrix} 0\\0\\1\end{bmatrix}$</li>
-<li>2차원에서와 마찬가지로 각 기저벡터들이 어디로 이동하는지 좌표값을 알면 특정 벡터 $\vec v=\begin{bmatrix} x\\y\\z\end{bmatrix}=x\hat i+y\hat j+z\hat k$가 어떤 벡터로 변형되는지 파악할 수 있음</li>
-<li>e.g. 기저벡터: $\hat i, \hat j, \hat k$가 $\begin{bmatrix} 1\\0\\1\end{bmatrix}, \begin{bmatrix} 1\\1\\0\end{bmatrix}, \begin{bmatrix} 0\\0\\1\end{bmatrix}$로 이동한다고 할 때의 선형변환<ul>
-<li>각 이동한 좌표값이 행렬의 열을 구성함 </li>
-</ul>
-</li>
-</ul>
-<script type="math/tex; mode=display">
-\begin{align}
-  \begin{bmatrix} 1&1&0\\0&1&0\\1&0&1\end{bmatrix}
-  \begin{bmatrix}x\\y\\z\end{bmatrix} & = x\begin{bmatrix}1\\0\\1\end{bmatrix}
-  +y\begin{bmatrix}1\\1\\0\end{bmatrix}
-  +z\begin{bmatrix} 0\\0\\1\end{bmatrix} \\
-   & = \begin{bmatrix} 1x+1y+0z\\ 0x+1y+0z \\1x+0y+1z \end{bmatrix} \\
-\end{align}</script>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/30/math-lin_alg-005/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -366,7 +322,7 @@ A^{-1}A \vec x & = A^{-1}\vec v \\
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 292 words)
+                    2 minutes read (About 293 words)
                 </span>
                 
             </div>
@@ -379,23 +335,16 @@ A^{-1}A \vec x & = A^{-1}\vec v \\
         </h1>
         <div class="content">
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 4편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/XkY2DOUCWMU" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E4-Matrix-multiplication-as-composition"><a href="#E4-Matrix-multiplication-as-composition" class="headerlink" title="E4. Matrix multiplication as composition"></a>E4. Matrix multiplication as composition</h2><h2 id="1-Composition-of-linear-transformation"><a href="#1-Composition-of-linear-transformation" class="headerlink" title="1. Composition of linear transformation"></a>1. Composition of linear transformation</h2><ul>
-<li>선형변환을 한 번 하고 다시 선형변환을 하면 그 결과는 새로운 하나의 선현변환이 됨</li>
-<li>이를 행렬의 곱으로 나타낼 수 있음, 단 함수의 합성처럼 식의 왼쪽으로 곱해나가야 함</li>
-<li>e.g. 첫번째 선형변환을 $\begin{bmatrix} 0 &amp; -1 \\ 1 &amp; 0\end{bmatrix}$(rotation), 두번째 선형변환을 $\begin{bmatrix} 1 &amp; 1 \\ 0 &amp; 1\end{bmatrix}$(shear)라고 할 때 그 composition<script type="math/tex; mode=display">
-\begin{bmatrix} 1 & 1 \\ 0 & 1\end{bmatrix}\Bigl(\begin{bmatrix} 0 & -1 \\ 1 & 0\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix} \Bigr) = \begin{bmatrix} 1 & -1 \\ 1 & 0\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix}</script></li>
-<li>이 때 composition 행렬을 두 원본 행렬의 곱(product)이라고 할 수 있음 </li>
-</ul>
-<h2 id="2-Matrix-multiplication"><a href="#2-Matrix-multiplication" class="headerlink" title="2. Matrix multiplication"></a>2. Matrix multiplication</h2><ul>
-<li>$M_1 = \begin{bmatrix} e &amp; f \\ g &amp; h\end{bmatrix}$과 $M_2 = \begin{bmatrix} a &amp; b \\ c &amp; d\end{bmatrix}$의 곱:<script type="math/tex; mode=display">
-\begin{bmatrix} a & b \\ c & d\end{bmatrix} \begin{bmatrix} e & f \\ g & h\end{bmatrix} = \begin{bmatrix} ae+bg & af+bh \\ ce+dg & cf+dh \end{bmatrix}</script></li>
-<li>교환법칙은 성립하지 않음: $AB \neq BA$ (곱하는 순서는 중요하다!)</li>
-<li>결합법칙은 성립함: $(AB)C = A(BC)$ (Assiciativity)</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/30/math-lin_alg-004/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -424,7 +373,7 @@ A^{-1}A \vec x & = A^{-1}\vec v \\
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 308 words)
+                    2 minutes read (About 309 words)
                 </span>
                 
             </div>
@@ -437,37 +386,16 @@ A^{-1}A \vec x & = A^{-1}\vec v \\
         </h1>
         <div class="content">
             <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 3편 내용을 간략히 정리해본다.</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/kYB8IZa5AuE" frameborder="0" allowfullscreen></iframe></div>
-<h2 id="E3-Linear-transformation-and-matrices"><a href="#E3-Linear-transformation-and-matrices" class="headerlink" title="E3. Linear transformation and matrices"></a>E3. Linear transformation and matrices</h2><h2 id="1-Linear-transformation란"><a href="#1-Linear-transformation란" class="headerlink" title="1. Linear transformation란"></a>1. Linear transformation란</h2><ul>
-<li>특정 벡터를 다른 벡터로 바꾸는 변환 (input vector → output vector)</li>
-<li>Linear 변환의 속성<ul>
-<li>Lines remain lines </li>
-<li>Origin remains fixed</li>
-<li>Grid lines remain parallel and evenly spaced</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-Linear-transformation-계산"><a href="#2-Linear-transformation-계산" class="headerlink" title="2. Linear transformation 계산"></a>2. Linear transformation 계산</h2><ul>
-<li>기저벡터 $\hat i$와 $\hat j$의 변형위치를 알면 임의의 벡터 $\vec v$를 추론할 수 있음<ul>
-<li>e.g. $\vec v = -1\hat i + 2\hat j$에서 $\hat i$와 $\hat j$가 $\begin{bmatrix} 1 \\ 2 \end{bmatrix},  \begin{bmatrix} 3 \\ 0 \end{bmatrix}$로 변형된 경우 변환된 $\vec v$ 구하기</li>
-</ul>
-</li>
-</ul>
-<script type="math/tex; mode=display">
-\begin{align}
-\vec v & = -1(Transformed \; \hat i) + 2(Transformed\; \hat j)\\
- & = -1\begin{bmatrix}1\\2\end{bmatrix} + -2\begin{bmatrix}3\\0\end{bmatrix}\\
- & = \begin{bmatrix} -1(1)+2(3) \\ 1(-2)+2(0) \end{bmatrix}\\
- & = \begin{bmatrix} 5 \\ 2 \end{bmatrix}
-\end{align}</script><ul>
-<li>일반화: $\vec v = x\hat i + y\hat j = \begin{bmatrix} x \\ y \end{bmatrix}$에서 $\hat i$와 $\hat j$가 $\begin{bmatrix} a \\ c \end{bmatrix},  \begin{bmatrix} b \\ d \end{bmatrix}$로 변형된 경우 변환된 벡터 구하기</li>
-</ul>
-<script type="math/tex; mode=display">
-\begin{bmatrix} a & b \\ c & d\end{bmatrix}\begin{bmatrix} x \\ y \end{bmatrix} = 
-x\begin{bmatrix} a \\ c \end{bmatrix} + \;y\begin{bmatrix} b \\ d \end{bmatrix} = \begin{bmatrix} ax+by \\ cx+dy \end{bmatrix}</script><p><code>⇒ 행렬-벡터 곱셈은 선형 변환을 계산하는 방법이라고 할 수 있음</code></p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/30/math-lin_alg-003/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>

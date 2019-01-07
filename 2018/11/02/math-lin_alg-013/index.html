@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 13편 내용을 간략하게 정리해본다.  E13. Eigenvectors and eigenvalues(고유벡터와 고유값)1. 개념 eigenvector와 eigenvalue를 이해하려면 앞에서 다룬 개념들에 대한 시각적">
+    <meta name="description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 13편 내용을 간략하게 정리해본다.">
 <meta name="keywords" content="data analysis,math,선형대수">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E13">
 <meta property="og:url" content="http://yoursite.com/2018/11/02/math-lin_alg-013/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 13편 내용을 간략하게 정리해본다.  E13. Eigenvectors and eigenvalues(고유벡터와 고유값)1. 개념 eigenvector와 eigenvalue를 이해하려면 앞에서 다룬 개념들에 대한 시각적">
+<meta property="og:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 13편 내용을 간략하게 정리해본다.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-20T14:25:08.737Z">
+<meta property="og:updated_time" content="2019-01-07T14:41:44.578Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E13">
-<meta name="twitter:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 13편 내용을 간략하게 정리해본다.  E13. Eigenvectors and eigenvalues(고유벡터와 고유값)1. 개념 eigenvector와 eigenvalue를 이해하려면 앞에서 다룬 개념들에 대한 시각적">
+<meta name="twitter:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 13편 내용을 간략하게 정리해본다.">
 
 
 
@@ -156,7 +156,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 355 words)
+                    2 minutes read (About 356 words)
                 </span>
                 
             </div>
@@ -168,7 +168,7 @@
             
         </h1>
         <div class="content">
-            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 13편 내용을 간략하게 정리해본다.</p>
+            <p>선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 13편 내용을 간략하게 정리해본다.<br><a id="more"></a> </p>
 <div class="video-container"><iframe src="//www.youtube.com/embed/PFDu9oVAE-g" frameborder="0" allowfullscreen></iframe></div>
 <h2 id="E13-Eigenvectors-and-eigenvalues-고유벡터와-고유값"><a href="#E13-Eigenvectors-and-eigenvalues-고유벡터와-고유값" class="headerlink" title="E13. Eigenvectors and eigenvalues(고유벡터와 고유값)"></a>E13. Eigenvectors and eigenvalues(고유벡터와 고유값)</h2><h2 id="1-개념"><a href="#1-개념" class="headerlink" title="1. 개념"></a>1. 개념</h2><ul>
 <li>eigenvector와 eigenvalue를 이해하려면 앞에서 다룬 개념들에 대한 시각적 이해, 특히 행렬을 선형변환으로 생각하는 방법에 대한 이해가 선행되어야 함</li>
@@ -186,14 +186,8 @@
 <li>$\lambda$: 고유값(eigenvalue)</li>
 </ul>
 </li>
-<li>$scaling \; by \; \lambda \Leftrightarrow Matrix \; multiplication by \begin {bmatrix} \lambda &amp;0&amp;0 \\ 0&amp;\lambda&amp;0 \\ 0&amp;0&amp;\lambda\end{bmatrix}(=\lambda I)$</li>
-<li>풀이<script type="math/tex; mode=display">
-\begin{align}
-A \vec v & = \lambda \vec v \\
-A \vec v & = (\lambda I) \vec v \\
-(A - \lambda I)\vec v & = 0 \\
-det(A - \lambda I) & = 0 \quad (squishification) \\
-\end{align}</script></li>
+<li>$scaling \; by \; \lambda \Leftrightarrow Matrix \; multiplication by \begin {bmatrix} \lambda &amp;0&amp;0 \ 0&amp;\lambda&amp;0 \ 0&amp;0&amp;\lambda\end{bmatrix}(=\lambda I)$</li>
+<li>풀이<br>$$<br>\begin{align}<br>A \vec v &amp; = \lambda \vec v \<br>A \vec v &amp; = (\lambda I) \vec v \<br>(A - \lambda I)\vec v &amp; = 0 \<br>det(A - \lambda I) &amp; = 0 \quad (squishification) \<br>\end{align}<br>$$</li>
 </ul>
 <h2 id="3-Eigenbasis-고유기저"><a href="#3-Eigenbasis-고유기저" class="headerlink" title="3. Eigenbasis(고유기저)"></a>3. Eigenbasis(고유기저)</h2><ul>
 <li>Eigenbasis: 기저벡터이기도 한 고유벡터의 쌍</li>
@@ -250,24 +244,15 @@ det(A - \lambda I) & = 0 \quad (squishification) \\
 <div class="card">
     <div class="card-content">
         <h3 class="title is-5 has-text-weight-normal">Comments</h3>
-        
-<script>
-    var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/11/02/math-lin_alg-013/';
-        this.page.identifier = '2018/11/02/math-lin_alg-013/';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
+        <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-width="100%" data-href="http://yoursite.com/2018/11/02/math-lin_alg-013/" data-num-posts="5"></div>
 
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
     </div>
 </div>
 </div>

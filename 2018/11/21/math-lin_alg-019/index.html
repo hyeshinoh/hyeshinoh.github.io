@@ -7,20 +7,20 @@
 
 
 
-    <meta name="description" content="직선과 점의 거리는 분류 알고리즘인 서포트 벡터 머신(SVM: Support Vector Machine) 과 관련해 알아두어야 할 부분이다. 직선의 방정식  어떤 벡터 $w$가 있을 때, 다음의 조건을 만족하는 직선 $x$의 방정식  (1) 벡터 $w$와 수직  (2) 벡터 $w$가 가리키는 점을 지남   벡터 $x$가 해당 직선 위의 한 점일 때, 벡터">
+    <meta name="description" content="직선과 점의 거리는 분류 알고리즘인 서포트 벡터 머신(SVM: Support Vector Machine) 과 관련해 알아두어야 할 부분이다. 직선의 방정식  어떤 벡터 $w$가 있을 때, 다음의 조건을 만족하는 직선 $x$의 방정식  (1) 벡터 $w$와 수직  (2) 벡터 $w$가 가리키는 점을 지남">
 <meta name="keywords" content="data analysis,math,선형대수">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&lt;선형대수&gt; 직선과 점의 거리">
 <meta property="og:url" content="http://yoursite.com/2018/11/21/math-lin_alg-019/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="직선과 점의 거리는 분류 알고리즘인 서포트 벡터 머신(SVM: Support Vector Machine) 과 관련해 알아두어야 할 부분이다. 직선의 방정식  어떤 벡터 $w$가 있을 때, 다음의 조건을 만족하는 직선 $x$의 방정식  (1) 벡터 $w$와 수직  (2) 벡터 $w$가 가리키는 점을 지남   벡터 $x$가 해당 직선 위의 한 점일 때, 벡터">
+<meta property="og:description" content="직선과 점의 거리는 분류 알고리즘인 서포트 벡터 머신(SVM: Support Vector Machine) 과 관련해 알아두어야 할 부분이다. 직선의 방정식  어떤 벡터 $w$가 있을 때, 다음의 조건을 만족하는 직선 $x$의 방정식  (1) 벡터 $w$와 수직  (2) 벡터 $w$가 가리키는 점을 지남">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2018/11/21/math-lin_alg-019/line.jpeg">
 <meta property="og:image" content="http://yoursite.com/2018/11/21/math-lin_alg-019/distance.jpeg">
-<meta property="og:updated_time" content="2018-11-22T09:25:18.080Z">
+<meta property="og:updated_time" content="2019-01-07T14:39:19.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 직선과 점의 거리">
-<meta name="twitter:description" content="직선과 점의 거리는 분류 알고리즘인 서포트 벡터 머신(SVM: Support Vector Machine) 과 관련해 알아두어야 할 부분이다. 직선의 방정식  어떤 벡터 $w$가 있을 때, 다음의 조건을 만족하는 직선 $x$의 방정식  (1) 벡터 $w$와 수직  (2) 벡터 $w$가 가리키는 점을 지남   벡터 $x$가 해당 직선 위의 한 점일 때, 벡터">
+<meta name="twitter:description" content="직선과 점의 거리는 분류 알고리즘인 서포트 벡터 머신(SVM: Support Vector Machine) 과 관련해 알아두어야 할 부분이다. 직선의 방정식  어떤 벡터 $w$가 있을 때, 다음의 조건을 만족하는 직선 $x$의 방정식  (1) 벡터 $w$와 수직  (2) 벡터 $w$가 가리키는 점을 지남">
 <meta name="twitter:image" content="http://yoursite.com/2018/11/21/math-lin_alg-019/line.jpeg">
 
 
@@ -159,7 +159,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 494 words)
+                    3 minutes read (About 495 words)
                 </span>
                 
             </div>
@@ -176,6 +176,7 @@
 <ul>
 <li>어떤 벡터 $w$가 있을 때, 다음의 조건을 만족하는 직선 $x$의 방정식<br>  (1) 벡터 $w$와 수직<br>  (2) 벡터 $w$가 가리키는 점을 지남</li>
 </ul>
+<a id="more"></a> 
 <ul>
 <li>벡터 $x$가 해당 직선 위의 한 점일 때, 벡터 $x$가 가리키는 점과 벡터 $w$가 가리키는 점을 이은 벡터 $x-w$가 벡터 $w$와 직교해야 함을 이용하여 풀이</li>
 </ul>
@@ -262,24 +263,15 @@ d & = \left|  \|x'^{\Vert w}\| - \|w\| \right| \\
 <div class="card">
     <div class="card-content">
         <h3 class="title is-5 has-text-weight-normal">Comments</h3>
-        
-<script>
-    var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/11/21/math-lin_alg-019/';
-        this.page.identifier = '2018/11/21/math-lin_alg-019/';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
+        <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-width="100%" data-href="http://yoursite.com/2018/11/21/math-lin_alg-019/" data-num-posts="5"></div>
 
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
     </div>
 </div>
 </div>

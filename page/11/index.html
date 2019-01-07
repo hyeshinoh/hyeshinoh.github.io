@@ -1005,7 +1005,7 @@ B.__init__
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 206 words)
+                    a minute read (About 207 words)
                 </span>
                 
             </div>
@@ -1019,28 +1019,16 @@ B.__init__
         <div class="content">
             <p><a href="https://github.com/hyeshinoh/Study_Algorithm/blob/master/Algorithm%20Problems/bj_01_1001_A-B.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
 <h4 id="BAEKJOON-1단계-1001번-문제"><a href="#BAEKJOON-1단계-1001번-문제" class="headerlink" title="BAEKJOON 1단계 1001번 문제"></a>BAEKJOON 1단계 1001번 문제</h4><p><a href="https://www.acmicpc.net/problem/1001" target="_blank" rel="noopener">https://www.acmicpc.net/problem/1001</a></p>
-<hr>
-<h3 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h3><p>두 정수 A와 B를 입력받은 다음, A-B를 출력하는 프로그램을 작성하시오.</p>
-<h3 id="입력"><a href="#입력" class="headerlink" title="입력"></a>입력</h3><p>첫째 줄에 A와 B가 주어진다. (0 &lt; A, B &lt; 10)</p>
-<h3 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h3><p>첫째 줄에 A-B를 출력한다.</p>
-<h3 id="예제-입력-1"><a href="#예제-입력-1" class="headerlink" title="예제 입력 1"></a>예제 입력 1</h3><p>3 2</p>
-<h3 id="예제-출력-1"><a href="#예제-출력-1" class="headerlink" title="예제 출력 1"></a>예제 출력 1</h3><p>1</p>
-<hr>
-<h3 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h3><h4 id="1-input을-split해서-리스트로-받아-A-B를-계산"><a href="#1-input을-split해서-리스트로-받아-A-B를-계산" class="headerlink" title="(1) input을 split해서 리스트로 받아 A - B를 계산"></a>(1) input을 split해서 리스트로 받아 A - B를 계산</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls = list(map(int, input().split(<span class="string">' '</span>)))</span><br><span class="line">print(ls[<span class="number">0</span>] - ls [<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
-<pre><code>3 2
-1
-</code></pre><h4 id="2-input은-각각-한-자리-수이므로-input-문자열의-0번째와-2번째를-indexing해서-int로-형변환-후-A-B-계산"><a href="#2-input은-각각-한-자리-수이므로-input-문자열의-0번째와-2번째를-indexing해서-int로-형변환-후-A-B-계산" class="headerlink" title="(2) input은 각각 한 자리 수이므로 input 문자열의 0번째와 2번째를 indexing해서 int로 형변환 후 A - B 계산"></a>(2) input은 각각 한 자리 수이므로 input 문자열의 0번째와 2번째를 indexing해서 int로 형변환 후 A - B 계산</h4><ul>
-<li>코드가 더 짧아진다</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = input()</span><br><span class="line">print(int(a[<span class="number">0</span>]) - int(a[<span class="number">2</span>]))</span><br></pre></td></tr></table></figure>
-<pre><code> 1 3
--2
-</code></pre><h4 id="3-input을-split해서-a-b로-한-번에-받아준-후-계산"><a href="#3-input을-split해서-a-b로-한-번에-받아준-후-계산" class="headerlink" title="(3) input을 split해서 a, b로 한 번에 받아준 후 계산"></a>(3) input을 split해서 a, b로 한 번에 받아준 후 계산</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b = map(int, input().split(<span class="string">' '</span>))</span><br><span class="line">print(a - b)</span><br></pre></td></tr></table></figure>
-<pre><code> 1 3
--2
-</code></pre>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/07/12/algorithm_prob_001/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
