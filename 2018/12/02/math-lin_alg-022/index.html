@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/12/02/math-lin_alg-022/symmetric.jpeg">
 <meta property="og:image" content="http://yoursite.com/2018/12/02/math-lin_alg-022/forPCA.jpeg">
 <meta property="og:image" content="http://yoursite.com/2018/12/02/math-lin_alg-022/summary.png">
-<meta property="og:updated_time" content="2019-01-07T14:51:08.434Z">
+<meta property="og:updated_time" content="2019-01-19T06:32:20.899Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 고윳값 분해 (2)">
 <meta name="twitter:description" content="고윳값행렬과 고유벡터행렬 $N$차원의 정방행렬 $A$가 $N$개의 고윳값과 이에 대응하는 고유벡터를 가질 때, 그 고윳값과 고유벡터를 다음과 같이 표시하자 고윳값: $\lambda_1, \lambda_2, \cdots, \lambda_N$ 고윳벡터: $v_1, v_2, \cdots, v_N$   이 고윳값과 고유벡터를 묶어서 아래와 같이 고유벡터 행렬, 고">
@@ -182,14 +182,14 @@
 <li>이 고윳값과 고유벡터를 묶어서 아래와 같이 고유벡터 행렬, 고윳값 행렬을 정의<ul>
 <li>고유벡터 행렬 $V$: 고유벡터를 옆으로 쌓아서 만든 행렬<br>$$ V = \begin{bmatrix} v_1 &amp; \cdots &amp; v_N \end{bmatrix},\quad  V \in R^{N \times N} $$<img src="/2018/12/02/math-lin_alg-022/eigenmatrix.jpeg">
 <a id="more"></a> </li>
-<li>고윳값 행렬 $\Lambda$: 고윳값을 대각성분으로 가지는 대각행렬<br>$$ \Lambda = \begin{bmatrix}<br>\lambda_1 &amp; 0 &amp; \cdots &amp; 0 \<br>0 &amp; \lambda_2 &amp; \cdots &amp; 0 \<br>\<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>\<br>0 &amp; 0 &amp; \cdots &amp; \lambda_N<br>\end{bmatrix}, \quad  \Lambda \in R^{N \times N}<br>$$</li>
+<li>고윳값 행렬 $\Lambda$: 고윳값을 대각성분으로 가지는 대각행렬<br>$$ \Lambda = \begin{bmatrix}<br>\lambda_1 &amp; 0 &amp; \cdots &amp; 0 \\<br>0 &amp; \lambda_2 &amp; \cdots &amp; 0 \\<br>\\<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>\\<br>0 &amp; 0 &amp; \cdots &amp; \lambda_N<br>\end{bmatrix}, \quad  \Lambda \in R^{N \times N}<br>$$</li>
 </ul>
 </li>
 </ul>
 <h2 id="행렬의-대각화-diagonalization"><a href="#행렬의-대각화-diagonalization" class="headerlink" title="행렬의 대각화(diagonalization)"></a>행렬의 대각화(diagonalization)</h2><ul>
 <li><p>위와 같이 고유벡터행렬과 고윳값행렬을 정의하면 <u>행렬과 고유벡터행렬의 곱</u>은 <u>고유벡터행렬과 고윳값행렬의 곱</u>과 같음<br>$$ AV = V\Lambda $$</p>
 <ul>
-<li>유도 과정<br>$$ \begin{align}<br>AV &amp; = A \begin{bmatrix} v_1 &amp; \cdots &amp; v_N \end{bmatrix} \<br>&amp; = \begin{bmatrix} Av_1 &amp; \cdots &amp; Av_N \end{bmatrix} \<br>&amp; = \begin{bmatrix} \lambda_1 v_1 &amp; \cdots &amp; \lambda_2 v_N \end{bmatrix} \<br>&amp; = \begin{bmatrix} v_1 &amp; \cdots &amp; v_N \end{bmatrix}<br>\begin{bmatrix}<br>\lambda_1 &amp; 0 &amp; \cdots &amp; 0 \<br>0 &amp; \lambda_2 &amp; \cdots &amp; 0 \<br>\<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>\<br>0 &amp; 0 &amp; \cdots &amp; \lambda_N<br>\end{bmatrix} \<br>&amp; = V \Lambda<br>\end{align}$$</li>
+<li>유도 과정<br>$$ \begin{align}<br>AV &amp; = A \begin{bmatrix} v_1 &amp; \cdots &amp; v_N \end{bmatrix} \\<br>&amp; = \begin{bmatrix} Av_1 &amp; \cdots &amp; Av_N \end{bmatrix} \\<br>&amp; = \begin{bmatrix} \lambda_1 v_1 &amp; \cdots &amp; \lambda_2 v_N \end{bmatrix} \\<br>&amp; = \begin{bmatrix} v_1 &amp; \cdots &amp; v_N \end{bmatrix}<br>\begin{bmatrix}<br>\lambda_1 &amp; 0 &amp; \cdots &amp; 0 \\<br>0 &amp; \lambda_2 &amp; \cdots &amp; 0 \\<br>\\<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>\\<br>0 &amp; 0 &amp; \cdots &amp; \lambda_N<br>\end{bmatrix} \\<br>&amp; = V \Lambda<br>\end{align}$$</li>
 </ul>
 </li>
 <li><p>행렬의 대각화: 고유벡터행렬  $V$의 역행렬이 존재한다면 행렬을 다음처럼 고유벡터행렬과 고윳값행렬의 곱으로 표현 가능<br>$$ A = V\Lambda V^{-1} $$</p>
@@ -214,7 +214,7 @@
 <li>따라서, <mark>대칭행렬은 항상 대각화가능</mark></li>
 </ul>
 <h2 id="대칭행렬을-랭크-1-행렬의-합으로-분해"><a href="#대칭행렬을-랭크-1-행렬의-합으로-분해" class="headerlink" title="대칭행렬을 랭크-1 행렬의 합으로 분해"></a>대칭행렬을 랭크-1 행렬의 합으로 분해</h2><ul>
-<li>$N$차원 대칭행렬 $A$는 다음처럼 $N$개의 랭크-1 행렬 $A_i = v_i v_i^T$의 합으로 표시할 수 있음<br>$$ \begin{align}<br>A &amp; = V \Lambda V^T \<br>&amp; = \begin{bmatrix} v_1 &amp; v_2 &amp; \cdots &amp; v_N  \end{bmatrix}<br>\begin{bmatrix}<br>\lambda_1 &amp; 0 &amp; \cdots &amp; 0 \<br>0 &amp; \lambda_2 &amp; \cdots &amp; 0 \<br>\<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>\<br>0 &amp; 0 &amp; \cdots &amp; \lambda_N<br>\end{bmatrix}<br>\begin{bmatrix} v_1^T \ v_2^T \ \vdots \ v_N^T \end{bmatrix} \<br>&amp; = \begin{bmatrix} \lambda_1 v_1 &amp; \lambda_2 v_2 &amp; \cdots &amp; \lambda_N v_N  \end{bmatrix}<br>\begin{bmatrix} v_1^T \ v_2^T \ \vdots \ v_N^T \end{bmatrix} \<br>&amp; = \sum_{i=1}^N \lambda_i v_i v_i^T \<br>&amp; = \sum_{i=1}^N \lambda_i A_i \<br>&amp; = \lambda_1 A_1 + \cdots + \lambda_N A_N \<br>\end{align}$$</li>
+<li>$N$차원 대칭행렬 $A$는 다음처럼 $N$개의 랭크-1 행렬 $A_i = v_i v_i^T$의 합으로 표시할 수 있음<br>$$ \begin{align}<br>A &amp; = V \Lambda V^T \\<br>&amp; = \begin{bmatrix} v_1 &amp; v_2 &amp; \cdots &amp; v_N  \end{bmatrix}<br>\begin{bmatrix}<br>\lambda_1 &amp; 0 &amp; \cdots &amp; 0 \\<br>0 &amp; \lambda_2 &amp; \cdots &amp; 0 \\<br>\\<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>\\<br>0 &amp; 0 &amp; \cdots &amp; \lambda_N<br>\end{bmatrix}<br>\begin{bmatrix} v_1^T \\ v_2^T \\ \vdots \\ v_N^T \end{bmatrix} \\<br>&amp; = \begin{bmatrix} \lambda_1 v_1 &amp; \lambda_2 v_2 &amp; \cdots &amp; \lambda_N v_N  \end{bmatrix}<br>\begin{bmatrix} v_1^T \\ v_2^T \\ \vdots \\ v_N^T \end{bmatrix} \\<br>&amp; = \sum_{i=1}^N \lambda_i v_i v_i^T \\<br>&amp; = \sum_{i=1}^N \lambda_i A_i \\<br>&amp; = \lambda_1 A_1 + \cdots + \lambda_N A_N \\<br>\end{align}$$</li>
 <li><p>아래와 같은 이미지로 나타낼 수 있음</p>
 <img src="/2018/12/02/math-lin_alg-022/symmetric.jpeg">
 </li>
@@ -224,7 +224,7 @@
 <h2 id="대칭행렬의-간략화"><a href="#대칭행렬의-간략화" class="headerlink" title="대칭행렬의 간략화"></a>대칭행렬의 간략화</h2><ul>
 <li>대칭행렬을 랭크-1 행렬의 합으로 분해할 때 각 요소는 모두 단위벡터인 고유벡터로 만들어진 행렬이므로 행렬의 놈이 1이 됨</li>
 <li>하지만 고윳값은 크기가 다양하게 나타날 수 있음</li>
-<li>따라서 고윳값이 작은 항을 몇 개 생략해도 원래의 행렬과 큰 차이가 나지 않을 것<br>$$ \begin{align}<br>A &amp; = \lambda_1A_1 + \cdots + \lambda_NA_N \; (\lambda_1 &gt; \cdots &gt; \lambda_N) \<br>&amp; \approx \lambda_1A_1 + \cdots + \lambda_MA_M \; (N &gt; M)<br>\end{align}<br>$$</li>
+<li>따라서 고윳값이 작은 항을 몇 개 생략해도 원래의 행렬과 큰 차이가 나지 않을 것<br>$$ \begin{align}<br>A &amp; = \lambda_1A_1 + \cdots + \lambda_NA_N \; (\lambda_1 &gt; \cdots &gt; \lambda_N) \\<br>&amp; \approx \lambda_1A_1 + \cdots + \lambda_MA_M \; (N &gt; M)<br>\end{align}<br>$$</li>
 </ul>
 <img src="/2018/12/02/math-lin_alg-022/forPCA.jpeg">
 <hr>
@@ -362,7 +362,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        132
+                        133
                     </p>
                 </div>
             </div>
@@ -493,7 +493,7 @@
                 <span class="level-item">TIL(Today I Learned)</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">77</span>
+                <span class="level-item tag">78</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/기타/">
@@ -529,6 +529,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/01/13/2019-01-14-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-14-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
+                    <a href="/2019/01/13/2019-01-14-TIL/" class="has-link-black-ter is-size-6">2019-01-14-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -606,25 +625,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/03/2019-01-03-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-03-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-03T14:55:15.000Z">2019-01-03</time></div>
-                    <a href="/2019/01/03/2019-01-03-TIL/" class="has-link-black-ter is-size-6">2019-01-03-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -643,7 +643,7 @@
                     <span class="level-item">January 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -750,6 +750,25 @@
         
         <article class="media">
             
+            <a href="/2019/01/13/2019-01-14-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-14-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
+                    <a href="/2019/01/13/2019-01-14-TIL/" class="has-link-black-ter is-size-6">2019-01-14-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/01/13/2019-01-13-TIL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-13-TIL">
@@ -824,25 +843,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/03/2019-01-03-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-03-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-03T14:55:15.000Z">2019-01-03</time></div>
-                    <a href="/2019/01/03/2019-01-03-TIL/" class="has-link-black-ter is-size-6">2019-01-03-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -861,7 +861,7 @@
                     <span class="level-item">January 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>

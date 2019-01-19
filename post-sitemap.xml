@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/12/02/math-lin_alg-022/</loc>
+        <lastmod>2019-01-19T06:32:20.899Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2019/01/13/2019-01-14-TIL/</loc>
+        <lastmod>2019-01-14T13:18:26.002Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2019/01/09/2019-01-09-TIL/</loc>
         <lastmod>2019-01-13T14:34:24.849Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -41,14 +57,6 @@
     <url>
         <loc>http://yoursite.com/2019/01/03/2019-01-03-TIL/</loc>
         <lastmod>2019-01-08T15:40:32.485Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/12/02/math-lin_alg-022/</loc>
-        <lastmod>2019-01-07T14:51:08.434Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

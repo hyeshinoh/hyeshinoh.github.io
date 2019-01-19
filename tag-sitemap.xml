@@ -156,29 +156,29 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/tags/TIL-Today-I-Learned/</loc>
+        <lastmod>2019-01-14T13:18:26.002Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/tags/data-analysis/</loc>
-        <lastmod>2019-01-07T14:51:08.434Z</lastmod>
+        <lastmod>2019-01-19T06:32:20.899Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/math/</loc>
-        <lastmod>2019-01-07T14:51:08.434Z</lastmod>
+        <lastmod>2019-01-19T06:32:20.899Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98/</loc>
-        <lastmod>2019-01-07T14:51:08.434Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/TIL-Today-I-Learned/</loc>
-        <lastmod>2019-01-13T14:34:24.849Z</lastmod>
+        <lastmod>2019-01-19T06:32:20.899Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
