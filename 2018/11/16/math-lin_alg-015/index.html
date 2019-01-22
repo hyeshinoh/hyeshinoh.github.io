@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="선형대수의 기초 개념과 파이썬 numpy로 구현해보는 내용을 정리해보았다. 데이터의 유형1) 스칼라(scalar) 실수인 숫자 하나로 이루어진 데이터  2) 벡터(vector) 여러 개의 숫자가 특정한 순서대로 모여있는 것">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-07T14:41:26.729Z">
+<meta property="og:updated_time" content="2019-01-22T14:21:46.034Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 선형대수 기초 with python NumPy">
 <meta name="twitter:description" content="선형대수의 기초 개념과 파이썬 numpy로 구현해보는 내용을 정리해보았다. 데이터의 유형1) 스칼라(scalar) 실수인 숫자 하나로 이루어진 데이터  2) 벡터(vector) 여러 개의 숫자가 특정한 순서대로 모여있는 것">
@@ -240,7 +240,7 @@
 </code></pre><h3 id="2-스칼라와-벡터-행렬의-곱셈"><a href="#2-스칼라와-벡터-행렬의-곱셈" class="headerlink" title="2) 스칼라와 벡터/행렬의 곱셈"></a>2) 스칼라와 벡터/행렬의 곱셈</h3><ul>
 <li>벡터($x$)나 행렬($A$)의 모든 원소에 스칼라($c$)를 곱하는 것과 같음 (스칼라배)  </li>
 </ul>
-<p>$$ c \begin{bmatrix} x_1 \x_2 \end{bmatrix} = \begin{bmatrix} cx_1 \cx_2 \end{bmatrix} $$<br><br><br>$$ c \begin{bmatrix} a_{11} &amp; a_{12}\a_{21} &amp; a_{22} \end{bmatrix} = \begin{bmatrix} ca_{11} &amp; ca_{12}\ca_{21} &amp; ca_{22}  \end{bmatrix} $$</p>
+<p>$$ c \begin{bmatrix} x_1 \\x_2 \end{bmatrix} = \begin{bmatrix} cx_1 \\cx_2 \end{bmatrix} $$<br><br><br>$$ c \begin{bmatrix} a_{11} &amp; a_{12}\\a_{21} &amp; a_{22} \end{bmatrix} = \begin{bmatrix} ca_{11} &amp; ca_{12}\\ca_{21} &amp; ca_{22}  \end{bmatrix} $$</p>
 <h3 id="3-선형-조합-linear-combination"><a href="#3-선형-조합-linear-combination" class="headerlink" title="3) 선형 조합(linear combination)"></a>3) 선형 조합(linear combination)</h3><ul>
 <li>벡터/행렬을 스칼라배한 후 더하거나 뺀 것으로, 벡터나 행렬을 선형조합해도 그 크기는 변하지 않음</li>
 </ul>
@@ -250,7 +250,7 @@
 <li>$x^Ty$ 혹은 $x \cdot y$</li>
 <li>앞을 행벡터, 뒤를 열벡터로 두고 같은 위치의 원소들을 각각 곱해 모두 더해 스칼라 값으로 만듦</li>
 </ul>
-<p>$$ x^Ty = \begin{bmatrix}x_1 &amp; x_2 &amp; \cdots&amp;  x_N \end{bmatrix}\begin{bmatrix}y_1 \ y_2 \ \vdots \  y_N \end{bmatrix} = x_1y_1 + \cdots + x_Ny_N = \sum_{i=1}^N x_iy_i $$</p>
+<p>$$ x^Ty = \begin{bmatrix}x_1 &amp; x_2 &amp; \cdots&amp;  x_N \end{bmatrix}\begin{bmatrix}y_1 \\ y_2 \\ \vdots \\  y_N \end{bmatrix} = x_1y_1 + \cdots + x_Ny_N = \sum_{i=1}^N x_iy_i $$</p>
 <ul>
 <li>가중합(weighted sum)을 벡터와 벡터의 곱셈으로 계산할 수 있음</li>
 </ul>

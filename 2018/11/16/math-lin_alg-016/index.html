@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="행렬의 부호1) 행렬의 양-정부호(positive definite) 특성 영벡터가 아닌 모든 벡터 $x$에 대해 다음 부등식이 성립하면 행렬 $A$가 양-정부호(positive definite)이라고 함  $$x^TAx&amp;gt;0$$  식이 등호를 포함하는 경우 양-준정부호(positive semi-definite)  $$x^TAx \geq 0$$  단위 행">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-07T14:41:17.860Z">
+<meta property="og:updated_time" content="2019-01-22T14:40:13.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 행렬의 성질 with python">
 <meta name="twitter:description" content="행렬의 부호1) 행렬의 양-정부호(positive definite) 특성 영벡터가 아닌 모든 벡터 $x$에 대해 다음 부등식이 성립하면 행렬 $A$가 양-정부호(positive definite)이라고 함  $$x^TAx&amp;gt;0$$  식이 등호를 포함하는 경우 양-준정부호(positive semi-definite)  $$x^TAx \geq 0$$  단위 행">
@@ -228,17 +228,18 @@
 <pre><code>3.0
 </code></pre><h3 id="3-행렬식-determinant"><a href="#3-행렬식-determinant" class="headerlink" title="3) 행렬식(determinant)"></a>3) 행렬식(determinant)</h3><ul>
 <li>정방행렬의 행렬식은 $det(A), |A|$로 표기</li>
-<li>코팩터 전개(cofactor expansion)라고 불리는 재귀적인 방법으로 정의 <br> (이 복잡한 수식과 계산 방법을 외우는 것 보다는 이해하고 넘어가는 것이 좋다고 생각된다. 어차피 손계산으로 행렬식을 구할 일은 거의 없을 것이니.)<br>$$ \det(A) = \sum_{i=1}^N \left{ (-1)^{i+j_0}M_{i,j_0} \right} a_{i,j_0}  $$</li>
+<li>코팩터 전개(cofactor expansion)라고 불리는 재귀적인 방법으로 정의 <br> (이 복잡한 수식과 계산 방법을 외우는 것 보다는 이해하고 넘어가는 것이 좋다고 생각된다. 어차피 손계산으로 행렬식을 구할 일은 거의 없을 것이니)</li>
 </ul>
+<p>$$ \det(A) = \sum_{i=1}^N\left{(-1)^{i+j_0}M_{i,j_0}\right}a_{i,j_0} $$</p>
 <center>또는</center>
 
-<p>$$ \det(A) = \sum_{j=1}^N \left{ (-1)^{i_0+j} M_{i_0,j} \right} a_{i_0,j}  $$</p>
+<p>$$ \det(A) = \sum_{j=1}^N\left{(-1)^{i_0+j}M_{i_0,j}\right}a_{i_0,j} $$</p>
 <ul>
 <li><p>2차, 3차 정방행렬의 행렬식 공식<br>(특히 2×2의 행렬식 정도는 기억해두어야 한다.)</p>
 <ul>
-<li><p>2×2 행렬의 행렬식<br>$$\det \left( \begin{bmatrix}a&amp;b\c&amp;d\end{bmatrix} \right) = ad-bc<br>$$</p>
+<li><p>2×2 행렬의 행렬식<br>$$\det \left( \begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix} \right) = ad-bc<br>$$</p>
 </li>
-<li><p>3×3 행렬의 행렬식<br>$$\det \left( \begin{bmatrix}a&amp;b&amp;c\d&amp;e&amp;f\g&amp;h&amp;i\end{bmatrix} \right) =aei+bfg+cdh-ceg-bdi-afh$$</p>
+<li><p>3×3 행렬의 행렬식<br>$$\det \left( \begin{bmatrix}a&amp;b&amp;c\\d&amp;e&amp;f\\g&amp;h&amp;i\end{bmatrix} \right) =aei+bfg+cdh-ceg-bdi-afh$$</p>
 </li>
 </ul>
 </li>

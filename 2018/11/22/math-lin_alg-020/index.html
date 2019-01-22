@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2018/11/22/math-lin_alg-020/matrixvector1.jpeg">
 <meta property="og:image" content="http://yoursite.com/2018/11/22/math-lin_alg-020/matrixvector2.jpeg">
-<meta property="og:updated_time" content="2019-01-07T14:39:11.399Z">
+<meta property="og:updated_time" content="2019-01-22T14:29:35.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 선형종속&#x2F;선형독립 &amp; 좌표변환">
 <meta name="twitter:description" content="1. 선형 종속과 선형 독립벡터의 선형 종속과 선형 독립 선형조합이 0벡터가 되는 경우로 선형 독립과 선형 종속을 판단함  c_1x_1 + c_2x_2 + \cdots + c_Nx_N = 0 선형 독립(linearly independent): 위 식을 만족하는 모두 0이 아닌 스칼라값 $c_1, c_2, \cdots, x_N$이 존재하지 않는 경우 그 벡터">
@@ -198,14 +198,14 @@
 </li>
 </ul>
 <script type="math/tex; mode=display">\begin{align}
-c_1x_1 + c_2x_2 + \cdots + c_Nx_N & = \begin{bmatrix} x_1 & x_2 & \cdots & x_N \end{bmatrix} \begin{bmatrix} c_1 \\ c_2 \\ \vdots \\ c_N \end{bmatrix} \\
-& = Xc
+c_1x_1 + c_2x_2 + \cdots + c_Nx_N & = \begin{bmatrix} x_1 & x_2 & \cdots & x_N \end{bmatrix} \begin{bmatrix} c_1 \\\\ c_2 \\\\ \vdots \\\\ c_N \end{bmatrix} \\\\
+& = Xc \\\\
 \end{align}</script><ul>
 <li><p>$X$행렬의 역행렬이 존재하면 0벡터가 유일한 해이므로 선형독립</p>
 <script type="math/tex; mode=display">\begin{align}
-Xc & = 0 \\
-X^{-1}Xc & = X^{-1}0 \\
-c & = 0
+Xc & = 0 \\\\
+X^{-1}Xc & = X^{-1}0 \\\\
+c & = 0 \\\\
 \end{align}</script></li>
 <li><p>$X$ 행렬에 0벡터가 아닌 해 $c$가 존재하면 선형 종속</p>
 </li>
@@ -229,14 +229,15 @@ c & = 0
 <hr>
 <h1 id="2-좌표-변환-coordinate-transform"><a href="#2-좌표-변환-coordinate-transform" class="headerlink" title="2. 좌표 변환(coordinate transform)"></a>2. 좌표 변환(coordinate transform)</h1><h2 id="좌표-표현"><a href="#좌표-표현" class="headerlink" title="좌표 표현"></a>좌표 표현</h2><ul>
 <li>좌표표현(coordinate representation) 또는 좌표(coordinate): 기저벡터를 선형 조합하여 해당 벡터를 나타냈을 때 선형 조합 가중치<script type="math/tex; mode=display">x = r_1e_1 + r_2e_2</script></li>
-<li>위와 같이 기저 벡터 $e_1, e_2$를 선형 조합하여 벡터 $x$를 나타낼 경우 벡터 $\begin{bmatrix} r_1 \\ r_2 \end{bmatrix}$를 벡터 $x$의 기저벡터 $e_1, e_2$에 대한 좌표라고 함</li>
+<li>위와 같이 기저 벡터 $e_1, e_2$를 선형 조합하여 벡터 $x$를 나타낼 경우 벡터 $\begin{bmatrix} r_1 \\\\ r_2 \end{bmatrix}$를 벡터 $x$의 기저벡터 $e_1, e_2$에 대한 좌표라고 함</li>
 <li>표준 기저 벡터에 대한 좌표는 원래 벡터와 같음</li>
 </ul>
 <h2 id="변환-행렬"><a href="#변환-행렬" class="headerlink" title="변환 행렬"></a>변환 행렬</h2><ul>
 <li>기저벡터를 바꾸면 벡터의 coordinate이 어떻게 바뀌는가를 계산하기 위한 행렬</li>
 <li>변환 행렬(transform matrix, $T$로 표기): $T = A^T$<ul>
-<li>행렬 $A$: 새로운 기저 벡터의 (기존 기저 벡터에 대한) 좌표를 열벡터로 두고 행렬로 묶은 것<script type="math/tex; mode=display">g_1 = ae_1 + ce_2</script><script type="math/tex; mode=display">g_2 = be_1 + de_2</script></li>
-<li>기존 기저벡터($e_1, e_2$)와 새로운 기저 벡터($g_1, g_2$)의 관계가 위와 같을 때 새로운 기저벡터의 좌표와 행렬 $A$<script type="math/tex; mode=display">g_1\text{의 좌표}: \begin{bmatrix} a \\ c \end{bmatrix} \text {,} \quad g_2 \text{의 좌표}: \begin{bmatrix} b \\ d \end{bmatrix}</script><script type="math/tex; mode=display">A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}</script></li>
+<li>행렬 $A$: 새로운 기저 벡터의 (기존 기저 벡터에 대한) 좌표를 열벡터로 두고 행렬로 묶은 것<script type="math/tex; mode=display">g_1 = ae_1 + ce_2 \\\\
+g_2 = be_1 + de_2</script></li>
+<li>기존 기저벡터($e_1, e_2$)와 새로운 기저 벡터($g_1, g_2$)의 관계가 위와 같을 때 새로운 기저벡터의 좌표와 행렬 $A$<script type="math/tex; mode=display">g_1\text{의 좌표}: \begin{bmatrix} a \\\\ c \end{bmatrix} \text {,} \quad g_2 \text{의 좌표}: \begin{bmatrix} b \\\\ d \end{bmatrix}</script><script type="math/tex; mode=display">A = \begin{bmatrix} a & b \\\\ c & d \end{bmatrix}</script></li>
 </ul>
 </li>
 </ul>
@@ -245,30 +246,31 @@ c & = 0
 <li><mark>좌표 변환은 행렬의 곱셈으로 구할 수 있음</mark></li>
 <li><p>벡터 $a$의 기존 기저벡터($e_1, e_2$)에 대한 좌표 $a_1$를 새로운 기저 벡터($g_1, g_2$)에 대한 좌표 $a_2$로 변환하기</p>
 <ul>
-<li>기존 기저벡터에 대한 좌표값과 새로운 기저벡터에 대한 좌표값이 가리키는 실제 위치는 같아야 함 <script type="math/tex; mode=display">a = a_1e_1 + a_2e_2  = a'_1g_1 + a'_2g_2</script><script type="math/tex; mode=display">a = \begin{bmatrix} e_1 & e_2 \end{bmatrix}a_1 
+<li>기존 기저벡터에 대한 좌표값과 새로운 기저벡터에 대한 좌표값이 가리키는 실제 위치는 같아야 함 <script type="math/tex; mode=display">a = a_1e_1 + a_2e_2  = a'_1g_1 + a'_2g_2 \\\\
+a = \begin{bmatrix} e_1 & e_2 \end{bmatrix}a_1 
 = \begin{bmatrix} g_1 & g_2 \end{bmatrix}a'</script></li>
 <li>이 식에서 $a’_1, a’_2$가 새로운 기저 벡터에 대한 좌표임<script type="math/tex; mode=display">\begin{align}
 a'_1g_1 + a'_2g_2 & = 
-\begin{bmatrix} g_1 & g_2 \end{bmatrix}\begin{bmatrix} a'_1 \\ a'_2 \end{bmatrix} \\
-& = \begin{bmatrix} g_1 & g_2 \end{bmatrix}a' \\
+\begin{bmatrix} g_1 & g_2 \end{bmatrix}\begin{bmatrix} a'_1 \\ a'_2 \end{bmatrix} \\\\
+& = \begin{bmatrix} g_1 & g_2 \end{bmatrix}a' \\\\
 & = Aa'
 \end{align}</script></li>
 <li>이 때, $A$는 역행렬이 존재하므로 다음과 같이 새로운 좌표계를 계산 가능<script type="math/tex; mode=display">\begin{align}
-Aa' & = a \\
-a' & = A^{-1}a \\
+Aa' & = a \\\\
+a' & = A^{-1}a \\\\
 & = Ta
 \end{align}</script></li>
 </ul>
 </li>
 <li><p>좌표 변환 예제</p>
 <ul>
-<li>벡터 $a$의 표준 기저 벡터에 대한 좌표: $a = 2e_1+2e_2 = \begin{bmatrix} 2 \\ 2 \end{bmatrix}$</li>
-<li>새로운 기저 벡터의 (표준 기저 벡터에 대한) 좌표: $g_1 = \begin{bmatrix} \frac{1}{\sqrt 2} \\ \frac{1}{\sqrt 2} \end{bmatrix}$, $g_2 = \begin{bmatrix} -\frac{1}{\sqrt 2} \\ \frac{1}{\sqrt 2} \end{bmatrix}$</li>
+<li>벡터 $a$의 표준 기저 벡터에 대한 좌표: $a = 2e_1+2e_2 = \begin{bmatrix} 2 \\\\ 2 \end{bmatrix}$</li>
+<li>새로운 기저 벡터의 (표준 기저 벡터에 대한) 좌표: $g_1 = \begin{bmatrix} \frac{1}{\sqrt 2} \\\\ \frac{1}{\sqrt 2} \end{bmatrix}$, $g_2 = \begin{bmatrix} -\frac{1}{\sqrt 2} \\\\ \frac{1}{\sqrt 2} \end{bmatrix}$</li>
 <li>이 때, 새로운 기저 벡터에 대한 벡터 $a$의 좌표는?<script type="math/tex; mode=display">\begin{align}
-a' & = A^{-1}a \\
-& = \begin{bmatrix} \frac{1}{\sqrt 2} & -\frac{1}{\sqrt 2}\\ \frac{1}{\sqrt 2} & \frac{1}{\sqrt 2} \end{bmatrix}^{-1} \begin{bmatrix} 2 \\2 \end{bmatrix} \\
-& = \begin{bmatrix} \frac{1}{\sqrt 2} & \frac{1}{\sqrt 2}\\ -\frac{1}{\sqrt 2} & \frac{1}{\sqrt 2} \end{bmatrix} \begin{bmatrix} 2 \\2 \end{bmatrix} \\
-& = \begin{bmatrix} 2 \sqrt 2 \\ 0 \end{bmatrix} \\
+a' & = A^{-1}a \\\\
+& = \begin{bmatrix} \frac{1}{\sqrt 2} & -\frac{1}{\sqrt 2}\\\\ \frac{1}{\sqrt 2} & \frac{1}{\sqrt 2} \end{bmatrix}^{-1} \begin{bmatrix} 2 \\\\ 2 \end{bmatrix} \\\\
+& = \begin{bmatrix} \frac{1}{\sqrt 2} & \frac{1}{\sqrt 2}\\\\ -\frac{1}{\sqrt 2} & \frac{1}{\sqrt 2} \end{bmatrix} \begin{bmatrix} 2 \\\\ 2 \end{bmatrix} \\\\
+& = \begin{bmatrix} 2 \sqrt 2 \\\\ 0 \end{bmatrix} \\\\
 \end{align}</script></li>
 </ul>
 </li>

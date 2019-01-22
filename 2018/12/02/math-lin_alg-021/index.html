@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="고윳값 분해 고윳값 분해(eigenvalue decomposition) or 고유 분해(eigen-decomposition) 고윳값과 고유벡터를 찾는 작업을 의미함  고윳값(eigenvalue)과 고유벡터(eigenvector) 정방 행렬 $A$에 대해 다음 식을 만족하는 벡터 $v$, 실수 $\lambda$를 찾을 수 있다고 가정Av = \lambda v">
+    <meta name="description" content="고윳값 분해 고윳값 분해(eigenvalue decomposition) or 고유 분해(eigen-decomposition) 고윳값과 고유벡터를 찾는 작업을 의미함  고윳값(eigenvalue)과 고유벡터(eigenvector) 정방 행렬 $A$에 대해 다음 식을 만족하는 벡터 $v$, 실수 $\lambda$를 찾을 수 있다고 가정$$ Av = \lambd">
 <meta name="keywords" content="data analysis,math,선형대수">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&lt;선형대수&gt; 고윳값 분해 (1)">
 <meta property="og:url" content="http://yoursite.com/2018/12/02/math-lin_alg-021/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="고윳값 분해 고윳값 분해(eigenvalue decomposition) or 고유 분해(eigen-decomposition) 고윳값과 고유벡터를 찾는 작업을 의미함  고윳값(eigenvalue)과 고유벡터(eigenvector) 정방 행렬 $A$에 대해 다음 식을 만족하는 벡터 $v$, 실수 $\lambda$를 찾을 수 있다고 가정Av = \lambda v">
+<meta property="og:description" content="고윳값 분해 고윳값 분해(eigenvalue decomposition) or 고유 분해(eigen-decomposition) 고윳값과 고유벡터를 찾는 작업을 의미함  고윳값(eigenvalue)과 고유벡터(eigenvector) 정방 행렬 $A$에 대해 다음 식을 만족하는 벡터 $v$, 실수 $\lambda$를 찾을 수 있다고 가정$$ Av = \lambd">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2018/12/02/math-lin_alg-021/eigen_001.jpeg">
-<meta property="og:updated_time" content="2019-01-07T14:38:59.895Z">
+<meta property="og:updated_time" content="2019-01-22T14:17:15.193Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 고윳값 분해 (1)">
-<meta name="twitter:description" content="고윳값 분해 고윳값 분해(eigenvalue decomposition) or 고유 분해(eigen-decomposition) 고윳값과 고유벡터를 찾는 작업을 의미함  고윳값(eigenvalue)과 고유벡터(eigenvector) 정방 행렬 $A$에 대해 다음 식을 만족하는 벡터 $v$, 실수 $\lambda$를 찾을 수 있다고 가정Av = \lambda v">
+<meta name="twitter:description" content="고윳값 분해 고윳값 분해(eigenvalue decomposition) or 고유 분해(eigen-decomposition) 고윳값과 고유벡터를 찾는 작업을 의미함  고윳값(eigenvalue)과 고유벡터(eigenvector) 정방 행렬 $A$에 대해 다음 식을 만족하는 벡터 $v$, 실수 $\lambda$를 찾을 수 있다고 가정$$ Av = \lambd">
 <meta name="twitter:image" content="http://yoursite.com/2018/12/02/math-lin_alg-021/eigen_001.jpeg">
 
 
@@ -175,35 +175,25 @@
 <li>고윳값과 고유벡터를 찾는 작업을 의미함</li>
 </ul>
 <h2 id="고윳값-eigenvalue-과-고유벡터-eigenvector"><a href="#고윳값-eigenvalue-과-고유벡터-eigenvector" class="headerlink" title="고윳값(eigenvalue)과 고유벡터(eigenvector)"></a>고윳값(eigenvalue)과 고유벡터(eigenvector)</h2><ul>
-<li>정방 행렬 $A$에 대해 다음 식을 만족하는 벡터 $v$, 실수 $\lambda$를 찾을 수 있다고 가정<script type="math/tex; mode=display">Av = \lambda v</script><ul>
+<li>정방 행렬 $A$에 대해 다음 식을 만족하는 벡터 $v$, 실수 $\lambda$를 찾을 수 있다고 가정<br>$$ Av = \lambda v$$<ul>
 <li>벡터를 선형 변환(행렬x벡터)해도 방향이 같은 벡터(실수x벡터)가 된다는 의미</li>
 <li>계산의 형태를 생각해보면 다음과 같음<a id="more"></a> 
 <img src="/2018/12/02/math-lin_alg-021/eigen_001.jpeg"></li>
 </ul>
 </li>
 <li>위 식을 만족하는 실수 $\lambda$를 고윳값, 벡터 $v$를 고유벡터라고 함</li>
-<li>고유벡터를 구할 때, 방향이 같은 벡터는 모두 고유벡터가 되므로 보통은 크기가 1인 단위 벡터가 되도록 unit vector를 이용해 정규화함(벡터의 크기, norm으로 나누어주기)<script type="math/tex; mode=display">\frac{v}{\Vert v \Vert}</script></li>
+<li>고유벡터를 구할 때, 방향이 같은 벡터는 모두 고유벡터가 되므로 보통은 크기가 1인 단위 벡터가 되도록 unit vector를 이용해 정규화함(벡터의 크기, norm으로 나누어주기)<br>$$ \frac{v}{\Vert v \Vert} $$</li>
 </ul>
 <h2 id="고윳값-고유벡터-계산하기"><a href="#고윳값-고유벡터-계산하기" class="headerlink" title="고윳값, 고유벡터 계산하기"></a>고윳값, 고유벡터 계산하기</h2><ul>
 <li>먼저 고윳값를 구한 후에 이를 대입해서 고유벡터를 구함</li>
-<li>행렬 A의 고윳값은 다음과 같은 <u>특성방정식(characteristic equation)</u>의 해와 같음<script type="math/tex; mode=display">f(\lambda) = det(A -\lambda I) = 0</script><ul>
-<li>유도 과정<script type="math/tex; mode=display">\begin{align}
-Av & = \lambda v \\
-Av & = \lambda I v \\
-(A - \lambda I)v & = 0 \\
-det(A - \lambda I) & = 0 \\
-\end{align}</script></li>
+<li>행렬 A의 고윳값은 다음과 같은 <u>특성방정식(characteristic equation)</u>의 해와 같음<br>$$ f(\lambda) = det(A -\lambda I) = 0 $$<ul>
+<li>유도 과정<br>$$ \begin{align}<br>Av &amp; = \lambda v \\<br>Av &amp; = \lambda I v \\<br>(A - \lambda I)v &amp; = 0 \\<br>det(A - \lambda I) &amp; = 0 \\<br>\end{align} $$</li>
 </ul>
 </li>
-<li>고윳값을 알면 다음 연립 방정식을 풀어 고유벡터를 구함<script type="math/tex; mode=display">(A - \lambda I)v = 0</script></li>
+<li>고윳값을 알면 다음 연립 방정식을 풀어 고유벡터를 구함<br>$$ (A - \lambda I)v = 0 $$</li>
 <li>e.g. 고윳값 계산하기 (행렬 $A = \begin{bmatrix} 2 &amp; 3 \\ 2 &amp; 1 \end{bmatrix}$에 대해)<ul>
-<li>특성방정식<script type="math/tex; mode=display">\begin{align}
-det(A- \lambda I) & = det(\begin{bmatrix} 2 & 3 \\ 2 & 1 \end{bmatrix} - \begin{bmatrix} \lambda & 0 \\ 0 & \lambda \end{bmatrix} \\
-& = det \begin{bmatrix} 2 - \lambda & 3 \\ 2 & 1 - \lambda \end{bmatrix} \\
-& = (2 - \lambda)(1 - \lambda) - 6 \\
-& = \lambda^2 - 3\lambda - 4 = 0 \\
-\end{align}</script></li>
-<li>고윳값 계산<script type="math/tex; mode=display">\lambda^2 - 3\lambda - 4 = (\lambda - 4)(\lambda + 1) = 0</script></li>
+<li>특성방정식<br>$$ \begin{align}<br>det(A- \lambda I) &amp; = det(\begin{bmatrix} 2 &amp; 3 \\ 2 &amp; 1 \end{bmatrix} - \begin{bmatrix} \lambda &amp; 0 \\ 0 &amp; \lambda \end{bmatrix} \\<br>&amp; = det \begin{bmatrix} 2 - \lambda &amp; 3 \\ 2 &amp; 1 - \lambda \end{bmatrix} \\<br>&amp; = (2 - \lambda)(1 - \lambda) - 6 \\<br>&amp; = \lambda^2 - 3\lambda - 4 = 0 \\<br>\end{align} $$</li>
+<li>고윳값 계산<br>$$ \lambda^2 - 3\lambda - 4 = (\lambda - 4)(\lambda + 1) = 0 $$</li>
 </ul>
 </li>
 </ul>
@@ -211,7 +201,7 @@ det(A- \lambda I) & = det(\begin{bmatrix} 2 & 3 \\ 2 & 1 \end{bmatrix} - \begin{
 <li>$N$차방정식이 항상 $N$개의 복소수 해를 가진다는 사실을 이용하면 $N$차원 정방행렬의 고윳값의 갯수는 다음과 같음<br>1) 중복된 고유값을 하나로 생각하고 실수 고윳값만 고려한다면 $N$차원 정방행렬의 고윳값은 $0$개부터  $N$개까지 있을 수 있다.<br>2) 중복된 고윳값을 각각 별개로 생각하고 복소수인 고윳값도 고려한다면  $N$차원 정방행렬의 고윳값은 항상 $N$개이다.</li>
 </ul>
 <h2 id="고윳값과-대각합-행렬식"><a href="#고윳값과-대각합-행렬식" class="headerlink" title="고윳값과 대각합/행렬식"></a>고윳값과 대각합/행렬식</h2><ul>
-<li>어떤 행렬의 고윳값이 $\lambda_1, \lambda_2, \cdots, \lambda_N$이라고 할 때, 모든 고윳값의 곱은 행렬식(determinant)의 값과 같고, 모든 고윳값의 합은 대각합(trace)의 값과 같음<script type="math/tex; mode=display">det(A) = \prod_{i=1}^N \lambda_i</script><script type="math/tex; mode=display">tr(A) = \sum_{i=1}^N \lambda_i</script></li>
+<li>어떤 행렬의 고윳값이 $\lambda_1, \lambda_2, \cdots, \lambda_N$이라고 할 때, 모든 고윳값의 곱은 행렬식(determinant)의 값과 같고, 모든 고윳값의 합은 대각합(trace)의 값과 같음<br>$$ det(A) = \prod_{i=1}^N \lambda_i $$<br>$$ tr(A) = \sum_{i=1}^N \lambda_i $$</li>
 </ul>
 <h4 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h4><ul>
 <li><a href="https://datascienceschool.net/view-notebook/7fd58178d9e64be682058db7e024d8b5/" target="_blank" rel="noopener">데이터 사이언스 스쿨 - 고윳값 분해</a></li>
