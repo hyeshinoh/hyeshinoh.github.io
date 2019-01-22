@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="앞으로 Hexo 블로그에 수학 공부 내용도 정리하기 위해서 열심히 구글링을 해서 mathjax 설정을 마쳤다!이렇게 알아낸 내용을 기억해두기 위해 Hexo 블로그에서 LaTex로 수식을 작성할 수 있도록 mathjax를 설정하는 방법을 정리해보겠다.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-07T14:43:33.468Z">
+<meta property="og:updated_time" content="2019-01-22T14:44:08.100Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 블로그에 수식 사용하기 - mathjax 설정">
 <meta name="twitter:description" content="앞으로 Hexo 블로그에 수학 공부 내용도 정리하기 위해서 열심히 구글링을 해서 mathjax 설정을 마쳤다!이렇게 알아낸 내용을 기억해두기 위해 Hexo 블로그에서 LaTex로 수식을 작성할 수 있도록 mathjax를 설정하는 방법을 정리해보겠다.">
@@ -188,8 +188,13 @@
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
 <h2 id="4-markdown-post-작성하기"><a href="#4-markdown-post-작성하기" class="headerlink" title="4. markdown post 작성하기"></a>4. markdown post 작성하기</h2><p>이제 hexo 블로그에 수식을 사용하기 위한 설정은 모두 마쳤다!<br>마지막으로 post 작성시 header 부분에 <code>mathjax: true</code>를 넣어주면 아래처럼 블로그에 수식이 잘 표현된다.</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;pmatrix&#125;</span><br><span class="line"> 1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \\</span><br><span class="line"> 1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \\</span><br><span class="line"> \vdots  &amp; \vdots&amp; \vdots &amp; \ddots &amp; \vdots \\</span><br><span class="line"> 1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n    </span><br><span class="line"> \end&#123;pmatrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\begin{pmatrix}<br> 1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \<br> 1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \<br> \vdots  &amp; \vdots&amp; \vdots &amp; \ddots &amp; \vdots \<br> 1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n<br> \end{pmatrix}<br>$$</p>
-<h4 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h4><ul>
+<script type="math/tex; mode=display">
+\begin{pmatrix}
+ 1 & a_1 & a_1^2 & \cdots & a_1^n \\\\
+ 1 & a_2 & a_2^2 & \cdots & a_2^n \\\\
+ \vdots  & \vdots& \vdots & \ddots & \vdots \\\\
+ 1 & a_m & a_m^2 & \cdots & a_m^n    
+ \end{pmatrix}</script><h4 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h4><ul>
 <li>블로그 <a href="https://www.infiniteft.xyz/2018/03/21/make-hexo-support-latex/" target="_blank" rel="noopener">Make Hexo Support Latex</a></li>
 <li>블로그 <a href="https://irongaea.github.io/2018/08/21/hexo-inline-math/" target="_blank" rel="noopener">hexo-inline-math</a></li>
 <li>블로그 <a href="https://johngrib.github.io/wiki/mathjax-latex/#3-%EB%8F%84%EA%B5%AC" target="_blank" rel="noopener">MathJax로 LaTeX 사용하기</a></li>

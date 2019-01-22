@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/10/24/hexo_mathjax_00/</loc>
+        <lastmod>2019-01-22T14:44:08.100Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/11/16/math-lin_alg-016/</loc>
         <lastmod>2019-01-22T14:40:13.759Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -193,14 +201,6 @@
     <url>
         <loc>http://yoursite.com/2018/07/30/Database_05_mysql%20intermediate%20syntax/</loc>
         <lastmod>2019-01-07T14:43:43.331Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/24/hexo_mathjax_00/</loc>
-        <lastmod>2019-01-07T14:43:33.468Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
