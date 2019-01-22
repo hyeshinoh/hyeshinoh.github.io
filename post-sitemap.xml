@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/11/22/math-lin_alg-020/</loc>
+        <lastmod>2019-01-22T14:46:57.073Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/10/24/hexo_mathjax_00/</loc>
         <lastmod>2019-01-22T14:44:08.100Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,14 +25,6 @@
     <url>
         <loc>http://yoursite.com/2018/11/16/math-lin_alg-016/</loc>
         <lastmod>2019-01-22T14:40:13.759Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/11/22/math-lin_alg-020/</loc>
-        <lastmod>2019-01-22T14:29:35.961Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
