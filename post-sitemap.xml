@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2019/01/19/2019-01-19-TIL/</loc>
+        <lastmod>2019-01-23T10:57:47.558Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2019/01/13/2019-01-14-TIL/</loc>
+        <lastmod>2019-01-23T10:42:06.526Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/11/22/math-lin_alg-020/</loc>
         <lastmod>2019-01-22T14:49:50.731Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -89,14 +105,6 @@
     <url>
         <loc>http://yoursite.com/2018/12/02/math-lin_alg-022/</loc>
         <lastmod>2019-01-19T06:32:20.899Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2019/01/13/2019-01-14-TIL/</loc>
-        <lastmod>2019-01-14T13:18:26.002Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

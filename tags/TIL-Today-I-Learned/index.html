@@ -156,6 +156,80 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-19T14:04:15.000Z">2019-01-19</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 428 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/01/19/2019-01-19-TIL/">2019-01-19-TIL</a>
+            
+        </h1>
+        <div class="content">
+            <p>1/15 화요일 ~ 1/19 토요일 Today I learned</p>
+<h4 id="배운-것-amp-리뷰"><a href="#배운-것-amp-리뷰" class="headerlink" title="배운 것 &amp; 리뷰"></a>배운 것 &amp; 리뷰</h4><ul>
+<li>SQL<ul>
+<li>회사에서 오랜만에 sql을 사용하게 되었다. 데사스에서도 살짝만 배웠다보니 몇개월만에 만난 sql은 너무나 어색하다. workbench 자체가 거의 처음보는 낯선 느낌이고 ㅋㅋ 쿼리를 쓰려면 하나씩 찾아가면서 쳐야함 ㅎㅎ</li>
+</ul>
+</li>
+<li>R<ul>
+<li>회사에서 데이터 정제와 학습에 쓰는 소스코드가 아직 R로 남아있는 것이 많다. 작년 1월에 들었던 패캠 R 강의를 약간 복습하면서 R에도 다시 발을 들여놓는 중. 근데 python을 배우고나서 다시 R을 써보니 확실히 속도에서 차이가 나는 느낌이다.</li>
+</ul>
+</li>
+<li>Web<ul>
+<li>코딩야학 5기 10일차까지 완강! 별로 어려운 내용은 아니었지만, 웹에 대해 기본적이면서도 아리까리한 개념들을 정말 잘 설명해주었다!! 코딩야학 기간 내에 수료해서 꽤나 뿌듯하다.</li>
+</ul>
+</li>
+<li>머신러닝 <ul>
+<li>19(토): [LaTex로 익히는 한페이지 머신러닝 세미나] 참석<ul>
+<li>개괄적으로 머신러닝의 아이디어를 설명해주는 부분과 LaTex 설명이 유용했다.</li>
+<li>토요일 9시반-5시반이라는 스케줄은 상당히 힘들었다.</li>
+<li>중간에 N-NP 문제 등 컴퓨터 사이언스로 깊게 들어가는 내용은 너무 어려워서 정신을 살짝 놓아버렸던 것 같다 ㅋㅋ </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="다음-배울-것"><a href="#다음-배울-것" class="headerlink" title="다음 배울 것"></a>다음 배울 것</h4><ul>
+<li>파이썬 os 복습</li>
+<li>파이썬 정규표현식 복습</li>
+<li>R 기본 문법</li>
+<li>SQL 기본 문법 복습</li>
+<li>확률 통계 복습</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time>
                 
                 <div class="level-item">
@@ -166,7 +240,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 116 words)
+                    a minute read (About 187 words)
                 </span>
                 
             </div>
@@ -188,8 +262,14 @@
 </li>
 <li><p>일하다 pandas 사용시 주의할 점을 알게 됨</p>
 <ul>
-<li>dataframe에서 view로 불러와서 수정하면 dataframe에 반영되지 않음 </li>
+<li>데이터프레임의 컬럼에서 몇자리수만 필터링으로 찾아내 값을 수정하려는데 기존 코드가 아래처럼 되어 있는 것을 발견했다.  <ul>
 <li><code>df[&#39;컬럼명&#39;].str[:3][...] = ...</code></li>
+</ul>
+</li>
+<li>이렇게 쓰면 <code>df[&#39;컬럼명&#39;]</code>은 수정되지 않는다. 다음과 같은 식으로 바꿔주어야 한다. <ul>
+<li><code>df[&#39;컬럼명&#39;][df[&#39;컬럼명&#39;].str[:3]=...] = ...</code> </li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -368,57 +448,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-01-06T14:55:15.000Z">2019-01-06</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 105 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/01/06/2019-01-06-TIL/">2019-01-06-TIL</a>
-            
-        </h1>
-        <div class="content">
-            <h4 id="배운-것"><a href="#배운-것" class="headerlink" title="배운 것"></a>배운 것</h4><ul>
-<li>코딩야학 3, 4일차 강의. 내용은 html 기초. 오늘도 쉬운 내용이었지만 설명을 참 이해하기 쉽게 잘해주시네</li>
-<li>네이버 2018 AI-Vision. ipython파일이 아니고 python 파일로 작업해서 cli 환경으로 nsml에서 작동시키는 환경이 익숙치가 않구먼 ㅜ</li>
-</ul>
-<h4 id="내일-배울-것"><a href="#내일-배울-것" class="headerlink" title="내일 배울 것"></a>내일 배울 것</h4><ul>
-<li>코딩야학 5일차</li>
-<li>ai-vision 관련 리서치</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -483,7 +512,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        133
+                        134
                     </p>
                 </div>
             </div>
@@ -614,7 +643,7 @@
                 <span class="level-item">TIL(Today I Learned)</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">78</span>
+                <span class="level-item tag">79</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/기타/">
@@ -647,6 +676,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/01/19/2019-01-19-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-19-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-19T14:04:15.000Z">2019-01-19</time></div>
+                    <a href="/2019/01/19/2019-01-19-TIL/" class="has-link-black-ter is-size-6">2019-01-19-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -724,25 +772,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/06/2019-01-06-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-06-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-06T14:55:15.000Z">2019-01-06</time></div>
-                    <a href="/2019/01/06/2019-01-06-TIL/" class="has-link-black-ter is-size-6">2019-01-06-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -761,7 +790,7 @@
                     <span class="level-item">January 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>

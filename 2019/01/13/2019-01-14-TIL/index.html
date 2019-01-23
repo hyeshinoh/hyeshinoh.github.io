@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="1/14 월요일 Today I learned 배운 것 &amp;amp; 리뷰 패스트캠퍼스 파이썬 데이터 전처리 Level Up CAMP 4주차 수업   변수 치우침과 이상치 문제 클래스 불균형 문제   일하다 pandas 사용시 주의할 점을 알게 됨  dataframe에서 view로 불러와서 수정하면 dataframe에 반영되지 않음  df[&amp;#39;컬럼명&amp;#39">
+    <meta name="description" content="1/14 월요일 Today I learned 배운 것 &amp;amp; 리뷰 패스트캠퍼스 파이썬 데이터 전처리 Level Up CAMP 4주차 수업   변수 치우침과 이상치 문제 클래스 불균형 문제   일하다 pandas 사용시 주의할 점을 알게 됨  데이터프레임의 컬럼에서 몇자리수만 필터링으로 찾아내 값을 수정하려는데 기존 코드가 아래처럼 되어 있는 것을 발견했">
 <meta name="keywords" content="TIL(Today I Learned)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2019-01-14-TIL">
 <meta property="og:url" content="http://yoursite.com/2019/01/13/2019-01-14-TIL/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="1/14 월요일 Today I learned 배운 것 &amp;amp; 리뷰 패스트캠퍼스 파이썬 데이터 전처리 Level Up CAMP 4주차 수업   변수 치우침과 이상치 문제 클래스 불균형 문제   일하다 pandas 사용시 주의할 점을 알게 됨  dataframe에서 view로 불러와서 수정하면 dataframe에 반영되지 않음  df[&amp;#39;컬럼명&amp;#39">
+<meta property="og:description" content="1/14 월요일 Today I learned 배운 것 &amp;amp; 리뷰 패스트캠퍼스 파이썬 데이터 전처리 Level Up CAMP 4주차 수업   변수 치우침과 이상치 문제 클래스 불균형 문제   일하다 pandas 사용시 주의할 점을 알게 됨  데이터프레임의 컬럼에서 몇자리수만 필터링으로 찾아내 값을 수정하려는데 기존 코드가 아래처럼 되어 있는 것을 발견했">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-14T13:18:26.002Z">
+<meta property="og:updated_time" content="2019-01-23T10:42:06.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019-01-14-TIL">
-<meta name="twitter:description" content="1/14 월요일 Today I learned 배운 것 &amp;amp; 리뷰 패스트캠퍼스 파이썬 데이터 전처리 Level Up CAMP 4주차 수업   변수 치우침과 이상치 문제 클래스 불균형 문제   일하다 pandas 사용시 주의할 점을 알게 됨  dataframe에서 view로 불러와서 수정하면 dataframe에 반영되지 않음  df[&amp;#39;컬럼명&amp;#39">
+<meta name="twitter:description" content="1/14 월요일 Today I learned 배운 것 &amp;amp; 리뷰 패스트캠퍼스 파이썬 데이터 전처리 Level Up CAMP 4주차 수업   변수 치우침과 이상치 문제 클래스 불균형 문제   일하다 pandas 사용시 주의할 점을 알게 됨  데이터프레임의 컬럼에서 몇자리수만 필터링으로 찾아내 값을 수정하려는데 기존 코드가 아래처럼 되어 있는 것을 발견했">
 
 
 
@@ -156,7 +156,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 116 words)
+                    a minute read (About 187 words)
                 </span>
                 
             </div>
@@ -178,8 +178,14 @@
 </li>
 <li><p>일하다 pandas 사용시 주의할 점을 알게 됨</p>
 <ul>
-<li>dataframe에서 view로 불러와서 수정하면 dataframe에 반영되지 않음 </li>
+<li>데이터프레임의 컬럼에서 몇자리수만 필터링으로 찾아내 값을 수정하려는데 기존 코드가 아래처럼 되어 있는 것을 발견했다.  <ul>
 <li><code>df[&#39;컬럼명&#39;].str[:3][...] = ...</code></li>
+</ul>
+</li>
+<li>이렇게 쓰면 <code>df[&#39;컬럼명&#39;]</code>은 수정되지 않는다. 다음과 같은 식으로 바꿔주어야 한다. <ul>
+<li><code>df[&#39;컬럼명&#39;][df[&#39;컬럼명&#39;].str[:3]=...] = ...</code> </li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -216,6 +222,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/01/19/2019-01-19-TIL/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">2019-01-19-TIL</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -294,7 +307,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        133
+                        134
                     </p>
                 </div>
             </div>
@@ -425,7 +438,7 @@
                 <span class="level-item">TIL(Today I Learned)</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">78</span>
+                <span class="level-item tag">79</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/기타/">
@@ -458,6 +471,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/01/19/2019-01-19-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-19-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-19T14:04:15.000Z">2019-01-19</time></div>
+                    <a href="/2019/01/19/2019-01-19-TIL/" class="has-link-black-ter is-size-6">2019-01-19-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -535,25 +567,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/06/2019-01-06-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-06-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-06T14:55:15.000Z">2019-01-06</time></div>
-                    <a href="/2019/01/06/2019-01-06-TIL/" class="has-link-black-ter is-size-6">2019-01-06-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -572,7 +585,7 @@
                     <span class="level-item">January 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
