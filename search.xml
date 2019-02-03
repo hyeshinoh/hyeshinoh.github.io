@@ -627,6 +627,35 @@
     
     
     <entry>
+      <title>리눅스(Linux) - IO Redirection</title>
+      <link href="/2019/02/03/linux_002/"/>
+      <url>/2019/02/03/linux_002/</url>
+      
+        <content type="html"><![CDATA[<p>생활코딩 생활코딩 <code>리눅스</code> 강좌 내용을 들으면서 정리하는 노트</p><p>※ 강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!)</p><ul><li><a href="https://opentutorials.org/course/2598" target="_blank" rel="noopener">리눅스 @생활코딩</a></li><li><a href="https://www.inflearn.com/course/생활코딩-리눅스-강좌" target="_blank" rel="noopener">생활코딩 리눅스 강좌 @인프런</a></li></ul><h2 id="0-Process의-input과-output"><a href="#0-Process의-input과-output" class="headerlink" title="0. Process의 input과 output"></a>0. Process의 input과 output</h2><p>UNIX Program에서 process는 기본적으로 input과 output을 가지고 있음</p><ul><li>Means of input<ul><li>program(command line) arguments [control information]<ul><li>e.g. <code>ls -al</code>에서 <code>-al</code></li></ul></li><li>environment variables [state information]</li><li>standard input [data]</li></ul></li><li>Means of output<ul><li>Return status code [control information]</li><li>Standard output [data]</li><li>Standard error [error messages]</li></ul></li></ul><p>IO Redirection이란 입력(Input)과 출력(Output)의 방향을 바꾸는 것</p><h2 id="1-Output-redirection"><a href="#1-Output-redirection" class="headerlink" title="1. Output redirection"></a>1. Output redirection</h2><h3 id="1-1-Standard-output-redirection"><a href="#1-1-Standard-output-redirection" class="headerlink" title="1.1 Standard output redirection"></a>1.1 Standard output redirection</h3><ul><li>Standard output은 기본적으로 결과가 모니터에 출력됨</li><li><code>&gt;</code>(<code>1&gt;</code>이 생략된 것)를 사용해 output이 파일에 저장되도록 redirection</li><li>e.g. <code>$ ls -l &gt; result.txt</code><ul><li><code>ls -l</code>의 출력 결과를 result.txt 파일에 저장함</li></ul></li><li><code>&gt;&gt;</code>: output을 파일에 덮어쓰기 하지 않고 append</li><li><code>&gt; /dev/null</code>: output이 화면에도 출력되지 않고 파일에도 출력하지 않음</li></ul><h3 id="1-2-Standard-error-redirection"><a href="#1-2-Standard-error-redirection" class="headerlink" title="1.2 Standard error redirection"></a>1.2 Standard error redirection</h3><ul><li>Standard error: 프로그램에 오류가 있을 때 별도의 출력으로 처리됨      </li><li><code>2&gt;</code>를 사용해 redirection (standard output과의 차이에 유의)</li><li>e.g. <code>$ rm result.txt 2&gt; error.log</code><ul><li><code>$ rm result.txt</code>의 결과 오류가 발생하면 에러 메시지를 error.log 파일에 저장함 </li></ul></li></ul><h2 id="2-Input-redirection"><a href="#2-Input-redirection" class="headerlink" title="2. Input redirection"></a>2. Input redirection</h2><p>input redirection은 output redirection처럼 자주 쓰이는 것은 아님</p><h3 id="2-1-Standard-input-redirection"><a href="#2-1-Standard-input-redirection" class="headerlink" title="2.1 Standard input redirection"></a>2.1 Standard input redirection</h3><ul><li><code>&lt;</code>을 사용해서 standard input을 redirection</li><li>e.g. <code>$ cat &lt; result.txt</code>를 사용하면 redirection<ul><li><code>cat</code>은 standard input으로 키보드 입력값을 받음 </li><li>cf: <code>$ cat result.txt</code>는 command line argument로 입력한 것</li></ul></li><li><code>&lt;&lt;</code>: 여러 개의 input을 redirection </li><li>e.g. <code>$ mail hyeshinoh@gmail.com &lt;&lt; aaa</code><ul><li><code>aaa</code>를 입력할 때까지의 모든 입력이 email로 전송됨</li></ul></li></ul><h2 id="3-Input-redirection과-output-redirection-함께-사용하기"><a href="#3-Input-redirection과-output-redirection-함께-사용하기" class="headerlink" title="3. Input redirection과 output redirection 함께 사용하기"></a>3. Input redirection과 output redirection 함께 사용하기</h2><ul><li>표준입력에 대한 redirection과 표준출력에 대한 redirection을 연결해서 함께 사용 가능함</li><li>e.g. <code>$ head -n1 &lt; result.txt &gt; one.txt</code><ul><li>result.txt의 첫 1줄이 one.txt에 저장됨</li></ul></li></ul><h2 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h2><ul><li><a href="https://opentutorials.org/course/2598" target="_blank" rel="noopener">생활코딩 <code>리눅스</code> 강좌</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> DataScience </category>
+          
+          <category> Linux 리눅스 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 리눅스 </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2019-02-01-TIL</title>
       <link href="/2019/02/01/2019-02-01-TIL/"/>
       <url>/2019/02/01/2019-02-01-TIL/</url>
@@ -654,7 +683,7 @@
     
     
     <entry>
-      <title>리눅스 기초</title>
+      <title>리눅스(Linux) - 기초</title>
       <link href="/2019/02/01/linux_001/"/>
       <url>/2019/02/01/linux_001/</url>
       
