@@ -627,6 +627,35 @@
     
     
     <entry>
+      <title>리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)</title>
+      <link href="/2019/02/05/linux_003/"/>
+      <url>/2019/02/05/linux_003/</url>
+      
+        <content type="html"><![CDATA[<p>생활코딩 생활코딩 <code>리눅스</code> 강좌 내용을 들으면서 정리하는 노트</p><p>※ 강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!)</p><ul><li><a href="https://opentutorials.org/course/2598" target="_blank" rel="noopener">리눅스 @생활코딩</a></li><li><a href="https://www.inflearn.com/course/생활코딩-리눅스-강좌" target="_blank" rel="noopener">생활코딩 리눅스 강좌 @인프런</a></li></ul><h2 id="1-쉘과-커널-Shell-amp-Kernel"><a href="#1-쉘과-커널-Shell-amp-Kernel" class="headerlink" title="1. 쉘과 커널 (Shell &amp; Kernel)"></a>1. 쉘과 커널 (Shell &amp; Kernel)</h2><h3 id="1-1-리눅스의-구조"><a href="#1-1-리눅스의-구조" class="headerlink" title="1.1 리눅스의 구조"></a>1.1 리눅스의 구조</h3><p><img src="https://oradba2015.files.wordpress.com/2018/07/kernel_shell.jpg" alt="리눅스의 구조"><br>(이미지 출처: <a href="https://getstart.blog/linux-tutorial/introduction/" target="_blank" rel="noopener">https://getstart.blog/linux-tutorial/introduction/</a>)</p><ul><li>kernel: hardware를 직접적으로 제어하는 운영체제의 가장 중심적인 부분</li><li>shell: 사용자의 명령을 해석해서 kernel에게 전달하는 역할</li><li>kernel과 shell을 분리하면 다양한 shell이 만들어질 수 있기 때문에 사용자의 선택의 폭이 넓어짐</li></ul><h3 id="1-2-bash-vs-zsh"><a href="#1-2-bash-vs-zsh" class="headerlink" title="1.2 bash vs. zsh"></a>1.2 bash vs. zsh</h3><ul><li><code>$ echo $0</code>: 현재 shell 확인 (bash or zsh)</li><li>기능의 차이가 약간 존재함 (zsh의 편의성이 더 뛰어남)</li><li>선호하는 shell을 설치해서 자신에게 최적화하여 사용 가능<ul><li>각각의 user마다 선호하는 다른 shell을 사용 가능</li></ul></li></ul><h2 id="2-쉘-스크립트-Shell-script"><a href="#2-쉘-스크립트-Shell-script" class="headerlink" title="2. 쉘 스크립트(Shell script)"></a>2. 쉘 스크립트(Shell script)</h2><ul><li>여러 개의 명령을 순차적으로 실행함으로써 하나의 업무가 이루어질 때 그 명령들을 script로 작성 → 저장 &amp; 재사용 가능</li><li>script 작성<ul><li>첫 줄에 <code>#!/bin/bash</code>: 이 밑에 작성되는 코드가 bin/bash를 통해 해석되어야한다는 사실을 명시</li></ul></li><li><p>script 작성 예시</p><ul><li><p><code>backup</code> 파일 생성 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="keyword">if</span> ! [ -d bak ]; <span class="keyword">then</span></span><br><span class="line">        mkdir bak</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line">cp *.<span class="built_in">log</span> bak</span><br></pre></td></tr></table></figure></li><li><p>내용: 현재 디렉토리에 bak 디렉토리가 존재하지 않는다면 bak 디렉토리를 만들고, <code>.log</code>로 끝나는 파일을 bak 디렉토리로 복사한다.</p></li></ul></li><li>script 실행<ul><li>파일권한 변경: <code>$ chmod +x backup</code> (실행가능하게 변경)</li><li>실행: <code>./backup</code></li></ul></li></ul><h2 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h2><ul><li><a href="https://opentutorials.org/course/2598" target="_blank" rel="noopener">생활코딩 <code>리눅스</code> 강좌</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> DataScience </category>
+          
+          <category> Linux 리눅스 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 리눅스 </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>리눅스(Linux) - IO Redirection</title>
       <link href="/2019/02/03/linux_002/"/>
       <url>/2019/02/03/linux_002/</url>
