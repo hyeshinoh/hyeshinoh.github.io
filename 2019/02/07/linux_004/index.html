@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트 ※ 강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!)  리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런  아. 리눅스의 디렉토리 구조! 맥을 쓰면서도 궁금했던 부분인데 이번 생활코딩 강의를 통해 궁금점이 상당 부분 해소되었다! 개요 unix 계열은 디렉토리의 용도에 따라서 이름이 정">
+<meta name="keywords" content="리눅스,Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="리눅스(Linux) - 디렉토리의 구조">
+<meta property="og:url" content="https://hyeshinoh.github.io/2019/02/07/linux_004/index.html">
+<meta property="og:site_name" content="우와팬더의 블로그">
+<meta property="og:description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트 ※ 강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!)  리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런  아. 리눅스의 디렉토리 구조! 맥을 쓰면서도 궁금했던 부분인데 이번 생활코딩 강의를 통해 궁금점이 상당 부분 해소되었다! 개요 unix 계열은 디렉토리의 용도에 따라서 이름이 정">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://www.2daygeek.com/wp-content/uploads/2016/10/linux-file-system-structure-final-4.png">
+<meta property="og:updated_time" content="2019-02-05T14:36:43.832Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="리눅스(Linux) - 디렉토리의 구조">
+<meta name="twitter:description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트 ※ 강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!)  리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런  아. 리눅스의 디렉토리 구조! 맥을 쓰면서도 궁금했던 부분인데 이번 생활코딩 강의를 통해 궁금점이 상당 부분 해소되었다! 개요 unix 계열은 디렉토리의 용도에 따라서 이름이 정">
+<meta name="twitter:image" content="https://www.2daygeek.com/wp-content/uploads/2016/10/linux-file-system-structure-final-4.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon_panda.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon_panda.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_panda.png">
+          
+        
+    
+    <!-- title -->
+    <title>리눅스(Linux) - 디렉토리의 구조</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/atom.xml" title="우와팬더의 블로그" type="application/atom+xml" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/categories/Diary">Diary</a></li>
+         
+          <li><a href="/categories/DataScience/">Data Science</a></li>
+         
+          <li><a href="/categories/Life/">Life</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/02/11/book_001_rich_dad/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2019/02/05/linux_003/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2019/02/07/linux_004/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&text=리눅스(Linux) - 디렉토리의 구조"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&title=리눅스(Linux) - 디렉토리의 구조"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&is_video=false&description=리눅스(Linux) - 디렉토리의 구조"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=리눅스(Linux) - 디렉토리의 구조&body=Check out this article: https://hyeshinoh.github.io/2019/02/07/linux_004/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&title=리눅스(Linux) - 디렉토리의 구조"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&title=리눅스(Linux) - 디렉토리의 구조"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&title=리눅스(Linux) - 디렉토리의 구조"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&title=리눅스(Linux) - 디렉토리의 구조"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&name=리눅스(Linux) - 디렉토리의 구조&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#개요"><span class="toc-number">1.</span> <span class="toc-text">개요</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#주요-디렉토리"><span class="toc-number">2.</span> <span class="toc-text">주요 디렉토리</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-The-root-directory"><span class="toc-number">2.1.</span> <span class="toc-text">1. / The root directory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-bin-User-Binaries"><span class="toc-number">2.2.</span> <span class="toc-text">2. /bin: User Binaries</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-sbin-System-Binaries"><span class="toc-number">2.3.</span> <span class="toc-text">3. /sbin: System Binaries</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-etc-Configuration-Files"><span class="toc-number">2.4.</span> <span class="toc-text">4. /etc: Configuration Files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-var-Variable-Files"><span class="toc-number">2.5.</span> <span class="toc-text">5. /var: Variable Files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-tmp-Temporary-Files"><span class="toc-number">2.6.</span> <span class="toc-text">6. /tmp: Temporary Files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-home-Home-Directory"><span class="toc-number">2.7.</span> <span class="toc-text">7. /home: Home Directory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-usr-User-Programs"><span class="toc-number">2.8.</span> <span class="toc-text">8. /usr: User Programs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#참고자료"><span class="toc-number">3.</span> <span class="toc-text">참고자료</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        리눅스(Linux) - 디렉토리의 구조
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">우와팬더의 블로그</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-02-07T13:40:26.000Z" itemprop="datePublished">2019-02-07</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/DataScience/">DataScience</a> › <a class="category-link" href="/categories/DataScience/Linux-리눅스/">Linux 리눅스</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/리눅스/">리눅스</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>생활코딩 생활코딩 <code>리눅스</code> 강좌 내용을 들으면서 정리하는 노트</p>
+<p>※ 강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!)</p>
+<ul>
+<li><a href="https://opentutorials.org/course/2598" target="_blank" rel="noopener">리눅스 @생활코딩</a></li>
+<li><a href="https://www.inflearn.com/course/생활코딩-리눅스-강좌" target="_blank" rel="noopener">생활코딩 리눅스 강좌 @인프런</a></li>
+</ul>
+<p>아. 리눅스의 디렉토리 구조! 맥을 쓰면서도 궁금했던 부분인데 이번 생활코딩 강의를 통해 궁금점이 상당 부분 해소되었다!</p>
+<h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><ul>
+<li>unix 계열은 디렉토리의 용도에 따라서 이름이 정해져 있음</li>
+<li>디렉토리의 구조<br>  <img src="https://www.2daygeek.com/wp-content/uploads/2016/10/linux-file-system-structure-final-4.png" alt=""><br>  <a href="https://www.2daygeek.com/linux-directory-structure-file-system-hierarchy/" target="_blank" rel="noopener">https://www.2daygeek.com/linux-directory-structure-file-system-hierarchy/</a></li>
+</ul>
+<h2 id="주요-디렉토리"><a href="#주요-디렉토리" class="headerlink" title="주요 디렉토리"></a>주요 디렉토리</h2><h3 id="1-The-root-directory"><a href="#1-The-root-directory" class="headerlink" title="1. / The root directory"></a>1. <code>/</code> The root directory</h3><ul>
+<li>최상위 디렉토리</li>
+</ul>
+<h3 id="2-bin-User-Binaries"><a href="#2-bin-User-Binaries" class="headerlink" title="2. /bin: User Binaries"></a>2. <code>/bin</code>: User Binaries</h3><ul>
+<li>사용자들이 사용하는 명령(프로그램)들이 위치함</li>
+</ul>
+<h3 id="3-sbin-System-Binaries"><a href="#3-sbin-System-Binaries" class="headerlink" title="3. /sbin: System Binaries"></a>3. <code>/sbin</code>: System Binaries</h3><ul>
+<li>시스템 관리자, root user가 사용하는 명령(프로그램)들이 위치함</li>
+</ul>
+<h3 id="4-etc-Configuration-Files"><a href="#4-etc-Configuration-Files" class="headerlink" title="4. /etc: Configuration Files"></a>4. <code>/etc</code>: Configuration Files</h3><ul>
+<li>프로그램의 설정 파일들이 위치함</li>
+</ul>
+<h3 id="5-var-Variable-Files"><a href="#5-var-Variable-Files" class="headerlink" title="5. /var: Variable Files"></a>5. <code>/var</code>: Variable Files</h3><ul>
+<li>내용이 바뀔 수 있는 파일들이 위치함</li>
+<li>system log files, packages and database files 등</li>
+</ul>
+<h3 id="6-tmp-Temporary-Files"><a href="#6-tmp-Temporary-Files" class="headerlink" title="6. /tmp: Temporary Files"></a>6. <code>/tmp</code>: Temporary Files</h3><ul>
+<li>임시 파일들이 위치함</li>
+<li>시스템이 리부트되면 파일이 삭제됨</li>
+</ul>
+<h3 id="7-home-Home-Directory"><a href="#7-home-Home-Directory" class="headerlink" title="7. /home: Home Directory"></a>7. <code>/home</code>: Home Directory</h3><ul>
+<li>사용자들의 파일이 위치한 디렉토리</li>
+<li><code>$ cd ~</code>: 어느 위치에서든 <code>$ cd /home/[사용자이름]</code>와 같은 결과</li>
+</ul>
+<h3 id="8-usr-User-Programs"><a href="#8-usr-User-Programs" class="headerlink" title="8. /usr: User Programs"></a>8. <code>/usr</code>: User Programs</h3><ul>
+<li>사용자가 설치하는 프로그램 관련 파일이 위치한 디렉토리</li>
+<li>컴퓨터 발전 과정 상의 이유로 <code>/bin</code>과 분리되어 있는 측면이 있음</li>
+<li><code>/usr/bin</code></li>
+<li><code>/usr/sbin</code></li>
+<li><code>/usr/lib</code></li>
+<li><code>/usr/local</code></li>
+</ul>
+<h2 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h2><ul>
+<li><a href="https://opentutorials.org/course/2598" target="_blank" rel="noopener">생활코딩 <code>리눅스</code> 강좌</a></li>
+<li><a href="https://www.2daygeek.com/linux-directory-structure-file-system-hierarchy/" target="_blank" rel="noopener">https://www.2daygeek.com/linux-directory-structure-file-system-hierarchy/</a></li>
+</ul>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/categories/Diary">Diary</a></li>
+         
+          <li><a href="/categories/DataScience/">Data Science</a></li>
+         
+          <li><a href="/categories/Life/">Life</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#개요"><span class="toc-number">1.</span> <span class="toc-text">개요</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#주요-디렉토리"><span class="toc-number">2.</span> <span class="toc-text">주요 디렉토리</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-The-root-directory"><span class="toc-number">2.1.</span> <span class="toc-text">1. / The root directory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-bin-User-Binaries"><span class="toc-number">2.2.</span> <span class="toc-text">2. /bin: User Binaries</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-sbin-System-Binaries"><span class="toc-number">2.3.</span> <span class="toc-text">3. /sbin: System Binaries</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-etc-Configuration-Files"><span class="toc-number">2.4.</span> <span class="toc-text">4. /etc: Configuration Files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-var-Variable-Files"><span class="toc-number">2.5.</span> <span class="toc-text">5. /var: Variable Files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-tmp-Temporary-Files"><span class="toc-number">2.6.</span> <span class="toc-text">6. /tmp: Temporary Files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-home-Home-Directory"><span class="toc-number">2.7.</span> <span class="toc-text">7. /home: Home Directory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-usr-User-Programs"><span class="toc-number">2.8.</span> <span class="toc-text">8. /usr: User Programs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#참고자료"><span class="toc-number">3.</span> <span class="toc-text">참고자료</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2019/02/07/linux_004/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&text=리눅스(Linux) - 디렉토리의 구조"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&title=리눅스(Linux) - 디렉토리의 구조"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&is_video=false&description=리눅스(Linux) - 디렉토리의 구조"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=리눅스(Linux) - 디렉토리의 구조&body=Check out this article: https://hyeshinoh.github.io/2019/02/07/linux_004/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&title=리눅스(Linux) - 디렉토리의 구조"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&title=리눅스(Linux) - 디렉토리의 구조"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&title=리눅스(Linux) - 디렉토리의 구조"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&title=리눅스(Linux) - 디렉토리의 구조"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2019/02/07/linux_004/&name=리눅스(Linux) - 디렉토리의 구조&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 우와팬더
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/categories/Diary">Diary</a></li>
+         
+          <li><a href="/categories/DataScience/">Data Science</a></li>
+         
+          <li><a href="/categories/Life/">Life</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-126954393-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'hyeshinoh';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+</html>
