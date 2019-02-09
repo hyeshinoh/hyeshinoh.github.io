@@ -6,19 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트 ※ 강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!)  리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런  1. 쉘과 커널 (Shell &amp;amp; Kernel)1.1 리눅스의 구조(이미지 출처: https://getstart.blog/linux-tutorial/introduction/">
+    <meta name="description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트  강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!) 리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런    1. 쉘과 커널 (Shell &amp;amp; Kernel)1.1 리눅스의 구조(이미지 출처: https://getstart.blog/linux-tutorial/introduction/">
 <meta name="keywords" content="리눅스,Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)">
+<meta property="og:title" content="리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)">
 <meta property="og:url" content="https://hyeshinoh.github.io/2019/02/05/linux_003/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트 ※ 강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!)  리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런  1. 쉘과 커널 (Shell &amp;amp; Kernel)1.1 리눅스의 구조(이미지 출처: https://getstart.blog/linux-tutorial/introduction/">
+<meta property="og:description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트  강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!) 리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런    1. 쉘과 커널 (Shell &amp;amp; Kernel)1.1 리눅스의 구조(이미지 출처: https://getstart.blog/linux-tutorial/introduction/">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://oradba2015.files.wordpress.com/2018/07/kernel_shell.jpg">
-<meta property="og:updated_time" content="2019-02-03T14:33:01.623Z">
+<meta property="og:updated_time" content="2019-08-26T12:24:06.708Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)">
-<meta name="twitter:description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트 ※ 강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!)  리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런  1. 쉘과 커널 (Shell &amp;amp; Kernel)1.1 리눅스의 구조(이미지 출처: https://getstart.blog/linux-tutorial/introduction/">
+<meta name="twitter:title" content="리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)">
+<meta name="twitter:description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트  강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!) 리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런    1. 쉘과 커널 (Shell &amp;amp; Kernel)1.1 리눅스의 구조(이미지 출처: https://getstart.blog/linux-tutorial/introduction/">
 <meta name="twitter:image" content="https://oradba2015.files.wordpress.com/2018/07/kernel_shell.jpg">
     
     
@@ -39,7 +39,7 @@
         
     
     <!-- title -->
-    <title>리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)</title>
+    <title>리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- persian styles -->
@@ -53,7 +53,8 @@
     
 </head>
 
-<body class="max-width mx-auto px3 ltr">    
+<body class="max-width mx-auto px3 ltr">
+    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -99,15 +100,15 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2019/02/05/linux_003/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&text=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&is_video=false&description=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)&body=Check out this article: https://hyeshinoh.github.io/2019/02/05/linux_003/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&name=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&text=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&is_video=false&description=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)&body=Check out this article: https://hyeshinoh.github.io/2019/02/05/linux_003/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&name=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -124,7 +125,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)
+        리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)
     </h1>
 
 
@@ -162,10 +163,12 @@
 
   <div class="content" itemprop="articleBody">
     <p>생활코딩 생활코딩 <code>리눅스</code> 강좌 내용을 들으면서 정리하는 노트</p>
-<p>※ 강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!)</p>
 <ul>
+<li>강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!)<ul>
 <li><a href="https://opentutorials.org/course/2598" target="_blank" rel="noopener">리눅스 @생활코딩</a></li>
 <li><a href="https://www.inflearn.com/course/생활코딩-리눅스-강좌" target="_blank" rel="noopener">생활코딩 리눅스 강좌 @인프런</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="1-쉘과-커널-Shell-amp-Kernel"><a href="#1-쉘과-커널-Shell-amp-Kernel" class="headerlink" title="1. 쉘과 커널 (Shell &amp; Kernel)"></a>1. 쉘과 커널 (Shell &amp; Kernel)</h2><h3 id="1-1-리눅스의-구조"><a href="#1-1-리눅스의-구조" class="headerlink" title="1.1 리눅스의 구조"></a>1.1 리눅스의 구조</h3><p><img src="https://oradba2015.files.wordpress.com/2018/07/kernel_shell.jpg" alt="리눅스의 구조"><br>(이미지 출처: <a href="https://getstart.blog/linux-tutorial/introduction/" target="_blank" rel="noopener">https://getstart.blog/linux-tutorial/introduction/</a>)</p>
 <ul>
@@ -248,15 +251,15 @@
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2019/02/05/linux_003/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&text=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&is_video=false&description=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)&body=Check out this article: https://hyeshinoh.github.io/2019/02/05/linux_003/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&name=리눅스(Linux) - 쉘과 쉘 스크립트(Shell script)&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&text=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&is_video=false&description=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)&body=Check out this article: https://hyeshinoh.github.io/2019/02/05/linux_003/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&title=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2019/02/05/linux_003/&name=리눅스(Linux) - 쉘(Shell)과 쉘 스크립트(Shell script)&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -358,25 +361,7 @@
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }());
-    </script>
-
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -394,6 +379,7 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
 
 </body>
 </html>
