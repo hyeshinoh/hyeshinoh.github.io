@@ -604,6 +604,62 @@
     
     
     <entry>
+      <title>2019-02-13-TIL</title>
+      <link href="/2019/02/13/2019-02-11-TIL/"/>
+      <url>/2019/02/13/2019-02-11-TIL/</url>
+      
+        <content type="html"><![CDATA[<h4 id="배운-것-amp-리뷰"><a href="#배운-것-amp-리뷰" class="headerlink" title="배운 것 &amp; 리뷰"></a>배운 것 &amp; 리뷰</h4><ul><li>생활코딩 리눅스 강좌: 인터넷, 네트워크, 그리고 서버<ul><li>강의 듣고 따라하고, 정리하고 포스팅까지 완료 </li><li>포스팅: <a href="https://hyeshinoh.github.io/2019/02/13/linux_007/">리눅스(Linux) - 인터넷, 네트워크, 그리고 서버</a></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Diary </category>
+          
+          <category> TIL(Today I Learned) </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TIL(Today I Learned) </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>리눅스(Linux) - 인터넷, 네트워크, 그리고 서버</title>
+      <link href="/2019/02/13/linux_007/"/>
+      <url>/2019/02/13/linux_007/</url>
+      
+        <content type="html"><![CDATA[<p>생활코딩 생활코딩 <code>리눅스</code> 강좌 내용을 들으면서 정리하는 노트</p><ul><li>강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!)<ul><li><a href="https://opentutorials.org/course/2598" target="_blank" rel="noopener">리눅스 @생활코딩</a></li><li><a href="https://www.inflearn.com/course/생활코딩-리눅스-강좌" target="_blank" rel="noopener">생활코딩 리눅스 강좌 @인프런</a></li></ul></li></ul><p>리눅스를 통해서 컴퓨터를 서버로 활용하는 방법에 대한 강의</p><h2 id="1-인터넷-구조-client-amp-server"><a href="#1-인터넷-구조-client-amp-server" class="headerlink" title="1. 인터넷 구조 - client &amp; server"></a>1. 인터넷 구조 - client &amp; server</h2><p></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> DataScience </category>
+          
+          <category> Linux 리눅스 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 리눅스 </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>책리뷰. 로버트 기요사키, ⟪부자 아빠 가난한 아빠 1 - 20주년 특별판⟫</title>
       <link href="/2019/02/11/book_001_rich_dad/"/>
       <url>/2019/02/11/book_001_rich_dad/</url>
@@ -623,33 +679,6 @@
         <tags>
             
             <tag> 책리뷰 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>2019-02-11-TIL</title>
-      <link href="/2019/02/11/2019-02-11-TIL/"/>
-      <url>/2019/02/11/2019-02-11-TIL/</url>
-      
-        <content type="html"><![CDATA[<h4 id="배운-것-amp-리뷰"><a href="#배운-것-amp-리뷰" class="headerlink" title="배운 것 &amp; 리뷰"></a>배운 것 &amp; 리뷰</h4><ul><li>생활코딩 리눅스 강좌: 사용자와 권한<ul><li>강의 듣고 따라하고, 정리하고 포스팅까지 완료 </li><li>포스팅: <a href="https://hyeshinoh.github.io/2019/02/11/linux_006/">리눅스(Linux) - 사용자와 권한</a></li></ul></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> Diary </category>
-          
-          <category> TIL(Today I Learned) </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> TIL(Today I Learned) </tag>
             
         </tags>
       
