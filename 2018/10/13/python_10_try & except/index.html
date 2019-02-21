@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="jupyter notebook으로 보기 Try &amp;amp; Except - 예외처리 예외처리, 코드에서 에러가 발생할 경우에 대한 처리방법을 정의하는 것 문법1234try:    예외 발생 가능 코드except &amp;lt;Exception Type&amp;gt;:    예외(에러) 발생시 대응하는 코드   1. Exception의 종류 (built-in exceptio">
+    <meta name="description" content="jupyter notebook으로 보기 Try &amp;amp; Except - 예외처리 예외처리, 코드에서 에러가 발생할 경우에 대한 처리방법을 정의하는 것 문법1234try:    예외 발생 가능 코드except &amp;lt;Exception Type&amp;gt;:    예외(에러) 발생시 대응하는 코드">
 <meta name="keywords" content="python,programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 10. Try &amp; Except (예외처리)">
 <meta property="og:url" content="http://yoursite.com/2018/10/13/python_10_try & except/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="jupyter notebook으로 보기 Try &amp;amp; Except - 예외처리 예외처리, 코드에서 에러가 발생할 경우에 대한 처리방법을 정의하는 것 문법1234try:    예외 발생 가능 코드except &amp;lt;Exception Type&amp;gt;:    예외(에러) 발생시 대응하는 코드   1. Exception의 종류 (built-in exceptio">
+<meta property="og:description" content="jupyter notebook으로 보기 Try &amp;amp; Except - 예외처리 예외처리, 코드에서 에러가 발생할 경우에 대한 처리방법을 정의하는 것 문법1234try:    예외 발생 가능 코드except &amp;lt;Exception Type&amp;gt;:    예외(에러) 발생시 대응하는 코드">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-13T06:09:52.062Z">
+<meta property="og:updated_time" content="2019-02-21T15:01:40.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 10. Try &amp; Except (예외처리)">
-<meta name="twitter:description" content="jupyter notebook으로 보기 Try &amp;amp; Except - 예외처리 예외처리, 코드에서 에러가 발생할 경우에 대한 처리방법을 정의하는 것 문법1234try:    예외 발생 가능 코드except &amp;lt;Exception Type&amp;gt;:    예외(에러) 발생시 대응하는 코드   1. Exception의 종류 (built-in exceptio">
+<meta name="twitter:description" content="jupyter notebook으로 보기 Try &amp;amp; Except - 예외처리 예외처리, 코드에서 에러가 발생할 경우에 대한 처리방법을 정의하는 것 문법1234try:    예외 발생 가능 코드except &amp;lt;Exception Type&amp;gt;:    예외(에러) 발생시 대응하는 코드">
 
 
 
@@ -149,14 +149,14 @@
                 <time class="level-item has-text-grey" datetime="2018-10-13T06:07:46.000Z">2018-10-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Python-공부/">Python 공부</a>
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 658 words)
+                    4 minutes read (About 659 words)
                 </span>
                 
             </div>
@@ -171,9 +171,10 @@
             <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_10_try%20%26%20except.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
 <h2 id="Try-amp-Except-예외처리"><a href="#Try-amp-Except-예외처리" class="headerlink" title="Try &amp; Except - 예외처리"></a>Try &amp; Except - 예외처리</h2><ul>
 <li>예외처리, 코드에서 에러가 발생할 경우에 대한 처리방법을 정의하는 것</li>
-<li>문법<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    예외 발생 가능 코드</span><br><span class="line">except &lt;Exception Type&gt;:</span><br><span class="line">    예외(에러) 발생시 대응하는 코드</span><br></pre></td></tr></table></figure>
+<li>문법<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    예외 발생 가능 코드</span><br><span class="line">except &lt;Exception Type&gt;:</span><br><span class="line">    예외(에러) 발생시 대응하는 코드</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<a id="more"></a> 
 <h2 id="1-Exception의-종류-built-in-exception"><a href="#1-Exception의-종류-built-in-exception" class="headerlink" title="1. Exception의 종류 (built-in exception)"></a>1. Exception의 종류 (built-in exception)</h2><ul>
 <li><code>IndexError</code>: list의 index 범위를 넘어갈 때</li>
 <li><code>NameError</code>: 존재하지 않은 벼수를 호출할 때</li>
@@ -182,7 +183,7 @@
 <li><code>FileNotFoundError</code>: 존재하지 않는 파일을 호출할 때</li>
 </ul>
 <h2 id="2-Try-amp-Except-구문"><a href="#2-Try-amp-Except-구문" class="headerlink" title="2. Try &amp; Except 구문"></a>2. Try &amp; Except 구문</h2><p>다음은 에러가 발생하는 코드이다</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">print(ls[<span class="number">3</span>])</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]</span><br><span class="line">print(ls[<span class="hljs-number">3</span>])</span><br><span class="line">print(<span class="hljs-string">"done"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>---------------------------------------------------------------------------
 
 IndexError                                Traceback (most recent call last)
@@ -195,13 +196,13 @@ IndexError                                Traceback (most recent call last)
 
 IndexError: list index out of range
 </code></pre><p>try &amp; except를 사용해서 아래와 같이 에러가 나도 코드가 실행될 수 있도록 만든다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(ls[<span class="number">3</span>])</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">"error"</span>)</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]</span><br><span class="line"><span class="hljs-keyword">try</span>:</span><br><span class="line">    print(ls[<span class="hljs-number">3</span>])</span><br><span class="line"><span class="hljs-keyword">except</span>:</span><br><span class="line">    print(<span class="hljs-string">"error"</span>)</span><br><span class="line">print(<span class="hljs-string">"done"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>error
 done
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(ls[<span class="number">3</span>])</span><br><span class="line"><span class="keyword">except</span> IndexError <span class="keyword">as</span> e:</span><br><span class="line">    print(<span class="string">"e"</span>)</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]</span><br><span class="line"><span class="hljs-keyword">try</span>:</span><br><span class="line">    print(ls[<span class="hljs-number">3</span>])</span><br><span class="line"><span class="hljs-keyword">except</span> IndexError <span class="hljs-keyword">as</span> e:</span><br><span class="line">    print(<span class="hljs-string">"e"</span>)</span><br><span class="line">print(<span class="hljs-string">"done"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>e
 done
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> IndexError <span class="keyword">as</span> e:     <span class="comment"># 특정 error</span></span><br><span class="line">    print(<span class="string">"e"</span>)</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]</span><br><span class="line"><span class="hljs-keyword">try</span>:</span><br><span class="line">    <span class="hljs-number">1</span> / <span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-keyword">except</span> IndexError <span class="hljs-keyword">as</span> e:     <span class="hljs-comment"># 특정 error</span></span><br><span class="line">    print(<span class="hljs-string">"e"</span>)</span><br><span class="line">print(<span class="hljs-string">"done"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>---------------------------------------------------------------------------
 
 ZeroDivisionError                         Traceback (most recent call last)
@@ -215,13 +216,13 @@ ZeroDivisionError                         Traceback (most recent call last)
 
 
 ZeroDivisionError: division by zero
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError <span class="keyword">as</span> z:      </span><br><span class="line">    print(<span class="string">"z"</span>)</span><br><span class="line"><span class="keyword">except</span> IndexError <span class="keyword">as</span> e:     </span><br><span class="line">    print(<span class="string">"e"</span>)</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]</span><br><span class="line"><span class="hljs-keyword">try</span>:</span><br><span class="line">    <span class="hljs-number">1</span> / <span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-keyword">except</span> ZeroDivisionError <span class="hljs-keyword">as</span> z:      </span><br><span class="line">    print(<span class="hljs-string">"z"</span>)</span><br><span class="line"><span class="hljs-keyword">except</span> IndexError <span class="hljs-keyword">as</span> e:     </span><br><span class="line">    print(<span class="hljs-string">"e"</span>)</span><br><span class="line">print(<span class="hljs-string">"done"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>z
 done
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:      </span><br><span class="line">    print(<span class="string">"e"</span>)</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]</span><br><span class="line"><span class="hljs-keyword">try</span>:</span><br><span class="line">    <span class="hljs-number">1</span> / <span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:      </span><br><span class="line">    print(<span class="hljs-string">"e"</span>)</span><br><span class="line">print(<span class="hljs-string">"done"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>e
 done
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> (IndexError, ZeroDivisionError) <span class="keyword">as</span> e:</span><br><span class="line">    print(<span class="string">"e"</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]</span><br><span class="line"><span class="hljs-keyword">try</span>:</span><br><span class="line">    <span class="hljs-number">1</span> / <span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-keyword">except</span> (IndexError, ZeroDivisionError) <span class="hljs-keyword">as</span> e:</span><br><span class="line">    print(<span class="hljs-string">"e"</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="hljs-string">"done"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>e
 done
 </code></pre><h2 id="3-Finally-구문"><a href="#3-Finally-구문" class="headerlink" title="3. Finally 구문"></a>3. Finally 구문</h2><ul>
@@ -229,7 +230,7 @@ done
 <li>파일을 읽어오거나 할 때 finally로 그 파일을 닫아줄 때 많이 사용</li>
 <li>가독성의 이유(명시적으로 관련성을 표시)로 사용 (finally가 없어도 결국 밑에 코드는 실행)</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> (IndexError, ZeroDivisionError) <span class="keyword">as</span> e:  </span><br><span class="line">    print(e)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    print(<span class="string">"end"</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">try</span>:</span><br><span class="line">    <span class="hljs-number">1</span> / <span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-keyword">except</span> (IndexError, ZeroDivisionError) <span class="hljs-keyword">as</span> e:  </span><br><span class="line">    print(e)</span><br><span class="line"><span class="hljs-keyword">finally</span>:</span><br><span class="line">    print(<span class="hljs-string">"end"</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="hljs-string">"done"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>division by zero
 end
 done
@@ -238,8 +239,8 @@ done
 <li>에러를 만들때는 Exception을 상속 받아 선언</li>
 </ul>
 <p>10 이하의 숫자가 들어가면 에러를 발생시키는 코드를 만들어 보자.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Under10Error</span><span class="params">(Exception)</span>:</span>    <span class="comment"># Exception을 상속 받음</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"insert int larger than 10"</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">input_number</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> num &lt; <span class="number">10</span>:</span><br><span class="line">        <span class="keyword">raise</span> Under10Error()</span><br><span class="line">    print(num)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">input_number(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Under10Error</span><span class="hljs-params">(Exception)</span>:</span>    <span class="hljs-comment"># Exception을 상속 받음</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-string">"insert int larger than 10"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">input_number</span><span class="hljs-params">(num)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">if</span> num &lt; <span class="hljs-number">10</span>:</span><br><span class="line">        <span class="hljs-keyword">raise</span> Under10Error()</span><br><span class="line">    print(num)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">input_number(<span class="hljs-number">5</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>---------------------------------------------------------------------------
 
 Under10Error                              Traceback (most recent call last)
@@ -259,7 +260,7 @@ Under10Error                              Traceback (most recent call last)
 
 
 Under10Error: insert int larger than 10
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    input_number(<span class="number">5</span>)</span><br><span class="line">    input_number(<span class="number">11</span>)</span><br><span class="line"><span class="keyword">except</span> Under10Error <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">try</span>:</span><br><span class="line">    input_number(<span class="hljs-number">5</span>)</span><br><span class="line">    input_number(<span class="hljs-number">11</span>)</span><br><span class="line"><span class="hljs-keyword">except</span> Under10Error <span class="hljs-keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line">print(<span class="hljs-string">"done"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>insert int larger than 10
 done
 </code></pre><p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_10_try%20%26%20except.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
@@ -380,7 +381,7 @@ done
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        136
+                        138
                     </p>
                 </div>
             </div>
@@ -390,7 +391,7 @@ done
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        8
                     </p>
                 </div>
             </div>
@@ -400,7 +401,7 @@ done
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        31
                     </p>
                 </div>
             </div>
@@ -450,31 +451,15 @@ done
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/">
             <span class="level-start">
-                <span class="level-item">Data Analysis 공부</span>
+                <span class="level-item">Data Science 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">23</span>
+                <span class="level-item tag">54</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/수학-공부/">
-            <span class="level-start">
-                <span class="level-item">수학 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">23</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/">
-            <span class="level-start">
-                <span class="level-item">Programming 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">30</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Algorithm-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Algorithm-공부/">
             <span class="level-start">
                 <span class="level-item">Algorithm 공부</span>
             </span>
@@ -482,7 +467,7 @@ done
                 <span class="level-item tag">2</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Database-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Database-공부/">
             <span class="level-start">
                 <span class="level-item">Database 공부</span>
             </span>
@@ -490,20 +475,28 @@ done
                 <span class="level-item tag">5</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Python-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Python-공부/">
             <span class="level-start">
                 <span class="level-item">Python 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">11</span>
+                <span class="level-item tag">12</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Web-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Web-공부/">
             <span class="level-start">
                 <span class="level-item">Web 공부</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/수학-공부/">
+            <span class="level-start">
+                <span class="level-item">수학 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/TIL-Today-I-Learned/">
@@ -511,7 +504,7 @@ done
                 <span class="level-item">TIL(Today I Learned)</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">81</span>
+                <span class="level-item tag">82</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/기타/">
@@ -533,7 +526,7 @@ done
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.44px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.78px;">data analysis</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11.11px;">html</a> <a href="/tags/javascript/" style="font-size: 11.11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 17.78px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 18.89px;">programming</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/selenium/" style="font-size: 12.22px;">selenium</a> <a href="/tags/web/" style="font-size: 15.56px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.44px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 17.78px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11.11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.44px;">웹크롤링</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 12.73px;">Database</a> <a href="/tags/MySQL/" style="font-size: 11.82px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 11.82px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.91px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 13.64px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.27px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 14.55px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.91px;">html</a> <a href="/tags/javascript/" style="font-size: 10.91px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19.09px;">programming</a> <a href="/tags/python/" style="font-size: 16.36px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 11.82px;">selenium</a> <a href="/tags/web/" style="font-size: 15.45px;">web</a> <a href="/tags/web-crawling/" style="font-size: 13.64px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.91px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 13.64px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 10.91px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
     </div>
 </div>
 
@@ -544,6 +537,44 @@ done
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/python_11_regex/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 11. 정규표현식(regex)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:35:53.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/python_11_regex/" class="has-link-black-ter is-size-6">python 11. 정규표현식(regex)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/2019-02-21-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-21-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:04:15.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/2019-02-21-TIL/" class="has-link-black-ter is-size-6">2019-02-21-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -602,44 +633,6 @@ done
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-14-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-14-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-14-TIL/" class="has-link-black-ter is-size-6">2019-01-14-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-13-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-13-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-13-TIL/" class="has-link-black-ter is-size-6">2019-01-13-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -658,7 +651,7 @@ done
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>

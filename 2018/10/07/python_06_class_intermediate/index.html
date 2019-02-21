@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="jupyter notebook으로 보기 다룰 내용 intermediate getter &amp;amp; setter private is a / has a magic method    1. Getter &amp;amp; Setter 객체의 내부 변수에 접근할때 특정 로직을 거쳐서(특정 함수를 이용, 특정 코드를 거쳐서) 접근할수 있도록 하는 방법 property와 deco">
+    <meta name="description" content="jupyter notebook으로 보기 다룰 내용 intermediate getter &amp;amp; setter private is a / has a magic method">
 <meta name="keywords" content="python,programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 06. Python Class - Intermediate">
 <meta property="og:url" content="http://yoursite.com/2018/10/07/python_06_class_intermediate/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="jupyter notebook으로 보기 다룰 내용 intermediate getter &amp;amp; setter private is a / has a magic method    1. Getter &amp;amp; Setter 객체의 내부 변수에 접근할때 특정 로직을 거쳐서(특정 함수를 이용, 특정 코드를 거쳐서) 접근할수 있도록 하는 방법 property와 deco">
+<meta property="og:description" content="jupyter notebook으로 보기 다룰 내용 intermediate getter &amp;amp; setter private is a / has a magic method">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-07T03:12:24.699Z">
+<meta property="og:updated_time" content="2019-02-21T15:00:51.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 06. Python Class - Intermediate">
-<meta name="twitter:description" content="jupyter notebook으로 보기 다룰 내용 intermediate getter &amp;amp; setter private is a / has a magic method    1. Getter &amp;amp; Setter 객체의 내부 변수에 접근할때 특정 로직을 거쳐서(특정 함수를 이용, 특정 코드를 거쳐서) 접근할수 있도록 하는 방법 property와 deco">
+<meta name="twitter:description" content="jupyter notebook으로 보기 다룰 내용 intermediate getter &amp;amp; setter private is a / has a magic method">
 
 
 
@@ -149,14 +149,14 @@
                 <time class="level-item has-text-grey" datetime="2018-10-07T02:50:40.000Z">2018-10-07</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Python-공부/">Python 공부</a>
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    11 minutes read (About 1659 words)
+                    11 minutes read (About 1660 words)
                 </span>
                 
             </div>
@@ -178,43 +178,44 @@
 </ul>
 </li>
 </ul>
+<a id="more"></a> 
 <h2 id="1-Getter-amp-Setter"><a href="#1-Getter-amp-Setter" class="headerlink" title="1. Getter &amp; Setter"></a>1. Getter &amp; Setter</h2><ul>
 <li>객체의 내부 변수에 접근할때 특정 로직을 거쳐서(특정 함수를 이용, 특정 코드를 거쳐서) 접근할수 있도록 하는 방법</li>
 <li>property와 decorator 두 가지 방법으로 구현이 가능</li>
 <li>OOP의 캡슐화, 은닉화를 구현하기 위해 쓰임</li>
 </ul>
-<h3 id="1-1-Property-함수-이용"><a href="#1-1-Property-함수-이용" class="headerlink" title="1.1 Property 함수 이용"></a>1.1 Property 함수 이용</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person1</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, input_name1, input_name2)</span>:</span></span><br><span class="line">        self.hidden_name1 = input_name1</span><br><span class="line">        self.hidden_name2 = input_name2</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">disp_name1</span><span class="params">(self)</span>:</span>     <span class="comment"># getter 1</span></span><br><span class="line">        print(<span class="string">"disp_name1"</span>)</span><br><span class="line">        <span class="keyword">return</span> self.hidden_name1.upper()</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">disp_name2</span><span class="params">(self)</span>:</span>     <span class="comment"># getter 2</span></span><br><span class="line">        print(<span class="string">"disp_name2"</span>)</span><br><span class="line">        <span class="keyword">return</span> self.hidden_name2</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_name1</span><span class="params">(self, input_name)</span>:</span>     <span class="comment"># setter 1</span></span><br><span class="line">        print(<span class="string">"set_name1"</span>)</span><br><span class="line">        self.hidden_name1 = <span class="string">"Mr. "</span>+ input_name.lower()</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_name2</span><span class="params">(self, input_name)</span>:</span>     <span class="comment"># setter 2</span></span><br><span class="line">        print(<span class="string">"set_name2"</span>)</span><br><span class="line">        self.hidden_name2 = input_name</span><br><span class="line">        </span><br><span class="line">    name1 = property(disp_name1, set_name1)     <span class="comment"># property:내장함수 | property(getter함수, setter함수)</span></span><br><span class="line">    name2 = property(disp_name2, set_name2)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p = Person1(<span class="string">"ksm"</span>, <span class="string">"kek"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1</span><br></pre></td></tr></table></figure>
+<h3 id="1-1-Property-함수-이용"><a href="#1-1-Property-함수-이용" class="headerlink" title="1.1 Property 함수 이용"></a>1.1 Property 함수 이용</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person1</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, input_name1, input_name2)</span>:</span></span><br><span class="line">        self.hidden_name1 = input_name1</span><br><span class="line">        self.hidden_name2 = input_name2</span><br><span class="line">        </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">disp_name1</span><span class="hljs-params">(self)</span>:</span>     <span class="hljs-comment"># getter 1</span></span><br><span class="line">        print(<span class="hljs-string">"disp_name1"</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span> self.hidden_name1.upper()</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">disp_name2</span><span class="hljs-params">(self)</span>:</span>     <span class="hljs-comment"># getter 2</span></span><br><span class="line">        print(<span class="hljs-string">"disp_name2"</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span> self.hidden_name2</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">set_name1</span><span class="hljs-params">(self, input_name)</span>:</span>     <span class="hljs-comment"># setter 1</span></span><br><span class="line">        print(<span class="hljs-string">"set_name1"</span>)</span><br><span class="line">        self.hidden_name1 = <span class="hljs-string">"Mr. "</span>+ input_name.lower()</span><br><span class="line">        </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">set_name2</span><span class="hljs-params">(self, input_name)</span>:</span>     <span class="hljs-comment"># setter 2</span></span><br><span class="line">        print(<span class="hljs-string">"set_name2"</span>)</span><br><span class="line">        self.hidden_name2 = input_name</span><br><span class="line">        </span><br><span class="line">    name1 = property(disp_name1, set_name1)     <span class="hljs-comment"># property:내장함수 | property(getter함수, setter함수)</span></span><br><span class="line">    name2 = property(disp_name2, set_name2)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p = Person1(<span class="hljs-string">"ksm"</span>, <span class="hljs-string">"kek"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1</span><br></pre></td></tr></table></figure>
 <pre><code>disp_name1
 
-&#39;KSM&#39;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.hidden_name1</span><br></pre></td></tr></table></figure>
-<pre><code>&#39;ksm&#39;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1 = <span class="string">"ppp"</span>         <span class="comment"># setter1을 통해 p에 이름 "ppp"를 저장함</span></span><br></pre></td></tr></table></figure>
+&apos;KSM&apos;
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.hidden_name1</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;ksm&apos;
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1 = <span class="hljs-string">"ppp"</span>         <span class="hljs-comment"># setter1을 통해 p에 이름 "ppp"를 저장함</span></span><br></pre></td></tr></table></figure>
 <pre><code>set_name1
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.hidden_name1          <span class="comment"># setter1을 통해 Mr. 를 붙여서 저장되었음</span></span><br></pre></td></tr></table></figure>
-<pre><code>&#39;Mr. ppp&#39;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.disp_name1()          <span class="comment"># getter1을 거쳐 대문자로 표시됨</span></span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.hidden_name1          <span class="hljs-comment"># setter1을 통해 Mr. 를 붙여서 저장되었음</span></span><br></pre></td></tr></table></figure>
+<pre><code>&apos;Mr. ppp&apos;
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.disp_name1()          <span class="hljs-comment"># getter1을 거쳐 대문자로 표시됨</span></span><br></pre></td></tr></table></figure>
 <pre><code>disp_name1
 
-&#39;MR. PPP&#39;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1</span><br></pre></td></tr></table></figure>
+&apos;MR. PPP&apos;
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1</span><br></pre></td></tr></table></figure>
 <pre><code>disp_name1
 
-&#39;MR. PPP&#39;
-</code></pre><h3 id="1-2-decorator-이용"><a href="#1-2-decorator-이용" class="headerlink" title="1.2 decorator 이용"></a>1.2 decorator 이용</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person2</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, input_name)</span>:</span></span><br><span class="line">        self.hidden_name = input_name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span>                      <span class="comment"># getter function</span></span><br><span class="line">        print(<span class="string">"inside the getter"</span>)</span><br><span class="line">        <span class="keyword">return</span> self.hidden_name.upper()</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @name.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self, input_name)</span>:</span>          <span class="comment"># setter function</span></span><br><span class="line">        print(<span class="string">"inside the setter"</span>)</span><br><span class="line">        self.hidden_name = <span class="string">"Mr. "</span> + input_name</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2 = Person2(<span class="string">"park"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.hidden_name</span><br></pre></td></tr></table></figure>
-<pre><code>&#39;park&#39;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.name = <span class="string">"kim"</span></span><br></pre></td></tr></table></figure>
+&apos;MR. PPP&apos;
+</code></pre><h3 id="1-2-decorator-이용"><a href="#1-2-decorator-이용" class="headerlink" title="1.2 decorator 이용"></a>1.2 decorator 이용</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person2</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, input_name)</span>:</span></span><br><span class="line">        self.hidden_name = input_name</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">    @property</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">name</span><span class="hljs-params">(self)</span>:</span>                      <span class="hljs-comment"># getter function</span></span><br><span class="line">        print(<span class="hljs-string">"inside the getter"</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span> self.hidden_name.upper()</span><br><span class="line">    </span><br><span class="line"><span class="hljs-meta">    @name.setter</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">name</span><span class="hljs-params">(self, input_name)</span>:</span>          <span class="hljs-comment"># setter function</span></span><br><span class="line">        print(<span class="hljs-string">"inside the setter"</span>)</span><br><span class="line">        self.hidden_name = <span class="hljs-string">"Mr. "</span> + input_name</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2 = Person2(<span class="hljs-string">"park"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.hidden_name</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;park&apos;
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.name = <span class="hljs-string">"kim"</span></span><br></pre></td></tr></table></figure>
 <pre><code>inside the setter
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.hidden_name</span><br></pre></td></tr></table></figure>
-<pre><code>&#39;Mr. kim&#39;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.name</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.hidden_name</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;Mr. kim&apos;
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.name</span><br></pre></td></tr></table></figure>
 <pre><code>inside the getter
 
-&#39;MR. KIM&#39;
+&apos;MR. KIM&apos;
 </code></pre><h2 id="2-Private"><a href="#2-Private" class="headerlink" title="2. Private"></a>2. Private</h2><ul>
 <li>위 코드처럼 생성자 함수에 변수를 선언하면 객체를 만들었을 때 getter를 통하지 않고 접근이 가능</li>
 <li>python에서는 mangling이라는 방법을 사용하여 class 내부 변수에 다이렉트로 접근하지 못하게 하는 방법으로 private을 구현<ul>
@@ -224,9 +225,9 @@
 <li>완벽한 방법은 아니고 변수명 앞에 <code>_(클래스명)</code>을 붙이면 접근이 가능</li>
 <li>객체의 변수에 접근하기 위해서 <code>(객체명).(변수명)</code> 으로 접근이 가능</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person3</span><span class="params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, input_name)</span>:</span></span><br><span class="line">        self.__hidden_name = input_name</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mod</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__hidden_name = <span class="string">"Park"</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"inside the getter"</span>)</span><br><span class="line">        <span class="keyword">return</span> self.__hidden_name.upper()</span><br><span class="line"></span><br><span class="line"><span class="meta">    @name.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self, input_name)</span>:</span></span><br><span class="line">        print(<span class="string">"inside the setter"</span>)</span><br><span class="line">        self.__hidden_name = <span class="string">"Mr. "</span> + input_name</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3 = Person3(<span class="string">"Lee"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#직접 접근할 수 없음</span></span><br><span class="line">p3.__hidden_name</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person3</span><span class="hljs-params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, input_name)</span>:</span></span><br><span class="line">        self.__hidden_name = input_name</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mod</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        self.__hidden_name = <span class="hljs-string">"Park"</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">    @property</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">name</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        print(<span class="hljs-string">"inside the getter"</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span> self.__hidden_name.upper()</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">    @name.setter</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">name</span><span class="hljs-params">(self, input_name)</span>:</span></span><br><span class="line">        print(<span class="hljs-string">"inside the setter"</span>)</span><br><span class="line">        self.__hidden_name = <span class="hljs-string">"Mr. "</span> + input_name</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3 = Person3(<span class="hljs-string">"Lee"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#직접 접근할 수 없음</span></span><br><span class="line">p3.__hidden_name</span><br></pre></td></tr></table></figure>
 <pre><code>---------------------------------------------------------------------------
 
 AttributeError                            Traceback (most recent call last)
@@ -235,26 +236,26 @@ AttributeError                            Traceback (most recent call last)
 ----&gt; 1 p3.__hidden_name
 
 
-AttributeError: &#39;Person3&#39; object has no attribute &#39;__hidden_name&#39;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># getter로만 접근 가능</span></span><br><span class="line">p3.name</span><br></pre></td></tr></table></figure>
+AttributeError: &apos;Person3&apos; object has no attribute &apos;__hidden_name&apos;
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># getter로만 접근 가능</span></span><br><span class="line">p3.name</span><br></pre></td></tr></table></figure>
 <pre><code>inside the getter
 
-&#39;LEE&#39;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3.mod()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3.name</span><br></pre></td></tr></table></figure>
+&apos;LEE&apos;
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3.mod()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3.name</span><br></pre></td></tr></table></figure>
 <pre><code>inside the getter
 
-&#39;PARK&#39;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3._Person3__hidden_name    <span class="comment"># 접근은 가능</span></span><br></pre></td></tr></table></figure>
-<pre><code>&#39;Park&#39;
+&apos;PARK&apos;
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3._Person3__hidden_name    <span class="hljs-comment"># 접근은 가능</span></span><br></pre></td></tr></table></figure>
+<pre><code>&apos;Park&apos;
 </code></pre><h3 id="Private-function"><a href="#Private-function" class="headerlink" title="Private function"></a>Private function</h3><ul>
 <li>class 내에서만 사용되는 함수의 이름 중복이 우려될 때 사용</li>
 <li>mangling 사용</li>
 <li>거의 사용되지는 않음</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># def test():</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__test</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"test"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = A()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a._A__test()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># def test():</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__test</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        print(<span class="hljs-string">"test"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = A()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a._A__test()</span><br></pre></td></tr></table></figure>
 <pre><code>test
 </code></pre><h2 id="3-is-a-amp-has-a"><a href="#3-is-a-amp-has-a" class="headerlink" title="3. is a &amp; has a"></a>3. is a &amp; has a</h2><ul>
 <li>is a: A is a B의 개념은 A는 B임을 의미<ul>
@@ -267,9 +268,9 @@ AttributeError: &#39;Person3&#39; object has no attribute &#39;__hidden_name&#39
 </li>
 <li>같이 혼합해서도 사용 가능</li>
 </ul>
-<h3 id="3-1-is-a"><a href="#3-1-is-a" class="headerlink" title="3.1 is a"></a>3.1 is a</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, email)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.email = email</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(B)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">about</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.name, self.email)</span><br><span class="line">        </span><br><span class="line">person = A(<span class="string">"Hyeshin"</span>, <span class="string">"hyeshinoh@gmail.com"</span>)</span><br><span class="line">person.about()</span><br></pre></td></tr></table></figure>
+<h3 id="3-1-is-a"><a href="#3-1-is-a" class="headerlink" title="3.1 is a"></a>3.1 is a</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span><span class="hljs-params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name, email)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.email = email</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span><span class="hljs-params">(B)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">about</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        print(self.name, self.email)</span><br><span class="line">        </span><br><span class="line">person = A(<span class="hljs-string">"Hyeshin"</span>, <span class="hljs-string">"hyeshinoh@gmail.com"</span>)</span><br><span class="line">person.about()</span><br></pre></td></tr></table></figure>
 <pre><code>Hyeshin hyeshinoh@gmail.com
-</code></pre><h3 id="3-2-has-a"><a href="#3-2-has-a" class="headerlink" title="3.2 has a"></a>3.2 has a</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Name</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name_str = name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Email</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, email)</span>:</span></span><br><span class="line">        self.email_str = email</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, email)</span>:</span></span><br><span class="line">        self.name_obj = name</span><br><span class="line">        self.email_obj = email</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">about</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.name_obj.name_str, self.email_obj.email_str)</span><br><span class="line">             <span class="comment"># object가 들어오고 오브젝트의 name값</span></span><br><span class="line"></span><br><span class="line">name = Name(<span class="string">"Hyeshin"</span>)</span><br><span class="line">email = Email(<span class="string">"hyeshinoh@gmail.com"</span>)</span><br><span class="line">p = Person(name, email)</span><br><span class="line">p.about()</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="3-2-has-a"><a href="#3-2-has-a" class="headerlink" title="3.2 has a"></a>3.2 has a</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Name</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name)</span>:</span></span><br><span class="line">        self.name_str = name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Email</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, email)</span>:</span></span><br><span class="line">        self.email_str = email</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name, email)</span>:</span></span><br><span class="line">        self.name_obj = name</span><br><span class="line">        self.email_obj = email</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">about</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        print(self.name_obj.name_str, self.email_obj.email_str)</span><br><span class="line">             <span class="hljs-comment"># object가 들어오고 오브젝트의 name값</span></span><br><span class="line"></span><br><span class="line">name = Name(<span class="hljs-string">"Hyeshin"</span>)</span><br><span class="line">email = Email(<span class="hljs-string">"hyeshinoh@gmail.com"</span>)</span><br><span class="line">p = Person(name, email)</span><br><span class="line">p.about()</span><br></pre></td></tr></table></figure>
 <pre><code>Hyeshin hyeshinoh@gmail.com
 </code></pre><h2 id="4-Magic-Special-Method"><a href="#4-Magic-Special-Method" class="headerlink" title="4. Magic(Special) Method"></a>4. Magic(Special) Method</h2><ul>
 <li><a href="https://docs.python.org/3/reference/datamodel.html#specialnames" target="_blank" rel="noopener">https://docs.python.org/3/reference/datamodel.html#specialnames</a></li>
@@ -301,49 +302,49 @@ AttributeError: &#39;Person3&#39; object has no attribute &#39;__hidden_name&#39
 <h3 id="4-1-eq"><a href="#4-1-eq" class="headerlink" title="4.1 __eq__"></a>4.1 <code>__eq__</code></h3><ul>
 <li>text 변수를 저장하고 객체가 같은지 비교하는 코드</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Txt</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, txt)</span>:</span></span><br><span class="line">        self.txt = txt</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">equals</span><span class="params">(self, txt_obj)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.txt.lower() == txt_obj.txt.lower()</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">txt1 = Txt(<span class="string">"DataScience"</span>)</span><br><span class="line">txt2 = Txt(<span class="string">"datascience"</span>)</span><br><span class="line">txt3 = Txt(<span class="string">"dataScience"</span>)</span><br><span class="line">txt4 = Txt(<span class="string">"python"</span>)</span><br><span class="line">txt5 = txt1</span><br><span class="line"></span><br><span class="line"><span class="comment"># Txt 객체의 txt 변수를 비교</span></span><br><span class="line">print( txt1.equals(txt2) )</span><br><span class="line">print( txt1.equals(txt3) )</span><br><span class="line">print( txt1.equals(txt4) )</span><br><span class="line">print( txt1.equals(txt5) )</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Txt</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, txt)</span>:</span></span><br><span class="line">        self.txt = txt</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">equals</span><span class="hljs-params">(self, txt_obj)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">return</span> self.txt.lower() == txt_obj.txt.lower()</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">txt1 = Txt(<span class="hljs-string">"DataScience"</span>)</span><br><span class="line">txt2 = Txt(<span class="hljs-string">"datascience"</span>)</span><br><span class="line">txt3 = Txt(<span class="hljs-string">"dataScience"</span>)</span><br><span class="line">txt4 = Txt(<span class="hljs-string">"python"</span>)</span><br><span class="line">txt5 = txt1</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Txt 객체의 txt 변수를 비교</span></span><br><span class="line">print( txt1.equals(txt2) )</span><br><span class="line">print( txt1.equals(txt3) )</span><br><span class="line">print( txt1.equals(txt4) )</span><br><span class="line">print( txt1.equals(txt5) )</span><br></pre></td></tr></table></figure>
 <pre><code>True
 True
 False
 True
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">txt1 == txt2, txt1 == txt3, txt1 == txt4, txt1</span><br><span class="line">	<span class="comment"># object는 == 사용시 주소값 비교</span></span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">txt1 == txt2, txt1 == txt3, txt1 == txt4, txt1</span><br><span class="line">	<span class="hljs-comment"># object는 == 사용시 주소값 비교</span></span><br></pre></td></tr></table></figure>
 <pre><code>(False, False, False, True)
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">txt1, txt4, txt5</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">txt1, txt4, txt5</span><br></pre></td></tr></table></figure>
 <pre><code>(&lt;__main__.Txt at 0x114f65ef0&gt;,
  &lt;__main__.Txt at 0x114f65f28&gt;,
  &lt;__main__.Txt at 0x114f65ef0&gt;)
 </code></pre><p><code>__eq__</code>를 정의하면 클래스 비교연산에서 <code>__eq__</code>를 수행<br>이를 값을 비교하는 함수로 수정</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Txt</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, txt)</span>:</span></span><br><span class="line">        self.txt = txt</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__eq__</span><span class="params">(self, txt_obj)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        return self.txt.lower() == txt_obj.txt.lower()</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">return</span> self.txt.lower() == txt_obj.txt.lower()</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">txt1 = Txt(<span class="string">"DataScience"</span>)</span><br><span class="line">txt2 = Txt(<span class="string">"datascience"</span>)</span><br><span class="line">txt3 = Txt(<span class="string">"dataScience"</span>)</span><br><span class="line">txt4 = Txt(<span class="string">"python"</span>)</span><br><span class="line">txt5 = txt1</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## equal의 기능을 바꿔주었음</span></span><br><span class="line">txt1 == txt2, txt1 == txt3, txt1 == txt4, txt1 == txt5</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Txt</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, txt)</span>:</span></span><br><span class="line">        self.txt = txt</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__eq__</span><span class="hljs-params">(self, txt_obj)</span>:</span></span><br><span class="line">        <span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-string">        return self.txt.lower() == txt_obj.txt.lower()</span></span><br><span class="line"><span class="hljs-string">        """</span></span><br><span class="line">        <span class="hljs-keyword">return</span> self.txt.lower() == txt_obj.txt.lower()</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">txt1 = Txt(<span class="hljs-string">"DataScience"</span>)</span><br><span class="line">txt2 = Txt(<span class="hljs-string">"datascience"</span>)</span><br><span class="line">txt3 = Txt(<span class="hljs-string">"dataScience"</span>)</span><br><span class="line">txt4 = Txt(<span class="hljs-string">"python"</span>)</span><br><span class="line">txt5 = txt1</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">## equal의 기능을 바꿔주었음</span></span><br><span class="line">txt1 == txt2, txt1 == txt3, txt1 == txt4, txt1 == txt5</span><br></pre></td></tr></table></figure>
 <pre><code>(True, True, False, True)
 </code></pre><h3 id="4-2-ne"><a href="#4-2-ne" class="headerlink" title="4.2 __ne__"></a>4.2 <code>__ne__</code></h3><ul>
 <li>list의 remove 함수는 한개의 value만 삭제</li>
 <li>리스트에 있는 값 여러개 삭제하는 코드</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"a"</span>, <span class="string">"c"</span>, <span class="string">"a"</span>]</span><br><span class="line">ls.remove(<span class="string">"a"</span>)</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
-<pre><code>[&#39;b&#39;, &#39;a&#39;, &#39;c&#39;, &#39;a&#39;]
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"a"</span>, <span class="string">"c"</span>, <span class="string">"a"</span>]</span><br><span class="line">s = <span class="string">"a"</span></span><br><span class="line">result = [data <span class="keyword">for</span> data <span class="keyword">in</span> ls <span class="keyword">if</span> data != s]</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
-<pre><code>[&#39;b&#39;, &#39;c&#39;]
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"a"</span>, <span class="hljs-string">"c"</span>, <span class="hljs-string">"a"</span>]</span><br><span class="line">ls.remove(<span class="hljs-string">"a"</span>)</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;b&apos;, &apos;a&apos;, &apos;c&apos;, &apos;a&apos;]
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"a"</span>, <span class="hljs-string">"c"</span>, <span class="hljs-string">"a"</span>]</span><br><span class="line">s = <span class="hljs-string">"a"</span></span><br><span class="line">result = [data <span class="hljs-keyword">for</span> data <span class="hljs-keyword">in</span> ls <span class="hljs-keyword">if</span> data != s]</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;b&apos;, &apos;c&apos;]
 </code></pre><p><code>__ne__</code>를 이용하여 리스트에 있는 값 여러개 삭제하는 코드</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"Python"</span></span><br><span class="line"><span class="comment"># s.__ne__??</span></span><br><span class="line"></span><br><span class="line">ls = [<span class="string">"Hello"</span>,<span class="string">"Python"</span>,<span class="string">"Hello"</span>,<span class="string">"Python"</span>,<span class="string">"Hello"</span>,<span class="string">"Python"</span>]</span><br><span class="line">print(list(filter(s.__ne__, ls)))</span><br></pre></td></tr></table></figure>
-<pre><code>[&#39;Hello&#39;, &#39;Hello&#39;, &#39;Hello&#39;]
-</code></pre><h3 id="4-3-add"><a href="#4-3-add" class="headerlink" title="4.3 __add__"></a>4.3 <code>__add__</code></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int.__add__??</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="hljs-string">"Python"</span></span><br><span class="line"><span class="hljs-comment"># s.__ne__??</span></span><br><span class="line"></span><br><span class="line">ls = [<span class="hljs-string">"Hello"</span>,<span class="hljs-string">"Python"</span>,<span class="hljs-string">"Hello"</span>,<span class="hljs-string">"Python"</span>,<span class="hljs-string">"Hello"</span>,<span class="hljs-string">"Python"</span>]</span><br><span class="line">print(list(filter(s.__ne__, ls)))</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;Hello&apos;, &apos;Hello&apos;, &apos;Hello&apos;]
+</code></pre><h3 id="4-3-add"><a href="#4-3-add" class="headerlink" title="4.3 __add__"></a>4.3 <code>__add__</code></h3><figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int.__add__??</span><br></pre></td></tr></table></figure>
 <pre><code>Signature:      int.__add__(self, value, /)
 Call signature: int.__add__(*args, **kwargs)
 Type:           wrapper_descriptor
-String form:    &lt;slot wrapper &#39;__add__&#39; of &#39;int&#39; objects&gt;
+String form:    &lt;slot wrapper &apos;__add__&apos; of &apos;int&apos; objects&gt;
 Namespace:      Python builtin
 Docstring:      Return self+value.
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">2</span>).__add__(<span class="number">3</span>), <span class="number">2</span> + <span class="number">3</span></span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-number">2</span>).__add__(<span class="hljs-number">3</span>), <span class="hljs-number">2</span> + <span class="hljs-number">3</span></span><br></pre></td></tr></table></figure>
 <pre><code>(5, 5)
 </code></pre><p>add를 정의 해서 객체간의 덧셈을 정의 할수 있음 (뺄셈으로 변경)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">number</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        self.num = num</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, other)</span>:</span>           <span class="comment"># overriding</span></span><br><span class="line">        <span class="keyword">return</span> self.num - other.num</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">n1 = number(<span class="number">5</span>)</span><br><span class="line">n2 = number(<span class="number">7</span>)</span><br><span class="line">n1 + n2</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">number</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, num)</span>:</span></span><br><span class="line">        self.num = num</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__add__</span><span class="hljs-params">(self, other)</span>:</span>           <span class="hljs-comment"># overriding</span></span><br><span class="line">        <span class="hljs-keyword">return</span> self.num - other.num</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">n1 = number(<span class="hljs-number">5</span>)</span><br><span class="line">n2 = number(<span class="hljs-number">7</span>)</span><br><span class="line">n1 + n2</span><br></pre></td></tr></table></figure>
 <pre><code>-2
 </code></pre><p>add를 정의 해서 객체간의 덧셈을 정의 할수 있음 (곱셈으로 변경)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">number2</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        self.num = num</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, other)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.num * other.num</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n1 = number(<span class="number">5</span>)</span><br><span class="line">n2 = number2(<span class="number">7</span>)</span><br><span class="line">n1 + n2</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">number2</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, num)</span>:</span></span><br><span class="line">        self.num = num</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__add__</span><span class="hljs-params">(self, other)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">return</span> self.num * other.num</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n1 = number(<span class="hljs-number">5</span>)</span><br><span class="line">n2 = number2(<span class="hljs-number">7</span>)</span><br><span class="line">n1 + n2</span><br></pre></td></tr></table></figure>
 <pre><code>-2
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n1 = number2(<span class="number">5</span>)</span><br><span class="line">n2 = number(<span class="number">7</span>)</span><br><span class="line">n1 + n2</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n1 = number2(<span class="hljs-number">5</span>)</span><br><span class="line">n2 = number(<span class="hljs-number">7</span>)</span><br><span class="line">n1 + n2</span><br></pre></td></tr></table></figure>
 <pre><code>35
 </code></pre><h3 id="4-4-str-repr"><a href="#4-4-str-repr" class="headerlink" title="4.4 __str__, __repr__"></a>4.4 <code>__str__</code>, <code>__repr__</code></h3><ul>
 <li><code>__str__</code>은 print로 객체를 출력할때 출력되는 문자열 데이터를 정의<ul>
@@ -358,13 +359,13 @@ Docstring:      Return self+value.
 </li>
 </ul>
 <p>number class에 <code>__str__</code>과 <code>__repr__</code>을 추가하여 객체를 출력할때 숫자 결과값이 나오도록 함</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Number</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        self.num = num</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> str(self.num)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> str(<span class="string">"Number(num="</span> + str(self.num) + <span class="string">")"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n = Number(<span class="number">5</span>)</span><br><span class="line">print(n)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Number</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, num)</span>:</span></span><br><span class="line">        self.num = num</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">return</span> str(self.num)</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">return</span> str(<span class="hljs-string">"Number(num="</span> + str(self.num) + <span class="hljs-string">")"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n = Number(<span class="hljs-number">5</span>)</span><br><span class="line">print(n)</span><br></pre></td></tr></table></figure>
 <pre><code>5
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n</span><br></pre></td></tr></table></figure>
 <pre><code>Number(num=5)
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n2 = Number(num=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n2</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n2 = Number(num=<span class="hljs-number">5</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n2</span><br></pre></td></tr></table></figure>
 <pre><code>Number(num=5)
 </code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
 <li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
@@ -483,7 +484,7 @@ Docstring:      Return self+value.
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        136
+                        138
                     </p>
                 </div>
             </div>
@@ -493,7 +494,7 @@ Docstring:      Return self+value.
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        8
                     </p>
                 </div>
             </div>
@@ -503,7 +504,7 @@ Docstring:      Return self+value.
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        31
                     </p>
                 </div>
             </div>
@@ -553,31 +554,15 @@ Docstring:      Return self+value.
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/">
             <span class="level-start">
-                <span class="level-item">Data Analysis 공부</span>
+                <span class="level-item">Data Science 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">23</span>
+                <span class="level-item tag">54</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/수학-공부/">
-            <span class="level-start">
-                <span class="level-item">수학 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">23</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/">
-            <span class="level-start">
-                <span class="level-item">Programming 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">30</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Algorithm-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Algorithm-공부/">
             <span class="level-start">
                 <span class="level-item">Algorithm 공부</span>
             </span>
@@ -585,7 +570,7 @@ Docstring:      Return self+value.
                 <span class="level-item tag">2</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Database-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Database-공부/">
             <span class="level-start">
                 <span class="level-item">Database 공부</span>
             </span>
@@ -593,20 +578,28 @@ Docstring:      Return self+value.
                 <span class="level-item tag">5</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Python-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Python-공부/">
             <span class="level-start">
                 <span class="level-item">Python 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">11</span>
+                <span class="level-item tag">12</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Web-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Web-공부/">
             <span class="level-start">
                 <span class="level-item">Web 공부</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/수학-공부/">
+            <span class="level-start">
+                <span class="level-item">수학 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/TIL-Today-I-Learned/">
@@ -614,7 +607,7 @@ Docstring:      Return self+value.
                 <span class="level-item">TIL(Today I Learned)</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">81</span>
+                <span class="level-item tag">82</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/기타/">
@@ -636,7 +629,7 @@ Docstring:      Return self+value.
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.44px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.78px;">data analysis</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11.11px;">html</a> <a href="/tags/javascript/" style="font-size: 11.11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 17.78px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 18.89px;">programming</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/selenium/" style="font-size: 12.22px;">selenium</a> <a href="/tags/web/" style="font-size: 15.56px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.44px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 17.78px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11.11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.44px;">웹크롤링</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 12.73px;">Database</a> <a href="/tags/MySQL/" style="font-size: 11.82px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 11.82px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.91px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 13.64px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.27px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 14.55px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.91px;">html</a> <a href="/tags/javascript/" style="font-size: 10.91px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19.09px;">programming</a> <a href="/tags/python/" style="font-size: 16.36px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 11.82px;">selenium</a> <a href="/tags/web/" style="font-size: 15.45px;">web</a> <a href="/tags/web-crawling/" style="font-size: 13.64px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.91px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 13.64px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 10.91px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
     </div>
 </div>
 
@@ -647,6 +640,44 @@ Docstring:      Return self+value.
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/python_11_regex/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 11. 정규표현식(regex)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:35:53.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/python_11_regex/" class="has-link-black-ter is-size-6">python 11. 정규표현식(regex)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/2019-02-21-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-21-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:04:15.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/2019-02-21-TIL/" class="has-link-black-ter is-size-6">2019-02-21-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -705,44 +736,6 @@ Docstring:      Return self+value.
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-14-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-14-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-14-TIL/" class="has-link-black-ter is-size-6">2019-01-14-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-13-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-13-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-13-TIL/" class="has-link-black-ter is-size-6">2019-01-13-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -761,7 +754,7 @@ Docstring:      Return self+value.
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>

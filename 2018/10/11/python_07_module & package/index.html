@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="jupyter notebook으로 보기 1. Module - 모듈여럿이 함께 프로그램을 개발하기 위한 방법인 (1) 함수 (2) 객체 (3) 모듈 중 모듈에 대해 알아보자.  모듈: 변수, 함수, 클래스를 모아놓은 파일 사용 이유: 하나의 파일로 모든 코드를 작성해서 서비스를 만들 수 없기 때문에 코드의 규모가 커지면 기능별로 분리해 모듈 형태로 저장하고,">
+    <meta name="description" content="jupyter notebook으로 보기 1. Module - 모듈여럿이 함께 프로그램을 개발하기 위한 방법인 (1) 함수 (2) 객체 (3) 모듈 중 모듈에 대해 알아보자.">
 <meta name="keywords" content="python,programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 07. Python Module  &amp; Package">
 <meta property="og:url" content="http://yoursite.com/2018/10/11/python_07_module & package/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="jupyter notebook으로 보기 1. Module - 모듈여럿이 함께 프로그램을 개발하기 위한 방법인 (1) 함수 (2) 객체 (3) 모듈 중 모듈에 대해 알아보자.  모듈: 변수, 함수, 클래스를 모아놓은 파일 사용 이유: 하나의 파일로 모든 코드를 작성해서 서비스를 만들 수 없기 때문에 코드의 규모가 커지면 기능별로 분리해 모듈 형태로 저장하고,">
+<meta property="og:description" content="jupyter notebook으로 보기 1. Module - 모듈여럿이 함께 프로그램을 개발하기 위한 방법인 (1) 함수 (2) 객체 (3) 모듈 중 모듈에 대해 알아보자.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-10T15:25:13.001Z">
+<meta property="og:updated_time" content="2019-02-21T15:01:04.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 07. Python Module  &amp; Package">
-<meta name="twitter:description" content="jupyter notebook으로 보기 1. Module - 모듈여럿이 함께 프로그램을 개발하기 위한 방법인 (1) 함수 (2) 객체 (3) 모듈 중 모듈에 대해 알아보자.  모듈: 변수, 함수, 클래스를 모아놓은 파일 사용 이유: 하나의 파일로 모든 코드를 작성해서 서비스를 만들 수 없기 때문에 코드의 규모가 커지면 기능별로 분리해 모듈 형태로 저장하고,">
+<meta name="twitter:description" content="jupyter notebook으로 보기 1. Module - 모듈여럿이 함께 프로그램을 개발하기 위한 방법인 (1) 함수 (2) 객체 (3) 모듈 중 모듈에 대해 알아보자.">
 
 
 
@@ -149,14 +149,14 @@
                 <time class="level-item has-text-grey" datetime="2018-10-10T15:22:27.000Z">2018-10-11</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Python-공부/">Python 공부</a>
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    9 minutes read (About 1320 words)
+                    9 minutes read (About 1321 words)
                 </span>
                 
             </div>
@@ -170,6 +170,7 @@
         <div class="content">
             <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_07_module%20%26%20package.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
 <h2 id="1-Module-모듈"><a href="#1-Module-모듈" class="headerlink" title="1. Module - 모듈"></a>1. Module - 모듈</h2><p>여럿이 함께 프로그램을 개발하기 위한 방법인 (1) 함수 (2) 객체 (3) 모듈 중 모듈에 대해 알아보자.</p>
+<a id="more"></a> 
 <ul>
 <li>모듈: 변수, 함수, 클래스를 모아놓은 파일</li>
 <li>사용 이유: 하나의 파일로 모든 코드를 작성해서 서비스를 만들 수 없기 때문에 코드의 규모가 커지면 기능별로 분리해 모듈 형태로 저장하고, 모듈을 모아서 하나의 큰 프로그램을 개발</li>
@@ -183,43 +184,43 @@
 </li>
 </ul>
 <p>magic command를 이용하여 module로 사용할 dsm.py 파일을 만들어 저장</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">%%writefile dsm.py</span><br><span class="line"></span><br><span class="line">var = <span class="number">1234</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">disp1</span><span class="params">(s)</span>:</span></span><br><span class="line">    print(<span class="string">"dsm_f1:"</span>, s)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">disp2</span><span class="params">(s)</span>:</span></span><br><span class="line">    print(<span class="string">"dsm_f2:"</span>, s)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">disp3</span><span class="params">(s)</span>:</span></span><br><span class="line">    print(<span class="string">"dsm_f3:"</span>, s)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calc</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plus</span><span class="params">(self, *args)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> sum(args)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">%%writefile dsm.py</span><br><span class="line"></span><br><span class="line">var = <span class="hljs-number">1234</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">disp1</span><span class="hljs-params">(s)</span>:</span></span><br><span class="line">    print(<span class="hljs-string">"dsm_f1:"</span>, s)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">disp2</span><span class="hljs-params">(s)</span>:</span></span><br><span class="line">    print(<span class="hljs-string">"dsm_f2:"</span>, s)</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">disp3</span><span class="hljs-params">(s)</span>:</span></span><br><span class="line">    print(<span class="hljs-string">"dsm_f3:"</span>, s)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Calc</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span><span class="hljs-params">(self, *args)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">return</span> sum(args)</span><br></pre></td></tr></table></figure>
 <pre><code>Writing dsm.py
 </code></pre><h3 id="1-1-모듈-호출"><a href="#1-1-모듈-호출" class="headerlink" title="1.1 모듈 호출"></a>1.1 모듈 호출</h3><h4 id="1-dsm-모듈-호출"><a href="#1-dsm-모듈-호출" class="headerlink" title="(1) dsm 모듈 호출"></a>(1) dsm 모듈 호출</h4><p>같은 폴더 내에 모듈이 위치한 경우 바로 import가 가능</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> dsm</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> dsm</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
 <pre><code>Variable   Type      Data/Info
 ------------------------------
-dsm        module    &lt;module &#39;dsm&#39; from &#39;/User&lt;...&gt;ace/Study_Python/dsm.py&#39;&gt;
-</code></pre><h4 id="2-dsm-모듈의-변수-호출"><a href="#2-dsm-모듈의-변수-호출" class="headerlink" title="(2) dsm 모듈의 변수 호출"></a>(2) dsm 모듈의 변수 호출</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dsm.var</span><br></pre></td></tr></table></figure>
+dsm        module    &lt;module &apos;dsm&apos; from &apos;/User&lt;...&gt;ace/Study_Python/dsm.py&apos;&gt;
+</code></pre><h4 id="2-dsm-모듈의-변수-호출"><a href="#2-dsm-모듈의-변수-호출" class="headerlink" title="(2) dsm 모듈의 변수 호출"></a>(2) dsm 모듈의 변수 호출</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dsm.var</span><br></pre></td></tr></table></figure>
 <pre><code>1234
-</code></pre><h4 id="3-dsm-모듈의-함수-호출"><a href="#3-dsm-모듈의-함수-호출" class="headerlink" title="(3) dsm 모듈의 함수 호출"></a>(3) dsm 모듈의 함수 호출</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dsm.disp1(<span class="string">"test"</span>)</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="3-dsm-모듈의-함수-호출"><a href="#3-dsm-모듈의-함수-호출" class="headerlink" title="(3) dsm 모듈의 함수 호출"></a>(3) dsm 모듈의 함수 호출</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dsm.disp1(<span class="hljs-string">"test"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>dsm_f1: test
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dsm.disp1(<span class="string">"test1"</span>)</span><br><span class="line">dsm.disp2(<span class="string">"test2"</span>)</span><br><span class="line">dsm.disp3(<span class="string">"test3"</span>)</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dsm.disp1(<span class="hljs-string">"test1"</span>)</span><br><span class="line">dsm.disp2(<span class="hljs-string">"test2"</span>)</span><br><span class="line">dsm.disp3(<span class="hljs-string">"test3"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>dsm_f1: test1
 dsm_f2: test2
 dsm_f3: test3
-</code></pre><h4 id="4-dsm-모듈의-클래스-호출"><a href="#4-dsm-모듈의-클래스-호출" class="headerlink" title="(4) dsm 모듈의 클래스 호출"></a>(4) dsm 모듈의 클래스 호출</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c = dsm.Calc()</span><br><span class="line">c.plus(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="4-dsm-모듈의-클래스-호출"><a href="#4-dsm-모듈의-클래스-호출" class="headerlink" title="(4) dsm 모듈의 클래스 호출"></a>(4) dsm 모듈의 클래스 호출</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c = dsm.Calc()</span><br><span class="line">c.plus(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>15
 </code></pre><h3 id="1-2-모듈에-있는-함수만-호출하기"><a href="#1-2-모듈에-있는-함수만-호출하기" class="headerlink" title="1.2 모듈에 있는 함수만 호출하기"></a>1.2 모듈에 있는 함수만 호출하기</h3><ul>
 <li>모듈에 있는 함수만 호출하면 (모듈이름).(함수이름) 에서 (함수이름)만 사용하기 때문에 함수를 사용할때 코드의 양을 줄일수 있음</li>
 <li>from을 사용하여 모듈을 호출하고 import를 이용하여 모듈안에 있는 함수나 변수나 클래스를 호출할수 있음</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%reset</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%reset</span><br></pre></td></tr></table></figure>
 <pre><code>Once deleted, variables cannot be recovered. Proceed (y/[n])?  y
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dsm <span class="keyword">import</span> disp1, disp2</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> dsm <span class="hljs-keyword">import</span> disp1, disp2</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
 <pre><code>Variable   Type        Data/Info
 --------------------------------
 disp1      function    &lt;function disp1 at 0x1078f6d08&gt;
 disp2      function    &lt;function disp2 at 0x10de1e950&gt;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disp1(<span class="string">"test"</span>)</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disp1(<span class="hljs-string">"test"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>dsm_f1: test
-</code></pre><h3 id="1-3-모듈의-모든-함수-호출"><a href="#1-3-모듈의-모든-함수-호출" class="headerlink" title="1.3 모듈의 모든 함수 호출"></a>1.3 모듈의 모든 함수 호출</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dsm <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="1-3-모듈의-모든-함수-호출"><a href="#1-3-모듈의-모든-함수-호출" class="headerlink" title="1.3 모듈의 모든 함수 호출"></a>1.3 모듈의 모든 함수 호출</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> dsm <span class="hljs-keyword">import</span> *</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
 <pre><code>Variable   Type        Data/Info
 --------------------------------
-Calc       type        &lt;class &#39;dsm.Calc&#39;&gt;
+Calc       type        &lt;class &apos;dsm.Calc&apos;&gt;
 disp1      function    &lt;function disp1 at 0x1078f6d08&gt;
 disp2      function    &lt;function disp2 at 0x10de1e950&gt;
 disp3      function    &lt;function disp3 at 0x10de9a378&gt;
@@ -233,9 +234,9 @@ var        int         1234
 </ul>
 </li>
 </ul>
-<h3 id="2-1-school-패키지-만들기"><a href="#2-1-school-패키지-만들기" class="headerlink" title="2.1 school 패키지 만들기"></a>2.1 school 패키지 만들기</h3><h4 id="디렉토리-구성하기"><a href="#디렉토리-구성하기" class="headerlink" title="디렉토리 구성하기"></a>디렉토리 구성하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!mkdir school</span><br><span class="line">!mkdir school/datascience</span><br><span class="line">!mkdir school/web</span><br></pre></td></tr></table></figure>
-<h4 id="init-py-만들기"><a href="#init-py-만들기" class="headerlink" title="__init__.py 만들기"></a><code>__init__.py</code> 만들기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!touch school/datascience/__init__.py</span><br><span class="line">!touch school/web/__init__.py</span><br></pre></td></tr></table></figure>
-<h4 id="directory-structure-체크"><a href="#directory-structure-체크" class="headerlink" title="directory structure 체크"></a>directory structure 체크</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!tree school</span><br></pre></td></tr></table></figure>
+<h3 id="2-1-school-패키지-만들기"><a href="#2-1-school-패키지-만들기" class="headerlink" title="2.1 school 패키지 만들기"></a>2.1 school 패키지 만들기</h3><h4 id="디렉토리-구성하기"><a href="#디렉토리-구성하기" class="headerlink" title="디렉토리 구성하기"></a>디렉토리 구성하기</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!mkdir school</span><br><span class="line">!mkdir school/datascience</span><br><span class="line">!mkdir school/web</span><br></pre></td></tr></table></figure>
+<h4 id="init-py-만들기"><a href="#init-py-만들기" class="headerlink" title="__init__.py 만들기"></a><code>__init__.py</code> 만들기</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!touch school/datascience/__init__.py</span><br><span class="line">!touch school/web/__init__.py</span><br></pre></td></tr></table></figure>
+<h4 id="directory-structure-체크"><a href="#directory-structure-체크" class="headerlink" title="directory structure 체크"></a>directory structure 체크</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!tree school</span><br></pre></td></tr></table></figure>
 <pre><code>school
 ├── datascience
 │   ├── __init__.py
@@ -251,14 +252,14 @@ var        int         1234
     └── url.py
 
 4 directories, 8 files
-</code></pre><h4 id="data-모듈-작성"><a href="#data-모듈-작성" class="headerlink" title="data 모듈 작성"></a>data 모듈 작성</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/datascience/data.py</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plus</span><span class="params">(*args)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sum(args)</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="data-모듈-작성"><a href="#data-모듈-작성" class="headerlink" title="data 모듈 작성"></a>data 모듈 작성</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/datascience/data.py</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus</span><span class="hljs-params">(*args)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> sum(args)</span><br></pre></td></tr></table></figure>
 <pre><code>Writing school/datascience/data.py
 </code></pre><h4 id="url-모듈-작성"><a href="#url-모듈-작성" class="headerlink" title="url 모듈 작성"></a>url 모듈 작성</h4><ul>
 <li>url의 프로토콜을 확인해서 붙여주는 함수를 포함</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/web/url.py</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_url</span><span class="params">(url)</span>:</span></span><br><span class="line">    protocol = <span class="string">"http://"</span></span><br><span class="line">    <span class="keyword">return</span> url <span class="keyword">if</span> url[:<span class="number">7</span>] == protocol <span class="keyword">else</span> protocol + url</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/web/url.py</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_url</span><span class="hljs-params">(url)</span>:</span></span><br><span class="line">    protocol = <span class="hljs-string">"http://"</span></span><br><span class="line">    <span class="hljs-keyword">return</span> url <span class="hljs-keyword">if</span> url[:<span class="hljs-number">7</span>] == protocol <span class="hljs-keyword">else</span> protocol + url</span><br></pre></td></tr></table></figure>
 <pre><code>Writing school/web/url.py
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!tree school</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!tree school</span><br></pre></td></tr></table></figure>
 <pre><code>school
 ├── datascience
 │   ├── __init__.py
@@ -268,45 +269,45 @@ var        int         1234
     └── url.py
 
 2 directories, 4 files
-</code></pre><h3 id="2-2-모듈-호출하기"><a href="#2-2-모듈-호출하기" class="headerlink" title="2.2 모듈 호출하기"></a>2.2 모듈 호출하기</h3><h4 id="1-import-사용해서-호출하기"><a href="#1-import-사용해서-호출하기" class="headerlink" title="(1) import 사용해서 호출하기"></a>(1) import 사용해서 호출하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%reset</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="2-2-모듈-호출하기"><a href="#2-2-모듈-호출하기" class="headerlink" title="2.2 모듈 호출하기"></a>2.2 모듈 호출하기</h3><h4 id="1-import-사용해서-호출하기"><a href="#1-import-사용해서-호출하기" class="headerlink" title="(1) import 사용해서 호출하기"></a>(1) import 사용해서 호출하기</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%reset</span><br></pre></td></tr></table></figure>
 <pre><code>Once deleted, variables cannot be recovered. Proceed (y/[n])?  y
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 아래처럼 import할 때 마지막은 module이 와야함</span></span><br><span class="line"><span class="keyword">import</span> school.web.url</span><br><span class="line">school.web.url.make_url(<span class="string">"naver.com"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>&#39;http://naver.com&#39;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 아래처럼 import할 때 마지막은 module이 와야함</span></span><br><span class="line"><span class="hljs-keyword">import</span> school.web.url</span><br><span class="line">school.web.url.make_url(<span class="hljs-string">"naver.com"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;http://naver.com&apos;
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
 <pre><code>Variable   Type      Data/Info
 ------------------------------
-school     module    &lt;module &#39;school&#39; (namespace)&gt;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> school.web.url <span class="keyword">as</span> url</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
+school     module    &lt;module &apos;school&apos; (namespace)&gt;
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> school.web.url <span class="hljs-keyword">as</span> url</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
 <pre><code>Variable   Type      Data/Info
 ------------------------------
-school     module    &lt;module &#39;school&#39; (namespace)&gt;
-url        module    &lt;module &#39;school.web.url&#39; &lt;...&gt;ython/school/web/url.py&#39;&gt;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url.make_url(<span class="string">"fastcampus.com"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>&#39;http://fastcampus.com&#39;
-</code></pre><h4 id="2-from과-import-사용해서-호출하기"><a href="#2-from과-import-사용해서-호출하기" class="headerlink" title="(2) from과 import 사용해서 호출하기"></a>(2) from과 import 사용해서 호출하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%reset</span><br></pre></td></tr></table></figure>
+school     module    &lt;module &apos;school&apos; (namespace)&gt;
+url        module    &lt;module &apos;school.web.url&apos; &lt;...&gt;ython/school/web/url.py&apos;&gt;
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url.make_url(<span class="hljs-string">"fastcampus.com"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;http://fastcampus.com&apos;
+</code></pre><h4 id="2-from과-import-사용해서-호출하기"><a href="#2-from과-import-사용해서-호출하기" class="headerlink" title="(2) from과 import 사용해서 호출하기"></a>(2) from과 import 사용해서 호출하기</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%reset</span><br></pre></td></tr></table></figure>
 <pre><code>Once deleted, variables cannot be recovered. Proceed (y/[n])?  y
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> school.datascience <span class="keyword">import</span> data</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/datascience/data2.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sqrt_data</span><span class="params">(*args)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> reduce(<span class="keyword">lambda</span> x, y: x ** y, args)</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> school.datascience <span class="hljs-keyword">import</span> data</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/datascience/data2.py</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> reduce</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sqrt_data</span><span class="hljs-params">(*args)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> reduce(<span class="hljs-keyword">lambda</span> x, y: x ** y, args)</span><br></pre></td></tr></table></figure>
 <pre><code>Writing school/datascience/data2.py
 </code></pre><h4 id="3-init-py-파일"><a href="#3-init-py-파일" class="headerlink" title="(3) __init__.py 파일"></a>(3) <code>__init__.py</code> 파일</h4><ul>
 <li><code>__init__.py</code>를 아래와 같이 작성하면 패키지를 호출시 <code>*</code>로 모든 모듈을 호출할 경우 import할 모듈을 정해줄 수 있음 </li>
 <li>수정 후엔 kernel restart</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/datascience/__init__.py</span><br><span class="line"></span><br><span class="line">__all__ = [<span class="string">'data'</span>, <span class="string">'data2'</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/datascience/__init__.py</span><br><span class="line"></span><br><span class="line">__all__ = [<span class="hljs-string">'data'</span>, <span class="hljs-string">'data2'</span>]</span><br></pre></td></tr></table></figure>
 <pre><code>Overwriting school/datascience/__init__.py
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> school.datascience <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> school.datascience <span class="hljs-keyword">import</span> *</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
 <pre><code>Variable   Type      Data/Info
 ------------------------------
-data       module    &lt;module &#39;school.datascien&lt;...&gt;ool/datascience/data.py&#39;&gt;
-data2      module    &lt;module &#39;school.datascien&lt;...&gt;ol/datascience/data2.py&#39;&gt;
+data       module    &lt;module &apos;school.datascien&lt;...&gt;ool/datascience/data.py&apos;&gt;
+data2      module    &lt;module &apos;school.datascien&lt;...&gt;ol/datascience/data2.py&apos;&gt;
 </code></pre><h3 id="2-2-global-영역-path-확인하기"><a href="#2-2-global-영역-path-확인하기" class="headerlink" title="2.2 global 영역 path 확인하기"></a>2.2 global 영역 path 확인하기</h3><ul>
 <li>jupyter notebook을 실행한 환경의 python에서 참고하고 있는 path들 체크</li>
 <li>같은 경로에 있지 않아도 이 path에 있으면 바로 import해서 사용 가능</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> path <span class="keyword">in</span> sys.path:</span><br><span class="line">    print(path)</span><br><span class="line">```     </span><br><span class="line">   	/usr/local/Cellar/python/<span class="number">3.6</span><span class="number">.5</span>_1/Frameworks/Python.framework/Versions/<span class="number">3.6</span>/lib/python36.zip</span><br><span class="line">  	/usr/local/Cellar/python/<span class="number">3.6</span><span class="number">.5</span>_1/Frameworks/Python.framework/Versions/<span class="number">3.6</span>/lib/python3<span class="number">.6</span></span><br><span class="line">  	/usr/local/Cellar/python/<span class="number">3.6</span><span class="number">.5</span>_1/Frameworks/Python.framework/Versions/<span class="number">3.6</span>/lib/python3<span class="number">.6</span>/lib-dynload</span><br><span class="line">	/usr/local/lib/python3<span class="number">.6</span>/site-packages</span><br><span class="line">	/usr/local/lib/python3<span class="number">.6</span>/site-packages/IPython/extensions</span><br><span class="line">	/Users/hyeshinoh/.ipython</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">!ls /usr/local/lib/python3<span class="number">.6</span>/site-packages</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> sys</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> path <span class="hljs-keyword">in</span> sys.path:</span><br><span class="line">    print(path)</span><br><span class="line">```     </span><br><span class="line">   	/usr/local/Cellar/python/<span class="hljs-number">3.6</span><span class="hljs-number">.5</span>_1/Frameworks/Python.framework/Versions/<span class="hljs-number">3.6</span>/lib/python36.zip</span><br><span class="line">  	/usr/local/Cellar/python/<span class="hljs-number">3.6</span><span class="hljs-number">.5</span>_1/Frameworks/Python.framework/Versions/<span class="hljs-number">3.6</span>/lib/python3<span class="hljs-number">.6</span></span><br><span class="line">  	/usr/local/Cellar/python/<span class="hljs-number">3.6</span><span class="hljs-number">.5</span>_1/Frameworks/Python.framework/Versions/<span class="hljs-number">3.6</span>/lib/python3<span class="hljs-number">.6</span>/lib-dynload</span><br><span class="line">	/usr/local/lib/python3<span class="hljs-number">.6</span>/site-packages</span><br><span class="line">	/usr/local/lib/python3<span class="hljs-number">.6</span>/site-packages/IPython/extensions</span><br><span class="line">	/Users/hyeshinoh/.ipython</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">!ls /usr/local/lib/python3<span class="hljs-number">.6</span>/site-packages</span><br></pre></td></tr></table></figure>
 <pre><code>IPython
 Jinja2-2.10.dist-info
 Keras-2.2.2.dist-info
@@ -437,7 +438,7 @@ zmq
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        136
+                        138
                     </p>
                 </div>
             </div>
@@ -447,7 +448,7 @@ zmq
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        8
                     </p>
                 </div>
             </div>
@@ -457,7 +458,7 @@ zmq
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        31
                     </p>
                 </div>
             </div>
@@ -507,31 +508,15 @@ zmq
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/">
             <span class="level-start">
-                <span class="level-item">Data Analysis 공부</span>
+                <span class="level-item">Data Science 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">23</span>
+                <span class="level-item tag">54</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/수학-공부/">
-            <span class="level-start">
-                <span class="level-item">수학 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">23</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/">
-            <span class="level-start">
-                <span class="level-item">Programming 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">30</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Algorithm-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Algorithm-공부/">
             <span class="level-start">
                 <span class="level-item">Algorithm 공부</span>
             </span>
@@ -539,7 +524,7 @@ zmq
                 <span class="level-item tag">2</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Database-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Database-공부/">
             <span class="level-start">
                 <span class="level-item">Database 공부</span>
             </span>
@@ -547,20 +532,28 @@ zmq
                 <span class="level-item tag">5</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Python-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Python-공부/">
             <span class="level-start">
                 <span class="level-item">Python 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">11</span>
+                <span class="level-item tag">12</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Web-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Web-공부/">
             <span class="level-start">
                 <span class="level-item">Web 공부</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/수학-공부/">
+            <span class="level-start">
+                <span class="level-item">수학 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/TIL-Today-I-Learned/">
@@ -568,7 +561,7 @@ zmq
                 <span class="level-item">TIL(Today I Learned)</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">81</span>
+                <span class="level-item tag">82</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/기타/">
@@ -590,7 +583,7 @@ zmq
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.44px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.78px;">data analysis</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11.11px;">html</a> <a href="/tags/javascript/" style="font-size: 11.11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 17.78px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 18.89px;">programming</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/selenium/" style="font-size: 12.22px;">selenium</a> <a href="/tags/web/" style="font-size: 15.56px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.44px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 17.78px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11.11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.44px;">웹크롤링</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 12.73px;">Database</a> <a href="/tags/MySQL/" style="font-size: 11.82px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 11.82px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.91px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 13.64px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.27px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 14.55px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.91px;">html</a> <a href="/tags/javascript/" style="font-size: 10.91px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19.09px;">programming</a> <a href="/tags/python/" style="font-size: 16.36px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 11.82px;">selenium</a> <a href="/tags/web/" style="font-size: 15.45px;">web</a> <a href="/tags/web-crawling/" style="font-size: 13.64px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.91px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 13.64px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 10.91px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
     </div>
 </div>
 
@@ -601,6 +594,44 @@ zmq
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/python_11_regex/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 11. 정규표현식(regex)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:35:53.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/python_11_regex/" class="has-link-black-ter is-size-6">python 11. 정규표현식(regex)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/2019-02-21-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-21-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:04:15.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/2019-02-21-TIL/" class="has-link-black-ter is-size-6">2019-02-21-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -659,44 +690,6 @@ zmq
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-14-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-14-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-14-TIL/" class="has-link-black-ter is-size-6">2019-01-14-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-13-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-13-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-13-TIL/" class="has-link-black-ter is-size-6">2019-01-13-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -715,7 +708,7 @@ zmq
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>

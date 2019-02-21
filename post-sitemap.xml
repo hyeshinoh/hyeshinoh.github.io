@@ -7,8 +7,480 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2019/02/21/2019-02-21-TIL/</loc>
+        <lastmod>2019-02-21T15:11:08.878Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2019/01/13/2019-01-14-TIL/</loc>
+        <lastmod>2019-02-21T15:09:56.240Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2019/01/19/2019-01-19-TIL/</loc>
+        <lastmod>2019-02-21T15:09:44.024Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2019/02/16/2019-02-16-TIL/</loc>
-        <lastmod>2019-02-20T11:59:28.682Z</lastmod>
+        <lastmod>2019-02-21T15:09:32.077Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2019/02/21/python_11_regex/</loc>
+        <lastmod>2019-02-21T15:07:53.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/15/web_12_scrapy/</loc>
+        <lastmod>2019-02-21T15:04:26.088Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/05/web_11_selenium_exercise/</loc>
+        <lastmod>2019-02-21T15:04:09.719Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/04/web_10_selenium/</loc>
+        <lastmod>2019-02-21T15:04:05.712Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/02/web_09_selenium/</loc>
+        <lastmod>2019-02-21T15:03:36.781Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/29/web_08_requests/</loc>
+        <lastmod>2019-02-21T15:03:28.944Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/29/web_07_crawling/</loc>
+        <lastmod>2019-02-21T15:03:21.633Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/29/web_06_Send_Email/</loc>
+        <lastmod>2019-02-21T15:03:14.948Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/28/web_05_javascript_intermediate/</loc>
+        <lastmod>2019-02-21T15:03:03.669Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/27/web_03_CSS_selector/</loc>
+        <lastmod>2019-02-21T15:02:45.321Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/28/web_04_javascript_basic/</loc>
+        <lastmod>2019-02-21T15:02:38.060Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/26/web_02_html_02_layout/</loc>
+        <lastmod>2019-02-21T15:02:18.167Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/09/26/web_01_html_01_basic/</loc>
+        <lastmod>2019-02-21T15:02:05.543Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/13/python_10_try%20&%20except/</loc>
+        <lastmod>2019-02-21T15:01:40.291Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/12/python_09_OS/</loc>
+        <lastmod>2019-02-21T15:01:29.793Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/12/python_08_file%20&%20pickle/</loc>
+        <lastmod>2019-02-21T15:01:22.222Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/11/python_07_module%20&%20package/</loc>
+        <lastmod>2019-02-21T15:01:04.033Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/07/python_06_class_intermediate/</loc>
+        <lastmod>2019-02-21T15:00:51.817Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/16/python_05_class_basic/</loc>
+        <lastmod>2019-02-21T15:00:44.196Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/11/python_04_function_intermediate/</loc>
+        <lastmod>2019-02-21T15:00:30.130Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/10/python_03_function_basic/</loc>
+        <lastmod>2019-02-21T15:00:14.211Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/08/python_02_condition,%20loop/</loc>
+        <lastmod>2019-02-21T15:00:10.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/07/python_01/</loc>
+        <lastmod>2019-02-21T14:59:31.842Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/01/python_00/</loc>
+        <lastmod>2019-02-21T14:59:23.780Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/24/hexo_mathjax_00/</loc>
+        <lastmod>2019-02-21T14:57:04.198Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/13/Blog_jupyter_tip/</loc>
+        <lastmod>2019-02-21T14:56:47.374Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/12/02/math-lin_alg-022/</loc>
+        <lastmod>2019-02-21T14:52:35.473Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/12/02/math-lin_alg-021/</loc>
+        <lastmod>2019-02-21T14:52:28.440Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/11/22/math-lin_alg-020/</loc>
+        <lastmod>2019-02-21T14:52:18.715Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/11/21/math-lin_alg-019/</loc>
+        <lastmod>2019-02-21T14:52:10.427Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/11/21/math-lin_alg-018/</loc>
+        <lastmod>2019-02-21T14:52:01.176Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/11/21/math-lin_alg-017/</loc>
+        <lastmod>2019-02-21T14:51:49.277Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/11/16/math-lin_alg-016/</loc>
+        <lastmod>2019-02-21T14:51:43.028Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/11/16/math-lin_alg-015/</loc>
+        <lastmod>2019-02-21T14:51:36.508Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/11/02/math-lin_alg-014/</loc>
+        <lastmod>2019-02-21T14:51:21.205Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/11/02/math-lin_alg-013/</loc>
+        <lastmod>2019-02-21T14:51:15.131Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/11/02/math-lin_alg-012/</loc>
+        <lastmod>2019-02-21T14:51:08.361Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/11/01/math-lin_alg-011/</loc>
+        <lastmod>2019-02-21T14:51:01.290Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/11/01/math-lin_alg-010/</loc>
+        <lastmod>2019-02-21T14:50:52.282Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/11/01/math-lin_alg-009/</loc>
+        <lastmod>2019-02-21T14:50:43.547Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/11/01/math-lin_alg-008/</loc>
+        <lastmod>2019-02-21T14:50:37.207Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/30/math-lin_alg-007/</loc>
+        <lastmod>2019-02-21T14:50:29.145Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/30/math-lin_alg-006/</loc>
+        <lastmod>2019-02-21T14:50:22.012Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/30/math-lin_alg-005/</loc>
+        <lastmod>2019-02-21T14:50:09.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/30/math-lin_alg-004/</loc>
+        <lastmod>2019-02-21T14:49:54.685Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/30/math-lin_alg-003/</loc>
+        <lastmod>2019-02-21T14:49:34.368Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/24/math-lin_alg-002/</loc>
+        <lastmod>2019-02-21T14:49:19.982Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/24/math-lin_alg-001/</loc>
+        <lastmod>2019-02-21T14:49:06.937Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/24/math_000_guide/</loc>
+        <lastmod>2019-02-21T14:48:41.028Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/30/Database_05_mysql%20intermediate%20syntax/</loc>
+        <lastmod>2019-02-21T14:47:54.391Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/28/Database_04_mysql%20basic%20syntax/</loc>
+        <lastmod>2019-02-21T14:47:45.703Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/27/Database_03_mysql_basic/</loc>
+        <lastmod>2019-02-21T14:47:38.125Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/25/Database_02/</loc>
+        <lastmod>2019-02-21T14:47:29.263Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/25/Database_01/</loc>
+        <lastmod>2019-02-21T14:47:21.849Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/12/algorithm_prob_001/</loc>
+        <lastmod>2019-02-21T14:45:59.385Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/10/algorithm_00/</loc>
+        <lastmod>2019-02-21T14:43:21.065Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,110 +489,6 @@
     <url>
         <loc>http://yoursite.com/2019/02/20/2019-02-20-TIL/</loc>
         <lastmod>2019-02-20T11:39:20.552Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2019/01/19/2019-01-19-TIL/</loc>
-        <lastmod>2019-01-23T10:57:47.558Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2019/01/13/2019-01-14-TIL/</loc>
-        <lastmod>2019-01-23T10:42:06.526Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/11/22/math-lin_alg-020/</loc>
-        <lastmod>2019-01-22T14:49:50.731Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/24/hexo_mathjax_00/</loc>
-        <lastmod>2019-01-22T14:44:08.100Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/11/16/math-lin_alg-016/</loc>
-        <lastmod>2019-01-22T14:40:13.759Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/11/02/math-lin_alg-012/</loc>
-        <lastmod>2019-01-22T14:22:43.146Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/11/02/math-lin_alg-013/</loc>
-        <lastmod>2019-01-22T14:22:10.751Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/11/16/math-lin_alg-015/</loc>
-        <lastmod>2019-01-22T14:21:46.034Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/11/21/math-lin_alg-019/</loc>
-        <lastmod>2019-01-22T14:19:40.814Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/12/02/math-lin_alg-021/</loc>
-        <lastmod>2019-01-22T14:17:15.193Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/11/21/math-lin_alg-017/</loc>
-        <lastmod>2019-01-22T13:55:30.503Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/11/21/math-lin_alg-018/</loc>
-        <lastmod>2019-01-22T13:53:24.962Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/12/02/math-lin_alg-022/</loc>
-        <lastmod>2019-01-19T06:32:20.899Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -167,174 +535,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/07/10/algorithm_00/</loc>
-        <lastmod>2019-01-07T14:44:44.304Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/12/algorithm_prob_001/</loc>
-        <lastmod>2019-01-07T14:44:31.332Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/08/13/Blog_jupyter_tip/</loc>
-        <lastmod>2019-01-07T14:44:19.799Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/25/Database_01/</loc>
-        <lastmod>2019-01-07T14:44:13.381Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/25/Database_02/</loc>
-        <lastmod>2019-01-07T14:44:07.376Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/27/Database_03_mysql_basic/</loc>
-        <lastmod>2019-01-07T14:44:00.609Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/28/Database_04_mysql%20basic%20syntax/</loc>
-        <lastmod>2019-01-07T14:43:51.809Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/30/Database_05_mysql%20intermediate%20syntax/</loc>
-        <lastmod>2019-01-07T14:43:43.331Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/24/math_000_guide/</loc>
-        <lastmod>2019-01-07T14:43:26.633Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/24/math-lin_alg-001/</loc>
-        <lastmod>2019-01-07T14:43:17.045Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/24/math-lin_alg-002/</loc>
-        <lastmod>2019-01-07T14:43:07.835Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/30/math-lin_alg-003/</loc>
-        <lastmod>2019-01-07T14:42:56.659Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/30/math-lin_alg-004/</loc>
-        <lastmod>2019-01-07T14:42:50.110Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/30/math-lin_alg-005/</loc>
-        <lastmod>2019-01-07T14:42:43.901Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/30/math-lin_alg-006/</loc>
-        <lastmod>2019-01-07T14:42:36.970Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/30/math-lin_alg-007/</loc>
-        <lastmod>2019-01-07T14:42:31.087Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/11/01/math-lin_alg-008/</loc>
-        <lastmod>2019-01-07T14:42:25.570Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/11/01/math-lin_alg-009/</loc>
-        <lastmod>2019-01-07T14:42:20.190Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/11/01/math-lin_alg-010/</loc>
-        <lastmod>2019-01-07T14:42:14.062Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/11/01/math-lin_alg-011/</loc>
-        <lastmod>2019-01-07T14:41:58.833Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/11/02/math-lin_alg-014/</loc>
-        <lastmod>2019-01-07T14:41:38.155Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://yoursite.com/2018/11/01/2018-11-01-TIL/</loc>
         <lastmod>2018-11-02T04:30:06.073Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -359,22 +559,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/10/15/web_12_scrapy/</loc>
-        <lastmod>2018-10-15T13:09:42.940Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/13/python_10_try%20&%20except/</loc>
-        <lastmod>2018-10-13T06:09:52.062Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://yoursite.com/2018/10/13/2018-10-12-TIL/</loc>
         <lastmod>2018-10-12T15:17:41.771Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -383,56 +567,8 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/10/12/python_09_OS/</loc>
-        <lastmod>2018-10-12T11:18:48.875Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/12/python_08_file%20&%20pickle/</loc>
-        <lastmod>2018-10-12T11:18:07.614Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://yoursite.com/2018/10/11/2018-10-10-TIL/</loc>
         <lastmod>2018-10-10T15:42:19.303Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/11/python_07_module%20&%20package/</loc>
-        <lastmod>2018-10-10T15:25:13.001Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/07/python_06_class_intermediate/</loc>
-        <lastmod>2018-10-07T03:12:24.699Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/16/python_05_class_basic/</loc>
-        <lastmod>2018-10-07T01:31:17.865Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/05/web_11_selenium_exercise/</loc>
-        <lastmod>2018-10-05T11:59:33.877Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -455,88 +591,8 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/10/04/web_10_selenium/</loc>
-        <lastmod>2018-10-04T11:27:40.531Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/02/web_09_selenium/</loc>
-        <lastmod>2018-10-02T15:04:44.848Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/09/29/web_08_requests/</loc>
-        <lastmod>2018-10-02T11:09:31.209Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/09/29/web_06_Send_Email/</loc>
-        <lastmod>2018-10-02T07:34:24.413Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://yoursite.com/2018/09/30/2018-09-29-TIL/</loc>
         <lastmod>2018-09-29T15:07:03.668Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/09/28/web_05_javascript_intermediate/</loc>
-        <lastmod>2018-09-29T15:04:20.789Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/09/29/web_07_crawling/</loc>
-        <lastmod>2018-09-29T08:13:18.345Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/09/28/web_04_javascript_basic/</loc>
-        <lastmod>2018-09-29T06:09:29.305Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/09/26/web_01_html_01_basic/</loc>
-        <lastmod>2018-09-29T05:53:06.327Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/09/26/web_02_html_02_layout/</loc>
-        <lastmod>2018-09-29T05:52:54.426Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/09/27/web_03_CSS_selector/</loc>
-        <lastmod>2018-09-29T05:52:39.630Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -553,46 +609,6 @@
     <url>
         <loc>http://yoursite.com/2018/09/27/2018-09-27-TIL/</loc>
         <lastmod>2018-09-27T13:45:24.740Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/01/python_00/</loc>
-        <lastmod>2018-09-27T12:06:09.459Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/07/python_01/</loc>
-        <lastmod>2018-09-27T12:06:01.929Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/08/python_02_condition,%20loop/</loc>
-        <lastmod>2018-09-27T12:05:53.979Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/10/python_03_function_basic/</loc>
-        <lastmod>2018-09-27T12:05:46.857Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/11/python_04_function_intermediate/</loc>
-        <lastmod>2018-09-27T12:05:40.754Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

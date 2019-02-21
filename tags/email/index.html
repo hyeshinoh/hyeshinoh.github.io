@@ -159,14 +159,14 @@
                 <time class="level-item has-text-grey" datetime="2018-09-29T04:47:26.000Z">2018-09-29</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Web-공부/">Web 공부</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    7 minutes read (About 1095 words)
+                    7 minutes read (About 1096 words)
                 </span>
                 
             </div>
@@ -183,68 +183,16 @@
 <li>e.g. 광고메일 등을 보낼 수 있음</li>
 <li>e.g. 머신러닝 모델을 학습시켜놓고 결과 데이터를 csv 파일로 메일을 받아볼 수 있음</li>
 </ul>
-<h1 id="1-Preparation"><a href="#1-Preparation" class="headerlink" title="1. Preparation"></a>1. Preparation</h1><p>파이썬으로 이메일을 보내기 위한 준비를 해준다.</p>
-<h2 id="1-1-Importing-necessary-libraries"><a href="#1-1-Importing-necessary-libraries" class="headerlink" title="1.1 Importing necessary libraries"></a>1.1 Importing necessary libraries</h2><p>필요한 패키지들을 import해준다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> smtplib, os, pickle  <span class="comment"># smtplib: 메일 전송을 위한 패키지</span></span><br><span class="line"><span class="keyword">from</span> email <span class="keyword">import</span> encoders  <span class="comment"># 파일전송을 할 때 이미지나 문서 동영상 등의 파일을 문자열로 변환할 때 사용할 패키지</span></span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText   <span class="comment"># 본문내용을 전송할 때 사용되는 모듈</span></span><br><span class="line"><span class="keyword">from</span> email.mime.multipart <span class="keyword">import</span> MIMEMultipart   <span class="comment"># 메시지를 보낼 때 메시지에 대한 모듈</span></span><br><span class="line"><span class="keyword">from</span> email.mime.base <span class="keyword">import</span> MIMEBase     <span class="comment"># 파일을 전송할 때 사용되는 모듈</span></span><br></pre></td></tr></table></figure>
-<p>메일을 보낼 주소들을 미리 저장해준다.<br>테스트를 위해 여러가지 주소로 보내고 싶은데, 나는 계정을 여러 개 갖고 있지 않으므로,<br>내 이메일 주소인 hyeshinoh@gmail.com에서 hyeshinoh 뒤에 ‘+’와 아무 글자를 넣어주면 마치 여러 개의 이메일 주소인 것처럼 사용할 수 있다. 이렇게 쓰면 메일은 모두 hyeshinoh@gmail.com로 전송된다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">toAddr = [<span class="string">"panda706@naver.com"</span>, <span class="string">"hyeshinoh+11@gmail.com"</span>, <span class="string">"hyeshinoh+h@gmail.com"</span>]</span><br></pre></td></tr></table></figure>
-<h2 id="1-2-Setting-login-information-email-amp-password"><a href="#1-2-Setting-login-information-email-amp-password" class="headerlink" title="1.2 Setting login information: email &amp; password"></a>1.2 Setting login information: email &amp; password</h2><p>password는 직접 노출하면 유출의 위험이 있으므로 아래와 같이 pickle 파일로 저장해서 이용하는 것이 좋다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pw = "본인의 pw"    </span></span><br><span class="line"><span class="comment"># pickle.dump(pw, open("pw.pickle", 'wb'))</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">email = <span class="string">"hyeshinoh@gmail.com"</span></span><br><span class="line">pw = pickle.load(open(<span class="string">'pw.pickle'</span>, <span class="string">'rb'</span>))</span><br></pre></td></tr></table></figure>
-<h1 id="2-Send-text"><a href="#2-Send-text" class="headerlink" title="2. Send text"></a>2. Send text</h1><h2 id="2-1-Access-smtp-server"><a href="#2-1-Access-smtp-server" class="headerlink" title="2.1 Access smtp server"></a>2.1 Access smtp server</h2><p>smtp object를 생성한다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">smtp = smtplib.SMTP(<span class="string">'smtp.gmail.com'</span>, <span class="number">587</span>)   <span class="comment"># 587: 서버의 포트번호</span></span><br><span class="line">smtp.ehlo()</span><br><span class="line">smtp.starttls()   <span class="comment"># tls방식으로 접속, 그 포트번호가 587</span></span><br><span class="line"><span class="comment"># smtp.login('hyeshinoh@gmail.com', pickle.load( open('../pw.pickle', 'rb') ))</span></span><br><span class="line">smtp.login(<span class="string">'hyeshinoh@gmail.com'</span>, pw)</span><br></pre></td></tr></table></figure>
-<pre><code>(235, b&#39;2.7.0 Accepted&#39;)
-</code></pre><h2 id="2-2-Make-message"><a href="#2-2-Make-message" class="headerlink" title="2.2 Make message"></a>2.2 Make message</h2><p>msg object를 생성하고 제목을 넣어준다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg = MIMEMultipart()    <span class="comment">#msg obj.</span></span><br><span class="line">msg[<span class="string">'Subject'</span>] = <span class="string">'hyeshin의 SMTP Send Text 테스트'</span></span><br></pre></td></tr></table></figure>
-<p>msg object에 본문(text msg)을 추가해준다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># text msg</span></span><br><span class="line">part = MIMEText(<span class="string">'SMTP로 메일 보내기 본문 메시지입니다.'</span>)</span><br><span class="line">msg.attach(part)   <span class="comment">#msg에 part obj.를 추가해줌</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msg</span><br></pre></td></tr></table></figure>
-<pre><code>&lt;email.mime.multipart.MIMEMultipart at 0x10d55d5f8&gt;
-</code></pre><h2 id="2-3-email-전송하기"><a href="#2-3-email-전송하기" class="headerlink" title="2.3 email 전송하기"></a>2.3 email 전송하기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> addr <span class="keyword">in</span> toAddr:</span><br><span class="line">    msg[<span class="string">"To"</span>] = addr</span><br><span class="line">    smtp.sendmail(<span class="string">"hyeshinoh@gmail.com"</span>, addr, msg.as_string())</span><br><span class="line">        <span class="comment">#msg는 object이기 때문에 전송을 위해 .as_string()으로 문자열로 바꿔야함(parsing)</span></span><br><span class="line">    print(addr)</span><br></pre></td></tr></table></figure>
-<pre><code>panda706@naver.com
-hyeshinoh+11@gmail.com
-hyeshinoh+h@gmail.com
-</code></pre><p>메일이 다음과 같이 잘 도착했다!</p>
-<ul>
-<li>naver메일<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_naver_mail_001.png?raw=true" alt=""></li>
-<li>gmail<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_gmail_001.png?raw=true" alt=""></li>
-</ul>
-<h2 id="2-4-HTML-code-추가하기"><a href="#2-4-HTML-code-추가하기" class="headerlink" title="2.4 HTML code 추가하기"></a>2.4 HTML code 추가하기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">part_html = MIMEText(<span class="string">'&lt;br&gt;&lt;a href="https://github.com/hyeshinoh/"&gt;hyeshin github&lt;/a&gt;'</span>, <span class="string">'html'</span>)</span><br><span class="line">msg.attach(part_html)</span><br><span class="line">msg  <span class="comment">#msg 상태: 제목, 본문(text), html 코드</span></span><br></pre></td></tr></table></figure>
-<pre><code>&lt;email.mime.multipart.MIMEMultipart at 0x10d55d5f8&gt;
-</code></pre><h2 id="2-5-email-전송하기"><a href="#2-5-email-전송하기" class="headerlink" title="2.5 email 전송하기"></a>2.5 email 전송하기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># email 전송</span></span><br><span class="line"><span class="keyword">for</span> addr <span class="keyword">in</span> toAddr:</span><br><span class="line">    msg[<span class="string">"To"</span>] = addr</span><br><span class="line">    smtp.sendmail(<span class="string">"hyeshinoh@gmail.com"</span>, addr, msg.as_string())</span><br><span class="line">    print(addr)</span><br></pre></td></tr></table></figure>
-<pre><code>panda706@naver.com
-hyeshinoh+11@gmail.com
-hyeshinoh+h@gmail.com
-</code></pre><h1 id="3-Send-File"><a href="#3-Send-File" class="headerlink" title="3. Send File"></a>3. Send File</h1><p>이제 파일을 첨부해서 이메일을 보내보자</p>
-<h2 id="3-1-Access-smtp-server"><a href="#3-1-Access-smtp-server" class="headerlink" title="3.1 Access smtp server"></a>3.1 Access smtp server</h2><p>smtp object를 다시 생성해보자.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># smtp close</span></span><br><span class="line">smtp.quit()</span><br></pre></td></tr></table></figure>
-<pre><code>(221, b&#39;2.0.0 closing connection o68-v6sm26409410pfi.180 - gsmtp&#39;)
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Access smtp server</span></span><br><span class="line">smtp = smtplib.SMTP(<span class="string">'smtp.gmail.com'</span>, <span class="number">587</span>)   <span class="comment"># 587: 서버의 포트번호</span></span><br><span class="line">smtp.ehlo()</span><br><span class="line">smtp.starttls()   </span><br><span class="line">smtp.login(<span class="string">'hyeshinoh@gmail.com'</span>, pw)</span><br></pre></td></tr></table></figure>
-<pre><code>(235, b&#39;2.7.0 Accepted&#39;)
-</code></pre><h2 id="3-2-Make-message"><a href="#3-2-Make-message" class="headerlink" title="3.2 Make message"></a>3.2 Make message</h2><p>msg object를 생성하고 제목을 넣어준다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">msg = MIMEMultipart()</span><br><span class="line">msg[<span class="string">'Subject'</span>] = <span class="string">'SMTP send file 테스트'</span></span><br></pre></td></tr></table></figure>
-<p>msg object에 본문(text msg)을 추가해준다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">part = MIMEText(<span class="string">'SMTP로 send file 본문 메시지'</span>)</span><br><span class="line">msg.attach(part)</span><br></pre></td></tr></table></figure>
-<p>파일을 첨부해보자. 단, javascript file은 보안 상 이유로 보낼 수 없게 되어 있음</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Attach FILE</span></span><br><span class="line">path = <span class="string">'apple.mp4'</span></span><br><span class="line"><span class="comment"># ctype = 'application/octet-stream'</span></span><br><span class="line"><span class="comment"># maintype, subtype = ctype.split('/', 1)</span></span><br><span class="line"><span class="keyword">with</span> open(path, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    part = MIMEBase(<span class="string">"application"</span>, <span class="string">"octet-stream"</span>)</span><br><span class="line">    part.set_payload(f.read())    <span class="comment">#payload: osi 7-layers</span></span><br><span class="line">    encoders.encode_base64(part)  <span class="comment">#base64 encoding: 영상, 이미지 파일을 문자열 형태로 변환</span></span><br><span class="line">    part.add_header(<span class="string">'Content-Disposition'</span>, <span class="string">'attachment'</span>, filename=path)</span><br><span class="line">    msg.attach(part)</span><br><span class="line">msg  <span class="comment"># 제목, 본문, 파일</span></span><br></pre></td></tr></table></figure>
-<pre><code>&lt;email.mime.multipart.MIMEMultipart at 0x1159127f0&gt;
-</code></pre><h2 id="3-3-email-전송하기"><a href="#3-3-email-전송하기" class="headerlink" title="3.3 email 전송하기"></a>3.3 email 전송하기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> addr <span class="keyword">in</span> toAddr:</span><br><span class="line">    msg[<span class="string">"To"</span>] = addr</span><br><span class="line">    smtp.sendmail(<span class="string">"hyeshinoh@gmail.com"</span>, addr, msg.as_string())</span><br><span class="line">    print(addr)</span><br></pre></td></tr></table></figure>
-<pre><code>panda706@naver.com
-hyeshinoh+11@gmail.com
-hyeshinoh+h@gmail.com
-</code></pre><p>메일이 다음과 같이 잘 도착했다!</p>
-<ul>
-<li>naver메일<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_naver_mail_002.png?raw=true" alt=""></li>
-<li>gmail<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_gmail_002.png?raw=true" alt=""></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># smtp close</span></span><br><span class="line">smtp.quit()</span><br></pre></td></tr></table></figure>
-<pre><code>(221, b&#39;2.0.0 closing connection d22-v6sm9509327pfk.69 - gsmtp&#39;)
-</code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
-<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/09/29/web_06_Send_Email/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -298,7 +246,7 @@ hyeshinoh+h@gmail.com
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        136
+                        138
                     </p>
                 </div>
             </div>
@@ -308,7 +256,7 @@ hyeshinoh+h@gmail.com
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        8
                     </p>
                 </div>
             </div>
@@ -318,7 +266,7 @@ hyeshinoh+h@gmail.com
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        31
                     </p>
                 </div>
             </div>
@@ -368,31 +316,15 @@ hyeshinoh+h@gmail.com
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/">
             <span class="level-start">
-                <span class="level-item">Data Analysis 공부</span>
+                <span class="level-item">Data Science 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">23</span>
+                <span class="level-item tag">54</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/수학-공부/">
-            <span class="level-start">
-                <span class="level-item">수학 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">23</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/">
-            <span class="level-start">
-                <span class="level-item">Programming 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">30</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Algorithm-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Algorithm-공부/">
             <span class="level-start">
                 <span class="level-item">Algorithm 공부</span>
             </span>
@@ -400,7 +332,7 @@ hyeshinoh+h@gmail.com
                 <span class="level-item tag">2</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Database-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Database-공부/">
             <span class="level-start">
                 <span class="level-item">Database 공부</span>
             </span>
@@ -408,20 +340,28 @@ hyeshinoh+h@gmail.com
                 <span class="level-item tag">5</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Python-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Python-공부/">
             <span class="level-start">
                 <span class="level-item">Python 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">11</span>
+                <span class="level-item tag">12</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Web-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Web-공부/">
             <span class="level-start">
                 <span class="level-item">Web 공부</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/수학-공부/">
+            <span class="level-start">
+                <span class="level-item">수학 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/TIL-Today-I-Learned/">
@@ -429,7 +369,7 @@ hyeshinoh+h@gmail.com
                 <span class="level-item">TIL(Today I Learned)</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">81</span>
+                <span class="level-item tag">82</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/기타/">
@@ -451,7 +391,7 @@ hyeshinoh+h@gmail.com
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.44px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.78px;">data analysis</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11.11px;">html</a> <a href="/tags/javascript/" style="font-size: 11.11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 17.78px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 18.89px;">programming</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/selenium/" style="font-size: 12.22px;">selenium</a> <a href="/tags/web/" style="font-size: 15.56px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.44px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 17.78px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11.11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.44px;">웹크롤링</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 12.73px;">Database</a> <a href="/tags/MySQL/" style="font-size: 11.82px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 11.82px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.91px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 13.64px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.27px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 14.55px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.91px;">html</a> <a href="/tags/javascript/" style="font-size: 10.91px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19.09px;">programming</a> <a href="/tags/python/" style="font-size: 16.36px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 11.82px;">selenium</a> <a href="/tags/web/" style="font-size: 15.45px;">web</a> <a href="/tags/web-crawling/" style="font-size: 13.64px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.91px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 13.64px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 10.91px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
     </div>
 </div>
 
@@ -462,6 +402,44 @@ hyeshinoh+h@gmail.com
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/python_11_regex/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 11. 정규표현식(regex)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:35:53.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/python_11_regex/" class="has-link-black-ter is-size-6">python 11. 정규표현식(regex)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/2019-02-21-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-21-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:04:15.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/2019-02-21-TIL/" class="has-link-black-ter is-size-6">2019-02-21-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -520,44 +498,6 @@ hyeshinoh+h@gmail.com
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-14-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-14-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-14-TIL/" class="has-link-black-ter is-size-6">2019-01-14-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-13-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-13-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-13-TIL/" class="has-link-black-ter is-size-6">2019-01-13-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -576,7 +516,7 @@ hyeshinoh+h@gmail.com
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>

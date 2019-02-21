@@ -159,14 +159,14 @@
                 <time class="level-item has-text-grey" datetime="2018-09-26T08:16:09.000Z">2018-09-26</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Web-공부/">Web 공부</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 889 words)
+                    6 minutes read (About 890 words)
                 </span>
                 
             </div>
@@ -179,190 +179,18 @@
         </h1>
         <div class="content">
             <h2 id="1-div"><a href="#1-div" class="headerlink" title="1. div"></a>1. div</h2><ul>
-<li>레이아웃을 잡아줄 때 사용, 가장 많이 쓰이는 element<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--emmet: div&#123;div$&#125;*3 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:500px; height:200px; background-color: grey;"</span>&gt;</span>div1</span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>div1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>div2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>div3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>레이아웃을 잡아줄 때 사용, 가장 많이 쓰이는 element</li>
 </ul>
-<p>적용시 아래와 같이 나타납니다.</p>
-<blockquote>
-<div style="width:500px; height:200px; background-color: grey;">div1
-   <p>div1</p>
-</div>
-<div>div2</div>
-<div>div3</div>
-
-
-
-</blockquote>
-<h2 id="2-table"><a href="#2-table" class="headerlink" title="2. table"></a>2. table</h2><ul>
-<li>row &amp; column이 있는 table 모양을 나타낼 때 사용하는 element</li>
-<li><p>사용하는 태그</p>
-<ul>
-<li>table: 표 생성</li>
-<li>caption: 표 제목 생성</li>
-<li>tr: row 생성</li>
-<li>th: column 이름이 들어가는 셀 생성</li>
-<li>td: 내용이 들어가는 셀 생성</li>
-<li>각 열의 의미에 따라 thead, tbody, tfoot 태그로 구분</li>
-<li>colspan 속성: 가로로 셀을 합칠 때 사용 (e.g.<code>colspan=&quot;2&quot;</code>)</li>
-<li>rowspan 속성: 세로로 셀을 합칠 때 사용 (e.g.<code>rowspan=&quot;2&quot;</code>)</li>
-</ul>
-</li>
-<li><p>emmet 문법</p>
-<ul>
-<li><code>+</code>: 동일한 레벨로 element 생성</li>
-<li><code>&gt;</code>: 하위 레벨에 생성</li>
-<li><code>^</code>: 상위 depth로 한 단계 올라감</li>
-<li><code>@</code>: $ 쓸 때 초기값 설정</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">table&gt;caption&#123;table title&#125;+thead&gt;tr&gt;th&#123;col$&#125;*4^^tbody&gt;tr&gt;td&#123;value$@3&#125;*4 --&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">caption</span>&gt;</span>table title<span class="tag">&lt;/<span class="name">caption</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>col1<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>col2<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>col3<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>col4<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>value3<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>value4<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>value5<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>value6<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>적용시 아래와 같이 나타납니다.</p>
-<table>
-  <caption>table title</caption>
-  <thead>
-    <tr>
-      <th>col1</th>
-      <th>col2</th>
-      <th>col3</th>
-      <th>col4</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>value3</td>
-      <td>value4</td>
-      <td>value5</td>
-      <td>value6</td>
-    </tr>
-  </tbody>
-</table>
-
-
-<h2 id="3-ul-li"><a href="#3-ul-li" class="headerlink" title="3. ul, li"></a>3. ul, li</h2><ul>
-<li>list element</li>
-<li>크롤링할 때 많이 보게 될 태그</li>
-<li>emmet 문법: <code>ul&gt;li{ul_li_$}*3</code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>ul_li_1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>ul_li_2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>ul_li_3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>적용시 아래와 같이 나타납니다.</p>
-<ul>
-    <li>ul_li_1</li>
-    <li>ul_li_2</li>
-    <li>ul_li_3</li>
-</ul>
-
-<h2 id="4-a"><a href="#4-a" class="headerlink" title="4. a"></a>4. a</h2><ul>
-<li>link element</li>
-<li>href 속성에 url을 넣습니다</li>
-<li>link도 크롤링의 대상으로 많이 사용됨</li>
-<li><p>상대경로도 사용 가능</p>
-<ul>
-<li>e.g. <code>&lt;a href=&quot;01_html_basic.html&quot;&gt;html_basic&lt;/a&gt;&lt;br&gt;</code></li>
-</ul>
-</li>
-<li><p><code>target=&quot;_blank&quot;</code> 속성을 넣어주면 새 탭을 띄워서 이동</p>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://google.com"</span>&gt;</span>Google<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://naver.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>Naver<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>적용시 아래와 같이 나타납니다.<br><a href="http://google.com" target="_blank" rel="noopener">Google</a><br><a href="http://naver.com" target="_blank">Naver</a></p>
-<h2 id="5-image"><a href="#5-image" class="headerlink" title="5. image"></a>5. image</h2><ul>
-<li>src 속성: url을 넣음</li>
-<li>style 속성: size를 지정해줄 수 있음 (e.g. <code>style=&quot;width:200px;&quot;</code>)</li>
-<li>alt 속성: 이미지가 없을 경우 뜨는 문자 (어떤 이미지인지 알려줄 수 있음) (alt 속성은 꼭 넣어야 함)</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">"width:200px;"</span> <span class="attr">src</span>=<span class="string">"http://cdn.www.fastcampus.co.kr/wp-content/uploads/2017/11/fastcampus_logo_positive-1.png"</span> <span class="attr">alt</span>=<span class="string">"패스트캠퍼스"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>적용시 아래와 같이 나타납니다.<br><img style="width:200px;" src="http://cdn.www.fastcampus.co.kr/wp-content/uploads/2017/11/fastcampus_logo_positive-1.png" alt="패스트캠퍼스"></p>
-<h2 id="6-iframe"><a href="#6-iframe" class="headerlink" title="6. iframe"></a>6. iframe</h2><ul>
-<li>외부 url 링크 페이지를 보여주기 위한 element</li>
-<li>중고나라 네이버 카페 등에서 크롤링할 경우 필요<ul>
-<li>iframe 안으로 들어가서 element를 선택해서 데이터를 가져와야 함<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://hyeshinoh.github.io/"</span> <span class="attr">width</span>=<span class="string">"600"</span> <span class="attr">height</span>=<span class="string">"400"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<p>적용시 아래와 같이 나타납니다.</p>
-<iframe src="https://hyeshinoh.github.io/" width="600" height="400"></iframe>
-
-
-
-<h2 id="7-입력-input-text-password-radio-checkbox"><a href="#7-입력-input-text-password-radio-checkbox" class="headerlink" title="7. 입력(input) : text, password, radio, checkbox"></a>7. 입력(input) : text, password, radio, checkbox</h2><ul>
-<li>크롤링할 때, 로그인을 하고 나서 이동한 페이지를 크롤링할 시 이용 가능</li>
-</ul>
-<h3 id="7-1-text-password"><a href="#7-1-text-password" class="headerlink" title="7.1 text, password"></a>7.1 text, password</h3><ul>
-<li>placeholder 속성: 어떤 정보를 넣는지 알려줌<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">placeholder</span>=<span class="string">"이메일"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">placeholder</span>=<span class="string">"패스워드"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>적용시 아래와 같이 나타납니다.</p>
-<input type="text" name="" value="" placeholder="이메일">
-<input type="password" name="" value="" placeholder="패스워드"><br>
-
-<span><h3>7.2 radio: 여러개 중에 선택하는 박스</h3></span>
-<ul>
-  <span><li>버튼은 name 속성의 값으로 그룹핑 (그룹핑되면 그 중에 택1하게 만들어짐)</li></span>
-  <span><li>요즘에 웹 개발에선 많이 사용되지는 않음</li></span>
-</ul>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio_1"</span> <span class="attr">value</span>=<span class="string">"b1"</span>&gt;</span>버튼1<span class="tag">&lt;/<span class="name">input</span>&gt;</span>    </span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio_1"</span> <span class="attr">value</span>=<span class="string">"b2"</span>&gt;</span>버튼2<span class="tag">&lt;/<span class="name">input</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio_2"</span> <span class="attr">value</span>=<span class="string">"b3"</span>&gt;</span>버튼3<span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio_2"</span> <span class="attr">value</span>=<span class="string">"b3"</span>&gt;</span>버튼4<span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radio_2"</span> <span class="attr">value</span>=<span class="string">"b5"</span>&gt;</span>버튼5<span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-적용시 아래와 같이 나타납니다.
-<input type="radio" name="radio_1" value="b1">버튼1    
-<input type="radio" name="radio_1" value="b2">버튼2<br>
-
-<input type="radio" name="radio_2" value="b3">버튼3
-<input type="radio" name="radio_2" value="b3">버튼4
-<input type="radio" name="radio_2" value="b5">버튼5
-
-<h3 id="7-3-checkbox-해당사항을-체크하는-박스"><a href="#7-3-checkbox-해당사항을-체크하는-박스" class="headerlink" title="7.3 checkbox: 해당사항을 체크하는 박스"></a>7.3 checkbox: 해당사항을 체크하는 박스</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">"c1"</span>&gt;</span> 체크박스1<span class="tag">&lt;/<span class="name">input</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">"c2"</span>&gt;</span> 체크박스2<span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>적용시 아래와 같이 나타납니다.</p>
-<input type="checkbox" name="" value="c1"> 체크박스1
-<input type="checkbox" name="" value="c2"> 체크박스2
-
-
-<h2 id="8-textarea"><a href="#8-textarea" class="headerlink" title="8. textarea"></a>8. textarea</h2><ul>
-<li>여러줄을 입력받는 element</li>
-<li>inputtext와 달리 여러줄을 입력할 수 있음</li>
-<li><code>style=&quot;resize:none;&quot;</code>을 넣어주면 크기가 고정됨<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">cols</span>=<span class="string">"30"</span> <span class="attr">rows</span>=<span class="string">"10"</span> <span class="attr">style</span>=<span class="string">"resize:none;"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>적용시 아래와 같이 나타납니다.</p>
-<textarea name="name" cols="30" rows="10" style="resize:none;"></textarea>
-
-
-<h2 id="9-select-option"><a href="#9-select-option" class="headerlink" title="9. select, option"></a>9. select, option</h2><ul>
-<li>option 선택할 수 있는 dropdown element<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>option 1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>option 2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"3"</span>&gt;</span>option 3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- select&gt;option[value=$][style=color:red]&#123;option $&#125;*3 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">style</span>=<span class="string">"color:red"</span>&gt;</span>option 1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"2"</span> <span class="attr">style</span>=<span class="string">"color:red"</span>&gt;</span>option 2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"3"</span> <span class="attr">style</span>=<span class="string">"color:red"</span>&gt;</span>option 3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>적용시 아래와 같이 나타납니다.</p>
-<select>
-    <option value="1">option 1</option>
-    <option value="2">option 2</option>
-    <option value="3">option 3</option>
-</select><br>
-<!-- select>option[value=$][style=color:red]{option $}*3 -->
-<select name="" id="">
-    <option value="1" style="color:red">option 1</option>
-    <option value="2" style="color:red">option 2</option>
-    <option value="3" style="color:red">option 3</option>
-</select>
-
-<h2 id="10-button"><a href="#10-button" class="headerlink" title="10. button"></a>10. button</h2><ul>
-<li>onclick 속성: 클릭했을 때 event. javascript 코드를 넣어줄 수 있음<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">name</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"javascript:(alert('alert msg'))"</span>&gt;</span>Click<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">name</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"javascript:(location.href = 'http://naver.com')"</span>&gt;</span>네이버로 이동<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>적용시 아래와 같이 나타납니다.</p>
-<button type="button" name="button" onclick="javascript:(alert('alert msg'))">Click</button>
-<button type="button" name="button" onclick="javascript:(location.href='http://naver.com')">네이버로 이동</button>
-
-
-
-<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
-<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/09/26/web_02_html_02_layout/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -384,14 +212,14 @@
                 <time class="level-item has-text-grey" datetime="2018-09-26T06:24:14.000Z">2018-09-26</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Web-공부/">Web 공부</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 710 words)
+                    5 minutes read (About 711 words)
                 </span>
                 
             </div>
@@ -408,87 +236,16 @@
 <li>Markup Language: 시작과 종료태그가 있는 language (대표적 예: XML)</li>
 <li>HTML은 여러 태그들로 구성되어 있으며 각 태그들을 사용하여 원하는 형태의 문서를 만들어갈 수 있음</li>
 </ul>
-<h3 id="1-2-HTML의-구성요소"><a href="#1-2-HTML의-구성요소" class="headerlink" title="1.2 HTML의 구성요소"></a>1.2 HTML의 구성요소</h3><p>(1) elements(요소): 시작태그와 종료태그로 이루어진 코드<br>(2) Tag(태그): 요소의 일부로 <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code> 등, 시작태그와 종료태그가 있음<br>(3) Attribute(속성): 태그 안에 키와 값으로 이루어진 코드</p>
-<h2 id="2-HTML-elements"><a href="#2-HTML-elements" class="headerlink" title="2. HTML elements"></a>2. HTML elements</h2><h3 id="2-1-Head-타이틀을-표현하기-위한-element"><a href="#2-1-Head-타이틀을-표현하기-위한-element" class="headerlink" title="2.1 Head: 타이틀을 표현하기 위한 element"></a>2.1 Head: 타이틀을 표현하기 위한 element</h3><ul>
-<li>h1~h6로 여섯단계가 표현 가능</li>
-<li>emmet 문법: <code>h${$단계 제목}*6</code></li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1단계 제목<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>2단계 제목<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>3단계 제목<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>4단계 제목<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h5</span>&gt;</span>5단계 제목<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span>6단계 제목<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>적용시 아래와 같이 나타납니다.</p>
-<blockquote>
-<p></p><h1>1단계 제목</h1><p></p>
-<p></p><h2>2단계 제목</h2><p></p>
-<p></p><h3>3단계 제목</h3><p></p>
-<p></p><h4>4단계 제목</h4><p></p>
-<p></p><h5>5단계 제목</h5><p></p>
-<h6>6단계 제목</h6>
-
-</blockquote>
-<h3 id="2-2-p"><a href="#2-2-p" class="headerlink" title="2.2 p"></a>2.2 p</h3><ul>
-<li>paragraph의 약자로 문단을 분리하기 위한 태그</li>
-<li>emmet 문법: <code>p{p_tag_$}*3</code></li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p_tag_1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p_tag_2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>p_tag_3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>적용시 아래와 같이 나타납니다.</p>
-<blockquote>
-<p>p_tag_1</p>
-<p>p_tag_2</p>
-<p>p_tag_3</p>
-
-</blockquote>
-<h3 id="2-3-span"><a href="#2-3-span" class="headerlink" title="2.3 span"></a>2.3 span</h3><ul>
-<li>영역을 설정하는 태그로 div 태그처럼 주로 CSS와 함께 쓰임</li>
-<li>div와 달리 줄바꿈이 되지 않고, 문장 단위로 지정(inline 속성)</li>
-<li>emmet 문법: <code>span{span_tag_$}*3</code></li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>span_tag_1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>span_tag_2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>span_tag_3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>적용시 아래와 같이 나타납니다.</p>
-<blockquote>
-<p><span>span_tag_1</span><br><span>span_tag_2</span><br><span>span_tag_3</span></p>
-</blockquote>
-<h3 id="2-4-pre"><a href="#2-4-pre" class="headerlink" title="2.4. pre"></a>2.4. pre</h3><ul>
-<li>preformatted text의 약자로, 입력한 그대로 화면 출력하는 태그</li>
-<li>줄바꿈이나 띄어쓰기가 그대로 적용되는 element</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    python</span><br><span class="line">    data</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line">    python</span><br><span class="line">    data</span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>적용시 아래와 같이 나타납니다. </p>
-<blockquote>
-<p></p><p>
-   python
-   data
-</p><p></p>
-<pre>
-   python
-   data
-</pre>
-
-
-</blockquote>
-<h3 id="2-5-글씨체"><a href="#2-5-글씨체" class="headerlink" title="2.5 글씨체"></a>2.5 글씨체</h3><ul>
-<li>b, strong(굵은글씨)</li>
-<li>i,em(이탤릭체)</li>
-<li>sup,sub(윗첨자, 아래첨자)</li>
-<li>small(작은 글씨)</li>
-<li>mark(배경이 노랑색)</li>
-<li>del(삭제문자열 - 가로줄)</li>
-<li>ins(언더라인 문자열)</li>
-<li>code(코드 문자열)</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>굵은글씨: <span class="tag">&lt;<span class="name">b</span>&gt;</span>굵은글씨<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>굵은글씨: <span class="tag">&lt;<span class="name">strong</span>&gt;</span>굵은글씨<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>이탤릭체: <span class="tag">&lt;<span class="name">i</span>&gt;</span>이탤릭체<span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>이탤릭체: <span class="tag">&lt;<span class="name">em</span>&gt;</span>이탤릭체<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>윗첨자: <span class="tag">&lt;<span class="name">sup</span>&gt;</span>윗첨자<span class="tag">&lt;/<span class="name">sup</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>아래첨자: <span class="tag">&lt;<span class="name">sub</span>&gt;</span>아래첨자<span class="tag">&lt;/<span class="name">sub</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>작은글씨: <span class="tag">&lt;<span class="name">small</span>&gt;</span>작은글씨<span class="tag">&lt;/<span class="name">small</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>글자배경이 <span class="tag">&lt;<span class="name">mark</span>&gt;</span>노란색<span class="tag">&lt;/<span class="name">mark</span>&gt;</span> 입니다<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>문자열 <span class="tag">&lt;<span class="name">del</span>&gt;</span>삭제<span class="tag">&lt;/<span class="name">del</span>&gt;</span>입니다<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>문자열 <span class="tag">&lt;<span class="name">ins</span>&gt;</span>언더라인<span class="tag">&lt;/<span class="name">ins</span>&gt;</span>입니다<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>코드: <span class="tag">&lt;<span class="name">code</span>&gt;</span>code<span class="tag">&lt;/<span class="name">code</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>적용시 아래와 같이 나타납니다.</p>
-<blockquote>
-<p><span>굵은글씨: <b>굵은글씨</b></span><br><span>굵은글씨: <strong>굵은글씨</strong></span></p>
-<p><span>이탤릭체: <i>이탤릭체</i></span><br><span>이탤릭체: <em>이탤릭체</em></span></p>
-<p><span>윗첨자: <sup>윗첨자</sup></span><br><span>아래첨자: <sub>아래첨자</sub></span><br><span>작은글씨: <small>작은글씨</small></span></p>
-<p><span>글자배경이 <mark>노란색</mark> 입니다</span><br><span>문자열 <del>삭제</del>입니다</span><br><span>문자열 <ins>언더라인</ins>입니다</span></p>
-<p><span>코드: <code>code</code></span></p>
-</blockquote>
-<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
-<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/09/26/web_01_html_01_basic/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -563,7 +320,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        136
+                        138
                     </p>
                 </div>
             </div>
@@ -573,7 +330,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        8
                     </p>
                 </div>
             </div>
@@ -583,7 +340,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        31
                     </p>
                 </div>
             </div>
@@ -633,31 +390,15 @@
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/">
             <span class="level-start">
-                <span class="level-item">Data Analysis 공부</span>
+                <span class="level-item">Data Science 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">23</span>
+                <span class="level-item tag">54</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/수학-공부/">
-            <span class="level-start">
-                <span class="level-item">수학 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">23</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/">
-            <span class="level-start">
-                <span class="level-item">Programming 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">30</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Algorithm-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Algorithm-공부/">
             <span class="level-start">
                 <span class="level-item">Algorithm 공부</span>
             </span>
@@ -665,7 +406,7 @@
                 <span class="level-item tag">2</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Database-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Database-공부/">
             <span class="level-start">
                 <span class="level-item">Database 공부</span>
             </span>
@@ -673,20 +414,28 @@
                 <span class="level-item tag">5</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Python-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Python-공부/">
             <span class="level-start">
                 <span class="level-item">Python 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">11</span>
+                <span class="level-item tag">12</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Web-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Web-공부/">
             <span class="level-start">
                 <span class="level-item">Web 공부</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/수학-공부/">
+            <span class="level-start">
+                <span class="level-item">수학 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/TIL-Today-I-Learned/">
@@ -694,7 +443,7 @@
                 <span class="level-item">TIL(Today I Learned)</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">81</span>
+                <span class="level-item tag">82</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/기타/">
@@ -716,7 +465,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.44px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.78px;">data analysis</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11.11px;">html</a> <a href="/tags/javascript/" style="font-size: 11.11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 17.78px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 18.89px;">programming</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/selenium/" style="font-size: 12.22px;">selenium</a> <a href="/tags/web/" style="font-size: 15.56px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.44px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 17.78px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11.11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.44px;">웹크롤링</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 12.73px;">Database</a> <a href="/tags/MySQL/" style="font-size: 11.82px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 11.82px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.91px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 13.64px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.27px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 14.55px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.91px;">html</a> <a href="/tags/javascript/" style="font-size: 10.91px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19.09px;">programming</a> <a href="/tags/python/" style="font-size: 16.36px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 11.82px;">selenium</a> <a href="/tags/web/" style="font-size: 15.45px;">web</a> <a href="/tags/web-crawling/" style="font-size: 13.64px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.91px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 13.64px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 10.91px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
     </div>
 </div>
 
@@ -727,6 +476,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/python_11_regex/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 11. 정규표현식(regex)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:35:53.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/python_11_regex/" class="has-link-black-ter is-size-6">python 11. 정규표현식(regex)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/2019-02-21-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-21-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:04:15.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/2019-02-21-TIL/" class="has-link-black-ter is-size-6">2019-02-21-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -785,44 +572,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-14-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-14-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-14-TIL/" class="has-link-black-ter is-size-6">2019-01-14-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-13-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-13-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-13-TIL/" class="has-link-black-ter is-size-6">2019-01-13-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -841,7 +590,7 @@
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>

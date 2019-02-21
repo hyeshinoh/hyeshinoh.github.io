@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="jupyter notebook으로 보기 다룰 내용 Scrapy 개요 xpath xpath의 기본 문법 scrapy shell 환경에서 xpath scrapy jupyter notebook xpath 네이버 실시간 검색어, 다음실시간 검색어, 지마켓 베스트 200   scrapy 프로젝트를 만들어서 크롤링 네이버 영화 사이트에서 현재 상영영화 링크를 크롤링">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-15T13:09:42.940Z">
+<meta property="og:updated_time" content="2019-02-21T15:04:26.088Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web crawling - Scrapy">
 <meta name="twitter:description" content="jupyter notebook으로 보기 다룰 내용 Scrapy 개요 xpath xpath의 기본 문법 scrapy shell 환경에서 xpath scrapy jupyter notebook xpath 네이버 실시간 검색어, 다음실시간 검색어, 지마켓 베스트 200   scrapy 프로젝트를 만들어서 크롤링 네이버 영화 사이트에서 현재 상영영화 링크를 크롤링">
@@ -149,14 +149,14 @@
                 <time class="level-item has-text-grey" datetime="2018-10-15T12:27:51.000Z">2018-10-15</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Web-공부/">Web 공부</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    20 minutes read (About 2942 words)
+                    20 minutes read (About 2943 words)
                 </span>
                 
             </div>
@@ -185,6 +185,7 @@
 </ul>
 </li>
 </ul>
+<a id="more"></a> 
 <h2 id="1-Scrapy"><a href="#1-Scrapy" class="headerlink" title="1. Scrapy"></a>1. Scrapy</h2><ul>
 <li>웹사이트에서 데이터 추출을 하기 위한 오픈소스 프레임워크 (패키지가 아님)</li>
 <li><a href="http://scrapy.org" target="_blank" rel="noopener">http://scrapy.org</a></li>
@@ -194,7 +195,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> scrapy</span><br></pre></td></tr></table></figure>
 <h2 id="2-xpath"><a href="#2-xpath" class="headerlink" title="2. xpath"></a>2. xpath</h2><p>지금까지 배웠던 css selector가 아닌 xpath를 이용해서도 웹페이지의 html element를 선택할 수 있다.</p>
 <h3 id="2-1-xpath의-기본-문법"><a href="#2-1-xpath의-기본-문법" class="headerlink" title="2.1 xpath의 기본 문법"></a>2.1 xpath의 기본 문법</h3><p>예시 xpath: 네이버 실시간 검색어 순위에서 [copy xpath]로 복사<br><code>//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li[1]/a/span[2]</code></p>
 <ul>
@@ -215,58 +216,58 @@
 <h3 id="2-2-네이버-실시간-검색어-크롤링"><a href="#2-2-네이버-실시간-검색어-크롤링" class="headerlink" title="2.2 네이버 실시간 검색어 크롤링"></a>2.2 네이버 실시간 검색어 크롤링</h3><h4 id="1-스크래피-셸-사용"><a href="#1-스크래피-셸-사용" class="headerlink" title="(1) 스크래피 셸 사용"></a>(1) 스크래피 셸 사용</h4><ul>
 <li><code>$ scrapy shell &quot;&lt;url&gt;&quot;</code></li>
 </ul>
-<h4 id="2-jupyter-notebook-사용"><a href="#2-jupyter-notebook-사용" class="headerlink" title="(2) jupyter notebook 사용"></a>(2) jupyter notebook 사용</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> scrapy.http <span class="keyword">import</span> TextResponse</span><br></pre></td></tr></table></figure>
-<h5 id="웹페이지에-연결"><a href="#웹페이지에-연결" class="headerlink" title="웹페이지에 연결"></a>웹페이지에 연결</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"http://naver.com"</span></span><br><span class="line">rep = requests.get(url)</span><br><span class="line">response = TextResponse(rep.url, body=rep.text, encoding=<span class="string">"utf-8"</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="2-jupyter-notebook-사용"><a href="#2-jupyter-notebook-사용" class="headerlink" title="(2) jupyter notebook 사용"></a>(2) jupyter notebook 사용</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"><span class="hljs-keyword">from</span> scrapy.http <span class="hljs-keyword">import</span> TextResponse</span><br></pre></td></tr></table></figure>
+<h5 id="웹페이지에-연결"><a href="#웹페이지에-연결" class="headerlink" title="웹페이지에 연결"></a>웹페이지에 연결</h5><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="hljs-string">"http://naver.com"</span></span><br><span class="line">rep = requests.get(url)</span><br><span class="line">response = TextResponse(rep.url, body=rep.text, encoding=<span class="hljs-string">"utf-8"</span>)</span><br></pre></td></tr></table></figure>
 <h5 id="네이버-실시간-검색어-1위-element-객체"><a href="#네이버-실시간-검색어-1위-element-객체" class="headerlink" title="네이버 실시간 검색어 1위 element 객체"></a>네이버 실시간 검색어 1위 element 객체</h5><ul>
 <li>xpath로 select하면 list로 return</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.xpath(<span class="string">'//*[@id="PM_ID_ct"]/div[1]/div[2]/div[2]/div[1]/div/ul/li[1]/a/span[2]'</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>[&lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li[1]/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;우왁굳&lt;/span&gt;&#39;&gt;]
-</code></pre><h5 id="네이버-실시간-검색어-20개-element-객체"><a href="#네이버-실시간-검색어-20개-element-객체" class="headerlink" title="네이버 실시간 검색어 20개 element 객체"></a>네이버 실시간 검색어 20개 element 객체</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 네이버 실시간 검색어 20개 element 객체</span></span><br><span class="line">response.xpath(<span class="string">'//*[@id="PM_ID_ct"]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]'</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>[&lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;우왁굳&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;홍현희&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;김수현&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;오영택&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;미세먼지&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;주윤발&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;박지원&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;환희유치원&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;제이쓴&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;동탄 환희유치원&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;브리짓 존스의 베이비&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;고현정&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;추상미&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;조현민&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;장학영&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;강병규&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;이한샘&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;자이언티&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;오늘 미세먼지 농도&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;존조&lt;/span&gt;&#39;&gt;]
-</code></pre><h5 id="객체의-text만-추출하기"><a href="#객체의-text만-추출하기" class="headerlink" title="객체의 text만 추출하기"></a>객체의 text만 추출하기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.xpath(<span class="string">'//*[@id="PM_ID_ct"]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()'</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>[&lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;우왁굳&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;홍현희&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;김수현&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;오영택&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;미세먼지&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;주윤발&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;박지원&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;환희유치원&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;제이쓴&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;동탄 환희유치원&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;브리짓 존스의 베이비&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;고현정&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;추상미&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;조현민&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;장학영&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;강병규&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;이한샘&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;자이언티&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;오늘 미세먼지 농도&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;존조&#39;&gt;]
-</code></pre><h5 id="문자열만-추출하기"><a href="#문자열만-추출하기" class="headerlink" title="문자열만 추출하기"></a>문자열만 추출하기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.xpath(<span class="string">'//*[@id="PM_ID_ct"]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()'</span>)[:<span class="number">10</span>].extract()</span><br></pre></td></tr></table></figure>
-<pre><code>[&#39;우왁굳&#39;, &#39;홍현희&#39;, &#39;김수현&#39;, &#39;오영택&#39;, &#39;미세먼지&#39;, &#39;주윤발&#39;, &#39;박지원&#39;, &#39;환희유치원&#39;, &#39;제이쓴&#39;, &#39;동탄 환희유치원&#39;]
-</code></pre><h5 id="을-이용해서-가져오기"><a href="#을-이용해서-가져오기" class="headerlink" title=".을 이용해서 가져오기"></a><code>.</code>을 이용해서 가져오기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">keywords = response.xpath(<span class="string">'//*[@id="PM_ID_ct"]/div[1]/div[2]/div[2]/div[1]/div/ul/li'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> keyword <span class="keyword">in</span> keywords:</span><br><span class="line">    print(keyword.xpath(<span class="string">'./a/span[2]/text()'</span>)[<span class="number">0</span>].extract())</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.xpath(<span class="hljs-string">'//*[@id="PM_ID_ct"]/div[1]/div[2]/div[2]/div[1]/div/ul/li[1]/a/span[2]'</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>[&lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li[1]/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;우왁굳&lt;/span&gt;&apos;&gt;]
+</code></pre><h5 id="네이버-실시간-검색어-20개-element-객체"><a href="#네이버-실시간-검색어-20개-element-객체" class="headerlink" title="네이버 실시간 검색어 20개 element 객체"></a>네이버 실시간 검색어 20개 element 객체</h5><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 네이버 실시간 검색어 20개 element 객체</span></span><br><span class="line">response.xpath(<span class="hljs-string">'//*[@id="PM_ID_ct"]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]'</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>[&lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;우왁굳&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;홍현희&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;김수현&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;오영택&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;미세먼지&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;주윤발&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;박지원&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;환희유치원&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;제이쓴&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;동탄 환희유치원&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;브리짓 존스의 베이비&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;고현정&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;추상미&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;조현민&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;장학영&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;강병규&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;이한샘&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;자이언티&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;오늘 미세먼지 농도&lt;/span&gt;&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&apos; data=&apos;&lt;span class=&quot;ah_k&quot;&gt;존조&lt;/span&gt;&apos;&gt;]
+</code></pre><h5 id="객체의-text만-추출하기"><a href="#객체의-text만-추출하기" class="headerlink" title="객체의 text만 추출하기"></a>객체의 text만 추출하기</h5><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.xpath(<span class="hljs-string">'//*[@id="PM_ID_ct"]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()'</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>[&lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;우왁굳&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;홍현희&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;김수현&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;오영택&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;미세먼지&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;주윤발&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;박지원&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;환희유치원&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;제이쓴&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;동탄 환희유치원&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;브리짓 존스의 베이비&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;고현정&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;추상미&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;조현민&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;장학영&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;강병규&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;이한샘&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;자이언티&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;오늘 미세먼지 농도&apos;&gt;,
+ &lt;Selector xpath=&apos;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&apos; data=&apos;존조&apos;&gt;]
+</code></pre><h5 id="문자열만-추출하기"><a href="#문자열만-추출하기" class="headerlink" title="문자열만 추출하기"></a>문자열만 추출하기</h5><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.xpath(<span class="hljs-string">'//*[@id="PM_ID_ct"]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()'</span>)[:<span class="hljs-number">10</span>].extract()</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;우왁굳&apos;, &apos;홍현희&apos;, &apos;김수현&apos;, &apos;오영택&apos;, &apos;미세먼지&apos;, &apos;주윤발&apos;, &apos;박지원&apos;, &apos;환희유치원&apos;, &apos;제이쓴&apos;, &apos;동탄 환희유치원&apos;]
+</code></pre><h5 id="을-이용해서-가져오기"><a href="#을-이용해서-가져오기" class="headerlink" title=".을 이용해서 가져오기"></a><code>.</code>을 이용해서 가져오기</h5><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">keywords = response.xpath(<span class="hljs-string">'//*[@id="PM_ID_ct"]/div[1]/div[2]/div[2]/div[1]/div/ul/li'</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> keyword <span class="hljs-keyword">in</span> keywords:</span><br><span class="line">    print(keyword.xpath(<span class="hljs-string">'./a/span[2]/text()'</span>)[<span class="hljs-number">0</span>].extract())</span><br></pre></td></tr></table></figure>
 <pre><code>우왁굳
 홍현희
 김수현
@@ -287,25 +288,25 @@
 자이언티
 오늘 미세먼지 농도
 존조
-</code></pre><h3 id="2-3-다음-실시간-검색어-크롤링"><a href="#2-3-다음-실시간-검색어-크롤링" class="headerlink" title="2.3 다음 실시간 검색어 크롤링"></a>2.3 다음 실시간 검색어 크롤링</h3><h5 id="다음-실시간-검색어-리스트-출력"><a href="#다음-실시간-검색어-리스트-출력" class="headerlink" title="다음 실시간 검색어 리스트 출력"></a>다음 실시간 검색어 리스트 출력</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"http://daum.net"</span></span><br><span class="line">rep = requests.get(url)</span><br><span class="line">response = TextResponse(rep.url, body=rep.text, encoding=<span class="string">"utf-8"</span>)</span><br><span class="line">response.xpath(<span class="string">'//*[@id="mArticle"]/div[2]/div[1]/div[2]/div[1]/ol/li/div/div[1]/span[2]/a/text()'</span>).extract()</span><br></pre></td></tr></table></figure>
-<pre><code>[&#39;박지원&#39;, &#39;추상미&#39;, &#39;우왁굳&#39;, &#39;강예빈&#39;, &#39;김수현 아나운서&#39;, &#39;장학영&#39;, &#39;환희유치원&#39;, &#39;미세먼지&#39;, &#39;존조&#39;, &#39;서유정&#39;]
-</code></pre><h3 id="2-4-gmarket-best-item-200-크롤링"><a href="#2-4-gmarket-best-item-200-크롤링" class="headerlink" title="2.4 gmarket best item 200 크롤링"></a>2.4 gmarket best item 200 크롤링</h3><h5 id="웹페이지에-연결-1"><a href="#웹페이지에-연결-1" class="headerlink" title="웹페이지에 연결"></a>웹페이지에 연결</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"http://corners.gmarket.co.kr/Bestsellers"</span></span><br><span class="line">rep = requests.get(url)</span><br><span class="line">response = TextResponse(rep.url, body=rep.text, encoding=<span class="string">"utf-8"</span>)</span><br></pre></td></tr></table></figure>
-<h5 id="베스트-200-아이템-제목-문자열-리스트로-가져오기"><a href="#베스트-200-아이템-제목-문자열-리스트로-가져오기" class="headerlink" title="베스트 200 아이템 제목 문자열 리스트로 가져오기"></a>베스트 200 아이템 제목 문자열 리스트로 가져오기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">titles = response.xpath(<span class="string">'//*[@id="gBestWrap"]/div/div[3]/div[2]/ul/li/a/text()'</span>).extract()</span><br><span class="line">print(len(titles))</span><br><span class="line">titles[<span class="number">195</span>:<span class="number">199</span>]</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="2-3-다음-실시간-검색어-크롤링"><a href="#2-3-다음-실시간-검색어-크롤링" class="headerlink" title="2.3 다음 실시간 검색어 크롤링"></a>2.3 다음 실시간 검색어 크롤링</h3><h5 id="다음-실시간-검색어-리스트-출력"><a href="#다음-실시간-검색어-리스트-출력" class="headerlink" title="다음 실시간 검색어 리스트 출력"></a>다음 실시간 검색어 리스트 출력</h5><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="hljs-string">"http://daum.net"</span></span><br><span class="line">rep = requests.get(url)</span><br><span class="line">response = TextResponse(rep.url, body=rep.text, encoding=<span class="hljs-string">"utf-8"</span>)</span><br><span class="line">response.xpath(<span class="hljs-string">'//*[@id="mArticle"]/div[2]/div[1]/div[2]/div[1]/ol/li/div/div[1]/span[2]/a/text()'</span>).extract()</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;박지원&apos;, &apos;추상미&apos;, &apos;우왁굳&apos;, &apos;강예빈&apos;, &apos;김수현 아나운서&apos;, &apos;장학영&apos;, &apos;환희유치원&apos;, &apos;미세먼지&apos;, &apos;존조&apos;, &apos;서유정&apos;]
+</code></pre><h3 id="2-4-gmarket-best-item-200-크롤링"><a href="#2-4-gmarket-best-item-200-크롤링" class="headerlink" title="2.4 gmarket best item 200 크롤링"></a>2.4 gmarket best item 200 크롤링</h3><h5 id="웹페이지에-연결-1"><a href="#웹페이지에-연결-1" class="headerlink" title="웹페이지에 연결"></a>웹페이지에 연결</h5><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="hljs-string">"http://corners.gmarket.co.kr/Bestsellers"</span></span><br><span class="line">rep = requests.get(url)</span><br><span class="line">response = TextResponse(rep.url, body=rep.text, encoding=<span class="hljs-string">"utf-8"</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="베스트-200-아이템-제목-문자열-리스트로-가져오기"><a href="#베스트-200-아이템-제목-문자열-리스트로-가져오기" class="headerlink" title="베스트 200 아이템 제목 문자열 리스트로 가져오기"></a>베스트 200 아이템 제목 문자열 리스트로 가져오기</h5><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">titles = response.xpath(<span class="hljs-string">'//*[@id="gBestWrap"]/div/div[3]/div[2]/ul/li/a/text()'</span>).extract()</span><br><span class="line">print(len(titles))</span><br><span class="line">titles[<span class="hljs-number">195</span>:<span class="hljs-number">199</span>]</span><br></pre></td></tr></table></figure>
 <pre><code>200
 
-[&#39;일본수출 초극세사이불/백화점납품/ 피톤치드가공10mm&#39;,
- &#39;제로스킨 아이폰 갤럭시 핸드폰케이스 6 7 8 X S 노트&#39;,
- &#39;(국산)고급 반코팅 100켤레 이중코팅 면 목장갑 작업&#39;,
- &#39;[다이소]공식판매처/택배박스/봉투/로고인쇄/당일발송/소량&#39;]
+[&apos;일본수출 초극세사이불/백화점납품/ 피톤치드가공10mm&apos;,
+ &apos;제로스킨 아이폰 갤럭시 핸드폰케이스 6 7 8 X S 노트&apos;,
+ &apos;(국산)고급 반코팅 100켤레 이중코팅 면 목장갑 작업&apos;,
+ &apos;[다이소]공식판매처/택배박스/봉투/로고인쇄/당일발송/소량&apos;]
 </code></pre><h5 id="200개-아이템에서-li-클래스가-first인-데이터만-가져오기"><a href="#200개-아이템에서-li-클래스가-first인-데이터만-가져오기" class="headerlink" title="200개 아이템에서 li 클래스가 first인 데이터만 가져오기"></a>200개 아이템에서 li 클래스가 first인 데이터만 가져오기</h5><ul>
 <li>클래스가 first인 아이템은 한 줄에 4개씩 나타나는 상품 중 각 줄의 첫번째 상품</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">titles = response.xpath(<span class="string">'//*[@id="gBestWrap"]/div/div[3]/div[2]/ul/li[@class="first"]/a/text()'</span>).extract()</span><br><span class="line">len(titles)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">titles = response.xpath(<span class="hljs-string">'//*[@id="gBestWrap"]/div/div[3]/div[2]/ul/li[@class="first"]/a/text()'</span>).extract()</span><br><span class="line">len(titles)</span><br></pre></td></tr></table></figure>
 <pre><code>50
 </code></pre><h5 id="200개-아이템에서-li-클래스가-first가-아닌-데이터만-가져오기"><a href="#200개-아이템에서-li-클래스가-first가-아닌-데이터만-가져오기" class="headerlink" title="200개 아이템에서 li 클래스가 first가 아닌 데이터만 가져오기"></a>200개 아이템에서 li 클래스가 first가 아닌 데이터만 가져오기</h5><ul>
 <li><code>not()</code>을 사용</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">titles = response.xpath(<span class="string">'//*[@id="gBestWrap"]/div/div[3]/div[2]/ul/li[not(@class="first")]/a/text()'</span>).extract()</span><br><span class="line">len(titles)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">titles = response.xpath(<span class="hljs-string">'//*[@id="gBestWrap"]/div/div[3]/div[2]/ul/li[not(@class="first")]/a/text()'</span>).extract()</span><br><span class="line">len(titles)</span><br></pre></td></tr></table></figure>
 <pre><code>150
 </code></pre><h2 id="3-Scrapy-project"><a href="#3-Scrapy-project" class="headerlink" title="3. Scrapy project"></a>3. Scrapy project</h2><ul>
 <li>jupyter notebook이 아닌 atom에서 작성</li>
@@ -314,14 +315,14 @@
 <h3 id="3-1-scrapy-프로젝트-생성"><a href="#3-1-scrapy-프로젝트-생성" class="headerlink" title="3.1 scrapy 프로젝트 생성"></a>3.1 scrapy 프로젝트 생성</h3><ul>
 <li>project 생성: <code>$ scrapy startproject &lt;project_name&gt;</code></li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">! scrapy startproject crawler</span><br></pre></td></tr></table></figure>
-<pre><code>New Scrapy project &#39;crawler&#39;, using template directory &#39;/usr/local/lib/python3.6/site-packages/scrapy/templates/project&#39;, created in:
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">! scrapy startproject crawler</span><br></pre></td></tr></table></figure>
+<pre><code>New Scrapy project &apos;crawler&apos;, using template directory &apos;/usr/local/lib/python3.6/site-packages/scrapy/templates/project&apos;, created in:
     /Users/hyeshinoh/Workspace/Study_Web/crawler
 
 You can start your first spider with:
     cd crawler
     scrapy genspider example example.com
-</code></pre><h3 id="3-2-scrapy-프로젝트-파일-설명"><a href="#3-2-scrapy-프로젝트-파일-설명" class="headerlink" title="3.2 scrapy 프로젝트 파일 설명"></a>3.2 scrapy 프로젝트 파일 설명</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">! tree crawler</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="3-2-scrapy-프로젝트-파일-설명"><a href="#3-2-scrapy-프로젝트-파일-설명" class="headerlink" title="3.2 scrapy 프로젝트 파일 설명"></a>3.2 scrapy 프로젝트 파일 설명</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">! tree crawler</span><br></pre></td></tr></table></figure>
 <pre><code>crawler
 ├── crawler
 │   ├── __init__.py
@@ -364,17 +365,17 @@ You can start your first spider with:
 </ul>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># iterator data</span></span><br><span class="line">ls = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># generator data</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">number</span><span class="params">()</span>:</span>    <span class="comment"># generator를 만드는 함수</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n = number()</span><br><span class="line">n</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># iterator data</span></span><br><span class="line">ls = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># generator data</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">number</span><span class="hljs-params">()</span>:</span>    <span class="hljs-comment"># generator를 만드는 함수</span></span><br><span class="line">    <span class="hljs-keyword">yield</span> <span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">yield</span> <span class="hljs-number">2</span></span><br><span class="line">    <span class="hljs-keyword">yield</span> <span class="hljs-number">3</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n = number()</span><br><span class="line">n</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;generator object number at 0x11052c620&gt;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n.__next__()</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n.__next__()</span><br></pre></td></tr></table></figure>
 <pre><code>1
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n.__next__()</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n.__next__()</span><br></pre></td></tr></table></figure>
 <pre><code>2
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n.__next__()</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n.__next__()</span><br></pre></td></tr></table></figure>
 <pre><code>3
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n.__next__()</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n.__next__()</span><br></pre></td></tr></table></figure>
 <pre><code>---------------------------------------------------------------------------
 
 StopIteration                             Traceback (most recent call last)
@@ -384,7 +385,7 @@ StopIteration                             Traceback (most recent call last)
 
 
 StopIteration: 
-</code></pre><h4 id="1-items-py"><a href="#1-items-py" class="headerlink" title="(1) items.py"></a>(1) items.py</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#######################################################################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Define here the models for your scraped items</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># See documentation in:</span></span><br><span class="line"><span class="comment"># https://doc.scrapy.org/en/latest/topics/items.html</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CrawlerItem</span><span class="params">(scrapy.Item)</span>:</span></span><br><span class="line">    <span class="comment"># define the fields for your item here like:</span></span><br><span class="line">    title = scrapy.Field()</span><br><span class="line">    count = scrapy.Field()</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#######################################################################################</span></span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="1-items-py"><a href="#1-items-py" class="headerlink" title="(1) items.py"></a>(1) items.py</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#######################################################################################</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Define here the models for your scraped items</span></span><br><span class="line"><span class="hljs-comment">#</span></span><br><span class="line"><span class="hljs-comment"># See documentation in:</span></span><br><span class="line"><span class="hljs-comment"># https://doc.scrapy.org/en/latest/topics/items.html</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CrawlerItem</span><span class="hljs-params">(scrapy.Item)</span>:</span></span><br><span class="line">    <span class="hljs-comment"># define the fields for your item here like:</span></span><br><span class="line">    title = scrapy.Field()</span><br><span class="line">    count = scrapy.Field()</span><br><span class="line">    <span class="hljs-keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#######################################################################################</span></span><br></pre></td></tr></table></figure>
 <h4 id="2-spider-py"><a href="#2-spider-py" class="headerlink" title="(2) spider.py"></a>(2) spider.py</h4><ul>
 <li>가장 먼저 실행되는 파일</li>
 <li>기본적 변수<ul>
@@ -398,8 +399,8 @@ StopIteration:
 <ul>
 <li>상영중인 영화 리스트 받아오기</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"https://movie.naver.com/movie/running/current.nhn"</span></span><br><span class="line">rep = requests.get(url)</span><br><span class="line">response = TextResponse(rep.url, body=rep.text, encoding=<span class="string">"utf-8"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">links = response.xpath(<span class="string">'//*[@id="content"]/div[1]/div[1]/div[3]/ul/li/dl/dt/a/@href'</span>)[:<span class="number">10</span>].extract()</span><br><span class="line"><span class="keyword">for</span> link <span class="keyword">in</span> links:</span><br><span class="line">    print(response.urljoin(link))    <span class="comment"># domain과 연결시켜줌</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="hljs-string">"https://movie.naver.com/movie/running/current.nhn"</span></span><br><span class="line">rep = requests.get(url)</span><br><span class="line">response = TextResponse(rep.url, body=rep.text, encoding=<span class="hljs-string">"utf-8"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">links = response.xpath(<span class="hljs-string">'//*[@id="content"]/div[1]/div[1]/div[3]/ul/li/dl/dt/a/@href'</span>)[:<span class="hljs-number">10</span>].extract()</span><br><span class="line"><span class="hljs-keyword">for</span> link <span class="hljs-keyword">in</span> links:</span><br><span class="line">    print(response.urljoin(link))    <span class="hljs-comment"># domain과 연결시켜줌</span></span><br></pre></td></tr></table></figure>
 <pre><code>https://movie.naver.com/movie/bi/mi/basic.nhn?code=167105
 https://movie.naver.com/movie/bi/mi/basic.nhn?code=119428
 https://movie.naver.com/movie/bi/mi/basic.nhn?code=155356
@@ -413,13 +414,13 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
 </code></pre><ul>
 <li>영화의 제목과 누적 관객수 받아오기</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"https://movie.naver.com/movie/bi/mi/basic.nhn?code=159892"</span></span><br><span class="line">rep = requests.get(url)</span><br><span class="line">response = TextResponse(rep.url, body=rep.text, encoding=<span class="string">"utf-8"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_page_contents</span><span class="params">(self, response)</span>:</span></span><br><span class="line">    item = CrawlerItem()</span><br><span class="line">    item[<span class="string">"title"</span>] = response.xpath(<span class="string">'//*[@id="content"]/div[1]/div[2]/div[1]/h3/a[1]/text()'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        item[<span class="string">"count"</span>] = response.xpath(<span class="string">'//*[@id="content"]/div[1]/div[2]/div[1]/dl/dd[5]/div/p[2]/text()'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        item[<span class="string">"count"</span>] = <span class="string">"0명"</span></span><br><span class="line">    <span class="keyword">yield</span> item</span><br></pre></td></tr></table></figure>
-<h4 id="nm-spider-py-작성"><a href="#nm-spider-py-작성" class="headerlink" title="nm_spider.py 작성"></a>nm_spider.py 작성</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#######################################################################################</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="keyword">from</span> crawler.items <span class="keyword">import</span> CrawlerItem    <span class="comment"># 위에서 작성한 items.py를 불러옴</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># start_urls -&gt; parse -&gt; parse_page_contents 순으로 호출</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NaverMovieSpider</span><span class="params">(scrapy.Spider)</span>:</span>    <span class="comment"># scrapy.Spider 클래스를 상속 받음 (크롤링에 필요한 기능이 들어가 있음)</span></span><br><span class="line">    name = <span class="string">"naver_movie"</span>   </span><br><span class="line">    allow_domain = [<span class="string">"https://movie.naver.com"</span>]</span><br><span class="line">    start_urls = [</span><br><span class="line">        <span class="string">"https://movie.naver.com/movie/running/current.nhn"</span></span><br><span class="line">    ]    </span><br><span class="line"></span><br><span class="line">    <span class="comment"># link 리스트를 가져옴 (start url을 request로 던지고 그 response를 parse 함수가 받음)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        links = response.xpath(<span class="string">'//*[@id="content"]/div[1]/div[1]/div[3]/ul/li/dl/dt/a/@href'</span>)[:<span class="number">10</span>].extract()</span><br><span class="line">        <span class="keyword">for</span> link <span class="keyword">in</span> links:</span><br><span class="line">            link = response.urljoin(link)</span><br><span class="line">            <span class="keyword">yield</span> scrapy.Request(link, callback=self.parse_page_contents)  <span class="comment"># yield가 10개 생성됨</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 각페이지의 link로 접속하여 데이터를 가져옴</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse_page_contents</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        item = CrawlerItem()    <span class="comment"># item obj.를 만들어 줌</span></span><br><span class="line">        item[<span class="string">"title"</span>] = response.xpath(<span class="string">'//*[@id="content"]/div[1]/div[2]/div[1]/h3/a[1]/text()'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            item[<span class="string">"count"</span>] = response.xpath(<span class="string">'//*[@id="content"]/div[1]/div[2]/div[1]/dl/dd[5]/div/p[2]/text()'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            item[<span class="string">"count"</span>] = <span class="string">"0명"</span></span><br><span class="line">        <span class="keyword">yield</span> item      <span class="comment"># 10개 만들어진 generator마다 한 번 실행됨</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#######################################################################################</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="hljs-string">"https://movie.naver.com/movie/bi/mi/basic.nhn?code=159892"</span></span><br><span class="line">rep = requests.get(url)</span><br><span class="line">response = TextResponse(rep.url, body=rep.text, encoding=<span class="hljs-string">"utf-8"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">parse_page_contents</span><span class="hljs-params">(self, response)</span>:</span></span><br><span class="line">    item = CrawlerItem()</span><br><span class="line">    item[<span class="hljs-string">"title"</span>] = response.xpath(<span class="hljs-string">'//*[@id="content"]/div[1]/div[2]/div[1]/h3/a[1]/text()'</span>).extract()[<span class="hljs-number">0</span>]</span><br><span class="line">    <span class="hljs-keyword">try</span>:</span><br><span class="line">        item[<span class="hljs-string">"count"</span>] = response.xpath(<span class="hljs-string">'//*[@id="content"]/div[1]/div[2]/div[1]/dl/dd[5]/div/p[2]/text()'</span>).extract()[<span class="hljs-number">0</span>]</span><br><span class="line">    <span class="hljs-keyword">except</span>:</span><br><span class="line">        item[<span class="hljs-string">"count"</span>] = <span class="hljs-string">"0명"</span></span><br><span class="line">    <span class="hljs-keyword">yield</span> item</span><br></pre></td></tr></table></figure>
+<h4 id="nm-spider-py-작성"><a href="#nm-spider-py-작성" class="headerlink" title="nm_spider.py 작성"></a>nm_spider.py 작성</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#######################################################################################</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> scrapy</span><br><span class="line"><span class="hljs-keyword">from</span> crawler.items <span class="hljs-keyword">import</span> CrawlerItem    <span class="hljs-comment"># 위에서 작성한 items.py를 불러옴</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># start_urls -&gt; parse -&gt; parse_page_contents 순으로 호출</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NaverMovieSpider</span><span class="hljs-params">(scrapy.Spider)</span>:</span>    <span class="hljs-comment"># scrapy.Spider 클래스를 상속 받음 (크롤링에 필요한 기능이 들어가 있음)</span></span><br><span class="line">    name = <span class="hljs-string">"naver_movie"</span>   </span><br><span class="line">    allow_domain = [<span class="hljs-string">"https://movie.naver.com"</span>]</span><br><span class="line">    start_urls = [</span><br><span class="line">        <span class="hljs-string">"https://movie.naver.com/movie/running/current.nhn"</span></span><br><span class="line">    ]    </span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># link 리스트를 가져옴 (start url을 request로 던지고 그 response를 parse 함수가 받음)</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">parse</span><span class="hljs-params">(self, response)</span>:</span></span><br><span class="line">        links = response.xpath(<span class="hljs-string">'//*[@id="content"]/div[1]/div[1]/div[3]/ul/li/dl/dt/a/@href'</span>)[:<span class="hljs-number">10</span>].extract()</span><br><span class="line">        <span class="hljs-keyword">for</span> link <span class="hljs-keyword">in</span> links:</span><br><span class="line">            link = response.urljoin(link)</span><br><span class="line">            <span class="hljs-keyword">yield</span> scrapy.Request(link, callback=self.parse_page_contents)  <span class="hljs-comment"># yield가 10개 생성됨</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># 각페이지의 link로 접속하여 데이터를 가져옴</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">parse_page_contents</span><span class="hljs-params">(self, response)</span>:</span></span><br><span class="line">        item = CrawlerItem()    <span class="hljs-comment"># item obj.를 만들어 줌</span></span><br><span class="line">        item[<span class="hljs-string">"title"</span>] = response.xpath(<span class="hljs-string">'//*[@id="content"]/div[1]/div[2]/div[1]/h3/a[1]/text()'</span>).extract()[<span class="hljs-number">0</span>]</span><br><span class="line">        <span class="hljs-keyword">try</span>:</span><br><span class="line">            item[<span class="hljs-string">"count"</span>] = response.xpath(<span class="hljs-string">'//*[@id="content"]/div[1]/div[2]/div[1]/dl/dd[5]/div/p[2]/text()'</span>).extract()[<span class="hljs-number">0</span>]</span><br><span class="line">        <span class="hljs-keyword">except</span>:</span><br><span class="line">            item[<span class="hljs-string">"count"</span>] = <span class="hljs-string">"0명"</span></span><br><span class="line">        <span class="hljs-keyword">yield</span> item      <span class="hljs-comment"># 10개 만들어진 generator마다 한 번 실행됨</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#######################################################################################</span></span><br></pre></td></tr></table></figure>
 <h4 id="3-settings-py"><a href="#3-settings-py" class="headerlink" title="(3) settings.py"></a>(3) settings.py</h4><ul>
 <li>크롤링하려는 사이트의 robots.txt 정책에 따라 obey 여부를 조정</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#######################################################################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Obey robots.txt rules</span></span><br><span class="line">ROBOTSTXT_OBEY = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#######################################################################################</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#######################################################################################</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Obey robots.txt rules</span></span><br><span class="line">ROBOTSTXT_OBEY = <span class="hljs-keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#######################################################################################</span></span><br></pre></td></tr></table></figure>
 <h4 id="4-spider-실행"><a href="#4-spider-실행" class="headerlink" title="(4) spider 실행"></a>(4) spider 실행</h4><ul>
 <li>실행 위치: 프로젝트 디렉토리에서 실행(item.py 파일이 있는 디렉토리)</li>
 <li>명령어<ul>
@@ -432,8 +433,7 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
 </li>
 <li>비동기 thread로 처리되기 때문에 영화 데이터가 순서대로 크롤링되지 않음</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.read_csv(<span class="string">"movie.csv"</span>)</span><br></pre></td></tr></table></figure>
-<div class="table-container">
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.read_csv(<span class="hljs-string">"movie.csv"</span>)</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -495,17 +495,15 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
 </tr>
 </tbody>
 </table>
-</div>
 <h4 id="5-pipeline-py"><a href="#5-pipeline-py" class="headerlink" title="(5) pipeline.py"></a>(5) pipeline.py</h4><ul>
 <li>pipeline을 사용해서 크롤링한 데이터를 column 순서를 지정해서 csv 파일로 저장할 수 있음</li>
 <li>크롤러를 실행할 때 CrawlerPipeline 객체를 생성하고 아이템을 하나씩 크롤링할 때마다 process_item 함수를 실행</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#######################################################################################</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CrawlerPipeline</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.csvwriter = csv.writer(open(<span class="string">"NaverMovie.csv"</span>,<span class="string">"wt"</span>))</span><br><span class="line">        self.csvwriter.writerow([<span class="string">"title"</span>, <span class="string">"count"</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, spider)</span>:</span></span><br><span class="line">        row = []</span><br><span class="line">        row.append(item[<span class="string">"title"</span>])</span><br><span class="line">        row.append(item[<span class="string">"count"</span>])</span><br><span class="line">        self.csvwriter.writerow(row)</span><br><span class="line">        <span class="keyword">return</span> item</span><br><span class="line"></span><br><span class="line"><span class="comment">#######################################################################################</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#######################################################################################</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> csv</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CrawlerPipeline</span><span class="hljs-params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        self.csvwriter = csv.writer(open(<span class="hljs-string">"NaverMovie.csv"</span>,<span class="hljs-string">"wt"</span>))</span><br><span class="line">        self.csvwriter.writerow([<span class="hljs-string">"title"</span>, <span class="hljs-string">"count"</span>])</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">process_item</span><span class="hljs-params">(self, item, spider)</span>:</span></span><br><span class="line">        row = []</span><br><span class="line">        row.append(item[<span class="hljs-string">"title"</span>])</span><br><span class="line">        row.append(item[<span class="hljs-string">"count"</span>])</span><br><span class="line">        self.csvwriter.writerow(row)</span><br><span class="line">        <span class="hljs-keyword">return</span> item</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#######################################################################################</span></span><br></pre></td></tr></table></figure>
 <p>settings.py 수정 (주석 해제)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#######################################################################################</span></span><br><span class="line"></span><br><span class="line">ITEM_PIPELINES = &#123;</span><br><span class="line">    <span class="string">'crawler.pipelines.CrawlerPipeline'</span>:<span class="number">300</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#######################################################################################</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#######################################################################################</span></span><br><span class="line"></span><br><span class="line">ITEM_PIPELINES = &#123;</span><br><span class="line">    <span class="hljs-string">'crawler.pipelines.CrawlerPipeline'</span>:<span class="hljs-number">300</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#######################################################################################</span></span><br></pre></td></tr></table></figure>
 <p>다시 scrapy 실행시 결과 파일의 column이 title, count 순서로 만들어짐</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.read_csv(<span class="string">"NaverMovie.csv"</span>)</span><br></pre></td></tr></table></figure>
-<div class="table-container">
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.read_csv(<span class="hljs-string">"NaverMovie.csv"</span>)</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -567,7 +565,6 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
 </tr>
 </tbody>
 </table>
-</div>
 <h3 id="덧"><a href="#덧" class="headerlink" title="덧"></a>덧</h3><ul>
 <li>yield, callback 구조를 이해하면 그 단계를 다양하게 구성할 수 있음</li>
 <li>동적페이지를 크롤링하려면 <code>__init__()</code> 함수로 driver를 만들고 driver를 사용해서 크롤링</li>
@@ -689,7 +686,7 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        136
+                        138
                     </p>
                 </div>
             </div>
@@ -699,7 +696,7 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        8
                     </p>
                 </div>
             </div>
@@ -709,7 +706,7 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        31
                     </p>
                 </div>
             </div>
@@ -759,31 +756,15 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/">
             <span class="level-start">
-                <span class="level-item">Data Analysis 공부</span>
+                <span class="level-item">Data Science 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">23</span>
+                <span class="level-item tag">54</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/수학-공부/">
-            <span class="level-start">
-                <span class="level-item">수학 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">23</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/">
-            <span class="level-start">
-                <span class="level-item">Programming 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">30</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Algorithm-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Algorithm-공부/">
             <span class="level-start">
                 <span class="level-item">Algorithm 공부</span>
             </span>
@@ -791,7 +772,7 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
                 <span class="level-item tag">2</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Database-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Database-공부/">
             <span class="level-start">
                 <span class="level-item">Database 공부</span>
             </span>
@@ -799,20 +780,28 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
                 <span class="level-item tag">5</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Python-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Python-공부/">
             <span class="level-start">
                 <span class="level-item">Python 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">11</span>
+                <span class="level-item tag">12</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Web-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Web-공부/">
             <span class="level-start">
                 <span class="level-item">Web 공부</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/수학-공부/">
+            <span class="level-start">
+                <span class="level-item">수학 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/TIL-Today-I-Learned/">
@@ -820,7 +809,7 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
                 <span class="level-item">TIL(Today I Learned)</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">81</span>
+                <span class="level-item tag">82</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/기타/">
@@ -842,7 +831,7 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.44px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.78px;">data analysis</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11.11px;">html</a> <a href="/tags/javascript/" style="font-size: 11.11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 17.78px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 18.89px;">programming</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/selenium/" style="font-size: 12.22px;">selenium</a> <a href="/tags/web/" style="font-size: 15.56px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.44px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 17.78px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11.11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.44px;">웹크롤링</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 12.73px;">Database</a> <a href="/tags/MySQL/" style="font-size: 11.82px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 11.82px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.91px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 13.64px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.27px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 14.55px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.91px;">html</a> <a href="/tags/javascript/" style="font-size: 10.91px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19.09px;">programming</a> <a href="/tags/python/" style="font-size: 16.36px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 11.82px;">selenium</a> <a href="/tags/web/" style="font-size: 15.45px;">web</a> <a href="/tags/web-crawling/" style="font-size: 13.64px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.91px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 13.64px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 10.91px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
     </div>
 </div>
 
@@ -853,6 +842,44 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/python_11_regex/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 11. 정규표현식(regex)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:35:53.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/python_11_regex/" class="has-link-black-ter is-size-6">python 11. 정규표현식(regex)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/2019-02-21-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-21-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:04:15.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/2019-02-21-TIL/" class="has-link-black-ter is-size-6">2019-02-21-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -911,44 +938,6 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-14-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-14-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-14-TIL/" class="has-link-black-ter is-size-6">2019-01-14-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-13-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-13-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-13-TIL/" class="has-link-black-ter is-size-6">2019-01-13-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -967,7 +956,7 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>

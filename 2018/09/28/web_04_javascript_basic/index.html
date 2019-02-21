@@ -16,7 +16,7 @@
 <meta property="og:description" content="1. JavaScript1.1 JavaScript란 JavaScript란 객체 기반의 스크립트 프로그래밍 언어로, 웹 브라우저 내에서 주로 사용 HTML, CSS와 함께 웹을 지탱하는 계층 구조에서 많은 역할을 차지 HTML 은 웹 페이지상에서 문단, 제목, 표, 이미지, 동영상등을 정의하고 그 구조와 의미를 부여하는 마크업 언어 CSS 는 배경색, 폰트,">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://github.com/hyeshinoh/Study_Web/blob/master/web_04_javascript_basic_001.JPG?raw=true">
-<meta property="og:updated_time" content="2018-09-29T06:09:29.305Z">
+<meta property="og:updated_time" content="2019-02-21T15:02:38.060Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript - Basic">
 <meta name="twitter:description" content="1. JavaScript1.1 JavaScript란 JavaScript란 객체 기반의 스크립트 프로그래밍 언어로, 웹 브라우저 내에서 주로 사용 HTML, CSS와 함께 웹을 지탱하는 계층 구조에서 많은 역할을 차지 HTML 은 웹 페이지상에서 문단, 제목, 표, 이미지, 동영상등을 정의하고 그 구조와 의미를 부여하는 마크업 언어 CSS 는 배경색, 폰트,">
@@ -151,14 +151,14 @@
                 <time class="level-item has-text-grey" datetime="2018-09-28T07:35:20.000Z">2018-09-28</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Web-공부/">Web 공부</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    9 minutes read (About 1396 words)
+                    9 minutes read (About 1397 words)
                 </span>
                 
             </div>
@@ -182,6 +182,7 @@
 <li>JavaScript는 자유도가 높은 언어로 규칙에 조금 어긋나는 코드도 실행이됨 (error가 생길수는 있음)</li>
 <li>javascript package 관리 매니져(npm)인 nodejs를 설치할 것</li>
 </ul>
+<a id="more"></a> 
 <h1 id="2-JavaScript-Basic-Syntax"><a href="#2-JavaScript-Basic-Syntax" class="headerlink" title="2. JavaScript Basic Syntax"></a>2. JavaScript Basic Syntax</h1><ul>
 <li>JavaScript 주석처리<ul>
 <li>한줄 주석: <code>// code</code></li>
@@ -189,7 +190,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="2-1-출력"><a href="#2-1-출력" class="headerlink" title="2.1 출력"></a>2.1 출력</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"print"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="2-1-출력"><a href="#2-1-출력" class="headerlink" title="2.1 출력"></a>2.1 출력</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"print"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>print
 </code></pre><ul>
 <li>이 외에도 여러가지 방법이 있음</li>
@@ -198,29 +199,29 @@
 <li>상수명: snake_case(대문자)</li>
 <li>변수명: camelCase 많이 사용</li>
 <li>모듈: PascalCase</li>
-<li>많이 쓰이는 convention: google js style, airbnb js style 등<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> TOTAL_COUNT = <span class="number">50</span>;</span><br><span class="line"><span class="keyword">var</span> firstName = <span class="string">"Doojin"</span>,</span><br><span class="line">	lastName = <span class="string">"Park"</span>;</span><br></pre></td></tr></table></figure>
+<li>많이 쓰이는 convention: google js style, airbnb js style 등<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> TOTAL_COUNT = <span class="hljs-number">50</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> firstName = <span class="hljs-string">"Doojin"</span>,</span><br><span class="line">	lastName = <span class="hljs-string">"Park"</span>;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="2-3-변수-선언"><a href="#2-3-변수-선언" class="headerlink" title="2.3 변수 선언"></a>2.3 변수 선언</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b =<span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a + b);</span><br></pre></td></tr></table></figure>
+<h2 id="2-3-변수-선언"><a href="#2-3-변수-선언" class="headerlink" title="2.3 변수 선언"></a>2.3 변수 선언</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> b =<span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(a + b);</span><br></pre></td></tr></table></figure>
 <pre><code>3
 </code></pre><h2 id="2-4-연산자"><a href="#2-4-연산자" class="headerlink" title="2.4 연산자"></a>2.4 연산자</h2><ul>
 <li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>++</code>, <code>--</code> (제곱이 없음)</li>
 <li><code>++</code> &amp; <code>--</code>: 다른 언어에서도 사용되는 연산자</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> result = a++;   <span class="comment">// a 가 result로 대입되고 1 증가</span></span><br><span class="line"><span class="built_in">console</span>.log(a, result);  </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> result = ++a;   <span class="comment">// a를 1 증가시키고 result에 대입</span></span><br><span class="line"><span class="built_in">console</span>.log(a, result);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> a = <span class="hljs-number">5</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> result = a++;   <span class="hljs-comment">// a 가 result로 대입되고 1 증가</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(a, result);  </span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> a = <span class="hljs-number">5</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> result = ++a;   <span class="hljs-comment">// a를 1 증가시키고 result에 대입</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(a, result);</span><br></pre></td></tr></table></figure>
 <pre><code>6 5
    6 6
 </code></pre><h2 id="2-5-데이터-타입"><a href="#2-5-데이터-타입" class="headerlink" title="2.5 데이터 타입"></a>2.5 데이터 타입</h2><ul>
 <li>동적타이핑: 변수를 선언할 때 값에 따라 데이터 타입이 나중에 설정</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>,           <span class="comment">// number</span></span><br><span class="line">b = <span class="number">1.9</span>,             <span class="comment">// number</span></span><br><span class="line">c = <span class="string">"data"</span>,          <span class="comment">// string</span></span><br><span class="line">d = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],         <span class="comment">// object</span></span><br><span class="line">e = &#123;<span class="string">"a"</span>:<span class="number">1</span>, <span class="string">"b"</span>:<span class="number">2</span>&#125;,  <span class="comment">// object</span></span><br><span class="line">f = <span class="literal">true</span>,            <span class="comment">// boolean</span></span><br><span class="line">g = <span class="literal">false</span>;           <span class="comment">// boolean</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a, <span class="keyword">typeof</span> b, <span class="keyword">typeof</span> c, <span class="keyword">typeof</span> d,</span><br><span class="line">    <span class="keyword">typeof</span> e , <span class="keyword">typeof</span> f, <span class="keyword">typeof</span> g);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>,           <span class="hljs-comment">// number</span></span><br><span class="line">b = <span class="hljs-number">1.9</span>,             <span class="hljs-comment">// number</span></span><br><span class="line">c = <span class="hljs-string">"data"</span>,          <span class="hljs-comment">// string</span></span><br><span class="line">d = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],         <span class="hljs-comment">// object</span></span><br><span class="line">e = &#123;<span class="hljs-string">"a"</span>:<span class="hljs-number">1</span>, <span class="hljs-string">"b"</span>:<span class="hljs-number">2</span>&#125;,  <span class="hljs-comment">// object</span></span><br><span class="line">f = <span class="hljs-literal">true</span>,            <span class="hljs-comment">// boolean</span></span><br><span class="line">g = <span class="hljs-literal">false</span>;           <span class="hljs-comment">// boolean</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> a, <span class="hljs-keyword">typeof</span> b, <span class="hljs-keyword">typeof</span> c, <span class="hljs-keyword">typeof</span> d,</span><br><span class="line">    <span class="hljs-keyword">typeof</span> e , <span class="hljs-keyword">typeof</span> f, <span class="hljs-keyword">typeof</span> g);</span><br></pre></td></tr></table></figure>
 <pre><code>number number string object object boolean boolean
 </code></pre><h2 id="2-6-null-undefined-NaN"><a href="#2-6-null-undefined-NaN" class="headerlink" title="2.6 null, undefined, NaN"></a>2.6 null, undefined, NaN</h2><ul>
 <li>null: 변수에 값이 없음을 정의</li>
 <li>undefined: 값이 지정되지 않음</li>
 <li>NaN: 존재하지 않는 데이터</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 값이 없음을 지정</span></span><br><span class="line"><span class="keyword">var</span> b;</span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 값이 지정되지 않음</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="number">0</span>/<span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 존재하지 않는 데이터 형태</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> a = <span class="hljs-literal">null</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// 값이 없음을 지정</span></span><br><span class="line"><span class="hljs-keyword">var</span> b;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(b); <span class="hljs-comment">// 값이 지정되지 않음</span></span><br><span class="line"><span class="hljs-keyword">var</span> c = <span class="hljs-number">0</span>/<span class="hljs-number">0</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(c); <span class="hljs-comment">// 존재하지 않는 데이터 형태</span></span><br></pre></td></tr></table></figure>
 <pre><code>null
 undefined
 NaN
@@ -229,7 +230,7 @@ NaN
 <li><code>==</code>와 <code>===</code>의 차이: <code>===</code>는 데이터타입까지 비교</li>
 <li><code>===</code> 사용 권장</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>==<span class="number">1</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>==<span class="string">'1'</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>===<span class="number">1</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>===<span class="string">'1'</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>==<span class="hljs-number">1</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>==<span class="hljs-string">'1'</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>===<span class="hljs-number">1</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>===<span class="hljs-string">'1'</span>); <span class="hljs-comment">// false</span></span><br></pre></td></tr></table></figure>
 <pre><code>true
 true
 true
@@ -237,7 +238,7 @@ false
 </code></pre><h3 id="2-lt-gt-lt-gt-값을-비교"><a href="#2-lt-gt-lt-gt-값을-비교" class="headerlink" title="2) !=, &lt;, &gt;, &lt;=, &gt;=: 값을 비교"></a>2) <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>: 값을 비교</h3><ul>
 <li><code>&#39;==</code> 사용시 데이터타입까지 비교</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>!=<span class="number">1</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>!=<span class="string">'1'</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>!==<span class="number">1</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>!==<span class="string">'1'</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>&gt;<span class="number">2</span>); <span class="comment">// fasle</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>&lt;<span class="number">2</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>&gt;=<span class="number">1</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>&lt;=<span class="number">2</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>!=<span class="hljs-number">1</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>!=<span class="hljs-string">'1'</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>!==<span class="hljs-number">1</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>!==<span class="hljs-string">'1'</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>&gt;<span class="hljs-number">2</span>); <span class="hljs-comment">// fasle</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>&lt;<span class="hljs-number">2</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>&gt;=<span class="hljs-number">1</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>&lt;=<span class="hljs-number">2</span>); <span class="hljs-comment">// true</span></span><br></pre></td></tr></table></figure>
 <pre><code>false
 false
 false
@@ -249,10 +250,10 @@ true
 </code></pre><h3 id="3-NaN은-비교연산으로-사용되지-않음"><a href="#3-NaN은-비교연산으로-사용되지-않음" class="headerlink" title="3) NaN은 비교연산으로 사용되지 않음"></a>3) NaN은 비교연산으로 사용되지 않음</h3><ul>
 <li>비교연산에서 어느 한쪽이 NaN이면 무조건 false</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">NaN</span>===<span class="literal">NaN</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">NaN</span>==<span class="literal">NaN</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-literal">NaN</span>===<span class="hljs-literal">NaN</span>);</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-literal">NaN</span>==<span class="hljs-literal">NaN</span>);</span><br></pre></td></tr></table></figure>
 <pre><code>false
 false
-</code></pre><h2 id="2-8-할당-연산자"><a href="#2-8-할당-연산자" class="headerlink" title="2.8 할당 연산자"></a>2.8 할당 연산자</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">a += <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 3</span></span><br><span class="line">a -= <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 2</span></span><br><span class="line">a *= <span class="number">6</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 12</span></span><br><span class="line">a /= <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 6</span></span><br><span class="line">a %= <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a);	<span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="2-8-할당-연산자"><a href="#2-8-할당-연산자" class="headerlink" title="2.8 할당 연산자"></a>2.8 할당 연산자</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>;</span><br><span class="line">a += <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(a);	<span class="hljs-comment">// 3</span></span><br><span class="line">a -= <span class="hljs-number">1</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(a);	<span class="hljs-comment">// 2</span></span><br><span class="line">a *= <span class="hljs-number">6</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(a);	<span class="hljs-comment">// 12</span></span><br><span class="line">a /= <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(a);	<span class="hljs-comment">// 6</span></span><br><span class="line">a %= <span class="hljs-number">5</span>;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(a);	<span class="hljs-comment">// 1</span></span><br></pre></td></tr></table></figure>
 <pre><code>3
 2
 12
@@ -261,25 +262,25 @@ false
 </code></pre><h2 id="2-9-논리-연산자"><a href="#2-9-논리-연산자" class="headerlink" title="2.9 논리 연산자"></a>2.9 논리 연산자</h2><ul>
 <li><code>&amp;&amp;</code> : 모두 참일때 참 (and)</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> &amp;&amp; <span class="literal">true</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> &amp;&amp; <span class="literal">false</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">false</span> &amp;&amp; <span class="literal">false</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-literal">true</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-literal">false</span>); <span class="hljs-comment">// false</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-literal">false</span> &amp;&amp; <span class="hljs-literal">false</span>); <span class="hljs-comment">// false</span></span><br></pre></td></tr></table></figure>
 <pre><code>true
 false
 false
 </code></pre><ul>
 <li><code>||</code> : 하나라도 참이면 참 (or)</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> || <span class="literal">true</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> || <span class="literal">false</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">false</span> || <span class="literal">false</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-literal">true</span> || <span class="hljs-literal">true</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-literal">true</span> || <span class="hljs-literal">false</span>); <span class="hljs-comment">// true</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-literal">false</span> || <span class="hljs-literal">false</span>); <span class="hljs-comment">// false</span></span><br></pre></td></tr></table></figure>
 <pre><code>true
 true
 false
 </code></pre><h1 id="3-Condition-조건문"><a href="#3-Condition-조건문" class="headerlink" title="3. Condition - 조건문"></a>3. Condition - 조건문</h1><h2 id="3-1-if-else-if-else"><a href="#3-1-if-else-if-else" class="headerlink" title="3.1 if, else if, else"></a>3.1 if, else if, else</h2><ul>
 <li>문법: <code>if(조건){code} else if(조건){code} else{code}</code></li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello javascript"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">false</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello javascript"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello datascience"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">false</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello javascript"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello html"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello datascience"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span>(<span class="hljs-literal">true</span>)&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"hello javascript"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span>(<span class="hljs-literal">false</span>)&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"hello javascript"</span>);</span><br><span class="line">&#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"hello datascience"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span>(<span class="hljs-literal">false</span>)&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"hello javascript"</span>);</span><br><span class="line">&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-literal">true</span>)&#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"hello html"</span>);</span><br><span class="line">&#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"hello datascience"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>hello javascript
 hello datascience
 hello html
-</code></pre><h2 id="3-2-false로-간주되는-데이터형"><a href="#3-2-false로-간주되는-데이터형" class="headerlink" title="3.2 false로 간주되는 데이터형"></a>3.2 false로 간주되는 데이터형</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">null</span> || <span class="literal">undefined</span> || <span class="literal">NaN</span> || <span class="number">0</span> || <span class="string">""</span>)&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello true"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello false"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="3-2-false로-간주되는-데이터형"><a href="#3-2-false로-간주되는-데이터형" class="headerlink" title="3.2 false로 간주되는 데이터형"></a>3.2 false로 간주되는 데이터형</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span>(<span class="hljs-literal">null</span> || <span class="hljs-literal">undefined</span> || <span class="hljs-literal">NaN</span> || <span class="hljs-number">0</span> || <span class="hljs-string">""</span>)&#123;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"hello true"</span>);</span><br><span class="line">&#125; <span class="hljs-keyword">else</span>&#123;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"hello false"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>hello false
 </code></pre><h2 id="3-3-true로-간주되는-데이터형"><a href="#3-3-true로-간주되는-데이터형" class="headerlink" title="3.3 true로 간주되는 데이터형"></a>3.3 true로 간주되는 데이터형</h2><ul>
 <li><code>[]</code>, <code>{}</code> (비어있는 object) - 객체이기 때문<ul>
@@ -287,17 +288,17 @@ hello html
 </ul>
 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>([] &amp;&amp; &#123;&#125;)&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hello true"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span>([] &amp;&amp; &#123;&#125;)&#123;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"hello true"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>hello true
-</code></pre><h2 id="Quiz-점수를-입력하면-학점이-나오는-코드를-작성하시오"><a href="#Quiz-점수를-입력하면-학점이-나오는-코드를-작성하시오" class="headerlink" title="Quiz: 점수를 입력하면 학점이 나오는 코드를 작성하시오"></a>Quiz: 점수를 입력하면 학점이 나오는 코드를 작성하시오</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> point = <span class="number">76</span>;</span><br><span class="line"><span class="keyword">var</span> result = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(point &gt;= <span class="number">90</span>)&#123;</span><br><span class="line">  result = <span class="string">'A'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(point &gt;= <span class="number">80</span>)&#123;</span><br><span class="line">  result = <span class="string">'B'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(point &gt;= <span class="number">70</span>)&#123;</span><br><span class="line">  result = <span class="string">'C'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(point &gt;= <span class="number">60</span>)&#123;</span><br><span class="line">  result = <span class="string">'D'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  result = <span class="string">'F'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">//'C'</span></span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="Quiz-점수를-입력하면-학점이-나오는-코드를-작성하시오"><a href="#Quiz-점수를-입력하면-학점이-나오는-코드를-작성하시오" class="headerlink" title="Quiz: 점수를 입력하면 학점이 나오는 코드를 작성하시오"></a>Quiz: 점수를 입력하면 학점이 나오는 코드를 작성하시오</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> point = <span class="hljs-number">76</span>;</span><br><span class="line"><span class="hljs-keyword">var</span> result = <span class="hljs-string">""</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span>(point &gt;= <span class="hljs-number">90</span>)&#123;</span><br><span class="line">  result = <span class="hljs-string">'A'</span>;</span><br><span class="line">&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(point &gt;= <span class="hljs-number">80</span>)&#123;</span><br><span class="line">  result = <span class="hljs-string">'B'</span>;</span><br><span class="line">&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(point &gt;= <span class="hljs-number">70</span>)&#123;</span><br><span class="line">  result = <span class="hljs-string">'C'</span>;</span><br><span class="line">&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(point &gt;= <span class="hljs-number">60</span>)&#123;</span><br><span class="line">  result = <span class="hljs-string">'D'</span>;</span><br><span class="line">&#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">  result = <span class="hljs-string">'F'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(result); <span class="hljs-comment">//'C'</span></span><br></pre></td></tr></table></figure>
 <pre><code>C
-</code></pre><h1 id="4-Loop-반복문-while-for-do-while-실제로-거의-사용x"><a href="#4-Loop-반복문-while-for-do-while-실제로-거의-사용x" class="headerlink" title="4. Loop - 반복문: while, for, do while(실제로 거의 사용x)"></a>4. Loop - 반복문: while, for, do while(실제로 거의 사용x)</h1><h2 id="4-1-while"><a href="#4-1-while" class="headerlink" title="4.1 while"></a>4.1 while</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(a &lt; <span class="number">5</span>)&#123;</span><br><span class="line">    a++;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h1 id="4-Loop-반복문-while-for-do-while-실제로-거의-사용x"><a href="#4-Loop-반복문-while-for-do-while-실제로-거의-사용x" class="headerlink" title="4. Loop - 반복문: while, for, do while(실제로 거의 사용x)"></a>4. Loop - 반복문: while, for, do while(실제로 거의 사용x)</h1><h2 id="4-1-while"><a href="#4-1-while" class="headerlink" title="4.1 while"></a>4.1 while</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> a = <span class="hljs-number">0</span>;</span><br><span class="line"><span class="hljs-keyword">while</span>(a &lt; <span class="hljs-number">5</span>)&#123;</span><br><span class="line">    a++;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>1
 2
 3
 4
 5
-</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    a++;</span><br><span class="line">    <span class="keyword">if</span>(a === <span class="number">3</span>)&#123;</span><br><span class="line">        <span class="keyword">continue</span>;   <span class="comment">// 3은 console.log가 되지 않음</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (a &gt;= <span class="number">5</span>)&#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> a = <span class="hljs-number">0</span>;</span><br><span class="line"><span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)&#123;</span><br><span class="line">    a++;</span><br><span class="line">    <span class="hljs-keyword">if</span>(a === <span class="hljs-number">3</span>)&#123;</span><br><span class="line">        <span class="hljs-keyword">continue</span>;   <span class="hljs-comment">// 3은 console.log가 되지 않음</span></span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (a &gt;= <span class="hljs-number">5</span>)&#123;</span><br><span class="line">        <span class="hljs-keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>1
 2
 4
@@ -309,42 +310,42 @@ hello html
 </ul>
 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++)&#123;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>0
 1
 2
 3
 4
-</code></pre><h1 id="5-Array-배열"><a href="#5-Array-배열" class="headerlink" title="5. Array - 배열"></a>5. Array - 배열</h1><h2 id="5-1-배열-선언"><a href="#5-1-배열-선언" class="headerlink" title="5.1 배열 선언"></a>5.1 배열 선언</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>];</span><br></pre></td></tr></table></figure>
-<h2 id="5-2-특정-위치-데이터-가져오기"><a href="#5-2-특정-위치-데이터-가져오기" class="headerlink" title="5.2 특정 위치 데이터 가져오기"></a>5.2 특정 위치 데이터 가져오기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">2</span>]);</span><br></pre></td></tr></table></figure>
+</code></pre><h1 id="5-Array-배열"><a href="#5-Array-배열" class="headerlink" title="5. Array - 배열"></a>5. Array - 배열</h1><h2 id="5-1-배열-선언"><a href="#5-1-배열-선언" class="headerlink" title="5.1 배열 선언"></a>5.1 배열 선언</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> arr = [<span class="hljs-string">'a'</span>,<span class="hljs-string">'b'</span>,<span class="hljs-string">'c'</span>,<span class="hljs-string">'d'</span>,<span class="hljs-string">'e'</span>];</span><br></pre></td></tr></table></figure>
+<h2 id="5-2-특정-위치-데이터-가져오기"><a href="#5-2-특정-위치-데이터-가져오기" class="headerlink" title="5.2 특정 위치 데이터 가져오기"></a>5.2 특정 위치 데이터 가져오기</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(arr[<span class="hljs-number">2</span>]);</span><br></pre></td></tr></table></figure>
 <pre><code>c
-</code></pre><h2 id="5-3-배열의-크기-length"><a href="#5-3-배열의-크기-length" class="headerlink" title="5.3 배열의 크기 (length)"></a>5.3 배열의 크기 (length)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(arr.length);</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="5-3-배열의-크기-length"><a href="#5-3-배열의-크기-length" class="headerlink" title="5.3 배열의 크기 (length)"></a>5.3 배열의 크기 (length)</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.log(arr.length);</span><br></pre></td></tr></table></figure>
 <pre><code>5
 </code></pre><h2 id="5-4-배열-추가"><a href="#5-4-배열-추가" class="headerlink" title="5.4 배열 추가"></a>5.4 배열 추가</h2><ul>
 <li><code>unshift()</code>: 맨 앞에 추가 </li>
 <li><code>push()</code>: 맨 뒤에 추가  </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.push(<span class="string">'f'</span>); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr.unshift(<span class="string">'z'</span>); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
-<pre><code>[ &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39; ]
-[ &#39;z&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39; ]
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.push(<span class="hljs-string">'f'</span>); </span><br><span class="line"><span class="hljs-built_in">console</span>.log(arr);</span><br><span class="line">arr.unshift(<span class="hljs-string">'z'</span>); </span><br><span class="line"><span class="hljs-built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+<pre><code>[ &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos; ]
+[ &apos;z&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos; ]
 </code></pre><h2 id="5-5-제거"><a href="#5-5-제거" class="headerlink" title="5.5 제거"></a>5.5 제거</h2><ul>
 <li><code>shift()</code>: 첫번째 배열 제거</li>
 <li><code>pop()</code>: 마지막 배열 제거   </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.shift(); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr.pop();</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
-<pre><code>[ &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39; ]
-[ &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39; ]
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.shift(); </span><br><span class="line"><span class="hljs-built_in">console</span>.log(arr);</span><br><span class="line">arr.pop();</span><br><span class="line"><span class="hljs-built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+<pre><code>[ &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos; ]
+[ &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos; ]
 </code></pre><h2 id="5-6-정렬"><a href="#5-6-정렬" class="headerlink" title="5.6 정렬"></a>5.6 정렬</h2><ul>
 <li><code>reverse()</code>: 역순으로 정렬</li>
 <li><code>sort()</code>: 오름차순으로 정렬  </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.reverse(); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line">arr.sort(); </span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
-<pre><code>[ &#39;e&#39;, &#39;d&#39;, &#39;c&#39;, &#39;b&#39;, &#39;a&#39; ]
-[ &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39; ]
-</code></pre><h2 id="5-7-배열-자르기"><a href="#5-7-배열-자르기" class="headerlink" title="5.7 배열 자르기"></a>5.7 배열 자르기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr2 = arr.splice(<span class="number">2</span>,<span class="number">3</span>); <span class="comment">// 2번에서 3개 자름</span></span><br><span class="line"><span class="built_in">console</span>.log(arr, arr.length);</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> arr[<span class="number">2</span>]; <span class="comment">// 2번이 삭제 하지만 데이터만 삭제, 공간은 남아있음</span></span><br><span class="line"><span class="built_in">console</span>.log(arr, arr.length);</span><br></pre></td></tr></table></figure>
-<pre><code>[ &#39;a&#39;, &#39;b&#39; ] 2
-[ &#39;a&#39;, &#39;b&#39; ] 2
-</code></pre><h2 id="5-8-배열-데이터-하나씩-사용하기"><a href="#5-8-배열-데이터-하나씩-사용하기" class="headerlink" title="5.8 배열 데이터 하나씩 사용하기"></a>5.8 배열 데이터 하나씩 사용하기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line"><span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.reverse(); </span><br><span class="line"><span class="hljs-built_in">console</span>.log(arr);</span><br><span class="line">arr.sort(); </span><br><span class="line"><span class="hljs-built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+<pre><code>[ &apos;e&apos;, &apos;d&apos;, &apos;c&apos;, &apos;b&apos;, &apos;a&apos; ]
+[ &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos; ]
+</code></pre><h2 id="5-7-배열-자르기"><a href="#5-7-배열-자르기" class="headerlink" title="5.7 배열 자르기"></a>5.7 배열 자르기</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> arr2 = arr.splice(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>); <span class="hljs-comment">// 2번에서 3개 자름</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(arr, arr.length);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">delete</span> arr[<span class="hljs-number">2</span>]; <span class="hljs-comment">// 2번이 삭제 하지만 데이터만 삭제, 공간은 남아있음</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(arr, arr.length);</span><br></pre></td></tr></table></figure>
+<pre><code>[ &apos;a&apos;, &apos;b&apos; ] 2
+[ &apos;a&apos;, &apos;b&apos; ] 2
+</code></pre><h2 id="5-8-배열-데이터-하나씩-사용하기"><a href="#5-8-배열-데이터-하나씩-사용하기" class="headerlink" title="5.8 배열 데이터 하나씩 사용하기"></a>5.8 배열 데이터 하나씩 사용하기</h2><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line"><span class="hljs-built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>a
 b
 </code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
@@ -463,7 +464,7 @@ b
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        136
+                        138
                     </p>
                 </div>
             </div>
@@ -473,7 +474,7 @@ b
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        8
                     </p>
                 </div>
             </div>
@@ -483,7 +484,7 @@ b
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        31
                     </p>
                 </div>
             </div>
@@ -533,31 +534,15 @@ b
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/">
             <span class="level-start">
-                <span class="level-item">Data Analysis 공부</span>
+                <span class="level-item">Data Science 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">23</span>
+                <span class="level-item tag">54</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/수학-공부/">
-            <span class="level-start">
-                <span class="level-item">수학 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">23</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/">
-            <span class="level-start">
-                <span class="level-item">Programming 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">30</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Algorithm-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Algorithm-공부/">
             <span class="level-start">
                 <span class="level-item">Algorithm 공부</span>
             </span>
@@ -565,7 +550,7 @@ b
                 <span class="level-item tag">2</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Database-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Database-공부/">
             <span class="level-start">
                 <span class="level-item">Database 공부</span>
             </span>
@@ -573,20 +558,28 @@ b
                 <span class="level-item tag">5</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Python-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Python-공부/">
             <span class="level-start">
                 <span class="level-item">Python 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">11</span>
+                <span class="level-item tag">12</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Web-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Web-공부/">
             <span class="level-start">
                 <span class="level-item">Web 공부</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/수학-공부/">
+            <span class="level-start">
+                <span class="level-item">수학 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/TIL-Today-I-Learned/">
@@ -594,7 +587,7 @@ b
                 <span class="level-item">TIL(Today I Learned)</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">81</span>
+                <span class="level-item tag">82</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/기타/">
@@ -616,7 +609,7 @@ b
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.44px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.78px;">data analysis</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11.11px;">html</a> <a href="/tags/javascript/" style="font-size: 11.11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 17.78px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 18.89px;">programming</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/selenium/" style="font-size: 12.22px;">selenium</a> <a href="/tags/web/" style="font-size: 15.56px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.44px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 17.78px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11.11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.44px;">웹크롤링</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 12.73px;">Database</a> <a href="/tags/MySQL/" style="font-size: 11.82px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 11.82px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.91px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 13.64px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.27px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 14.55px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.91px;">html</a> <a href="/tags/javascript/" style="font-size: 10.91px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19.09px;">programming</a> <a href="/tags/python/" style="font-size: 16.36px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 11.82px;">selenium</a> <a href="/tags/web/" style="font-size: 15.45px;">web</a> <a href="/tags/web-crawling/" style="font-size: 13.64px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.91px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 13.64px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 10.91px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
     </div>
 </div>
 
@@ -627,6 +620,44 @@ b
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/python_11_regex/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 11. 정규표현식(regex)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:35:53.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/python_11_regex/" class="has-link-black-ter is-size-6">python 11. 정규표현식(regex)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/2019-02-21-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-21-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:04:15.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/2019-02-21-TIL/" class="has-link-black-ter is-size-6">2019-02-21-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -685,44 +716,6 @@ b
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-14-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-14-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-14-TIL/" class="has-link-black-ter is-size-6">2019-01-14-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-13-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-13-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-13-TIL/" class="has-link-black-ter is-size-6">2019-01-13-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -741,7 +734,7 @@ b
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>

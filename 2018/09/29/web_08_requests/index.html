@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="Requests requests: 서버에 request 요청을 하고 response를 받는 패키지 http://docs.python-requests.org/en/master/ mac은 설치 필요: pip3 install requests  12import requestsimport pickle 1. 네이버 주식 데이터 가져오기 api를 사용해 json 파싱">
+    <meta name="description" content="Requests requests: 서버에 request 요청을 하고 response를 받는 패키지 http://docs.python-requests.org/en/master/ mac은 설치 필요: pip3 install requests">
 <meta name="keywords" content="programming,web,crawling,web_crawling,웹크롤링">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web crawling - Requests">
 <meta property="og:url" content="http://yoursite.com/2018/09/29/web_08_requests/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="Requests requests: 서버에 request 요청을 하고 response를 받는 패키지 http://docs.python-requests.org/en/master/ mac은 설치 필요: pip3 install requests  12import requestsimport pickle 1. 네이버 주식 데이터 가져오기 api를 사용해 json 파싱">
+<meta property="og:description" content="Requests requests: 서버에 request 요청을 하고 response를 받는 패키지 http://docs.python-requests.org/en/master/ mac은 설치 필요: pip3 install requests">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-02T11:09:31.209Z">
+<meta property="og:updated_time" content="2019-02-21T15:03:28.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web crawling - Requests">
-<meta name="twitter:description" content="Requests requests: 서버에 request 요청을 하고 response를 받는 패키지 http://docs.python-requests.org/en/master/ mac은 설치 필요: pip3 install requests  12import requestsimport pickle 1. 네이버 주식 데이터 가져오기 api를 사용해 json 파싱">
+<meta name="twitter:description" content="Requests requests: 서버에 request 요청을 하고 response를 받는 패키지 http://docs.python-requests.org/en/master/ mac은 설치 필요: pip3 install requests">
 
 
 
@@ -149,14 +149,14 @@
                 <time class="level-item has-text-grey" datetime="2018-09-29T13:52:26.000Z">2018-09-29</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Web-공부/">Web 공부</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    12 minutes read (About 1805 words)
+                    12 minutes read (About 1806 words)
                 </span>
                 
             </div>
@@ -173,7 +173,8 @@
 <li><a href="http://docs.python-requests.org/en/master/" target="_blank" rel="noopener">http://docs.python-requests.org/en/master/</a></li>
 <li>mac은 설치 필요: <code>pip3 install requests</code></li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> pickle</span><br></pre></td></tr></table></figure>
+<a id="more"></a> 
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"><span class="hljs-keyword">import</span> pickle</span><br></pre></td></tr></table></figure>
 <h2 id="1-네이버-주식-데이터-가져오기"><a href="#1-네이버-주식-데이터-가져오기" class="headerlink" title="1. 네이버 주식 데이터 가져오기"></a>1. 네이버 주식 데이터 가져오기</h2><ul>
 <li>api를 사용해 json 파싱</li>
 <li>네이버 주식 페이지(모바일)에서 주식 데이터를 가져와 pandas dataframe으로 만들기</li>
@@ -187,14 +188,13 @@
 <h3 id="1-1-make-url-함수"><a href="#1-1-make-url-함수" class="headerlink" title="1.1 make_url 함수"></a>1.1 make_url 함수</h3><ul>
 <li>page_size와 page를 parameter로 받아 url을 만드는 함수</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_url</span><span class="params">(page_size=<span class="number">10</span>, page=<span class="number">1</span>)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"http://m.stock.naver.com/api/json/sise/siseListJson.nhn?\</span></span><br><span class="line"><span class="string">menu=market_sum&amp;sosok=0&amp;pageSize="</span>+str(page_size)+<span class="string">"&amp;page="</span>+str(page)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">make_url()</span><br></pre></td></tr></table></figure>
-<pre><code>&#39;http://m.stock.naver.com/api/json/sise/siseListJson.nhn?menu=market_sum&amp;sosok=0&amp;pageSize=10&amp;page=1&#39;
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">make_url</span><span class="hljs-params">(page_size=<span class="hljs-number">10</span>, page=<span class="hljs-number">1</span>)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-string">"http://m.stock.naver.com/api/json/sise/siseListJson.nhn?\</span></span><br><span class="line"><span class="hljs-string">menu=market_sum&amp;sosok=0&amp;pageSize="</span>+str(page_size)+<span class="hljs-string">"&amp;page="</span>+str(page)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">make_url()</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;http://m.stock.naver.com/api/json/sise/siseListJson.nhn?menu=market_sum&amp;sosok=0&amp;pageSize=10&amp;page=1&apos;
 </code></pre><h3 id="1-2-get-data-함수"><a href="#1-2-get-data-함수" class="headerlink" title="1.2 get_data 함수"></a>1.2 get_data 함수</h3><ul>
 <li>url을 parameter로 받아 pandas dataframe으로 만들어주는 함수</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_data</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    URL을 받으면 json으로 데이터를 가져와서 pandas dataframe 로 만들어주는 함수</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    response = requests.get(url)   <span class="comment"># response라는 obj. 안에 결과 데이터를 받아옴</span></span><br><span class="line">    json_info = response.json()    <span class="comment"># json함수: 문자열 데이터를 json 형태로 parsing</span></span><br><span class="line">    companies = json_info[<span class="string">"result"</span>][<span class="string">"itemList"</span>]</span><br><span class="line">    df = pd.DataFrame(columns = [<span class="string">"종목"</span>,<span class="string">"시세"</span>,<span class="string">"전일비"</span>,<span class="string">"등락율"</span>,<span class="string">"시가총액"</span>,<span class="string">"거래량"</span>])</span><br><span class="line">    <span class="keyword">for</span> company <span class="keyword">in</span> companies:</span><br><span class="line">        df.loc[len(df)] = &#123;</span><br><span class="line">            <span class="string">"종목"</span>:company[<span class="string">"nm"</span>],</span><br><span class="line">            <span class="string">"시세"</span>:company[<span class="string">"nv"</span>],</span><br><span class="line">            <span class="string">"전일비"</span>:company[<span class="string">"cv"</span>],</span><br><span class="line">            <span class="string">"등락율"</span>:company[<span class="string">"cr"</span>],</span><br><span class="line">            <span class="string">"시가총액"</span>:company[<span class="string">"mks"</span>],</span><br><span class="line">            <span class="string">"거래량"</span>:company[<span class="string">"aq"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = make_url(<span class="number">100</span>, <span class="number">1</span>)</span><br><span class="line">df = get_data(url)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
-<div class="table-container">
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_data</span><span class="hljs-params">(url)</span>:</span></span><br><span class="line">    <span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-string">    URL을 받으면 json으로 데이터를 가져와서 pandas dataframe 로 만들어주는 함수</span></span><br><span class="line"><span class="hljs-string">    """</span></span><br><span class="line">    response = requests.get(url)   <span class="hljs-comment"># response라는 obj. 안에 결과 데이터를 받아옴</span></span><br><span class="line">    json_info = response.json()    <span class="hljs-comment"># json함수: 문자열 데이터를 json 형태로 parsing</span></span><br><span class="line">    companies = json_info[<span class="hljs-string">"result"</span>][<span class="hljs-string">"itemList"</span>]</span><br><span class="line">    df = pd.DataFrame(columns = [<span class="hljs-string">"종목"</span>,<span class="hljs-string">"시세"</span>,<span class="hljs-string">"전일비"</span>,<span class="hljs-string">"등락율"</span>,<span class="hljs-string">"시가총액"</span>,<span class="hljs-string">"거래량"</span>])</span><br><span class="line">    <span class="hljs-keyword">for</span> company <span class="hljs-keyword">in</span> companies:</span><br><span class="line">        df.loc[len(df)] = &#123;</span><br><span class="line">            <span class="hljs-string">"종목"</span>:company[<span class="hljs-string">"nm"</span>],</span><br><span class="line">            <span class="hljs-string">"시세"</span>:company[<span class="hljs-string">"nv"</span>],</span><br><span class="line">            <span class="hljs-string">"전일비"</span>:company[<span class="hljs-string">"cv"</span>],</span><br><span class="line">            <span class="hljs-string">"등락율"</span>:company[<span class="hljs-string">"cr"</span>],</span><br><span class="line">            <span class="hljs-string">"시가총액"</span>:company[<span class="hljs-string">"mks"</span>],</span><br><span class="line">            <span class="hljs-string">"거래량"</span>:company[<span class="hljs-string">"aq"</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> df</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = make_url(<span class="hljs-number">100</span>, <span class="hljs-number">1</span>)</span><br><span class="line">df = get_data(url)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -255,13 +255,11 @@
 </tr>
 </tbody>
 </table>
-</div>
 <h3 id="1-3-json-normalize"><a href="#1-3-json-normalize" class="headerlink" title="1.3 json_normalize"></a>1.3 json_normalize</h3><ul>
 <li>더 편하게 json format 데이터를 pandas dataframe에 넣어주는 방법</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pandas.io.json <span class="keyword">import</span> json_normalize</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_data</span><span class="params">(url)</span>:</span></span><br><span class="line">    </span><br><span class="line">    response = requests.get(url)</span><br><span class="line">    json_info = response.json()    <span class="comment"># parsing</span></span><br><span class="line">    companies = json_info[<span class="string">"result"</span>][<span class="string">"itemList"</span>]</span><br><span class="line">    <span class="keyword">return</span> json_normalize(companies)</span><br><span class="line"></span><br><span class="line">url = make_url(<span class="number">100</span>, <span class="number">2</span>)</span><br><span class="line">df = get_data(url)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
-<div class="table-container">
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> pandas.io.json <span class="hljs-keyword">import</span> json_normalize</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_data</span><span class="hljs-params">(url)</span>:</span></span><br><span class="line">    </span><br><span class="line">    response = requests.get(url)</span><br><span class="line">    json_info = response.json()    <span class="hljs-comment"># parsing</span></span><br><span class="line">    companies = json_info[<span class="hljs-string">"result"</span>][<span class="hljs-string">"itemList"</span>]</span><br><span class="line">    <span class="hljs-keyword">return</span> json_normalize(companies)</span><br><span class="line"></span><br><span class="line">url = make_url(<span class="hljs-number">100</span>, <span class="hljs-number">2</span>)</span><br><span class="line">df = get_data(url)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -352,13 +350,12 @@
 </tr>
 </tbody>
 </table>
-</div>
 <h2 id="2-공식적으로-제공되는-API-사용하기-Dark-Sky-API"><a href="#2-공식적으로-제공되는-API-사용하기-Dark-Sky-API" class="headerlink" title="2. 공식적으로 제공되는 API 사용하기 - Dark Sky API"></a>2. 공식적으로 제공되는 API 사용하기 - Dark Sky API</h2><ul>
 <li><p>날씨 정보를 알려주는 api - <a href="https://darksky.net/dev" target="_blank" rel="noopener">https://darksky.net/dev</a></p>
 <ul>
 <li>회원가입 필요, 하루에 1000건까지 무료로 사용 가능</li>
 <li>사용법(<a href="https://darksky.net/dev/docs" target="_blank" rel="noopener">Docs</a>)<ul>
-<li>Forecast Request: <a href="https://api.darksky.net/forecast/[key]/[latitude],[longitude" target="_blank" rel="noopener">https://api.darksky.net/forecast/[key]/[latitude],[longitude</a>]</li>
+<li>Forecast Request: <a href="https://api.darksky.net/forecast/[key]/[latitude],[longitude]" target="_blank" rel="noopener">https://api.darksky.net/forecast/[key]/[latitude],[longitude]</a></li>
 <li>[key]: 회원가입시 부여받은 secret key 사용<ul>
 <li>요청할 때 token 값을 같이 query에 보내주어 API를 요청하는 사람이 누구인지 서비스 제공자가 판별</li>
 </ul>
@@ -381,31 +378,30 @@
 <li>import package &amp; set request url</li>
 <li>secret key(토큰)는 유출되어서는 안되니 pickle file로 저장해 이용</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> forecastio</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># FORECAST_TOKEN = "본인이 발급받은 토큰"</span></span><br><span class="line"><span class="comment"># pickle.dump(FORECAST_TOKEN, open("FORECAST_TOKEN.pickle", 'wb'))</span></span><br><span class="line">FORECAST_TOKEN = pickle.load(open(<span class="string">'FORECAST_TOKEN.pickle'</span>, <span class="string">'rb'</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> forecastio</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># FORECAST_TOKEN = "본인이 발급받은 토큰"</span></span><br><span class="line"><span class="hljs-comment"># pickle.dump(FORECAST_TOKEN, open("FORECAST_TOKEN.pickle", 'wb'))</span></span><br><span class="line">FORECAST_TOKEN = pickle.load(open(<span class="hljs-string">'FORECAST_TOKEN.pickle'</span>, <span class="hljs-string">'rb'</span>))</span><br></pre></td></tr></table></figure>
 <h3 id="2-2-forecast-함수-사용"><a href="#2-2-forecast-함수-사용" class="headerlink" title="2.2 forecast 함수 사용"></a>2.2 forecast 함수 사용</h3><ul>
 <li>위도와 경도를 parameter로 받는 forecast 함수 생성</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">forecast</span><span class="params">(lat, lng)</span>:</span></span><br><span class="line">    url = <span class="string">"https://api.darksky.net/forecast/&#123;&#125;/&#123;&#125;,&#123;&#125;"</span>.format(FORECAST_TOKEN, lat, lng)</span><br><span class="line">    response = requests.get(url)</span><br><span class="line">    json_info = response.json()</span><br><span class="line">    <span class="keyword">return</span> json_info[<span class="string">"hourly"</span>][<span class="string">"summary"</span>], json_info[<span class="string">"timezone"</span>]</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lat = <span class="number">37.512</span></span><br><span class="line">lng = <span class="number">126.954</span></span><br><span class="line">forecast(lat, lng)</span><br></pre></td></tr></table></figure>
-<pre><code>(&#39;Partly cloudy tomorrow afternoon.&#39;, &#39;Asia/Seoul&#39;)
-</code></pre><h3 id="2-3-forecastio-패키지-사용"><a href="#2-3-forecastio-패키지-사용" class="headerlink" title="2.3 forecastio 패키지 사용"></a>2.3 forecastio 패키지 사용</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">forecast2</span><span class="params">(lat, lng)</span>:</span></span><br><span class="line">    forecast = forecastio.load_forecast(FORECAST_TOKEN, lat, lng, lang = <span class="string">'ko'</span>)</span><br><span class="line">    byHour = forecast.hourly()</span><br><span class="line">    <span class="keyword">return</span> byHour.summary</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lat = <span class="number">37.512</span></span><br><span class="line">lng = <span class="number">126.954</span></span><br><span class="line">forecast2(lat, lng)</span><br></pre></td></tr></table></figure>
-<pre><code>&#39;내일 오후동안 약간 흐림&#39;
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forecast</span><span class="hljs-params">(lat, lng)</span>:</span></span><br><span class="line">    url = <span class="hljs-string">"https://api.darksky.net/forecast/&#123;&#125;/&#123;&#125;,&#123;&#125;"</span>.format(FORECAST_TOKEN, lat, lng)</span><br><span class="line">    response = requests.get(url)</span><br><span class="line">    json_info = response.json()</span><br><span class="line">    <span class="hljs-keyword">return</span> json_info[<span class="hljs-string">"hourly"</span>][<span class="hljs-string">"summary"</span>], json_info[<span class="hljs-string">"timezone"</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lat = <span class="hljs-number">37.512</span></span><br><span class="line">lng = <span class="hljs-number">126.954</span></span><br><span class="line">forecast(lat, lng)</span><br></pre></td></tr></table></figure>
+<pre><code>(&apos;Partly cloudy tomorrow afternoon.&apos;, &apos;Asia/Seoul&apos;)
+</code></pre><h3 id="2-3-forecastio-패키지-사용"><a href="#2-3-forecastio-패키지-사용" class="headerlink" title="2.3 forecastio 패키지 사용"></a>2.3 forecastio 패키지 사용</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forecast2</span><span class="hljs-params">(lat, lng)</span>:</span></span><br><span class="line">    forecast = forecastio.load_forecast(FORECAST_TOKEN, lat, lng, lang = <span class="hljs-string">'ko'</span>)</span><br><span class="line">    byHour = forecast.hourly()</span><br><span class="line">    <span class="hljs-keyword">return</span> byHour.summary</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lat = <span class="hljs-number">37.512</span></span><br><span class="line">lng = <span class="hljs-number">126.954</span></span><br><span class="line">forecast2(lat, lng)</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;내일 오후동안 약간 흐림&apos;
 </code></pre><h2 id="3-BeautifulSoup"><a href="#3-BeautifulSoup" class="headerlink" title="3. BeautifulSoup"></a>3. BeautifulSoup</h2><ul>
 <li>BeautifulSoup Doc (<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank" rel="noopener">https://www.crummy.com/software/BeautifulSoup/bs4/doc/</a>)</li>
 <li>문자열로 되어있는 html 코드를 css selector나 xpath를 이용해서 특정 element의 데이터를 쉽게 가져올 수 있도록 하는 서비스 패키지</li>
 <li>설치: <code>pip3 install bs4</code></li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup</span><br></pre></td></tr></table></figure>
 <h3 id="3-1-네이버-검색어-순위-크롤링"><a href="#3-1-네이버-검색어-순위-크롤링" class="headerlink" title="3.1 네이버 검색어 순위 크롤링"></a>3.1 네이버 검색어 순위 크롤링</h3><ul>
 <li>bs4 사용 : html을 특정 element를 CSS selector로 select할 수 있는 객체로 parsing</li>
 <li>네이버 검색어 순위를 가져와 데이터 프레임으로 만들기</li>
 <li><a href="http://naver.com" target="_blank" rel="noopener">http://naver.com</a></li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">naver_top20</span><span class="params">()</span>:</span></span><br><span class="line">    df = pd.DataFrame(columns=[<span class="string">"rank"</span>,<span class="string">"keyword"</span>])</span><br><span class="line">    response = requests.get(<span class="string">"http://naver.com"</span>)</span><br><span class="line">    dom = BeautifulSoup(response.content, <span class="string">"html.parser"</span>)   <span class="comment">#html.parser   # dom 객체</span></span><br><span class="line">    keywords = dom.select(<span class="string">".ah_roll .ah_l .ah_item"</span>)   </span><br><span class="line">        <span class="comment"># CSS selector - selecting하는 방법은 다양</span></span><br><span class="line">        <span class="comment"># select 쓰면 list로 리턴 (요소가 하나라도) | select_one은 하나의 element만 리턴</span></span><br><span class="line">        <span class="comment"># len()을 찍어봐서 갯수가 맞게 나오는지 확인할 것</span></span><br><span class="line">    <span class="comment"># keywords = dom.select(".ah_roll_area &gt; .ah_l &gt; .ah_item")  </span></span><br><span class="line">    <span class="keyword">for</span> keyword <span class="keyword">in</span> keywords:</span><br><span class="line">        df.loc[len(df)] = &#123;</span><br><span class="line">            <span class="string">"rank"</span>: keyword.select_one(<span class="string">".ah_r"</span>).text,       </span><br><span class="line">            <span class="string">"keyword"</span>: keyword.select_one(<span class="string">".ah_k"</span>).text,</span><br><span class="line">            <span class="comment"># .text - element 안의 시작태그와 끝 태그 사이 내용을 가져옴</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = naver_top20()</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
-<div class="table-container">
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">naver_top20</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    df = pd.DataFrame(columns=[<span class="hljs-string">"rank"</span>,<span class="hljs-string">"keyword"</span>])</span><br><span class="line">    response = requests.get(<span class="hljs-string">"http://naver.com"</span>)</span><br><span class="line">    dom = BeautifulSoup(response.content, <span class="hljs-string">"html.parser"</span>)   <span class="hljs-comment">#html.parser   # dom 객체</span></span><br><span class="line">    keywords = dom.select(<span class="hljs-string">".ah_roll .ah_l .ah_item"</span>)   </span><br><span class="line">        <span class="hljs-comment"># CSS selector - selecting하는 방법은 다양</span></span><br><span class="line">        <span class="hljs-comment"># select 쓰면 list로 리턴 (요소가 하나라도) | select_one은 하나의 element만 리턴</span></span><br><span class="line">        <span class="hljs-comment"># len()을 찍어봐서 갯수가 맞게 나오는지 확인할 것</span></span><br><span class="line">    <span class="hljs-comment"># keywords = dom.select(".ah_roll_area &gt; .ah_l &gt; .ah_item")  </span></span><br><span class="line">    <span class="hljs-keyword">for</span> keyword <span class="hljs-keyword">in</span> keywords:</span><br><span class="line">        df.loc[len(df)] = &#123;</span><br><span class="line">            <span class="hljs-string">"rank"</span>: keyword.select_one(<span class="hljs-string">".ah_r"</span>).text,       </span><br><span class="line">            <span class="hljs-string">"keyword"</span>: keyword.select_one(<span class="hljs-string">".ah_k"</span>).text,</span><br><span class="line">            <span class="hljs-comment"># .text - element 안의 시작태그와 끝 태그 사이 내용을 가져옴</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> df</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = naver_top20()</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -442,14 +438,12 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>10초마다 실시간 검색어를 크롤링해서 리스트로 저장하기</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">ls = []</span><br><span class="line"><span class="keyword">for</span> idx <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">    print(idx)</span><br><span class="line">    df = naver_top20()</span><br><span class="line">    ls.append(df)</span><br><span class="line">    time.sleep(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> time</span><br><span class="line">ls = []</span><br><span class="line"><span class="hljs-keyword">for</span> idx <span class="hljs-keyword">in</span> range(<span class="hljs-number">3</span>):</span><br><span class="line">    print(idx)</span><br><span class="line">    df = naver_top20()</span><br><span class="line">    ls.append(df)</span><br><span class="line">    time.sleep(<span class="hljs-number">10</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>0
 1
 2
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls[<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-<div class="table-container">
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls[<span class="hljs-number">2</span>]</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -561,16 +555,14 @@
 </tr>
 </tbody>
 </table>
-</div>
 <h3 id="3-2-다음-검색어-순위"><a href="#3-2-다음-검색어-순위" class="headerlink" title="3.2 다음 검색어 순위"></a>3.2 다음 검색어 순위</h3><ul>
 <li>다음 검색어 순위를 가져와서 네이버 검색어 순위와 중복되는 키워드만 출력하기</li>
 <li><a href="http://daum.net" target="_blank" rel="noopener">http://daum.net</a></li>
 </ul>
-<h4 id="다음-실시간-검색어-순위-가져오기"><a href="#다음-실시간-검색어-순위-가져오기" class="headerlink" title="다음 실시간 검색어 순위 가져오기"></a>다음 실시간 검색어 순위 가져오기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">daum_top10</span><span class="params">()</span>:</span></span><br><span class="line">    df = pd.DataFrame(columns=[<span class="string">"rank"</span>,<span class="string">"keyword"</span>])</span><br><span class="line">    response = requests.get(<span class="string">"http://daum.net"</span>)</span><br><span class="line">    dom = BeautifulSoup(response.content, <span class="string">"html.parser"</span>)   </span><br><span class="line">    keywords = dom.select(<span class="string">"#mArticle &gt; div.cmain_tmp &gt; div.section_media &gt; div.hotissue_builtin &gt; div.realtime_part &gt; ol &gt; li"</span>)</span><br><span class="line">    print(len(keywords))</span><br><span class="line">    <span class="keyword">for</span> keyword <span class="keyword">in</span> keywords:</span><br><span class="line">        df.loc[len(df)] = &#123;</span><br><span class="line">            <span class="string">"rank"</span>:keyword.select_one(<span class="string">".ir_wa"</span>).text.replace(<span class="string">"위"</span>,<span class="string">""</span>),</span><br><span class="line">            <span class="string">"keyword"</span>:keyword.select_one(<span class="string">".link_issue"</span>).text,</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_daum = daum_top10()</span><br><span class="line">df_daum</span><br></pre></td></tr></table></figure>
+<h4 id="다음-실시간-검색어-순위-가져오기"><a href="#다음-실시간-검색어-순위-가져오기" class="headerlink" title="다음 실시간 검색어 순위 가져오기"></a>다음 실시간 검색어 순위 가져오기</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">daum_top10</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    df = pd.DataFrame(columns=[<span class="hljs-string">"rank"</span>,<span class="hljs-string">"keyword"</span>])</span><br><span class="line">    response = requests.get(<span class="hljs-string">"http://daum.net"</span>)</span><br><span class="line">    dom = BeautifulSoup(response.content, <span class="hljs-string">"html.parser"</span>)   </span><br><span class="line">    keywords = dom.select(<span class="hljs-string">"#mArticle &gt; div.cmain_tmp &gt; div.section_media &gt; div.hotissue_builtin &gt; div.realtime_part &gt; ol &gt; li"</span>)</span><br><span class="line">    print(len(keywords))</span><br><span class="line">    <span class="hljs-keyword">for</span> keyword <span class="hljs-keyword">in</span> keywords:</span><br><span class="line">        df.loc[len(df)] = &#123;</span><br><span class="line">            <span class="hljs-string">"rank"</span>:keyword.select_one(<span class="hljs-string">".ir_wa"</span>).text.replace(<span class="hljs-string">"위"</span>,<span class="hljs-string">""</span>),</span><br><span class="line">            <span class="hljs-string">"keyword"</span>:keyword.select_one(<span class="hljs-string">".link_issue"</span>).text,</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> df</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_daum = daum_top10()</span><br><span class="line">df_daum</span><br></pre></td></tr></table></figure>
 <pre><code>10
-</code></pre><div class="table-container">
-<table>
+</code></pre><table>
 <thead>
 <tr>
 <th></th>
@@ -631,16 +623,15 @@
 </tr>
 </tbody>
 </table>
-</div>
 <h4 id="네이버-실시간-검색어와-중복되는-키워드-추출하기"><a href="#네이버-실시간-검색어와-중복되는-키워드-추출하기" class="headerlink" title="네이버 실시간 검색어와 중복되는 키워드 추출하기"></a>네이버 실시간 검색어와 중복되는 키워드 추출하기</h4><ul>
 <li>여러가지 방법이 있음</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df_naver = df</span><br><span class="line"></span><br><span class="line">result = [keyword <span class="keyword">for</span> keyword <span class="keyword">in</span> df_daum[<span class="string">"keyword"</span>] </span><br><span class="line">          <span class="keyword">if</span> keyword <span class="keyword">in</span> df_naver[<span class="string">"keyword"</span>].tolist()]</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
-<pre><code>[&#39;중국 샤먼&#39;, &#39;플레이어&#39;]
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">result = [keyword <span class="keyword">for</span> keyword <span class="keyword">in</span> df_daum[<span class="string">"keyword"</span>] </span><br><span class="line">          <span class="keyword">if</span> df_naver[<span class="string">"keyword"</span>].str.contains(keyword).any()]</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
-<pre><code>[&#39;중국 샤먼&#39;, &#39;플레이어&#39;]
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list(set(df_daum[<span class="string">"keyword"</span>]) &amp; set(df_naver[<span class="string">"keyword"</span>]))</span><br></pre></td></tr></table></figure>
-<pre><code>[&#39;중국 샤먼&#39;, &#39;플레이어&#39;]
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df_naver = df</span><br><span class="line"></span><br><span class="line">result = [keyword <span class="hljs-keyword">for</span> keyword <span class="hljs-keyword">in</span> df_daum[<span class="hljs-string">"keyword"</span>] </span><br><span class="line">          <span class="hljs-keyword">if</span> keyword <span class="hljs-keyword">in</span> df_naver[<span class="hljs-string">"keyword"</span>].tolist()]</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;중국 샤먼&apos;, &apos;플레이어&apos;]
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">result = [keyword <span class="hljs-keyword">for</span> keyword <span class="hljs-keyword">in</span> df_daum[<span class="hljs-string">"keyword"</span>] </span><br><span class="line">          <span class="hljs-keyword">if</span> df_naver[<span class="hljs-string">"keyword"</span>].str.contains(keyword).any()]</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;중국 샤먼&apos;, &apos;플레이어&apos;]
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list(set(df_daum[<span class="hljs-string">"keyword"</span>]) &amp; set(df_naver[<span class="hljs-string">"keyword"</span>]))</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;중국 샤먼&apos;, &apos;플레이어&apos;]
 </code></pre><h2 id="4-url-링크로-파일-다운로드-받는-방법"><a href="#4-url-링크로-파일-다운로드-받는-방법" class="headerlink" title="4. url 링크로 파일 다운로드 받는 방법"></a>4. url 링크로 파일 다운로드 받는 방법</h2><ul>
 <li>이미지 파일이나 영상 파일을 다운로드 받고 싶으면 이 방법 사용</li>
 <li>용량이 큰 파일을 받을 때는 chunk를 이용해서 파일을 쪼개서 다운로드 <ul>
@@ -648,9 +639,9 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download</span><span class="params">(title, download_url)</span>:</span></span><br><span class="line">    response = requests.get(download_url, stream=<span class="keyword">True</span>)</span><br><span class="line">    size = <span class="number">0</span></span><br><span class="line">    <span class="keyword">with</span> open(title, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> chunk <span class="keyword">in</span> response.iter_content(chunk_size=<span class="number">1024</span>): <span class="comment">#1024 byte 단위로 쪼개서 받음</span></span><br><span class="line">            <span class="keyword">if</span> chunk:</span><br><span class="line">                size += <span class="number">1024</span></span><br><span class="line">                f.write(chunk)</span><br><span class="line">    <span class="keyword">return</span> size</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">download</span><span class="hljs-params">(title, download_url)</span>:</span></span><br><span class="line">    response = requests.get(download_url, stream=<span class="hljs-keyword">True</span>)</span><br><span class="line">    size = <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">with</span> open(title, <span class="hljs-string">'wb'</span>) <span class="hljs-keyword">as</span> f:</span><br><span class="line">        <span class="hljs-keyword">for</span> chunk <span class="hljs-keyword">in</span> response.iter_content(chunk_size=<span class="hljs-number">1024</span>): <span class="hljs-comment">#1024 byte 단위로 쪼개서 받음</span></span><br><span class="line">            <span class="hljs-keyword">if</span> chunk:</span><br><span class="line">                size += <span class="hljs-number">1024</span></span><br><span class="line">                f.write(chunk)</span><br><span class="line">    <span class="hljs-keyword">return</span> size</span><br></pre></td></tr></table></figure>
 <p>Youtube 영상은 영상 링크에서 “www.”를 빼고 “ss”를 붙이면 다운로드 받을 수 있으므로, 여기서 다운로드 링크를 가져오기</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title = <span class="string">"Tiffany_TeachYou.mp4"</span></span><br><span class="line">download_url = <span class="string">"https://bit.ly/2P1YDPT"</span></span><br><span class="line">size = download(title, download_url)</span><br><span class="line">round(size/<span class="number">1024</span>/<span class="number">1024</span>, <span class="number">2</span>)    <span class="comment"># byte 단위를 megabyte 단위로 만들어 줌</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title = <span class="hljs-string">"Tiffany_TeachYou.mp4"</span></span><br><span class="line">download_url = <span class="hljs-string">"https://bit.ly/2P1YDPT"</span></span><br><span class="line">size = download(title, download_url)</span><br><span class="line">round(size/<span class="hljs-number">1024</span>/<span class="hljs-number">1024</span>, <span class="hljs-number">2</span>)    <span class="hljs-comment"># byte 단위를 megabyte 단위로 만들어 줌</span></span><br></pre></td></tr></table></figure>
 <pre><code>22.06
 </code></pre><h4 id="결론-크롤링을-많이-연습해보자"><a href="#결론-크롤링을-많이-연습해보자" class="headerlink" title="결론: 크롤링을 많이 연습해보자!!"></a>결론: 크롤링을 많이 연습해보자!!</h4><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
 <li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
@@ -768,7 +759,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        136
+                        138
                     </p>
                 </div>
             </div>
@@ -778,7 +769,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        8
                     </p>
                 </div>
             </div>
@@ -788,7 +779,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        31
                     </p>
                 </div>
             </div>
@@ -838,31 +829,15 @@
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/">
             <span class="level-start">
-                <span class="level-item">Data Analysis 공부</span>
+                <span class="level-item">Data Science 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">23</span>
+                <span class="level-item tag">54</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/수학-공부/">
-            <span class="level-start">
-                <span class="level-item">수학 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">23</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/">
-            <span class="level-start">
-                <span class="level-item">Programming 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">30</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Algorithm-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Algorithm-공부/">
             <span class="level-start">
                 <span class="level-item">Algorithm 공부</span>
             </span>
@@ -870,7 +845,7 @@
                 <span class="level-item tag">2</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Database-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Database-공부/">
             <span class="level-start">
                 <span class="level-item">Database 공부</span>
             </span>
@@ -878,20 +853,28 @@
                 <span class="level-item tag">5</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Python-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Python-공부/">
             <span class="level-start">
                 <span class="level-item">Python 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">11</span>
+                <span class="level-item tag">12</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Web-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Web-공부/">
             <span class="level-start">
                 <span class="level-item">Web 공부</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/수학-공부/">
+            <span class="level-start">
+                <span class="level-item">수학 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/TIL-Today-I-Learned/">
@@ -899,7 +882,7 @@
                 <span class="level-item">TIL(Today I Learned)</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">81</span>
+                <span class="level-item tag">82</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/기타/">
@@ -921,7 +904,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.44px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.78px;">data analysis</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11.11px;">html</a> <a href="/tags/javascript/" style="font-size: 11.11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 17.78px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 18.89px;">programming</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/selenium/" style="font-size: 12.22px;">selenium</a> <a href="/tags/web/" style="font-size: 15.56px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.44px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 17.78px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11.11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.44px;">웹크롤링</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 12.73px;">Database</a> <a href="/tags/MySQL/" style="font-size: 11.82px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 11.82px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.91px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 13.64px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.27px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 14.55px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.91px;">html</a> <a href="/tags/javascript/" style="font-size: 10.91px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19.09px;">programming</a> <a href="/tags/python/" style="font-size: 16.36px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 11.82px;">selenium</a> <a href="/tags/web/" style="font-size: 15.45px;">web</a> <a href="/tags/web-crawling/" style="font-size: 13.64px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.91px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 13.64px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 10.91px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
     </div>
 </div>
 
@@ -932,6 +915,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/python_11_regex/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 11. 정규표현식(regex)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:35:53.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/python_11_regex/" class="has-link-black-ter is-size-6">python 11. 정규표현식(regex)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/2019-02-21-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-21-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:04:15.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/2019-02-21-TIL/" class="has-link-black-ter is-size-6">2019-02-21-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -990,44 +1011,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-14-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-14-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-14-TIL/" class="has-link-black-ter is-size-6">2019-01-14-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-13-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-13-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-13-TIL/" class="has-link-black-ter is-size-6">2019-01-13-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1046,7 +1029,7 @@
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>

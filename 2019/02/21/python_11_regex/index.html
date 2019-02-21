@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+<title>python 11. 정규표현식(regex) - 우와팬더의 블로그</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+
+    <meta name="description" content="jupyter notebook으로 보기 정규표현식 특정 패턴을 이용해 문자열을 처리하는 방법 호불호가 있지만 강사님은 필요시에만 사용하는 것이 좋다고 생각함 작성하면서 실수하기도 쉽고, 이해하는데도 가독성이 떨어짐 문자열 함수를 쓰는 것이 가독성이 더 좋음    다룰 내용 정규표현식 함수 match: 문자열의 가장 앞에서 일치하는 패턴을 찾기 search:">
+<meta name="keywords" content="python,파이썬,programming,정규표현식,regex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 11. 정규표현식(regex)">
+<meta property="og:url" content="http://yoursite.com/2019/02/21/python_11_regex/index.html">
+<meta property="og:site_name" content="우와팬더의 블로그">
+<meta property="og:description" content="jupyter notebook으로 보기 정규표현식 특정 패턴을 이용해 문자열을 처리하는 방법 호불호가 있지만 강사님은 필요시에만 사용하는 것이 좋다고 생각함 작성하면서 실수하기도 쉽고, 이해하는데도 가독성이 떨어짐 문자열 함수를 쓰는 것이 가독성이 더 좋음    다룰 내용 정규표현식 함수 match: 문자열의 가장 앞에서 일치하는 패턴을 찾기 search:">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-02-21T15:07:53.481Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python 11. 정규표현식(regex)">
+<meta name="twitter:description" content="jupyter notebook으로 보기 정규표현식 특정 패턴을 이용해 문자열을 처리하는 방법 호불호가 있지만 강사님은 필요시에만 사용하는 것이 좋다고 생각함 작성하면서 실수하기도 쉽고, 이해하는데도 가독성이 떨어짐 문자열 함수를 쓰는 것이 가독성이 더 좋음    다룰 내용 정규표현식 함수 match: 문자열의 가장 앞에서 일치하는 패턴을 찾기 search:">
+
+
+
+<link rel="alternative" href="hyeshinoh" title="python 11. 정규표현식(regex)" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126954393-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-126954393-1');
+</script>
+
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+<body class="is-2-column">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="python 11. 정규표현식(regex)" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-02-21T14:35:53.000Z">2019-02-21</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    13 minutes read (About 1916 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                python 11. 정규표현식(regex)
+            
+        </h1>
+        <div class="content">
+            <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_11_regex.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
+<h2 id="정규표현식"><a href="#정규표현식" class="headerlink" title="정규표현식"></a><strong>정규표현식</strong></h2><ul>
+<li>특정 패턴을 이용해 문자열을 처리하는 방법</li>
+<li>호불호가 있지만 강사님은 필요시에만 사용하는 것이 좋다고 생각함<ul>
+<li>작성하면서 실수하기도 쉽고, 이해하는데도 가독성이 떨어짐</li>
+<li>문자열 함수를 쓰는 것이 가독성이 더 좋음</li>
+</ul>
+</li>
+</ul>
+<h2 id="다룰-내용"><a href="#다룰-내용" class="headerlink" title="다룰 내용"></a>다룰 내용</h2><ol>
+<li>정규표현식 함수<ul>
+<li>match: 문자열의 가장 앞에서 일치하는 패턴을 찾기</li>
+<li>search: 문자열에서 가장 첫번째로 일치하는 패턴 찾기</li>
+<li>findall: 일치하는 패턴을 모두 찾기</li>
+<li>split: 문자열을 특정 패턴으로 나누기</li>
+<li>sub: 특정 패턴에 맞는 문자열을 대체하기</li>
+</ul>
+</li>
+<li>Pattern</li>
+<li>Examples</li>
+</ol>
+<a id="more"></a> 
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> re</span><br></pre></td></tr></table></figure>
+<h2 id="1-함수"><a href="#1-함수" class="headerlink" title="1. 함수"></a><strong>1. 함수</strong></h2><h3 id="1-1-match"><a href="#1-1-match" class="headerlink" title="1.1 match"></a>1.1 match</h3><ul>
+<li>문자열의 <strong>가장 앞</strong>(시작)에서부터 일치하는 패턴 찾기</li>
+<li><code>re.match(패턴, 문자열)</code></li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="hljs-string">"fast campus datascience fighitng. datascience fighting. fast campus fighting."</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">result1 = re.match(<span class="hljs-string">"fast"</span>, s)       </span><br><span class="line">result2 = re.match(<span class="hljs-string">"campus"</span>, s)     </span><br><span class="line">print(<span class="hljs-string">"result1:"</span>, result1)</span><br><span class="line">print(<span class="hljs-string">"result2:"</span>, result2)</span><br></pre></td></tr></table></figure>
+<pre><code>result1: &lt;_sre.SRE_Match object; span=(0, 4), match=&apos;fast&apos;&gt;
+result2: None
+</code></pre><h3 id="1-2-search"><a href="#1-2-search" class="headerlink" title="1.2 search"></a>1.2 search</h3><ul>
+<li>문자열에서 <strong>가장 첫번째로</strong> 일치하는 패턴 찾기 (일치하는 것 중 첫번째만)</li>
+<li><code>re.search(패턴, 문자열)</code></li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">result3 = re.search(<span class="hljs-string">"fast"</span>, s)  </span><br><span class="line">result4 = re.search(<span class="hljs-string">"campus"</span>, s) </span><br><span class="line">print(<span class="hljs-string">"result3:"</span>, result3)</span><br><span class="line">print(<span class="hljs-string">"result4:"</span>, result4)</span><br></pre></td></tr></table></figure>
+<pre><code>result3: &lt;_sre.SRE_Match object; span=(0, 4), match=&apos;fast&apos;&gt;
+result4: &lt;_sre.SRE_Match object; span=(5, 11), match=&apos;campus&apos;&gt;
+</code></pre><h3 id="1-3-findall"><a href="#1-3-findall" class="headerlink" title="1.3 findall"></a>1.3 findall</h3><ul>
+<li>일치하는 패턴을 모두 찾아서 리스트로 돌려줌</li>
+<li>가장 많이 사용하게됨</li>
+<li><code>re.findall(패턴, 문자열)</code></li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">result5 = re.findall(<span class="hljs-string">"fast"</span>, s)    </span><br><span class="line">result6 = re.findall(<span class="hljs-string">"campus"</span>, s)     </span><br><span class="line">print(<span class="hljs-string">"result5:"</span>, result5, len(result5))</span><br><span class="line">print(<span class="hljs-string">"result6:"</span>, result6, len(result6))</span><br></pre></td></tr></table></figure>
+<pre><code>result5: [&apos;fast&apos;, &apos;fast&apos;] 2
+result6: [&apos;campus&apos;, &apos;campus&apos;] 2
+</code></pre><h3 id="1-4-split"><a href="#1-4-split" class="headerlink" title="1.4 split"></a>1.4 split</h3><ul>
+<li>패턴을 기준으로 문자열을 나눠서 리스트로 만들어 줌</li>
+<li><code>re.split(패턴, 문자열)</code></li>
+<li>여러가지 문자로 나누고 싶을 때<ul>
+<li><code>string.split()</code>은 chaining을 이용해 여러 번 함수를 호출해야함</li>
+<li>regex는 패턴을 이용해서 함수를 한번만 호출해도 됨</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s1 = <span class="hljs-string">"fast campus datascience fighting!"</span></span><br><span class="line">result = re.split(<span class="hljs-string">"i"</span>, s1)</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;fast campus datasc&apos;, &apos;ence f&apos;, &apos;ght&apos;, &apos;ng!&apos;]
+</code></pre><h3 id="1-5-sub"><a href="#1-5-sub" class="headerlink" title="1.5 sub"></a>1.5 sub</h3><ul>
+<li>일치하는 패턴을 대체</li>
+<li><code>re.sub(패턴, 바꿀 문자, (전체)문자열)</code></li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(s)</span><br><span class="line">re.sub(<span class="hljs-string">"fast"</span>,<span class="hljs-string">"slow"</span>, s)</span><br></pre></td></tr></table></figure>
+<pre><code>fast campus datascience fighitng. datascience fighting. fast campus fighting.
+&apos;slow campus datascience fighitng. datascience fighting. slow campus fighting.&apos;
+</code></pre><h2 id="2-Pattern"><a href="#2-Pattern" class="headerlink" title="2. Pattern"></a><strong>2. Pattern</strong></h2><ul>
+<li>문자: 숫자인지 문자인지 특수문자인지 등을 구분</li>
+<li>지정자: ‘범위가 몇회 반복’ 같은 패턴을 구분</li>
+</ul>
+<h3 id="2-1-문자"><a href="#2-1-문자" class="headerlink" title="2.1 문자"></a>2.1 문자</h3><ul>
+<li><code>\d</code> &amp; <code>\D</code>: 숫자와 비숫자를 찾는 패턴</li>
+<li><code>\w</code> &amp; <code>\W</code> : 숫자, 문자, _  &amp; 숫자, 문자, _ 제외</li>
+<li><code>\s</code> &amp; <code>\S</code>: 공백문자 &amp; 비공백문자 </li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> string</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># string.printable: 사용가능한 모든 문자</span></span><br><span class="line">pt = string.printable</span><br><span class="line">print(len(pt))</span><br><span class="line">pt</span><br></pre></td></tr></table></figure>
+<pre><code>100
+&apos;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!&quot;#$%&amp;\&apos;()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~ \t\n\r\x0b\x0c&apos;
+</code></pre><h4 id="1-d-amp-D-숫자와-비숫자를-찾는-패턴"><a href="#1-d-amp-D-숫자와-비숫자를-찾는-패턴" class="headerlink" title="(1) \d &amp; \D: 숫자와 비숫자를 찾는 패턴"></a>(1) <code>\d</code> &amp; <code>\D</code>: 숫자와 비숫자를 찾는 패턴</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">result = re.findall(<span class="hljs-string">"\d"</span>, pt)   <span class="hljs-comment"># '\d'라는 패턴을 findall 함수에 넣어줌</span></span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;0&apos;, &apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;, &apos;6&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos;]
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">result = re.findall(<span class="hljs-string">"\D"</span>, pt)</span><br><span class="line"><span class="hljs-string">''</span>.join(result)</span><br><span class="line">```    	</span><br><span class="line">	<span class="hljs-string">'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&amp;\'()*+,-./:;&lt;=&gt;?@[\\]^_`&#123;|&#125;~ \t\n\r\x0b\x0c'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#### (2) `\w` &amp; `\W` : 숫자, 문자, _  &amp; 숫자, 문자, _ 제외</span></span><br><span class="line">- 숫자, 문자, _ : 식별자로 사용할 수 있는 문자</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">result = re.findall(<span class="hljs-string">"\w"</span>, pt)</span><br><span class="line"><span class="hljs-string">''</span>.join(result)</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_&apos;
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">result = re.findall(<span class="hljs-string">"\W"</span>, pt)</span><br><span class="line"><span class="hljs-string">''</span>.join(result)</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;!&quot;#$%&amp;\&apos;()*+,-./:;&lt;=&gt;?@[\\]^`{|}~ \t\n\r\x0b\x0c&apos;
+</code></pre><h4 id="3-s-amp-S-공백문자-amp-비공백문자"><a href="#3-s-amp-S-공백문자-amp-비공백문자" class="headerlink" title="(3) \s &amp; \S: 공백문자 &amp; 비공백문자"></a>(3) <code>\s</code> &amp; <code>\S</code>: 공백문자 &amp; 비공백문자</h4><ul>
+<li>공백문자: 문자의 공백을 다 지우고 싶으면 이 패턴을 활용해서 sub 함수를 쓰면 됨</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">result = re.findall(<span class="hljs-string">"\s"</span>, pt)</span><br><span class="line"><span class="hljs-string">''</span>.join(result)</span><br></pre></td></tr></table></figure>
+<pre><code>&apos; \t\n\r\x0b\x0c&apos;
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">result = re.findall(<span class="hljs-string">"\S"</span>, pt)</span><br><span class="line"><span class="hljs-string">''</span>.join(result)</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!&quot;#$%&amp;\&apos;()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~&apos;
+</code></pre><h3 id="2-2-지정자"><a href="#2-2-지정자" class="headerlink" title="2.2 지정자"></a>2.2 지정자</h3><p>지정자의 활용이 정규표현식의 핵심이라 할 수 있음!</p>
+<ul>
+<li><code>[]</code>: 문자</li>
+<li><code>-</code>: 범위</li>
+<li><code>.</code>: 하나의 문자</li>
+<li><code>?</code>: 0회 또는 1회 반복</li>
+<li><code>*</code>: 0회 이상 반복</li>
+<li><code>+</code>: 1회 이상 반복</li>
+<li><code>{m,n}</code>: m~n회 반복</li>
+<li><code>()</code>: 그룹핑 </li>
+</ul>
+<h4 id="1-문자-괄호-안의-각각의-문자"><a href="#1-문자-괄호-안의-각각의-문자" class="headerlink" title="(1) []: 문자 - 괄호 안의 각각의 문자"></a>(1) <code>[]</code>: 문자 - 괄호 안의 각각의 문자</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">re.findall(<span class="hljs-string">"[abc1]"</span>, pt)</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;1&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;]
+</code></pre><h4 id="2-범위"><a href="#2-범위" class="headerlink" title="(2) -: 범위"></a>(2) <code>-</code>: 범위</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(re.findall(<span class="hljs-string">"[0-9]"</span>, pt))      <span class="hljs-comment"># [0123456789] 라고 쓸 필요가 없음</span></span><br><span class="line">print(re.findall(<span class="hljs-string">"[a-f]"</span>, pt))    </span><br><span class="line">print(re.findall(<span class="hljs-string">"[a-fA-F]"</span>, pt))   <span class="hljs-comment"># 여러가지 범위를 써도 됨</span></span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;0&apos;, &apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;, &apos;6&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos;]
+[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos;]
+[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos;, &apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;, &apos;E&apos;, &apos;F&apos;]
+</code></pre><h4 id="3-하나의-문자"><a href="#3-하나의-문자" class="headerlink" title="(3) .: 하나의 문자"></a>(3) <code>.</code>: 하나의 문자</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-string">"123aab123"</span>, <span class="hljs-string">"a0b"</span>, <span class="hljs-string">"abc"</span>]</span><br><span class="line"><span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> ls:</span><br><span class="line">    result = re.findall(<span class="hljs-string">"a.b"</span>, s)   <span class="hljs-comment"># a + 어떤 문자 1개 + b</span></span><br><span class="line">    print(s, result)</span><br></pre></td></tr></table></figure>
+<pre><code>123aab123 [&apos;aab&apos;]
+a0b [&apos;a0b&apos;]
+abc []
+</code></pre><h4 id="4-‘-’-앞의-문자를-0회-또는-1회-반복"><a href="#4-‘-’-앞의-문자를-0회-또는-1회-반복" class="headerlink" title="(4) ?: ‘?’ 앞의 문자를 0회 또는 1회 반복"></a>(4) <code>?</code>: ‘?’ 앞의 문자를 0회 또는 1회 반복</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-string">"aab"</span>, <span class="hljs-string">"a3b"</span>, <span class="hljs-string">"accb"</span>, <span class="hljs-string">"ab"</span>]</span><br><span class="line"><span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> ls:</span><br><span class="line">    result = re.findall(<span class="hljs-string">"a.?b"</span>, s)  <span class="hljs-comment"># a + 어떤문자 0개 또는 1개 + b → a.b 또는 ab</span></span><br><span class="line">    print(s, result)</span><br></pre></td></tr></table></figure>
+<pre><code>aab [&apos;aab&apos;]
+a3b [&apos;a3b&apos;]
+accb []
+ab [&apos;ab&apos;]
+</code></pre><h4 id="5-‘-’-앞의-문자를-0회-이상-반복"><a href="#5-‘-’-앞의-문자를-0회-이상-반복" class="headerlink" title="(5) *: ‘*’ 앞의 문자를 0회 이상 반복"></a>(5) <code>*</code>: ‘*’ 앞의 문자를 0회 이상 반복</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-string">"ac"</span>, <span class="hljs-string">"abc"</span>, <span class="hljs-string">"abbbbc"</span>, <span class="hljs-string">"a3bec"</span>]</span><br><span class="line"><span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> ls:</span><br><span class="line">    result = re.findall(<span class="hljs-string">"ab*c"</span>, s)  <span class="hljs-comment"># a + b가 0회 이상 반복 + c</span></span><br><span class="line">    print(s, result)</span><br></pre></td></tr></table></figure>
+<pre><code>ac [&apos;ac&apos;]
+abc [&apos;abc&apos;]
+abbbbc [&apos;abbbbc&apos;]
+a3bec []
+</code></pre><h4 id="6-‘-’-앞의-문자를-1회-이상-반복"><a href="#6-‘-’-앞의-문자를-1회-이상-반복" class="headerlink" title="(6) +: ‘+’ 앞의 문자를 1회 이상 반복"></a>(6) <code>+</code>: ‘+’ 앞의 문자를 1회 이상 반복</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-string">"ac"</span>, <span class="hljs-string">"abc"</span>, <span class="hljs-string">"abbbbc"</span>, <span class="hljs-string">"a3bec"</span>]</span><br><span class="line"><span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> ls:</span><br><span class="line">    result = re.findall(<span class="hljs-string">"ab+c"</span>, s)  <span class="hljs-comment"># a + b가 1회 이상 반복 + c</span></span><br><span class="line">    print(s, result)</span><br></pre></td></tr></table></figure>
+<pre><code>ac []
+abc [&apos;abc&apos;]
+abbbbc [&apos;abbbbc&apos;]
+a3bec []
+</code></pre><h4 id="7-m-n-앞의-문자를-m-n회-반복"><a href="#7-m-n-앞의-문자를-m-n회-반복" class="headerlink" title="(7) {m,n}: 앞의 문자를 m~n회 반복"></a>(7) <code>{m,n}</code>: 앞의 문자를 m~n회 반복</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-string">"ac"</span>, <span class="hljs-string">"abc"</span>, <span class="hljs-string">"abbbbbc"</span>, <span class="hljs-string">"abbbbbbbbbbc"</span>] <span class="hljs-comment"># 5회, 10회</span></span><br><span class="line"><span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> ls:</span><br><span class="line">    result = re.findall(<span class="hljs-string">"ab&#123;1,8&#125;c"</span>, s)  <span class="hljs-comment"># a + b가 1~8회 반복 + c</span></span><br><span class="line">    print(s, result)</span><br></pre></td></tr></table></figure>
+<pre><code>ac []
+abc [&apos;abc&apos;]
+abbbbbc [&apos;abbbbbc&apos;]
+abbbbbbbbbbc []
+</code></pre><h4 id="8-그룹핑"><a href="#8-그룹핑" class="headerlink" title="(8) (): 그룹핑"></a>(8) <code>()</code>: 그룹핑</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-string">"aaa5.djfi"</span>,<span class="hljs-string">"abdddc5"</span>,<span class="hljs-string">"1abbbbc"</span>,<span class="hljs-string">"a3.bec"</span>]</span><br><span class="line"><span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> ls:</span><br><span class="line">    result = re.findall(<span class="hljs-string">"([0-9]+)[.]([a-z]&#123;2&#125;)"</span>, s)  </span><br><span class="line">    print(s, result)</span><br></pre></td></tr></table></figure>
+<pre><code>aaa5.djfi [(&apos;5&apos;, &apos;dj&apos;)]
+abdddc5 []
+1abbbbc []
+a3.bec [(&apos;3&apos;, &apos;be&apos;)]
+</code></pre><h3 id="3-Examples"><a href="#3-Examples" class="headerlink" title="3. Examples"></a><strong>3. Examples</strong></h3><h3 id="3-1-email-주소-찾기"><a href="#3-1-email-주소-찾기" class="headerlink" title="3.1 email 주소 찾기"></a>3.1 email 주소 찾기</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="hljs-string">"저의 이메일 주소는 hyeshinoh@gmail.com입니다. 또한 panda706@naver.com도 가지고 있습니다."</span></span><br><span class="line">p = <span class="hljs-string">"[0-9a-zA-Z]+@[0-9a-z]+\.[0-9a-z]+"</span>          <span class="hljs-comment"># \. : 패턴이 아니고 "."을 문자 자체로 사용</span></span><br><span class="line"><span class="hljs-comment"># result = True if re.search(p, s) else False</span></span><br><span class="line"><span class="hljs-comment"># print(result, re.findall(p, s))</span></span><br><span class="line">re.findall(p, s)</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;hyeshinoh@gmail.com&apos;, &apos;panda706@naver.com&apos;]
+</code></pre><h3 id="3-2-주민등록번호-뒷자리-변경"><a href="#3-2-주민등록번호-뒷자리-변경" class="headerlink" title="3.2 주민등록번호 뒷자리 변경"></a>3.2 주민등록번호 뒷자리 변경</h3><ul>
+<li>주민등록번호를 group으로 나눠서 뒷자리를 <strong>***</strong>로 변경</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="hljs-string">"저의 전화번호는 010-1111-2222이고 주민등록번호는 870101-1234567 입니다"</span></span><br><span class="line">p = <span class="hljs-string">"[0-9]&#123;6&#125;\-[0-9]&#123;7&#125;"</span>          <span class="hljs-comment"># \(escaping)을 안해줘도 문제는 없음</span></span><br><span class="line">print(re.findall(p, s))</span><br><span class="line">p = <span class="hljs-string">"([0-9]&#123;6&#125;)\-([0-9]&#123;7&#125;)"</span>      <span class="hljs-comment"># 그룹핑</span></span><br><span class="line">print(re.findall(p, s))</span><br><span class="line">re.sub(p, <span class="hljs-string">"\g&lt;1&gt;-********"</span>, s)    <span class="hljs-comment"># \g&lt;1&gt; : 그룹핑 첫번째(0부터 세지 않음. 앞의 그룹) 데이터 사용</span></span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;870101-1234567&apos;]
+[(&apos;870101&apos;, &apos;1234567&apos;)]
+&apos;저의 전화번호는 010-1111-2222이고 주민등록번호는 870101-******** 입니다&apos;
+</code></pre><h3 id="3-3-전화번호-추출해서-바꾸기"><a href="#3-3-전화번호-추출해서-바꾸기" class="headerlink" title="3.3 전화번호 추출해서 바꾸기"></a>3.3 전화번호 추출해서 바꾸기</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 전화번호 추출하기</span></span><br><span class="line"></span><br><span class="line">s = <span class="hljs-string">"안녕하세요. 저의 전화번호는 영일공-48구삼삼7이사 입니다. 또한 010사팔구삼삼구삼일입니다. 둘중에 하나로 연락하세요"</span></span><br><span class="line"></span><br><span class="line">p = <span class="hljs-string">'[0-9영공일이둘삼사오육칠팔구빵oO]&#123;3&#125;[-]?[0-9영공일이둘삼사오육칠팔구빵oO]&#123;3,4&#125;[-]?[0-9영공일이둘삼사오육칠팔구빵oO]&#123;4&#125;'</span></span><br><span class="line"></span><br><span class="line">numbers = re.findall(p, s)     <span class="hljs-comment"># 찾아 놓은 패턴 number에 저장</span></span><br><span class="line">numbers</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;영일공-48구삼삼7이사&apos;, &apos;010사팔구삼삼구삼일&apos;]
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 전화번호를 추출해서 바꾸기</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">change_phone_str</span><span class="hljs-params">(s)</span>:</span></span><br><span class="line">    <span class="hljs-comment"># 문자열 패턴</span></span><br><span class="line">    p = <span class="hljs-string">'[0-9영공일이둘삼사오육칠팔구빵oO]&#123;3&#125;[-]?[0-9영공일이둘삼사오육칠팔구빵o]&#123;3,4&#125;[-]?[0-9영공일이둘삼사오육칠팔구빵oO]&#123;4&#125;'</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># 찾아 놓은 패턴 number에 저장</span></span><br><span class="line">    numbers = re.findall(p, s)</span><br><span class="line">    print(numbers)                                <span class="hljs-comment"># 결과: '영일공-48구삼삼7이사', '010사팔구삼삼구삼일'</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># 패턴에 맞는 데이터 문자로된 숫자 숫자로 바꾸기</span></span><br><span class="line">    result = []</span><br><span class="line">    preprocess_dict = &#123;</span><br><span class="line">    <span class="hljs-string">"공"</span>: <span class="hljs-number">0</span>, <span class="hljs-string">"영"</span>: <span class="hljs-number">0</span>, <span class="hljs-string">"일"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"둘"</span>: <span class="hljs-number">2</span>, <span class="hljs-string">"이"</span>: <span class="hljs-number">2</span>, <span class="hljs-string">"삼"</span>: <span class="hljs-number">3</span>, <span class="hljs-string">"사"</span>: <span class="hljs-number">4</span>,</span><br><span class="line">    <span class="hljs-string">"오"</span>: <span class="hljs-number">5</span>, <span class="hljs-string">"육"</span>: <span class="hljs-number">6</span>, <span class="hljs-string">"칠"</span>: <span class="hljs-number">7</span>, <span class="hljs-string">"팔"</span>: <span class="hljs-number">8</span>, <span class="hljs-string">"구"</span>: <span class="hljs-number">9</span>, <span class="hljs-string">"빵"</span>:<span class="hljs-number">0</span>, <span class="hljs-string">"o"</span>:<span class="hljs-number">0</span>, <span class="hljs-string">"O"</span>:<span class="hljs-number">0</span>, <span class="hljs-string">"-"</span>: <span class="hljs-string">""</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span> number <span class="hljs-keyword">in</span> numbers:            </span><br><span class="line">        mod_numbers = number</span><br><span class="line">        <span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> preprocess_dict.items():</span><br><span class="line">            mod_numbers = mod_numbers.replace(key, str(value))</span><br><span class="line">        result.append(mod_numbers)</span><br><span class="line">      </span><br><span class="line">    <span class="hljs-comment"># 결과값을 replace 하기</span></span><br><span class="line">    result_str = s</span><br><span class="line">    <span class="hljs-keyword">for</span> idx, number <span class="hljs-keyword">in</span> enumerate(numbers):</span><br><span class="line">        result_str = result_str.replace(number, result[idx])</span><br><span class="line">    <span class="hljs-keyword">return</span> result_str</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s, change_phone_str(s)</span><br></pre></td></tr></table></figure>
+<pre><code>[&apos;영일공-48구삼삼7이사&apos;, &apos;010사팔구삼삼구삼일&apos;]
+
+(&apos;안녕하세요. 저의 전화번호는 영일공-48구삼삼7이사 입니다. 또한 010사팔구삼삼구삼일입니다. 둘중에 하나로 연락하세요&apos;,
+ &apos;안녕하세요. 저의 전화번호는 01048933724 입니다. 또한 01048933931입니다. 둘중에 하나로 연락하세요&apos;)
+</code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
+</ul>
+<p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_11_regex.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/programming/">programming</a>, <a class="has-link-grey -link" href="/tags/python/">python</a>, <a class="has-link-grey -link" href="/tags/regex/">regex</a>, <a class="has-link-grey -link" href="/tags/정규표현식/">정규표현식</a>, <a class="has-link-grey -link" href="/tags/파이썬/">파이썬</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5c334172a47fe500116a8ea8&amp;product=inline-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/21/2019-02-21-TIL/">
+                <span class="level-item">2019-02-21-TIL</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2019/02/21/python_11_regex/';
+        this.page.identifier = '2019/02/21/python_11_regex/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="/images/avatar_panda.png" alt="우와팬더(Hyeshin Oh)">
+                    
+                    <p class="is-size-4 is-block">
+                        우와팬더(Hyeshin Oh)
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        데이터 사이언티스트
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Seoul, Korea</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        138
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        8
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        31
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/hyeshinoh">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="http://github.com/hyeshinoh">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Facebook" href="http://facebook.com/hyeshinoh">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Twitter" href="http://twitter.com/hyeshinoh">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/">
+            <span class="level-start">
+                <span class="level-item">Data Science 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">54</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Algorithm-공부/">
+            <span class="level-start">
+                <span class="level-item">Algorithm 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Database-공부/">
+            <span class="level-start">
+                <span class="level-item">Database 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Python-공부/">
+            <span class="level-start">
+                <span class="level-item">Python 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Web-공부/">
+            <span class="level-start">
+                <span class="level-item">Web 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/수학-공부/">
+            <span class="level-start">
+                <span class="level-item">수학 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/TIL-Today-I-Learned/">
+            <span class="level-start">
+                <span class="level-item">TIL(Today I Learned)</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">82</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/기타/">
+            <span class="level-start">
+                <span class="level-item">기타</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 12.73px;">Database</a> <a href="/tags/MySQL/" style="font-size: 11.82px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 11.82px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.91px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 13.64px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.27px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 14.55px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.91px;">html</a> <a href="/tags/javascript/" style="font-size: 10.91px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19.09px;">programming</a> <a href="/tags/python/" style="font-size: 16.36px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 11.82px;">selenium</a> <a href="/tags/web/" style="font-size: 15.45px;">web</a> <a href="/tags/web-crawling/" style="font-size: 13.64px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.91px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 13.64px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 10.91px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/python_11_regex/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 11. 정규표현식(regex)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:35:53.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/python_11_regex/" class="has-link-black-ter is-size-6">python 11. 정규표현식(regex)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/2019-02-21-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-21-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:04:15.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/2019-02-21-TIL/" class="has-link-black-ter is-size-6">2019-02-21-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/20/2019-02-20-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-20-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-20T14:04:15.000Z">2019-02-20</time></div>
+                    <a href="/2019/02/20/2019-02-20-TIL/" class="has-link-black-ter is-size-6">2019-02-20-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/16/2019-02-16-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-16-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-16T14:04:15.000Z">2019-02-16</time></div>
+                    <a href="/2019/02/16/2019-02-16-TIL/" class="has-link-black-ter is-size-6">2019-02-16-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/19/2019-01-19-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-19-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-19T14:04:15.000Z">2019-01-19</time></div>
+                    <a href="/2019/01/19/2019-01-19-TIL/" class="has-link-black-ter is-size-6">2019-01-19-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">24</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">18</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">23</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">42</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.png" alt="python 11. 정규표현식(regex)" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 우와팬더&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+</html>

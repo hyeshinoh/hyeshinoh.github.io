@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="jupyter notebook으로 보기 다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return args, *kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법은 (1)함수 (2)객체 (3)모듈이 있는데 그 중에">
+    <meta name="description" content="jupyter notebook으로 보기 다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return *args, **kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법은 (1)함수 (2)객체 (3)모듈이 있는데 그">
 <meta name="keywords" content="python,programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 03. Python Function - Basic">
 <meta property="og:url" content="http://yoursite.com/2018/07/10/python_03_function_basic/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="jupyter notebook으로 보기 다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return args, *kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법은 (1)함수 (2)객체 (3)모듈이 있는데 그 중에">
+<meta property="og:description" content="jupyter notebook으로 보기 다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return *args, **kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법은 (1)함수 (2)객체 (3)모듈이 있는데 그">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-27T12:05:46.857Z">
+<meta property="og:updated_time" content="2019-02-21T15:00:14.211Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 03. Python Function - Basic">
-<meta name="twitter:description" content="jupyter notebook으로 보기 다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return args, *kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법은 (1)함수 (2)객체 (3)모듈이 있는데 그 중에">
+<meta name="twitter:description" content="jupyter notebook으로 보기 다룰 내용 함수의 개념 함수 선언, 호출 parameter &amp;amp; argument 개념 return *args, **kwargs docstring  여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법은 (1)함수 (2)객체 (3)모듈이 있는데 그">
 
 
 
@@ -149,14 +149,14 @@
                 <time class="level-item has-text-grey" datetime="2018-07-09T15:11:45.000Z">2018-07-10</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Python-공부/">Python 공부</a>
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    11 minutes read (About 1649 words)
+                    11 minutes read (About 1650 words)
                 </span>
                 
             </div>
@@ -174,10 +174,11 @@
 <li>함수 선언, 호출</li>
 <li>parameter &amp; argument 개념</li>
 <li>return</li>
-<li><em>args, *</em>kwargs</li>
+<li>*args, **kwargs</li>
 <li>docstring</li>
 </ul>
 <p>여럿이 함께 프로그램을 개발하려면 필요한 부분을 나눠서 작성한 후 합쳐야 한다. 이 때 프로그램을 기능별로 나누는 방법은 (1)함수 (2)객체 (3)모듈이 있는데 그 중에서 먼저 함수에 대해서 살펴보도록 하자</p>
+<a id="more"></a> 
 <h2 id="1-함수의-기초"><a href="#1-함수의-기초" class="headerlink" title="1. 함수의 기초"></a>1. 함수의 기초</h2><ul>
 <li>함수: 어떤 일을 수행하는 코드의 덩어리, 묶음</li>
 <li>함수의 기능<ul>
@@ -189,17 +190,17 @@
 </ul>
 <h3 id="1-1-선언"><a href="#1-1-선언" class="headerlink" title="1.1 선언"></a>1.1 선언</h3><ul>
 <li><p>함수 선언 문법</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> &lt;<span class="title">function_name</span>&gt;<span class="params">(parameter)</span>:</span></span><br><span class="line">    &lt;code&gt;</span><br><span class="line">    <span class="keyword">return</span> &lt;<span class="keyword">return</span> value&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> &lt;<span class="hljs-title">function_name</span>&gt;<span class="hljs-params">(parameter)</span>:</span></span><br><span class="line">    &lt;code&gt;</span><br><span class="line">    <span class="hljs-keyword">return</span> &lt;<span class="hljs-keyword">return</span> value&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>함수 선언 예시</p>
 </li>
 </ul>
-<p>In [1]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    print(a + b)</span><br></pre></td></tr></table></figure></p>
-<h3 id="1-2-호출"><a href="#1-2-호출" class="headerlink" title="1.2 호출"></a>1.2 호출</h3><p>In [ ]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">&lt;function_name(argument)&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure></p>
-<p>In [2]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sum_func(<span class="number">1</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
+<p>In [1]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum_func</span><span class="hljs-params">(a, b)</span>:</span></span><br><span class="line">    print(a + b)</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-2-호출"><a href="#1-2-호출" class="headerlink" title="1.2 호출"></a>1.2 호출</h3><p>In [ ]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">'''</span></span><br><span class="line"><span class="hljs-string">&lt;function_name(argument)&gt;</span></span><br><span class="line"><span class="hljs-string">'''</span></span><br></pre></td></tr></table></figure></p>
+<p>In [2]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sum_func(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br></pre></td></tr></table></figure></p>
 <pre><code>3
-</code></pre><p>In [3]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type(sum_func)</span><br></pre></td></tr></table></figure></p>
-<p>Out[3]:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function</span><br></pre></td></tr></table></figure></p>
+</code></pre><p>In [3]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type(sum_func)</span><br></pre></td></tr></table></figure></p>
+<p>Out[3]:<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function</span><br></pre></td></tr></table></figure></p>
 <h4 id="함수-호출-방식"><a href="#함수-호출-방식" class="headerlink" title="함수 호출 방식"></a>함수 호출 방식</h4><p>함수 인자를 전달하는 방식에는 다음의 두 가지가 있음</p>
 <ol>
 <li>값에 의한 호출 (call by value)<ul>
@@ -222,9 +223,9 @@
 </ul>
 </li>
 </ul>
-<p>In [3]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span><span class="params">(eggs)</span>:</span></span><br><span class="line">    eggs.append(<span class="number">1</span>)</span><br><span class="line">    eggs = [<span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">ham = [<span class="number">0</span>]</span><br><span class="line">spam(ham)</span><br><span class="line">print(ham)</span><br></pre></td></tr></table></figure></p>
+<p>In [3]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">spam</span><span class="hljs-params">(eggs)</span>:</span></span><br><span class="line">    eggs.append(<span class="hljs-number">1</span>)</span><br><span class="line">    eggs = [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>]</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">ham = [<span class="hljs-number">0</span>]</span><br><span class="line">spam(ham)</span><br><span class="line">print(ham)</span><br></pre></td></tr></table></figure></p>
 <pre><code>[0, 1]
-</code></pre><p>In [4]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(t)</span>:</span></span><br><span class="line">    t = <span class="number">20</span></span><br><span class="line">    print(<span class="string">"In function: "</span>, t)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">x = <span class="number">10</span></span><br><span class="line">print(<span class="string">"Before: "</span>, x)</span><br><span class="line">test(x)</span><br><span class="line">print(<span class="string">"After: "</span>, x)</span><br></pre></td></tr></table></figure></p>
+</code></pre><p>In [4]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test</span><span class="hljs-params">(t)</span>:</span></span><br><span class="line">    t = <span class="hljs-number">20</span></span><br><span class="line">    print(<span class="hljs-string">"In function: "</span>, t)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">x = <span class="hljs-number">10</span></span><br><span class="line">print(<span class="hljs-string">"Before: "</span>, x)</span><br><span class="line">test(x)</span><br><span class="line">print(<span class="hljs-string">"After: "</span>, x)</span><br></pre></td></tr></table></figure></p>
 <pre><code>Before:  10
 In function:  20
 After:  10
@@ -233,33 +234,32 @@ After:  10
 <li>argument: 실제 parameter에 대입된 값</li>
 <li>현업에서는 혼용해서 말하는 경우도 있음</li>
 </ul>
-<p>In [4]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_func</span><span class="params">(a, b)</span>:</span>        <span class="comment"># a, b: parameter</span></span><br><span class="line">    print(a + b)</span><br></pre></td></tr></table></figure></p>
-<p>In [5]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sum_func(<span class="number">1</span>, <span class="number">2</span>)             <span class="comment"># 1, 2: argument</span></span><br></pre></td></tr></table></figure></p>
+<p>In [4]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum_func</span><span class="hljs-params">(a, b)</span>:</span>        <span class="hljs-comment"># a, b: parameter</span></span><br><span class="line">    print(a + b)</span><br></pre></td></tr></table></figure></p>
+<p>In [5]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sum_func(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)             <span class="hljs-comment"># 1, 2: argument</span></span><br></pre></td></tr></table></figure></p>
 <pre><code>3
 </code></pre><h4 id="keyword-argument"><a href="#keyword-argument" class="headerlink" title="keyword argument"></a>keyword argument</h4><ul>
-<li>함수에 입력되는 parameter의 변수명을 사용하여 argument를 넘김<br>In [6]:<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">div_func</span><span class="params">(a, b)</span>:</span>        </span><br><span class="line">    print(a / b)</span><br></pre></td></tr></table></figure>
+<li>함수에 입력되는 parameter의 변수명을 사용하여 argument를 넘김<br>In [6]:<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">div_func</span><span class="hljs-params">(a, b)</span>:</span>        </span><br><span class="line">    print(a / b)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>In [7]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div_func(<span class="number">10</span>,<span class="number">2</span>), div_func(b=<span class="number">10</span>, a=<span class="number">2</span>) <span class="comment"># keyword argument</span></span><br></pre></td></tr></table></figure></p>
+<p>In [7]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div_func(<span class="hljs-number">10</span>,<span class="hljs-number">2</span>), div_func(b=<span class="hljs-number">10</span>, a=<span class="hljs-number">2</span>) <span class="hljs-comment"># keyword argument</span></span><br></pre></td></tr></table></figure></p>
 <pre><code>5.0
 0.2
-</code></pre><p>Out[7]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">None</span>, <span class="keyword">None</span>)</span><br></pre></td></tr></table></figure></p>
+</code></pre><p>Out[7]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-keyword">None</span>, <span class="hljs-keyword">None</span>)</span><br></pre></td></tr></table></figure></p>
 <h4 id="default-parameter"><a href="#default-parameter" class="headerlink" title="default parameter"></a>default parameter</h4><ul>
 <li>parameter의 기본 값을 사용, 입력하지 않을 경우 기본값을 출력</li>
 <li><p>non-default parameter를 몰아서 써주고 나서 맨 끝에 넣어줌<br>In [9]:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_func</span><span class="params">(a, b = <span class="number">0</span>)</span>:</span>  <span class="comment"># b는 default 값이 0인 parameter</span></span><br><span class="line">    print(a + b)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">sum_func(<span class="number">2</span>), sum_func(<span class="number">2</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum_func</span><span class="hljs-params">(a, b = <span class="hljs-number">0</span>)</span>:</span>  <span class="hljs-comment"># b는 default 값이 0인 parameter</span></span><br><span class="line">    print(a + b)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">sum_func(<span class="hljs-number">2</span>), sum_func(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)</span><br></pre></td></tr></table></figure>
 <p>  2<br>  5<br>Out[9]:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">None</span>, <span class="keyword">None</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-keyword">None</span>, <span class="hljs-keyword">None</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="1-4-return"><a href="#1-4-return" class="headerlink" title="1.4 return"></a>1.4 return</h3><ul>
 <li>함수를 호출했을 때 결과를 반환하는 용도로 사용</li>
-<li>return data가 있는 함수 &amp; 없는 함수가 있음<br>In [11]:<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line">result = sum_func(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+<li>return data가 있는 함수 &amp; 없는 함수가 있음<br>In [11]:<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum_func</span><span class="hljs-params">(a, b)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line">result = sum_func(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>Out[11]:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure></p>
+<p>Out[11]:<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure></p>
 <h3 id="1-5-함수의-형태"><a href="#1-5-함수의-형태" class="headerlink" title="1.5 함수의 형태"></a>1.5 함수의 형태</h3><p>parameter의 유무, return value의 유무에 따라 함수 형태가 다름</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -281,7 +281,6 @@ After:  10
 </tr>
 </tbody>
 </table>
-</div>
 <h2 id="2-Variable-length-arguments"><a href="#2-Variable-length-arguments" class="headerlink" title="2. Variable-length arguments"></a>2. Variable-length arguments</h2><ul>
 <li>개수가 정해지지 않은 변수를 함수의 parameter로 사용하는 방법</li>
 <li>asterisk(*): 전부, 모두, all</li>
@@ -293,75 +292,75 @@ After:  10
 <li>기존 parameter 이후에 나오는 값을 tuple로 저장함</li>
 <li>가변인자는 마지막 parameter 위치에 사용 가능</li>
 </ul>
-<p>In [5]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">varlen_test</span><span class="params">(a, b, *args)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b + sum(args)</span><br><span class="line"></span><br><span class="line">varlen_test(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure></p>
-<p>Out[5]:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">15</span><br></pre></td></tr></table></figure></p>
-<p>In [12]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_func</span><span class="params">(*args)</span>:</span></span><br><span class="line">    print(args)</span><br><span class="line">    print(type(args))</span><br><span class="line">    print(args[<span class="number">2</span>])</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">sum_func(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>) <span class="comment"># 묶여서 tuple형태로 들어감</span></span><br></pre></td></tr></table></figure></p>
+<p>In [5]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">varlen_test</span><span class="hljs-params">(a, b, *args)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> a + b + sum(args)</span><br><span class="line"></span><br><span class="line">varlen_test(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)</span><br></pre></td></tr></table></figure></p>
+<p>Out[5]:<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">15</span><br></pre></td></tr></table></figure></p>
+<p>In [12]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum_func</span><span class="hljs-params">(*args)</span>:</span></span><br><span class="line">    print(args)</span><br><span class="line">    print(type(args))</span><br><span class="line">    print(args[<span class="hljs-number">2</span>])</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">sum_func(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>) <span class="hljs-comment"># 묶여서 tuple형태로 들어감</span></span><br></pre></td></tr></table></figure></p>
 <pre><code>(1, 2, 3, 4, 5)
-&lt;class &#39;tuple&#39;&gt;
+&lt;class &apos;tuple&apos;&gt;
 3
 </code></pre><h3 id="2-2-키워드-가변인자-kwargs"><a href="#2-2-키워드-가변인자-kwargs" class="headerlink" title="2.2 키워드 가변인자: **kwargs"></a>2.2 키워드 가변인자: **kwargs</h3><ul>
 <li>parameter의 이름을 따로 지정하지 않고 입력하는 방법</li>
 <li>asterisk(*) 두개를 사용하여 함수의 parameter를 표시함</li>
 <li>입력된 값은 dict type으로 사용할 수 있음</li>
 <li><p>키워드 가변인자는 오직 한 개만 기존 가변인자(있을 경우) 다음에 사용함<br>In [6]:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kwargs_test_1</span><span class="params">(**kwargs)</span>:</span> </span><br><span class="line">    print(kwargs)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kwargs_test_2</span><span class="params">(**kwargs)</span>:</span> </span><br><span class="line">    print(kwargs)</span><br><span class="line">    print(<span class="string">"First value is &#123;first&#125;"</span>.format(**kwargs)) </span><br><span class="line">    print(<span class="string">"Second value is &#123;second&#125;"</span>.format(**kwargs)) </span><br><span class="line">    print(<span class="string">"Third value is &#123;third&#125;"</span>.format(**kwargs))</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kwargs_test_3</span><span class="params">(one,two, *args, **kwargs)</span>:</span> </span><br><span class="line">    print(one+two+sum(args))</span><br><span class="line">    print(kwargs)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">kwargs_test_3(<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>, first=<span class="number">3</span>, second=<span class="number">4</span>, third=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">kwargs_test_1</span><span class="hljs-params">(**kwargs)</span>:</span> </span><br><span class="line">    print(kwargs)</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">kwargs_test_2</span><span class="hljs-params">(**kwargs)</span>:</span> </span><br><span class="line">    print(kwargs)</span><br><span class="line">    print(<span class="hljs-string">"First value is &#123;first&#125;"</span>.format(**kwargs)) </span><br><span class="line">    print(<span class="hljs-string">"Second value is &#123;second&#125;"</span>.format(**kwargs)) </span><br><span class="line">    print(<span class="hljs-string">"Third value is &#123;third&#125;"</span>.format(**kwargs))</span><br><span class="line">    </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">kwargs_test_3</span><span class="hljs-params">(one,two, *args, **kwargs)</span>:</span> </span><br><span class="line">    print(one+two+sum(args))</span><br><span class="line">    print(kwargs)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">kwargs_test_3(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>, first=<span class="hljs-number">3</span>, second=<span class="hljs-number">4</span>, third=<span class="hljs-number">5</span>)</span><br></pre></td></tr></table></figure>
 <p>  42<br>  {‘first’: 3, ‘second’: 4, ‘third’: 5}</p>
 </li>
 </ul>
-<p>In [13]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">points</span><span class="params">(**kwargs)</span>:</span></span><br><span class="line">    print(kwargs)</span><br><span class="line">    print(type(kwargs))</span><br><span class="line">    print(kwargs[<span class="string">'math'</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">points(math = <span class="number">90</span>, science = <span class="number">70</span>)</span><br></pre></td></tr></table></figure></p>
-<pre><code>{&#39;math&#39;: 90, &#39;science&#39;: 70}
-&lt;class &#39;dict&#39;&gt;
+<p>In [13]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">points</span><span class="hljs-params">(**kwargs)</span>:</span></span><br><span class="line">    print(kwargs)</span><br><span class="line">    print(type(kwargs))</span><br><span class="line">    print(kwargs[<span class="hljs-string">'math'</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">points(math = <span class="hljs-number">90</span>, science = <span class="hljs-number">70</span>)</span><br></pre></td></tr></table></figure></p>
+<pre><code>{&apos;math&apos;: 90, &apos;science&apos;: 70}
+&lt;class &apos;dict&apos;&gt;
 90
-</code></pre><p>In [14]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dss</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    print(args)</span><br><span class="line">    print(kwargs)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">dss(<span class="number">2</span>, <span class="number">3</span>, num1 = <span class="number">10</span>, num2 = <span class="number">20</span>)</span><br></pre></td></tr></table></figure></p>
+</code></pre><p>In [14]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dss</span><span class="hljs-params">(*args, **kwargs)</span>:</span></span><br><span class="line">    print(args)</span><br><span class="line">    print(kwargs)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">dss(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, num1 = <span class="hljs-number">10</span>, num2 = <span class="hljs-number">20</span>)</span><br></pre></td></tr></table></figure></p>
 <pre><code>(2, 3)
-{&#39;num1&#39;: 10, &#39;num2&#39;: 20}
-</code></pre><p>In [15]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dss</span><span class="params">(*args)</span>:</span></span><br><span class="line">    print(args)</span><br><span class="line">    </span><br><span class="line">ls = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">dss(ls)              <span class="comment"># ls가 *args의 0번째 데이터로 들어감</span></span><br></pre></td></tr></table></figure></p>
+{&apos;num1&apos;: 10, &apos;num2&apos;: 20}
+</code></pre><p>In [15]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dss</span><span class="hljs-params">(*args)</span>:</span></span><br><span class="line">    print(args)</span><br><span class="line">    </span><br><span class="line">ls = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]</span><br><span class="line">dss(ls)              <span class="hljs-comment"># ls가 *args의 0번째 데이터로 들어감</span></span><br></pre></td></tr></table></figure></p>
 <pre><code>([1, 2, 3, 4],)
-</code></pre><h4 id="argument에-가변인자-사용하기"><a href="#argument에-가변인자-사용하기" class="headerlink" title="argument에 가변인자 사용하기"></a>argument에 가변인자 사용하기</h4><p>In [16]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dss</span><span class="params">(*args)</span>:</span></span><br><span class="line">    print(args)</span><br><span class="line">    print(type(args))</span><br><span class="line">    </span><br><span class="line">ls = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">dss(*ls)   <span class="comment"># list 가 argument로 하나씩 들어가게 됨</span></span><br></pre></td></tr></table></figure></p>
+</code></pre><h4 id="argument에-가변인자-사용하기"><a href="#argument에-가변인자-사용하기" class="headerlink" title="argument에 가변인자 사용하기"></a>argument에 가변인자 사용하기</h4><p>In [16]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dss</span><span class="hljs-params">(*args)</span>:</span></span><br><span class="line">    print(args)</span><br><span class="line">    print(type(args))</span><br><span class="line">    </span><br><span class="line">ls = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]</span><br><span class="line">dss(*ls)   <span class="hljs-comment"># list 가 argument로 하나씩 들어가게 됨</span></span><br></pre></td></tr></table></figure></p>
 <pre><code>(1, 2, 3, 4)
-&lt;class &#39;tuple&#39;&gt;
-</code></pre><p>In [17]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 그냥 보낼 경우 args의 0번째 데이터로 보내게 됨</span></span><br><span class="line">dss(ls)</span><br></pre></td></tr></table></figure></p>
+&lt;class &apos;tuple&apos;&gt;
+</code></pre><p>In [17]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 그냥 보낼 경우 args의 0번째 데이터로 보내게 됨</span></span><br><span class="line">dss(ls)</span><br></pre></td></tr></table></figure></p>
 <pre><code>([1, 2, 3, 4],)
-&lt;class &#39;tuple&#39;&gt;
-</code></pre><h2 id="3-docstring"><a href="#3-docstring" class="headerlink" title="3. docstring"></a>3. docstring</h2><p>함수에 대한 설명을 넣는 것 (함수와 parameter에 관한 설명은 필수)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dss</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="string">"description"</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">or</span></span><br><span class="line"></span><br><span class="line">  <span class="string">"""</span></span><br><span class="line"><span class="string">  description</span></span><br><span class="line"><span class="string">  description</span></span><br><span class="line"><span class="string">  """</span></span><br></pre></td></tr></table></figure></p>
+&lt;class &apos;tuple&apos;&gt;
+</code></pre><h2 id="3-docstring"><a href="#3-docstring" class="headerlink" title="3. docstring"></a>3. docstring</h2><p>함수에 대한 설명을 넣는 것 (함수와 parameter에 관한 설명은 필수)<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dss</span><span class="hljs-params">()</span>:</span></span><br><span class="line">  <span class="hljs-string">"description"</span></span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">or</span></span><br><span class="line"></span><br><span class="line">  <span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-string">  description</span></span><br><span class="line"><span class="hljs-string">  description</span></span><br><span class="line"><span class="hljs-string">  """</span></span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>PEP 20: The Zen of Python - “Readability counts”</li>
 <li>PEP 8: Style Guide for Python Code</li>
 </ul>
-<p>In [18]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># PEP 20</span></span><br><span class="line"><span class="keyword">import</span> this</span><br></pre></td></tr></table></figure></p>
+<p>In [18]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># PEP 20</span></span><br><span class="line"><span class="hljs-keyword">import</span> this</span><br></pre></td></tr></table></figure></p>
 <p><strong>The Zen of Python, by Tim Peters</strong></p>
 <blockquote>
-<p>Beautiful is better than ugly.<br>Explicit is better than implicit.<br>Simple is better than complex.<br>Complex is better than complicated.<br>Flat is better than nested.<br>Sparse is better than dense.<br>Readability counts.<br>Special cases aren’t special enough to break the rules.<br>Although practicality beats purity.<br>Errors should never pass silently.<br>Unless explicitly silenced.<br>In the face of ambiguity, refuse the temptation to guess.<br>There should be one— and preferably only one —obvious way to do it.<br>Although that way may not be obvious at first unless you’re Dutch.<br>Now is better than never.<br>Although never is often better than <em>right</em> now.<br>If the implementation is hard to explain, it’s a bad idea.<br>If the implementation is easy to explain, it may be a good idea.<br>Namespaces are one honking great idea — let’s do more of those!</p>
+<p>Beautiful is better than ugly.<br>Explicit is better than implicit.<br>Simple is better than complex.<br>Complex is better than complicated.<br>Flat is better than nested.<br>Sparse is better than dense.<br>Readability counts.<br>Special cases aren’t special enough to break the rules.<br>Although practicality beats purity.<br>Errors should never pass silently.<br>Unless explicitly silenced.<br>In the face of ambiguity, refuse the temptation to guess.<br>There should be one– and preferably only one –obvious way to do it.<br>Although that way may not be obvious at first unless you’re Dutch.<br>Now is better than never.<br>Although never is often better than <em>right</em> now.<br>If the implementation is hard to explain, it’s a bad idea.<br>If the implementation is easy to explain, it may be a good idea.<br>Namespaces are one honking great idea – let’s do more of those!</p>
 </blockquote>
 <h4 id="naming-convention-함수의-경우는-주로-snake-case-사용"><a href="#naming-convention-함수의-경우는-주로-snake-case-사용" class="headerlink" title="naming convention - 함수의 경우는 주로 snake case 사용"></a>naming convention - 함수의 경우는 주로 snake case 사용</h4><ul>
 <li>snake case: first_name</li>
 <li>camel case: firstNameAddrEmail</li>
 <li>pascal case: FirstNameAddrEmail</li>
 </ul>
-<p>In [19]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">echo</span><span class="params">(anything)</span>:</span></span><br><span class="line">    <span class="string">'echo returns its input argument'</span></span><br><span class="line">    <span class="keyword">return</span> anything</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result1 = echo(<span class="string">"data_science"</span>)</span><br></pre></td></tr></table></figure></p>
-<p>In [20]:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo?</span><br></pre></td></tr></table></figure></p>
+<p>In [19]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">echo</span><span class="hljs-params">(anything)</span>:</span></span><br><span class="line">    <span class="hljs-string">'echo returns its input argument'</span></span><br><span class="line">    <span class="hljs-keyword">return</span> anything</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result1 = echo(<span class="hljs-string">"data_science"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>In [20]:<br><figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo?</span><br></pre></td></tr></table></figure></p>
 <pre><code>Signature: echo(anything)
 Docstring: echo returns its input argument
 File:      ~/Workspace/Python_Study/&lt;ipython-input-19-387cc7da3925&gt;
 Type:      function
-</code></pre><p>In [21]:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo??</span><br></pre></td></tr></table></figure></p>
+</code></pre><p>In [21]:<br><figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo??</span><br></pre></td></tr></table></figure></p>
 <pre><code>Signature: echo(anything)
 Source:   
 def echo(anything):
-    &#39;echo returns its input argument&#39;
+    &apos;echo returns its input argument&apos;
     return anything
 File:      ~/Workspace/Python_Study/&lt;ipython-input-19-387cc7da3925&gt;
 Type:      function
-</code></pre><p>In [22]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">echo2</span><span class="params">(anything)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    echo returns it's input argument</span></span><br><span class="line"><span class="string">    The operation is:</span></span><br><span class="line"><span class="string">    1. print anything parameter</span></span><br><span class="line"><span class="string">    2. return anything parameter</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    print(<span class="string">"echo2 function : &#123;&#125;"</span>.format(anything))</span><br><span class="line">    <span class="keyword">return</span> anything</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result2 = echo2(<span class="string">"data_science"</span>)</span><br></pre></td></tr></table></figure></p>
+</code></pre><p>In [22]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">echo2</span><span class="hljs-params">(anything)</span>:</span></span><br><span class="line">    <span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-string">    echo returns it's input argument</span></span><br><span class="line"><span class="hljs-string">    The operation is:</span></span><br><span class="line"><span class="hljs-string">    1. print anything parameter</span></span><br><span class="line"><span class="hljs-string">    2. return anything parameter</span></span><br><span class="line"><span class="hljs-string">    """</span></span><br><span class="line">    print(<span class="hljs-string">"echo2 function : &#123;&#125;"</span>.format(anything))</span><br><span class="line">    <span class="hljs-keyword">return</span> anything</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result2 = echo2(<span class="hljs-string">"data_science"</span>)</span><br></pre></td></tr></table></figure></p>
 <pre><code>echo2 function : data_science
-</code></pre><p>3.2 help<br>In [23]:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">help(echo)</span><br></pre></td></tr></table></figure></p>
+</code></pre><p>3.2 help<br>In [23]:<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">help(echo)</span><br></pre></td></tr></table></figure></p>
 <pre><code>Help on function echo in module __main__:
 
 echo(anything)
     echo returns its input argument
-</code></pre><p>In [24]:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print?</span><br></pre></td></tr></table></figure></p>
+</code></pre><p>In [24]:<br><figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print?</span><br></pre></td></tr></table></figure></p>
 <pre><code>Docstring:
-print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
+print(value, ..., sep=&apos; &apos;, end=&apos;\n&apos;, file=sys.stdout, flush=False)
 
 Prints the values to a stream, or to sys.stdout by default.
 Optional keyword arguments:
@@ -487,7 +486,7 @@ Type:      builtin_function_or_method
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        136
+                        138
                     </p>
                 </div>
             </div>
@@ -497,7 +496,7 @@ Type:      builtin_function_or_method
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        8
                     </p>
                 </div>
             </div>
@@ -507,7 +506,7 @@ Type:      builtin_function_or_method
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        31
                     </p>
                 </div>
             </div>
@@ -557,31 +556,15 @@ Type:      builtin_function_or_method
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/">
             <span class="level-start">
-                <span class="level-item">Data Analysis 공부</span>
+                <span class="level-item">Data Science 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">23</span>
+                <span class="level-item tag">54</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/수학-공부/">
-            <span class="level-start">
-                <span class="level-item">수학 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">23</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/">
-            <span class="level-start">
-                <span class="level-item">Programming 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">30</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Algorithm-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Algorithm-공부/">
             <span class="level-start">
                 <span class="level-item">Algorithm 공부</span>
             </span>
@@ -589,7 +572,7 @@ Type:      builtin_function_or_method
                 <span class="level-item tag">2</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Database-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Database-공부/">
             <span class="level-start">
                 <span class="level-item">Database 공부</span>
             </span>
@@ -597,20 +580,28 @@ Type:      builtin_function_or_method
                 <span class="level-item tag">5</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Python-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Python-공부/">
             <span class="level-start">
                 <span class="level-item">Python 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">11</span>
+                <span class="level-item tag">12</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Web-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Web-공부/">
             <span class="level-start">
                 <span class="level-item">Web 공부</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/수학-공부/">
+            <span class="level-start">
+                <span class="level-item">수학 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/TIL-Today-I-Learned/">
@@ -618,7 +609,7 @@ Type:      builtin_function_or_method
                 <span class="level-item">TIL(Today I Learned)</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">81</span>
+                <span class="level-item tag">82</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/기타/">
@@ -640,7 +631,7 @@ Type:      builtin_function_or_method
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.44px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.78px;">data analysis</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11.11px;">html</a> <a href="/tags/javascript/" style="font-size: 11.11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 17.78px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 18.89px;">programming</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/selenium/" style="font-size: 12.22px;">selenium</a> <a href="/tags/web/" style="font-size: 15.56px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.44px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 17.78px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11.11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.44px;">웹크롤링</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 12.73px;">Database</a> <a href="/tags/MySQL/" style="font-size: 11.82px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 11.82px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.91px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 13.64px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.27px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 14.55px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.91px;">html</a> <a href="/tags/javascript/" style="font-size: 10.91px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19.09px;">programming</a> <a href="/tags/python/" style="font-size: 16.36px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 11.82px;">selenium</a> <a href="/tags/web/" style="font-size: 15.45px;">web</a> <a href="/tags/web-crawling/" style="font-size: 13.64px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.91px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 13.64px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 10.91px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
     </div>
 </div>
 
@@ -651,6 +642,44 @@ Type:      builtin_function_or_method
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/python_11_regex/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 11. 정규표현식(regex)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:35:53.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/python_11_regex/" class="has-link-black-ter is-size-6">python 11. 정규표현식(regex)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/2019-02-21-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-21-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:04:15.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/2019-02-21-TIL/" class="has-link-black-ter is-size-6">2019-02-21-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -709,44 +738,6 @@ Type:      builtin_function_or_method
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-14-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-14-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-14-TIL/" class="has-link-black-ter is-size-6">2019-01-14-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-13-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-13-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-13-TIL/" class="has-link-black-ter is-size-6">2019-01-13-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -765,7 +756,7 @@ Type:      builtin_function_or_method
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>

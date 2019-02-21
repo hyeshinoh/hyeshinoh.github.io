@@ -156,17 +156,88 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-15T12:27:51.000Z">2018-10-15</time>
+                <time class="level-item has-text-grey" datetime="2019-02-21T14:35:53.000Z">2019-02-21</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Web-공부/">Web 공부</a>
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    20 minutes read (About 2942 words)
+                    13 minutes read (About 1916 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/02/21/python_11_regex/">python 11. 정규표현식(regex)</a>
+            
+        </h1>
+        <div class="content">
+            <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_11_regex.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
+<h2 id="정규표현식"><a href="#정규표현식" class="headerlink" title="정규표현식"></a><strong>정규표현식</strong></h2><ul>
+<li>특정 패턴을 이용해 문자열을 처리하는 방법</li>
+<li>호불호가 있지만 강사님은 필요시에만 사용하는 것이 좋다고 생각함<ul>
+<li>작성하면서 실수하기도 쉽고, 이해하는데도 가독성이 떨어짐</li>
+<li>문자열 함수를 쓰는 것이 가독성이 더 좋음</li>
+</ul>
+</li>
+</ul>
+<h2 id="다룰-내용"><a href="#다룰-내용" class="headerlink" title="다룰 내용"></a>다룰 내용</h2><ol>
+<li>정규표현식 함수<ul>
+<li>match: 문자열의 가장 앞에서 일치하는 패턴을 찾기</li>
+<li>search: 문자열에서 가장 첫번째로 일치하는 패턴 찾기</li>
+<li>findall: 일치하는 패턴을 모두 찾기</li>
+<li>split: 문자열을 특정 패턴으로 나누기</li>
+<li>sub: 특정 패턴에 맞는 문자열을 대체하기</li>
+</ul>
+</li>
+<li>Pattern</li>
+<li>Examples</li>
+</ol>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/02/21/python_11_regex/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-10-15T12:27:51.000Z">2018-10-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Web-공부/">Web 공부</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    20 minutes read (About 2943 words)
                 </span>
                 
             </div>
@@ -195,400 +266,16 @@
 </ul>
 </li>
 </ul>
-<h2 id="1-Scrapy"><a href="#1-Scrapy" class="headerlink" title="1. Scrapy"></a>1. Scrapy</h2><ul>
-<li>웹사이트에서 데이터 추출을 하기 위한 오픈소스 프레임워크 (패키지가 아님)</li>
-<li><a href="http://scrapy.org" target="_blank" rel="noopener">http://scrapy.org</a></li>
-<li>설치<ul>
-<li>windows: <code>conda install -c conda-forge scrapy</code></li>
-<li>mac: <code>pip3 install scrapy</code></li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br></pre></td></tr></table></figure>
-<h2 id="2-xpath"><a href="#2-xpath" class="headerlink" title="2. xpath"></a>2. xpath</h2><p>지금까지 배웠던 css selector가 아닌 xpath를 이용해서도 웹페이지의 html element를 선택할 수 있다.</p>
-<h3 id="2-1-xpath의-기본-문법"><a href="#2-1-xpath의-기본-문법" class="headerlink" title="2.1 xpath의 기본 문법"></a>2.1 xpath의 기본 문법</h3><p>예시 xpath: 네이버 실시간 검색어 순위에서 [copy xpath]로 복사<br><code>//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li[1]/a/span[2]</code></p>
-<ul>
-<li><code>//</code>: 최상위 element를 의미</li>
-<li><code>*</code>: 조건에 맞는 하위 element를 모두 살펴봄 (css selector에서 하위 element 검색: 한칸 띄우기)</li>
-<li><code>[@id=&quot;PM_ID_ct&quot;]</code>: id가 PM_ID_ct 인 element를 선택<ul>
-<li><code>[@&lt;key&gt;=&lt;value&gt;]</code> 형태 (css selector와 다르게 모든 속성을 <code>@&lt;key&gt;</code>로 표현)</li>
-</ul>
-</li>
-<li><code>/</code>: 바로 아래 element를 살펴봄 (css selector의 <code>&gt;</code> 기호와 같은 의미)</li>
-<li><code>[number]</code>: number번째 element를 선택 (0번부터가 아니라 1번부터 시작함)</li>
-<li><code>.</code>: 현재 element를 의미</li>
-<li><code>not()</code>: 조건이 아닌 element를 찾음<ul>
-<li><code>not([@id=test})</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="2-2-네이버-실시간-검색어-크롤링"><a href="#2-2-네이버-실시간-검색어-크롤링" class="headerlink" title="2.2 네이버 실시간 검색어 크롤링"></a>2.2 네이버 실시간 검색어 크롤링</h3><h4 id="1-스크래피-셸-사용"><a href="#1-스크래피-셸-사용" class="headerlink" title="(1) 스크래피 셸 사용"></a>(1) 스크래피 셸 사용</h4><ul>
-<li><code>$ scrapy shell &quot;&lt;url&gt;&quot;</code></li>
-</ul>
-<h4 id="2-jupyter-notebook-사용"><a href="#2-jupyter-notebook-사용" class="headerlink" title="(2) jupyter notebook 사용"></a>(2) jupyter notebook 사용</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> scrapy.http <span class="keyword">import</span> TextResponse</span><br></pre></td></tr></table></figure>
-<h5 id="웹페이지에-연결"><a href="#웹페이지에-연결" class="headerlink" title="웹페이지에 연결"></a>웹페이지에 연결</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"http://naver.com"</span></span><br><span class="line">rep = requests.get(url)</span><br><span class="line">response = TextResponse(rep.url, body=rep.text, encoding=<span class="string">"utf-8"</span>)</span><br></pre></td></tr></table></figure>
-<h5 id="네이버-실시간-검색어-1위-element-객체"><a href="#네이버-실시간-검색어-1위-element-객체" class="headerlink" title="네이버 실시간 검색어 1위 element 객체"></a>네이버 실시간 검색어 1위 element 객체</h5><ul>
-<li>xpath로 select하면 list로 return</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.xpath(<span class="string">'//*[@id="PM_ID_ct"]/div[1]/div[2]/div[2]/div[1]/div/ul/li[1]/a/span[2]'</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>[&lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li[1]/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;우왁굳&lt;/span&gt;&#39;&gt;]
-</code></pre><h5 id="네이버-실시간-검색어-20개-element-객체"><a href="#네이버-실시간-검색어-20개-element-객체" class="headerlink" title="네이버 실시간 검색어 20개 element 객체"></a>네이버 실시간 검색어 20개 element 객체</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 네이버 실시간 검색어 20개 element 객체</span></span><br><span class="line">response.xpath(<span class="string">'//*[@id="PM_ID_ct"]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]'</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>[&lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;우왁굳&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;홍현희&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;김수현&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;오영택&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;미세먼지&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;주윤발&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;박지원&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;환희유치원&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;제이쓴&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;동탄 환희유치원&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;브리짓 존스의 베이비&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;고현정&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;추상미&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;조현민&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;장학영&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;강병규&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;이한샘&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;자이언티&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;오늘 미세먼지 농도&lt;/span&gt;&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]&#39; data=&#39;&lt;span class=&quot;ah_k&quot;&gt;존조&lt;/span&gt;&#39;&gt;]
-</code></pre><h5 id="객체의-text만-추출하기"><a href="#객체의-text만-추출하기" class="headerlink" title="객체의 text만 추출하기"></a>객체의 text만 추출하기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.xpath(<span class="string">'//*[@id="PM_ID_ct"]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()'</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>[&lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;우왁굳&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;홍현희&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;김수현&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;오영택&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;미세먼지&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;주윤발&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;박지원&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;환희유치원&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;제이쓴&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;동탄 환희유치원&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;브리짓 존스의 베이비&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;고현정&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;추상미&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;조현민&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;장학영&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;강병규&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;이한샘&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;자이언티&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;오늘 미세먼지 농도&#39;&gt;,
- &lt;Selector xpath=&#39;//*[@id=&quot;PM_ID_ct&quot;]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()&#39; data=&#39;존조&#39;&gt;]
-</code></pre><h5 id="문자열만-추출하기"><a href="#문자열만-추출하기" class="headerlink" title="문자열만 추출하기"></a>문자열만 추출하기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.xpath(<span class="string">'//*[@id="PM_ID_ct"]/div[1]/div[2]/div[2]/div[1]/div/ul/li/a/span[2]/text()'</span>)[:<span class="number">10</span>].extract()</span><br></pre></td></tr></table></figure>
-<pre><code>[&#39;우왁굳&#39;, &#39;홍현희&#39;, &#39;김수현&#39;, &#39;오영택&#39;, &#39;미세먼지&#39;, &#39;주윤발&#39;, &#39;박지원&#39;, &#39;환희유치원&#39;, &#39;제이쓴&#39;, &#39;동탄 환희유치원&#39;]
-</code></pre><h5 id="을-이용해서-가져오기"><a href="#을-이용해서-가져오기" class="headerlink" title=".을 이용해서 가져오기"></a><code>.</code>을 이용해서 가져오기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">keywords = response.xpath(<span class="string">'//*[@id="PM_ID_ct"]/div[1]/div[2]/div[2]/div[1]/div/ul/li'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> keyword <span class="keyword">in</span> keywords:</span><br><span class="line">    print(keyword.xpath(<span class="string">'./a/span[2]/text()'</span>)[<span class="number">0</span>].extract())</span><br></pre></td></tr></table></figure>
-<pre><code>우왁굳
-홍현희
-김수현
-오영택
-미세먼지
-주윤발
-박지원
-환희유치원
-제이쓴
-동탄 환희유치원
-브리짓 존스의 베이비
-고현정
-추상미
-조현민
-장학영
-강병규
-이한샘
-자이언티
-오늘 미세먼지 농도
-존조
-</code></pre><h3 id="2-3-다음-실시간-검색어-크롤링"><a href="#2-3-다음-실시간-검색어-크롤링" class="headerlink" title="2.3 다음 실시간 검색어 크롤링"></a>2.3 다음 실시간 검색어 크롤링</h3><h5 id="다음-실시간-검색어-리스트-출력"><a href="#다음-실시간-검색어-리스트-출력" class="headerlink" title="다음 실시간 검색어 리스트 출력"></a>다음 실시간 검색어 리스트 출력</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"http://daum.net"</span></span><br><span class="line">rep = requests.get(url)</span><br><span class="line">response = TextResponse(rep.url, body=rep.text, encoding=<span class="string">"utf-8"</span>)</span><br><span class="line">response.xpath(<span class="string">'//*[@id="mArticle"]/div[2]/div[1]/div[2]/div[1]/ol/li/div/div[1]/span[2]/a/text()'</span>).extract()</span><br></pre></td></tr></table></figure>
-<pre><code>[&#39;박지원&#39;, &#39;추상미&#39;, &#39;우왁굳&#39;, &#39;강예빈&#39;, &#39;김수현 아나운서&#39;, &#39;장학영&#39;, &#39;환희유치원&#39;, &#39;미세먼지&#39;, &#39;존조&#39;, &#39;서유정&#39;]
-</code></pre><h3 id="2-4-gmarket-best-item-200-크롤링"><a href="#2-4-gmarket-best-item-200-크롤링" class="headerlink" title="2.4 gmarket best item 200 크롤링"></a>2.4 gmarket best item 200 크롤링</h3><h5 id="웹페이지에-연결-1"><a href="#웹페이지에-연결-1" class="headerlink" title="웹페이지에 연결"></a>웹페이지에 연결</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"http://corners.gmarket.co.kr/Bestsellers"</span></span><br><span class="line">rep = requests.get(url)</span><br><span class="line">response = TextResponse(rep.url, body=rep.text, encoding=<span class="string">"utf-8"</span>)</span><br></pre></td></tr></table></figure>
-<h5 id="베스트-200-아이템-제목-문자열-리스트로-가져오기"><a href="#베스트-200-아이템-제목-문자열-리스트로-가져오기" class="headerlink" title="베스트 200 아이템 제목 문자열 리스트로 가져오기"></a>베스트 200 아이템 제목 문자열 리스트로 가져오기</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">titles = response.xpath(<span class="string">'//*[@id="gBestWrap"]/div/div[3]/div[2]/ul/li/a/text()'</span>).extract()</span><br><span class="line">print(len(titles))</span><br><span class="line">titles[<span class="number">195</span>:<span class="number">199</span>]</span><br></pre></td></tr></table></figure>
-<pre><code>200
-
-[&#39;일본수출 초극세사이불/백화점납품/ 피톤치드가공10mm&#39;,
- &#39;제로스킨 아이폰 갤럭시 핸드폰케이스 6 7 8 X S 노트&#39;,
- &#39;(국산)고급 반코팅 100켤레 이중코팅 면 목장갑 작업&#39;,
- &#39;[다이소]공식판매처/택배박스/봉투/로고인쇄/당일발송/소량&#39;]
-</code></pre><h5 id="200개-아이템에서-li-클래스가-first인-데이터만-가져오기"><a href="#200개-아이템에서-li-클래스가-first인-데이터만-가져오기" class="headerlink" title="200개 아이템에서 li 클래스가 first인 데이터만 가져오기"></a>200개 아이템에서 li 클래스가 first인 데이터만 가져오기</h5><ul>
-<li>클래스가 first인 아이템은 한 줄에 4개씩 나타나는 상품 중 각 줄의 첫번째 상품</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">titles = response.xpath(<span class="string">'//*[@id="gBestWrap"]/div/div[3]/div[2]/ul/li[@class="first"]/a/text()'</span>).extract()</span><br><span class="line">len(titles)</span><br></pre></td></tr></table></figure>
-<pre><code>50
-</code></pre><h5 id="200개-아이템에서-li-클래스가-first가-아닌-데이터만-가져오기"><a href="#200개-아이템에서-li-클래스가-first가-아닌-데이터만-가져오기" class="headerlink" title="200개 아이템에서 li 클래스가 first가 아닌 데이터만 가져오기"></a>200개 아이템에서 li 클래스가 first가 아닌 데이터만 가져오기</h5><ul>
-<li><code>not()</code>을 사용</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">titles = response.xpath(<span class="string">'//*[@id="gBestWrap"]/div/div[3]/div[2]/ul/li[not(@class="first")]/a/text()'</span>).extract()</span><br><span class="line">len(titles)</span><br></pre></td></tr></table></figure>
-<pre><code>150
-</code></pre><h2 id="3-Scrapy-project"><a href="#3-Scrapy-project" class="headerlink" title="3. Scrapy project"></a>3. Scrapy project</h2><ul>
-<li>jupyter notebook이 아닌 atom에서 작성</li>
-<li>네이버 영화 페이지에서 현재 상영되고 있는 영화의 제목과 관람객수를 크롤링</li>
-</ul>
-<h3 id="3-1-scrapy-프로젝트-생성"><a href="#3-1-scrapy-프로젝트-생성" class="headerlink" title="3.1 scrapy 프로젝트 생성"></a>3.1 scrapy 프로젝트 생성</h3><ul>
-<li>project 생성: <code>$ scrapy startproject &lt;project_name&gt;</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">! scrapy startproject crawler</span><br></pre></td></tr></table></figure>
-<pre><code>New Scrapy project &#39;crawler&#39;, using template directory &#39;/usr/local/lib/python3.6/site-packages/scrapy/templates/project&#39;, created in:
-    /Users/hyeshinoh/Workspace/Study_Web/crawler
-
-You can start your first spider with:
-    cd crawler
-    scrapy genspider example example.com
-</code></pre><h3 id="3-2-scrapy-프로젝트-파일-설명"><a href="#3-2-scrapy-프로젝트-파일-설명" class="headerlink" title="3.2 scrapy 프로젝트 파일 설명"></a>3.2 scrapy 프로젝트 파일 설명</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">! tree crawler</span><br></pre></td></tr></table></figure>
-<pre><code>crawler
-├── crawler
-│   ├── __init__.py
-│   ├── __pycache__
-│   ├── items.py
-│   ├── middlewares.py
-│   ├── pipelines.py
-│   ├── settings.py
-│   └── spiders
-│       ├── __init__.py
-│       └── __pycache__
-└── scrapy.cfg
-
-4 directories, 7 files
-</code></pre><h4 id="project-구조"><a href="#project-구조" class="headerlink" title="project 구조"></a>project 구조</h4><ul>
-<li>spiders directory <ul>
-<li>어떤 웹사이트를 어떻게 크롤링할 것인가를 명시하고, 각각의 웹 페이지의 어떤 부분을 스크래핑할 것인지 명시하는 클래스가 모여있는 디렉토리</li>
-<li>여러개의 spider.py 파일을 만들어 사용할 수 있음</li>
-</ul>
-</li>
-<li>items.py<ul>
-<li>크롤링하는 데이터에 대해 정의하는 클래스가 있는 파일(MVC → M)</li>
-</ul>
-</li>
-<li>pipelines.py<ul>
-<li>item 객체 형태로 크롤링을 하고 출력하기 전에 item을 받아서 실행하는 파일이 정의되어 있는 파일</li>
-<li>item을 자유롭게 가공하거나 다양한 파일 형태로 저장할 수 있도록 하는 클래스</li>
-</ul>
-</li>
-<li>settings.py<ul>
-<li>spider나 item pipeline 등이 어떻게 동작하게 할지에 대한 세부적 설정이 담겨 있는 파일 </li>
-<li>e.g. robots.txt 정책을 따를 것인지 안 따를 것인지, pipeline을 사용할지 안 할지</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-3-크롤링-코드-작성"><a href="#3-3-크롤링-코드-작성" class="headerlink" title="3.3 크롤링 코드 작성"></a>3.3 크롤링 코드 작성</h3><h4 id="※-yield"><a href="#※-yield" class="headerlink" title="※ yield"></a>※ yield</h4><h5 id="iterator와-generator"><a href="#iterator와-generator" class="headerlink" title="iterator와 generator"></a>iterator와 generator</h5><ul>
-<li>iterator: 순서가 있는 데이터의 집합</li>
-<li>generator: 함수가 호출될 때마다 순서대로 결과가 나오는 집합<ul>
-<li><code>return</code>으로 한번에 데이터를 return하는 것보다 <code>yield</code>로 하나씩 return하면 resource를 절약할 수 있음</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># iterator data</span></span><br><span class="line">ls = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># generator data</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">number</span><span class="params">()</span>:</span>    <span class="comment"># generator를 만드는 함수</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n = number()</span><br><span class="line">n</span><br></pre></td></tr></table></figure>
-<pre><code>&lt;generator object number at 0x11052c620&gt;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n.__next__()</span><br></pre></td></tr></table></figure>
-<pre><code>1
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n.__next__()</span><br></pre></td></tr></table></figure>
-<pre><code>2
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n.__next__()</span><br></pre></td></tr></table></figure>
-<pre><code>3
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n.__next__()</span><br></pre></td></tr></table></figure>
-<pre><code>---------------------------------------------------------------------------
-
-StopIteration                             Traceback (most recent call last)
-
-&lt;ipython-input-23-8d5cb7b534a9&gt; in &lt;module&gt;()
-----&gt; 1 n.__next__()
-
-
-StopIteration: 
-</code></pre><h4 id="1-items-py"><a href="#1-items-py" class="headerlink" title="(1) items.py"></a>(1) items.py</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#######################################################################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Define here the models for your scraped items</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># See documentation in:</span></span><br><span class="line"><span class="comment"># https://doc.scrapy.org/en/latest/topics/items.html</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CrawlerItem</span><span class="params">(scrapy.Item)</span>:</span></span><br><span class="line">    <span class="comment"># define the fields for your item here like:</span></span><br><span class="line">    title = scrapy.Field()</span><br><span class="line">    count = scrapy.Field()</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#######################################################################################</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-spider-py"><a href="#2-spider-py" class="headerlink" title="(2) spider.py"></a>(2) spider.py</h4><ul>
-<li>가장 먼저 실행되는 파일</li>
-<li>기본적 변수<ul>
-<li>name: scrapy 명령어로 spider를 실행할 때 argument로 쓰는 name</li>
-<li>domain: 크롤링할 domain</li>
-<li>start_urls: 가장 먼저 크롤링을 시작할 (처음에 request를 던질) url</li>
-</ul>
-</li>
-</ul>
-<h4 id="크롤링-함수-작성"><a href="#크롤링-함수-작성" class="headerlink" title="크롤링 함수 작성"></a>크롤링 함수 작성</h4><p>먼저, jupyter notebook 상에서 네이버 영화 페이지에서 현재 상영영화 링크 리스트 크롤링해본다.<br>(jupyter notebook 상에서 크롤링이 제대로 되는지 확인해보고, 파이썬 파일로 작성하기 위함)</p>
-<ul>
-<li>상영중인 영화 리스트 받아오기</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"https://movie.naver.com/movie/running/current.nhn"</span></span><br><span class="line">rep = requests.get(url)</span><br><span class="line">response = TextResponse(rep.url, body=rep.text, encoding=<span class="string">"utf-8"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">links = response.xpath(<span class="string">'//*[@id="content"]/div[1]/div[1]/div[3]/ul/li/dl/dt/a/@href'</span>)[:<span class="number">10</span>].extract()</span><br><span class="line"><span class="keyword">for</span> link <span class="keyword">in</span> links:</span><br><span class="line">    print(response.urljoin(link))    <span class="comment"># domain과 연결시켜줌</span></span><br></pre></td></tr></table></figure>
-<pre><code>https://movie.naver.com/movie/bi/mi/basic.nhn?code=167105
-https://movie.naver.com/movie/bi/mi/basic.nhn?code=119428
-https://movie.naver.com/movie/bi/mi/basic.nhn?code=155356
-https://movie.naver.com/movie/bi/mi/basic.nhn?code=168050
-https://movie.naver.com/movie/bi/mi/basic.nhn?code=163533
-https://movie.naver.com/movie/bi/mi/basic.nhn?code=168023
-https://movie.naver.com/movie/bi/mi/basic.nhn?code=178402
-https://movie.naver.com/movie/bi/mi/basic.nhn?code=164992
-https://movie.naver.com/movie/bi/mi/basic.nhn?code=172040
-https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
-</code></pre><ul>
-<li>영화의 제목과 누적 관객수 받아오기</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"https://movie.naver.com/movie/bi/mi/basic.nhn?code=159892"</span></span><br><span class="line">rep = requests.get(url)</span><br><span class="line">response = TextResponse(rep.url, body=rep.text, encoding=<span class="string">"utf-8"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_page_contents</span><span class="params">(self, response)</span>:</span></span><br><span class="line">    item = CrawlerItem()</span><br><span class="line">    item[<span class="string">"title"</span>] = response.xpath(<span class="string">'//*[@id="content"]/div[1]/div[2]/div[1]/h3/a[1]/text()'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        item[<span class="string">"count"</span>] = response.xpath(<span class="string">'//*[@id="content"]/div[1]/div[2]/div[1]/dl/dd[5]/div/p[2]/text()'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        item[<span class="string">"count"</span>] = <span class="string">"0명"</span></span><br><span class="line">    <span class="keyword">yield</span> item</span><br></pre></td></tr></table></figure>
-<h4 id="nm-spider-py-작성"><a href="#nm-spider-py-작성" class="headerlink" title="nm_spider.py 작성"></a>nm_spider.py 작성</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#######################################################################################</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="keyword">from</span> crawler.items <span class="keyword">import</span> CrawlerItem    <span class="comment"># 위에서 작성한 items.py를 불러옴</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># start_urls -&gt; parse -&gt; parse_page_contents 순으로 호출</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NaverMovieSpider</span><span class="params">(scrapy.Spider)</span>:</span>    <span class="comment"># scrapy.Spider 클래스를 상속 받음 (크롤링에 필요한 기능이 들어가 있음)</span></span><br><span class="line">    name = <span class="string">"naver_movie"</span>   </span><br><span class="line">    allow_domain = [<span class="string">"https://movie.naver.com"</span>]</span><br><span class="line">    start_urls = [</span><br><span class="line">        <span class="string">"https://movie.naver.com/movie/running/current.nhn"</span></span><br><span class="line">    ]    </span><br><span class="line"></span><br><span class="line">    <span class="comment"># link 리스트를 가져옴 (start url을 request로 던지고 그 response를 parse 함수가 받음)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        links = response.xpath(<span class="string">'//*[@id="content"]/div[1]/div[1]/div[3]/ul/li/dl/dt/a/@href'</span>)[:<span class="number">10</span>].extract()</span><br><span class="line">        <span class="keyword">for</span> link <span class="keyword">in</span> links:</span><br><span class="line">            link = response.urljoin(link)</span><br><span class="line">            <span class="keyword">yield</span> scrapy.Request(link, callback=self.parse_page_contents)  <span class="comment"># yield가 10개 생성됨</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 각페이지의 link로 접속하여 데이터를 가져옴</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse_page_contents</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        item = CrawlerItem()    <span class="comment"># item obj.를 만들어 줌</span></span><br><span class="line">        item[<span class="string">"title"</span>] = response.xpath(<span class="string">'//*[@id="content"]/div[1]/div[2]/div[1]/h3/a[1]/text()'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            item[<span class="string">"count"</span>] = response.xpath(<span class="string">'//*[@id="content"]/div[1]/div[2]/div[1]/dl/dd[5]/div/p[2]/text()'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            item[<span class="string">"count"</span>] = <span class="string">"0명"</span></span><br><span class="line">        <span class="keyword">yield</span> item      <span class="comment"># 10개 만들어진 generator마다 한 번 실행됨</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#######################################################################################</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-settings-py"><a href="#3-settings-py" class="headerlink" title="(3) settings.py"></a>(3) settings.py</h4><ul>
-<li>크롤링하려는 사이트의 robots.txt 정책에 따라 obey 여부를 조정</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#######################################################################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Obey robots.txt rules</span></span><br><span class="line">ROBOTSTXT_OBEY = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#######################################################################################</span></span><br></pre></td></tr></table></figure>
-<h4 id="4-spider-실행"><a href="#4-spider-실행" class="headerlink" title="(4) spider 실행"></a>(4) spider 실행</h4><ul>
-<li>실행 위치: 프로젝트 디렉토리에서 실행(item.py 파일이 있는 디렉토리)</li>
-<li>명령어<ul>
-<li><code>$ scrapy crawl naver_movie</code></li>
-<li>csv 파일로 결과 저장 옵션: <code>$ scrapy crawl naver_movie -o movie.csv</code><ul>
-<li>단, 이렇게 저장하면 column 순서를 지정할 수 없음 (pipeline으로 지정할 수 있음)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>비동기 thread로 처리되기 때문에 영화 데이터가 순서대로 크롤링되지 않음</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.read_csv(<span class="string">"movie.csv"</span>)</span><br></pre></td></tr></table></figure>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>count</th>
-<th>title</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>2,833,821명</td>
-<td>암수살인</td>
-</tr>
-<tr>
-<td>1</td>
-<td>15,248명</td>
-<td>리즈와 파랑새</td>
-</tr>
-<tr>
-<td>2</td>
-<td>395,867명</td>
-<td>곰돌이 푸 다시 만나 행복해</td>
-</tr>
-<tr>
-<td>3</td>
-<td>0명</td>
-<td>다이노 어드벤처2: 육해공 공룡 대백과</td>
-</tr>
-<tr>
-<td>4</td>
-<td>153,398명</td>
-<td>스타 이즈 본</td>
-</tr>
-<tr>
-<td>5</td>
-<td>18,318명</td>
-<td>극장판 가면라이더 이그제이드: 트루 엔딩</td>
-</tr>
-<tr>
-<td>6</td>
-<td>193,789명</td>
-<td>미쓰백</td>
-</tr>
-<tr>
-<td>7</td>
-<td>794,815명</td>
-<td>그랜드 부다페스트 호텔</td>
-</tr>
-<tr>
-<td>8</td>
-<td>5,352,401명</td>
-<td>안시성</td>
-</tr>
-<tr>
-<td>9</td>
-<td>3,249,358명</td>
-<td>베놈</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h4 id="5-pipeline-py"><a href="#5-pipeline-py" class="headerlink" title="(5) pipeline.py"></a>(5) pipeline.py</h4><ul>
-<li>pipeline을 사용해서 크롤링한 데이터를 column 순서를 지정해서 csv 파일로 저장할 수 있음</li>
-<li>크롤러를 실행할 때 CrawlerPipeline 객체를 생성하고 아이템을 하나씩 크롤링할 때마다 process_item 함수를 실행</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#######################################################################################</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CrawlerPipeline</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.csvwriter = csv.writer(open(<span class="string">"NaverMovie.csv"</span>,<span class="string">"wt"</span>))</span><br><span class="line">        self.csvwriter.writerow([<span class="string">"title"</span>, <span class="string">"count"</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, spider)</span>:</span></span><br><span class="line">        row = []</span><br><span class="line">        row.append(item[<span class="string">"title"</span>])</span><br><span class="line">        row.append(item[<span class="string">"count"</span>])</span><br><span class="line">        self.csvwriter.writerow(row)</span><br><span class="line">        <span class="keyword">return</span> item</span><br><span class="line"></span><br><span class="line"><span class="comment">#######################################################################################</span></span><br></pre></td></tr></table></figure>
-<p>settings.py 수정 (주석 해제)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#######################################################################################</span></span><br><span class="line"></span><br><span class="line">ITEM_PIPELINES = &#123;</span><br><span class="line">    <span class="string">'crawler.pipelines.CrawlerPipeline'</span>:<span class="number">300</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#######################################################################################</span></span><br></pre></td></tr></table></figure>
-<p>다시 scrapy 실행시 결과 파일의 column이 title, count 순서로 만들어짐</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.read_csv(<span class="string">"NaverMovie.csv"</span>)</span><br></pre></td></tr></table></figure>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>title</th>
-<th>count</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>암수살인</td>
-<td>2,833,821명</td>
-</tr>
-<tr>
-<td>1</td>
-<td>리즈와 파랑새</td>
-<td>15,248명</td>
-</tr>
-<tr>
-<td>2</td>
-<td>다이노 어드벤처2: 육해공 공룡 대백과</td>
-<td>0명</td>
-</tr>
-<tr>
-<td>3</td>
-<td>곰돌이 푸 다시 만나 행복해</td>
-<td>395,867명</td>
-</tr>
-<tr>
-<td>4</td>
-<td>스타 이즈 본</td>
-<td>153,398명</td>
-</tr>
-<tr>
-<td>5</td>
-<td>극장판 가면라이더 이그제이드: 트루 엔딩</td>
-<td>18,318명</td>
-</tr>
-<tr>
-<td>6</td>
-<td>안시성</td>
-<td>5,352,401명</td>
-</tr>
-<tr>
-<td>7</td>
-<td>미쓰백</td>
-<td>193,789명</td>
-</tr>
-<tr>
-<td>8</td>
-<td>그랜드 부다페스트 호텔</td>
-<td>794,815명</td>
-</tr>
-<tr>
-<td>9</td>
-<td>베놈</td>
-<td>3,249,358명</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="덧"><a href="#덧" class="headerlink" title="덧"></a>덧</h3><ul>
-<li>yield, callback 구조를 이해하면 그 단계를 다양하게 구성할 수 있음</li>
-<li>동적페이지를 크롤링하려면 <code>__init__()</code> 함수로 driver를 만들고 driver를 사용해서 크롤링</li>
-</ul>
-<p><a href="https://github.com/hyeshinoh/Study_Web/blob/master/web_11_scrapy.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
-<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
-<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/15/web_12_scrapy/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -610,14 +297,14 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
                 <time class="level-item has-text-grey" datetime="2018-10-13T06:07:46.000Z">2018-10-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Python-공부/">Python 공부</a>
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 658 words)
+                    4 minutes read (About 659 words)
                 </span>
                 
             </div>
@@ -632,105 +319,19 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
             <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_10_try%20%26%20except.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
 <h2 id="Try-amp-Except-예외처리"><a href="#Try-amp-Except-예외처리" class="headerlink" title="Try &amp; Except - 예외처리"></a>Try &amp; Except - 예외처리</h2><ul>
 <li>예외처리, 코드에서 에러가 발생할 경우에 대한 처리방법을 정의하는 것</li>
-<li>문법<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    예외 발생 가능 코드</span><br><span class="line">except &lt;Exception Type&gt;:</span><br><span class="line">    예외(에러) 발생시 대응하는 코드</span><br></pre></td></tr></table></figure>
+<li>문법<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    예외 발생 가능 코드</span><br><span class="line">except &lt;Exception Type&gt;:</span><br><span class="line">    예외(에러) 발생시 대응하는 코드</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="1-Exception의-종류-built-in-exception"><a href="#1-Exception의-종류-built-in-exception" class="headerlink" title="1. Exception의 종류 (built-in exception)"></a>1. Exception의 종류 (built-in exception)</h2><ul>
-<li><code>IndexError</code>: list의 index 범위를 넘어갈 때</li>
-<li><code>NameError</code>: 존재하지 않은 벼수를 호출할 때</li>
-<li><code>ZeroDivisionError</code>: 0으로 숫자를 나눌 때</li>
-<li><code>ValueError</code>: 변환할 수 없는 문자/숫자를 변환할 때</li>
-<li><code>FileNotFoundError</code>: 존재하지 않는 파일을 호출할 때</li>
-</ul>
-<h2 id="2-Try-amp-Except-구문"><a href="#2-Try-amp-Except-구문" class="headerlink" title="2. Try &amp; Except 구문"></a>2. Try &amp; Except 구문</h2><p>다음은 에러가 발생하는 코드이다</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">print(ls[<span class="number">3</span>])</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>---------------------------------------------------------------------------
-
-IndexError                                Traceback (most recent call last)
-
-&lt;ipython-input-1-d1eeae227c94&gt; in &lt;module&gt;()
-      1 ls = [1,2,3]
-----&gt; 2 print(ls[3])
-      3 print(&quot;done&quot;)
-
-
-IndexError: list index out of range
-</code></pre><p>try &amp; except를 사용해서 아래와 같이 에러가 나도 코드가 실행될 수 있도록 만든다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(ls[<span class="number">3</span>])</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">"error"</span>)</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>error
-done
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(ls[<span class="number">3</span>])</span><br><span class="line"><span class="keyword">except</span> IndexError <span class="keyword">as</span> e:</span><br><span class="line">    print(<span class="string">"e"</span>)</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>e
-done
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> IndexError <span class="keyword">as</span> e:     <span class="comment"># 특정 error</span></span><br><span class="line">    print(<span class="string">"e"</span>)</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>---------------------------------------------------------------------------
-
-ZeroDivisionError                         Traceback (most recent call last)
-
-&lt;ipython-input-3-802b3bd3ad1b&gt; in &lt;module&gt;()
-      1 ls = [1,2,3]
-      2 try:
-----&gt; 3     1 / 0
-      4 except IndexError as e:     # 특정 error
-      5     print(&quot;e&quot;)
-
-
-ZeroDivisionError: division by zero
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError <span class="keyword">as</span> z:      </span><br><span class="line">    print(<span class="string">"z"</span>)</span><br><span class="line"><span class="keyword">except</span> IndexError <span class="keyword">as</span> e:     </span><br><span class="line">    print(<span class="string">"e"</span>)</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>z
-done
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:      </span><br><span class="line">    print(<span class="string">"e"</span>)</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>e
-done
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> (IndexError, ZeroDivisionError) <span class="keyword">as</span> e:</span><br><span class="line">    print(<span class="string">"e"</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>e
-done
-</code></pre><h2 id="3-Finally-구문"><a href="#3-Finally-구문" class="headerlink" title="3. Finally 구문"></a>3. Finally 구문</h2><ul>
-<li>try-except 구문이 실행되고 마지막에 무조건 실행되는 구문</li>
-<li>파일을 읽어오거나 할 때 finally로 그 파일을 닫아줄 때 많이 사용</li>
-<li>가독성의 이유(명시적으로 관련성을 표시)로 사용 (finally가 없어도 결국 밑에 코드는 실행)</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> (IndexError, ZeroDivisionError) <span class="keyword">as</span> e:  </span><br><span class="line">    print(e)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    print(<span class="string">"end"</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>division by zero
-end
-done
-</code></pre><h2 id="4-Raise-구문-Make-Error-에러-만들기"><a href="#4-Raise-구문-Make-Error-에러-만들기" class="headerlink" title="4. Raise 구문 (Make Error - 에러 만들기)"></a>4. Raise 구문 (Make Error - 에러 만들기)</h2><ul>
-<li><code>raise</code>를 이용하면 에러를 강제로 발생시킬 수 있음</li>
-<li>에러를 만들때는 Exception을 상속 받아 선언</li>
-</ul>
-<p>10 이하의 숫자가 들어가면 에러를 발생시키는 코드를 만들어 보자.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Under10Error</span><span class="params">(Exception)</span>:</span>    <span class="comment"># Exception을 상속 받음</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"insert int larger than 10"</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">input_number</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> num &lt; <span class="number">10</span>:</span><br><span class="line">        <span class="keyword">raise</span> Under10Error()</span><br><span class="line">    print(num)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">input_number(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>---------------------------------------------------------------------------
-
-Under10Error                              Traceback (most recent call last)
-
-&lt;ipython-input-9-5c81f9e7ac63&gt; in &lt;module&gt;()
-      5 
-      6 
-----&gt; 7 input_number(5)
-
-
-&lt;ipython-input-9-5c81f9e7ac63&gt; in input_number(num)
-      1 def input_number(num):
-      2     if num &lt; 10:
-----&gt; 3         raise Under10Error()
-      4     print(num)
-      5 
-
-
-Under10Error: insert int larger than 10
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    input_number(<span class="number">5</span>)</span><br><span class="line">    input_number(<span class="number">11</span>)</span><br><span class="line"><span class="keyword">except</span> Under10Error <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br><span class="line">print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>insert int larger than 10
-done
-</code></pre><p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_10_try%20%26%20except.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
-<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
-<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
-<li>인프런, ⟪프로그래밍, 데이터 과학을 위한 파이썬 입문⟫ 수업 자료</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/13/python_10_try & except/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -752,14 +353,14 @@ done
                 <time class="level-item has-text-grey" datetime="2018-10-12T11:07:46.000Z">2018-10-12</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Python-공부/">Python 공부</a>
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 696 words)
+                    5 minutes read (About 697 words)
                 </span>
                 
             </div>
@@ -775,103 +376,16 @@ done
 <h1 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h1><ul>
 <li>python에서 파일 시스템을 control하기 위한 python package</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!ls</span><br></pre></td></tr></table></figure>
-<pre><code>1984.txt                              python_04_function_intermediate.ipynb
-LICENSE                               python_05_class_basic.ipynb
-README.md                             python_06_class_intermediate.ipynb
-Untitled.ipynb                        python_07_module &amp; package.ipynb
-[08] try &amp; exception.ipynb            python_08_file &amp; pickle.ipynb
-[09] Thread.ipynb                     python_09_OS.ipynb
-[10] Regex.ipynb                      range.b
-__pycache__                           school
-obj.pkl                               test1.txt
-python_01_basic_syntax.ipynb          test2.txt
-python_02_condition &amp; loop.ipynb      test3.txt
-python_03_function_basic.ipynb
-</code></pre><h2 id="1-폴더-만들기"><a href="#1-폴더-만들기" class="headerlink" title="1. 폴더 만들기"></a>1. 폴더 만들기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.makedirs(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="2-파일-쓰기"><a href="#2-파일-쓰기" class="headerlink" title="2. 파일 쓰기"></a>2. 파일 쓰기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"data science"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test.txt"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br><span class="line"></span><br><span class="line">s2 = <span class="string">"data science2"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test2.txt"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br><span class="line"></span><br><span class="line">s3 = <span class="string">"data,science3"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test3.csv"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!tree os_dir</span><br></pre></td></tr></table></figure>
-<pre><code>os_dir
-├── test.txt
-├── test2.txt
-└── test3.csv
-
-
-0 directories, 3 files
-</code></pre><h2 id="3-파일-리스트-읽기"><a href="#3-파일-리스트-읽기" class="headerlink" title="3. 파일 리스트 읽기"></a>3. 파일 리스트 읽기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.listdir(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>[&#39;test2.txt&#39;, &#39;test3.csv&#39;, &#39;test.txt&#39;]
-</code></pre><h2 id="4-파일-삭제"><a href="#4-파일-삭제" class="headerlink" title="4. 파일 삭제"></a>4. 파일 삭제</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.remove(<span class="string">"os_dir/test3.csv"</span>)</span><br><span class="line">os.listdir(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>[&#39;test2.txt&#39;, &#39;test.txt&#39;]
-</code></pre><h2 id="5-디렉토리-삭제"><a href="#5-디렉토리-삭제" class="headerlink" title="5. 디렉토리 삭제"></a>5. 디렉토리 삭제</h2><p>디렉토리 안에 파일이 있으면 삭제되지 않음</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.removedirs(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>---------------------------------------------------------------------------
-
-OSError                                   Traceback (most recent call last)
-
-&lt;ipython-input-9-b28c6d42127c&gt; in &lt;module&gt;()
-----&gt; 1 os.removedirs(&quot;os_dir&quot;)
-
-
-/usr/local/Cellar/python/3.6.5_1/Frameworks/Python.framework/Versions/3.6/lib/python3.6/os.py in removedirs(name)
-    236 
-    237     &quot;&quot;&quot;
---&gt; 238     rmdir(name)
-    239     head, tail = path.split(name)
-    240     if not tail:
-
-
-OSError: [Errno 66] Directory not empty: &#39;os_dir&#39;
-</code></pre><p>rmtree: 디렉토리 안에 파일이 있어도 삭제 가능</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.rmtree(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="6-파일-존재여부-확인"><a href="#6-파일-존재여부-확인" class="headerlink" title="6. 파일 존재여부 확인"></a>6. 파일 존재여부 확인</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">os.makedirs(<span class="string">"os_dir"</span>)</span><br><span class="line">s = <span class="string">"data science"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test.txt"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br><span class="line"></span><br><span class="line">s2 = <span class="string">"data science2"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test2.txt"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br><span class="line"></span><br><span class="line">s3 = <span class="string">"data,science3"</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"os_dir/test3.csv"</span>, <span class="string">"wt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(s)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.path.exists(<span class="string">"os_dir/test.txt"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>True
-</code></pre><h2 id="7-타입-확인"><a href="#7-타입-확인" class="headerlink" title="7. 타입 확인"></a>7. 타입 확인</h2><ul>
-<li>isfile</li>
-<li>isdir</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.path.isdir(<span class="string">"os_dir"</span>), os.path.isfile(<span class="string">"os_dir/test.txt"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>(True, True)
-</code></pre><h2 id="8-복사하기"><a href="#8-복사하기" class="headerlink" title="8. 복사하기"></a>8. 복사하기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutil.copy(<span class="string">"os_dir/test.txt"</span>, <span class="string">"os_dir/copy.txt"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>&#39;os_dir/copy.txt&#39;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.listdir(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>[&#39;test2.txt&#39;, &#39;test3.csv&#39;, &#39;copy.txt&#39;, &#39;test.txt&#39;]
-</code></pre><h2 id="9-이름-바꾸기"><a href="#9-이름-바꾸기" class="headerlink" title="9. 이름 바꾸기"></a>9. 이름 바꾸기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.rename(<span class="string">"os_dir/copy.txt"</span>, <span class="string">"os_dir/renamed.txt"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.listdir(<span class="string">"os_dir"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>[&#39;test2.txt&#39;, &#39;renamed.txt&#39;, &#39;test3.csv&#39;, &#39;test.txt&#39;]
-</code></pre><h2 id="10-권한설정-chmod"><a href="#10-권한설정-chmod" class="headerlink" title="10. 권한설정(chmod)"></a>10. 권한설정(chmod)</h2><ul>
-<li>10자리의 문자로 되어 있음 (e.g. -rw-r—r—)<ul>
-<li>[:1]: type (“-“ 파일, “d” 디렉토리)</li>
-<li>[1:4]: 소유자의 권한</li>
-<li>[4:7]: 그룹에 대한 권한</li>
-<li>[7:]: 모든 사용자에 대한 권한</li>
-</ul>
-</li>
-<li>소유자/그룹/모든 사용자의 권한은 rwx로 나뉨<ul>
-<li>rwx: r(읽기), w(쓰기), x(실행)</li>
-<li>rwx 각 권한이 있으면 1, 없으면 0의 2진수로 표시 ⇒ 3자리의 2진수를 8진수로 변환<ul>
-<li>rwx: 111(2진수) → 7(8진수)</li>
-<li>r—: 100(2진수) → 4(8진수) </li>
-<li>-wx: 011(2진수) → 3(8진수)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>모든 사용자가 read권한만 갖도록: -r—r—r—</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.chmod(<span class="string">"os_dir/renamed.txt"</span>, <span class="number">0o444</span>)</span><br></pre></td></tr></table></figure>
-<p>파일소유자가 작성권한을 갖도록: -rw-r—r—</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.chmod(<span class="string">"os_dir/renamed.txt"</span>, <span class="number">0o734</span>)</span><br></pre></td></tr></table></figure>
-<p>모든 권한 제거: —————</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.chmod(<span class="string">"os_dir/renamed.txt"</span>, <span class="number">0o000</span>)</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_09_OS.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
-<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
-<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/10/12/python_09_OS/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -893,14 +407,14 @@ OSError: [Errno 66] Directory not empty: &#39;os_dir&#39;
                 <time class="level-item has-text-grey" datetime="2018-10-12T08:33:46.000Z">2018-10-12</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Python-공부/">Python 공부</a>
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    7 minutes read (About 1021 words)
+                    7 minutes read (About 1022 words)
                 </span>
                 
             </div>
@@ -935,302 +449,16 @@ OSError: [Errno 66] Directory not empty: &#39;os_dir&#39;
 </ul>
 </li>
 </ul>
-<h2 id="2-파일-쓰기-write"><a href="#2-파일-쓰기-write" class="headerlink" title="2. 파일 쓰기 - write"></a>2. 파일 쓰기 - write</h2><h3 id="2-1-텍스트-파일-쓰기"><a href="#2-1-텍스트-파일-쓰기" class="headerlink" title="2.1 텍스트 파일 쓰기"></a>2.1 텍스트 파일 쓰기</h3><h4 id="1-wt-옵션-사용"><a href="#1-wt-옵션-사용" class="headerlink" title="(1) wt 옵션 사용"></a>(1) wt 옵션 사용</h4><p>간단한 텍스트 파일(test1.txt, test2.txt)을 작성해보자</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"""data</span></span><br><span class="line"><span class="string">scicence</span></span><br><span class="line"><span class="string">professional</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line">f = open(<span class="string">"test1.txt"</span>, <span class="string">'wt'</span>)</span><br><span class="line">f.write(s)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 아래와 같이 with구문을 사용해도 동일</span></span><br><span class="line"><span class="comment"># with open("text1.txt", 'wt') as f:</span></span><br><span class="line"><span class="comment">#     f.write(s)</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"test1.txt"</span>,<span class="string">"rt"</span>)</span><br><span class="line">result = f.read()</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
-<pre><code>data
-scicence
-professional
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"""datascicence</span></span><br><span class="line"><span class="string">fighting!!</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = open(<span class="string">"test2.txt"</span>, <span class="string">'wt'</span>)</span><br><span class="line">f.write(s)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<h4 id="2-xt-옵션-사용"><a href="#2-xt-옵션-사용" class="headerlink" title="(2) xt 옵션 사용"></a>(2) xt 옵션 사용</h4><p>파일 옵션을 xt로 주면 아래와 같이 해당 파일이 없는 경우에만 새로이 생성이 가능하다</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"""dss</span></span><br><span class="line"><span class="string">dss7</span></span><br><span class="line"><span class="string">dss8</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line">f = open(<span class="string">"test1.txt"</span>, <span class="string">'xt'</span>)</span><br><span class="line">f.write(s)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<pre><code>---------------------------------------------------------------------------
-
-FileExistsError                           Traceback (most recent call last)
-
-&lt;ipython-input-5-736c6249daba&gt; in &lt;module&gt;()
-      5 &quot;&quot;&quot;
-      6 
-----&gt; 7 f = open(&quot;test1.txt&quot;, &#39;xt&#39;)
-      8 f.write(s)
-      9 f.close()
-
-
-FileExistsError: [Errno 17] File exists: &#39;test1.txt&#39;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"""dss</span></span><br><span class="line"><span class="string">dss7</span></span><br><span class="line"><span class="string">dss8</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line">f = open(<span class="string">"test3.txt"</span>, <span class="string">'xt'</span>)</span><br><span class="line">f.write(s)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<h3 id="2-2-바이너리-파일-쓰기"><a href="#2-2-바이너리-파일-쓰기" class="headerlink" title="2.2 바이너리 파일 쓰기"></a>2.2 바이너리 파일 쓰기</h3><ul>
-<li>객체를 저장할 때 사용</li>
-<li><code>bytes()</code>: 이진데이터로 형변환 시켜줌</li>
-<li>이진데이터로 저장하기: 옵션 wb</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data = bytes(range(<span class="number">0</span>,<span class="number">10</span>))</span><br><span class="line">data</span><br></pre></td></tr></table></figure>
-<pre><code>b&#39;\x00\x01\x02\x03\x04\x05\x06\x07\x08\t&#39;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"range.b"</span>, <span class="string">"wb"</span>)</span><br><span class="line">f.write(data)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<h2 id="3-파일읽기-read"><a href="#3-파일읽기-read" class="headerlink" title="3. 파일읽기 - read"></a>3. 파일읽기 - read</h2><h3 id="3-1-텍스트-파일-읽어오기-옵션-rt"><a href="#3-1-텍스트-파일-읽어오기-옵션-rt" class="headerlink" title="3.1 텍스트 파일 읽어오기 (옵션 : rt)"></a>3.1 텍스트 파일 읽어오기 (옵션 : rt)</h3><h4 id="1-텍스트-파일-모두-읽어오기-read"><a href="#1-텍스트-파일-모두-읽어오기-read" class="headerlink" title="(1) 텍스트 파일 모두 읽어오기 - read"></a>(1) 텍스트 파일 모두 읽어오기 - read</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"test1.txt"</span>, <span class="string">'rt'</span>)</span><br><span class="line">result = f.read()</span><br><span class="line">f.close()</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
-<pre><code>data
-scicence
-professional
-</code></pre><h4 id="2-텍스트-파일-일부만-읽어오기"><a href="#2-텍스트-파일-일부만-읽어오기" class="headerlink" title="(2) 텍스트 파일 일부만 읽어오기"></a>(2) 텍스트 파일 일부만 읽어오기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"test1.txt"</span>, <span class="string">'rt'</span>)</span><br><span class="line">result = f.read(<span class="number">13</span>)     <span class="comment"># 10자만 읽어옴</span></span><br><span class="line">f.close()</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
-<pre><code>data
-scicence
-</code></pre><h4 id="3-텍스트-파일-한-줄-읽어오기-readline"><a href="#3-텍스트-파일-한-줄-읽어오기-readline" class="headerlink" title="(3) 텍스트 파일 한 줄 읽어오기 - readline"></a>(3) 텍스트 파일 한 줄 읽어오기 - readline</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"test1.txt"</span>, <span class="string">'rt'</span>)</span><br><span class="line">result = f.readline()</span><br><span class="line">print(result, end=<span class="string">""</span>)</span><br><span class="line">result = f.readline()</span><br><span class="line">f.close()</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
-<pre><code>data
-scicence
-</code></pre><p>for문 사용해서 두 줄 읽기</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"test1.txt"</span>, <span class="string">'rt'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>):</span><br><span class="line">    result = f.readline()</span><br><span class="line">    print(result, end=<span class="string">""</span>)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<pre><code>data
-scicence
-</code></pre><p>while문 사용해서 끝까지 읽기</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"test1.txt"</span>, <span class="string">'rt'</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    result = f.readline()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> result:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    print(result, end=<span class="string">""</span>)</span><br><span class="line">    </span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<pre><code>data
-scicence
-professional
-</code></pre><h3 id="3-2-바이너리-파일-읽어오기"><a href="#3-2-바이너리-파일-읽어오기" class="headerlink" title="3.2 바이너리 파일 읽어오기"></a>3.2 바이너리 파일 읽어오기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"range.b"</span>, <span class="string">"rb"</span>)</span><br><span class="line">data = f.read()</span><br><span class="line">print(list(data))</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<pre><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-</code></pre><h2 id="4-파일에-내용-추가하기-a"><a href="#4-파일에-내용-추가하기-a" class="headerlink" title="4. 파일에 내용 추가하기 - a"></a>4. 파일에 내용 추가하기 - a</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"\nschool"</span></span><br><span class="line">f = open(<span class="string">"test1.txt"</span>, <span class="string">"at"</span>)</span><br><span class="line">f.write(s)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"test1.txt"</span>, <span class="string">"rt"</span>)</span><br><span class="line">print(f.read())</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<pre><code>data
-scicence
-professional
-
-school
-</code></pre><h2 id="5-with"><a href="#5-with" class="headerlink" title="5. with"></a>5. with</h2><ul>
-<li>with 구문이 끝나면 자동으로 close를 하여 파일을 읽고 쓸때 조금 더 편리</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"test1.txt"</span>, <span class="string">'rt'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    s = f.read()</span><br><span class="line">    print(s)</span><br></pre></td></tr></table></figure>
-<pre><code>data
-scicence
-professional
-
-school
-</code></pre><h2 id="6-Pickle"><a href="#6-Pickle" class="headerlink" title="6. Pickle"></a>6. Pickle</h2><ul>
-<li>직렬화(serialization): 객체를 파일로 저장하는 것</li>
-<li>pickle: 파이썬에서 직렬화를 통해 바이너리 형태의 데이터를 저장하고 복원하는 모듈<ul>
-<li>데이터, 객체 등 실행 중인 정보를 저장하고 다시 불러와서 사용</li>
-<li>데이터 분석에서 분석모델을 저장하고 불러오는 등 많이 사용하게 됨</li>
-</ul>
-</li>
-<li>이진타입으로 변환해서 입력하는 것보다 pickle이 더 빠름</li>
-</ul>
-<h3 id="6-1-피클파일로-저장할-클래스-선언"><a href="#6-1-피클파일로-저장할-클래스-선언" class="headerlink" title="6.1 피클파일로 저장할 클래스 선언"></a>6.1 피클파일로 저장할 클래스 선언</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, data)</span>:</span></span><br><span class="line">        self.data = data</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">disp</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.data)</span><br><span class="line"></span><br><span class="line">a = A(<span class="string">"pickle test"</span>)</span><br><span class="line">a.disp()</span><br></pre></td></tr></table></figure>
-<pre><code>pickle test
-</code></pre><h3 id="6-2-pickle-파일로-객체를-저장"><a href="#6-2-pickle-파일로-객체를-저장" class="headerlink" title="6.2 pickle 파일로 객체를 저장"></a>6.2 pickle 파일로 객체를 저장</h3><ul>
-<li>문법: <code>pickle.dump(&quot;저장할 객체&quot;, &quot;파일 객체&quot;)</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"obj.pkl"</span>, <span class="string">"wb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    pickle.dump(a, f)</span><br></pre></td></tr></table></figure>
-<h3 id="6-3-pickle-파일-로드-하기"><a href="#6-3-pickle-파일-로드-하기" class="headerlink" title="6.3 pickle 파일 로드 하기"></a>6.3 pickle 파일 로드 하기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"obj.pkl"</span>, <span class="string">"rb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    load_a = pickle.load(f)</span><br><span class="line">load_a</span><br></pre></td></tr></table></figure>
-<pre><code>&lt;__main__.A at 0x10c577da0&gt;
-</code></pre><h3 id="6-4-로드한-피클파일-객체의-함수-실행하기"><a href="#6-4-로드한-피클파일-객체의-함수-실행하기" class="headerlink" title="6.4 로드한 피클파일 객체의 함수 실행하기"></a>6.4 로드한 피클파일 객체의 함수 실행하기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">load_a.disp(), load_a.data</span><br></pre></td></tr></table></figure>
-<pre><code>pickle test
-(None, &#39;pickle test&#39;)
-</code></pre><p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_08_file%20%26%20pickle.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
-<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
-<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
-<li>인프런, ⟪프로그래밍, 데이터 과학을 위한 파이썬 입문⟫ 수업 자료</li>
-</ul>
-
         </div>
         
         
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-10T15:22:27.000Z">2018-10-11</time>
-                
+        <div class="level is-mobile">
+            <div class="level-start">
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Programming-공부/">Programming 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Programming-공부/Python-공부/">Python 공부</a>
+                <a class="button is-size-7 is-light" href="/2018/10/12/python_08_file & pickle/#more">Read More</a>
                 </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9 minutes read (About 1320 words)
-                </span>
-                
             </div>
         </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/10/11/python_07_module & package/">python 07. Python Module  &amp; Package</a>
-            
-        </h1>
-        <div class="content">
-            <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_07_module%20%26%20package.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
-<h2 id="1-Module-모듈"><a href="#1-Module-모듈" class="headerlink" title="1. Module - 모듈"></a>1. Module - 모듈</h2><p>여럿이 함께 프로그램을 개발하기 위한 방법인 (1) 함수 (2) 객체 (3) 모듈 중 모듈에 대해 알아보자.</p>
-<ul>
-<li>모듈: 변수, 함수, 클래스를 모아놓은 파일</li>
-<li>사용 이유: 하나의 파일로 모든 코드를 작성해서 서비스를 만들 수 없기 때문에 코드의 규모가 커지면 기능별로 분리해 모듈 형태로 저장하고, 모듈을 모아서 하나의 큰 프로그램을 개발</li>
-<li>모듈의 확장자는 py</li>
-<li>import를 이용하여 모듈을 호출</li>
-<li>naming:<ul>
-<li>module의 식별자(이름)은 짧은 소문자로 구성, 합성어를 사용할 경우에는 밑줄로 구분(snake_case)</li>
-<li>CamelCase도 혼재</li>
-<li>C/C++모듈은 이름이 밑줄로 시작</li>
-</ul>
-</li>
-</ul>
-<p>magic command를 이용하여 module로 사용할 dsm.py 파일을 만들어 저장</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">%%writefile dsm.py</span><br><span class="line"></span><br><span class="line">var = <span class="number">1234</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">disp1</span><span class="params">(s)</span>:</span></span><br><span class="line">    print(<span class="string">"dsm_f1:"</span>, s)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">disp2</span><span class="params">(s)</span>:</span></span><br><span class="line">    print(<span class="string">"dsm_f2:"</span>, s)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">disp3</span><span class="params">(s)</span>:</span></span><br><span class="line">    print(<span class="string">"dsm_f3:"</span>, s)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calc</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plus</span><span class="params">(self, *args)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> sum(args)</span><br></pre></td></tr></table></figure>
-<pre><code>Writing dsm.py
-</code></pre><h3 id="1-1-모듈-호출"><a href="#1-1-모듈-호출" class="headerlink" title="1.1 모듈 호출"></a>1.1 모듈 호출</h3><h4 id="1-dsm-모듈-호출"><a href="#1-dsm-모듈-호출" class="headerlink" title="(1) dsm 모듈 호출"></a>(1) dsm 모듈 호출</h4><p>같은 폴더 내에 모듈이 위치한 경우 바로 import가 가능</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> dsm</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
-<pre><code>Variable   Type      Data/Info
-------------------------------
-dsm        module    &lt;module &#39;dsm&#39; from &#39;/User&lt;...&gt;ace/Study_Python/dsm.py&#39;&gt;
-</code></pre><h4 id="2-dsm-모듈의-변수-호출"><a href="#2-dsm-모듈의-변수-호출" class="headerlink" title="(2) dsm 모듈의 변수 호출"></a>(2) dsm 모듈의 변수 호출</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dsm.var</span><br></pre></td></tr></table></figure>
-<pre><code>1234
-</code></pre><h4 id="3-dsm-모듈의-함수-호출"><a href="#3-dsm-모듈의-함수-호출" class="headerlink" title="(3) dsm 모듈의 함수 호출"></a>(3) dsm 모듈의 함수 호출</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dsm.disp1(<span class="string">"test"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>dsm_f1: test
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dsm.disp1(<span class="string">"test1"</span>)</span><br><span class="line">dsm.disp2(<span class="string">"test2"</span>)</span><br><span class="line">dsm.disp3(<span class="string">"test3"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>dsm_f1: test1
-dsm_f2: test2
-dsm_f3: test3
-</code></pre><h4 id="4-dsm-모듈의-클래스-호출"><a href="#4-dsm-모듈의-클래스-호출" class="headerlink" title="(4) dsm 모듈의 클래스 호출"></a>(4) dsm 모듈의 클래스 호출</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c = dsm.Calc()</span><br><span class="line">c.plus(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>15
-</code></pre><h3 id="1-2-모듈에-있는-함수만-호출하기"><a href="#1-2-모듈에-있는-함수만-호출하기" class="headerlink" title="1.2 모듈에 있는 함수만 호출하기"></a>1.2 모듈에 있는 함수만 호출하기</h3><ul>
-<li>모듈에 있는 함수만 호출하면 (모듈이름).(함수이름) 에서 (함수이름)만 사용하기 때문에 함수를 사용할때 코드의 양을 줄일수 있음</li>
-<li>from을 사용하여 모듈을 호출하고 import를 이용하여 모듈안에 있는 함수나 변수나 클래스를 호출할수 있음</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%reset</span><br></pre></td></tr></table></figure>
-<pre><code>Once deleted, variables cannot be recovered. Proceed (y/[n])?  y
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dsm <span class="keyword">import</span> disp1, disp2</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
-<pre><code>Variable   Type        Data/Info
---------------------------------
-disp1      function    &lt;function disp1 at 0x1078f6d08&gt;
-disp2      function    &lt;function disp2 at 0x10de1e950&gt;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disp1(<span class="string">"test"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>dsm_f1: test
-</code></pre><h3 id="1-3-모듈의-모든-함수-호출"><a href="#1-3-모듈의-모든-함수-호출" class="headerlink" title="1.3 모듈의 모든 함수 호출"></a>1.3 모듈의 모든 함수 호출</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dsm <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
-<pre><code>Variable   Type        Data/Info
---------------------------------
-Calc       type        &lt;class &#39;dsm.Calc&#39;&gt;
-disp1      function    &lt;function disp1 at 0x1078f6d08&gt;
-disp2      function    &lt;function disp2 at 0x10de1e950&gt;
-disp3      function    &lt;function disp3 at 0x10de9a378&gt;
-var        int         1234
-</code></pre><h2 id="2-Package-패키지"><a href="#2-Package-패키지" class="headerlink" title="2. Package - 패키지"></a>2. Package - 패키지</h2><ul>
-<li>하나의 큰 프로젝트를 만드는 코드의 묶음</li>
-<li>디렉토리와 모듈로 이루어져 있음</li>
-<li><code>__init__.py</code><ul>
-<li>현재 폴더가 패키지임을 알리는 초기화 스크립트로, 없을 경우 패키지로 간주하지 않음</li>
-<li><code>python3.3</code> 이후 버전에서는 없어도 동작에 문제가 없지만 호환성을 위해서 파일을 만들어 주는 것이 좋음</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-1-school-패키지-만들기"><a href="#2-1-school-패키지-만들기" class="headerlink" title="2.1 school 패키지 만들기"></a>2.1 school 패키지 만들기</h3><h4 id="디렉토리-구성하기"><a href="#디렉토리-구성하기" class="headerlink" title="디렉토리 구성하기"></a>디렉토리 구성하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!mkdir school</span><br><span class="line">!mkdir school/datascience</span><br><span class="line">!mkdir school/web</span><br></pre></td></tr></table></figure>
-<h4 id="init-py-만들기"><a href="#init-py-만들기" class="headerlink" title="__init__.py 만들기"></a><code>__init__.py</code> 만들기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!touch school/datascience/__init__.py</span><br><span class="line">!touch school/web/__init__.py</span><br></pre></td></tr></table></figure>
-<h4 id="directory-structure-체크"><a href="#directory-structure-체크" class="headerlink" title="directory structure 체크"></a>directory structure 체크</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!tree school</span><br></pre></td></tr></table></figure>
-<pre><code>school
-├── datascience
-│   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-36.pyc
-│   │   └── data.cpython-36.pyc
-│   └── data.py
-└── web
-    ├── __init__.py
-    ├── __pycache__
-    │   ├── __init__.cpython-36.pyc
-    │   └── url.cpython-36.pyc
-    └── url.py
-
-4 directories, 8 files
-</code></pre><h4 id="data-모듈-작성"><a href="#data-모듈-작성" class="headerlink" title="data 모듈 작성"></a>data 모듈 작성</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/datascience/data.py</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plus</span><span class="params">(*args)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sum(args)</span><br></pre></td></tr></table></figure>
-<pre><code>Writing school/datascience/data.py
-</code></pre><h4 id="url-모듈-작성"><a href="#url-모듈-작성" class="headerlink" title="url 모듈 작성"></a>url 모듈 작성</h4><ul>
-<li>url의 프로토콜을 확인해서 붙여주는 함수를 포함</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/web/url.py</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_url</span><span class="params">(url)</span>:</span></span><br><span class="line">    protocol = <span class="string">"http://"</span></span><br><span class="line">    <span class="keyword">return</span> url <span class="keyword">if</span> url[:<span class="number">7</span>] == protocol <span class="keyword">else</span> protocol + url</span><br></pre></td></tr></table></figure>
-<pre><code>Writing school/web/url.py
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!tree school</span><br></pre></td></tr></table></figure>
-<pre><code>school
-├── datascience
-│   ├── __init__.py
-│   └── data.py
-└── web
-    ├── __init__.py
-    └── url.py
-
-2 directories, 4 files
-</code></pre><h3 id="2-2-모듈-호출하기"><a href="#2-2-모듈-호출하기" class="headerlink" title="2.2 모듈 호출하기"></a>2.2 모듈 호출하기</h3><h4 id="1-import-사용해서-호출하기"><a href="#1-import-사용해서-호출하기" class="headerlink" title="(1) import 사용해서 호출하기"></a>(1) import 사용해서 호출하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%reset</span><br></pre></td></tr></table></figure>
-<pre><code>Once deleted, variables cannot be recovered. Proceed (y/[n])?  y
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 아래처럼 import할 때 마지막은 module이 와야함</span></span><br><span class="line"><span class="keyword">import</span> school.web.url</span><br><span class="line">school.web.url.make_url(<span class="string">"naver.com"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>&#39;http://naver.com&#39;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
-<pre><code>Variable   Type      Data/Info
-------------------------------
-school     module    &lt;module &#39;school&#39; (namespace)&gt;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> school.web.url <span class="keyword">as</span> url</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
-<pre><code>Variable   Type      Data/Info
-------------------------------
-school     module    &lt;module &#39;school&#39; (namespace)&gt;
-url        module    &lt;module &#39;school.web.url&#39; &lt;...&gt;ython/school/web/url.py&#39;&gt;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url.make_url(<span class="string">"fastcampus.com"</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>&#39;http://fastcampus.com&#39;
-</code></pre><h4 id="2-from과-import-사용해서-호출하기"><a href="#2-from과-import-사용해서-호출하기" class="headerlink" title="(2) from과 import 사용해서 호출하기"></a>(2) from과 import 사용해서 호출하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%reset</span><br></pre></td></tr></table></figure>
-<pre><code>Once deleted, variables cannot be recovered. Proceed (y/[n])?  y
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> school.datascience <span class="keyword">import</span> data</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/datascience/data2.py</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sqrt_data</span><span class="params">(*args)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> reduce(<span class="keyword">lambda</span> x, y: x ** y, args)</span><br></pre></td></tr></table></figure>
-<pre><code>Writing school/datascience/data2.py
-</code></pre><h4 id="3-init-py-파일"><a href="#3-init-py-파일" class="headerlink" title="(3) __init__.py 파일"></a>(3) <code>__init__.py</code> 파일</h4><ul>
-<li><code>__init__.py</code>를 아래와 같이 작성하면 패키지를 호출시 <code>*</code>로 모든 모듈을 호출할 경우 import할 모듈을 정해줄 수 있음 </li>
-<li>수정 후엔 kernel restart</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%%writefile school/datascience/__init__.py</span><br><span class="line"></span><br><span class="line">__all__ = [<span class="string">'data'</span>, <span class="string">'data2'</span>]</span><br></pre></td></tr></table></figure>
-<pre><code>Overwriting school/datascience/__init__.py
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> school.datascience <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%whos</span><br></pre></td></tr></table></figure>
-<pre><code>Variable   Type      Data/Info
-------------------------------
-data       module    &lt;module &#39;school.datascien&lt;...&gt;ool/datascience/data.py&#39;&gt;
-data2      module    &lt;module &#39;school.datascien&lt;...&gt;ol/datascience/data2.py&#39;&gt;
-</code></pre><h3 id="2-2-global-영역-path-확인하기"><a href="#2-2-global-영역-path-확인하기" class="headerlink" title="2.2 global 영역 path 확인하기"></a>2.2 global 영역 path 확인하기</h3><ul>
-<li>jupyter notebook을 실행한 환경의 python에서 참고하고 있는 path들 체크</li>
-<li>같은 경로에 있지 않아도 이 path에 있으면 바로 import해서 사용 가능</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> path <span class="keyword">in</span> sys.path:</span><br><span class="line">    print(path)</span><br><span class="line">```     </span><br><span class="line">   	/usr/local/Cellar/python/<span class="number">3.6</span><span class="number">.5</span>_1/Frameworks/Python.framework/Versions/<span class="number">3.6</span>/lib/python36.zip</span><br><span class="line">  	/usr/local/Cellar/python/<span class="number">3.6</span><span class="number">.5</span>_1/Frameworks/Python.framework/Versions/<span class="number">3.6</span>/lib/python3<span class="number">.6</span></span><br><span class="line">  	/usr/local/Cellar/python/<span class="number">3.6</span><span class="number">.5</span>_1/Frameworks/Python.framework/Versions/<span class="number">3.6</span>/lib/python3<span class="number">.6</span>/lib-dynload</span><br><span class="line">	/usr/local/lib/python3<span class="number">.6</span>/site-packages</span><br><span class="line">	/usr/local/lib/python3<span class="number">.6</span>/site-packages/IPython/extensions</span><br><span class="line">	/Users/hyeshinoh/.ipython</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">!ls /usr/local/lib/python3<span class="number">.6</span>/site-packages</span><br></pre></td></tr></table></figure>
-<pre><code>IPython
-Jinja2-2.10.dist-info
-Keras-2.2.2.dist-info
-Keras_Applications-1.0.4.dist-info
-Keras_Preprocessing-1.0.2.dist-info
-.
-.
-.
-wheel-0.31.1-py3.6.egg-info
-widgetsnbextension
-widgetsnbextension-3.4.0.dist-info
-yaml
-zmq
-</code></pre><p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_07_module%20%26%20package.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
-<h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
-<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
-</ul>
-
-        </div>
-        
         
         
     </div>
@@ -1261,7 +489,7 @@ zmq
             
             <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/tags/programming/page/5/">5</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/tags/programming/page/6/">6</a></li>
             
         </ul>
     </nav>
@@ -1307,7 +535,7 @@ zmq
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        136
+                        138
                     </p>
                 </div>
             </div>
@@ -1317,7 +545,7 @@ zmq
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        8
                     </p>
                 </div>
             </div>
@@ -1327,7 +555,7 @@ zmq
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        31
                     </p>
                 </div>
             </div>
@@ -1377,31 +605,15 @@ zmq
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/">
             <span class="level-start">
-                <span class="level-item">Data Analysis 공부</span>
+                <span class="level-item">Data Science 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">23</span>
+                <span class="level-item tag">54</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/Data-Analysis-공부/수학-공부/">
-            <span class="level-start">
-                <span class="level-item">수학 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">23</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/">
-            <span class="level-start">
-                <span class="level-item">Programming 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">30</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Algorithm-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Algorithm-공부/">
             <span class="level-start">
                 <span class="level-item">Algorithm 공부</span>
             </span>
@@ -1409,7 +621,7 @@ zmq
                 <span class="level-item tag">2</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Database-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Database-공부/">
             <span class="level-start">
                 <span class="level-item">Database 공부</span>
             </span>
@@ -1417,20 +629,28 @@ zmq
                 <span class="level-item tag">5</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Python-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Python-공부/">
             <span class="level-start">
                 <span class="level-item">Python 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">11</span>
+                <span class="level-item tag">12</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Programming-공부/Web-공부/">
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Web-공부/">
             <span class="level-start">
                 <span class="level-item">Web 공부</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/수학-공부/">
+            <span class="level-start">
+                <span class="level-item">수학 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/TIL-Today-I-Learned/">
@@ -1438,7 +658,7 @@ zmq
                 <span class="level-item">TIL(Today I Learned)</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">81</span>
+                <span class="level-item tag">82</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/기타/">
@@ -1460,7 +680,7 @@ zmq
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11.11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.44px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.78px;">data analysis</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11.11px;">html</a> <a href="/tags/javascript/" style="font-size: 11.11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 17.78px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 18.89px;">programming</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/selenium/" style="font-size: 12.22px;">selenium</a> <a href="/tags/web/" style="font-size: 15.56px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.44px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 17.78px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11.11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.44px;">웹크롤링</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 12.73px;">Database</a> <a href="/tags/MySQL/" style="font-size: 11.82px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 11.82px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.91px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 13.64px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.27px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 14.55px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.91px;">html</a> <a href="/tags/javascript/" style="font-size: 10.91px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19.09px;">programming</a> <a href="/tags/python/" style="font-size: 16.36px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 11.82px;">selenium</a> <a href="/tags/web/" style="font-size: 15.45px;">web</a> <a href="/tags/web-crawling/" style="font-size: 13.64px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.91px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 13.64px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 10.91px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
     </div>
 </div>
 
@@ -1471,6 +691,44 @@ zmq
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/python_11_regex/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 11. 정규표현식(regex)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:35:53.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/python_11_regex/" class="has-link-black-ter is-size-6">python 11. 정규표현식(regex)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/2019-02-21-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-21-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:04:15.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/2019-02-21-TIL/" class="has-link-black-ter is-size-6">2019-02-21-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1529,44 +787,6 @@ zmq
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-14-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-14-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-14-TIL/" class="has-link-black-ter is-size-6">2019-01-14-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/01/13/2019-01-13-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-01-13-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T14:04:15.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/2019-01-13-TIL/" class="has-link-black-ter is-size-6">2019-01-13-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1585,7 +805,7 @@ zmq
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
