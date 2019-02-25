@@ -8,7 +8,23 @@
 
     <url>
         <loc>http://yoursite.com/2019/02/21/2019-02-21-TIL/</loc>
-        <lastmod>2019-02-21T15:11:08.878Z</lastmod>
+        <lastmod>2019-02-25T14:53:32.382Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2019/02/20/2019-02-20-TIL/</loc>
+        <lastmod>2019-02-25T14:52:43.693Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2019/02/25/2019-02-25-TIL/</loc>
+        <lastmod>2019-02-25T14:52:24.746Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -481,14 +497,6 @@
     <url>
         <loc>http://yoursite.com/2018/07/10/algorithm_00/</loc>
         <lastmod>2019-02-21T14:43:21.065Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2019/02/20/2019-02-20-TIL/</loc>
-        <lastmod>2019-02-20T11:39:20.552Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
