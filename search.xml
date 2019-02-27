@@ -488,6 +488,93 @@
     
     
     <entry>
+      <title>리눅스(Linux) - 연속적으로 명령 실행시키기 (;과 &amp;와 &amp;&amp;의 차이)</title>
+      <link href="/2019/02/27/linux_011/"/>
+      <url>/2019/02/27/linux_011/</url>
+      
+        <content type="html"><![CDATA[<p>생활코딩 생활코딩 <code>리눅스</code> 강좌 내용을 들으면서 정리하는 노트</p><ul><li>강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!)<ul><li><a href="https://opentutorials.org/course/2598" target="_blank" rel="noopener">리눅스 @생활코딩</a></li><li><a href="https://www.inflearn.com/course/생활코딩-리눅스-강좌" target="_blank" rel="noopener">생활코딩 리눅스 강좌 @인프런</a></li></ul></li></ul><h2 id="1-성공여부와-상관없이-다음-명령어-실행"><a href="#1-성공여부와-상관없이-다음-명령어-실행" class="headerlink" title="1. ;: 성공여부와 상관없이 다음 명령어 실행"></a>1. <code>;</code>: 성공여부와 상관없이 다음 명령어 실행</h2><ul><li><code>$ mkdir test; cd test</code>: test 디렉토리를 만든 후 test 디렉토리로 이동</li></ul><h2 id="2-amp-amp-성공한-경우에-다음-명령어-실행"><a href="#2-amp-amp-성공한-경우에-다음-명령어-실행" class="headerlink" title="2. &amp;&amp;: 성공한 경우에 다음 명령어 실행"></a>2. <code>&amp;&amp;</code>: 성공한 경우에 다음 명령어 실행</h2><ul><li>앞의 명령어가 실행되어 성공한 경우에 다음 명령어 실행</li><li><code>$ mkdir test &amp;&amp; cd test</code>: test 디렉토리를 만든 후 test 디렉토리로 이동</li></ul><h2 id="3-amp-명령어를-백그라운드로-동작시킬-때-사용"><a href="#3-amp-명령어를-백그라운드로-동작시킬-때-사용" class="headerlink" title="3. &amp;: 명령어를 백그라운드로 동작시킬 때 사용"></a>3. <code>&amp;</code>: 명령어를 백그라운드로 동작시킬 때 사용</h2><ul><li><code>mkdir test &amp; cd test</code><ul><li>결과: 에러 (test 디렉토리를 백그라운드로 생성함과 동시에 test 디렉토리로 이동하려고 했기 때문에 cd test는 존재하지 않는 디렉토리로 진입하려고 시도한 것. 한편 test 디렉토리는 생성됨)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   [1] 19989</span><br><span class="line">cd: no such file or directory: test</span><br><span class="line">[1]  + 19989 done       mkdir test</span><br></pre></td></tr></table></figure></li></ul></li></ul><h2 id="4-명령어의-그룹핑"><a href="#4-명령어의-그룹핑" class="headerlink" title="4. {}: 명령어의 그룹핑"></a>4. <code>{}</code>: 명령어의 그룹핑</h2><ul><li><code>mkdir test3 &amp;&amp; { cd test3; touch abc; echo &#39;success!!&#39; } || echo &#39;There is no dir&#39;</code><ul><li>mkdir test3 성공시 cd test2; touch abc를 실행하고 success!!를 출력</li><li>mkdir test3 실패시 echo ‘There is no dir’ 실행  </li></ul></li></ul><h2 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h2><ul><li><a href="https://opentutorials.org/course/2598" target="_blank" rel="noopener">생활코딩 <code>리눅스</code> 강좌</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> DataScience </category>
+          
+          <category> Linux 리눅스 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 리눅스 </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>리눅스(Linux) - 로그인 없이 로그인하기 (ssh key)</title>
+      <link href="/2019/02/27/linux_010/"/>
+      <url>/2019/02/27/linux_010/</url>
+      
+        <content type="html"><![CDATA[<p>생활코딩 생활코딩 <code>리눅스</code> 강좌 내용을 들으면서 정리하는 노트</p><ul><li>강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!)<ul><li><a href="https://opentutorials.org/course/2598" target="_blank" rel="noopener">리눅스 @생활코딩</a></li><li><a href="https://www.inflearn.com/course/생활코딩-리눅스-강좌" target="_blank" rel="noopener">생활코딩 리눅스 강좌 @인프런</a></li></ul></li></ul><h2 id="1-ssh-공개키를-이용한-자동-로그인"><a href="#1-ssh-공개키를-이용한-자동-로그인" class="headerlink" title="1. ssh 공개키를 이용한 자동 로그인"></a>1. ssh 공개키를 이용한 자동 로그인</h2><ul><li>ssh 키 생성: <code>$ ssh-keygen</code><ul><li>랜덤하게 생성된 비밀번호가 파일 형태로 저장됨</li><li><code>~/.ssh/</code> 경로에 <code>id_rsa</code>(private key), <code>id_rsa.pub</code>(public key) 파일로 생성 </li></ul></li><li>접속할 컴퓨터에 public key 저장<ul><li><code>~/.ssh/authorized_keys</code>에 public key를 추가하면 됨</li><li>command: <code>$ ssh-copy-id [id@ip addr]</code> </li></ul></li><li>로그인하기: <code>$ ssh [id@ip addr]</code> </li></ul><h2 id="2-활용-rsync"><a href="#2-활용-rsync" class="headerlink" title="2. 활용: rsync"></a>2. 활용: rsync</h2><ul><li>ssh를 이용해서 자동로그인을 해두면 로그인 없이 동기화 가능</li><li><code>$ rsync -avz ~/rsync/src/ [id@ip adress]:~/rsync/dest</code></li></ul><h2 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h2><ul><li><a href="https://opentutorials.org/course/2598" target="_blank" rel="noopener">생활코딩 <code>리눅스</code> 강좌</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> DataScience </category>
+          
+          <category> Linux 리눅스 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 리눅스 </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>리눅스(Linux) - 인터넷을 통한 서버간 동기화 (rsync)</title>
+      <link href="/2019/02/27/linux_009/"/>
+      <url>/2019/02/27/linux_009/</url>
+      
+        <content type="html"><![CDATA[<p>생활코딩 생활코딩 <code>리눅스</code> 강좌 내용을 들으면서 정리하는 노트</p><ul><li>강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!)<ul><li><a href="https://opentutorials.org/course/2598" target="_blank" rel="noopener">리눅스 @생활코딩</a></li><li><a href="https://www.inflearn.com/course/생활코딩-리눅스-강좌" target="_blank" rel="noopener">생활코딩 리눅스 강좌 @인프런</a></li></ul></li></ul><h2 id="1-rsync-기본동작"><a href="#1-rsync-기본동작" class="headerlink" title="1. rsync 기본동작"></a>1. rsync 기본동작</h2><ul><li><code>src</code> 디렉토리의 파일들을 <code>dest</code> 디렉토리로 동기화: <code>$ rsync -a src/ dest</code> <ul><li><code>rsync -a src dest</code>: dest 폴더 안에 src 폴더가 생길 것</li><li><code>-a</code></li></ul></li><li>증분동기화   </li></ul><h2 id="2-Remote-sync-네트워크를-통한-동기화"><a href="#2-Remote-sync-네트워크를-통한-동기화" class="headerlink" title="2. Remote sync: 네트워크를 통한 동기화"></a>2. Remote sync: 네트워크를 통한 동기화</h2><ul><li><code>$ rsync -azP ~/rsync/src/ [id@ip adress]:~/rsync/dest</code><ul><li><code>-z</code>: 압축해서 전송  </li><li><code>-P</code>: 전송상황을 progress bar로 보여줌</li></ul></li></ul><h2 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h2><ul><li><a href="https://opentutorials.org/course/2598" target="_blank" rel="noopener">생활코딩 <code>리눅스</code> 강좌</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> DataScience </category>
+          
+          <category> Linux 리눅스 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 리눅스 </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2019-02-25-TIL</title>
       <link href="/2019/02/25/2019-02-25-TIL/"/>
       <url>/2019/02/25/2019-02-25-TIL/</url>
