@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2012/02/28/Jupyter_tip_002/</loc>
+        <lastmod>2019-02-28T07:42:44.727Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/10/24/hexo_mathjax_00/</loc>
         <lastmod>2019-02-28T07:41:27.967Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,14 +25,6 @@
     <url>
         <loc>http://yoursite.com/2018/08/13/Jupyter_tip_001/</loc>
         <lastmod>2019-02-28T06:41:16.122Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/08/13/Jupyter_tip_002/</loc>
-        <lastmod>2019-02-28T06:41:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

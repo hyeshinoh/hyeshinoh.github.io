@@ -2,27 +2,26 @@
 <html  lang="en">
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-<title>Jupyter Notebook Tip - 여러 개 output을 한번에 보는 방법 - 우와팬더의 블로그</title>
+<title>Archives: 2012/2 - 우와팬더의 블로그</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-    <meta name="description" content="Jupyter notebook 파일을 hexo 블로그에 올리는 방법을 계속 googling 하던 중 괜찮은 팁을 발견하게 되었다. 그것은 바로 jupyter notebook의 한 cell안에서 여러 개의 output을 확인할 수 있는 방법이다.">
-<meta name="keywords" content="jupyter notebook,python,파이썬,주피터노트북">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Jupyter Notebook Tip - 여러 개 output을 한번에 보는 방법">
-<meta property="og:url" content="http://yoursite.com/2018/08/13/Jupyter_tip_002/index.html">
+    <meta name="description" content="데이터사이언스를 공부합니다">
+<meta name="keywords" content="data science">
+<meta property="og:type" content="website">
+<meta property="og:title" content="우와팬더의 블로그">
+<meta property="og:url" content="http://yoursite.com/archives/2012/02/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="Jupyter notebook 파일을 hexo 블로그에 올리는 방법을 계속 googling 하던 중 괜찮은 팁을 발견하게 되었다. 그것은 바로 jupyter notebook의 한 cell안에서 여러 개의 output을 확인할 수 있는 방법이다.">
+<meta property="og:description" content="데이터사이언스를 공부합니다">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-28T06:41:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jupyter Notebook Tip - 여러 개 output을 한번에 보는 방법">
-<meta name="twitter:description" content="Jupyter notebook 파일을 hexo 블로그에 올리는 방법을 계속 googling 하던 중 괜찮은 팁을 발견하게 되었다. 그것은 바로 jupyter notebook의 한 cell안에서 여러 개의 output을 확인할 수 있는 방법이다.">
+<meta name="twitter:title" content="우와팬더의 블로그">
+<meta name="twitter:description" content="데이터사이언스를 공부합니다">
 
 
 
-<link rel="alternative" href="hyeshinoh" title="Jupyter Notebook Tip - 여러 개 output을 한번에 보는 방법" type="application/atom+xml">
+<link rel="alternative" href="hyeshinoh" title="우와팬더의 블로그" type="application/atom+xml">
 
 
 
@@ -99,7 +98,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.png" alt="Jupyter Notebook Tip - 여러 개 output을 한번에 보는 방법" height="28">
+                <img src="/images/logo.png" alt="우와팬더의 블로그" height="28">
             
             </a>
         </div>
@@ -140,121 +139,39 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-08-13T09:02:35.000Z">2018-08-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 minutes read (About 402 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                Jupyter Notebook Tip - 여러 개 output을 한번에 보는 방법
-            
-        </h1>
-        <div class="content">
-            <p>Jupyter notebook 파일을 hexo 블로그에 올리는 방법을 계속 googling 하던 중 괜찮은 팁을 발견하게 되었다.</p>
-<p>그것은 바로 jupyter notebook의 한 cell안에서 여러 개의 output을 확인할 수 있는 방법이다.</p>
-<a id="more"></a> 
-<h3 id="1-jupyter-notebook의-기본-setting"><a href="#1-jupyter-notebook의-기본-setting" class="headerlink" title="1. jupyter notebook의 기본 setting"></a>1. jupyter notebook의 기본 setting</h3><p>jupyter notebook에서는 한 cell 안에서 결과값이 여러 번 나오게 될 경우 맨 마지막에 있는 output만 출력이 되게 된다.</p>
-<p>여러 개의 output을 함께 출력해서 비교하고 싶다거나 하는 경우에도 별도의 cell로 써주어야 하기 때문에 이게 은근히 성가신 부분이다.</p>
-<p>지금까지는 jupyter notebook에서 한 셀에서 여러 가지 결과값을 보고 싶다면 아래와 같이 두 가지 방법 중 하나를 취해야 했다.</p>
-<h4 id="1-위쪽의-output은-print문을-이용해-출력"><a href="#1-위쪽의-output은-print문을-이용해-출력" class="headerlink" title="1) 위쪽의 output은 print문을 이용해 출력"></a>1) 위쪽의 output은 print문을 이용해 출력</h4>
-<h4 id="2-마지막-줄에-한꺼번에-명령을-실행"><a href="#2-마지막-줄에-한꺼번에-명령을-실행" class="headerlink" title="2) 마지막 줄에 한꺼번에 명령을 실행"></a>2) 마지막 줄에 한꺼번에 명령을 실행</h4>
-<h3 id="2-jupyter-notebook에서-여러-output을-한-번에-출력하기"><a href="#2-jupyter-notebook에서-여러-output을-한-번에-출력하기" class="headerlink" title="2. jupyter notebook에서 여러 output을 한 번에 출력하기"></a>2. jupyter notebook에서 여러 output을 한 번에 출력하기</h3><p>아래의 코드를 실행하면 이제 여러 줄의 output을 한 번에 출력할 수 있게 된다.<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> IPython.core.interactiveshell <span class="hljs-keyword">import</span> InteractiveShell</span><br><span class="line">InteractiveShell.ast_node_interactivity = <span class="hljs-string">"all"</span></span><br></pre></td></tr></table></figure></p>
-<p>짠! 아래와 같이 여러 개의 output을 한 번에 볼 수 있게 되었다.<br></p>
-<h3 id="요약"><a href="#요약" class="headerlink" title="요약"></a>요약</h3><ul>
-<li>jupyter notebook에서는 한 cell에서 output을 마지막 하나만 출력할 수 있어 불편했다.</li>
-<li>아래 코드로 패키지를 불러와 설정을 해주면 한 cell 내에서 여러 개의 결과값을 모두 출력할 수 있게 된다.<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> IPython.core.interactiveshell <span class="hljs-keyword">import</span> InteractiveShell</span><br><span class="line">InteractiveShell.ast_node_interactivity = <span class="hljs-string">"all"</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/jupyter-notebook/">jupyter notebook</a>, <a class="has-link-grey -link" href="/tags/python/">python</a>, <a class="has-link-grey -link" href="/tags/주피터노트북/">주피터노트북</a>, <a class="has-link-grey -link" href="/tags/파이썬/">파이썬</a>
-                </div>
-            </div>
-        </div>
-        
-        
-        
-        
-<div class="sharethis-inline-share-buttons"></div>
-<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5c334172a47fe500116a8ea8&amp;product=inline-share-buttons' async='async'></script>
-
-        
-    </div>
-</div>
-
-
-
-
-
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/08/14/2018-08-13-TIL/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">2018-08-13-TIL</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/08/13/Jupyter_tip_001/">
-                <span class="level-item">Jupyter Notebook Tip - 여러 개 output을 한번에 보는 방법</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
-
-
-
-<div class="card">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+<div class="card widget">
     <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        <h3 class="tag is-link">
+        February 2012
+        </h3>
+        <div class="timeline">
         
-<script>
-    var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/08/13/Jupyter_tip_002/';
-        this.page.identifier = '2018/08/13/Jupyter_tip_002/';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
+            <article class="media">
+                
+                <div class="media-content">
+                    <div class="content">
+                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2012-02-28T09:02:35.000Z">2012-02-28</time>
+                        <a href="/2012/02/28/Jupyter_tip_002/" class="has-link-black-ter is-size-6">Jupyter Notebook Tip - 항상 쓰는 라이브러리 자동으로 import하기!</a>
+                        <div class="level article-meta is-mobile">
+                            <div class="level-left">
+                                
+                                <div class="level-item is-size-7 is-uppercase">
+                                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        
+        </div>
     </div>
 </div>
+
+
+
 </div>
                 
 
@@ -632,7 +549,7 @@
                     <span class="level-item">August 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">24</span>
+                    <span class="level-item tag">23</span>
                 </span>
             </a>
         </li>
@@ -659,6 +576,17 @@
             </a>
         </li>
         
+        <li>
+            <a class="level is-marginless" href="/archives/2012/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2012</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
         </ul>
         </div>
     </div>
@@ -681,7 +609,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.png" alt="Jupyter Notebook Tip - 여러 개 output을 한번에 보는 방법" height="28">
+                    <img src="/images/logo.png" alt="우와팬더의 블로그" height="28">
                 
                 </a>
                 <p class="is-size-7">

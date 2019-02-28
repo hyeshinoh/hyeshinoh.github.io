@@ -177,34 +177,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/jupyter-notebook/</loc>
-        <lastmod>2019-02-28T06:41:16.122Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/python/</loc>
-        <lastmod>2019-02-28T06:41:16.122Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
-        <lastmod>2019-02-28T06:41:16.122Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/%EC%A3%BC%ED%94%BC%ED%84%B0%EB%85%B8%ED%8A%B8%EB%B6%81/</loc>
-        <lastmod>2019-02-28T06:41:16.122Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/tags/hexo/</loc>
         <lastmod>2019-02-28T07:41:27.967Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -214,6 +186,34 @@
     <url>
         <loc>http://yoursite.com/tags/mathjax/</loc>
         <lastmod>2019-02-28T07:41:27.967Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/jupyter-notebook/</loc>
+        <lastmod>2019-02-28T07:42:44.727Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/python/</loc>
+        <lastmod>2019-02-28T07:42:44.727Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
+        <lastmod>2019-02-28T07:42:44.727Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%EC%A3%BC%ED%94%BC%ED%84%B0%EB%85%B8%ED%8A%B8%EB%B6%81/</loc>
+        <lastmod>2019-02-28T07:42:44.727Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
