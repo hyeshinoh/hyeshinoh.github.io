@@ -15,7 +15,7 @@
 
     <url>
         <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/Database-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2019-02-21T14:47:54.391Z</lastmod>
+        <lastmod>2019-02-21T14:47:54.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -42,22 +42,22 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/categories/TIL-Today-I-Learned/</loc>
+        <lastmod>2019-02-28T02:45:27.916Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2019-02-21T15:07:53.481Z</lastmod>
+        <lastmod>2019-02-28T05:31:01.092Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/Python-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2019-02-21T15:07:53.481Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/categories/TIL-Today-I-Learned/</loc>
-        <lastmod>2019-02-25T14:53:32.382Z</lastmod>
+        <lastmod>2019-02-28T05:31:01.092Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

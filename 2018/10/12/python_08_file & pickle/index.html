@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="jupyter notebook으로 보기 Python으로 file 읽고 쓰기1. 파일 불러오기 문법 f = open(&amp;quot;파일명&amp;quot;, &amp;quot;옵션&amp;quot;), f.close() with 구문: 구문이 끝나면 자동으로 파일이 close됨 with open(&amp;quot;파일명&amp;quot;, &amp;quot;옵션&amp;quot;) as f:     파일 접근">
+    <meta name="description" content="jupyter notebook으로 보기 Python으로 file 읽고 쓰기">
 <meta name="keywords" content="python,programming">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 08. Python File &amp; Pickle">
 <meta property="og:url" content="http://yoursite.com/2018/10/12/python_08_file & pickle/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="jupyter notebook으로 보기 Python으로 file 읽고 쓰기1. 파일 불러오기 문법 f = open(&amp;quot;파일명&amp;quot;, &amp;quot;옵션&amp;quot;), f.close() with 구문: 구문이 끝나면 자동으로 파일이 close됨 with open(&amp;quot;파일명&amp;quot;, &amp;quot;옵션&amp;quot;) as f:     파일 접근">
+<meta property="og:description" content="jupyter notebook으로 보기 Python으로 file 읽고 쓰기">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-21T15:01:22.222Z">
+<meta property="og:updated_time" content="2019-02-28T05:29:49.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 08. Python File &amp; Pickle">
-<meta name="twitter:description" content="jupyter notebook으로 보기 Python으로 file 읽고 쓰기1. 파일 불러오기 문법 f = open(&amp;quot;파일명&amp;quot;, &amp;quot;옵션&amp;quot;), f.close() with 구문: 구문이 끝나면 자동으로 파일이 close됨 with open(&amp;quot;파일명&amp;quot;, &amp;quot;옵션&amp;quot;) as f:     파일 접근">
+<meta name="twitter:description" content="jupyter notebook으로 보기 Python으로 file 읽고 쓰기">
 
 
 
@@ -156,7 +156,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    7 minutes read (About 1022 words)
+                    7 minutes read (About 1023 words)
                 </span>
                 
             </div>
@@ -169,7 +169,8 @@
         </h1>
         <div class="content">
             <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_08_file%20%26%20pickle.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
-<h1 id="Python으로-file-읽고-쓰기"><a href="#Python으로-file-읽고-쓰기" class="headerlink" title="Python으로 file 읽고 쓰기"></a>Python으로 file 읽고 쓰기</h1><h2 id="1-파일-불러오기"><a href="#1-파일-불러오기" class="headerlink" title="1. 파일 불러오기"></a>1. 파일 불러오기</h2><ul>
+<h2 id="Python으로-file-읽고-쓰기"><a href="#Python으로-file-읽고-쓰기" class="headerlink" title="Python으로 file 읽고 쓰기"></a>Python으로 file 읽고 쓰기</h2><a id="more"></a> 
+<h2 id="1-파일-불러오기"><a href="#1-파일-불러오기" class="headerlink" title="1. 파일 불러오기"></a>1. 파일 불러오기</h2><ul>
 <li>문법<ul>
 <li><code>f = open(&quot;파일명&quot;, &quot;옵션&quot;)</code>, <code>f.close()</code></li>
 <li><code>with</code> 구문: 구문이 끝나면 자동으로 파일이 close됨<ul>
@@ -191,7 +192,7 @@
 </ul>
 </li>
 </ul>
-<a id="more"></a> 
+<!-- more --> 
 <h2 id="2-파일-쓰기-write"><a href="#2-파일-쓰기-write" class="headerlink" title="2. 파일 쓰기 - write"></a>2. 파일 쓰기 - write</h2><h3 id="2-1-텍스트-파일-쓰기"><a href="#2-1-텍스트-파일-쓰기" class="headerlink" title="2.1 텍스트 파일 쓰기"></a>2.1 텍스트 파일 쓰기</h3><h4 id="1-wt-옵션-사용"><a href="#1-wt-옵션-사용" class="headerlink" title="(1) wt 옵션 사용"></a>(1) wt 옵션 사용</h4><p>간단한 텍스트 파일(test1.txt, test2.txt)을 작성해보자</p>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="hljs-string">"""data</span></span><br><span class="line"><span class="hljs-string">scicence</span></span><br><span class="line"><span class="hljs-string">professional</span></span><br><span class="line"><span class="hljs-string">"""</span></span><br><span class="line"></span><br><span class="line">f = open(<span class="hljs-string">"test1.txt"</span>, <span class="hljs-string">'wt'</span>)</span><br><span class="line">f.write(s)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## 아래와 같이 with구문을 사용해도 동일</span></span><br><span class="line"><span class="hljs-comment"># with open("text1.txt", 'wt') as f:</span></span><br><span class="line"><span class="hljs-comment">#     f.write(s)</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="hljs-string">"test1.txt"</span>,<span class="hljs-string">"rt"</span>)</span><br><span class="line">result = f.read()</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
@@ -316,9 +317,9 @@ school
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/10/12/python_09_OS/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/10/12/python_09_OS & shutil/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">python 09. OS</span>
+                <span class="level-item">python 09. OS &amp; shutil로 파일 &amp; 폴더 관련 작업하기</span>
             </a>
         </div>
         
@@ -399,7 +400,7 @@ school
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        139
+                        142
                     </p>
                 </div>
             </div>
@@ -474,7 +475,7 @@ school
                 <span class="level-item">Data Science 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">54</span>
+                <span class="level-item tag">56</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Data-Science-공부/Algorithm-공부/">
@@ -498,7 +499,7 @@ school
                 <span class="level-item">Python 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">12</span>
+                <span class="level-item tag">14</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Data-Science-공부/Web-공부/">
@@ -522,7 +523,7 @@ school
                 <span class="level-item">TIL(Today I Learned)</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">83</span>
+                <span class="level-item tag">84</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/기타/">
@@ -544,7 +545,7 @@ school
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 12.73px;">Database</a> <a href="/tags/MySQL/" style="font-size: 11.82px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 11.82px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.91px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 13.64px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.27px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 14.55px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.91px;">html</a> <a href="/tags/javascript/" style="font-size: 10.91px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19.09px;">programming</a> <a href="/tags/python/" style="font-size: 16.36px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 11.82px;">selenium</a> <a href="/tags/web/" style="font-size: 15.45px;">web</a> <a href="/tags/web-crawling/" style="font-size: 13.64px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.91px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 13.64px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 10.91px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 15px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11px;">html</a> <a href="/tags/javascript/" style="font-size: 11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19px;">programming</a> <a href="/tags/python/" style="font-size: 17px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 12px;">selenium</a> <a href="/tags/web/" style="font-size: 16px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 11px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
     </div>
 </div>
 
@@ -555,6 +556,25 @@ school
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/28/2019-02-28-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-28-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-28T14:52:15.000Z">2019-02-28</time></div>
+                    <a href="/2019/02/28/2019-02-28-TIL/" class="has-link-black-ter is-size-6">2019-02-28-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -632,25 +652,6 @@ school
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/02/16/2019-02-16-TIL/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-16-TIL">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-16T14:04:15.000Z">2019-02-16</time></div>
-                    <a href="/2019/02/16/2019-02-16-TIL/" class="has-link-black-ter is-size-6">2019-02-16-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -669,7 +670,7 @@ school
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -746,7 +747,7 @@ school
                     <span class="level-item">July 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">42</span>
+                    <span class="level-item tag">44</span>
                 </span>
             </a>
         </li>
@@ -958,24 +959,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 </script>
 <!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

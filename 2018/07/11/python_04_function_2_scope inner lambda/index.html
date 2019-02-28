@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+<title>python 04. Python Function - Scope, inner function, lambda function - 우와팬더의 블로그</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+
+    <meta name="description" content="jupyter notebook으로 보기 다룰 내용 Scope: global &amp;amp; local   Inner function(익명함수): 외부로 내 함수를 노출시키고 싶지 않을 때 사용   Lambda function">
+<meta name="keywords" content="python,programming">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 04. Python Function - Scope, inner function, lambda function">
+<meta property="og:url" content="http://yoursite.com/2018/07/11/python_04_function_2_scope inner lambda/index.html">
+<meta property="og:site_name" content="우와팬더의 블로그">
+<meta property="og:description" content="jupyter notebook으로 보기 다룰 내용 Scope: global &amp;amp; local   Inner function(익명함수): 외부로 내 함수를 노출시키고 싶지 않을 때 사용   Lambda function">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-02-28T04:55:56.801Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python 04. Python Function - Scope, inner function, lambda function">
+<meta name="twitter:description" content="jupyter notebook으로 보기 다룰 내용 Scope: global &amp;amp; local   Inner function(익명함수): 외부로 내 함수를 노출시키고 싶지 않을 때 사용   Lambda function">
+
+
+
+<link rel="alternative" href="hyeshinoh" title="python 04. Python Function - Scope, inner function, lambda function" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126954393-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-126954393-1');
+</script>
+
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+<body class="is-2-column">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="python 04. Python Function - Scope, inner function, lambda function" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-07-10T15:19:40.000Z">2018-07-11</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    9 minutes read (About 1371 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                python 04. Python Function - Scope, inner function, lambda function
+            
+        </h1>
+        <div class="content">
+            <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_04_function_intermediate.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
+<h3 id="다룰-내용"><a href="#다룰-내용" class="headerlink" title="다룰 내용"></a>다룰 내용</h3><ol>
+<li>Scope: global &amp; local  </li>
+<li>Inner function(익명함수): 외부로 내 함수를 노출시키고 싶지 않을 때 사용  </li>
+<li>Lambda function  </li>
+</ol>
+<a id="more"></a> 
+<h2 id="1-변수의-범위-Scoping-Rule"><a href="#1-변수의-범위-Scoping-Rule" class="headerlink" title="1. 변수의 범위(Scoping Rule)"></a>1. 변수의 범위(Scoping Rule)</h2><ul>
+<li>변수가 사용되는 범위</li>
+<li>global variable: 프로그램 전체에서 사용 </li>
+<li>local variable: 함수 내에서만 사용</li>
+</ul>
+<h3 id="1-1-global-variable"><a href="#1-1-global-variable" class="headerlink" title="1.1 global variable"></a>1.1 global variable</h3><ul>
+<li>전역변수는 함수 내에서 사용이 가능함</li>
+<li>but, 함수 내에 전역 변수와 같은 이름의 변수를 선언하면 새로운 지역 변수가 생김</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gv = <span class="hljs-number">10</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_gv</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    print(gv)</span><br><span class="line">print_gv()</span><br></pre></td></tr></table></figure>
+<pre><code>10
+</code></pre><h3 id="1-2-local-variable"><a href="#1-2-local-variable" class="headerlink" title="1.2 local variable"></a>1.2 local variable</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gv = <span class="hljs-number">10</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_gv</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    gv = <span class="hljs-number">100</span></span><br><span class="line">    print(gv)    <span class="hljs-comment"># local 영역의 gv</span></span><br><span class="line">print_gv(), </span><br><span class="line">print(gv)        <span class="hljs-comment"># global 영역의 gv = 10</span></span><br></pre></td></tr></table></figure>
+<pre><code>100
+(None,)
+10
+</code></pre><h4 id="1-locals-로컬-영역에-선언되어-있는-변수를-호출"><a href="#1-locals-로컬-영역에-선언되어-있는-변수를-호출" class="headerlink" title="(1) locals(): 로컬 영역에 선언되어 있는 변수를 호출"></a>(1) locals(): 로컬 영역에 선언되어 있는 변수를 호출</h4><p>locals 가 실행되는 위치에서 local이므로 global영역에서 실행하면 global 변수가 나옴<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gv = <span class="hljs-number">10</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_gv</span><span class="hljs-params">(gv)</span>:</span></span><br><span class="line">    gv = <span class="hljs-number">100</span></span><br><span class="line">    gv2 = <span class="hljs-number">200</span></span><br><span class="line">    print(locals())</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print_gv(gv)</span><br></pre></td></tr></table></figure>
+<pre><code>{&apos;gv&apos;: 100, &apos;gv2&apos;: 200}
+</code></pre><h4 id="2-globals-글로벌-영역에-선언되어-있는-변수를-호출"><a href="#2-globals-글로벌-영역에-선언되어-있는-변수를-호출" class="headerlink" title="(2) globals(): 글로벌 영역에 선언되어 있는 변수를 호출"></a>(2) globals(): 글로벌 영역에 선언되어 있는 변수를 호출</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(globals())</span><br></pre></td></tr></table></figure>
+<pre><code>{&apos;__name__&apos;: &apos;__main__&apos;, &apos;__doc__&apos;: &apos;Automatically created module for IPython interactive environment&apos;, &apos;__package__&apos;: None, &apos;__loader__&apos;: None, &apos;__spec__&apos;: None, &apos;__builtin__&apos;: &lt;module &apos;builtins&apos; (built-in)&gt;, &apos;__builtins__&apos;: &lt;module &apos;builtins&apos; (built-in)&gt;, &apos;_ih&apos;: [&apos;&apos;, &apos;gv = 10\ndef print_gv():\n    print(gv)\nprint_gv()&apos;, &apos;gv = 10\ndef print_gv():\n    gv = 100\n    print(gv)    # local 영역의 gv\nprint_gv(), \nprint(gv)        # global 영역의 gv = 10&apos;, &apos;# locals(): 로컬 영역에 선언되어 있는 변수\ngv = 10\ndef print_gv(gv):\n    gv = 100\n    gv2 = 200\n    print(locals())\n    \n#locals 가 실행되는 위치에서 local이므로 global영역에서 실행하면 global 변수가 나옴&apos;, &apos;print_gv(gv)&apos;, &apos;print(globals())&apos;], &apos;_oh&apos;: {2: (None,)}, &apos;_dh&apos;: [&apos;/Users/hyeshinoh/Workspace/Study_Python&apos;], &apos;In&apos;: [&apos;&apos;, &apos;gv = 10\ndef print_gv():\n    print(gv)\nprint_gv()&apos;, &apos;gv = 10\ndef print_gv():\n    gv = 100\n    print(gv)    # local 영역의 gv\nprint_gv(), \nprint(gv)        # global 영역의 gv = 10&apos;, &apos;# locals(): 로컬 영역에 선언되어 있는 변수\ngv = 10\ndef print_gv(gv):\n    gv = 100\n    gv2 = 200\n    print(locals())\n    \n#locals 가 실행되는 위치에서 local이므로 global영역에서 실행하면 global 변수가 나옴&apos;, &apos;print_gv(gv)&apos;, &apos;print(globals())&apos;], &apos;Out&apos;: {2: (None,)}, &apos;get_ipython&apos;: &lt;bound method InteractiveShell.get_ipython of &lt;ipykernel.zmqshell.ZMQInteractiveShell object at 0x10ae9b208&gt;&gt;, &apos;exit&apos;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x10aeae978&gt;, &apos;quit&apos;: &lt;IPython.core.autocall.ZMQExitAutocall object at 0x10aeae978&gt;, &apos;_&apos;: (None,), &apos;__&apos;: &apos;&apos;, &apos;___&apos;: &apos;&apos;, &apos;InteractiveShell&apos;: &lt;class &apos;IPython.core.interactiveshell.InteractiveShell&apos;&gt;, &apos;np&apos;: &lt;module &apos;numpy&apos; from &apos;/usr/local/lib/python3.7/site-packages/numpy/__init__.py&apos;&gt;, &apos;sp&apos;: &lt;module &apos;scipy&apos; from &apos;/usr/local/lib/python3.7/site-packages/scipy/__init__.py&apos;&gt;, &apos;pd&apos;: &lt;module &apos;pandas&apos; from &apos;/usr/local/lib/python3.7/site-packages/pandas/__init__.py&apos;&gt;, &apos;sm&apos;: &lt;module &apos;statsmodels.api&apos; from &apos;/usr/local/lib/python3.7/site-packages/statsmodels/api.py&apos;&gt;, &apos;smf&apos;: &lt;module &apos;statsmodels.formula.api&apos; from &apos;/usr/local/lib/python3.7/site-packages/statsmodels/formula/api.py&apos;&gt;, &apos;sms&apos;: &lt;module &apos;statsmodels.stats.api&apos; from &apos;/usr/local/lib/python3.7/site-packages/statsmodels/stats/api.py&apos;&gt;, &apos;sk&apos;: &lt;module &apos;sklearn&apos; from &apos;/usr/local/lib/python3.7/site-packages/sklearn/__init__.py&apos;&gt;, &apos;mpl&apos;: &lt;module &apos;matplotlib&apos; from &apos;/usr/local/lib/python3.7/site-packages/matplotlib/__init__.py&apos;&gt;, &apos;plt&apos;: &lt;module &apos;matplotlib.pyplot&apos; from &apos;/usr/local/lib/python3.7/site-packages/matplotlib/pyplot.py&apos;&gt;, &apos;Axes3D&apos;: &lt;class &apos;mpl_toolkits.mplot3d.axes3d.Axes3D&apos;&gt;, &apos;sns&apos;: &lt;module &apos;seaborn&apos; from &apos;/usr/local/lib/python3.7/site-packages/seaborn/__init__.py&apos;&gt;, &apos;_i&apos;: &apos;print_gv(gv)&apos;, &apos;_ii&apos;: &apos;# locals(): 로컬 영역에 선언되어 있는 변수\ngv = 10\ndef print_gv(gv):\n    gv = 100\n    gv2 = 200\n    print(locals())\n    \n#locals 가 실행되는 위치에서 local이므로 global영역에서 실행하면 global 변수가 나옴&apos;, &apos;_iii&apos;: &apos;gv = 10\ndef print_gv():\n    gv = 100\n    print(gv)    # local 영역의 gv\nprint_gv(), \nprint(gv)        # global 영역의 gv = 10&apos;, &apos;_i1&apos;: &apos;gv = 10\ndef print_gv():\n    print(gv)\nprint_gv()&apos;, &apos;gv&apos;: 10, &apos;print_gv&apos;: &lt;function print_gv at 0x10aef50d0&gt;, &apos;_i2&apos;: &apos;gv = 10\ndef print_gv():\n    gv = 100\n    print(gv)    # local 영역의 gv\nprint_gv(), \nprint(gv)        # global 영역의 gv = 10&apos;, &apos;_2&apos;: (None,), &apos;_i3&apos;: &apos;# locals(): 로컬 영역에 선언되어 있는 변수\ngv = 10\ndef print_gv(gv):\n    gv = 100\n    gv2 = 200\n    print(locals())\n    \n#locals 가 실행되는 위치에서 local이므로 global영역에서 실행하면 global 변수가 나옴&apos;, &apos;_i4&apos;: &apos;print_gv(gv)&apos;, &apos;_i5&apos;: &apos;print(globals())&apos;}
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type(globals()), globals()[<span class="hljs-string">'gv'</span>]</span><br></pre></td></tr></table></figure>
+<pre><code>(dict, 10)
+</code></pre><h3 id="1-3-local-영역에서-global-변수의-변경"><a href="#1-3-local-영역에서-global-변수의-변경" class="headerlink" title="1.3 local 영역에서 global 변수의 변경"></a>1.3 local 영역에서 global 변수의 변경</h3><p>함수 내에서 전역변수 사용히 global 키워드를 사용</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gv = <span class="hljs-number">10</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dss</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-keyword">global</span> gv    <span class="hljs-comment"># local영역의 gv → global영역의 gv 변수</span></span><br><span class="line">    gv = <span class="hljs-number">100</span></span><br><span class="line">    print(gv)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gv</span><br></pre></td></tr></table></figure>
+<pre><code>10
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dss()</span><br></pre></td></tr></table></figure>
+<pre><code>100
+</code></pre><p>dss() 함수 실행 후 gv는 100으로 변경됨</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gv</span><br></pre></td></tr></table></figure>
+<pre><code>100
+</code></pre><h2 id="2-Inner-function"><a href="#2-Inner-function" class="headerlink" title="2. Inner function"></a>2. Inner function</h2><ul>
+<li>global: 전역변수, 전역함수 / local: 지역변수, 지역함수</li>
+<li>전역함수 내에 지역함수를 선언할 수 있음 (inner function)</li>
+<li>local 영역에 함수를 숨겨서 global영역에서 사용할 수 없도록 함</li>
+<li>local 영역에 함수를 선언하면 함수가 실행될 때 메모리상에 올라가서 실행되기 때문에 메모리 절약<ul>
+<li>global 영역에 선언하면 그 함수가 계속 메모리에 올라간 상태(상주)로 실행이 되는 것 (호출이 되지 않더라도)</li>
+</ul>
+</li>
+<li>decorator에 inner function 이해가 필수적</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">outer</span><span class="hljs-params">(a, b)</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">inner</span><span class="hljs-params">(c, d)</span>:</span>      <span class="hljs-comment"># local function - 숨겨져 있음, outer 함수 내에서만 사용 가능</span></span><br><span class="line">        <span class="hljs-keyword">return</span> c + d</span><br><span class="line">    <span class="hljs-keyword">return</span> inner(a, b)    <span class="hljs-comment"># 결과를 리턴: 3</span></span><br><span class="line"></span><br><span class="line">outer(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>3
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 외부에서 inner function을 사용하려면 함수를(결과값이 아니라) 호출</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">outer</span><span class="hljs-params">(a, b)</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">inner</span><span class="hljs-params">(c, d)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">return</span> c + d</span><br><span class="line">    <span class="hljs-keyword">return</span> inner</span><br><span class="line"></span><br><span class="line">i = outer(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)    <span class="hljs-comment"># 왜 1과 2를 넣는가?</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>6
+</code></pre><p>inner()를 바로 호출하면 error 메세지가 뜸</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inner(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-22-5051cd321f58&gt; in &lt;module&gt;()
+----&gt; 1 inner(1, 2)
+
+
+NameError: name &apos;inner&apos; is not defined
+</code></pre><h2 id="3-lambda-function"><a href="#3-lambda-function" class="headerlink" title="3. lambda function"></a>3. lambda function</h2><ul>
+<li>함수의 이름 없이, 간단한 파라미터를 받아서 리턴해주는 함수를 만들어 줌</li>
+<li>python3부터는 권장하지는 않으나 여전히 많이 쓰임  </li>
+<li>문법: <code>lambda &lt;parameters&gt; : &lt;return_value&gt;</code></li>
+</ul>
+<h3 id="3-1-General-function과-lambda-function의-차이"><a href="#3-1-General-function과-lambda-function의-차이" class="headerlink" title="3.1 General function과 lambda function의 차이"></a>3.1 General function과 lambda function의 차이</h3><p>Lambda function을 쓰면 더 간결하게 함수 정의가 가능함</p>
+<ul>
+<li><p>General Function</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum_func</span><span class="hljs-params">(a, b)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line">sum_func(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>  3</p>
+</li>
+<li><p>Lambda Function</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sum_func2 = <span class="hljs-keyword">lambda</span> a, b: a + b</span><br><span class="line">sum_func2(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>  3</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type(sum_func2)</span><br></pre></td></tr></table></figure>
+<p>  function</p>
+</li>
+</ul>
+<h3 id="3-2-Lambda-function-예시"><a href="#3-2-Lambda-function-예시" class="headerlink" title="3.2 Lambda function 예시"></a>3.2 Lambda function 예시</h3><p>계산기 기능을 함수로 구현하는 예시로 lambda function의 활용도를 살펴보자</p>
+<ul>
+<li>General function을 사용하여 계산기 기능을 만들려면 다음과 같이 해야 함</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calc</span><span class="hljs-params">(fn, a, b)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> fn(a, b)</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum_func</span><span class="hljs-params">(a, b)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">minus_func</span><span class="hljs-params">(a, b)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> a - b</span><br><span class="line"></span><br><span class="line">calc(sum_func, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>), calc(minus_func, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)    <span class="hljs-comment"># 함수를 변수처럼 던져줄 수 있음</span></span><br></pre></td></tr></table></figure>
+<pre><code>(3, -1)
+</code></pre><ul>
+<li>Lambda function을 이용하면 lambda function을 선언하면서 함수에 넣어줌 → 한줄로 쓸 수 있음<ul>
+<li>global 영역에 함수를 만들어주지 않아도 되어 메모리 효율 높음</li>
+<li>하지만 간단한 함수만 가능  </li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">calc(<span class="hljs-keyword">lambda</span> a, b: a + b, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>), calc(<span class="hljs-keyword">lambda</span> a, b: a - b, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>(3, -1)
+</code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
+<li>인프런, ⟪프로그래밍, 데이터 과학을 위한 파이썬 입문⟫ 수업 자료</li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/programming/">programming</a>, <a class="has-link-grey -link" href="/tags/python/">python</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5c334172a47fe500116a8ea8&amp;product=inline-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/07/11/python_04_function_3_map filter reduce/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">python 04. Python Function - Map, Filter, Reduce</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/07/10/2018-07-10-TIL/">
+                <span class="level-item">2018-07-10-TIL</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/07/11/python_04_function_2_scope inner lambda/';
+        this.page.identifier = '2018/07/11/python_04_function_2_scope inner lambda/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="/images/avatar_panda.png" alt="우와팬더(Hyeshin Oh)">
+                    
+                    <p class="is-size-4 is-block">
+                        우와팬더(Hyeshin Oh)
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        데이터 사이언티스트
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Seoul, Korea</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        142
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        8
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        31
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/hyeshinoh">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="http://github.com/hyeshinoh">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Facebook" href="http://facebook.com/hyeshinoh">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Twitter" href="http://twitter.com/hyeshinoh">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/">
+            <span class="level-start">
+                <span class="level-item">Data Science 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">56</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Algorithm-공부/">
+            <span class="level-start">
+                <span class="level-item">Algorithm 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Database-공부/">
+            <span class="level-start">
+                <span class="level-item">Database 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Python-공부/">
+            <span class="level-start">
+                <span class="level-item">Python 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">14</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Web-공부/">
+            <span class="level-start">
+                <span class="level-item">Web 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/수학-공부/">
+            <span class="level-start">
+                <span class="level-item">수학 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/TIL-Today-I-Learned/">
+            <span class="level-start">
+                <span class="level-item">TIL(Today I Learned)</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">84</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/기타/">
+            <span class="level-start">
+                <span class="level-item">기타</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 15px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11px;">html</a> <a href="/tags/javascript/" style="font-size: 11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19px;">programming</a> <a href="/tags/python/" style="font-size: 17px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 12px;">selenium</a> <a href="/tags/web/" style="font-size: 16px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 11px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/28/2019-02-28-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-28-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-28T14:52:15.000Z">2019-02-28</time></div>
+                    <a href="/2019/02/28/2019-02-28-TIL/" class="has-link-black-ter is-size-6">2019-02-28-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/25/2019-02-25-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-25-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-25T14:52:15.000Z">2019-02-25</time></div>
+                    <a href="/2019/02/25/2019-02-25-TIL/" class="has-link-black-ter is-size-6">2019-02-25-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/python_11_regex/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 11. 정규표현식(regex)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:35:53.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/python_11_regex/" class="has-link-black-ter is-size-6">python 11. 정규표현식(regex)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/2019-02-21-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-21-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:04:15.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/2019-02-21-TIL/" class="has-link-black-ter is-size-6">2019-02-21-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/20/2019-02-20-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-20-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-20T14:04:15.000Z">2019-02-20</time></div>
+                    <a href="/2019/02/20/2019-02-20-TIL/" class="has-link-black-ter is-size-6">2019-02-20-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">24</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">18</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">23</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">44</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.png" alt="python 04. Python Function - Scope, inner function, lambda function" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 우와팬더&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+<title>python 04. Python Function - Decorator - 우와팬더의 블로그</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+
+    <meta name="description" content="jupyter notebook으로 보기 Python Function - Decorator 코드를 바꾸지 않고 함수의 기능을 추가하거나 수정하고 싶을때 사용 여러개의 함수를 작성하는데 공통된 코드를 뽑아서 묶어 사용할 수 있음 *args와 **kwargs를 이용하여 내부함수와 내부 인자로 사용">
+<meta name="keywords" content="python,programming">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 04. Python Function - Decorator">
+<meta property="og:url" content="http://yoursite.com/2018/07/11/python_04_function_4_decorator/index.html">
+<meta property="og:site_name" content="우와팬더의 블로그">
+<meta property="og:description" content="jupyter notebook으로 보기 Python Function - Decorator 코드를 바꾸지 않고 함수의 기능을 추가하거나 수정하고 싶을때 사용 여러개의 함수를 작성하는데 공통된 코드를 뽑아서 묶어 사용할 수 있음 *args와 **kwargs를 이용하여 내부함수와 내부 인자로 사용">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-02-28T04:59:01.349Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python 04. Python Function - Decorator">
+<meta name="twitter:description" content="jupyter notebook으로 보기 Python Function - Decorator 코드를 바꾸지 않고 함수의 기능을 추가하거나 수정하고 싶을때 사용 여러개의 함수를 작성하는데 공통된 코드를 뽑아서 묶어 사용할 수 있음 *args와 **kwargs를 이용하여 내부함수와 내부 인자로 사용">
+
+
+
+<link rel="alternative" href="hyeshinoh" title="python 04. Python Function - Decorator" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126954393-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-126954393-1');
+</script>
+
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+<body class="is-2-column">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="python 04. Python Function - Decorator" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-07-10T15:19:50.000Z">2018-07-11</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 minutes read (About 713 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                python 04. Python Function - Decorator
+            
+        </h1>
+        <div class="content">
+            <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_04_function_intermediate.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
+<h2 id="Python-Function-Decorator"><a href="#Python-Function-Decorator" class="headerlink" title="Python Function - Decorator"></a>Python Function - Decorator</h2><ul>
+<li>코드를 바꾸지 않고 함수의 기능을 추가하거나 수정하고 싶을때 사용</li>
+<li>여러개의 함수를 작성하는데 공통된 코드를 뽑아서 묶어 사용할 수 있음</li>
+<li><code>*args</code>와 <code>**kwargs</code>를 이용하여 내부함수와 내부 인자로 사용</li>
+</ul>
+<a id="more"></a> 
+<p>예를 들어, 아래 A와 B함수에서 공통된 부분인 code_1과 code_3을 빼서 묶어 사용하고 싶을 때 사용</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">A</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    code_1</span><br><span class="line">    code_2</span><br><span class="line">    code_3</span><br><span class="line">    </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">B</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    code_1</span><br><span class="line">    code_4</span><br><span class="line">    code_3</span><br></pre></td></tr></table></figure>
+<h3 id="1-Decorator-사용-방법"><a href="#1-Decorator-사용-방법" class="headerlink" title="1. Decorator 사용 방법"></a>1. Decorator 사용 방법</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">C</span><span class="hljs-params">(func)</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span><span class="hljs-params">(*args, **kwargs)</span>             # <span class="hljs-title">inner</span> <span class="hljs-title">function</span></span></span><br><span class="line"><span class="hljs-function">        <span class="hljs-title">code_1</span></span></span><br><span class="line">        result = func(*args, **kwargs)</span><br><span class="line">        code_3</span><br><span class="line">        <span class="hljs-keyword">return</span> result</span><br><span class="line">    <span class="hljs-keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@C</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">A</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    code_2</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@C</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">B</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    code_4</span><br><span class="line">    </span><br><span class="line"><span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-string">결과:</span></span><br><span class="line"><span class="hljs-string">A() - code1, code2, code3</span></span><br><span class="line"><span class="hljs-string">B() - code1, code4, code3</span></span><br><span class="line"><span class="hljs-string"></span></span><br><span class="line"><span class="hljs-string">decorator를 쓰지 않으면 아래 처럼 써야함</span></span><br><span class="line"><span class="hljs-string">C(A)()</span></span><br><span class="line"><span class="hljs-string">"""</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-Decorator-함수-만들어보기"><a href="#2-Decorator-함수-만들어보기" class="headerlink" title="2. Decorator 함수 만들어보기"></a>2. Decorator 함수 만들어보기</h3><h4 id="2-1-더하기와-빼기-연산을-display하기"><a href="#2-1-더하기와-빼기-연산을-display하기" class="headerlink" title="2.1 더하기와 빼기 연산을 display하기"></a>2.1 더하기와 빼기 연산을 display하기</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># A</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum_func</span><span class="hljs-params">(a, b)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> a + b</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># B</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">minus_func</span><span class="hljs-params">(a, b)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> a - b</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># C  </span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">disp_func</span><span class="hljs-params">(func)</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span><span class="hljs-params">(*args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="hljs-string">"running function :"</span>, func.__name__)     <span class="hljs-comment"># 공통부분</span></span><br><span class="line">        print(<span class="hljs-string">"args :"</span>, args)                          <span class="hljs-comment"># 공통부분</span></span><br><span class="line">        print(<span class="hljs-string">"kwargs :"</span>, kwargs)                      <span class="hljs-comment"># 공통부분</span></span><br><span class="line">        result = func(*args, **kwargs)                 <span class="hljs-comment"># running func</span></span><br><span class="line">        print(<span class="hljs-string">"result :"</span>, result)                      <span class="hljs-comment"># 공통부분</span></span><br><span class="line">        <span class="hljs-keyword">return</span> result                                  <span class="hljs-comment"># 공통부분</span></span><br><span class="line">    <span class="hljs-keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
+<p>함수 그대로를 호출<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sum_func(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>), minus_func(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br></pre></td></tr></table></figure></p>
+<pre><code>(3, -1)
+</code></pre><p>display를 하고 싶으면 decorator를 이용</p>
+<ul>
+<li><p>sum_func() 함수를 호출할 때 disp_func가 추가되어 실행</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@disp_func</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum_func</span><span class="hljs-params">(a, b)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> a + b   </span><br><span class="line"></span><br><span class="line">sum_func(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>  running function : sum_func<br>  args : (1, 2)<br>  kwargs : {}<br>  result : 3</p>
+<p>  3</p>
+</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@disp_func</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">minus_func</span><span class="hljs-params">(a, b)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> a - b   </span><br><span class="line"></span><br><span class="line">minus_func(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>running function : minus_func
+args : (1, 2)
+kwargs : {}
+result : -1
+
+-1
+</code></pre><p>decorator를 안 쓰고 수동으로 선언<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum_int</span><span class="hljs-params">(*args)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> sum(args)</span><br><span class="line"></span><br><span class="line">new_sum_int = disp_func(sum_int)</span><br><span class="line">new_sum_int(<span class="hljs-number">5</span>, <span class="hljs-number">7</span>)</span><br></pre></td></tr></table></figure></p>
+<pre><code>running function : sum_int
+args : (5, 7)
+kwargs : {}
+result : 12
+
+12
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disp_func(sum_int)(<span class="hljs-number">5</span>, <span class="hljs-number">7</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>running function : sum_int
+args : (5, 7)
+kwargs : {}
+result : 12
+
+12
+</code></pre><h4 id="2-2-함수의-실행-시간을-측정하는-데코레이터-함수"><a href="#2-2-함수의-실행-시간을-측정하는-데코레이터-함수" class="headerlink" title="2.2 함수의 실행 시간을 측정하는 데코레이터 함수"></a>2.2 함수의 실행 시간을 측정하는 데코레이터 함수</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> time</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run_time</span><span class="hljs-params">(func)</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span><span class="hljs-params">(*args, **kwargs)</span>:</span>            <span class="hljs-comment"># 함수 정의부 packing</span></span><br><span class="line">        start_time = time.time()</span><br><span class="line">        result = func(*args, **kwargs)       <span class="hljs-comment"># 함수 호출부 unpacking</span></span><br><span class="line">        end_time = time.time()</span><br><span class="line">        print(<span class="hljs-string">"time : &#123;time&#125;"</span>.format(time = end_time - start_time))</span><br><span class="line">        <span class="hljs-keyword">return</span> result</span><br><span class="line">    <span class="hljs-keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@run_time</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum_func</span><span class="hljs-params">(ls)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> sum(ls)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls = list(range(<span class="hljs-number">10000</span>))</span><br><span class="line">sum_func(ls)</span><br></pre></td></tr></table></figure>
+<pre><code>time : 0.0001068115234375
+49995000
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@run_time</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pow_func</span><span class="hljs-params">(a, b)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> a ** b</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pow_func(<span class="hljs-number">7</span>, <span class="hljs-number">100</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>time : 3.814697265625e-06
+3234476509624757991344647769100216810857203198904625400933895331391691459636928060001
+</code></pre><h4 id="2-3-관리자-계정을-확인해서-관리자-계정이면-패스워드를-출력하는-함수"><a href="#2-3-관리자-계정을-확인해서-관리자-계정이면-패스워드를-출력하는-함수" class="headerlink" title="2.3 관리자 계정을 확인해서 관리자 계정이면 패스워드를 출력하는 함수"></a>2.3 관리자 계정을 확인해서 관리자 계정이면 패스워드를 출력하는 함수</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@admin - code1, func, code3</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dss</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    </span><br><span class="line"><span class="hljs-meta">@admin</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test</span><span class="hljs-params">()</span>:</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">admin_ls = [<span class="hljs-string">"pdf"</span>, <span class="hljs-string">"dss"</span>]</span><br><span class="line">pw = <span class="hljs-string">"dss8"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">admin</span><span class="hljs-params">(func)</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wrapper</span><span class="hljs-params">(*args, **kwargs)</span>:</span></span><br><span class="line">        user_id = func(*args, **kwargs)</span><br><span class="line">        <span class="hljs-keyword">if</span> user_id <span class="hljs-keyword">in</span> admin_ls:</span><br><span class="line">            print(<span class="hljs-string">"allow permission [pw:&#123;&#125;]"</span>.format(pw))</span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            print(<span class="hljs-string">"you are not admin."</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@admin</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">input_user</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-keyword">return</span> input(<span class="hljs-string">"insert user name: "</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">input_user()</span><br></pre></td></tr></table></figure>
+<pre><code>insert user name:  3
+you are not admin.
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">user_id = &#123;</span><br><span class="line">    <span class="hljs-number">1</span>:<span class="hljs-string">"dss"</span>,</span><br><span class="line">    <span class="hljs-number">2</span>:<span class="hljs-string">"data"</span>,</span><br><span class="line">    <span class="hljs-number">3</span>:<span class="hljs-string">"python"</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@admin</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">input_id</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    user_num = int(input(<span class="hljs-string">"inser user id: "</span>))</span><br><span class="line">    <span class="hljs-keyword">return</span> user_id[user_num]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">input_id()</span><br></pre></td></tr></table></figure>
+<pre><code>inser user id:  1
+allow permission [pw:dss8]
+</code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
+<li>인프런, ⟪프로그래밍, 데이터 과학을 위한 파이썬 입문⟫ 수업 자료</li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/programming/">programming</a>, <a class="has-link-grey -link" href="/tags/python/">python</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5c334172a47fe500116a8ea8&amp;product=inline-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/07/11/2018-07-11-TIL/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">2018-07-11-TIL</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/07/11/python_04_function_3_map filter reduce/">
+                <span class="level-item">python 04. Python Function - Map, Filter, Reduce</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/07/11/python_04_function_4_decorator/';
+        this.page.identifier = '2018/07/11/python_04_function_4_decorator/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="/images/avatar_panda.png" alt="우와팬더(Hyeshin Oh)">
+                    
+                    <p class="is-size-4 is-block">
+                        우와팬더(Hyeshin Oh)
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        데이터 사이언티스트
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Seoul, Korea</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        142
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        8
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        31
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/hyeshinoh">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="http://github.com/hyeshinoh">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Facebook" href="http://facebook.com/hyeshinoh">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Twitter" href="http://twitter.com/hyeshinoh">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/">
+            <span class="level-start">
+                <span class="level-item">Data Science 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">56</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Algorithm-공부/">
+            <span class="level-start">
+                <span class="level-item">Algorithm 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Database-공부/">
+            <span class="level-start">
+                <span class="level-item">Database 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Python-공부/">
+            <span class="level-start">
+                <span class="level-item">Python 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">14</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/Web-공부/">
+            <span class="level-start">
+                <span class="level-item">Web 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Data-Science-공부/수학-공부/">
+            <span class="level-start">
+                <span class="level-item">수학 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/TIL-Today-I-Learned/">
+            <span class="level-start">
+                <span class="level-item">TIL(Today I Learned)</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">84</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/기타/">
+            <span class="level-start">
+                <span class="level-item">기타</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 15px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11px;">html</a> <a href="/tags/javascript/" style="font-size: 11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19px;">programming</a> <a href="/tags/python/" style="font-size: 17px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 12px;">selenium</a> <a href="/tags/web/" style="font-size: 16px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 11px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/28/2019-02-28-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-28-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-28T14:52:15.000Z">2019-02-28</time></div>
+                    <a href="/2019/02/28/2019-02-28-TIL/" class="has-link-black-ter is-size-6">2019-02-28-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/25/2019-02-25-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-25-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-25T14:52:15.000Z">2019-02-25</time></div>
+                    <a href="/2019/02/25/2019-02-25-TIL/" class="has-link-black-ter is-size-6">2019-02-25-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/python_11_regex/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 11. 정규표현식(regex)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:35:53.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/python_11_regex/" class="has-link-black-ter is-size-6">python 11. 정규표현식(regex)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Data-Science-공부/">Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/Data-Science-공부/Python-공부/">Python 공부</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/2019-02-21-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-21-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:04:15.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/2019-02-21-TIL/" class="has-link-black-ter is-size-6">2019-02-21-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/20/2019-02-20-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-20-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-20T14:04:15.000Z">2019-02-20</time></div>
+                    <a href="/2019/02/20/2019-02-20-TIL/" class="has-link-black-ter is-size-6">2019-02-20-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/TIL-Today-I-Learned/">TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">24</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">18</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">23</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">44</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.png" alt="python 04. Python Function - Decorator" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 우와팬더&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

@@ -7,6 +7,110 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/07/16/python_05_class_basic/</loc>
+        <lastmod>2019-02-28T05:31:01.092Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/07/python_06_class_intermediate/</loc>
+        <lastmod>2019-02-28T05:30:42.796Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/12/python_08_file%20&%20pickle/</loc>
+        <lastmod>2019-02-28T05:29:49.677Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/13/python_10_try%20&%20except/</loc>
+        <lastmod>2019-02-28T05:29:28.125Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2019/02/21/python_11_regex/</loc>
+        <lastmod>2019-02-28T05:29:17.889Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/11/python_04_function_3_map%20filter%20reduce/</loc>
+        <lastmod>2019-02-28T05:28:28.776Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/10/12/python_09_OS%20&%20shutil/</loc>
+        <lastmod>2019-02-28T05:26:24.457Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/11/python_04_function_4_decorator/</loc>
+        <lastmod>2019-02-28T04:59:01.349Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/07/python_01/</loc>
+        <lastmod>2019-02-28T04:58:36.549Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/08/python_02_condition,%20loop/</loc>
+        <lastmod>2019-02-28T04:58:08.255Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/11/python_04_function_2_scope%20inner%20lambda/</loc>
+        <lastmod>2019-02-28T04:55:56.801Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/07/10/python_03_function_1_basic/</loc>
+        <lastmod>2019-02-28T02:58:54.580Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2019/02/28/2019-02-28-TIL/</loc>
+        <lastmod>2019-02-28T02:45:27.916Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2019/02/21/2019-02-21-TIL/</loc>
         <lastmod>2019-02-25T14:53:32.382Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -49,14 +153,6 @@
     <url>
         <loc>http://yoursite.com/2019/02/16/2019-02-16-TIL/</loc>
         <lastmod>2019-02-21T15:09:32.077Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2019/02/21/python_11_regex/</loc>
-        <lastmod>2019-02-21T15:07:53.481Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -159,30 +255,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/10/13/python_10_try%20&%20except/</loc>
-        <lastmod>2019-02-21T15:01:40.291Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/12/python_09_OS/</loc>
-        <lastmod>2019-02-21T15:01:29.793Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/12/python_08_file%20&%20pickle/</loc>
-        <lastmod>2019-02-21T15:01:22.222Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://yoursite.com/2018/10/11/python_07_module%20&%20package/</loc>
         <lastmod>2019-02-21T15:01:04.033Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -191,56 +263,8 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/10/07/python_06_class_intermediate/</loc>
-        <lastmod>2019-02-21T15:00:51.817Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/16/python_05_class_basic/</loc>
-        <lastmod>2019-02-21T15:00:44.196Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/11/python_04_function_intermediate/</loc>
-        <lastmod>2019-02-21T15:00:30.130Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/10/python_03_function_basic/</loc>
-        <lastmod>2019-02-21T15:00:14.211Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/08/python_02_condition,%20loop/</loc>
-        <lastmod>2019-02-21T15:00:10.229Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/07/07/python_01/</loc>
-        <lastmod>2019-02-21T14:59:31.842Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://yoursite.com/2018/07/01/python_00/</loc>
-        <lastmod>2019-02-21T14:59:23.780Z</lastmod>
+        <lastmod>2019-02-21T14:59:23.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -256,7 +280,7 @@
 
     <url>
         <loc>http://yoursite.com/2018/08/13/Blog_jupyter_tip/</loc>
-        <lastmod>2019-02-21T14:56:47.374Z</lastmod>
+        <lastmod>2019-02-21T14:56:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -448,7 +472,7 @@
 
     <url>
         <loc>http://yoursite.com/2018/07/30/Database_05_mysql%20intermediate%20syntax/</loc>
-        <lastmod>2019-02-21T14:47:54.391Z</lastmod>
+        <lastmod>2019-02-21T14:47:54.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -456,7 +480,7 @@
 
     <url>
         <loc>http://yoursite.com/2018/07/28/Database_04_mysql%20basic%20syntax/</loc>
-        <lastmod>2019-02-21T14:47:45.703Z</lastmod>
+        <lastmod>2019-02-21T14:47:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -464,7 +488,7 @@
 
     <url>
         <loc>http://yoursite.com/2018/07/27/Database_03_mysql_basic/</loc>
-        <lastmod>2019-02-21T14:47:38.125Z</lastmod>
+        <lastmod>2019-02-21T14:47:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -472,7 +496,7 @@
 
     <url>
         <loc>http://yoursite.com/2018/07/25/Database_02/</loc>
-        <lastmod>2019-02-21T14:47:29.263Z</lastmod>
+        <lastmod>2019-02-21T14:47:29.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -480,7 +504,7 @@
 
     <url>
         <loc>http://yoursite.com/2018/07/25/Database_01/</loc>
-        <lastmod>2019-02-21T14:47:21.849Z</lastmod>
+        <lastmod>2019-02-21T14:47:21.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

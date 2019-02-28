@@ -24,21 +24,21 @@
 
     <url>
         <loc>http://yoursite.com/tags/Database/</loc>
-        <lastmod>2019-02-21T14:47:54.391Z</lastmod>
+        <lastmod>2019-02-21T14:47:54.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/MySQL/</loc>
-        <lastmod>2019-02-21T14:47:54.391Z</lastmod>
+        <lastmod>2019-02-21T14:47:54.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/SQL/</loc>
-        <lastmod>2019-02-21T14:47:54.391Z</lastmod>
+        <lastmod>2019-02-21T14:47:54.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -87,14 +87,14 @@
 
     <url>
         <loc>http://yoursite.com/tags/jupyter-notebook/</loc>
-        <lastmod>2019-02-21T14:56:47.374Z</lastmod>
+        <lastmod>2019-02-21T14:56:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/%EC%A3%BC%ED%94%BC%ED%84%B0%EB%85%B8%ED%8A%B8%EB%B6%81/</loc>
-        <lastmod>2019-02-21T14:56:47.374Z</lastmod>
+        <lastmod>2019-02-21T14:56:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -177,43 +177,43 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/python/</loc>
-        <lastmod>2019-02-21T15:07:53.481Z</lastmod>
+        <loc>http://yoursite.com/tags/TIL-Today-I-Learned/</loc>
+        <lastmod>2019-02-28T02:45:27.916Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
-        <lastmod>2019-02-21T15:07:53.481Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/programming/</loc>
-        <lastmod>2019-02-21T15:07:53.481Z</lastmod>
+        <lastmod>2019-02-28T05:29:17.889Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/</loc>
-        <lastmod>2019-02-21T15:07:53.481Z</lastmod>
+        <lastmod>2019-02-28T05:29:17.889Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/regex/</loc>
-        <lastmod>2019-02-21T15:07:53.481Z</lastmod>
+        <lastmod>2019-02-28T05:29:17.889Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/TIL-Today-I-Learned/</loc>
-        <lastmod>2019-02-25T14:53:32.382Z</lastmod>
+        <loc>http://yoursite.com/tags/python/</loc>
+        <lastmod>2019-02-28T05:31:01.092Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/programming/</loc>
+        <lastmod>2019-02-28T05:31:01.092Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
