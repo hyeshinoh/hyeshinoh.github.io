@@ -192,28 +192,35 @@
 
     <url>
         <loc>http://yoursite.com/tags/jupyter-notebook/</loc>
-        <lastmod>2019-02-28T07:42:44.727Z</lastmod>
+        <lastmod>2019-02-28T08:29:39.112Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/python/</loc>
-        <lastmod>2019-02-28T07:42:44.727Z</lastmod>
+        <lastmod>2019-02-28T08:29:39.112Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
-        <lastmod>2019-02-28T07:42:44.727Z</lastmod>
+        <lastmod>2019-02-28T08:29:39.112Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/%EC%A3%BC%ED%94%BC%ED%84%B0%EB%85%B8%ED%8A%B8%EB%B6%81/</loc>
-        <lastmod>2019-02-28T07:42:44.727Z</lastmod>
+        <lastmod>2019-02-28T08:29:39.112Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%EA%B7%80%EC%B0%AE%EC%9D%80%EA%B1%B4-%EC%8B%AB%EC%96%B4/</loc>
+        <lastmod>2019-02-28T08:29:39.112Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
