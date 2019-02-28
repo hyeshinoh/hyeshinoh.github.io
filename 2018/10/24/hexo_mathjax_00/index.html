@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="앞으로 Hexo 블로그에 수학 공부 내용도 정리하기 위해서 열심히 구글링을 해서 mathjax 설정을 마쳤다!이렇게 알아낸 내용을 기억해두기 위해 Hexo 블로그에서 LaTex로 수식을 작성할 수 있도록 mathjax를 설정하는 방법을 정리해보겠다.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-28T06:51:46.409Z">
+<meta property="og:updated_time" content="2019-02-28T07:41:27.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 블로그에 수식 사용하기 - mathjax 설정">
 <meta name="twitter:description" content="앞으로 Hexo 블로그에 수학 공부 내용도 정리하기 위해서 열심히 구글링을 해서 mathjax 설정을 마쳤다!이렇게 알아낸 내용을 기억해두기 위해 Hexo 블로그에서 LaTex로 수식을 작성할 수 있도록 mathjax를 설정하는 방법을 정리해보겠다.">
@@ -156,7 +156,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 780 words)
+                    5 minutes read (About 782 words)
                 </span>
                 
             </div>
@@ -189,7 +189,7 @@
 <h2 id="4-markdown-post-작성하기"><a href="#4-markdown-post-작성하기" class="headerlink" title="4. markdown post 작성하기"></a>4. markdown post 작성하기</h2><p>이제 hexo 블로그에 수식을 사용하기 위한 설정은 모두 마쳤다!<br>마지막으로 post 작성시 header 부분에 <code>mathjax: true</code>를 넣어주면 아래처럼 블로그에 수식이 잘 표현된다.</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;pmatrix&#125;</span><br><span class="line"> 1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \\</span><br><span class="line"> 1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \\</span><br><span class="line"> \vdots  &amp; \vdots&amp; \vdots &amp; \ddots &amp; \vdots \\</span><br><span class="line"> 1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n    </span><br><span class="line"> \end&#123;pmatrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
 <p>$$<br>\begin{pmatrix}<br> 1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \\<br> 1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \\<br> \vdots  &amp; \vdots&amp; \vdots &amp; \ddots &amp; \vdots \\<br> 1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n<br> \end{pmatrix}<br>$$</p>
-<h4 id="추가-문제가-발생했다"><a href="#추가-문제가-발생했다" class="headerlink" title="추가! 문제가 발생했다!"></a>추가! 문제가 발생했다!</h4><p>위에 행렬 작성 latex 코드를 보면, 행렬 내에서 행 구분을 할 때는 <code>\\</code>를 사용한다. 처음 블로그에 mathjax 설정을 했을 때는 문제 없이 동작했는데, hexo blog theme을 업데이트 하고 나니까 <mark><code>\\</code>가 제대로 인식되지 않고 모든 행렬이 한 줄로 나타나는 문제가 발생</mark>했다!! </p>
+<h4 id="내용-추가-문제가-발생했다-2019-01"><a href="#내용-추가-문제가-발생했다-2019-01" class="headerlink" title="내용 추가! 문제가 발생했다! (2019.01)"></a>내용 추가! 문제가 발생했다! (2019.01)</h4><p>위에 행렬 작성 latex 코드를 보면, 행렬 내에서 행 구분을 할 때는 <code>\\</code>를 사용한다. 처음 블로그에 mathjax 설정을 했을 때는 문제 없이 동작했는데, hexo blog theme을 업데이트 하고 나니까 <mark><code>\\</code>가 제대로 인식되지 않고 모든 행렬이 한 줄로 나타나는 문제가 발생</mark>했다!! </p>
 <p>설정 쪽에서 escape 항목을 수정해서 해결해보려고 했지만 생각대로 되지 않았다ㅜ </p>
 <p>결국 적절히 escape이 될 수 있도록 모든 latex 코드를 수동으로 <code>\\</code> → <code>\\\\</code>로 수정해주는 방법을 택할 수 밖에 없었다.</p>
 <p>즉, 현재는 아래처럼 작성해주어야 행렬이 올바르게 표시된다.<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;pmatrix&#125;</span><br><span class="line"> 1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \\\\</span><br><span class="line"> 1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \\\\</span><br><span class="line"> \vdots  &amp; \vdots&amp; \vdots &amp; \ddots &amp; \vdots \\\\</span><br><span class="line"> 1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n    </span><br><span class="line"> \end&#123;pmatrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure></p>
@@ -312,7 +312,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        142
+                        143
                     </p>
                 </div>
             </div>
@@ -387,7 +387,7 @@
                 <span class="level-item">Data Science 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">58</span>
+                <span class="level-item tag">59</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Data-Science-공부/Algorithm-공부/">
@@ -419,7 +419,7 @@
                 <span class="level-item">Python 공부</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">15</span>
+                <span class="level-item tag">16</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Data-Science-공부/Web-공부/">
@@ -457,7 +457,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 11px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 15px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 11px;">html</a> <a href="/tags/javascript/" style="font-size: 11px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19px;">programming</a> <a href="/tags/python/" style="font-size: 17px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 12px;">selenium</a> <a href="/tags/web/" style="font-size: 16px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 11px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 11px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.5px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.5px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.83px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.17px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 16.67px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 15px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10.83px;">html</a> <a href="/tags/javascript/" style="font-size: 10.83px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10.83px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.33px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/programming/" style="font-size: 19.17px;">programming</a> <a href="/tags/python/" style="font-size: 17.5px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 12.5px;">selenium</a> <a href="/tags/web/" style="font-size: 15.83px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.17px;">web_crawling</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.33px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.83px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.17px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10.83px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 11.67px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
     </div>
 </div>
 
@@ -648,7 +648,7 @@
                     <span class="level-item">August 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">23</span>
+                    <span class="level-item tag">24</span>
                 </span>
             </a>
         </li>
