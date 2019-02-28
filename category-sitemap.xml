@@ -28,13 +28,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/%EA%B8%B0%ED%83%80/</loc>
-        <lastmod>2019-02-21T14:57:04.198Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/Web-%EA%B3%B5%EB%B6%80/</loc>
         <lastmod>2019-02-21T15:04:26.088Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -49,15 +42,22 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2019-02-28T05:31:01.092Z</lastmod>
+        <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/Python-%EA%B3%B5%EB%B6%80/</loc>
+        <lastmod>2019-02-28T06:41:16.122Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/Python-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2019-02-28T05:31:01.092Z</lastmod>
+        <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/</loc>
+        <lastmod>2019-02-28T06:51:46.409Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/Hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8/</loc>
+        <lastmod>2019-02-28T06:51:46.409Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

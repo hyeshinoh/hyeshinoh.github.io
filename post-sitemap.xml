@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/10/24/hexo_mathjax_00/</loc>
+        <lastmod>2019-02-28T06:51:46.409Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/08/13/Blog_jupyter_tip/</loc>
+        <lastmod>2019-02-28T06:41:16.122Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/07/16/python_05_class_basic/</loc>
         <lastmod>2019-02-28T05:31:01.092Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -265,22 +281,6 @@
     <url>
         <loc>http://yoursite.com/2018/07/01/python_00/</loc>
         <lastmod>2019-02-21T14:59:23.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/10/24/hexo_mathjax_00/</loc>
-        <lastmod>2019-02-21T14:57:04.198Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/08/13/Blog_jupyter_tip/</loc>
-        <lastmod>2019-02-21T14:56:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

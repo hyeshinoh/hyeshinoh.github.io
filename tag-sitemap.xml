@@ -86,34 +86,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/jupyter-notebook/</loc>
-        <lastmod>2019-02-21T14:56:47.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/%EC%A3%BC%ED%94%BC%ED%84%B0%EB%85%B8%ED%8A%B8%EB%B6%81/</loc>
-        <lastmod>2019-02-21T14:56:47.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/hexo/</loc>
-        <lastmod>2019-02-21T14:57:04.198Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/mathjax/</loc>
-        <lastmod>2019-02-21T14:57:04.198Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/tags/html/</loc>
         <lastmod>2019-02-21T15:02:18.167Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -184,13 +156,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
-        <lastmod>2019-02-28T05:29:17.889Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/tags/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/</loc>
         <lastmod>2019-02-28T05:29:17.889Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -205,15 +170,50 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/python/</loc>
+        <loc>http://yoursite.com/tags/programming/</loc>
         <lastmod>2019-02-28T05:31:01.092Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/programming/</loc>
-        <lastmod>2019-02-28T05:31:01.092Z</lastmod>
+        <loc>http://yoursite.com/tags/jupyter-notebook/</loc>
+        <lastmod>2019-02-28T06:41:16.122Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/python/</loc>
+        <lastmod>2019-02-28T06:41:16.122Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
+        <lastmod>2019-02-28T06:41:16.122Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%EC%A3%BC%ED%94%BC%ED%84%B0%EB%85%B8%ED%8A%B8%EB%B6%81/</loc>
+        <lastmod>2019-02-28T06:41:16.122Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/hexo/</loc>
+        <lastmod>2019-02-28T06:51:46.409Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/mathjax/</loc>
+        <lastmod>2019-02-28T06:51:46.409Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
