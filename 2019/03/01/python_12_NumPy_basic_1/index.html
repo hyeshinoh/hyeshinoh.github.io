@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+<title>python 12. NumPy의 기초 (1) - 우와팬더의 블로그</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+
+
+
+    <meta name="description" content="jupyter notebook으로 보기">
+<meta name="keywords" content="python,파이썬,programming,numpy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 12. NumPy의 기초 (1)">
+<meta property="og:url" content="https://hyeshinoh.github.io/2019/03/01/python_12_NumPy_basic_1/index.html">
+<meta property="og:site_name" content="우와팬더의 블로그">
+<meta property="og:description" content="jupyter notebook으로 보기">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-03-01T14:31:59.023Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python 12. NumPy의 기초 (1)">
+<meta name="twitter:description" content="jupyter notebook으로 보기">
+<meta property="fb:app_id" content="hyeshinoh">
+
+
+
+<link rel="alternative" href="hyeshinoh" title="python 12. NumPy의 기초 (1)" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126954393-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-126954393-1');
+</script>
+
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+    <meta property="fb:app_id" content="346594012616363" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+<body class="is-2-column">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="python 12. NumPy의 기초 (1)" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-01T14:35:53.000Z">2019-03-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes read (About 905 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                python 12. NumPy의 기초 (1)
+            
+        </h1>
+        <div class="content">
+            <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_21_NumPy_basic_1.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
+<a id="more"></a> 
+<h1 id="NumPy의-기초-1"><a href="#NumPy의-기초-1" class="headerlink" title="NumPy의 기초 (1)"></a><strong>NumPy의 기초 (1)</strong></h1><h4 id="NumPy-소개"><a href="#NumPy-소개" class="headerlink" title="NumPy 소개"></a><strong>NumPy 소개</strong></h4><ul>
+<li>Numpy는 Pandas와 함께 데이터사이언스에서 수치 배열 데이터를 다루는데 필수적으로 사용되는 핵심 패키지이다.</li>
+<li>데이터사이언스에서 데이터는 보통 배열로 나타내는데 numpy를 사용해 vector/matrix/고차원 배열의 연산을 효율적이고 빠르게 할 수 있다. <br> (내부적으로 C로 구현되어 있기 때문에 python 반복문을 사용하는 것에 비해 연산이 빠르다.)</li>
+</ul>
+<h4 id="다룰-내용"><a href="#다룰-내용" class="headerlink" title="다룰 내용"></a><strong>다룰 내용</strong></h4><p>먼저 여기에서는 array를 만들고 수정하는 기본적인 방법들을 다뤄보자.</p>
+<ol>
+<li>배열 만들기: Make, array</li>
+<li>reshape</li>
+<li>index</li>
+<li>데이터 수정</li>
+<li>특수 행렬 만들기: zeros, ones, eye, like, empty</li>
+</ol>
+<h2 id="0-설치하기-amp-불러오기"><a href="#0-설치하기-amp-불러오기" class="headerlink" title="0. 설치하기 &amp; 불러오기"></a><strong>0. 설치하기 &amp; 불러오기</strong></h2><ul>
+<li>설치하기: <code>$ pip3 install numpy</code></li>
+<li>불러올때는 아래와 같이 alias로 ‘np’를 사용하는 것이 컨벤션</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np</span><br></pre></td></tr></table></figure>
+<h2 id="1-배열-만들기"><a href="#1-배열-만들기" class="headerlink" title="1. 배열 만들기"></a><strong>1. 배열 만들기</strong></h2><h3 id="1-1-배열-ndarray"><a href="#1-1-배열-ndarray" class="headerlink" title="1.1 배열(ndarray)"></a>1.1 배열(ndarray)</h3><ul>
+<li><code>ndarray</code>: NumPy의 array class (alias: <code>array</code>)</li>
+<li>중요 속성<ul>
+<li><code>ndarray.ndim</code> : array의 차원 수</li>
+<li><code>ndarray.shape</code> : array 각 차원의 사이즈</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-array-만들기"><a href="#1-2-array-만들기" class="headerlink" title="1.2 array 만들기"></a>1.2 array 만들기</h3><h4 id="1-1차원-배열-vector-행벡터"><a href="#1-1차원-배열-vector-행벡터" class="headerlink" title="(1) 1차원 배열 (vector, 행벡터)"></a>(1) 1차원 배열 (vector, 행벡터)</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">array = np.array([<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>])</span><br><span class="line"><span class="hljs-comment"># array = np.array(range(6))      # 같은 결과가 나옴</span></span><br><span class="line">print(type(array))</span><br><span class="line">print(array)</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;class &apos;numpy.ndarray&apos;&gt;
+[0 1 2 3 4 5]
+</code></pre><h4 id="2-2차원-배열-matrix"><a href="#2-2차원-배열-matrix" class="headerlink" title="(2) 2차원 배열 (matrix)"></a>(2) 2차원 배열 (matrix)</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 열벡터 (n*1 matrix)</span></span><br><span class="line">array = np.array([[<span class="hljs-number">0</span>],[<span class="hljs-number">1</span>],[<span class="hljs-number">2</span>]])</span><br><span class="line">print(array)</span><br></pre></td></tr></table></figure>
+<pre><code>[[0]
+ [1]
+ [2]]
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># `n*m` matrix</span></span><br><span class="line">array = np.array([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],</span><br><span class="line">                  [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]])</span><br><span class="line">print(array)</span><br><span class="line">print(<span class="hljs-string">"array의 ndim(차원 수):"</span>, array.ndim)</span><br><span class="line">print(<span class="hljs-string">"array의 shape:"</span>, array.shape)</span><br></pre></td></tr></table></figure>
+<pre><code>[[1 2 3]
+ [4 5 6]]
+array의 차원 수: 2
+array의 shape: (2, 3)
+</code></pre><h4 id="3-3차원-배열-n-m-o-matrix"><a href="#3-3차원-배열-n-m-o-matrix" class="headerlink" title="(3) 3차원 배열 (n*m*o matrix)"></a>(3) 3차원 배열 (<code>n*m*o</code> matrix)</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">array = np.array([[[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],</span><br><span class="line">                   [<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>],</span><br><span class="line">                   [<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>,<span class="hljs-number">11</span>]],</span><br><span class="line">                  [[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],</span><br><span class="line">                   [<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">100</span>,<span class="hljs-number">7</span>],</span><br><span class="line">                   [<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>,<span class="hljs-number">11</span>]]])</span><br><span class="line">print(array)</span><br><span class="line">print(<span class="hljs-string">"array의 ndim(차원 수):"</span>, array.ndim)</span><br><span class="line">print(<span class="hljs-string">"array의 shape:"</span>, array.shape)   <span class="hljs-comment"># 바깥에서 안(상위에서 하위로)으로 모양을 나타낸다고 생각하면 편함</span></span><br></pre></td></tr></table></figure>
+<pre><code>[[[  0   1   2   3]
+  [  4   5   6   7]
+  [  8   9  10  11]]
+
+ [[  0   1   2   3]
+  [  4   5 100   7]
+  [  8   9  10  11]]]
+array의 ndim(차원 수): 3
+array의 shape: (2, 3, 4)
+</code></pre><h2 id="2-reshape"><a href="#2-reshape" class="headerlink" title="2. reshape"></a><strong>2. reshape</strong></h2><ul>
+<li>행렬의 모양을 바꿀수 있다.</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">na = np.array([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>])</span><br><span class="line">na</span><br></pre></td></tr></table></figure>
+<pre><code>array([1, 2, 3, 4, 5, 6, 7, 8])
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rna = na.reshape(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>)          <span class="hljs-comment"># 아래보다는 이렇게 쓰는게 좀 더 편한 방법</span></span><br><span class="line">rna</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1, 2, 3, 4],
+       [5, 6, 7, 8]])
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rna = np.reshape(na, (<span class="hljs-number">4</span>, <span class="hljs-number">2</span>))    <span class="hljs-comment"># np의 함수 reshape을 사용</span></span><br><span class="line">rna</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1, 2],
+       [3, 4],
+       [5, 6],
+       [7, 8]])
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 전치행렬 (.T는 속성)</span></span><br><span class="line">rna.T</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1, 3, 5, 7],
+       [2, 4, 6, 8]])
+</code></pre><h2 id="3-index"><a href="#3-index" class="headerlink" title="3. index"></a><strong>3. index</strong></h2><ul>
+<li>행렬 데이터를 수정하거나, 가져오거나, 자를 때 사용</li>
+<li>행렬의 특정 위치 데이터 값 가져오기</li>
+<li>행렬 자르기</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array</span><br></pre></td></tr></table></figure>
+<pre><code>array([[[  0,   1,   2,   3],
+        [  4,   5,   6,   7],
+        [  8,   9,  10,  11]],
+
+       [[  0,   1,   2,   3],
+        [  4,   5, 100,   7],
+        [  8,   9,  10,  11]]])
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(array[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>][<span class="hljs-number">2</span>])  <span class="hljs-comment"># 바깥차원부터 indexing</span></span><br><span class="line">print(array[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>])    <span class="hljs-comment"># 이렇게 줄여서 써도 OK</span></span><br></pre></td></tr></table></figure>
+<pre><code>100
+100
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># indexing 이용한 slicing</span></span><br><span class="line">result = array[<span class="hljs-number">1</span>:,<span class="hljs-number">1</span>:,<span class="hljs-number">2</span>:]</span><br><span class="line">print(result)</span><br><span class="line">print(result.ndim, result.shape)    <span class="hljs-comment"># 3차원이라는 점!</span></span><br></pre></td></tr></table></figure>
+<pre><code>[[[100   7]
+  [ 10  11]]]
+3 (1, 2, 2)
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(result[<span class="hljs-number">0</span>])</span><br><span class="line">result[<span class="hljs-number">0</span>].ndim</span><br></pre></td></tr></table></figure>
+<pre><code>[[100   7]
+ [ 10  11]]
+
+2
+</code></pre><h2 id="4-데이터-수정"><a href="#4-데이터-수정" class="headerlink" title="4. 데이터 수정"></a><strong>4. 데이터 수정</strong></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls = np.array(range(<span class="hljs-number">5</span>))</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<pre><code>array([0, 1, 2, 3, 4])
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls[<span class="hljs-number">2</span>] = <span class="hljs-number">0</span></span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<pre><code>array([0, 1, 0, 3, 4])
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls[<span class="hljs-number">3</span>:] = <span class="hljs-number">0</span></span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<pre><code>array([0, 1, 0, 0, 0])
+</code></pre><h2 id="5-특수-행렬-만들기"><a href="#5-특수-행렬-만들기" class="headerlink" title="5. 특수 행렬 만들기"></a><strong>5. 특수 행렬 만들기</strong></h2><h3 id="5-1-zeros"><a href="#5-1-zeros" class="headerlink" title="5.1 zeros"></a>5.1 zeros</h3><ul>
+<li>행렬을 만들고 0을 채움</li>
+<li>dtype으로 데이터 타입 설정 가능 (default는 float)</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">z = np.zeros(<span class="hljs-number">5</span>)</span><br><span class="line">z</span><br></pre></td></tr></table></figure>
+<pre><code>array([0., 0., 0., 0., 0.])
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">## data type을 parameter로 넣어주기</span></span><br><span class="line">zz = np.zeros((<span class="hljs-number">2</span> ,<span class="hljs-number">3</span>), dtype=int)  </span><br><span class="line">zz</span><br></pre></td></tr></table></figure>
+<pre><code>array([[0, 0, 0],
+       [0, 0, 0]])
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zz.ndim</span><br></pre></td></tr></table></figure>
+<pre><code>2
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 고차원도 만들 수 있음 (모양을 상상할 수는 없지만)</span></span><br><span class="line">z5 = np.zeros((<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>), dtype=int)</span><br><span class="line">z5.ndim, z5.shape</span><br></pre></td></tr></table></figure>
+<pre><code>(5, (2, 3, 2, 3, 2))
+</code></pre><h3 id="5-2-ones"><a href="#5-2-ones" class="headerlink" title="5.2 ones"></a>5.2 ones</h3><ul>
+<li>행렬을 만들고 1을 채움</li>
+<li>dtype으로 데이터 타입 설정 가능 (default는 float)</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">one = np.ones((<span class="hljs-number">2</span>, <span class="hljs-number">3</span>), dtype=int)</span><br><span class="line">one</span><br></pre></td></tr></table></figure>
+<pre><code>array([[1, 1, 1],
+       [1, 1, 1]])
+</code></pre><h3 id="5-3-eye"><a href="#5-3-eye" class="headerlink" title="5.3 eye"></a>5.3 eye</h3><ul>
+<li>단위 행렬 데이터를 만듦</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(np.eye(<span class="hljs-number">5</span>))</span><br><span class="line">print(np.identity(<span class="hljs-number">5</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>[[1. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 0. 1. 0.]
+ [0. 0. 0. 0. 1.]]
+[[1. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 0. 1. 0.]
+ [0. 0. 0. 0. 1.]]
+</code></pre><h3 id="5-4-like"><a href="#5-4-like" class="headerlink" title="5.4 like"></a>5.4 like</h3><ul>
+<li>행렬 안에 있는 모든 데이터를 0이나 1로 바꿀수 있음</li>
+<li><code>np.zeros_like(matrix)</code>: 0으로 바꾸기</li>
+<li><code>np.ones_like(matrix)</code>: 1로 바꾸기</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">z = np.zeros(<span class="hljs-number">5</span>)</span><br><span class="line">z</span><br></pre></td></tr></table></figure>
+<pre><code>array([0., 0., 0., 0., 0.])
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls = np.ones_like(z)</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<pre><code>array([1., 1., 1., 1., 1.])
+</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.zeros_like(one)</span><br></pre></td></tr></table></figure>
+<pre><code>array([[0, 0, 0],
+       [0, 0, 0]])
+</code></pre><h3 id="5-5-empty"><a href="#5-5-empty" class="headerlink" title="5.5 empty"></a>5.5 empty</h3><ul>
+<li>빈 행렬을 만듦</li>
+<li>실제로는 빈데이터가 아니라 dummy 데이터가 들어감</li>
+<li>보통 empty보다는 zeros나 ones를 많이 사용</li>
+</ul>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.empty((<span class="hljs-number">5</span>, <span class="hljs-number">3</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>array([[0., 0., 0.],
+       [0., 0., 0.],
+       [0., 0., 0.],
+       [0., 0., 0.],
+       [0., 0., 0.]])
+</code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
+<li>NumPy v1.16 Manual <a href="https://docs.scipy.org/doc/numpy/index.html" target="_blank" rel="noopener">(https://docs.scipy.org/doc/numpy/index.html)</a></li>
+<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/numpy/">numpy</a>, <a class="has-link-grey -link" href="/tags/programming/">programming</a>, <a class="has-link-grey -link" href="/tags/python/">python</a>, <a class="has-link-grey -link" href="/tags/파이썬/">파이썬</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5c334172a47fe500116a8ea8&amp;product=inline-share-buttons' async='async'></script>
+
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/03/09/2019-03-09-TIL/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">2019-03-09-TIL</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/28/2019-02-28-TIL/">
+                <span class="level-item">2019-02-28-TIL</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://hyeshinoh.github.io/2019/03/01/python_12_NumPy_basic_1/';
+        this.page.identifier = '2019/03/01/python_12_NumPy_basic_1/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="/images/avatar_panda.png" alt="우와팬더(Hyeshin Oh)">
+                    
+                    <p class="is-size-4 is-block">
+                        우와팬더(Hyeshin Oh)
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        데이터 사이언티스트
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Seoul, Korea</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        147
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        8
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        33
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/hyeshinoh">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="http://github.com/hyeshinoh">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Facebook" href="http://facebook.com/hyeshinoh">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Twitter" href="http://twitter.com/hyeshinoh">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/1-TIL-Today-I-Learned/">
+            <span class="level-start">
+                <span class="level-item">1. TIL(Today I Learned)</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">86</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/2-Data-Science-공부/">
+            <span class="level-start">
+                <span class="level-item">2. Data Science 공부</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">61</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/2-Data-Science-공부/2-수학/">
+            <span class="level-start">
+                <span class="level-item">2) 수학</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/2-Data-Science-공부/3-파이썬-Python/">
+            <span class="level-start">
+                <span class="level-item">3) 파이썬 Python</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">17</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/2-Data-Science-공부/4-알고리즘-Algorithm/">
+            <span class="level-start">
+                <span class="level-item">4) 알고리즘 Algorithm</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/2-Data-Science-공부/5-데이터베이스-Database/">
+            <span class="level-start">
+                <span class="level-item">5) 데이터베이스 Database</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/2-Data-Science-공부/6-웹-Web/">
+            <span class="level-start">
+                <span class="level-item">6) 웹 Web</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/2-Data-Science-공부/7-Hexo-블로그/">
+            <span class="level-start">
+                <span class="level-item">7) Hexo 블로그</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 12.73px;">Database</a> <a href="/tags/MySQL/" style="font-size: 11.82px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 11.82px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.91px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 13.64px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 16.36px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 14.55px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10.91px;">hexo</a> <a href="/tags/html/" style="font-size: 10.91px;">html</a> <a href="/tags/javascript/" style="font-size: 10.91px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10.91px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.18px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/programming/" style="font-size: 19.09px;">programming</a> <a href="/tags/python/" style="font-size: 17.27px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 11.82px;">selenium</a> <a href="/tags/web/" style="font-size: 15.45px;">web</a> <a href="/tags/web-crawling/" style="font-size: 13.64px;">web_crawling</a> <a href="/tags/귀찮은건-싫어/" style="font-size: 10px;">귀찮은건 싫어</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.18px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.91px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 13.64px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10.91px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 11.82px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/03/16/2019-03-16-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-03-16-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-16T14:52:15.000Z">2019-03-16</time></div>
+                    <a href="/2019/03/16/2019-03-16-TIL/" class="has-link-black-ter is-size-6">2019-03-16-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/1-TIL-Today-I-Learned/">1. TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/03/09/2019-03-09-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-03-09-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-09T14:52:15.000Z">2019-03-09</time></div>
+                    <a href="/2019/03/09/2019-03-09-TIL/" class="has-link-black-ter is-size-6">2019-03-09-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/1-TIL-Today-I-Learned/">1. TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/03/01/python_12_NumPy_basic_1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 12. NumPy의 기초 (1)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-01T14:35:53.000Z">2019-03-01</time></div>
+                    <a href="/2019/03/01/python_12_NumPy_basic_1/" class="has-link-black-ter is-size-6">python 12. NumPy의 기초 (1)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/28/2019-02-28-TIL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-02-28-TIL">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-28T14:52:15.000Z">2019-02-28</time></div>
+                    <a href="/2019/02/28/2019-02-28-TIL/" class="has-link-black-ter is-size-6">2019-02-28-TIL</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/1-TIL-Today-I-Learned/">1. TIL(Today I Learned)</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/28/Jupyter_tip_002/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Jupyter Notebook Tip - 항상 쓰는 라이브러리 자동으로 import하기!">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-28T09:02:35.000Z">2019-02-28</time></div>
+                    <a href="/2019/02/28/Jupyter_tip_002/" class="has-link-black-ter is-size-6">Jupyter Notebook Tip - 항상 쓰는 라이브러리 자동으로 import하기!</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">25</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">18</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">23</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">44</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.png" alt="python 12. NumPy의 기초 (1)" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 우와팬더&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
