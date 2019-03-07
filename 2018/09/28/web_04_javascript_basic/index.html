@@ -11,7 +11,7 @@
 <meta name="keywords" content="programming,web,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript - Basic">
-<meta property="og:url" content="http://yoursite.com/2018/09/28/web_04_javascript_basic/index.html">
+<meta property="og:url" content="https://hyeshinoh.github.io/2018/09/28/web_04_javascript_basic/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="1. JavaScript1.1 JavaScript란 JavaScript란 객체 기반의 스크립트 프로그래밍 언어로, 웹 브라우저 내에서 주로 사용 HTML, CSS와 함께 웹을 지탱하는 계층 구조에서 많은 역할을 차지 HTML 은 웹 페이지상에서 문단, 제목, 표, 이미지, 동영상등을 정의하고 그 구조와 의미를 부여하는 마크업 언어 CSS 는 배경색, 폰트,">
 <meta property="og:locale" content="en">
@@ -21,6 +21,7 @@
 <meta name="twitter:title" content="JavaScript - Basic">
 <meta name="twitter:description" content="1. JavaScript1.1 JavaScript란 JavaScript란 객체 기반의 스크립트 프로그래밍 언어로, 웹 브라우저 내에서 주로 사용 HTML, CSS와 함께 웹을 지탱하는 계층 구조에서 많은 역할을 차지 HTML 은 웹 페이지상에서 문단, 제목, 표, 이미지, 동영상등을 정의하고 그 구조와 의미를 부여하는 마크업 언어 CSS 는 배경색, 폰트,">
 <meta name="twitter:image" content="https://github.com/hyeshinoh/Study_Web/blob/master/web_04_javascript_basic_001.JPG?raw=true">
+<meta property="fb:app_id" content="hyeshinoh">
 
 
 
@@ -403,24 +404,16 @@ b
 <div class="card">
     <div class="card-content">
         <h3 class="title is-5 has-text-weight-normal">Comments</h3>
-        
-<script>
-    var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/09/28/web_04_javascript_basic/';
-        this.page.identifier = '2018/09/28/web_04_javascript_basic/';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
+        <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=346594012616363&autoLogAppEvents=1";
+    fjs.parentNode.insertBefore(js, fjs);
+    console.log("https://hyeshinoh.github.io/2018/09/28/web_04_javascript_basic/")
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-width="100%" data-href="https://hyeshinoh.github.io/2018/09/28/web_04_javascript_basic/" data-num-posts="5"></div>
 
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
     </div>
 </div>
 </div>

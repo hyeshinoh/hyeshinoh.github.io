@@ -11,14 +11,15 @@
 <meta name="keywords" content="hexo,mathjax">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 블로그에 수식 사용하기 - mathjax 설정">
-<meta property="og:url" content="http://yoursite.com/2018/10/24/hexo_mathjax_00/index.html">
+<meta property="og:url" content="https://hyeshinoh.github.io/2018/10/24/hexo_mathjax_00/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="앞으로 Hexo 블로그에 수학 공부 내용도 정리하기 위해서 열심히 구글링을 해서 mathjax 설정을 마쳤다!이렇게 알아낸 내용을 기억해두기 위해 Hexo 블로그에서 LaTex로 수식을 작성할 수 있도록 mathjax를 설정하는 방법을 정리해보겠다.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-28T07:41:27.967Z">
+<meta property="og:updated_time" content="2019-03-04T04:47:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 블로그에 수식 사용하기 - mathjax 설정">
 <meta name="twitter:description" content="앞으로 Hexo 블로그에 수학 공부 내용도 정리하기 위해서 열심히 구글링을 해서 mathjax 설정을 마쳤다!이렇게 알아낸 내용을 기억해두기 위해 Hexo 블로그에서 LaTex로 수식을 작성할 수 있도록 mathjax를 설정하는 방법을 정리해보겠다.">
+<meta property="fb:app_id" content="hyeshinoh">
 
 
 
@@ -174,7 +175,7 @@
 <p><code>$ npm uninstall hexo-renderer-marked --save</code><br><code>$ npm install hexo-renderer-kramed --save</code></p>
 <p>그리고 <code>&lt;your-project-dir&gt;/node_modules/hexo-reneder-kramed/lib/renderer.js</code>를 열어 다음과 같이 return 값을 text로 수정한다.</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Change inline math rule</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatText</span>(<span class="hljs-params">text</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-comment">// Fit kramed's rule: $$ + \1 + $$</span></span><br><span class="line">  <span class="hljs-comment">// return text.replace(/`\$(.*?)\$`/g, '$$$$$1$$$$');</span></span><br><span class="line">  <span class="hljs-keyword">return</span> text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-mathjax-설치"><a href="#2-mathjax-설치" class="headerlink" title="2) mathjax 설치"></a>2) mathjax 설치</h3><p>다음으로는 mathjax plugin을 설치한다.<br><code>npm install hexo-renderer-mathjax --save</code></p>
+<h3 id="2-mathjax-설치"><a href="#2-mathjax-설치" class="headerlink" title="2) mathjax 설치"></a>2) mathjax 설치</h3><p>다음으로는 mathjax plugin을 설치한다.<br><code>$ npm install hexo-renderer-mathjax --save</code></p>
 <p>그리고 <code>&lt;your-project-dir&gt;/node_modules/hexo-reneder-mathjax/mathjax.html</code>을 열고 CDN URL을 아래와 같이 수정한다.</p>
 <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!-- &lt;script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;&lt;/script&gt; --&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="2-LaTex와-markdown의-문법-충돌-fix하기"><a href="#2-LaTex와-markdown의-문법-충돌-fix하기" class="headerlink" title="2. LaTex와 markdown의 문법 충돌 fix하기"></a>2. LaTex와 markdown의 문법 충돌 fix하기</h2><p>LaTex와 markdown에는 다음과 같이 문법이 충돌하는 부분이 있다. </p>
@@ -188,8 +189,13 @@
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
 <h2 id="4-markdown-post-작성하기"><a href="#4-markdown-post-작성하기" class="headerlink" title="4. markdown post 작성하기"></a>4. markdown post 작성하기</h2><p>이제 hexo 블로그에 수식을 사용하기 위한 설정은 모두 마쳤다!<br>마지막으로 post 작성시 header 부분에 <code>mathjax: true</code>를 넣어주면 아래처럼 블로그에 수식이 잘 표현된다.</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;pmatrix&#125;</span><br><span class="line"> 1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \\</span><br><span class="line"> 1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \\</span><br><span class="line"> \vdots  &amp; \vdots&amp; \vdots &amp; \ddots &amp; \vdots \\</span><br><span class="line"> 1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n    </span><br><span class="line"> \end&#123;pmatrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\begin{pmatrix}<br> 1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \\<br> 1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \\<br> \vdots  &amp; \vdots&amp; \vdots &amp; \ddots &amp; \vdots \\<br> 1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n<br> \end{pmatrix}<br>$$</p>
-<h4 id="내용-추가-문제가-발생했다-2019-01"><a href="#내용-추가-문제가-발생했다-2019-01" class="headerlink" title="내용 추가! 문제가 발생했다! (2019.01)"></a>내용 추가! 문제가 발생했다! (2019.01)</h4><p>위에 행렬 작성 latex 코드를 보면, 행렬 내에서 행 구분을 할 때는 <code>\\</code>를 사용한다. 처음 블로그에 mathjax 설정을 했을 때는 문제 없이 동작했는데, hexo blog theme을 업데이트 하고 나니까 <mark><code>\\</code>가 제대로 인식되지 않고 모든 행렬이 한 줄로 나타나는 문제가 발생</mark>했다!! </p>
+<script type="math/tex; mode=display">
+\begin{pmatrix}
+ 1 & a_1 & a_1^2 & \cdots & a_1^n \\\\
+ 1 & a_2 & a_2^2 & \cdots & a_2^n \\\\
+ \vdots  & \vdots& \vdots & \ddots & \vdots \\\\
+ 1 & a_m & a_m^2 & \cdots & a_m^n    
+ \end{pmatrix}</script><h4 id="내용-추가-문제가-발생했다-2019-01"><a href="#내용-추가-문제가-발생했다-2019-01" class="headerlink" title="내용 추가! 문제가 발생했다! (2019.01)"></a>내용 추가! 문제가 발생했다! (2019.01)</h4><p>위에 행렬 작성 latex 코드를 보면, 행렬 내에서 행 구분을 할 때는 <code>\\</code>를 사용한다. 처음 블로그에 mathjax 설정을 했을 때는 문제 없이 동작했는데, hexo blog theme을 업데이트 하고 나니까 <mark><code>\\</code>가 제대로 인식되지 않고 모든 행렬이 한 줄로 나타나는 문제가 발생</mark>했다!! </p>
 <p>설정 쪽에서 escape 항목을 수정해서 해결해보려고 했지만 생각대로 되지 않았다ㅜ </p>
 <p>결국 적절히 escape이 될 수 있도록 모든 latex 코드를 수동으로 <code>\\</code> → <code>\\\\</code>로 수정해주는 방법을 택할 수 밖에 없었다.</p>
 <p>즉, 현재는 아래처럼 작성해주어야 행렬이 올바르게 표시된다.<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;pmatrix&#125;</span><br><span class="line"> 1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \\\\</span><br><span class="line"> 1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^n \\\\</span><br><span class="line"> \vdots  &amp; \vdots&amp; \vdots &amp; \ddots &amp; \vdots \\\\</span><br><span class="line"> 1 &amp; a_m &amp; a_m^2 &amp; \cdots &amp; a_m^n    </span><br><span class="line"> \end&#123;pmatrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure></p>
@@ -251,24 +257,16 @@
 <div class="card">
     <div class="card-content">
         <h3 class="title is-5 has-text-weight-normal">Comments</h3>
-        
-<script>
-    var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/10/24/hexo_mathjax_00/';
-        this.page.identifier = '2018/10/24/hexo_mathjax_00/';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
+        <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=346594012616363&autoLogAppEvents=1";
+    fjs.parentNode.insertBefore(js, fjs);
+    console.log("https://hyeshinoh.github.io/2018/10/24/hexo_mathjax_00/")
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-width="100%" data-href="https://hyeshinoh.github.io/2018/10/24/hexo_mathjax_00/" data-num-posts="5"></div>
 
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
     </div>
 </div>
 </div>

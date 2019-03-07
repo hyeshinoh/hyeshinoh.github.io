@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://yoursite.com</loc>
+        <loc>https://hyeshinoh.github.io</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/Algorithm-%EA%B3%B5%EB%B6%80/</loc>
+        <loc>https://hyeshinoh.github.io/categories/Data-Science-%EA%B3%B5%EB%B6%80/Algorithm-%EA%B3%B5%EB%B6%80/</loc>
         <lastmod>2019-02-21T14:45:59.385Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/Database-%EA%B3%B5%EB%B6%80/</loc>
+        <loc>https://hyeshinoh.github.io/categories/Data-Science-%EA%B3%B5%EB%B6%80/Database-%EA%B3%B5%EB%B6%80/</loc>
         <lastmod>2019-02-21T14:47:54.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/%EC%88%98%ED%95%99-%EA%B3%B5%EB%B6%80/</loc>
+        <loc>https://hyeshinoh.github.io/categories/Data-Science-%EA%B3%B5%EB%B6%80/%EC%88%98%ED%95%99-%EA%B3%B5%EB%B6%80/</loc>
         <lastmod>2019-02-21T14:52:35.473Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/Web-%EA%B3%B5%EB%B6%80/</loc>
+        <loc>https://hyeshinoh.github.io/categories/Data-Science-%EA%B3%B5%EB%B6%80/Web-%EA%B3%B5%EB%B6%80/</loc>
         <lastmod>2019-02-21T15:04:26.088Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/TIL-Today-I-Learned/</loc>
+        <loc>https://hyeshinoh.github.io/categories/TIL-Today-I-Learned/</loc>
         <lastmod>2019-02-28T02:45:27.916Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/Hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8/</loc>
-        <lastmod>2019-02-28T07:41:27.967Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/</loc>
+        <loc>https://hyeshinoh.github.io/categories/Data-Science-%EA%B3%B5%EB%B6%80/Python-%EA%B3%B5%EB%B6%80/</loc>
         <lastmod>2019-02-28T08:29:39.112Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Data-Science-%EA%B3%B5%EB%B6%80/Python-%EA%B3%B5%EB%B6%80/</loc>
-        <lastmod>2019-02-28T08:29:39.112Z</lastmod>
+        <loc>https://hyeshinoh.github.io/categories/Data-Science-%EA%B3%B5%EB%B6%80/</loc>
+        <lastmod>2019-03-04T04:47:17.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/categories/Data-Science-%EA%B3%B5%EB%B6%80/Hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8/</loc>
+        <lastmod>2019-03-04T04:47:17.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
