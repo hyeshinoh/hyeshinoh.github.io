@@ -24,7 +24,7 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/2019/02/28/Jupyter_tip_002/</loc>
-        <lastmod>2019-02-28T08:29:39.112Z</lastmod>
+        <lastmod>2019-02-28T08:29:39.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -32,7 +32,7 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/2018/08/13/Jupyter_tip_001/</loc>
-        <lastmod>2019-02-28T06:41:16.122Z</lastmod>
+        <lastmod>2019-02-28T06:41:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -40,7 +40,7 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/2018/07/16/python_05_class_basic/</loc>
-        <lastmod>2019-02-28T05:31:01.092Z</lastmod>
+        <lastmod>2019-02-28T05:31:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -48,7 +48,7 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/</loc>
-        <lastmod>2019-02-28T05:30:42.796Z</lastmod>
+        <lastmod>2019-02-28T05:30:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -56,7 +56,7 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/2018/10/12/python_08_file%20&%20pickle/</loc>
-        <lastmod>2019-02-28T05:29:49.677Z</lastmod>
+        <lastmod>2019-02-28T05:29:49.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -64,7 +64,7 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/2018/10/13/python_10_try%20&%20except/</loc>
-        <lastmod>2019-02-28T05:29:28.125Z</lastmod>
+        <lastmod>2019-02-28T05:29:28.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -72,7 +72,7 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/2019/02/21/python_11_regex/</loc>
-        <lastmod>2019-02-28T05:29:17.889Z</lastmod>
+        <lastmod>2019-02-28T05:29:17.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -80,7 +80,7 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/2018/07/11/python_04_function_3_map%20filter%20reduce/</loc>
-        <lastmod>2019-02-28T05:28:28.776Z</lastmod>
+        <lastmod>2019-02-28T05:28:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -88,15 +88,7 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/2018/10/12/python_09_OS%20&%20shutil/</loc>
-        <lastmod>2019-02-28T05:26:24.457Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/07/11/python_04_function_4_decorator/</loc>
-        <lastmod>2019-02-28T04:59:01.349Z</lastmod>
+        <lastmod>2019-02-28T05:26:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -104,7 +96,7 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/2018/07/07/python_01/</loc>
-        <lastmod>2019-02-28T04:58:36.549Z</lastmod>
+        <lastmod>2019-02-28T04:58:36.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -112,7 +104,7 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/2018/07/08/python_02_condition,%20loop/</loc>
-        <lastmod>2019-02-28T04:58:08.255Z</lastmod>
+        <lastmod>2019-02-28T04:58:08.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -120,7 +112,15 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/2018/07/11/python_04_function_2_scope%20inner%20lambda/</loc>
-        <lastmod>2019-02-28T04:55:56.801Z</lastmod>
+        <lastmod>2019-02-28T04:55:56.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2018/07/11/python_04_function_4_decorator/</loc>
+        <lastmod>2019-02-28T04:53:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -128,7 +128,7 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/2018/07/10/python_03_function_1_basic/</loc>
-        <lastmod>2019-02-28T02:58:54.580Z</lastmod>
+        <lastmod>2019-02-28T02:58:54.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -136,7 +136,7 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/2019/02/28/2019-02-28-TIL/</loc>
-        <lastmod>2019-02-28T02:45:27.916Z</lastmod>
+        <lastmod>2019-02-28T02:45:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
