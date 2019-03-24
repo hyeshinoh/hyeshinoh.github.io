@@ -9,18 +9,18 @@
 
 
 
-    <meta name="description" content="jupyter notebook으로 보기">
+    <meta name="description" content="jupyter notebook으로 보기 NumPy의 기초 (1)NumPy 소개 Numpy는 Pandas와 함께 데이터사이언스에서 수치 배열 데이터를 다루는데 필수적으로 사용되는 핵심 패키지이다. 데이터사이언스에서 데이터는 보통 배열로 나타내는데 numpy를 사용해 vector/matrix/고차원 배열의 연산을 효율적이고 빠르게 할 수 있다.  (내부적으로">
 <meta name="keywords" content="python,파이썬,programming,numpy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 12. NumPy의 기초 (1)">
 <meta property="og:url" content="https://hyeshinoh.github.io/2019/03/01/python_12_NumPy_basic_1/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="jupyter notebook으로 보기">
+<meta property="og:description" content="jupyter notebook으로 보기 NumPy의 기초 (1)NumPy 소개 Numpy는 Pandas와 함께 데이터사이언스에서 수치 배열 데이터를 다루는데 필수적으로 사용되는 핵심 패키지이다. 데이터사이언스에서 데이터는 보통 배열로 나타내는데 numpy를 사용해 vector/matrix/고차원 배열의 연산을 효율적이고 빠르게 할 수 있다.  (내부적으로">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-01T14:31:59.023Z">
+<meta property="og:updated_time" content="2019-03-20T14:44:30.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 12. NumPy의 기초 (1)">
-<meta name="twitter:description" content="jupyter notebook으로 보기">
+<meta name="twitter:description" content="jupyter notebook으로 보기 NumPy의 기초 (1)NumPy 소개 Numpy는 Pandas와 함께 데이터사이언스에서 수치 배열 데이터를 다루는데 필수적으로 사용되는 핵심 패키지이다. 데이터사이언스에서 데이터는 보통 배열로 나타내는데 numpy를 사용해 vector/matrix/고차원 배열의 연산을 효율적이고 빠르게 할 수 있다.  (내부적으로">
 <meta property="fb:app_id" content="hyeshinoh">
 
 
@@ -174,7 +174,6 @@
         </h1>
         <div class="content">
             <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_21_NumPy_basic_1.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
-<a id="more"></a> 
 <h1 id="NumPy의-기초-1"><a href="#NumPy의-기초-1" class="headerlink" title="NumPy의 기초 (1)"></a><strong>NumPy의 기초 (1)</strong></h1><h4 id="NumPy-소개"><a href="#NumPy-소개" class="headerlink" title="NumPy 소개"></a><strong>NumPy 소개</strong></h4><ul>
 <li>Numpy는 Pandas와 함께 데이터사이언스에서 수치 배열 데이터를 다루는데 필수적으로 사용되는 핵심 패키지이다.</li>
 <li>데이터사이언스에서 데이터는 보통 배열로 나타내는데 numpy를 사용해 vector/matrix/고차원 배열의 연산을 효율적이고 빠르게 할 수 있다. <br> (내부적으로 C로 구현되어 있기 때문에 python 반복문을 사용하는 것에 비해 연산이 빠르다.)</li>
@@ -187,6 +186,7 @@
 <li>데이터 수정</li>
 <li>특수 행렬 만들기: zeros, ones, eye, like, empty</li>
 </ol>
+<a id="more"></a> 
 <h2 id="0-설치하기-amp-불러오기"><a href="#0-설치하기-amp-불러오기" class="headerlink" title="0. 설치하기 &amp; 불러오기"></a><strong>0. 설치하기 &amp; 불러오기</strong></h2><ul>
 <li>설치하기: <code>$ pip3 install numpy</code></li>
 <li>불러올때는 아래와 같이 alias로 ‘np’를 사용하는 것이 컨벤션</li>

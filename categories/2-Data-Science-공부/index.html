@@ -172,7 +172,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    10 minutes read (About 1450 words)
+                    10 minutes read (About 1469 words)
                 </span>
                 
             </div>
@@ -184,7 +184,8 @@
             
         </h1>
         <div class="content">
-            <h1 id="NumPy의-기초-2"><a href="#NumPy의-기초-2" class="headerlink" title="NumPy의 기초 (2)"></a><strong>NumPy의 기초 (2)</strong></h1><h4 id="다룰-내용"><a href="#다룰-내용" class="headerlink" title="다룰 내용"></a><strong>다룰 내용</strong></h4><ol>
+            <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_22_NumPy_basic_2.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
+<h1 id="NumPy의-기초-2"><a href="#NumPy의-기초-2" class="headerlink" title="NumPy의 기초 (2)"></a><strong>NumPy의 기초 (2)</strong></h1><h4 id="다룰-내용"><a href="#다룰-내용" class="headerlink" title="다룰 내용"></a><strong>다룰 내용</strong></h4><ol>
 <li>array에 데이터 넣기<ul>
 <li>arange</li>
 <li>linspace, logspace</li>
@@ -201,297 +202,16 @@
 <li>split</li>
 <li>sort</li>
 </ol>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np</span><br></pre></td></tr></table></figure>
-<h2 id="1-array에-데이터-넣기"><a href="#1-array에-데이터-넣기" class="headerlink" title="1. array에 데이터 넣기"></a><strong>1. array에 데이터 넣기</strong></h2><h3 id="1-1-arange"><a href="#1-1-arange" class="headerlink" title="1.1 arange"></a>1.1 arange</h3><ul>
-<li>range와 사용 방법이 같음</li>
-<li>하지만 range보다 속도가 빠름</li>
-</ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.arange(<span class="hljs-number">10</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.arange(<span class="hljs-number">5</span>, <span class="hljs-number">10</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>array([5, 6, 7, 8, 9])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.arange(<span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">2</span>)  <span class="hljs-comment"># step 지정</span></span><br></pre></td></tr></table></figure>
-<pre><code>array([5, 7, 9])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 속도 비교</span></span><br><span class="line">size = <span class="hljs-number">10</span> ** <span class="hljs-number">6</span></span><br><span class="line"><span class="hljs-comment"># size = int(1E6)</span></span><br><span class="line">size</span><br></pre></td></tr></table></figure>
-<pre><code>1000000
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># range보다 arange를 사용하는 것이 더 빠르다!</span></span><br><span class="line">%time <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(size): x**<span class="hljs-number">2</span></span><br><span class="line">%time <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> np.arange(size): x**<span class="hljs-number">2</span></span><br></pre></td></tr></table></figure>
-<pre><code>Wall time: 270 ms
-Wall time: 169 ms
-</code></pre><h3 id="1-2-linspace-logspace"><a href="#1-2-linspace-logspace" class="headerlink" title="1.2 linspace, logspace"></a>1.2 linspace, logspace</h3><h4 id="1-linspace"><a href="#1-linspace" class="headerlink" title="(1) linspace"></a>(1) linspace</h4><ul>
-<li>범위 사이를 n-1 등분(point는 n개가 됨) (선형적으로 공간을 나눔)</li>
-</ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 0과 100 사이를 3점으로 나눔</span></span><br><span class="line">np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">3</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>array([  0.,  50., 100.])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 0과 100 사이를 5점으로 나눔</span></span><br><span class="line">np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">5</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>array([  0.,  25.,  50.,  75., 100.])
-</code></pre><h4 id="2-logspace"><a href="#2-logspace" class="headerlink" title="(2) logspace"></a>(2) logspace</h4><ul>
-<li>log 범위 사이를 n-1 등분(point는 n개가 됨)</li>
-</ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># log10(x1)=2, log10(x2)=3, log10(x3)=4</span></span><br><span class="line"><span class="hljs-comment"># x1=100, x2=1000, x3=10000</span></span><br><span class="line">np.logspace(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>array([  100.,  1000., 10000.])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 2, 2.5, 3</span></span><br><span class="line"><span class="hljs-comment"># log10(x1)=2, log10(x2)=2.5, log10(x3)=4</span></span><br><span class="line">np.logspace(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>array([ 100.        ,  316.22776602, 1000.        ])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">10</span>**<span class="hljs-number">2</span>, <span class="hljs-number">10</span>**<span class="hljs-number">2.5</span>, <span class="hljs-number">10</span>**<span class="hljs-number">3</span></span><br></pre></td></tr></table></figure>
-<pre><code>(100, 316.22776601683796, 1000)
-</code></pre><h3 id="1-3-random"><a href="#1-3-random" class="headerlink" title="1.3 random"></a>1.3 random</h3><p>array에 랜덤하게 수를 발생시켜 넣어주는 방법을 알아보자.</p>
-<ul>
-<li>seed: 랜덤변수의 설정값<ul>
-<li>seed 값을 동일하게 주면 같은 동일한 결과를 반복해서 얻을 수 있음 </li>
-</ul>
-</li>
-<li>rand: 균등분포(uniform)로 난수를 발생시킴</li>
-<li>randn: 정규분포(Gaussian)로 난수를 발생시킴</li>
-<li>randint: 정수로 난수를 발생시킴 (균등분포)</li>
-<li>suffle: 행렬 데이터를 섞어줌</li>
-<li>choice: 특정 범위의 숫자를 선택해줌 (확률 설정이 가능)</li>
-</ul>
-<h4 id="1-seed-rand-randn"><a href="#1-seed-rand-randn" class="headerlink" title="(1) seed, rand, randn"></a>(1) seed, rand, randn</h4><ul>
-<li><code>np.random.rand(size)</code>  <br></li>
-<li><code>np.random.randn(size)</code></li>
-</ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">np.random.seed(<span class="hljs-number">0</span>)</span><br><span class="line">rd = np.random.rand(<span class="hljs-number">2</span>, <span class="hljs-number">5</span>)       <span class="hljs-comment"># uniform 으로 난수 발생 (균등분포)</span></span><br><span class="line">rdn = np.random.randn(<span class="hljs-number">2</span>, <span class="hljs-number">5</span>)     <span class="hljs-comment"># Gaussian 으로 난수 발생 (정규분포 - 0에 가까운수가 많이 나옴)</span></span><br><span class="line">print(rd)</span><br><span class="line">print(rdn)</span><br></pre></td></tr></table></figure>
-<pre><code>[[0.5488135  0.71518937 0.60276338 0.54488318 0.4236548 ]
- [0.64589411 0.43758721 0.891773   0.96366276 0.38344152]]
-[[ 0.14404357  1.45427351  0.76103773  0.12167502  0.44386323]
- [ 0.33367433  1.49407907 -0.20515826  0.3130677  -0.85409574]]
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># seed 값을 바꾸면 다른 값이 나온다.</span></span><br><span class="line">np.random.seed(<span class="hljs-number">1</span>)</span><br><span class="line">rd = np.random.rand(<span class="hljs-number">2</span>, <span class="hljs-number">5</span>) </span><br><span class="line">rdn = np.random.randn(<span class="hljs-number">2</span>, <span class="hljs-number">5</span>) </span><br><span class="line">print(rd)</span><br><span class="line">print(rdn)</span><br></pre></td></tr></table></figure>
-<pre><code>[[4.17022005e-01 7.20324493e-01 1.14374817e-04 3.02332573e-01
-  1.46755891e-01]
- [9.23385948e-02 1.86260211e-01 3.45560727e-01 3.96767474e-01
-  5.38816734e-01]]
-[[ 1.74481176 -0.7612069   0.3190391  -0.24937038  1.46210794]
- [-2.06014071 -0.3224172  -0.38405435  1.13376944 -1.09989127]]
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">np.random.seed(<span class="hljs-number">1</span>)</span><br><span class="line">rd = np.random.rand(<span class="hljs-number">4</span>)</span><br><span class="line">rdn = np.random.randn(<span class="hljs-number">4</span>)</span><br><span class="line">print(rd)</span><br><span class="line">print(rdn)</span><br></pre></td></tr></table></figure>
-<pre><code>[4.17022005e-01 7.20324493e-01 1.14374817e-04 3.02332573e-01]
-[-0.52817175 -1.07296862  0.86540763 -2.3015387 ]
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># rand로 3차원 행렬 만들기</span></span><br><span class="line">r = np.random.rand(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)</span><br><span class="line">r</span><br></pre></td></tr></table></figure>
-<pre><code>array([[[0.41919451, 0.6852195 , 0.20445225, 0.87811744],
-        [0.02738759, 0.67046751, 0.4173048 , 0.55868983],
-        [0.14038694, 0.19810149, 0.80074457, 0.96826158]],
-
-       [[0.31342418, 0.69232262, 0.87638915, 0.89460666],
-        [0.08504421, 0.03905478, 0.16983042, 0.8781425 ],
-        [0.09834683, 0.42110763, 0.95788953, 0.53316528]]])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># rand로 2차원 행렬 만들기</span></span><br><span class="line">r = np.random.rand(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)</span><br><span class="line">r</span><br></pre></td></tr></table></figure>
-<pre><code>array([[0.69187711, 0.31551563, 0.68650093],
-       [0.83462567, 0.01828828, 0.75014431]])
-</code></pre><h4 id="2-randint"><a href="#2-randint" class="headerlink" title="(2) randint"></a>(2) randint</h4><ul>
-<li><code>np.random.randint(from, to, size)</code></li>
-</ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r = np.random.randint(<span class="hljs-number">5</span>, <span class="hljs-number">10</span>, (<span class="hljs-number">3</span>, <span class="hljs-number">3</span>))</span><br><span class="line">r</span><br></pre></td></tr></table></figure>
-<pre><code>array([[5, 9, 6],
-       [7, 7, 6],
-       [5, 6, 8]])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r = np.random.randint(<span class="hljs-number">5</span>, size=(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>))</span><br><span class="line">r</span><br></pre></td></tr></table></figure>
-<pre><code>array([[4, 3, 1],
-       [3, 0, 0],
-       [2, 2, 1]])
-</code></pre><h4 id="3-shuffle"><a href="#3-shuffle" class="headerlink" title="(3) shuffle"></a>(3) shuffle</h4><ul>
-<li>데이터의 순서를 바꿀수 있음</li>
-<li>행의 순서만 바뀜 (행 안의 데이터는 바뀌지 않음)</li>
-<li>데이터를 다 바꾸려면? 1열로 reshape 후 shuffle, 그 후 다시 reshape</li>
-</ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r</span><br></pre></td></tr></table></figure>
-<pre><code>array([[4, 3, 1],
-       [3, 0, 0],
-       [2, 2, 1]])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">np.random.shuffle(r)</span><br><span class="line">r</span><br></pre></td></tr></table></figure>
-<pre><code>array([[3, 0, 0],
-       [2, 2, 1],
-       [4, 3, 1]])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 데이터를 전부 뒤섞기</span></span><br><span class="line">r = r.reshape(<span class="hljs-number">9</span> ,<span class="hljs-number">1</span>)</span><br><span class="line">np.random.shuffle(r)</span><br><span class="line">r = r.reshape(<span class="hljs-number">3</span>,<span class="hljs-number">3</span>)</span><br><span class="line">r</span><br></pre></td></tr></table></figure>
-<pre><code>array([[0, 1, 2],
-       [3, 2, 4],
-       [0, 1, 3]])
-</code></pre><h4 id="4-choice"><a href="#4-choice" class="headerlink" title="(4) choice"></a>(4) choice</h4><ul>
-<li><code>numpy.random.choice(a, size=None, replace=True, p=None)</code><ul>
-<li>a: 1-D array-like or int</li>
-<li>size: int or tuple of int, optional</li>
-<li>replace: boolen, optional (False: equivalent to permutation - 비복원추출!)</li>
-<li>p: 1-D array-like, optional (입력하지 않으면 a에 대해 uniform distribution)</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.random.choice(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>array([1, 0, 2])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># p의 확률로 range(5)를 10개 추출</span></span><br><span class="line">a = list(range(<span class="hljs-number">5</span>))</span><br><span class="line">p = [<span class="hljs-number">0.1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.4</span>, <span class="hljs-number">0.2</span>, <span class="hljs-number">0.3</span>]     <span class="hljs-comment"># p= 0 나올 확률, 1 나올 확률, 2 나올 확률, 3 나올 확률, 4 나올 확률</span></span><br><span class="line">print(a)</span><br><span class="line">print(p)</span><br></pre></td></tr></table></figure>
-<pre><code>[0, 1, 2, 3, 4]
-[0.1, 0, 0.4, 0.2, 0.3]
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.random.choice(a, <span class="hljs-number">10</span>, p)</span><br></pre></td></tr></table></figure>
-<pre><code>array([1, 2, 1, 4, 2, 0, 0, 1, 0, 1])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.random.choice(range(<span class="hljs-number">5</span>, <span class="hljs-number">10</span>), (<span class="hljs-number">2</span>, <span class="hljs-number">2</span>), replace=<span class="hljs-keyword">False</span>, p=p)</span><br></pre></td></tr></table></figure>
-<pre><code>array([[7, 9],
-       [5, 8]])
-</code></pre><h2 id="2-unique"><a href="#2-unique" class="headerlink" title="2. unique"></a><strong>2. unique</strong></h2><ul>
-<li>행렬 데이터에서 유일값(중복없는 list)과 유일값의 개수를 확인할 수 있음</li>
-</ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r</span><br></pre></td></tr></table></figure>
-<pre><code>array([[0, 1, 2],
-       [3, 2, 4],
-       [0, 1, 3]])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">index, counts = np.unique(r, return_counts=<span class="hljs-keyword">True</span>)</span><br><span class="line">print(index, type(index))</span><br><span class="line">print(counts, type(counts))</span><br></pre></td></tr></table></figure>
-<pre><code>[0 1 2 3 4] &lt;class &apos;numpy.ndarray&apos;&gt;
-[2 2 2 2 1] &lt;class &apos;numpy.ndarray&apos;&gt;
-</code></pre><h2 id="3-stack-amp-concatenate"><a href="#3-stack-amp-concatenate" class="headerlink" title="3. stack &amp; concatenate"></a><strong>3. stack &amp; concatenate</strong></h2><h3 id="3-1-stack"><a href="#3-1-stack" class="headerlink" title="3.1 stack"></a>3.1 stack</h3><ul>
-<li>행렬을 쌓는 것과 같이 합치는 방법</li>
-<li><code>numpy.stack(arrays, axis=0, out=None)</code><ul>
-<li>arrays: sequence of array_like (각 array는 같은 shape여야 함!)</li>
-<li>axis: The axis in the result array along which the input arrays are stacked (몇번째 차원의 방향으로 쌓는가)</li>
-</ul>
-</li>
-</ul>
-<h4 id="1-1차원-행렬의-stack"><a href="#1-1차원-행렬의-stack" class="headerlink" title="(1) 1차원 행렬의 stack"></a>(1) 1차원 행렬의 stack</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">na1 = np.arange(<span class="hljs-number">1</span>, <span class="hljs-number">6</span>)</span><br><span class="line">na2 = np.arange(<span class="hljs-number">6</span>, <span class="hljs-number">11</span>)</span><br><span class="line">print(na1)</span><br><span class="line">print(na2)</span><br></pre></td></tr></table></figure>
-<pre><code>[1 2 3 4 5]
-[ 6  7  8  9 10]
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">na3 = np.stack([na1, na2])   </span><br><span class="line"><span class="hljs-comment"># na3 = np.stack((na1, na2)) </span></span><br><span class="line">print(na3)</span><br></pre></td></tr></table></figure>
-<pre><code>[[ 1  2  3  4  5]
- [ 6  7  8  9 10]]
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">na3 = np.stack((na1, na2), axis = <span class="hljs-number">1</span>)   <span class="hljs-comment"># axis=1: 각 행렬의 shape인 (1, 5)에서 1번째인 '5'가 나타내는 열방향으로 쌓음)</span></span><br><span class="line">print(na3)</span><br></pre></td></tr></table></figure>
-<pre><code>[[ 1  6]
- [ 2  7]
- [ 3  8]
- [ 4  9]
- [ 5 10]]
-</code></pre><h4 id="2-2차원-행렬의-stack"><a href="#2-2차원-행렬의-stack" class="headerlink" title="(2) 2차원 행렬의 stack"></a>(2) 2차원 행렬의 stack</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">na1 = np.arange(<span class="hljs-number">1</span>, <span class="hljs-number">7</span>).reshape(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)</span><br><span class="line">na2 = np.arange(<span class="hljs-number">7</span>, <span class="hljs-number">13</span>).reshape(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)</span><br><span class="line">print(na1)</span><br><span class="line">print(na2)</span><br><span class="line">print(<span class="hljs-string">"shape of na1:"</span>, na1.shape)</span><br><span class="line">print(<span class="hljs-string">"shape of na2:"</span>, na2.shape)</span><br></pre></td></tr></table></figure>
-<pre><code>[[1 2 3]
- [4 5 6]]
-[[ 7  8  9]
- [10 11 12]]
-shape of na1: (2, 3)
-shape of na2: (2, 3)
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">na3 = np.stack((na1, na2))   </span><br><span class="line">print(na3)</span><br></pre></td></tr></table></figure>
-<pre><code>[[[ 1  2  3]
-  [ 4  5  6]]
-
- [[ 7  8  9]
-  [10 11 12]]]
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="hljs-string">"shape of 'na3':"</span>, na3.shape)</span><br></pre></td></tr></table></figure>
-<pre><code>shape of &apos;na3&apos;: (2, 2, 3)
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">na3 = np.stack((na1, na2), axis = <span class="hljs-number">1</span>)   <span class="hljs-comment"># 한 차원 안으로 들어가서 행끼리 짝지어 쌓음</span></span><br><span class="line">print(na3)</span><br></pre></td></tr></table></figure>
-<pre><code>[[[ 1  2  3]
-  [ 7  8  9]]
-
- [[ 4  5  6]
-  [10 11 12]]]
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">na3 = np.stack((na1, na2), axis = <span class="hljs-number">2</span>)  <span class="hljs-comment"># 한 차원 더 들어가서 원소들을 짝지어 쌓음</span></span><br><span class="line">print(na3)</span><br></pre></td></tr></table></figure>
-<pre><code>[[[ 1  7]
-  [ 2  8]
-  [ 3  9]]
-
- [[ 4 10]
-  [ 5 11]
-  [ 6 12]]]
-</code></pre><h3 id="3-2-concatenate-결합"><a href="#3-2-concatenate-결합" class="headerlink" title="3.2 concatenate (결합)"></a>3.2 concatenate (결합)</h3><ul>
-<li>세로 결합(axis=0, default)은 열의 갯수가 같아야 함</li>
-<li>가로 결합(axis=1)은 행의 갯수가 같아야 함</li>
-</ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">na1 = np.random.randint(<span class="hljs-number">10</span>, size=(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))</span><br><span class="line">na1</span><br></pre></td></tr></table></figure>
-<pre><code>array([[8, 9, 2],
-       [7, 5, 5]])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">na2 = np.random.randint(<span class="hljs-number">10</span>, size=(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>))</span><br><span class="line">na2</span><br></pre></td></tr></table></figure>
-<pre><code>array([[4, 5],
-       [8, 5],
-       [8, 1]])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">na3 = np.random.randint(<span class="hljs-number">10</span>, size=(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>))</span><br><span class="line">na3</span><br></pre></td></tr></table></figure>
-<pre><code>array([[1, 8, 7],
-       [0, 3, 4],
-       [2, 0, 3]])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.concatenate((na1, na3))           <span class="hljs-comment"># axis=0이 default: 세로결합</span></span><br></pre></td></tr></table></figure>
-<pre><code>array([[8, 9, 2],
-       [7, 5, 5],
-       [1, 8, 7],
-       [0, 3, 4],
-       [2, 0, 3]])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.concatenate((na2, na3), axis=<span class="hljs-number">1</span>)   <span class="hljs-comment"># axix=1: 가로 결합</span></span><br></pre></td></tr></table></figure>
-<pre><code>array([[4, 5, 1, 8, 7],
-       [8, 5, 0, 3, 4],
-       [8, 1, 2, 0, 3]])
-</code></pre><h3 id="3-3-column-row-결합"><a href="#3-3-column-row-결합" class="headerlink" title="3.3 column/row 결합"></a>3.3 column/row 결합</h3><ul>
-<li><code>c_[array1, array2]</code>: column 결합</li>
-<li><code>r_[array1, array2]</code>: row 결합 → 결과가 1행 행렬이 됨</li>
-<li>stack이나 concatenate이 더 빠름</li>
-</ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.c_[np.array([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]), np.array([<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]) ]</span><br></pre></td></tr></table></figure>
-<pre><code>array([[1, 4],
-       [2, 5],
-       [3, 6]])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.r_[np.array([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]), np.array([<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]) ]</span><br></pre></td></tr></table></figure>
-<pre><code>array([1, 2, 3, 4, 5, 6])
-</code></pre><h2 id="4-split"><a href="#4-split" class="headerlink" title="4. split"></a><strong>4. split</strong></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ab = np.arange(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>)</span><br><span class="line">ab</span><br></pre></td></tr></table></figure>
-<pre><code>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.split(ab, [<span class="hljs-number">5</span>])     <span class="hljs-comment"># 앞에서 5번째를 기준으로 나눈다</span></span><br></pre></td></tr></table></figure>
-<pre><code>[array([0, 1, 2, 3, 4]), array([5, 6, 7, 8, 9])]
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># split 해서 여러개의 array로 받을 수 있음</span></span><br><span class="line">r1, r2 = np.split(ab, [<span class="hljs-number">5</span>])  </span><br><span class="line">r1, r2</span><br></pre></td></tr></table></figure>
-<pre><code>(array([0, 1, 2, 3, 4]), array([5, 6, 7, 8, 9]))
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># split 기준을 여러개 둘 수 있음: 2, 4, 6, 8 번째 원소 기준으로 5개로 나눈다</span></span><br><span class="line">np.split(ab, [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">8</span>])</span><br></pre></td></tr></table></figure>
-<pre><code>[array([0, 1]), array([2, 3]), array([4, 5]), array([6, 7]), array([8, 9])]
-</code></pre><h4 id="vsplit-hsplit"><a href="#vsplit-hsplit" class="headerlink" title="vsplit / hsplit"></a>vsplit / hsplit</h4><ul>
-<li>행렬을 수직, 수평으로 나눈다</li>
-</ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r = np.random.randint(<span class="hljs-number">10</span>, size=(<span class="hljs-number">4</span>, <span class="hljs-number">6</span>))</span><br><span class="line">r</span><br></pre></td></tr></table></figure>
-<pre><code>array([[5, 1, 2, 4, 3, 0],
-       [6, 0, 7, 2, 8, 3],
-       [0, 8, 4, 2, 9, 0],
-       [3, 8, 1, 4, 3, 3]])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># vsplit: 위 아래 각각의 행렬로 분리함</span></span><br><span class="line">r1, r2 = np.vsplit(r, [<span class="hljs-number">2</span>])     <span class="hljs-comment"># 2번째 행 기준으로</span></span><br><span class="line">print(r1)</span><br><span class="line">print(r2)</span><br></pre></td></tr></table></figure>
-<pre><code>[[5 1 2 4 3 0]
- [6 0 7 2 8 3]]
-[[0 8 4 2 9 0]
- [3 8 1 4 3 3]]
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># hsplit: 좌 우 행렬로 분리함, 수직을 자름</span></span><br><span class="line">n1, n2 = np.hsplit(r, [<span class="hljs-number">3</span>])    <span class="hljs-comment"># 3번째 열 기준으로</span></span><br><span class="line">print(n1)</span><br><span class="line">print(n2)</span><br></pre></td></tr></table></figure>
-<pre><code>[[5 1 2]
- [6 0 7]
- [0 8 4]
- [3 8 1]]
-[[4 3 0]
- [2 8 3]
- [2 9 0]
- [4 3 3]]
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n1, n2, n3 = np.hsplit(r, [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>])</span><br><span class="line">print(n1)</span><br><span class="line">print(n2)</span><br><span class="line">print(n3)</span><br></pre></td></tr></table></figure>
-<pre><code>[[5 1]
- [6 0]
- [0 8]
- [3 8]]
-[[2 4]
- [7 2]
- [4 2]
- [1 4]]
-[[3 0]
- [8 3]
- [9 0]
- [3 3]]
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n1, n2, n3 = np.hsplit(r, <span class="hljs-number">3</span>)      <span class="hljs-comment"># int를 넣으면 n등분을 함</span></span><br><span class="line">print(n1)</span><br><span class="line">print(n2)</span><br><span class="line">print(n3)</span><br></pre></td></tr></table></figure>
-<pre><code>[[5 1]
- [6 0]
- [0 8]
- [3 8]]
-[[2 4]
- [7 2]
- [4 2]
- [1 4]]
-[[3 0]
- [8 3]
- [9 0]
- [3 3]]
-</code></pre><h2 id="5-sort"><a href="#5-sort" class="headerlink" title="5. sort"></a><strong>5. sort</strong></h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r1 = np.random.randint(<span class="hljs-number">10</span>, size=(<span class="hljs-number">3</span>,<span class="hljs-number">3</span>))</span><br><span class="line">print(r1)</span><br></pre></td></tr></table></figure>
-<pre><code>[[6 7 3]
- [5 3 2]
- [4 4 0]]
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 가로로 sorting</span></span><br><span class="line">r1.sort()          <span class="hljs-comment"># axis -1과 1은 같은 동작을 한다   sort는 r1에 바로 반영됨</span></span><br><span class="line">r1</span><br></pre></td></tr></table></figure>
-<pre><code>array([[3, 6, 7],
-       [2, 3, 5],
-       [0, 4, 4]])
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 세로로 sorting : axis=0 (각 열이 독립적으로 정렬됨)</span></span><br><span class="line">r1.sort(axis=<span class="hljs-number">0</span>)</span><br><span class="line">r1</span><br></pre></td></tr></table></figure>
-<pre><code>array([[0, 3, 4],
-       [2, 4, 5],
-       [3, 6, 7]])
-</code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
-<li>NumPy v1.16 Manual <a href="https://docs.scipy.org/doc/numpy/index.html" target="_blank" rel="noopener">(https://docs.scipy.org/doc/numpy/index.html)</a></li>
-<li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/03/19/python_13_NumPy_basic_2/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -533,6 +253,18 @@ shape of na2: (2, 3)
         </h1>
         <div class="content">
             <p><a href="https://github.com/hyeshinoh/Study_Python/blob/master/python_21_NumPy_basic_1.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
+<h1 id="NumPy의-기초-1"><a href="#NumPy의-기초-1" class="headerlink" title="NumPy의 기초 (1)"></a><strong>NumPy의 기초 (1)</strong></h1><h4 id="NumPy-소개"><a href="#NumPy-소개" class="headerlink" title="NumPy 소개"></a><strong>NumPy 소개</strong></h4><ul>
+<li>Numpy는 Pandas와 함께 데이터사이언스에서 수치 배열 데이터를 다루는데 필수적으로 사용되는 핵심 패키지이다.</li>
+<li>데이터사이언스에서 데이터는 보통 배열로 나타내는데 numpy를 사용해 vector/matrix/고차원 배열의 연산을 효율적이고 빠르게 할 수 있다. <br> (내부적으로 C로 구현되어 있기 때문에 python 반복문을 사용하는 것에 비해 연산이 빠르다.)</li>
+</ul>
+<h4 id="다룰-내용"><a href="#다룰-내용" class="headerlink" title="다룰 내용"></a><strong>다룰 내용</strong></h4><p>먼저 여기에서는 array를 만들고 수정하는 기본적인 방법들을 다뤄보자.</p>
+<ol>
+<li>배열 만들기: Make, array</li>
+<li>reshape</li>
+<li>index</li>
+<li>데이터 수정</li>
+<li>특수 행렬 만들기: zeros, ones, eye, like, empty</li>
+</ol>
         </div>
         
         
