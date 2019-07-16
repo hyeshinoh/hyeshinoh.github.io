@@ -35,13 +35,6 @@
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/categories/TIL-Today-I-Learned/</loc>
-        <lastmod>2019-02-28T02:45:27.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://hyeshinoh.github.io/categories/Data-Science-%EA%B3%B5%EB%B6%80/Python-%EA%B3%B5%EB%B6%80/</loc>
         <lastmod>2019-02-28T08:29:39.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -58,6 +51,13 @@
     <url>
         <loc>https://hyeshinoh.github.io/categories/Data-Science-%EA%B3%B5%EB%B6%80/Hexo-%EB%B8%94%EB%A1%9C%EA%B7%B8/</loc>
         <lastmod>2019-03-10T12:39:07.387Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/categories/TIL-Today-I-Learned/</loc>
+        <lastmod>2019-07-16T07:56:05.480Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -149,13 +149,6 @@
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/tags/TIL-Today-I-Learned/</loc>
-        <lastmod>2019-02-28T02:45:27.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://hyeshinoh.github.io/tags/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/</loc>
         <lastmod>2019-02-28T05:29:17.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -221,6 +214,13 @@
     <url>
         <loc>https://hyeshinoh.github.io/tags/hexo/</loc>
         <lastmod>2019-03-10T12:39:07.387Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/TIL-Today-I-Learned/</loc>
+        <lastmod>2019-07-16T07:56:05.480Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
