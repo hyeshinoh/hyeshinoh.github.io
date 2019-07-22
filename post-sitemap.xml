@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>https://hyeshinoh.github.io/2019/03/19/python_13_NumPy_basic_2/</loc>
+        <lastmod>2019-07-22T11:28:43.889Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2019/03/01/python_12_NumPy_basic_1/</loc>
+        <lastmod>2019-07-22T11:28:29.214Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hyeshinoh.github.io/2018/07/12/algorithm_prob_001/</loc>
         <lastmod>2019-07-16T14:19:47.588Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1169,22 +1185,6 @@
     <url>
         <loc>https://hyeshinoh.github.io/2018/06/28/2018-06-27-TIL/</loc>
         <lastmod>2019-07-16T13:31:20.446Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2019/03/01/python_12_NumPy_basic_1/</loc>
-        <lastmod>2019-03-20T14:44:30.817Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2019/03/19/python_13_NumPy_basic_2/</loc>
-        <lastmod>2019-03-20T14:44:13.020Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
