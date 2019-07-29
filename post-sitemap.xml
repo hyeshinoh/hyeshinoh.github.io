@@ -7,32 +7,104 @@
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/2019/04/05/python_16_pandas_basic_2/</loc>
-        <lastmod>2019-07-29T14:15:15.044Z</lastmod>
+        <loc>https://hyeshinoh.github.io/2018/07/07/python_01/</loc>
+        <lastmod>2019-07-29T15:05:57.385Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/2019/03/30/python_15_pandas_basic_1/</loc>
-        <lastmod>2019-07-29T11:55:41.025Z</lastmod>
+        <loc>https://hyeshinoh.github.io/2018/07/08/python_02_condition,%20loop/</loc>
+        <lastmod>2019-07-29T15:05:30.013Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/2019/03/26/python_14_NumPy_calculate/</loc>
-        <lastmod>2019-07-22T11:40:36.048Z</lastmod>
+        <loc>https://hyeshinoh.github.io/2018/07/10/python_03_function_1_basic/</loc>
+        <lastmod>2019-07-29T15:05:18.164Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/2019/03/19/python_13_NumPy_basic_2/</loc>
-        <lastmod>2019-07-22T11:28:43.889Z</lastmod>
+        <loc>https://hyeshinoh.github.io/2018/07/11/python_04_function_2_scope%20inner%20lambda/</loc>
+        <lastmod>2019-07-29T15:05:02.081Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2018/07/11/python_04_function_3_map%20filter%20reduce/</loc>
+        <lastmod>2019-07-29T15:04:48.882Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2018/07/11/python_04_function_4_decorator/</loc>
+        <lastmod>2019-07-29T15:04:27.360Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2018/07/16/python_05_class_basic/</loc>
+        <lastmod>2019-07-29T15:04:10.828Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/</loc>
+        <lastmod>2019-07-29T15:03:47.749Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2018/10/11/python_07_module%20&%20package/</loc>
+        <lastmod>2019-07-29T15:03:31.005Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2018/10/12/python_08_file%20&%20pickle/</loc>
+        <lastmod>2019-07-29T15:03:14.983Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2018/10/12/python_09_OS%20&%20shutil/</loc>
+        <lastmod>2019-07-29T15:02:57.642Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2018/10/13/python_10_try%20&%20except/</loc>
+        <lastmod>2019-07-29T15:02:41.955Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2019/02/21/python_11_regex/</loc>
+        <lastmod>2019-07-29T15:02:19.543Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -40,7 +112,39 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/2019/03/01/python_12_NumPy_basic_1/</loc>
-        <lastmod>2019-07-22T11:28:29.214Z</lastmod>
+        <lastmod>2019-07-29T15:01:59.233Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2019/03/19/python_13_NumPy_basic_2/</loc>
+        <lastmod>2019-07-29T15:01:45.605Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2019/03/26/python_14_NumPy_calculate/</loc>
+        <lastmod>2019-07-29T15:01:29.868Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2019/03/30/python_15_pandas_basic_1/</loc>
+        <lastmod>2019-07-29T14:59:32.268Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2019/04/05/python_16_pandas_basic_2/</loc>
+        <lastmod>2019-07-29T14:47:14.282Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -225,110 +329,6 @@
     <url>
         <loc>https://hyeshinoh.github.io/2018/09/26/web_01_html_01_basic/</loc>
         <lastmod>2019-07-16T14:11:33.884Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2019/02/21/python_11_regex/</loc>
-        <lastmod>2019-07-16T14:10:43.086Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/10/13/python_10_try%20&%20except/</loc>
-        <lastmod>2019-07-16T14:10:36.844Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/10/12/python_09_OS%20&%20shutil/</loc>
-        <lastmod>2019-07-16T14:10:29.876Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/10/12/python_08_file%20&%20pickle/</loc>
-        <lastmod>2019-07-16T14:10:23.374Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/10/11/python_07_module%20&%20package/</loc>
-        <lastmod>2019-07-16T14:10:15.988Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/</loc>
-        <lastmod>2019-07-16T14:10:10.081Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/07/16/python_05_class_basic/</loc>
-        <lastmod>2019-07-16T14:10:03.692Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/07/11/python_04_function_4_decorator/</loc>
-        <lastmod>2019-07-16T14:09:52.044Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/07/11/python_04_function_3_map%20filter%20reduce/</loc>
-        <lastmod>2019-07-16T14:09:41.838Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/07/11/python_04_function_2_scope%20inner%20lambda/</loc>
-        <lastmod>2019-07-16T14:09:30.600Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/07/10/python_03_function_1_basic/</loc>
-        <lastmod>2019-07-16T14:09:24.736Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/07/08/python_02_condition,%20loop/</loc>
-        <lastmod>2019-07-16T14:09:18.383Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/07/07/python_01/</loc>
-        <lastmod>2019-07-16T14:09:11.292Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
