@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="Pandas란 NumPy를 기반으로 개발된 데이터 분석을 위한 쉽고 성능 좋은 오픈소스 python 라이브러리 많은 사람들에게 익숙한 행x열로 이뤄진 테이블 형태로 데이터를 다룰 수 있게 한다. R과 비슷하게 데이터를 다룰 수 있게 되는데, R에 비해서는 속도가 훨씬 빠르다. 공식문서: http://pandas.pydata.org">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-07-29T11:47:36.553Z">
+<meta property="og:updated_time" content="2019-07-29T11:50:37.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 15. Pandas - basic(1)">
 <meta name="twitter:description" content="Pandas란 NumPy를 기반으로 개발된 데이터 분석을 위한 쉽고 성능 좋은 오픈소스 python 라이브러리 많은 사람들에게 익숙한 행x열로 이뤄진 테이블 형태로 데이터를 다룰 수 있게 한다. R과 비슷하게 데이터를 다룰 수 있게 되는데, R에 비해서는 속도가 훨씬 빠르다. 공식문서: http://pandas.pydata.org">
@@ -131,6 +131,10 @@
             
             <div class="navbar-end">
                 
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
                 
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
@@ -641,6 +645,73 @@
         <div class="column-right-shadow is-hidden-widescreen ">
         
             
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><ul class="menu-list"><ul class="menu-list"><li>
+        <a class="is-flex" href="#Pandas란">
+        <span class="has-mr-6">1.1.1</span>
+        <span>Pandas란</span>
+        </a></li><li>
+        <a class="is-flex" href="#Pandas의-data-type">
+        <span class="has-mr-6">1.1.2</span>
+        <span>Pandas의 data type</span>
+        </a></li><li>
+        <a class="is-flex" href="#다룰-내용">
+        <span class="has-mr-6">1.1.3</span>
+        <span>다룰 내용</span>
+        </a></li></ul></ul><li>
+        <a class="is-flex" href="#0-설치와-import">
+        <span class="has-mr-6">2</span>
+        <span>0. 설치와 import</span>
+        </a></li><li>
+        <a class="is-flex" href="#1-Series">
+        <span class="has-mr-6">3</span>
+        <span>1. Series</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1-1-Series-만들기">
+        <span class="has-mr-6">3.1</span>
+        <span>1.1 Series 만들기</span>
+        </a></li><li>
+        <a class="is-flex" href="#1-2-Series-데이터-보기">
+        <span class="has-mr-6">3.2</span>
+        <span>1.2 Series 데이터 보기</span>
+        </a></li><li>
+        <a class="is-flex" href="#1-3-indexing과-slicing">
+        <span class="has-mr-6">3.3</span>
+        <span>1.3 indexing과 slicing</span>
+        </a></li><li>
+        <a class="is-flex" href="#1-4-Series-데이터-연산-및-Series-다루기">
+        <span class="has-mr-6">3.4</span>
+        <span>1.4 Series 데이터 연산 및 Series 다루기</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#2-DataFrame">
+        <span class="has-mr-6">4</span>
+        <span>2. DataFrame</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#2-1-create">
+        <span class="has-mr-6">4.1</span>
+        <span>2.1 create</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-2-insert">
+        <span class="has-mr-6">4.2</span>
+        <span>2.2 insert</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-3-append">
+        <span class="has-mr-6">4.3</span>
+        <span>2.3 append</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-4-concat">
+        <span class="has-mr-6">4.4</span>
+        <span>2.4 concat</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
         
             
 <div class="card widget">
@@ -730,6 +801,73 @@
 <div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><ul class="menu-list"><ul class="menu-list"><li>
+        <a class="is-flex" href="#Pandas란">
+        <span class="has-mr-6">1.1.1</span>
+        <span>Pandas란</span>
+        </a></li><li>
+        <a class="is-flex" href="#Pandas의-data-type">
+        <span class="has-mr-6">1.1.2</span>
+        <span>Pandas의 data type</span>
+        </a></li><li>
+        <a class="is-flex" href="#다룰-내용">
+        <span class="has-mr-6">1.1.3</span>
+        <span>다룰 내용</span>
+        </a></li></ul></ul><li>
+        <a class="is-flex" href="#0-설치와-import">
+        <span class="has-mr-6">2</span>
+        <span>0. 설치와 import</span>
+        </a></li><li>
+        <a class="is-flex" href="#1-Series">
+        <span class="has-mr-6">3</span>
+        <span>1. Series</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1-1-Series-만들기">
+        <span class="has-mr-6">3.1</span>
+        <span>1.1 Series 만들기</span>
+        </a></li><li>
+        <a class="is-flex" href="#1-2-Series-데이터-보기">
+        <span class="has-mr-6">3.2</span>
+        <span>1.2 Series 데이터 보기</span>
+        </a></li><li>
+        <a class="is-flex" href="#1-3-indexing과-slicing">
+        <span class="has-mr-6">3.3</span>
+        <span>1.3 indexing과 slicing</span>
+        </a></li><li>
+        <a class="is-flex" href="#1-4-Series-데이터-연산-및-Series-다루기">
+        <span class="has-mr-6">3.4</span>
+        <span>1.4 Series 데이터 연산 및 Series 다루기</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#2-DataFrame">
+        <span class="has-mr-6">4</span>
+        <span>2. DataFrame</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#2-1-create">
+        <span class="has-mr-6">4.1</span>
+        <span>2.1 create</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-2-insert">
+        <span class="has-mr-6">4.2</span>
+        <span>2.2 insert</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-3-append">
+        <span class="has-mr-6">4.3</span>
+        <span>2.3 append</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-4-concat">
+        <span class="has-mr-6">4.4</span>
+        <span>2.4 concat</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 <div class="card widget">
