@@ -213,10 +213,6 @@
         if (e.type !== 'click' && !touch) {
             return;
         }
-        $('.navbar-main').css('pointer-events', 'none');
-        setTimeout(function(){
-            $('.navbar-main').css('pointer-events', 'auto');
-        }, 400);
         $main.removeClass('show');
         touch = false;
     }).on('keydown', function (e) {

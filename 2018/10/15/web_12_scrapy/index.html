@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html lang=en>
+<html class="has-navbar-fixed-top">
 <head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+<title>Web crawling - Scrapy - 우와팬더의 블로그</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
+
+
+
+
+<meta name="description" content="데이터사이언스를 공부합니다">
+
+
+
+<meta name="keywords" content="data science">
+
+
+
     <meta name="description" content="jupyter notebook으로 보기 다룰 내용 Scrapy 개요 xpath xpath의 기본 문법 scrapy shell 환경에서 xpath scrapy jupyter notebook xpath 네이버 실시간 검색어, 다음실시간 검색어, 지마켓 베스트 200   scrapy 프로젝트를 만들어서 크롤링 네이버 영화 사이트에서 현재 상영영화 링크를 크롤링">
 <meta name="keywords" content="programming,web,crawling,web_crawling,웹크롤링,selenium">
 <meta property="og:type" content="article">
@@ -18,160 +30,243 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web crawling - Scrapy">
 <meta name="twitter:description" content="jupyter notebook으로 보기 다룰 내용 Scrapy 개요 xpath xpath의 기본 문법 scrapy shell 환경에서 xpath scrapy jupyter notebook xpath 네이버 실시간 검색어, 다음실시간 검색어, 지마켓 베스트 200   scrapy 프로젝트를 만들어서 크롤링 네이버 영화 사이트에서 현재 상영영화 링크를 크롤링">
+
+
+
+
+
+<link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
     
     
-        
-          
-              <link rel="shortcut icon" href="/images/favicon.ico">
-          
-        
-        
-          
-            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-          
-        
-        
-          
-            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-          
-        
-    
-    <!-- title -->
-    <title>Web crawling - Scrapy</title>
-    <!-- styles -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- persian styles -->
-    
-      <link rel="stylesheet" href="/css/rtl.css">
-    
-    <!-- rss -->
     
     
-      <link rel="alternate" href="/atom.xml" title="우와팬더의 블로그" type="application/atom+xml" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
+    
+    
+    
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126954393-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-126954393-1');
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+    
+
+
 </head>
-
-<body class="max-width mx-auto px3 ltr">    
-      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
-  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/categories/">Categories</a></li>
-         
-          <li><a href="/search/">Search</a></li>
-        
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li><a class="icon" href="/2018/10/15/2018-10-15-TIL/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
-        
-        
-        <li><a class="icon" href="/2018/10/13/python_10_try & except/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&text=Web crawling - Scrapy"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&title=Web crawling - Scrapy"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&is_video=false&description=Web crawling - Scrapy"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Web crawling - Scrapy&body=Check out this article: https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&title=Web crawling - Scrapy"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&title=Web crawling - Scrapy"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&title=Web crawling - Scrapy"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&title=Web crawling - Scrapy"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&name=Web crawling - Scrapy&description=&lt;p&gt;&lt;a href=&#34;https://github.com/hyeshinoh/Study_Web/blob/master/web_11_scrapy.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jupyter notebook으로 보기&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;다룰-내용&#34;&gt;&lt;a href=&#34;#다룰-내용&#34; class=&#34;headerlink&#34; title=&#34;다룰 내용&#34;&gt;&lt;/a&gt;다룰 내용&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;Scrapy 개요&lt;/li&gt;
-&lt;li&gt;xpath&lt;ul&gt;
-&lt;li&gt;xpath의 기본 문법&lt;/li&gt;
-&lt;li&gt;scrapy shell 환경에서 xpath&lt;/li&gt;
-&lt;li&gt;scrapy jupyter notebook xpath&lt;/li&gt;
-&lt;li&gt;네이버 실시간 검색어, 다음실시간 검색어, 지마켓 베스트 200&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;scrapy 프로젝트를 만들어서 크롤링&lt;ul&gt;
-&lt;li&gt;네이버 영화 사이트에서 현재 상영영화 링크를 크롤링&lt;/li&gt;
-&lt;li&gt;크롤링한 링크에서 영화 제목과 누적관객수 데이터를 크롤링&lt;/li&gt;
-&lt;li&gt;csv 파일로 저장&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#다룰-내용"><span class="toc-number">1.</span> <span class="toc-text">다룰 내용</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Scrapy"><span class="toc-number"></span> <span class="toc-text">1. Scrapy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-xpath"><span class="toc-number"></span> <span class="toc-text">2. xpath</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-xpath의-기본-문법"><span class="toc-number"></span> <span class="toc-text">2.1 xpath의 기본 문법</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-네이버-실시간-검색어-크롤링"><span class="toc-number"></span> <span class="toc-text">2.2 네이버 실시간 검색어 크롤링</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-스크래피-셸-사용"><span class="toc-number">1.</span> <span class="toc-text">(1) 스크래피 셸 사용</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-jupyter-notebook-사용"><span class="toc-number">2.</span> <span class="toc-text">(2) jupyter notebook 사용</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#웹페이지에-연결"><span class="toc-number">2.1.</span> <span class="toc-text">웹페이지에 연결</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#네이버-실시간-검색어-1위-element-객체"><span class="toc-number">2.2.</span> <span class="toc-text">네이버 실시간 검색어 1위 element 객체</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#네이버-실시간-검색어-20개-element-객체"><span class="toc-number">2.3.</span> <span class="toc-text">네이버 실시간 검색어 20개 element 객체</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#객체의-text만-추출하기"><span class="toc-number">2.4.</span> <span class="toc-text">객체의 text만 추출하기</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#문자열만-추출하기"><span class="toc-number">2.5.</span> <span class="toc-text">문자열만 추출하기</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#을-이용해서-가져오기"><span class="toc-number">2.6.</span> <span class="toc-text">.을 이용해서 가져오기</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-다음-실시간-검색어-크롤링"><span class="toc-number"></span> <span class="toc-text">2.3 다음 실시간 검색어 크롤링</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#다음-실시간-검색어-리스트-출력"><span class="toc-number">0.1.</span> <span class="toc-text">다음 실시간 검색어 리스트 출력</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-gmarket-best-item-200-크롤링"><span class="toc-number"></span> <span class="toc-text">2.4 gmarket best item 200 크롤링</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#웹페이지에-연결-1"><span class="toc-number">0.1.</span> <span class="toc-text">웹페이지에 연결</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#베스트-200-아이템-제목-문자열-리스트로-가져오기"><span class="toc-number">0.2.</span> <span class="toc-text">베스트 200 아이템 제목 문자열 리스트로 가져오기</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#200개-아이템에서-li-클래스가-first인-데이터만-가져오기"><span class="toc-number">0.3.</span> <span class="toc-text">200개 아이템에서 li 클래스가 first인 데이터만 가져오기</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#200개-아이템에서-li-클래스가-first가-아닌-데이터만-가져오기"><span class="toc-number">0.4.</span> <span class="toc-text">200개 아이템에서 li 클래스가 first가 아닌 데이터만 가져오기</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Scrapy-project"><span class="toc-number"></span> <span class="toc-text">3. Scrapy project</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-scrapy-프로젝트-생성"><span class="toc-number"></span> <span class="toc-text">3.1 scrapy 프로젝트 생성</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-scrapy-프로젝트-파일-설명"><span class="toc-number"></span> <span class="toc-text">3.2 scrapy 프로젝트 파일 설명</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#project-구조"><span class="toc-number">1.</span> <span class="toc-text">project 구조</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-크롤링-코드-작성"><span class="toc-number"></span> <span class="toc-text">3.3 크롤링 코드 작성</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#※-yield"><span class="toc-number">1.</span> <span class="toc-text">※ yield</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#iterator와-generator"><span class="toc-number">1.1.</span> <span class="toc-text">iterator와 generator</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-items-py"><span class="toc-number">2.</span> <span class="toc-text">(1) items.py</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-spider-py"><span class="toc-number">3.</span> <span class="toc-text">(2) spider.py</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#크롤링-함수-작성"><span class="toc-number">4.</span> <span class="toc-text">크롤링 함수 작성</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nm-spider-py-작성"><span class="toc-number">5.</span> <span class="toc-text">nm_spider.py 작성</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-settings-py"><span class="toc-number">6.</span> <span class="toc-text">(3) settings.py</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-spider-실행"><span class="toc-number">7.</span> <span class="toc-text">(4) spider 실행</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-pipeline-py"><span class="toc-number">8.</span> <span class="toc-text">(5) pipeline.py</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#덧"><span class="toc-number"></span> <span class="toc-text">덧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#참고자료"><span class="toc-number">1.</span> <span class="toc-text">참고자료</span></a></li></ol>
-    </div>
-  </span>
-</div>
-
+<body>
     
-    <div class="content index py4">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                <img src="/images/logo.png" alt="" height="28">
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
-    <h1 class="posttitle" itemprop="name headline">
-        Web crawling - Scrapy
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item "
+               href="/archives">Archives</a>
+            
+            <a class="navbar-item "
+               href="/categories/">Categories</a>
+            
+            <a class="navbar-item "
+               href="/about">About</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="Search" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
+            
+            <div class="navbar-item is-hoverable has-dropdown is-hidden-mobile is-hidden-tablet-only toc">
+                <a class="navbar-item" title="Table of Contents">
+                    <i class="fa fa-list"></i>
+                </a>
+                <div class="navbar-dropdown is-right">
+                    
+                    
+                    
+                    
+                    <a class="navbar-item" href="#다룰-내용">1.1.1&nbsp;&nbsp;다룰 내용</a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#1-Scrapy">2&nbsp;&nbsp;<b>1. Scrapy</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#2-xpath">3&nbsp;&nbsp;<b>2. xpath</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#2-1-xpath의-기본-문법">3.1&nbsp;&nbsp;2.1 xpath의 기본 문법</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#2-2-네이버-실시간-검색어-크롤링">3.2&nbsp;&nbsp;2.2 네이버 실시간 검색어 크롤링</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#1-스크래피-셸-사용">3.2.1&nbsp;&nbsp;(1) 스크래피 셸 사용</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#2-jupyter-notebook-사용">3.2.2&nbsp;&nbsp;(2) jupyter notebook 사용</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#2-3-다음-실시간-검색어-크롤링">3.3&nbsp;&nbsp;2.3 다음 실시간 검색어 크롤링</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#2-4-gmarket-best-item-200-크롤링">3.4&nbsp;&nbsp;2.4 gmarket best item 200 크롤링</a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#3-Scrapy-project">4&nbsp;&nbsp;<b>3. Scrapy project</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#3-1-scrapy-프로젝트-생성">4.1&nbsp;&nbsp;3.1 scrapy 프로젝트 생성</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#3-2-scrapy-프로젝트-파일-설명">4.2&nbsp;&nbsp;3.2 scrapy 프로젝트 파일 설명</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#project-구조">4.2.1&nbsp;&nbsp;project 구조</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#3-3-크롤링-코드-작성">4.3&nbsp;&nbsp;3.3 크롤링 코드 작성</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#※-yield">4.3.1&nbsp;&nbsp;※ yield</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#1-items-py">4.3.2&nbsp;&nbsp;(1) items.py</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#2-spider-py">4.3.3&nbsp;&nbsp;(2) spider.py</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#크롤링-함수-작성">4.3.4&nbsp;&nbsp;크롤링 함수 작성</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#nm-spider-py-작성">4.3.5&nbsp;&nbsp;nm_spider.py 작성</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#3-settings-py">4.3.6&nbsp;&nbsp;(3) settings.py</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#4-spider-실행">4.3.7&nbsp;&nbsp;(4) spider 실행</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#5-pipeline-py">4.3.8&nbsp;&nbsp;(5) pipeline.py</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#덧">4.4&nbsp;&nbsp;덧</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#참고자료">4.4.1&nbsp;&nbsp;참고자료</a>
+                    
+                </div>
+            </div>
+            
+            
+            <a class="navbar-item" title="GitHub" href="https://github.com/hyeshinoh">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+               
+            
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            Web crawling - Scrapy
+        
     </h1>
-
-
-
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">우와팬더의 블로그</span>
-      </span>
-      
-    <div class="postdate">
-      
-        <time datetime="2018-10-15T12:27:51.000Z" itemprop="datePublished">2018-10-15</time>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2018-10-15T12:27:51.000Z" itemprop="datePublished">Oct 15 2018</time>
+        </span>
         
-      
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a><span>></span><a class="article-category-link" href="/categories/2-Data-Science-공부/6-웹-Web/">6) 웹 Web</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            20 minutes read (About 2943 words)
+        </span>
+        
     </div>
-
-
-      
-    <div class="article-category">
-        <i class="fas fa-archive"></i>
-        <a class="category-link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> › <a class="category-link" href="/categories/2-Data-Science-공부/6-웹-Web/">6) 웹 Web</a>
-    </div>
-
-
-      
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/crawling/">crawling</a>, <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/selenium/">selenium</a>, <a class="tag-link" href="/tags/web/">web</a>, <a class="tag-link" href="/tags/web-crawling/">web_crawling</a>, <a class="tag-link" href="/tags/웹크롤링/">웹크롤링</a>
-    </div>
-
-
-    </div>
-  </header>
-  
-
-  <div class="content" itemprop="articleBody">
-    <p><a href="https://github.com/hyeshinoh/Study_Web/blob/master/web_11_scrapy.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <p><a href="https://github.com/hyeshinoh/Study_Web/blob/master/web_11_scrapy.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
 <h4 id="다룰-내용"><a href="#다룰-내용" class="headerlink" title="다룰 내용"></a>다룰 내용</h4><ul>
 <li>Scrapy 개요</li>
 <li>xpath<ul>
@@ -577,169 +672,280 @@ https://movie.naver.com/movie/bi/mi/basic.nhn?code=97612
 <li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
 </ul>
 
-  </div>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/programming/">#programming</a></span>
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/web/">#web</a></span>
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/crawling/">#crawling</a></span>
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/web-crawling/">#web_crawling</a></span>
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/웹크롤링/">#웹크롤링</a></span>
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/selenium/">#selenium</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/2018/10/15/2018-10-15-TIL/">2018-10-15-TIL</a>
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2018/10/13/python_10_try & except/">python 10. Try &amp; Except (예외처리)</a>
+            
+        </span>
+    </div>
+    
 </article>
 
-    <div class="blog-post-comments">
-        <div id="disqus_thread">
-            <noscript>Please enable JavaScript to view the comments.</noscript>
-        </div>
-    </div>
 
+<div class="sharebox">
+    
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5c334172a47fe500116a8ea8&amp;product=inline-share-buttons' async='async'></script>
 
-
-        
-          <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/categories/">Categories</a></li>
-         
-          <li><a href="/search/">Search</a></li>
-        
-      </ul>
-    </div>
-
-    <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#다룰-내용"><span class="toc-number">1.</span> <span class="toc-text">다룰 내용</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Scrapy"><span class="toc-number"></span> <span class="toc-text">1. Scrapy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-xpath"><span class="toc-number"></span> <span class="toc-text">2. xpath</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-xpath의-기본-문법"><span class="toc-number"></span> <span class="toc-text">2.1 xpath의 기본 문법</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-네이버-실시간-검색어-크롤링"><span class="toc-number"></span> <span class="toc-text">2.2 네이버 실시간 검색어 크롤링</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-스크래피-셸-사용"><span class="toc-number">1.</span> <span class="toc-text">(1) 스크래피 셸 사용</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-jupyter-notebook-사용"><span class="toc-number">2.</span> <span class="toc-text">(2) jupyter notebook 사용</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#웹페이지에-연결"><span class="toc-number">2.1.</span> <span class="toc-text">웹페이지에 연결</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#네이버-실시간-검색어-1위-element-객체"><span class="toc-number">2.2.</span> <span class="toc-text">네이버 실시간 검색어 1위 element 객체</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#네이버-실시간-검색어-20개-element-객체"><span class="toc-number">2.3.</span> <span class="toc-text">네이버 실시간 검색어 20개 element 객체</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#객체의-text만-추출하기"><span class="toc-number">2.4.</span> <span class="toc-text">객체의 text만 추출하기</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#문자열만-추출하기"><span class="toc-number">2.5.</span> <span class="toc-text">문자열만 추출하기</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#을-이용해서-가져오기"><span class="toc-number">2.6.</span> <span class="toc-text">.을 이용해서 가져오기</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-다음-실시간-검색어-크롤링"><span class="toc-number"></span> <span class="toc-text">2.3 다음 실시간 검색어 크롤링</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#다음-실시간-검색어-리스트-출력"><span class="toc-number">0.1.</span> <span class="toc-text">다음 실시간 검색어 리스트 출력</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-gmarket-best-item-200-크롤링"><span class="toc-number"></span> <span class="toc-text">2.4 gmarket best item 200 크롤링</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#웹페이지에-연결-1"><span class="toc-number">0.1.</span> <span class="toc-text">웹페이지에 연결</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#베스트-200-아이템-제목-문자열-리스트로-가져오기"><span class="toc-number">0.2.</span> <span class="toc-text">베스트 200 아이템 제목 문자열 리스트로 가져오기</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#200개-아이템에서-li-클래스가-first인-데이터만-가져오기"><span class="toc-number">0.3.</span> <span class="toc-text">200개 아이템에서 li 클래스가 first인 데이터만 가져오기</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#200개-아이템에서-li-클래스가-first가-아닌-데이터만-가져오기"><span class="toc-number">0.4.</span> <span class="toc-text">200개 아이템에서 li 클래스가 first가 아닌 데이터만 가져오기</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Scrapy-project"><span class="toc-number"></span> <span class="toc-text">3. Scrapy project</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-scrapy-프로젝트-생성"><span class="toc-number"></span> <span class="toc-text">3.1 scrapy 프로젝트 생성</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-scrapy-프로젝트-파일-설명"><span class="toc-number"></span> <span class="toc-text">3.2 scrapy 프로젝트 파일 설명</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#project-구조"><span class="toc-number">1.</span> <span class="toc-text">project 구조</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-크롤링-코드-작성"><span class="toc-number"></span> <span class="toc-text">3.3 크롤링 코드 작성</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#※-yield"><span class="toc-number">1.</span> <span class="toc-text">※ yield</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#iterator와-generator"><span class="toc-number">1.1.</span> <span class="toc-text">iterator와 generator</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-items-py"><span class="toc-number">2.</span> <span class="toc-text">(1) items.py</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-spider-py"><span class="toc-number">3.</span> <span class="toc-text">(2) spider.py</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#크롤링-함수-작성"><span class="toc-number">4.</span> <span class="toc-text">크롤링 함수 작성</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nm-spider-py-작성"><span class="toc-number">5.</span> <span class="toc-text">nm_spider.py 작성</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-settings-py"><span class="toc-number">6.</span> <span class="toc-text">(3) settings.py</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-spider-실행"><span class="toc-number">7.</span> <span class="toc-text">(4) spider 실행</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-pipeline-py"><span class="toc-number">8.</span> <span class="toc-text">(5) pipeline.py</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#덧"><span class="toc-number"></span> <span class="toc-text">덧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#참고자료"><span class="toc-number">1.</span> <span class="toc-text">참고자료</span></a></li></ol>
-    </div>
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&text=Web crawling - Scrapy"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&title=Web crawling - Scrapy"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&is_video=false&description=Web crawling - Scrapy"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Web crawling - Scrapy&body=Check out this article: https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&title=Web crawling - Scrapy"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&title=Web crawling - Scrapy"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&title=Web crawling - Scrapy"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&title=Web crawling - Scrapy"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/&name=Web crawling - Scrapy&description=&lt;p&gt;&lt;a href=&#34;https://github.com/hyeshinoh/Study_Web/blob/master/web_11_scrapy.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jupyter notebook으로 보기&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;다룰-내용&#34;&gt;&lt;a href=&#34;#다룰-내용&#34; class=&#34;headerlink&#34; title=&#34;다룰 내용&#34;&gt;&lt;/a&gt;다룰 내용&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;Scrapy 개요&lt;/li&gt;
-&lt;li&gt;xpath&lt;ul&gt;
-&lt;li&gt;xpath의 기본 문법&lt;/li&gt;
-&lt;li&gt;scrapy shell 환경에서 xpath&lt;/li&gt;
-&lt;li&gt;scrapy jupyter notebook xpath&lt;/li&gt;
-&lt;li&gt;네이버 실시간 검색어, 다음실시간 검색어, 지마켓 베스트 200&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;scrapy 프로젝트를 만들어서 크롤링&lt;ul&gt;
-&lt;li&gt;네이버 영화 사이트에서 현재 상영영화 링크를 크롤링&lt;/li&gt;
-&lt;li&gt;크롤링한 링크에서 영화 제목과 누적관객수 데이터를 크롤링&lt;/li&gt;
-&lt;li&gt;csv 파일로 저장&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
-  </div>
 </div>
 
+
+
+<div class="comments">
+    <h3 class="title is-4">Comments</h3>
+    
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://hyeshinoh.github.io/2018/10/15/web_12_scrapy/';
+        this.page.identifier = '2018/10/15/web_12_scrapy/';
         
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy; 2019 우와팬더
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/categories/">Categories</a></li>
-         
-          <li><a href="/search/">Search</a></li>
+        this.language = 'en';
         
-      </ul>
-    </nav>
-  </div>
-</footer>
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</div>
 
     </div>
-    <!-- styles -->
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+</section>
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                &copy; 2019 우와팬더&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+            </div>
+            <div class="column is-hidden-mobile"></div>
 
-    <!-- jquery -->
-<script src="/lib/jquery/jquery.min.js"></script>
-<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
-<!-- clipboard -->
+            
+            <div class="column is-narrow">
+                <div class="columns is-mobile is-multiline is-centered">
+                
+                    
+                <a class="column is-narrow has-text-black" title="GitHub" href="https://github.com/hyeshinoh">
+                    
+                    GitHub
+                    
+                </a>
+                
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
 
-  <script src="/lib/clipboard/clipboard.min.js"></script>
-  <script type="text/javascript">
-  $(function() {
-    // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
-    btn += '<i class="far fa-clone"></i>';
-    btn += '</span>'; 
-    // mount it!
-    $(".highlight .code pre").before(btn);
-    var clip = new ClipboardJS('.btn-copy', {
-      target: function(trigger) {
-        return trigger.nextElementSibling;
-      }
+<!-- test if the browser is outdated -->
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
     });
-    clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Copied!");
-      e.clearSelection();
-    })
-  })
-  </script>
+</script>
 
-<script src="/js/main.js"></script>
-<!-- search -->
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("en-AU");
+</script>
 
-<!-- Google Analytics -->
 
-    <script type="text/javascript">
-        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-126954393-1', 'auto');
-        ga('send', 'pageview');
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+</script>
+
+    
+    
+    
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            if (typeof($.fn.lightGallery) === 'function') {
+                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery').justifiedGallery();
+            }
+        });
+    })(jQuery);
+</script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
+      })
     </script>
 
-<!-- Baidu Analytics -->
+    
+    
 
-<!-- Disqus Comments -->
-
-    <script type="text/javascript">
-        var disqus_shortname = 'hyeshinoh';
-
-        (function(){
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        }());
-    </script>
+    
 
 
+<script src="/js/script.js"></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js"></script>
+    
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
