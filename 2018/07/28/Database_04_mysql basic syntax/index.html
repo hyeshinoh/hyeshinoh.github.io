@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html  lang="en">
+<html lang=en>
 <head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-<title>MySQL Basic Syntax - 우와팬더의 블로그</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-
-
-
-
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="본격적으로 RDBMS(나의 경우는 workbench)를 사용하여 MySQL 문법을 익혀보자  명령어는 대문자로 쓰는 것이 컨벤션이나 소문자로 써도 실행에는 문제가 없음 마지막에 세미콜론(;) 또한 쓰지 않아도 실행에는 문제가 없음">
 <meta name="keywords" content="Database,MySQL,SQL">
 <meta property="og:type" content="article">
@@ -21,159 +18,148 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL Basic Syntax">
 <meta name="twitter:description" content="본격적으로 RDBMS(나의 경우는 workbench)를 사용하여 MySQL 문법을 익혀보자  명령어는 대문자로 쓰는 것이 컨벤션이나 소문자로 써도 실행에는 문제가 없음 마지막에 세미콜론(;) 또한 쓰지 않아도 실행에는 문제가 없음">
-<meta property="fb:app_id" content="hyeshinoh">
-
-
-
-<link rel="alternative" href="hyeshinoh" title="MySQL Basic Syntax" type="application/atom+xml">
-
-
-
-<link rel="icon" href="/images/favicon.png">
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
-
-
     
     
+        
+          
+              <link rel="shortcut icon" href="/images/favicon_panda.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
     
-    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    <!-- title -->
+    <title>MySQL Basic Syntax</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
     
-
+      <link rel="stylesheet" href="/css/rtl.css">
     
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-    
-
-    
-    
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
-
-
-    
-    
-    
-    
-
-<link rel="stylesheet" href="/css/back-to-top.css">
-
-
-    
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126954393-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-126954393-1');
-</script>
-
-
+    <!-- rss -->
     
     
+      <link rel="alternate" href="/atom.xml" title="우와팬더의 블로그" type="application/atom+xml" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
-    
-
-    
-    
-<link rel="stylesheet" href="/css/progressbar.css">
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-
-    
-    
-    
-
-    
-
-
-<link rel="stylesheet" href="/css/style.css">
-
-    <meta property="fb:app_id" content="346594012616363" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
-<body class="is-3-column">
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="navbar navbar-main">
-    <div class="container">
-        <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="/">
-            
-                <img src="/images/logo.png" alt="MySQL Basic Syntax" height="28">
-            
-            </a>
-        </div>
-        <div class="navbar-menu">
-            
-            <div class="navbar-start">
-                
-                <a class="navbar-item"
-                href="/">Home</a>
-                
-                <a class="navbar-item"
-                href="/archives">Archives</a>
-                
-                <a class="navbar-item"
-                href="/categories">Categories</a>
-                
-                <a class="navbar-item"
-                href="/tags">Tags</a>
-                
-                <a class="navbar-item"
-                href="/about">About</a>
-                
-            </div>
-            
-            <div class="navbar-end">
-                
-                
-                
-                <a class="navbar-item search" title="Search" href="javascript:;">
-                    <i class="fas fa-search"></i>
-                </a>
-                
-            </div>
-        </div>
+
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/07/28/2018-07-27-TIL/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/07/27/2018-07-26-TIL/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&text=MySQL Basic Syntax"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&title=MySQL Basic Syntax"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&is_video=false&description=MySQL Basic Syntax"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=MySQL Basic Syntax&body=Check out this article: https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&title=MySQL Basic Syntax"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&title=MySQL Basic Syntax"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&title=MySQL Basic Syntax"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&title=MySQL Basic Syntax"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&name=MySQL Basic Syntax&description=&lt;p&gt;본격적으로 RDBMS(나의 경우는 workbench)를 사용하여 MySQL 문법을 익혀보자&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;명령어는 대문자로 쓰는 것이 컨벤션이나 소문자로 써도 실행에는 문제가 없음&lt;/li&gt;
+&lt;li&gt;마지막에 세미콜론(;) 또한 쓰지 않아도 실행에는 문제가 없음&lt;/li&gt;
+&lt;/ul&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
     </div>
-</nav>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Create"><span class="toc-number">1.</span> <span class="toc-text">1. Create</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Create-Database"><span class="toc-number">1.1.</span> <span class="toc-text">1) Create Database</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Create-Table"><span class="toc-number">1.2.</span> <span class="toc-text">2) Create Table</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Alter"><span class="toc-number">2.</span> <span class="toc-text">2. Alter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Database"><span class="toc-number">2.1.</span> <span class="toc-text">1) Database</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Table"><span class="toc-number">2.2.</span> <span class="toc-text">2) Table</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-DROP"><span class="toc-number">3.</span> <span class="toc-text">3. DROP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Database-1"><span class="toc-number">3.1.</span> <span class="toc-text">1) Database</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Table-1"><span class="toc-number">3.2.</span> <span class="toc-text">2) Table</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-INSERT"><span class="toc-number">4.</span> <span class="toc-text">4. INSERT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Syntax"><span class="toc-number">4.1.</span> <span class="toc-text">1) Syntax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Example"><span class="toc-number">4.2.</span> <span class="toc-text">2) Example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-SELECT"><span class="toc-number">5.</span> <span class="toc-text">4. SELECT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Basic"><span class="toc-number">5.1.</span> <span class="toc-text">1) Basic</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-ALIAS"><span class="toc-number">5.2.</span> <span class="toc-text">2) ALIAS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-DISTINCT"><span class="toc-number">5.3.</span> <span class="toc-text">3) DISTINCT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-WHERE"><span class="toc-number">5.4.</span> <span class="toc-text">4) WHERE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-ORDER-BY"><span class="toc-number">5.5.</span> <span class="toc-text">5) ORDER BY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-CONCAT"><span class="toc-number">5.6.</span> <span class="toc-text">6) CONCAT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-LIKE"><span class="toc-number">5.7.</span> <span class="toc-text">7) LIKE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-IN"><span class="toc-number">5.8.</span> <span class="toc-text">8) IN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-LIMIT"><span class="toc-number">5.9.</span> <span class="toc-text">9) LIMIT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-UPDATE"><span class="toc-number">6.</span> <span class="toc-text">6. UPDATE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-syntax"><span class="toc-number">6.1.</span> <span class="toc-text">1) syntax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-example"><span class="toc-number">6.2.</span> <span class="toc-text">2) example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-DELETE"><span class="toc-number">7.</span> <span class="toc-text">7. DELETE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-syntax-1"><span class="toc-number">7.1.</span> <span class="toc-text">1) syntax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-example-1"><span class="toc-number">7.2.</span> <span class="toc-text">2) example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-GROUP-BY"><span class="toc-number">8.</span> <span class="toc-text">8. GROUP BY</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-GROUP-BY-함수"><span class="toc-number">8.1.</span> <span class="toc-text">1) GROUP BY 함수</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-COUNT"><span class="toc-number">8.1.1.</span> <span class="toc-text">(1) COUNT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-MAX"><span class="toc-number">8.1.2.</span> <span class="toc-text">(2) MAX</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-MIN"><span class="toc-number">8.1.3.</span> <span class="toc-text">(3) MIN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-SUM"><span class="toc-number">8.1.4.</span> <span class="toc-text">(4) SUM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-AVG"><span class="toc-number">8.1.5.</span> <span class="toc-text">(5) AVG</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-HAVING"><span class="toc-number">8.2.</span> <span class="toc-text">2) HAVING</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#※-참고-자료"><span class="toc-number">8.2.1.</span> <span class="toc-text">※ 참고 자료</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
     
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
     
-    <div class="card-content article ">
+    <h1 class="posttitle" itemprop="name headline">
+        MySQL Basic Syntax
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">우와팬더의 블로그</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-07-27T15:48:26.000Z" itemprop="datePublished">2018-07-28</time>
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-07-27T15:48:26.000Z">2018-07-28</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/2-Data-Science-공부/5-데이터베이스-Database/">5) 데이터베이스 Database</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    12 minutes read (About 1810 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                MySQL Basic Syntax
-            
-        </h1>
-        <div class="content">
-            <p>본격적으로 RDBMS(나의 경우는 workbench)를 사용하여 MySQL 문법을 익혀보자</p>
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> › <a class="category-link" href="/categories/2-Data-Science-공부/5-데이터베이스-Database/">5) 데이터베이스 Database</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Database/">Database</a>, <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/SQL/">SQL</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>본격적으로 RDBMS(나의 경우는 workbench)를 사용하여 MySQL 문법을 익혀보자</p>
 <ul>
 <li>명령어는 대문자로 쓰는 것이 컨벤션이나 소문자로 써도 실행에는 문제가 없음</li>
 <li>마지막에 세미콜론(;) 또한 쓰지 않아도 실행에는 문제가 없음</li>
@@ -181,200 +167,200 @@
 <a id="more"></a> 
 <h2 id="1-Create"><a href="#1-Create" class="headerlink" title="1. Create"></a>1. Create</h2><h3 id="1-Create-Database"><a href="#1-Create-Database" class="headerlink" title="1) Create Database"></a>1) Create Database</h3><ul>
 <li><p>Database 생성</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">DATABASE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Database 선택</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">USE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>현재 database 확인</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">DATABASE</span>();</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DATABASE</span>();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="2-Create-Table"><a href="#2-Create-Table" class="headerlink" title="2) Create Table"></a>2) Create Table</h3><p>Table을 생성할 때에는 컬럼이름, 데이터타입, 제약조건에 대한 내용이 들어감</p>
 <ul>
 <li><p>Table 생성</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> &lt;table_name&gt;(</span><br><span class="line">    column_name_1 column_datatype_1 column_constraint_1,</span><br><span class="line">    column_name_2 column_datatype_2 column_constraint_2,</span><br><span class="line">    ...</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> &lt;table_name&gt;(</span><br><span class="line">    column_name_1 column_datatype_1 column_constraint_1,</span><br><span class="line">    column_name_2 column_datatype_2 column_constraint_2,</span><br><span class="line">    ...</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>제약조건이 없는 user1 Table 생성</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> user1(</span><br><span class="line">    user_id <span class="hljs-built_in">INT</span>,</span><br><span class="line">    <span class="hljs-keyword">name</span> <span class="hljs-built_in">Varchar</span>(<span class="hljs-number">20</span>),</span><br><span class="line">    email <span class="hljs-built_in">Varchar</span>(<span class="hljs-number">30</span>),</span><br><span class="line">    age <span class="hljs-built_in">INT</span>(<span class="hljs-number">3</span>),</span><br><span class="line">    rdate <span class="hljs-built_in">DATE</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> user1(</span><br><span class="line">    user_id <span class="built_in">INT</span>,</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">Varchar</span>(<span class="number">20</span>),</span><br><span class="line">    email <span class="built_in">Varchar</span>(<span class="number">30</span>),</span><br><span class="line">    age <span class="built_in">INT</span>(<span class="number">3</span>),</span><br><span class="line">    rdate <span class="built_in">DATE</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>제약조건이 있는 user2 Table 생성</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> user2(</span><br><span class="line">    user_id <span class="hljs-built_in">INT</span> PRIMARY <span class="hljs-keyword">KEY</span> AUTO_INCREMENT,</span><br><span class="line">    <span class="hljs-keyword">name</span> <span class="hljs-built_in">Varchar</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">    email <span class="hljs-built_in">Varchar</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">UNIQUE</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">    age <span class="hljs-built_in">INT</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">'30'</span>,</span><br><span class="line">    rdate <span class="hljs-keyword">TIMESTAMP</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> user2(</span><br><span class="line">    user_id <span class="built_in">INT</span> PRIMARY <span class="keyword">KEY</span> AUTO_INCREMENT,</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">Varchar</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    email <span class="built_in">Varchar</span>(<span class="number">30</span>) <span class="keyword">UNIQUE</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    age <span class="built_in">INT</span>(<span class="number">3</span>) <span class="keyword">DEFAULT</span> <span class="string">'30'</span>,</span><br><span class="line">    rdate <span class="keyword">TIMESTAMP</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Database 선택</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">USE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>현재 database 확인</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">DATABASE</span>();</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DATABASE</span>();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="2-Alter"><a href="#2-Alter" class="headerlink" title="2. Alter"></a>2. Alter</h2><h3 id="1-Database"><a href="#1-Database" class="headerlink" title="1) Database"></a>1) Database</h3><p>ALTER를 이용하여 database encoding 변경</p>
 <ul>
 <li><p>현재 문자열 인코딩 확인</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">show</span> <span class="hljs-keyword">variables</span> <span class="hljs-keyword">like</span> <span class="hljs-string">"character_set_database"</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">"character_set_database"</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>test 데이터베이스의 문자열 인코딩을 utf8로 변경</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">DATABASE</span> <span class="hljs-keyword">test</span> <span class="hljs-built_in">CHARACTER</span> <span class="hljs-keyword">SET</span> = utf8;</span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">DATABASE</span> <span class="hljs-keyword">test</span> <span class="hljs-built_in">CHARACTER</span> <span class="hljs-keyword">SET</span> = <span class="hljs-keyword">ascii</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">test</span> <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> = utf8;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">test</span> <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> = <span class="keyword">ascii</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>문자열 encoding 변경 결과 확인</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">show</span> <span class="hljs-keyword">variables</span> <span class="hljs-keyword">like</span> <span class="hljs-string">"character_set_database"</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">"character_set_database"</span>;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="2-Table"><a href="#2-Table" class="headerlink" title="2) Table"></a>2) Table</h3><p>ALTER를 이용하여 table의 column 추가, 삭제, 수정</p>
 <ul>
 <li><p>ADD</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">-- user2 테이블에 TEXT 데이터 타입을 갖는 tmp column 추가</span></span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> user2 <span class="hljs-keyword">ADD</span> tmp <span class="hljs-built_in">TEXT</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- user2 테이블에 TEXT 데이터 타입을 갖는 tmp column 추가</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user2 <span class="keyword">ADD</span> tmp <span class="built_in">TEXT</span>;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>MODIFY</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">-- user2 테이블에 tmp column을 INT(3) 데이터 타입으로 수정</span></span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> user2 <span class="hljs-keyword">MODIFY</span> <span class="hljs-keyword">COLUMN</span> tmp <span class="hljs-built_in">INT</span>(<span class="hljs-number">3</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- user2 테이블에 tmp column을 INT(3) 데이터 타입으로 수정</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user2 <span class="keyword">MODIFY</span> <span class="keyword">COLUMN</span> tmp <span class="built_in">INT</span>(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>DROP</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">-- user2 테이블의 tmp column을 삭제</span></span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> user2 <span class="hljs-keyword">DROP</span> tmp;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- user2 테이블의 tmp column을 삭제</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> user2 <span class="keyword">DROP</span> tmp;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="3-DROP"><a href="#3-DROP" class="headerlink" title="3. DROP"></a>3. DROP</h2><h3 id="1-Database-1"><a href="#1-Database-1" class="headerlink" title="1) Database"></a>1) Database</h3><ul>
-<li>Database 삭제<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">DATABASE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
+<li>Database 삭제<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> &lt;db_name&gt;;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="2-Table-1"><a href="#2-Table-1" class="headerlink" title="2) Table"></a>2) Table</h3><ul>
-<li>Table 삭제<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> &lt;table_name&gt;;</span><br></pre></td></tr></table></figure>
+<li>Table 삭제<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> &lt;table_name&gt;;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="4-INSERT"><a href="#4-INSERT" class="headerlink" title="4. INSERT"></a>4. INSERT</h2><h3 id="1-Syntax"><a href="#1-Syntax" class="headerlink" title="1) Syntax"></a>1) Syntax</h3><ul>
 <li><p>Table 뒤에 오는 column이름은 생략 가능, 대신 VALUES 뒤에 value값이 순서대로 와야 함</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_1&gt;, ...)</span><br><span class="line"><span class="hljs-keyword">VALUES</span>(&lt;value_1&gt;, &lt;value_2&gt; ...)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_1&gt;, ...)</span><br><span class="line"><span class="keyword">VALUES</span>(&lt;value_1&gt;, &lt;value_2&gt; ...)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>여러 row를 한번에 insert하기</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_1&gt;, ...)</span><br><span class="line"><span class="hljs-keyword">VALUES</span>(&lt;value_1&gt;, &lt;value_2&gt; ...),</span><br><span class="line">(&lt;value_1&gt;, &lt;value_2&gt; ...),</span><br><span class="line">...</span><br><span class="line">(&lt;value_1&gt;, &lt;value_2&gt; ...);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> &lt;table_name&gt;(&lt;column_name_1&gt;, &lt;column_name_1&gt;, ...)</span><br><span class="line"><span class="keyword">VALUES</span>(&lt;value_1&gt;, &lt;value_2&gt; ...),</span><br><span class="line">(&lt;value_1&gt;, &lt;value_2&gt; ...),</span><br><span class="line">...</span><br><span class="line">(&lt;value_1&gt;, &lt;value_2&gt; ...);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="2-Example"><a href="#2-Example" class="headerlink" title="2) Example"></a>2) Example</h3><ul>
-<li>user1 테이블에 user_id, name, email, age, rdate를 입력<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> user1(user_id, <span class="hljs-keyword">name</span>, email, age, rdate)</span><br><span class="line"><span class="hljs-keyword">VALUES</span>(<span class="hljs-number">1</span>, <span class="hljs-string">"jane"</span>, <span class="hljs-string">"jane@gmail.com"</span>, <span class="hljs-number">30</span>, <span class="hljs-keyword">now</span>()),</span><br><span class="line">(<span class="hljs-number">2</span>, <span class="hljs-string">"peter"</span>, <span class="hljs-string">"peter@gmail.com"</span>, <span class="hljs-number">33</span>, <span class="hljs-string">'2017-02-20'</span>),</span><br><span class="line">(<span class="hljs-number">3</span>, <span class="hljs-string">"alice"</span>, <span class="hljs-string">"alice@gmail.com"</span>, <span class="hljs-number">23</span>, <span class="hljs-string">'2018-01-15'</span>),</span><br><span class="line">(<span class="hljs-number">4</span>, <span class="hljs-string">"po"</span>, <span class="hljs-string">"po@gmail.com"</span>, <span class="hljs-number">43</span>, <span class="hljs-string">'2002-09-16'</span>),</span><br><span class="line">(<span class="hljs-number">5</span>, <span class="hljs-string">"andy"</span>, <span class="hljs-string">"andy@gmail.com"</span>, <span class="hljs-number">17</span>, <span class="hljs-string">'2016-04-28'</span>),</span><br><span class="line">(<span class="hljs-number">6</span>, <span class="hljs-string">"jane"</span>, <span class="hljs-string">"jane1234@gmail.com"</span>, <span class="hljs-number">33</span>, <span class="hljs-string">'2013-09-02'</span>);</span><br></pre></td></tr></table></figure>
+<li>user1 테이블에 user_id, name, email, age, rdate를 입력<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> user1(user_id, <span class="keyword">name</span>, email, age, rdate)</span><br><span class="line"><span class="keyword">VALUES</span>(<span class="number">1</span>, <span class="string">"jane"</span>, <span class="string">"jane@gmail.com"</span>, <span class="number">30</span>, <span class="keyword">now</span>()),</span><br><span class="line">(<span class="number">2</span>, <span class="string">"peter"</span>, <span class="string">"peter@gmail.com"</span>, <span class="number">33</span>, <span class="string">'2017-02-20'</span>),</span><br><span class="line">(<span class="number">3</span>, <span class="string">"alice"</span>, <span class="string">"alice@gmail.com"</span>, <span class="number">23</span>, <span class="string">'2018-01-15'</span>),</span><br><span class="line">(<span class="number">4</span>, <span class="string">"po"</span>, <span class="string">"po@gmail.com"</span>, <span class="number">43</span>, <span class="string">'2002-09-16'</span>),</span><br><span class="line">(<span class="number">5</span>, <span class="string">"andy"</span>, <span class="string">"andy@gmail.com"</span>, <span class="number">17</span>, <span class="string">'2016-04-28'</span>),</span><br><span class="line">(<span class="number">6</span>, <span class="string">"jane"</span>, <span class="string">"jane1234@gmail.com"</span>, <span class="number">33</span>, <span class="string">'2013-09-02'</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="4-SELECT"><a href="#4-SELECT" class="headerlink" title="4. SELECT"></a>4. SELECT</h2><h3 id="1-Basic"><a href="#1-Basic" class="headerlink" title="1) Basic"></a>1) Basic</h3><ul>
 <li><p>basic syntax</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> &lt;column_name_1&gt;, &lt;<span class="hljs-keyword">column</span>)name_2&gt;, ...</span><br><span class="line"><span class="hljs-keyword">FROM</span> &lt;table_name&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> &lt;column_name_1&gt;, &lt;<span class="keyword">column</span>)name_2&gt;, ...</span><br><span class="line"><span class="keyword">FROM</span> &lt;table_name&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>전체 컬럼 데이터 조회하기 (table 전체)</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>일부 컬럼 조회하기</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> user_id, <span class="hljs-keyword">name</span>, rdate</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> user_id, <span class="keyword">name</span>, rdate</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="2-ALIAS"><a href="#2-ALIAS" class="headerlink" title="2) ALIAS"></a>2) ALIAS</h3><p>alias(as)를 이용하여 컬럼명을 변경할 수 있음<br>as는 생략 가능<br><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> user_id <span class="hljs-keyword">as</span> <span class="hljs-string">"아이디"</span>, <span class="hljs-keyword">name</span> <span class="hljs-keyword">as</span> <span class="hljs-string">"이름"</span>, rdate <span class="hljs-keyword">as</span> <span class="hljs-string">"등록일"</span></span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-ALIAS"><a href="#2-ALIAS" class="headerlink" title="2) ALIAS"></a>2) ALIAS</h3><p>alias(as)를 이용하여 컬럼명을 변경할 수 있음<br>as는 생략 가능<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> user_id <span class="keyword">as</span> <span class="string">"아이디"</span>, <span class="keyword">name</span> <span class="keyword">as</span> <span class="string">"이름"</span>, rdate <span class="keyword">as</span> <span class="string">"등록일"</span></span><br><span class="line"><span class="keyword">FROM</span> user1</span><br></pre></td></tr></table></figure></p>
 <h3 id="3-DISTINCT"><a href="#3-DISTINCT" class="headerlink" title="3) DISTINCT"></a>3) DISTINCT</h3><p>DISTINCT를 이용하여 특정 컬럼의 중복 데이터를 제거 가능</p>
 <ul>
-<li>name 컬럼을 중복 제거하여 조회<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">DISTINCT</span>(<span class="hljs-keyword">name</span>)</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
+<li>name 컬럼을 중복 제거하여 조회<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span>(<span class="keyword">name</span>)</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="4-WHERE"><a href="#4-WHERE" class="headerlink" title="4) WHERE"></a>4) WHERE</h3><p>WHERE절을 이용해서 검색 조건을 추가<br>AND, OR, 연산자 등의 기능을 사용</p>
 <ul>
 <li><p>나이가 30살 이상인 user를 조회</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br><span class="line"><span class="hljs-keyword">WHERE</span> age &gt;= <span class="hljs-number">30</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> age &gt;= <span class="number">30</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>등록일이 2016-01-01일 이후의 user를 조회</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br><span class="line"><span class="hljs-keyword">WHERE</span> rdate &gt;= <span class="hljs-string">"2016-01-01"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> rdate &gt;= <span class="string">"2016-01-01"</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>등록일이 2010-01-01에서 2017-12-31 사이인 user를 조회 (AND는 둘다 true이면 true, OR도 사용가능)</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br><span class="line"><span class="hljs-keyword">WHERE</span> rdate &gt;= <span class="hljs-string">"2010-01-01"</span> <span class="hljs-keyword">AND</span> rdate &lt;= <span class="hljs-string">"2017-12-13"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> rdate &gt;= <span class="string">"2010-01-01"</span> <span class="keyword">AND</span> rdate &lt;= <span class="string">"2017-12-13"</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>BETWEEN을 사용하여 기간 조회 (숫자데이터도 사용 가능)</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br><span class="line"><span class="hljs-keyword">WHERE</span> rdate <span class="hljs-keyword">BETWEEN</span> <span class="hljs-string">"2010-01-01"</span> <span class="hljs-keyword">AND</span> <span class="hljs-string">"2017-12-13"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> rdate <span class="keyword">BETWEEN</span> <span class="string">"2010-01-01"</span> <span class="keyword">AND</span> <span class="string">"2017-12-13"</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="5-ORDER-BY"><a href="#5-ORDER-BY" class="headerlink" title="5) ORDER BY"></a>5) ORDER BY</h3><p>ORDER BY를 이용하여 특정 컬럼으로 데이터 정렬 가능</p>
 <ul>
 <li><p>age로 오름차순 정렬 (ASC는 생략이 가능)</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br><span class="line"><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> age <span class="hljs-keyword">ASC</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">ASC</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>age로 내림차순 정렬</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br><span class="line"><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> age <span class="hljs-keyword">DESC</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>age로 내림차순 정렬하고 rdate를 오름차순 정렬</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br><span class="line"><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> age <span class="hljs-keyword">DESC</span>, rdate</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> age <span class="keyword">DESC</span>, rdate</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="6-CONCAT"><a href="#6-CONCAT" class="headerlink" title="6) CONCAT"></a>6) CONCAT</h3><p>CONCAT을 사용하여 select한 데이터를 합쳐서 새로운 컬럼으로 보여줄 수 있음</p>
 <ul>
-<li>name과 age를 같이 보여주도록 조회<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> email, <span class="hljs-keyword">CONCAT</span>(<span class="hljs-keyword">name</span>, <span class="hljs-string">"("</span>, age, <span class="hljs-string">")"</span>) <span class="hljs-keyword">AS</span> <span class="hljs-string">"name_age"</span></span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
+<li>name과 age를 같이 보여주도록 조회<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> email, <span class="keyword">CONCAT</span>(<span class="keyword">name</span>, <span class="string">"("</span>, age, <span class="string">")"</span>) <span class="keyword">AS</span> <span class="string">"name_age"</span></span><br><span class="line"><span class="keyword">FROM</span> user1</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="7-LIKE"><a href="#7-LIKE" class="headerlink" title="7) LIKE"></a>7) LIKE</h3><p>LIKE를 이용하여 특정 문자열이 들어간 데이터 조회 가능<br>%는 ‘어떤 문자나’와 같은 의미로 “%gmail” 은 gmail 문자열 앞에 아무 문자나 올수 있음을 의미<br>NOT LIKE를 사용하여 특정 문자가 들어가지 않는 데이터 조회 가능</p>
 <ul>
 <li><p>email에 gmail이 들어간 데이터 조회</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br><span class="line"><span class="hljs-keyword">WHERE</span> email <span class="hljs-keyword">LIKE</span> <span class="hljs-string">"%@gmail%"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> email <span class="keyword">LIKE</span> <span class="string">"%@gmail%"</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>email에 gmail이 들어가지 않는 데이터 조회</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br><span class="line"><span class="hljs-keyword">WHERE</span> email <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">LIKE</span> <span class="hljs-string">"%@gmail%"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> email <span class="keyword">NOT</span> <span class="keyword">LIKE</span> <span class="string">"%@gmail%"</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="8-IN"><a href="#8-IN" class="headerlink" title="8) IN"></a>8) IN</h3><p>여러개의 조건을 만족하는 데이터를 조회하고 싶을때 사용<br>WHERE 절의 조건을 여러개 사용하는것을 간단하게 만들 수 있음</p>
 <ul>
 <li><p>name이 peter와 alice인 데이터 조회</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br><span class="line"><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">name</span>=<span class="hljs-string">"peter"</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">name</span>=<span class="hljs-string">"alice"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span>=<span class="string">"peter"</span> <span class="keyword">OR</span> <span class="keyword">name</span>=<span class="string">"alice"</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>name이 peter와 alice인 데이터 조회</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br><span class="line"><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">name</span> <span class="hljs-keyword">IN</span> (<span class="hljs-string">"peter"</span>, <span class="hljs-string">"alice"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">IN</span> (<span class="string">"peter"</span>, <span class="string">"alice"</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="9-LIMIT"><a href="#9-LIMIT" class="headerlink" title="9) LIMIT"></a>9) LIMIT</h3><p>LIMIT은 조회하는 데이터의 수를 제한할 때 사용<br><em>데이터가 너무 많은 경우에는 항상 limit을 사용하여 적은 데이터를 조회해야 조회 시간이나 업데이트시의 실수를 줄일수 있음</em></p>
 <ul>
 <li><p>user1 테이블에서 3개의 데이터 조회</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br><span class="line"><span class="hljs-keyword">LIMIT</span> <span class="hljs-number">3</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>user1 테이블에서 두번째에서 네번째까지의 3개의 데이터 조회</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> *</span><br><span class="line"><span class="hljs-keyword">FROM</span> user1</span><br><span class="line"><span class="hljs-keyword">LIMIT</span> <span class="hljs-number">1</span>,<span class="hljs-number">3</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">1</span>,<span class="number">3</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="6-UPDATE"><a href="#6-UPDATE" class="headerlink" title="6. UPDATE"></a>6. UPDATE</h2><p>업데이트시에는 항상 select-where로 변경할 데이터를 확인하고 update 해줘야 실수를 줄일 수 있음<br>limit도 함께 사용해주는 것이 좋음</p>
-<h3 id="1-syntax"><a href="#1-syntax" class="headerlink" title="1) syntax"></a>1) syntax</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE &lt;table_name&gt;</span><br><span class="line">SET &lt;column_name_1&gt; = &lt;value_1&gt;, &lt;column_name_2&gt; = &lt;value_2&gt;,</span><br><span class="line">WHERE &lt;condition&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="1-syntax"><a href="#1-syntax" class="headerlink" title="1) syntax"></a>1) syntax</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE &lt;table_name&gt;</span><br><span class="line">SET &lt;column_name_1&gt; = &lt;value_1&gt;, &lt;column_name_2&gt; = &lt;value_2&gt;,</span><br><span class="line">WHERE &lt;condition&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="2-example"><a href="#2-example" class="headerlink" title="2) example"></a>2) example</h3><ul>
-<li>jane 이름을 가지고 있는 사람의 나이를 20, 이메일을 <a href="mailto:jane000@daum.net" target="_blank" rel="noopener">jane000@daum.net</a>으로 변경<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">UPDATE</span> user1</span><br><span class="line"><span class="hljs-keyword">SET</span> age=<span class="hljs-number">20</span>, email=<span class="hljs-string">"jane000@daum.net"</span></span><br><span class="line"><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">name</span>=<span class="hljs-string">"jane"</span></span><br></pre></td></tr></table></figure>
+<li>jane 이름을 가지고 있는 사람의 나이를 20, 이메일을 <a href="mailto:jane000@daum.net" target="_blank" rel="noopener">jane000@daum.net</a>으로 변경<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> user1</span><br><span class="line"><span class="keyword">SET</span> age=<span class="number">20</span>, email=<span class="string">"jane000@daum.net"</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span>=<span class="string">"jane"</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="7-DELETE"><a href="#7-DELETE" class="headerlink" title="7. DELETE"></a>7. DELETE</h2><h3 id="1-syntax-1"><a href="#1-syntax-1" class="headerlink" title="1) syntax"></a>1) syntax</h3><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> &lt;table_name&gt;</span><br><span class="line"><span class="hljs-keyword">WHERE</span> &lt;condition&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="7-DELETE"><a href="#7-DELETE" class="headerlink" title="7. DELETE"></a>7. DELETE</h2><h3 id="1-syntax-1"><a href="#1-syntax-1" class="headerlink" title="1) syntax"></a>1) syntax</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> &lt;table_name&gt;</span><br><span class="line"><span class="keyword">WHERE</span> &lt;condition&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="2-example-1"><a href="#2-example-1" class="headerlink" title="2) example"></a>2) example</h3><ul>
-<li>2016-01-01 이전 데이터 삭제<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> user1</span><br><span class="line"><span class="hljs-keyword">WHERE</span> rdate &lt; <span class="hljs-string">"2016-01-01"</span></span><br></pre></td></tr></table></figure>
+<li>2016-01-01 이전 데이터 삭제<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> user1</span><br><span class="line"><span class="keyword">WHERE</span> rdate &lt; <span class="string">"2016-01-01"</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="8-GROUP-BY"><a href="#8-GROUP-BY" class="headerlink" title="8. GROUP BY"></a>8. GROUP BY</h2><p>GROUP BY는 여러개의 동일한 데이터를 가지는 특정 컬럼을 합쳐주는 역할을 하는 명령<br>sql의 그룹함수: count, min, max, sum, avg</p>
 <ul>
-<li>world 데이터 베이스로 이동<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">-- world 데이터 베이스는 city, country, countrylanguage 테이블이 있는 데이터 베이스 </span></span><br><span class="line"><span class="hljs-keyword">use</span> world</span><br></pre></td></tr></table></figure>
+<li>world 데이터 베이스로 이동<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- world 데이터 베이스는 city, country, countrylanguage 테이블이 있는 데이터 베이스 </span></span><br><span class="line"><span class="keyword">use</span> world</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="1-GROUP-BY-함수"><a href="#1-GROUP-BY-함수" class="headerlink" title="1) GROUP BY 함수"></a>1) GROUP BY 함수</h3><h4 id="1-COUNT"><a href="#1-COUNT" class="headerlink" title="(1) COUNT"></a>(1) COUNT</h4><ul>
 <li><p>city 테이블의 CountryCode를 묶고 각 코드마다 몇개의 데이터가 있는지 확인</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> CountryCode, <span class="hljs-keyword">COUNT</span>(CountryCode)</span><br><span class="line"><span class="hljs-keyword">FROM</span> city</span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> CountryCode</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> CountryCode, <span class="keyword">COUNT</span>(CountryCode)</span><br><span class="line"><span class="keyword">FROM</span> city</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> CountryCode</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>countrylanguage 테이블에서 전체 언어가 몇개 있는지 구하시오.</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">COUNT</span>(<span class="hljs-keyword">DISTINCT</span>(<span class="hljs-keyword">Language</span>)) <span class="hljs-keyword">as</span> language_count</span><br><span class="line"><span class="hljs-keyword">FROM</span> countrylanguage</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span>(<span class="keyword">Language</span>)) <span class="keyword">as</span> language_count</span><br><span class="line"><span class="keyword">FROM</span> countrylanguage</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="2-MAX"><a href="#2-MAX" class="headerlink" title="(2) MAX"></a>(2) MAX</h4><ul>
-<li>대륙별 인구수와 GNP 최대 값을 조회<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> continent, <span class="hljs-keyword">MAX</span>(Population) <span class="hljs-keyword">as</span> Population, <span class="hljs-keyword">MAX</span>(GNP) <span class="hljs-keyword">as</span> GNP</span><br><span class="line"><span class="hljs-keyword">FROM</span> country</span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> continent</span><br></pre></td></tr></table></figure>
+<li>대륙별 인구수와 GNP 최대 값을 조회<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">MAX</span>(Population) <span class="keyword">as</span> Population, <span class="keyword">MAX</span>(GNP) <span class="keyword">as</span> GNP</span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="3-MIN"><a href="#3-MIN" class="headerlink" title="(3) MIN"></a>(3) MIN</h4><ul>
-<li>대륙별 인구수와 GNP 최소 값을 조회 (GNP와 인구수가 0이 아닌 데이터 중에서)<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> continent, <span class="hljs-keyword">MIN</span>(Population) <span class="hljs-keyword">as</span> Population, <span class="hljs-keyword">MIN</span>(GNP) <span class="hljs-keyword">as</span> GNP</span><br><span class="line"><span class="hljs-keyword">FROM</span> country</span><br><span class="line"><span class="hljs-keyword">WHERE</span> GNP != <span class="hljs-number">0</span> <span class="hljs-keyword">AND</span> Population != <span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> continent</span><br></pre></td></tr></table></figure>
+<li>대륙별 인구수와 GNP 최소 값을 조회 (GNP와 인구수가 0이 아닌 데이터 중에서)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">MIN</span>(Population) <span class="keyword">as</span> Population, <span class="keyword">MIN</span>(GNP) <span class="keyword">as</span> GNP</span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">WHERE</span> GNP != <span class="number">0</span> <span class="keyword">AND</span> Population != <span class="number">0</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="4-SUM"><a href="#4-SUM" class="headerlink" title="(4) SUM"></a>(4) SUM</h4><ul>
-<li>대륙별 총 인구수와 총 GNP<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> continent, <span class="hljs-keyword">SUM</span>(Population) <span class="hljs-keyword">as</span> Population, <span class="hljs-keyword">SUM</span>(GNP) <span class="hljs-keyword">as</span> GNP</span><br><span class="line"><span class="hljs-keyword">FROM</span> country</span><br><span class="line"><span class="hljs-keyword">WHERE</span> GNP != <span class="hljs-number">0</span> <span class="hljs-keyword">AND</span> Population != <span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> continent</span><br></pre></td></tr></table></figure>
+<li>대륙별 총 인구수와 총 GNP<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">SUM</span>(Population) <span class="keyword">as</span> Population, <span class="keyword">SUM</span>(GNP) <span class="keyword">as</span> GNP</span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">WHERE</span> GNP != <span class="number">0</span> <span class="keyword">AND</span> Population != <span class="number">0</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="5-AVG"><a href="#5-AVG" class="headerlink" title="(5) AVG"></a>(5) AVG</h4><ul>
-<li>대륙별 평균 인구수와 평균 GNP 결과를 인구수로 내림차순 정렬<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> continent, <span class="hljs-keyword">AVG</span>(Population) <span class="hljs-keyword">as</span> Population, <span class="hljs-keyword">AVG</span>(GNP) <span class="hljs-keyword">as</span> GNP</span><br><span class="line"><span class="hljs-keyword">FROM</span> country</span><br><span class="line"><span class="hljs-keyword">WHERE</span> GNP != <span class="hljs-number">0</span> <span class="hljs-keyword">AND</span> Population != <span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> continent</span><br><span class="line"><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> Population DESCs</span><br></pre></td></tr></table></figure>
+<li>대륙별 평균 인구수와 평균 GNP 결과를 인구수로 내림차순 정렬<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">AVG</span>(Population) <span class="keyword">as</span> Population, <span class="keyword">AVG</span>(GNP) <span class="keyword">as</span> GNP</span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">WHERE</span> GNP != <span class="number">0</span> <span class="keyword">AND</span> Population != <span class="number">0</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Population DESCs</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="2-HAVING"><a href="#2-HAVING" class="headerlink" title="2) HAVING"></a>2) HAVING</h3><p>GROUP BY에서 반환되는 결과에 조건을 줄 수 있음</p>
 <ul>
 <li><p>대륙별 전체인구를 구하고 5억이상인 대륙만 조회</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> continent, <span class="hljs-keyword">SUM</span>(Population) <span class="hljs-keyword">as</span> Population</span><br><span class="line"><span class="hljs-keyword">FROM</span> country</span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> continent</span><br><span class="line"><span class="hljs-keyword">HAVING</span> Population &gt; <span class="hljs-number">500000000</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">SUM</span>(Population) <span class="keyword">as</span> Population</span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br><span class="line"><span class="keyword">HAVING</span> Population &gt; <span class="number">500000000</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>대륙별 평균 인구수, 평균 GNP, 1인당 GNP한 결과를 1인당 GNP가 0.01 이상인 데이터를 조회하고 1인당 GNP를 내림차순으로 정렬</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> continent, <span class="hljs-keyword">AVG</span>(Population) <span class="hljs-keyword">as</span> Population, <span class="hljs-keyword">AVG</span>(GNP) <span class="hljs-keyword">as</span> GNP,</span><br><span class="line"><span class="hljs-keyword">AVG</span>(GNP) / <span class="hljs-keyword">AVG</span>(Population) * <span class="hljs-number">1000</span> <span class="hljs-keyword">as</span> <span class="hljs-keyword">AVG</span></span><br><span class="line"><span class="hljs-keyword">FROM</span> country</span><br><span class="line"><span class="hljs-keyword">WHERE</span> GNP != <span class="hljs-number">0</span> <span class="hljs-keyword">AND</span> Population != <span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> continent</span><br><span class="line"><span class="hljs-keyword">HAVING</span> <span class="hljs-keyword">AVG</span> &gt; <span class="hljs-number">0.01</span></span><br><span class="line"><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> <span class="hljs-keyword">AVG</span> <span class="hljs-keyword">DESC</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> continent, <span class="keyword">AVG</span>(Population) <span class="keyword">as</span> Population, <span class="keyword">AVG</span>(GNP) <span class="keyword">as</span> GNP,</span><br><span class="line"><span class="keyword">AVG</span>(GNP) / <span class="keyword">AVG</span>(Population) * <span class="number">1000</span> <span class="keyword">as</span> <span class="keyword">AVG</span></span><br><span class="line"><span class="keyword">FROM</span> country</span><br><span class="line"><span class="keyword">WHERE</span> GNP != <span class="number">0</span> <span class="keyword">AND</span> Population != <span class="number">0</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> continent</span><br><span class="line"><span class="keyword">HAVING</span> <span class="keyword">AVG</span> &gt; <span class="number">0.01</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">AVG</span> <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -382,752 +368,157 @@
 <li>패스트캠퍼스 ‘데이터 사이언스 스쿨 Python 8기’ 수업자료</li>
 </ul>
 
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Database/">Database</a>, <a class="has-link-grey -link" href="/tags/MySQL/">MySQL</a>, <a class="has-link-grey -link" href="/tags/SQL/">SQL</a>
-                </div>
-            </div>
-        </div>
-        
-        
-        
-        
-<div class="sharethis-inline-share-buttons"></div>
-<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5c334172a47fe500116a8ea8&amp;product=inline-share-buttons' async='async'></script>
+  </div>
+</article>
 
-        
-    </div>
-</div>
-
-
-
-
-
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/07/28/2018-07-27-TIL/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">2018-07-27-TIL</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/07/27/2018-07-26-TIL/">
-                <span class="level-item">2018-07-26-TIL</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
-
-
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
-        
-<script>
-    var disqus_config = function () {
-        this.page.url = 'https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/';
-        this.page.identifier = '2018/07/28/Database_04_mysql basic syntax/';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-    </div>
-</div>
-</div>
-                
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <nav class="level">
-            <div class="level-item has-text-centered">
-                <div>
-                    <img class="image is-128x128 has-mb-6" src="/images/avatar_panda.png" alt="우와팬더(Hyeshin Oh)">
-                    
-                    <p class="is-size-4 is-block">
-                        우와팬더(Hyeshin Oh)
-                    </p>
-                    
-                    
-                    <p class="is-size-6 is-block">
-                        데이터 사이언티스트
-                    </p>
-                    
-                    
-                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
-                        <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Seoul, Korea</span>
-                    </p>
-                    
-                </div>
-            </div>
-        </nav>
-        <nav class="level is-mobile">
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        Posts
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        155
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        Categories
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        8
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        Tags
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        34
-                    </p>
-                </div>
-            </div>
-        </nav>
-        <div class="level">
-            <a class="level-item button is-link is-rounded" href="http://github.com/hyeshinoh">
-                Follow</a>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/hyeshinoh">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Facebook" href="http://facebook.com/hyeshinoh">
-                
-                <i class="fab fa-facebook"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Twitter" href="http://twitter.com/hyeshinoh">
-                
-                <i class="fab fa-twitter"></i>
-                
-            </a>
-            
-        </div>
-        
-    </div>
-</div>
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Categories
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/1-TIL-Today-I-Learned/">
-            <span class="level-start">
-                <span class="level-item">1. TIL(Today I Learned)</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">89</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/">
-            <span class="level-start">
-                <span class="level-item">2. Data Science 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">66</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/2-수학/">
-            <span class="level-start">
-                <span class="level-item">2) 수학</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">23</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/3-파이썬-Python/">
-            <span class="level-start">
-                <span class="level-item">3) 파이썬 Python</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">22</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/4-알고리즘-Algorithm/">
-            <span class="level-start">
-                <span class="level-item">4) 알고리즘 Algorithm</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/5-데이터베이스-Database/">
-            <span class="level-start">
-                <span class="level-item">5) 데이터베이스 Database</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">5</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/6-웹-Web/">
-            <span class="level-start">
-                <span class="level-item">6) 웹 Web</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">12</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/7-Hexo-블로그/">
-            <span class="level-start">
-                <span class="level-item">7) Hexo 블로그</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li></ul></li>
-            </ul>
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
         </div>
     </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            Archives
-        </h3>
-        <ul class="menu-list">
+
+
+
         
-        <li>
-            <a class="level is-marginless" href="/archives/2019/04/">
-                <span class="level-start">
-                    <span class="level-item">April 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">3</span>
-                </span>
-            </a>
-        </li>
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
         
-        <li>
-            <a class="level is-marginless" href="/archives/2019/03/">
-                <span class="level-start">
-                    <span class="level-item">March 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">8</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/02/">
-                <span class="level-start">
-                    <span class="level-item">February 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">7</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/01/">
-                <span class="level-start">
-                    <span class="level-item">January 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">7</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/12/">
-                <span class="level-start">
-                    <span class="level-item">December 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">2</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/11/">
-                <span class="level-start">
-                    <span class="level-item">November 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">14</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/10/">
-                <span class="level-start">
-                    <span class="level-item">October 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">25</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/09/">
-                <span class="level-start">
-                    <span class="level-item">September 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">18</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/08/">
-                <span class="level-start">
-                    <span class="level-item">August 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">23</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/07/">
-                <span class="level-start">
-                    <span class="level-item">July 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">44</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/06/">
-                <span class="level-start">
-                    <span class="level-item">June 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">4</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
+      </ul>
     </div>
-</div>
-    
-    
-        <div class="column-right-shadow is-hidden-widescreen ">
-        
-            
-        
-            
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Recent
-        </h3>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-07T14:52:15.000Z">2019-04-07</time></div>
-                    <a href="/2019/04/07/2019-04-07-TIL/" class="has-link-black-ter is-size-6">2019-04-07-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/1-TIL-Today-I-Learned/">1. TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-07T14:35:53.000Z">2019-04-07</time></div>
-                    <a href="/2019/04/07/python_17_pandas_pivot/" class="has-link-black-ter is-size-6">python 17. Pandas - pivot &amp; pivot_table</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-05T14:35:53.000Z">2019-04-05</time></div>
-                    <a href="/2019/04/05/python_16_pandas_basic_2/" class="has-link-black-ter is-size-6">python 16. Pandas - basic(2)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-31T14:52:15.000Z">2019-03-31</time></div>
-                    <a href="/2019/03/31/2019-03-31-TIL/" class="has-link-black-ter is-size-6">2019-03-31-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/1-TIL-Today-I-Learned/">1. TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-30T14:35:53.000Z">2019-03-30</time></div>
-                    <a href="/2019/03/30/python_15_pandas_basic_1/" class="has-link-black-ter is-size-6">python 15. Pandas - basic(1)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Create"><span class="toc-number">1.</span> <span class="toc-text">1. Create</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Create-Database"><span class="toc-number">1.1.</span> <span class="toc-text">1) Create Database</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Create-Table"><span class="toc-number">1.2.</span> <span class="toc-text">2) Create Table</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Alter"><span class="toc-number">2.</span> <span class="toc-text">2. Alter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Database"><span class="toc-number">2.1.</span> <span class="toc-text">1) Database</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Table"><span class="toc-number">2.2.</span> <span class="toc-text">2) Table</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-DROP"><span class="toc-number">3.</span> <span class="toc-text">3. DROP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Database-1"><span class="toc-number">3.1.</span> <span class="toc-text">1) Database</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Table-1"><span class="toc-number">3.2.</span> <span class="toc-text">2) Table</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-INSERT"><span class="toc-number">4.</span> <span class="toc-text">4. INSERT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Syntax"><span class="toc-number">4.1.</span> <span class="toc-text">1) Syntax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Example"><span class="toc-number">4.2.</span> <span class="toc-text">2) Example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-SELECT"><span class="toc-number">5.</span> <span class="toc-text">4. SELECT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Basic"><span class="toc-number">5.1.</span> <span class="toc-text">1) Basic</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-ALIAS"><span class="toc-number">5.2.</span> <span class="toc-text">2) ALIAS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-DISTINCT"><span class="toc-number">5.3.</span> <span class="toc-text">3) DISTINCT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-WHERE"><span class="toc-number">5.4.</span> <span class="toc-text">4) WHERE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-ORDER-BY"><span class="toc-number">5.5.</span> <span class="toc-text">5) ORDER BY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-CONCAT"><span class="toc-number">5.6.</span> <span class="toc-text">6) CONCAT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-LIKE"><span class="toc-number">5.7.</span> <span class="toc-text">7) LIKE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-IN"><span class="toc-number">5.8.</span> <span class="toc-text">8) IN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-LIMIT"><span class="toc-number">5.9.</span> <span class="toc-text">9) LIMIT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-UPDATE"><span class="toc-number">6.</span> <span class="toc-text">6. UPDATE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-syntax"><span class="toc-number">6.1.</span> <span class="toc-text">1) syntax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-example"><span class="toc-number">6.2.</span> <span class="toc-text">2) example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-DELETE"><span class="toc-number">7.</span> <span class="toc-text">7. DELETE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-syntax-1"><span class="toc-number">7.1.</span> <span class="toc-text">1) syntax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-example-1"><span class="toc-number">7.2.</span> <span class="toc-text">2) example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-GROUP-BY"><span class="toc-number">8.</span> <span class="toc-text">8. GROUP BY</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-GROUP-BY-함수"><span class="toc-number">8.1.</span> <span class="toc-text">1) GROUP BY 함수</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-COUNT"><span class="toc-number">8.1.1.</span> <span class="toc-text">(1) COUNT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-MAX"><span class="toc-number">8.1.2.</span> <span class="toc-text">(2) MAX</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-MIN"><span class="toc-number">8.1.3.</span> <span class="toc-text">(3) MIN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-SUM"><span class="toc-number">8.1.4.</span> <span class="toc-text">(4) SUM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-AVG"><span class="toc-number">8.1.5.</span> <span class="toc-text">(5) AVG</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-HAVING"><span class="toc-number">8.2.</span> <span class="toc-text">2) HAVING</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#※-참고-자료"><span class="toc-number">8.2.1.</span> <span class="toc-text">※ 참고 자료</span></a></li></ol></li></ol></li></ol>
     </div>
-</div>
 
-        
-            
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Tag Cloud
-        </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.5px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.5px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.83px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.17px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.5px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 15px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10.83px;">hexo</a> <a href="/tags/html/" style="font-size: 10.83px;">html</a> <a href="/tags/javascript/" style="font-size: 10.83px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10.83px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.33px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/numpy/" style="font-size: 11.67px;">numpy</a> <a href="/tags/pandas/" style="font-size: 11.67px;">pandas</a> <a href="/tags/programming/" style="font-size: 19.17px;">programming</a> <a href="/tags/python/" style="font-size: 18.33px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 12.5px;">selenium</a> <a href="/tags/web/" style="font-size: 16.67px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.17px;">web_crawling</a> <a href="/tags/귀찮은건-싫어/" style="font-size: 10px;">귀찮은건 싫어</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.33px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.83px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.17px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10.83px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 15.83px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&text=MySQL Basic Syntax"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&title=MySQL Basic Syntax"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&is_video=false&description=MySQL Basic Syntax"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=MySQL Basic Syntax&body=Check out this article: https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&title=MySQL Basic Syntax"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&title=MySQL Basic Syntax"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&title=MySQL Basic Syntax"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&title=MySQL Basic Syntax"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2018/07/28/Database_04_mysql basic syntax/&name=MySQL Basic Syntax&description=&lt;p&gt;본격적으로 RDBMS(나의 경우는 workbench)를 사용하여 MySQL 문법을 익혀보자&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;명령어는 대문자로 쓰는 것이 컨벤션이나 소문자로 써도 실행에는 문제가 없음&lt;/li&gt;
+&lt;li&gt;마지막에 세미콜론(;) 또한 쓰지 않아도 실행에는 문제가 없음&lt;/li&gt;
+&lt;/ul&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
     </div>
-</div>
 
-        
-        </div>
-    
-</div>
-
-                
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
-    
-        
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Recent
-        </h3>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-07T14:52:15.000Z">2019-04-07</time></div>
-                    <a href="/2019/04/07/2019-04-07-TIL/" class="has-link-black-ter is-size-6">2019-04-07-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/1-TIL-Today-I-Learned/">1. TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-07T14:35:53.000Z">2019-04-07</time></div>
-                    <a href="/2019/04/07/python_17_pandas_pivot/" class="has-link-black-ter is-size-6">python 17. Pandas - pivot &amp; pivot_table</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-05T14:35:53.000Z">2019-04-05</time></div>
-                    <a href="/2019/04/05/python_16_pandas_basic_2/" class="has-link-black-ter is-size-6">python 16. Pandas - basic(2)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-31T14:52:15.000Z">2019-03-31</time></div>
-                    <a href="/2019/03/31/2019-03-31-TIL/" class="has-link-black-ter is-size-6">2019-03-31-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/1-TIL-Today-I-Learned/">1. TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-30T14:35:53.000Z">2019-03-30</time></div>
-                    <a href="/2019/03/30/python_15_pandas_basic_1/" class="has-link-black-ter is-size-6">python 15. Pandas - basic(1)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
+
+  </div>
 </div>
 
-    
         
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Tag Cloud
-        </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.5px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.5px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.83px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.17px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.5px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 15px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10.83px;">hexo</a> <a href="/tags/html/" style="font-size: 10.83px;">html</a> <a href="/tags/javascript/" style="font-size: 10.83px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10.83px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.33px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/numpy/" style="font-size: 11.67px;">numpy</a> <a href="/tags/pandas/" style="font-size: 11.67px;">pandas</a> <a href="/tags/programming/" style="font-size: 19.17px;">programming</a> <a href="/tags/python/" style="font-size: 18.33px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 12.5px;">selenium</a> <a href="/tags/web/" style="font-size: 16.67px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.17px;">web_crawling</a> <a href="/tags/귀찮은건-싫어/" style="font-size: 10px;">귀찮은건 싫어</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.33px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.83px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.17px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10.83px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 15.83px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
-    </div>
-</div>
-
-    
-    
-</div>
-
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="level">
-            <div class="level-start has-text-centered-mobile">
-                <a class="footer-logo is-block has-mb-6" href="/">
-                
-                    <img src="/images/logo.png" alt="MySQL Basic Syntax" height="28">
-                
-                </a>
-                <p class="is-size-7">
-                &copy; 2019 우와팬더&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
-                </p>
-            </div>
-            <div class="level-end">
-            
-                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
-                        
-                        <i class="fab fa-creative-commons"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
-                        
-                        <i class="fab fa-creative-commons-by"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
-                        
-                        <i class="fab fa-github"></i>
-                        
-                    </a>
-                </p>
-                
-                </div>
-            
-            </div>
-        </div>
-    </div>
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 우와팬더
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </footer>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("en");</script>
 
-
-    
-    
-    
-    <script src="/js/animation.js"></script>
-    
-
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
-    
-
-    
-    
-
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
-            my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        });
-    });
-</script>
-
-
-    
-    
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    MathJax.Hub.Config({
-        'HTML-CSS': {matchFontHeight: false},
-        SVG: {matchFontHeight: false},
-        CommonHTML: {matchFontHeight: false}
-    });
-});
-</script>
-
-    
-    
-
-<a id="back-to-top" title="Back to Top" href="javascript:;">
-    <i class="fas fa-chevron-up"></i>
-</a>
-<script src="/js/back-to-top.js" defer></script>
-
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
-    <script src="/js/clipboard.js" defer></script>
-    
-
-    
-
-
-<script src="/js/main.js" defer></script>
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
     </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
-    
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-126954393-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'hyeshinoh';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {

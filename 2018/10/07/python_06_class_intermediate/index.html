@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html  lang="en">
+<html lang=en>
 <head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-<title>python 06. Python Class - Intermediate - 우와팬더의 블로그</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-
-
-
-
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="jupyter notebook으로 보기 다룰 내용python class - intermediate  getter &amp;amp; setter private is a / has a magic method">
 <meta name="keywords" content="python,programming">
 <meta property="og:type" content="article">
@@ -21,159 +18,151 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 06. Python Class - Intermediate">
 <meta name="twitter:description" content="jupyter notebook으로 보기 다룰 내용python class - intermediate  getter &amp;amp; setter private is a / has a magic method">
-<meta property="fb:app_id" content="hyeshinoh">
-
-
-
-<link rel="alternative" href="hyeshinoh" title="python 06. Python Class - Intermediate" type="application/atom+xml">
-
-
-
-<link rel="icon" href="/images/favicon.png">
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
-
-
     
     
+        
+          
+              <link rel="shortcut icon" href="/images/favicon_panda.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
     
-    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    <!-- title -->
+    <title>python 06. Python Class - Intermediate</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
     
-
+      <link rel="stylesheet" href="/css/rtl.css">
     
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-    
-
-    
-    
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
-
-
-    
-    
-    
-    
-
-<link rel="stylesheet" href="/css/back-to-top.css">
-
-
-    
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126954393-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-126954393-1');
-</script>
-
-
+    <!-- rss -->
     
     
+      <link rel="alternate" href="/atom.xml" title="우와팬더의 블로그" type="application/atom+xml" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
-    
-
-    
-    
-<link rel="stylesheet" href="/css/progressbar.css">
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-
-    
-    
-    
-
-    
-
-
-<link rel="stylesheet" href="/css/style.css">
-
-    <meta property="fb:app_id" content="346594012616363" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
-<body class="is-3-column">
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="navbar navbar-main">
-    <div class="container">
-        <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="/">
-            
-                <img src="/images/logo.png" alt="python 06. Python Class - Intermediate" height="28">
-            
-            </a>
-        </div>
-        <div class="navbar-menu">
-            
-            <div class="navbar-start">
-                
-                <a class="navbar-item"
-                href="/">Home</a>
-                
-                <a class="navbar-item"
-                href="/archives">Archives</a>
-                
-                <a class="navbar-item"
-                href="/categories">Categories</a>
-                
-                <a class="navbar-item"
-                href="/tags">Tags</a>
-                
-                <a class="navbar-item"
-                href="/about">About</a>
-                
-            </div>
-            
-            <div class="navbar-end">
-                
-                
-                
-                <a class="navbar-item search" title="Search" href="javascript:;">
-                    <i class="fas fa-search"></i>
-                </a>
-                
-            </div>
-        </div>
+
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/10/11/python_07_module & package/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/10/05/web_11_selenium_exercise/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&text=python 06. Python Class - Intermediate"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&title=python 06. Python Class - Intermediate"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&is_video=false&description=python 06. Python Class - Intermediate"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=python 06. Python Class - Intermediate&body=Check out this article: https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&title=python 06. Python Class - Intermediate"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&title=python 06. Python Class - Intermediate"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&title=python 06. Python Class - Intermediate"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&title=python 06. Python Class - Intermediate"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&name=python 06. Python Class - Intermediate&description=&lt;p&gt;&lt;a href=&#34;https://nbviewer.jupyter.org/github/hyeshinoh/Study_Python/blob/master/python_06_class_intermediate.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jupyter notebook으로 보기&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;다룰-내용&#34;&gt;&lt;a href=&#34;#다룰-내용&#34; class=&#34;headerlink&#34; title=&#34;다룰 내용&#34;&gt;&lt;/a&gt;다룰 내용&lt;/h3&gt;&lt;p&gt;python class - intermediate&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;getter &amp;amp; setter&lt;/li&gt;
+&lt;li&gt;private&lt;/li&gt;
+&lt;li&gt;is a / has a&lt;/li&gt;
+&lt;li&gt;magic method&lt;/li&gt;
+&lt;/ul&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
     </div>
-</nav>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#다룰-내용"><span class="toc-number">1.</span> <span class="toc-text">다룰 내용</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Getter-amp-Setter"><span class="toc-number"></span> <span class="toc-text">1. Getter &amp; Setter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Property-함수-이용"><span class="toc-number">1.</span> <span class="toc-text">1.1 Property 함수 이용</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-decorator-이용"><span class="toc-number">2.</span> <span class="toc-text">1.2 decorator 이용</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Private"><span class="toc-number"></span> <span class="toc-text">2. Private</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Private-function"><span class="toc-number">1.</span> <span class="toc-text">Private function</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-is-a-amp-has-a"><span class="toc-number"></span> <span class="toc-text">3. is a &amp; has a</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-is-a"><span class="toc-number">1.</span> <span class="toc-text">3.1 is a</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-has-a"><span class="toc-number">2.</span> <span class="toc-text">3.2 has a</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Magic-Special-Method"><span class="toc-number"></span> <span class="toc-text">4. Magic(Special) Method</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-eq"><span class="toc-number">1.</span> <span class="toc-text">4.1 __eq__</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-ne"><span class="toc-number">2.</span> <span class="toc-text">4.2 __ne__</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-add"><span class="toc-number">3.</span> <span class="toc-text">4.3 __add__</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-str-repr"><span class="toc-number">4.</span> <span class="toc-text">4.4 __str__, __repr__</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#참고자료"><span class="toc-number">4.1.</span> <span class="toc-text">참고자료</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
     
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
     
-    <div class="card-content article ">
+    <h1 class="posttitle" itemprop="name headline">
+        python 06. Python Class - Intermediate
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">우와팬더의 블로그</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-10-07T02:50:40.000Z" itemprop="datePublished">2018-10-07</time>
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-07T02:50:40.000Z">2018-10-07</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    11 minutes read (About 1666 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                python 06. Python Class - Intermediate
-            
-        </h1>
-        <div class="content">
-            <p><a href="https://nbviewer.jupyter.org/github/hyeshinoh/Study_Python/blob/master/python_06_class_intermediate.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> › <a class="category-link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p><a href="https://nbviewer.jupyter.org/github/hyeshinoh/Study_Python/blob/master/python_06_class_intermediate.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
 <h3 id="다룰-내용"><a href="#다룰-내용" class="headerlink" title="다룰 내용"></a>다룰 내용</h3><p>python class - intermediate</p>
 <ul>
 <li>getter &amp; setter</li>
@@ -187,35 +176,35 @@
 <li>property와 decorator 두 가지 방법으로 구현이 가능</li>
 <li>OOP의 캡슐화, 은닉화를 구현하기 위해 쓰임</li>
 </ul>
-<h3 id="1-1-Property-함수-이용"><a href="#1-1-Property-함수-이용" class="headerlink" title="1.1 Property 함수 이용"></a>1.1 Property 함수 이용</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person1</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, input_name1, input_name2)</span>:</span></span><br><span class="line">        self.hidden_name1 = input_name1</span><br><span class="line">        self.hidden_name2 = input_name2</span><br><span class="line">        </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">disp_name1</span><span class="hljs-params">(self)</span>:</span>     <span class="hljs-comment"># getter 1</span></span><br><span class="line">        print(<span class="hljs-string">"disp_name1"</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span> self.hidden_name1.upper()</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">disp_name2</span><span class="hljs-params">(self)</span>:</span>     <span class="hljs-comment"># getter 2</span></span><br><span class="line">        print(<span class="hljs-string">"disp_name2"</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span> self.hidden_name2</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">set_name1</span><span class="hljs-params">(self, input_name)</span>:</span>     <span class="hljs-comment"># setter 1</span></span><br><span class="line">        print(<span class="hljs-string">"set_name1"</span>)</span><br><span class="line">        self.hidden_name1 = <span class="hljs-string">"Mr. "</span>+ input_name.lower()</span><br><span class="line">        </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">set_name2</span><span class="hljs-params">(self, input_name)</span>:</span>     <span class="hljs-comment"># setter 2</span></span><br><span class="line">        print(<span class="hljs-string">"set_name2"</span>)</span><br><span class="line">        self.hidden_name2 = input_name</span><br><span class="line">        </span><br><span class="line">    name1 = property(disp_name1, set_name1)     <span class="hljs-comment"># property:내장함수 | property(getter함수, setter함수)</span></span><br><span class="line">    name2 = property(disp_name2, set_name2)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p = Person1(<span class="hljs-string">"ksm"</span>, <span class="hljs-string">"kek"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1</span><br></pre></td></tr></table></figure>
+<h3 id="1-1-Property-함수-이용"><a href="#1-1-Property-함수-이용" class="headerlink" title="1.1 Property 함수 이용"></a>1.1 Property 함수 이용</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person1</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, input_name1, input_name2)</span>:</span></span><br><span class="line">        self.hidden_name1 = input_name1</span><br><span class="line">        self.hidden_name2 = input_name2</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">disp_name1</span><span class="params">(self)</span>:</span>     <span class="comment"># getter 1</span></span><br><span class="line">        print(<span class="string">"disp_name1"</span>)</span><br><span class="line">        <span class="keyword">return</span> self.hidden_name1.upper()</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">disp_name2</span><span class="params">(self)</span>:</span>     <span class="comment"># getter 2</span></span><br><span class="line">        print(<span class="string">"disp_name2"</span>)</span><br><span class="line">        <span class="keyword">return</span> self.hidden_name2</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_name1</span><span class="params">(self, input_name)</span>:</span>     <span class="comment"># setter 1</span></span><br><span class="line">        print(<span class="string">"set_name1"</span>)</span><br><span class="line">        self.hidden_name1 = <span class="string">"Mr. "</span>+ input_name.lower()</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_name2</span><span class="params">(self, input_name)</span>:</span>     <span class="comment"># setter 2</span></span><br><span class="line">        print(<span class="string">"set_name2"</span>)</span><br><span class="line">        self.hidden_name2 = input_name</span><br><span class="line">        </span><br><span class="line">    name1 = property(disp_name1, set_name1)     <span class="comment"># property:내장함수 | property(getter함수, setter함수)</span></span><br><span class="line">    name2 = property(disp_name2, set_name2)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p = Person1(<span class="string">"ksm"</span>, <span class="string">"kek"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1</span><br></pre></td></tr></table></figure>
 <pre><code>disp_name1
 
 &apos;KSM&apos;
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.hidden_name1</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.hidden_name1</span><br></pre></td></tr></table></figure>
 <pre><code>&apos;ksm&apos;
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1 = <span class="hljs-string">"ppp"</span>         <span class="hljs-comment"># setter1을 통해 p에 이름 "ppp"를 저장함</span></span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1 = <span class="string">"ppp"</span>         <span class="comment"># setter1을 통해 p에 이름 "ppp"를 저장함</span></span><br></pre></td></tr></table></figure>
 <pre><code>set_name1
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.hidden_name1          <span class="hljs-comment"># setter1을 통해 Mr. 를 붙여서 저장되었음</span></span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.hidden_name1          <span class="comment"># setter1을 통해 Mr. 를 붙여서 저장되었음</span></span><br></pre></td></tr></table></figure>
 <pre><code>&apos;Mr. ppp&apos;
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.disp_name1()          <span class="hljs-comment"># getter1을 거쳐 대문자로 표시됨</span></span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.disp_name1()          <span class="comment"># getter1을 거쳐 대문자로 표시됨</span></span><br></pre></td></tr></table></figure>
 <pre><code>disp_name1
 
 &apos;MR. PPP&apos;
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.name1</span><br></pre></td></tr></table></figure>
 <pre><code>disp_name1
 
 &apos;MR. PPP&apos;
-</code></pre><h3 id="1-2-decorator-이용"><a href="#1-2-decorator-이용" class="headerlink" title="1.2 decorator 이용"></a>1.2 decorator 이용</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person2</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, input_name)</span>:</span></span><br><span class="line">        self.hidden_name = input_name</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">    @property</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">name</span><span class="hljs-params">(self)</span>:</span>                      <span class="hljs-comment"># getter function</span></span><br><span class="line">        print(<span class="hljs-string">"inside the getter"</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span> self.hidden_name.upper()</span><br><span class="line">    </span><br><span class="line"><span class="hljs-meta">    @name.setter</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">name</span><span class="hljs-params">(self, input_name)</span>:</span>          <span class="hljs-comment"># setter function</span></span><br><span class="line">        print(<span class="hljs-string">"inside the setter"</span>)</span><br><span class="line">        self.hidden_name = <span class="hljs-string">"Mr. "</span> + input_name</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2 = Person2(<span class="hljs-string">"park"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.hidden_name</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="1-2-decorator-이용"><a href="#1-2-decorator-이용" class="headerlink" title="1.2 decorator 이용"></a>1.2 decorator 이용</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person2</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, input_name)</span>:</span></span><br><span class="line">        self.hidden_name = input_name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span>                      <span class="comment"># getter function</span></span><br><span class="line">        print(<span class="string">"inside the getter"</span>)</span><br><span class="line">        <span class="keyword">return</span> self.hidden_name.upper()</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @name.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self, input_name)</span>:</span>          <span class="comment"># setter function</span></span><br><span class="line">        print(<span class="string">"inside the setter"</span>)</span><br><span class="line">        self.hidden_name = <span class="string">"Mr. "</span> + input_name</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2 = Person2(<span class="string">"park"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.hidden_name</span><br></pre></td></tr></table></figure>
 <pre><code>&apos;park&apos;
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.name = <span class="hljs-string">"kim"</span></span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.name = <span class="string">"kim"</span></span><br></pre></td></tr></table></figure>
 <pre><code>inside the setter
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.hidden_name</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.hidden_name</span><br></pre></td></tr></table></figure>
 <pre><code>&apos;Mr. kim&apos;
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.name</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p2.name</span><br></pre></td></tr></table></figure>
 <pre><code>inside the getter
 
 &apos;MR. KIM&apos;
@@ -228,9 +217,9 @@
 <li>완벽한 방법은 아니고 변수명 앞에 <code>_(클래스명)</code>을 붙이면 접근이 가능</li>
 <li>객체의 변수에 접근하기 위해서 <code>(객체명).(변수명)</code> 으로 접근이 가능</li>
 </ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person3</span><span class="hljs-params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, input_name)</span>:</span></span><br><span class="line">        self.__hidden_name = input_name</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mod</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        self.__hidden_name = <span class="hljs-string">"Park"</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">    @property</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">name</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        print(<span class="hljs-string">"inside the getter"</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span> self.__hidden_name.upper()</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">    @name.setter</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">name</span><span class="hljs-params">(self, input_name)</span>:</span></span><br><span class="line">        print(<span class="hljs-string">"inside the setter"</span>)</span><br><span class="line">        self.__hidden_name = <span class="hljs-string">"Mr. "</span> + input_name</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3 = Person3(<span class="hljs-string">"Lee"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#직접 접근할 수 없음</span></span><br><span class="line">p3.__hidden_name</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person3</span><span class="params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, input_name)</span>:</span></span><br><span class="line">        self.__hidden_name = input_name</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mod</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__hidden_name = <span class="string">"Park"</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"inside the getter"</span>)</span><br><span class="line">        <span class="keyword">return</span> self.__hidden_name.upper()</span><br><span class="line"></span><br><span class="line"><span class="meta">    @name.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span><span class="params">(self, input_name)</span>:</span></span><br><span class="line">        print(<span class="string">"inside the setter"</span>)</span><br><span class="line">        self.__hidden_name = <span class="string">"Mr. "</span> + input_name</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3 = Person3(<span class="string">"Lee"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#직접 접근할 수 없음</span></span><br><span class="line">p3.__hidden_name</span><br></pre></td></tr></table></figure>
 <pre><code>---------------------------------------------------------------------------
 
 AttributeError                            Traceback (most recent call last)
@@ -240,25 +229,25 @@ AttributeError                            Traceback (most recent call last)
 
 
 AttributeError: &apos;Person3&apos; object has no attribute &apos;__hidden_name&apos;
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># getter로만 접근 가능</span></span><br><span class="line">p3.name</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># getter로만 접근 가능</span></span><br><span class="line">p3.name</span><br></pre></td></tr></table></figure>
 <pre><code>inside the getter
 
 &apos;LEE&apos;
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3.mod()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3.name</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3.mod()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3.name</span><br></pre></td></tr></table></figure>
 <pre><code>inside the getter
 
 &apos;PARK&apos;
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3._Person3__hidden_name    <span class="hljs-comment"># 접근은 가능</span></span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p3._Person3__hidden_name    <span class="comment"># 접근은 가능</span></span><br></pre></td></tr></table></figure>
 <pre><code>&apos;Park&apos;
 </code></pre><h3 id="Private-function"><a href="#Private-function" class="headerlink" title="Private function"></a>Private function</h3><ul>
 <li>class 내에서만 사용되는 함수의 이름 중복이 우려될 때 사용</li>
 <li>mangling 사용</li>
 <li>거의 사용되지는 않음</li>
 </ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># def test():</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__test</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        print(<span class="hljs-string">"test"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = A()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a._A__test()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># def test():</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__test</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"test"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = A()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a._A__test()</span><br></pre></td></tr></table></figure>
 <pre><code>test
 </code></pre><h2 id="3-is-a-amp-has-a"><a href="#3-is-a-amp-has-a" class="headerlink" title="3. is a &amp; has a"></a>3. is a &amp; has a</h2><ul>
 <li>is a: A is a B의 개념은 A는 B임을 의미<ul>
@@ -271,9 +260,9 @@ AttributeError: &apos;Person3&apos; object has no attribute &apos;__hidden_name&
 </li>
 <li>같이 혼합해서도 사용 가능</li>
 </ul>
-<h3 id="3-1-is-a"><a href="#3-1-is-a" class="headerlink" title="3.1 is a"></a>3.1 is a</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span><span class="hljs-params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name, email)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.email = email</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span><span class="hljs-params">(B)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">about</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        print(self.name, self.email)</span><br><span class="line">        </span><br><span class="line">person = A(<span class="hljs-string">"Hyeshin"</span>, <span class="hljs-string">"hyeshinoh@gmail.com"</span>)</span><br><span class="line">person.about()</span><br></pre></td></tr></table></figure>
+<h3 id="3-1-is-a"><a href="#3-1-is-a" class="headerlink" title="3.1 is a"></a>3.1 is a</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, email)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.email = email</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(B)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">about</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.name, self.email)</span><br><span class="line">        </span><br><span class="line">person = A(<span class="string">"Hyeshin"</span>, <span class="string">"hyeshinoh@gmail.com"</span>)</span><br><span class="line">person.about()</span><br></pre></td></tr></table></figure>
 <pre><code>Hyeshin hyeshinoh@gmail.com
-</code></pre><h3 id="3-2-has-a"><a href="#3-2-has-a" class="headerlink" title="3.2 has a"></a>3.2 has a</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Name</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name)</span>:</span></span><br><span class="line">        self.name_str = name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Email</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, email)</span>:</span></span><br><span class="line">        self.email_str = email</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name, email)</span>:</span></span><br><span class="line">        self.name_obj = name</span><br><span class="line">        self.email_obj = email</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">about</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        print(self.name_obj.name_str, self.email_obj.email_str)</span><br><span class="line">             <span class="hljs-comment"># object가 들어오고 오브젝트의 name값</span></span><br><span class="line"></span><br><span class="line">name = Name(<span class="hljs-string">"Hyeshin"</span>)</span><br><span class="line">email = Email(<span class="hljs-string">"hyeshinoh@gmail.com"</span>)</span><br><span class="line">p = Person(name, email)</span><br><span class="line">p.about()</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="3-2-has-a"><a href="#3-2-has-a" class="headerlink" title="3.2 has a"></a>3.2 has a</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Name</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name_str = name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Email</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, email)</span>:</span></span><br><span class="line">        self.email_str = email</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, email)</span>:</span></span><br><span class="line">        self.name_obj = name</span><br><span class="line">        self.email_obj = email</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">about</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.name_obj.name_str, self.email_obj.email_str)</span><br><span class="line">             <span class="comment"># object가 들어오고 오브젝트의 name값</span></span><br><span class="line"></span><br><span class="line">name = Name(<span class="string">"Hyeshin"</span>)</span><br><span class="line">email = Email(<span class="string">"hyeshinoh@gmail.com"</span>)</span><br><span class="line">p = Person(name, email)</span><br><span class="line">p.about()</span><br></pre></td></tr></table></figure>
 <pre><code>Hyeshin hyeshinoh@gmail.com
 </code></pre><h2 id="4-Magic-Special-Method"><a href="#4-Magic-Special-Method" class="headerlink" title="4. Magic(Special) Method"></a>4. Magic(Special) Method</h2><ul>
 <li><a href="https://docs.python.org/3/reference/datamodel.html#specialnames" target="_blank" rel="noopener">https://docs.python.org/3/reference/datamodel.html#specialnames</a></li>
@@ -305,49 +294,49 @@ AttributeError: &apos;Person3&apos; object has no attribute &apos;__hidden_name&
 <h3 id="4-1-eq"><a href="#4-1-eq" class="headerlink" title="4.1 __eq__"></a>4.1 <code>__eq__</code></h3><ul>
 <li>text 변수를 저장하고 객체가 같은지 비교하는 코드</li>
 </ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Txt</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, txt)</span>:</span></span><br><span class="line">        self.txt = txt</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">equals</span><span class="hljs-params">(self, txt_obj)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">return</span> self.txt.lower() == txt_obj.txt.lower()</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">txt1 = Txt(<span class="hljs-string">"DataScience"</span>)</span><br><span class="line">txt2 = Txt(<span class="hljs-string">"datascience"</span>)</span><br><span class="line">txt3 = Txt(<span class="hljs-string">"dataScience"</span>)</span><br><span class="line">txt4 = Txt(<span class="hljs-string">"python"</span>)</span><br><span class="line">txt5 = txt1</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Txt 객체의 txt 변수를 비교</span></span><br><span class="line">print( txt1.equals(txt2) )</span><br><span class="line">print( txt1.equals(txt3) )</span><br><span class="line">print( txt1.equals(txt4) )</span><br><span class="line">print( txt1.equals(txt5) )</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Txt</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, txt)</span>:</span></span><br><span class="line">        self.txt = txt</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">equals</span><span class="params">(self, txt_obj)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.txt.lower() == txt_obj.txt.lower()</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">txt1 = Txt(<span class="string">"DataScience"</span>)</span><br><span class="line">txt2 = Txt(<span class="string">"datascience"</span>)</span><br><span class="line">txt3 = Txt(<span class="string">"dataScience"</span>)</span><br><span class="line">txt4 = Txt(<span class="string">"python"</span>)</span><br><span class="line">txt5 = txt1</span><br><span class="line"></span><br><span class="line"><span class="comment"># Txt 객체의 txt 변수를 비교</span></span><br><span class="line">print( txt1.equals(txt2) )</span><br><span class="line">print( txt1.equals(txt3) )</span><br><span class="line">print( txt1.equals(txt4) )</span><br><span class="line">print( txt1.equals(txt5) )</span><br></pre></td></tr></table></figure>
 <pre><code>True
 True
 False
 True
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">txt1 == txt2, txt1 == txt3, txt1 == txt4, txt1</span><br><span class="line">	<span class="hljs-comment"># object는 == 사용시 주소값 비교</span></span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">txt1 == txt2, txt1 == txt3, txt1 == txt4, txt1</span><br><span class="line">	<span class="comment"># object는 == 사용시 주소값 비교</span></span><br></pre></td></tr></table></figure>
 <pre><code>(False, False, False, True)
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">txt1, txt4, txt5</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">txt1, txt4, txt5</span><br></pre></td></tr></table></figure>
 <pre><code>(&lt;__main__.Txt at 0x114f65ef0&gt;,
  &lt;__main__.Txt at 0x114f65f28&gt;,
  &lt;__main__.Txt at 0x114f65ef0&gt;)
 </code></pre><p><code>__eq__</code>를 정의하면 클래스 비교연산에서 <code>__eq__</code>를 수행<br>이를 값을 비교하는 함수로 수정</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Txt</span><span class="hljs-params">()</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, txt)</span>:</span></span><br><span class="line">        self.txt = txt</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__eq__</span><span class="hljs-params">(self, txt_obj)</span>:</span></span><br><span class="line">        <span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-string">        return self.txt.lower() == txt_obj.txt.lower()</span></span><br><span class="line"><span class="hljs-string">        """</span></span><br><span class="line">        <span class="hljs-keyword">return</span> self.txt.lower() == txt_obj.txt.lower()</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">txt1 = Txt(<span class="hljs-string">"DataScience"</span>)</span><br><span class="line">txt2 = Txt(<span class="hljs-string">"datascience"</span>)</span><br><span class="line">txt3 = Txt(<span class="hljs-string">"dataScience"</span>)</span><br><span class="line">txt4 = Txt(<span class="hljs-string">"python"</span>)</span><br><span class="line">txt5 = txt1</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">## equal의 기능을 바꿔주었음</span></span><br><span class="line">txt1 == txt2, txt1 == txt3, txt1 == txt4, txt1 == txt5</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Txt</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, txt)</span>:</span></span><br><span class="line">        self.txt = txt</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__eq__</span><span class="params">(self, txt_obj)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        return self.txt.lower() == txt_obj.txt.lower()</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">return</span> self.txt.lower() == txt_obj.txt.lower()</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">txt1 = Txt(<span class="string">"DataScience"</span>)</span><br><span class="line">txt2 = Txt(<span class="string">"datascience"</span>)</span><br><span class="line">txt3 = Txt(<span class="string">"dataScience"</span>)</span><br><span class="line">txt4 = Txt(<span class="string">"python"</span>)</span><br><span class="line">txt5 = txt1</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## equal의 기능을 바꿔주었음</span></span><br><span class="line">txt1 == txt2, txt1 == txt3, txt1 == txt4, txt1 == txt5</span><br></pre></td></tr></table></figure>
 <pre><code>(True, True, False, True)
 </code></pre><h3 id="4-2-ne"><a href="#4-2-ne" class="headerlink" title="4.2 __ne__"></a>4.2 <code>__ne__</code></h3><ul>
 <li>list의 remove 함수는 한개의 value만 삭제</li>
 <li>리스트에 있는 값 여러개 삭제하는 코드</li>
 </ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"a"</span>, <span class="hljs-string">"c"</span>, <span class="hljs-string">"a"</span>]</span><br><span class="line">ls.remove(<span class="hljs-string">"a"</span>)</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"a"</span>, <span class="string">"c"</span>, <span class="string">"a"</span>]</span><br><span class="line">ls.remove(<span class="string">"a"</span>)</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
 <pre><code>[&apos;b&apos;, &apos;a&apos;, &apos;c&apos;, &apos;a&apos;]
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"a"</span>, <span class="hljs-string">"c"</span>, <span class="hljs-string">"a"</span>]</span><br><span class="line">s = <span class="hljs-string">"a"</span></span><br><span class="line">result = [data <span class="hljs-keyword">for</span> data <span class="hljs-keyword">in</span> ls <span class="hljs-keyword">if</span> data != s]</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"a"</span>, <span class="string">"c"</span>, <span class="string">"a"</span>]</span><br><span class="line">s = <span class="string">"a"</span></span><br><span class="line">result = [data <span class="keyword">for</span> data <span class="keyword">in</span> ls <span class="keyword">if</span> data != s]</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
 <pre><code>[&apos;b&apos;, &apos;c&apos;]
 </code></pre><p><code>__ne__</code>를 이용하여 리스트에 있는 값 여러개 삭제하는 코드</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="hljs-string">"Python"</span></span><br><span class="line"><span class="hljs-comment"># s.__ne__??</span></span><br><span class="line"></span><br><span class="line">ls = [<span class="hljs-string">"Hello"</span>,<span class="hljs-string">"Python"</span>,<span class="hljs-string">"Hello"</span>,<span class="hljs-string">"Python"</span>,<span class="hljs-string">"Hello"</span>,<span class="hljs-string">"Python"</span>]</span><br><span class="line">print(list(filter(s.__ne__, ls)))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"Python"</span></span><br><span class="line"><span class="comment"># s.__ne__??</span></span><br><span class="line"></span><br><span class="line">ls = [<span class="string">"Hello"</span>,<span class="string">"Python"</span>,<span class="string">"Hello"</span>,<span class="string">"Python"</span>,<span class="string">"Hello"</span>,<span class="string">"Python"</span>]</span><br><span class="line">print(list(filter(s.__ne__, ls)))</span><br></pre></td></tr></table></figure>
 <pre><code>[&apos;Hello&apos;, &apos;Hello&apos;, &apos;Hello&apos;]
-</code></pre><h3 id="4-3-add"><a href="#4-3-add" class="headerlink" title="4.3 __add__"></a>4.3 <code>__add__</code></h3><figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int.__add__??</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="4-3-add"><a href="#4-3-add" class="headerlink" title="4.3 __add__"></a>4.3 <code>__add__</code></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int.__add__??</span><br></pre></td></tr></table></figure>
 <pre><code>Signature:      int.__add__(self, value, /)
 Call signature: int.__add__(*args, **kwargs)
 Type:           wrapper_descriptor
 String form:    &lt;slot wrapper &apos;__add__&apos; of &apos;int&apos; objects&gt;
 Namespace:      Python builtin
 Docstring:      Return self+value.
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="hljs-number">2</span>).__add__(<span class="hljs-number">3</span>), <span class="hljs-number">2</span> + <span class="hljs-number">3</span></span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">2</span>).__add__(<span class="number">3</span>), <span class="number">2</span> + <span class="number">3</span></span><br></pre></td></tr></table></figure>
 <pre><code>(5, 5)
 </code></pre><p>add를 정의 해서 객체간의 덧셈을 정의 할수 있음 (뺄셈으로 변경)</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">number</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, num)</span>:</span></span><br><span class="line">        self.num = num</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__add__</span><span class="hljs-params">(self, other)</span>:</span>           <span class="hljs-comment"># overriding</span></span><br><span class="line">        <span class="hljs-keyword">return</span> self.num - other.num</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">n1 = number(<span class="hljs-number">5</span>)</span><br><span class="line">n2 = number(<span class="hljs-number">7</span>)</span><br><span class="line">n1 + n2</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">number</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        self.num = num</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, other)</span>:</span>           <span class="comment"># overriding</span></span><br><span class="line">        <span class="keyword">return</span> self.num - other.num</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">n1 = number(<span class="number">5</span>)</span><br><span class="line">n2 = number(<span class="number">7</span>)</span><br><span class="line">n1 + n2</span><br></pre></td></tr></table></figure>
 <pre><code>-2
 </code></pre><p>add를 정의 해서 객체간의 덧셈을 정의 할수 있음 (곱셈으로 변경)</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">number2</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, num)</span>:</span></span><br><span class="line">        self.num = num</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__add__</span><span class="hljs-params">(self, other)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">return</span> self.num * other.num</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n1 = number(<span class="hljs-number">5</span>)</span><br><span class="line">n2 = number2(<span class="hljs-number">7</span>)</span><br><span class="line">n1 + n2</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">number2</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        self.num = num</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, other)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.num * other.num</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n1 = number(<span class="number">5</span>)</span><br><span class="line">n2 = number2(<span class="number">7</span>)</span><br><span class="line">n1 + n2</span><br></pre></td></tr></table></figure>
 <pre><code>-2
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n1 = number2(<span class="hljs-number">5</span>)</span><br><span class="line">n2 = number(<span class="hljs-number">7</span>)</span><br><span class="line">n1 + n2</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n1 = number2(<span class="number">5</span>)</span><br><span class="line">n2 = number(<span class="number">7</span>)</span><br><span class="line">n1 + n2</span><br></pre></td></tr></table></figure>
 <pre><code>35
 </code></pre><h3 id="4-4-str-repr"><a href="#4-4-str-repr" class="headerlink" title="4.4 __str__, __repr__"></a>4.4 <code>__str__</code>, <code>__repr__</code></h3><ul>
 <li><code>__str__</code>은 print로 객체를 출력할때 출력되는 문자열 데이터를 정의<ul>
@@ -362,765 +351,173 @@ Docstring:      Return self+value.
 </li>
 </ul>
 <p>number class에 <code>__str__</code>과 <code>__repr__</code>을 추가하여 객체를 출력할때 숫자 결과값이 나오도록 함</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Number</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, num)</span>:</span></span><br><span class="line">        self.num = num</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">return</span> str(self.num)</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__repr__</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">return</span> str(<span class="hljs-string">"Number(num="</span> + str(self.num) + <span class="hljs-string">")"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n = Number(<span class="hljs-number">5</span>)</span><br><span class="line">print(n)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Number</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        self.num = num</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> str(self.num)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> str(<span class="string">"Number(num="</span> + str(self.num) + <span class="string">")"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n = Number(<span class="number">5</span>)</span><br><span class="line">print(n)</span><br></pre></td></tr></table></figure>
 <pre><code>5
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n</span><br></pre></td></tr></table></figure>
 <pre><code>Number(num=5)
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n2 = Number(num=<span class="hljs-number">5</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n2</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n2 = Number(num=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n2</span><br></pre></td></tr></table></figure>
 <pre><code>Number(num=5)
 </code></pre><h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
 <li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
 </ul>
 <p><a href="https://nbviewer.jupyter.org/github/hyeshinoh/Study_Python/blob/master/python_06_class_intermediate.ipynb" target="_blank" rel="noopener">jupyter notebook으로 보기</a></p>
 
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/programming/">programming</a>, <a class="has-link-grey -link" href="/tags/python/">python</a>
-                </div>
-            </div>
-        </div>
-        
-        
-        
-        
-<div class="sharethis-inline-share-buttons"></div>
-<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5c334172a47fe500116a8ea8&amp;product=inline-share-buttons' async='async'></script>
+  </div>
+</article>
 
-        
-    </div>
-</div>
-
-
-
-
-
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/10/11/python_07_module & package/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">python 07. Python Module  &amp; Package</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/10/05/web_11_selenium_exercise/">
-                <span class="level-item">Web crawling exercise</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
-
-
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
-        
-<script>
-    var disqus_config = function () {
-        this.page.url = 'https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/';
-        this.page.identifier = '2018/10/07/python_06_class_intermediate/';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-    </div>
-</div>
-</div>
-                
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <nav class="level">
-            <div class="level-item has-text-centered">
-                <div>
-                    <img class="image is-128x128 has-mb-6" src="/images/avatar_panda.png" alt="우와팬더(Hyeshin Oh)">
-                    
-                    <p class="is-size-4 is-block">
-                        우와팬더(Hyeshin Oh)
-                    </p>
-                    
-                    
-                    <p class="is-size-6 is-block">
-                        데이터 사이언티스트
-                    </p>
-                    
-                    
-                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
-                        <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Seoul, Korea</span>
-                    </p>
-                    
-                </div>
-            </div>
-        </nav>
-        <nav class="level is-mobile">
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        Posts
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        155
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        Categories
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        8
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        Tags
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        34
-                    </p>
-                </div>
-            </div>
-        </nav>
-        <div class="level">
-            <a class="level-item button is-link is-rounded" href="http://github.com/hyeshinoh">
-                Follow</a>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/hyeshinoh">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Facebook" href="http://facebook.com/hyeshinoh">
-                
-                <i class="fab fa-facebook"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Twitter" href="http://twitter.com/hyeshinoh">
-                
-                <i class="fab fa-twitter"></i>
-                
-            </a>
-            
-        </div>
-        
-    </div>
-</div>
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Categories
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/1-TIL-Today-I-Learned/">
-            <span class="level-start">
-                <span class="level-item">1. TIL(Today I Learned)</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">89</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/">
-            <span class="level-start">
-                <span class="level-item">2. Data Science 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">66</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/2-수학/">
-            <span class="level-start">
-                <span class="level-item">2) 수학</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">23</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/3-파이썬-Python/">
-            <span class="level-start">
-                <span class="level-item">3) 파이썬 Python</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">22</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/4-알고리즘-Algorithm/">
-            <span class="level-start">
-                <span class="level-item">4) 알고리즘 Algorithm</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/5-데이터베이스-Database/">
-            <span class="level-start">
-                <span class="level-item">5) 데이터베이스 Database</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">5</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/6-웹-Web/">
-            <span class="level-start">
-                <span class="level-item">6) 웹 Web</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">12</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/7-Hexo-블로그/">
-            <span class="level-start">
-                <span class="level-item">7) Hexo 블로그</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li></ul></li>
-            </ul>
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
         </div>
     </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            Archives
-        </h3>
-        <ul class="menu-list">
+
+
+
         
-        <li>
-            <a class="level is-marginless" href="/archives/2019/04/">
-                <span class="level-start">
-                    <span class="level-item">April 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">3</span>
-                </span>
-            </a>
-        </li>
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
         
-        <li>
-            <a class="level is-marginless" href="/archives/2019/03/">
-                <span class="level-start">
-                    <span class="level-item">March 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">8</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/02/">
-                <span class="level-start">
-                    <span class="level-item">February 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">7</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/01/">
-                <span class="level-start">
-                    <span class="level-item">January 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">7</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/12/">
-                <span class="level-start">
-                    <span class="level-item">December 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">2</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/11/">
-                <span class="level-start">
-                    <span class="level-item">November 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">14</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/10/">
-                <span class="level-start">
-                    <span class="level-item">October 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">25</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/09/">
-                <span class="level-start">
-                    <span class="level-item">September 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">18</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/08/">
-                <span class="level-start">
-                    <span class="level-item">August 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">23</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/07/">
-                <span class="level-start">
-                    <span class="level-item">July 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">44</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/06/">
-                <span class="level-start">
-                    <span class="level-item">June 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">4</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
+      </ul>
     </div>
-</div>
-    
-    
-        <div class="column-right-shadow is-hidden-widescreen ">
-        
-            
-        
-            
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Recent
-        </h3>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-07T14:52:15.000Z">2019-04-07</time></div>
-                    <a href="/2019/04/07/2019-04-07-TIL/" class="has-link-black-ter is-size-6">2019-04-07-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/1-TIL-Today-I-Learned/">1. TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-07T14:35:53.000Z">2019-04-07</time></div>
-                    <a href="/2019/04/07/python_17_pandas_pivot/" class="has-link-black-ter is-size-6">python 17. Pandas - pivot &amp; pivot_table</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-05T14:35:53.000Z">2019-04-05</time></div>
-                    <a href="/2019/04/05/python_16_pandas_basic_2/" class="has-link-black-ter is-size-6">python 16. Pandas - basic(2)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-31T14:52:15.000Z">2019-03-31</time></div>
-                    <a href="/2019/03/31/2019-03-31-TIL/" class="has-link-black-ter is-size-6">2019-03-31-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/1-TIL-Today-I-Learned/">1. TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-30T14:35:53.000Z">2019-03-30</time></div>
-                    <a href="/2019/03/30/python_15_pandas_basic_1/" class="has-link-black-ter is-size-6">python 15. Pandas - basic(1)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#다룰-내용"><span class="toc-number">1.</span> <span class="toc-text">다룰 내용</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Getter-amp-Setter"><span class="toc-number"></span> <span class="toc-text">1. Getter &amp; Setter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Property-함수-이용"><span class="toc-number">1.</span> <span class="toc-text">1.1 Property 함수 이용</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-decorator-이용"><span class="toc-number">2.</span> <span class="toc-text">1.2 decorator 이용</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Private"><span class="toc-number"></span> <span class="toc-text">2. Private</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Private-function"><span class="toc-number">1.</span> <span class="toc-text">Private function</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-is-a-amp-has-a"><span class="toc-number"></span> <span class="toc-text">3. is a &amp; has a</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-is-a"><span class="toc-number">1.</span> <span class="toc-text">3.1 is a</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-has-a"><span class="toc-number">2.</span> <span class="toc-text">3.2 has a</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Magic-Special-Method"><span class="toc-number"></span> <span class="toc-text">4. Magic(Special) Method</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-eq"><span class="toc-number">1.</span> <span class="toc-text">4.1 __eq__</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-ne"><span class="toc-number">2.</span> <span class="toc-text">4.2 __ne__</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-add"><span class="toc-number">3.</span> <span class="toc-text">4.3 __add__</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-str-repr"><span class="toc-number">4.</span> <span class="toc-text">4.4 __str__, __repr__</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#참고자료"><span class="toc-number">4.1.</span> <span class="toc-text">참고자료</span></a></li></ol></li></ol>
     </div>
-</div>
 
-        
-            
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Tag Cloud
-        </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.5px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.5px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.83px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.17px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.5px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 15px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10.83px;">hexo</a> <a href="/tags/html/" style="font-size: 10.83px;">html</a> <a href="/tags/javascript/" style="font-size: 10.83px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10.83px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.33px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/numpy/" style="font-size: 11.67px;">numpy</a> <a href="/tags/pandas/" style="font-size: 11.67px;">pandas</a> <a href="/tags/programming/" style="font-size: 19.17px;">programming</a> <a href="/tags/python/" style="font-size: 18.33px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 12.5px;">selenium</a> <a href="/tags/web/" style="font-size: 16.67px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.17px;">web_crawling</a> <a href="/tags/귀찮은건-싫어/" style="font-size: 10px;">귀찮은건 싫어</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.33px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.83px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.17px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10.83px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 15.83px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&text=python 06. Python Class - Intermediate"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&title=python 06. Python Class - Intermediate"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&is_video=false&description=python 06. Python Class - Intermediate"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=python 06. Python Class - Intermediate&body=Check out this article: https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&title=python 06. Python Class - Intermediate"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&title=python 06. Python Class - Intermediate"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&title=python 06. Python Class - Intermediate"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&title=python 06. Python Class - Intermediate"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2018/10/07/python_06_class_intermediate/&name=python 06. Python Class - Intermediate&description=&lt;p&gt;&lt;a href=&#34;https://nbviewer.jupyter.org/github/hyeshinoh/Study_Python/blob/master/python_06_class_intermediate.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jupyter notebook으로 보기&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;다룰-내용&#34;&gt;&lt;a href=&#34;#다룰-내용&#34; class=&#34;headerlink&#34; title=&#34;다룰 내용&#34;&gt;&lt;/a&gt;다룰 내용&lt;/h3&gt;&lt;p&gt;python class - intermediate&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;getter &amp;amp; setter&lt;/li&gt;
+&lt;li&gt;private&lt;/li&gt;
+&lt;li&gt;is a / has a&lt;/li&gt;
+&lt;li&gt;magic method&lt;/li&gt;
+&lt;/ul&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
     </div>
-</div>
 
-        
-        </div>
-    
-</div>
-
-                
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
-    
-        
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Recent
-        </h3>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-07T14:52:15.000Z">2019-04-07</time></div>
-                    <a href="/2019/04/07/2019-04-07-TIL/" class="has-link-black-ter is-size-6">2019-04-07-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/1-TIL-Today-I-Learned/">1. TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-07T14:35:53.000Z">2019-04-07</time></div>
-                    <a href="/2019/04/07/python_17_pandas_pivot/" class="has-link-black-ter is-size-6">python 17. Pandas - pivot &amp; pivot_table</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-05T14:35:53.000Z">2019-04-05</time></div>
-                    <a href="/2019/04/05/python_16_pandas_basic_2/" class="has-link-black-ter is-size-6">python 16. Pandas - basic(2)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-31T14:52:15.000Z">2019-03-31</time></div>
-                    <a href="/2019/03/31/2019-03-31-TIL/" class="has-link-black-ter is-size-6">2019-03-31-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/1-TIL-Today-I-Learned/">1. TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-30T14:35:53.000Z">2019-03-30</time></div>
-                    <a href="/2019/03/30/python_15_pandas_basic_1/" class="has-link-black-ter is-size-6">python 15. Pandas - basic(1)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
+
+  </div>
 </div>
 
-    
         
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Tag Cloud
-        </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.5px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.5px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.83px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.17px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.5px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 15px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10.83px;">hexo</a> <a href="/tags/html/" style="font-size: 10.83px;">html</a> <a href="/tags/javascript/" style="font-size: 10.83px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10.83px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.33px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/numpy/" style="font-size: 11.67px;">numpy</a> <a href="/tags/pandas/" style="font-size: 11.67px;">pandas</a> <a href="/tags/programming/" style="font-size: 19.17px;">programming</a> <a href="/tags/python/" style="font-size: 18.33px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 12.5px;">selenium</a> <a href="/tags/web/" style="font-size: 16.67px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.17px;">web_crawling</a> <a href="/tags/귀찮은건-싫어/" style="font-size: 10px;">귀찮은건 싫어</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.33px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.83px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.17px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10.83px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 15.83px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
-    </div>
-</div>
-
-    
-    
-</div>
-
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="level">
-            <div class="level-start has-text-centered-mobile">
-                <a class="footer-logo is-block has-mb-6" href="/">
-                
-                    <img src="/images/logo.png" alt="python 06. Python Class - Intermediate" height="28">
-                
-                </a>
-                <p class="is-size-7">
-                &copy; 2019 우와팬더&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
-                </p>
-            </div>
-            <div class="level-end">
-            
-                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
-                        
-                        <i class="fab fa-creative-commons"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
-                        
-                        <i class="fab fa-creative-commons-by"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
-                        
-                        <i class="fab fa-github"></i>
-                        
-                    </a>
-                </p>
-                
-                </div>
-            
-            </div>
-        </div>
-    </div>
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 우와팬더
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </footer>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("en");</script>
 
-
-    
-    
-    
-    <script src="/js/animation.js"></script>
-    
-
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
-    
-
-    
-    
-
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
-            my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        });
-    });
-</script>
-
-
-    
-    
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    MathJax.Hub.Config({
-        'HTML-CSS': {matchFontHeight: false},
-        SVG: {matchFontHeight: false},
-        CommonHTML: {matchFontHeight: false}
-    });
-});
-</script>
-
-    
-    
-
-<a id="back-to-top" title="Back to Top" href="javascript:;">
-    <i class="fas fa-chevron-up"></i>
-</a>
-<script src="/js/back-to-top.js" defer></script>
-
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
-    <script src="/js/clipboard.js" defer></script>
-    
-
-    
-
-
-<script src="/js/main.js" defer></script>
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
     </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
-    
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-126954393-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'hyeshinoh';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {

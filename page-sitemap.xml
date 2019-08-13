@@ -7,15 +7,22 @@
     </url>
     
     <url>
-        <loc>https://hyeshinoh.github.io/about/</loc>
-        <lastmod>2018-07-11T12:04:28.000Z</lastmod>
+        <loc>https://hyeshinoh.github.io/search/</loc>
+        <lastmod>2019-08-13T14:13:02.121Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://hyeshinoh.github.io/categories/</loc>
-        <lastmod>2018-06-26T16:32:24.000Z</lastmod>
+        <lastmod>2019-08-13T14:11:56.599Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://hyeshinoh.github.io/about/</loc>
+        <lastmod>2018-07-11T12:04:28.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

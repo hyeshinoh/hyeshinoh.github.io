@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html  lang="en">
+<html lang=en>
 <head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-<title>Web crawling - Selenium Intermediate - 우와팬더의 블로그</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-
-
-
-
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="Selenium - Intermediate다룰 내용 Selenium 웹 데이터 스크래핑 Selenium 네이버 메일 크롤링 Selenium 이미지 스크린샷">
 <meta name="keywords" content="programming,web,crawling,web_crawling,웹크롤링,selenium">
 <meta property="og:type" content="article">
@@ -30,159 +27,148 @@
 <meta name="twitter:title" content="Web crawling - Selenium Intermediate">
 <meta name="twitter:description" content="Selenium - Intermediate다룰 내용 Selenium 웹 데이터 스크래핑 Selenium 네이버 메일 크롤링 Selenium 이미지 스크린샷">
 <meta name="twitter:image" content="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_001.png?raw=true">
-<meta property="fb:app_id" content="hyeshinoh">
-
-
-
-<link rel="alternative" href="hyeshinoh" title="Web crawling - Selenium Intermediate" type="application/atom+xml">
-
-
-
-<link rel="icon" href="/images/favicon.png">
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
-
-
     
     
+        
+          
+              <link rel="shortcut icon" href="/images/favicon_panda.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
     
-    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    <!-- title -->
+    <title>Web crawling - Selenium Intermediate</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
     
-
+      <link rel="stylesheet" href="/css/rtl.css">
     
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-    
-
-    
-    
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
-
-
-    
-    
-    
-    
-
-<link rel="stylesheet" href="/css/back-to-top.css">
-
-
-    
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126954393-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-126954393-1');
-</script>
-
-
+    <!-- rss -->
     
     
+      <link rel="alternate" href="/atom.xml" title="우와팬더의 블로그" type="application/atom+xml" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
-    
-
-    
-    
-<link rel="stylesheet" href="/css/progressbar.css">
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-
-    
-    
-    
-
-    
-
-
-<link rel="stylesheet" href="/css/style.css">
-
-    <meta property="fb:app_id" content="346594012616363" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
-<body class="is-3-column">
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav class="navbar navbar-main">
-    <div class="container">
-        <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="/">
-            
-                <img src="/images/logo.png" alt="Web crawling - Selenium Intermediate" height="28">
-            
-            </a>
-        </div>
-        <div class="navbar-menu">
-            
-            <div class="navbar-start">
-                
-                <a class="navbar-item"
-                href="/">Home</a>
-                
-                <a class="navbar-item"
-                href="/archives">Archives</a>
-                
-                <a class="navbar-item"
-                href="/categories">Categories</a>
-                
-                <a class="navbar-item"
-                href="/tags">Tags</a>
-                
-                <a class="navbar-item"
-                href="/about">About</a>
-                
-            </div>
-            
-            <div class="navbar-end">
-                
-                
-                
-                <a class="navbar-item search" title="Search" href="javascript:;">
-                    <i class="fas fa-search"></i>
-                </a>
-                
-            </div>
-        </div>
+
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/10/04/2018-10-04-TIL/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/10/03/2018-10-02-TIL/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&text=Web crawling - Selenium Intermediate"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&title=Web crawling - Selenium Intermediate"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&is_video=false&description=Web crawling - Selenium Intermediate"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Web crawling - Selenium Intermediate&body=Check out this article: https://hyeshinoh.github.io/2018/10/04/web_10_selenium/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&title=Web crawling - Selenium Intermediate"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&title=Web crawling - Selenium Intermediate"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&title=Web crawling - Selenium Intermediate"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&title=Web crawling - Selenium Intermediate"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&name=Web crawling - Selenium Intermediate&description=&lt;h1 id=&#34;Selenium-Intermediate&#34;&gt;&lt;a href=&#34;#Selenium-Intermediate&#34; class=&#34;headerlink&#34; title=&#34;Selenium - Intermediate&#34;&gt;&lt;/a&gt;Selenium - Intermediate&lt;/h1&gt;&lt;h4 id=&#34;다룰-내용&#34;&gt;&lt;a href=&#34;#다룰-내용&#34; class=&#34;headerlink&#34; title=&#34;다룰 내용&#34;&gt;&lt;/a&gt;다룰 내용&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;Selenium 웹 데이터 스크래핑&lt;/li&gt;
+&lt;li&gt;Selenium 네이버 메일 크롤링&lt;/li&gt;
+&lt;li&gt;Selenium 이미지 스크린샷&lt;/li&gt;
+&lt;/ol&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
     </div>
-</nav>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Selenium-Intermediate"><span class="toc-number">1.</span> <span class="toc-text">Selenium - Intermediate</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#다룰-내용"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">다룰 내용</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Selenium-웹-데이터-스크래핑"><span class="toc-number">1.1.</span> <span class="toc-text">1. Selenium 웹 데이터 스크래핑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-webdriver-실행하고-gmarket-best-페이지로-이동"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 webdriver 실행하고 gmarket best 페이지로 이동</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-best-200-상품의-정보-스크래핑"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 best 200 상품의 정보 스크래핑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#200개-상품-정보-저장하기"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">200개 상품 정보 저장하기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#200개-상품의-이름-가격-할인가격-링크-pandas-dataframe으로-만들기"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">200개 상품의 이름/가격/할인가격/링크 pandas dataframe으로 만들기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sale하지-않는-품목에-o-price-채우기"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">sale하지 않는 품목에 o price 채우기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#할인율-column-추가하기"><span class="toc-number">1.1.2.4.</span> <span class="toc-text">할인율 column 추가하기</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Selenium-네이버-메일-크롤링"><span class="toc-number">1.2.</span> <span class="toc-text">2. Selenium 네이버 메일 크롤링</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-webdriver-실행하고-naver로-이동"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 webdriver 실행하고 naver로 이동</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-네이버-로그인하기"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 네이버 로그인하기</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#아이디-패스워드-입력"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">아이디 패스워드 입력</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-네이버-메일로-이동해서-메일-데이터-가져오기"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 네이버 메일로 이동해서 메일 데이터 가져오기</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#전체-메일-갯수-가져오기"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">전체 메일 갯수 가져오기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#안-읽은-메일-갯수-가져오기"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">안 읽은 메일 갯수 가져오기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#메일-데이터-가져오기-제목-보낸사람-메일링크"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">메일 데이터 가져오기 - 제목, 보낸사람, 메일링크</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Selenium-이미지-스크린샷"><span class="toc-number">1.3.</span> <span class="toc-text">3. Selenium 이미지 스크린샷</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-pillow-패키지"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 pillow 패키지</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-webdriver-실행하고-youtube-영상-스크린샷-저장"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 webdriver 실행하고 youtube 영상 스크린샷 저장</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-스크린샷-이미지-편집"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3 스크린샷 이미지 편집</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#저장한-스크린샷-이미지-확인"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">저장한 스크린샷 이미지 확인</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#영상이-나오는-영역만-자르기"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">영상이 나오는 영역만 자르기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#썸네일로-만들기"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">썸네일로 만들기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#참고자료"><span class="toc-number">1.3.3.4.</span> <span class="toc-text">참고자료</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
     
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
     
-    <div class="card-content article ">
+    <h1 class="posttitle" itemprop="name headline">
+        Web crawling - Selenium Intermediate
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">우와팬더의 블로그</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-10-04T10:12:41.000Z" itemprop="datePublished">2018-10-04</time>
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-10-04T10:12:41.000Z">2018-10-04</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/2-Data-Science-공부/6-웹-Web/">6) 웹 Web</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    15 minutes read (About 2274 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                Web crawling - Selenium Intermediate
-            
-        </h1>
-        <div class="content">
-            <h1 id="Selenium-Intermediate"><a href="#Selenium-Intermediate" class="headerlink" title="Selenium - Intermediate"></a>Selenium - Intermediate</h1><h4 id="다룰-내용"><a href="#다룰-내용" class="headerlink" title="다룰 내용"></a>다룰 내용</h4><ol>
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> › <a class="category-link" href="/categories/2-Data-Science-공부/6-웹-Web/">6) 웹 Web</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/crawling/">crawling</a>, <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/selenium/">selenium</a>, <a class="tag-link" href="/tags/web/">web</a>, <a class="tag-link" href="/tags/web-crawling/">web_crawling</a>, <a class="tag-link" href="/tags/웹크롤링/">웹크롤링</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="Selenium-Intermediate"><a href="#Selenium-Intermediate" class="headerlink" title="Selenium - Intermediate"></a>Selenium - Intermediate</h1><h4 id="다룰-내용"><a href="#다룰-내용" class="headerlink" title="다룰 내용"></a>다룰 내용</h4><ol>
 <li>Selenium 웹 데이터 스크래핑</li>
 <li>Selenium 네이버 메일 크롤링</li>
 <li>Selenium 이미지 스크린샷</li>
@@ -192,12 +178,12 @@
 <li>gmarket 베스트셀러 데이터 수집하기</li>
 <li>gmarket best의 200개 상품의 이름/가격/할인가격/링크 가져오기</li>
 </ul>
-<h3 id="1-1-webdriver-실행하고-gmarket-best-페이지로-이동"><a href="#1-1-webdriver-실행하고-gmarket-best-페이지로-이동" class="headerlink" title="1.1 webdriver 실행하고 gmarket best 페이지로 이동"></a>1.1 webdriver 실행하고 gmarket best 페이지로 이동</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> selenium <span class="hljs-keyword">import</span> webdriver</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="hljs-string">"http://corners.gmarket.co.kr/Bestsellers"</span></span><br><span class="line">driver = webdriver.Chrome() </span><br><span class="line">driver.get(url)</span><br></pre></td></tr></table></figure>
+<h3 id="1-1-webdriver-실행하고-gmarket-best-페이지로-이동"><a href="#1-1-webdriver-실행하고-gmarket-best-페이지로-이동" class="headerlink" title="1.1 webdriver 실행하고 gmarket best 페이지로 이동"></a>1.1 webdriver 실행하고 gmarket best 페이지로 이동</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"http://corners.gmarket.co.kr/Bestsellers"</span></span><br><span class="line">driver = webdriver.Chrome() </span><br><span class="line">driver.get(url)</span><br></pre></td></tr></table></figure>
 <p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_001.png?raw=true" alt=""></p>
-<h3 id="1-2-best-200-상품의-정보-스크래핑"><a href="#1-2-best-200-상품의-정보-스크래핑" class="headerlink" title="1.2 best 200 상품의 정보 스크래핑"></a>1.2 best 200 상품의 정보 스크래핑</h3><h4 id="200개-상품-정보-저장하기"><a href="#200개-상품-정보-저장하기" class="headerlink" title="200개 상품 정보 저장하기"></a>200개 상품 정보 저장하기</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">items = driver.find_elements_by_css_selector(<span class="hljs-string">".best-list:nth-child(3) &gt; ul &gt; li"</span>)</span><br><span class="line"></span><br><span class="line">len(items)</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-best-200-상품의-정보-스크래핑"><a href="#1-2-best-200-상품의-정보-스크래핑" class="headerlink" title="1.2 best 200 상품의 정보 스크래핑"></a>1.2 best 200 상품의 정보 스크래핑</h3><h4 id="200개-상품-정보-저장하기"><a href="#200개-상품-정보-저장하기" class="headerlink" title="200개 상품 정보 저장하기"></a>200개 상품 정보 저장하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">items = driver.find_elements_by_css_selector(<span class="string">".best-list:nth-child(3) &gt; ul &gt; li"</span>)</span><br><span class="line"></span><br><span class="line">len(items)</span><br></pre></td></tr></table></figure>
 <pre><code>200
-</code></pre><h4 id="200개-상품의-이름-가격-할인가격-링크-pandas-dataframe으로-만들기"><a href="#200개-상품의-이름-가격-할인가격-링크-pandas-dataframe으로-만들기" class="headerlink" title="200개 상품의 이름/가격/할인가격/링크 pandas dataframe으로 만들기"></a>200개 상품의 이름/가격/할인가격/링크 pandas dataframe으로 만들기</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dict_list = []</span><br><span class="line"><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> items:</span><br><span class="line">    dict_list.append(&#123;</span><br><span class="line">        <span class="hljs-string">"title"</span>: item.find_element_by_css_selector(<span class="hljs-string">".itemname"</span>).text,</span><br><span class="line">        <span class="hljs-string">"s price"</span>: item.find_element_by_css_selector(<span class="hljs-string">".s-price"</span>).text.split(<span class="hljs-string">" "</span>)[<span class="hljs-number">0</span>].replace(<span class="hljs-string">","</span>,<span class="hljs-string">""</span>)[:<span class="hljs-number">-1</span>],</span><br><span class="line">        <span class="hljs-string">"o price"</span>: item.find_element_by_css_selector(<span class="hljs-string">".o-price"</span>).text.split(<span class="hljs-string">" "</span>)[<span class="hljs-number">0</span>].replace(<span class="hljs-string">","</span>,<span class="hljs-string">""</span>)[:<span class="hljs-number">-1</span>],</span><br><span class="line">        <span class="hljs-string">"link"</span>: item.find_element_by_css_selector(<span class="hljs-string">".itemname"</span>).get_attribute(<span class="hljs-string">"href"</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(dict_list)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="200개-상품의-이름-가격-할인가격-링크-pandas-dataframe으로-만들기"><a href="#200개-상품의-이름-가격-할인가격-링크-pandas-dataframe으로-만들기" class="headerlink" title="200개 상품의 이름/가격/할인가격/링크 pandas dataframe으로 만들기"></a>200개 상품의 이름/가격/할인가격/링크 pandas dataframe으로 만들기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dict_list = []</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">    dict_list.append(&#123;</span><br><span class="line">        <span class="string">"title"</span>: item.find_element_by_css_selector(<span class="string">".itemname"</span>).text,</span><br><span class="line">        <span class="string">"s price"</span>: item.find_element_by_css_selector(<span class="string">".s-price"</span>).text.split(<span class="string">" "</span>)[<span class="number">0</span>].replace(<span class="string">","</span>,<span class="string">""</span>)[:<span class="number">-1</span>],</span><br><span class="line">        <span class="string">"o price"</span>: item.find_element_by_css_selector(<span class="string">".o-price"</span>).text.split(<span class="string">" "</span>)[<span class="number">0</span>].replace(<span class="string">","</span>,<span class="string">""</span>)[:<span class="number">-1</span>],</span><br><span class="line">        <span class="string">"link"</span>: item.find_element_by_css_selector(<span class="string">".itemname"</span>).get_attribute(<span class="string">"href"</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(dict_list)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -247,9 +233,9 @@
 </tbody>
 </table>
 <h4 id="sale하지-않는-품목에-o-price-채우기"><a href="#sale하지-않는-품목에-o-price-채우기" class="headerlink" title="sale하지 않는 품목에 o price 채우기"></a>sale하지 않는 품목에 o price 채우기</h4><p>o price가 NaN인지(True) 아닌지 (False) is_nodata에 저장 </p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">is_nodata = df[<span class="hljs-string">"o price"</span>] == <span class="hljs-string">""</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">is_nodata = df[<span class="string">"o price"</span>] == <span class="string">""</span></span><br></pre></td></tr></table></figure>
 <p>비어있는 o price 칸에 s price의 값을 넣기</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="hljs-string">"s price"</span>][is_nodata] <span class="hljs-comment"># `df["s price"]`에서 is_nodata가 true인 행</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"s price"</span>][is_nodata] <span class="comment"># `df["s price"]`에서 is_nodata가 true인 행</span></span><br></pre></td></tr></table></figure>
 <pre><code>9       13800
 27      24900
 30       5900
@@ -282,7 +268,7 @@
 192     12700
 198     69000
 Name: s price, dtype: object
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="hljs-string">"o price"</span>][is_nodata] = df[<span class="hljs-string">"s price"</span>][is_nodata]</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"o price"</span>][is_nodata] = df[<span class="string">"s price"</span>][is_nodata]</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -331,9 +317,9 @@ Name: s price, dtype: object
 </tr>
 </tbody>
 </table>
-<h4 id="할인율-column-추가하기"><a href="#할인율-column-추가하기" class="headerlink" title="할인율 column 추가하기"></a>할인율 column 추가하기</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="hljs-string">"o price"</span>] = df[<span class="hljs-string">"o price"</span>].astype(<span class="hljs-string">"int"</span>)</span><br><span class="line">df[<span class="hljs-string">"s price"</span>] = df[<span class="hljs-string">"s price"</span>].astype(<span class="hljs-string">"int"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="hljs-string">"sale"</span>] = round((<span class="hljs-number">1</span> - (df[<span class="hljs-string">"s price"</span>] / df[<span class="hljs-string">"o price"</span>])), <span class="hljs-number">2</span>)*<span class="hljs-number">100</span></span><br><span class="line">df[<span class="hljs-string">"sale"</span>] = df[<span class="hljs-string">"sale"</span>].astype(<span class="hljs-string">"int"</span>).astype(<span class="hljs-string">"str"</span>)+<span class="hljs-string">"%"</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
+<h4 id="할인율-column-추가하기"><a href="#할인율-column-추가하기" class="headerlink" title="할인율 column 추가하기"></a>할인율 column 추가하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"o price"</span>] = df[<span class="string">"o price"</span>].astype(<span class="string">"int"</span>)</span><br><span class="line">df[<span class="string">"s price"</span>] = df[<span class="string">"s price"</span>].astype(<span class="string">"int"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"sale"</span>] = round((<span class="number">1</span> - (df[<span class="string">"s price"</span>] / df[<span class="string">"o price"</span>])), <span class="number">2</span>)*<span class="number">100</span></span><br><span class="line">df[<span class="string">"sale"</span>] = df[<span class="string">"sale"</span>].astype(<span class="string">"int"</span>).astype(<span class="string">"str"</span>)+<span class="string">"%"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -388,34 +374,34 @@ Name: s price, dtype: object
 </tr>
 </tbody>
 </table>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
 <h2 id="2-Selenium-네이버-메일-크롤링"><a href="#2-Selenium-네이버-메일-크롤링" class="headerlink" title="2. Selenium 네이버 메일 크롤링"></a>2. Selenium 네이버 메일 크롤링</h2><ul>
 <li>네이버 페이지로 이동</li>
 <li>아이디 패스워드로 로그인</li>
 <li>전체 메일 수, 안읽은 메일 수를 가져오기</li>
 <li>메일 제목과 요약을 데이터프레임으로 만들기</li>
 </ul>
-<h3 id="2-1-webdriver-실행하고-naver로-이동"><a href="#2-1-webdriver-실행하고-naver로-이동" class="headerlink" title="2.1 webdriver 실행하고 naver로 이동"></a>2.1 webdriver 실행하고 naver로 이동</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">main_url = <span class="hljs-string">"http://naver.com"</span></span><br><span class="line">mail_url = <span class="hljs-string">"http://mail.naver.com"</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 네이버 페이지로 이동</span></span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.get(main_url)</span><br></pre></td></tr></table></figure>
+<h3 id="2-1-webdriver-실행하고-naver로-이동"><a href="#2-1-webdriver-실행하고-naver로-이동" class="headerlink" title="2.1 webdriver 실행하고 naver로 이동"></a>2.1 webdriver 실행하고 naver로 이동</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">main_url = <span class="string">"http://naver.com"</span></span><br><span class="line">mail_url = <span class="string">"http://mail.naver.com"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 네이버 페이지로 이동</span></span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.get(main_url)</span><br></pre></td></tr></table></figure>
 <p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_002.png?raw=true" alt=""></p>
 <h3 id="2-2-네이버-로그인하기"><a href="#2-2-네이버-로그인하기" class="headerlink" title="2.2 네이버 로그인하기"></a>2.2 네이버 로그인하기</h3><h4 id="아이디-패스워드-입력"><a href="#아이디-패스워드-입력" class="headerlink" title="아이디 패스워드 입력"></a>아이디 패스워드 입력</h4><p>비밀번호는 노출해서는 안되므로 pickle 파일로 저장해서 불러오기</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> pickle</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># with open("naver_pw.plk", "wb") as f:</span></span><br><span class="line"><span class="hljs-comment">#     pickle.dump("본인의 네이버 pw", f)</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">my_id = <span class="hljs-string">"panda706"</span></span><br><span class="line">my_pw = pickle.load(open(<span class="hljs-string">"naver_pw.plk"</span>, <span class="hljs-string">"rb"</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># with open("naver_pw.plk", "wb") as f:</span></span><br><span class="line"><span class="comment">#     pickle.dump("본인의 네이버 pw", f)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">my_id = <span class="string">"panda706"</span></span><br><span class="line">my_pw = pickle.load(open(<span class="string">"naver_pw.plk"</span>, <span class="string">"rb"</span>))</span><br></pre></td></tr></table></figure>
 <p>로그인 버튼 클릭 &amp; 로그인 페이지로 이동</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="hljs-string">".lg_local_btn"</span>).click()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="string">".lg_local_btn"</span>).click()</span><br></pre></td></tr></table></figure>
 <p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_003.png?raw=true" alt=""></p>
 <p>아이디와 패스워드 넣고 로그인 버튼 클릭하기  </p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="hljs-string">"#id"</span>).send_keys(my_id)</span><br><span class="line">driver.find_element_by_css_selector(<span class="hljs-string">"#pw"</span>).send_keys(my_pw)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="hljs-string">".btn_global"</span>).click()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="string">"#id"</span>).send_keys(my_id)</span><br><span class="line">driver.find_element_by_css_selector(<span class="string">"#pw"</span>).send_keys(my_pw)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="string">".btn_global"</span>).click()</span><br></pre></td></tr></table></figure>
 <p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_004.png?raw=true" alt=""></p>
-<h3 id="2-3-네이버-메일로-이동해서-메일-데이터-가져오기"><a href="#2-3-네이버-메일로-이동해서-메일-데이터-가져오기" class="headerlink" title="2.3 네이버 메일로 이동해서 메일 데이터 가져오기"></a>2.3 네이버 메일로 이동해서 메일 데이터 가져오기</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.get(mail_url)</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-네이버-메일로-이동해서-메일-데이터-가져오기"><a href="#2-3-네이버-메일로-이동해서-메일-데이터-가져오기" class="headerlink" title="2.3 네이버 메일로 이동해서 메일 데이터 가져오기"></a>2.3 네이버 메일로 이동해서 메일 데이터 가져오기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.get(mail_url)</span><br></pre></td></tr></table></figure>
 <p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_005.png?raw=true" alt=""></p>
-<h4 id="전체-메일-갯수-가져오기"><a href="#전체-메일-갯수-가져오기" class="headerlink" title="전체 메일 갯수 가져오기"></a>전체 메일 갯수 가져오기</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">total_mail_count = driver.find_element_by_css_selector(<span class="hljs-string">"#headTotalNum"</span>).text</span><br><span class="line">total_mail_count</span><br></pre></td></tr></table></figure>
+<h4 id="전체-메일-갯수-가져오기"><a href="#전체-메일-갯수-가져오기" class="headerlink" title="전체 메일 갯수 가져오기"></a>전체 메일 갯수 가져오기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">total_mail_count = driver.find_element_by_css_selector(<span class="string">"#headTotalNum"</span>).text</span><br><span class="line">total_mail_count</span><br></pre></td></tr></table></figure>
 <pre><code>&apos;110&apos;
-</code></pre><h4 id="안-읽은-메일-갯수-가져오기"><a href="#안-읽은-메일-갯수-가져오기" class="headerlink" title="안 읽은 메일 갯수 가져오기"></a>안 읽은 메일 갯수 가져오기</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unread_mail_count = driver.find_element_by_css_selector(<span class="hljs-string">"#headUnreadNum"</span>).text</span><br><span class="line">unread_mail_count</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="안-읽은-메일-갯수-가져오기"><a href="#안-읽은-메일-갯수-가져오기" class="headerlink" title="안 읽은 메일 갯수 가져오기"></a>안 읽은 메일 갯수 가져오기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unread_mail_count = driver.find_element_by_css_selector(<span class="string">"#headUnreadNum"</span>).text</span><br><span class="line">unread_mail_count</span><br></pre></td></tr></table></figure>
 <pre><code>&apos;105&apos;
-</code></pre><h4 id="메일-데이터-가져오기-제목-보낸사람-메일링크"><a href="#메일-데이터-가져오기-제목-보낸사람-메일링크" class="headerlink" title="메일 데이터 가져오기 - 제목, 보낸사람, 메일링크"></a>메일 데이터 가져오기 - 제목, 보낸사람, 메일링크</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mails = driver.find_elements_by_css_selector(<span class="hljs-string">".mailList &gt; li"</span>)</span><br><span class="line">df = pd.DataFrame(columns = [<span class="hljs-string">"제목"</span>, <span class="hljs-string">"보낸사람"</span>, <span class="hljs-string">"메일링크"</span>])</span><br><span class="line"><span class="hljs-keyword">for</span> mail <span class="hljs-keyword">in</span> mails:</span><br><span class="line">    title = mail.find_element_by_css_selector(<span class="hljs-string">".mail_title"</span>).text</span><br><span class="line">    name = mail.find_element_by_css_selector(<span class="hljs-string">".name"</span>).text</span><br><span class="line">    link = mail.find_element_by_css_selector(<span class="hljs-string">".subject &gt; a"</span>).get_attribute(<span class="hljs-string">"href"</span>)</span><br><span class="line">    df.loc[len(df)] = &#123;<span class="hljs-string">"제목"</span>:title, <span class="hljs-string">"보낸사람"</span>:name, <span class="hljs-string">"메일링크"</span>:link&#125;</span><br><span class="line">    </span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="메일-데이터-가져오기-제목-보낸사람-메일링크"><a href="#메일-데이터-가져오기-제목-보낸사람-메일링크" class="headerlink" title="메일 데이터 가져오기 - 제목, 보낸사람, 메일링크"></a>메일 데이터 가져오기 - 제목, 보낸사람, 메일링크</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mails = driver.find_elements_by_css_selector(<span class="string">".mailList &gt; li"</span>)</span><br><span class="line">df = pd.DataFrame(columns = [<span class="string">"제목"</span>, <span class="string">"보낸사람"</span>, <span class="string">"메일링크"</span>])</span><br><span class="line"><span class="keyword">for</span> mail <span class="keyword">in</span> mails:</span><br><span class="line">    title = mail.find_element_by_css_selector(<span class="string">".mail_title"</span>).text</span><br><span class="line">    name = mail.find_element_by_css_selector(<span class="string">".name"</span>).text</span><br><span class="line">    link = mail.find_element_by_css_selector(<span class="string">".subject &gt; a"</span>).get_attribute(<span class="string">"href"</span>)</span><br><span class="line">    df.loc[len(df)] = &#123;<span class="string">"제목"</span>:title, <span class="string">"보낸사람"</span>:name, <span class="string">"메일링크"</span>:link&#125;</span><br><span class="line">    </span><br><span class="line">df</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -518,7 +504,7 @@ Name: s price, dtype: object
 </tr>
 </tbody>
 </table>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
 <h2 id="3-Selenium-이미지-스크린샷"><a href="#3-Selenium-이미지-스크린샷" class="headerlink" title="3. Selenium 이미지 스크린샷"></a>3. Selenium 이미지 스크린샷</h2><ul>
 <li>youtube 페이지를 이미지로 스크린샷을 만들기</li>
 <li>영상 있는 부분의 위치를 파악</li>
@@ -538,794 +524,199 @@ Name: s price, dtype: object
 </ul>
 </li>
 </ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image <span class="hljs-keyword">as</span> pil</span><br><span class="line"><span class="hljs-keyword">import</span> time</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image <span class="keyword">as</span> pil</span><br><span class="line"><span class="keyword">import</span> time</span><br></pre></td></tr></table></figure>
 <h3 id="3-2-webdriver-실행하고-youtube-영상-스크린샷-저장"><a href="#3-2-webdriver-실행하고-youtube-영상-스크린샷-저장" class="headerlink" title="3.2 webdriver 실행하고 youtube 영상 스크린샷 저장"></a>3.2 webdriver 실행하고 youtube 영상 스크린샷 저장</h3><p>스크린샷을 저장할 “WWDC 2018 Keynote - Apple” 영상의 url을 저장</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="hljs-string">"https://www.youtube.com/watch?v=UThGcWBIMpU&amp;t=500s"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"https://www.youtube.com/watch?v=UThGcWBIMpU&amp;t=500s"</span></span><br></pre></td></tr></table></figure>
 <p>webdriver 실행하고 영상 실행 화면을 스크린샷</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.get(url)</span><br><span class="line">time.sleep(<span class="hljs-number">1</span>)</span><br><span class="line">driver.save_screenshot(<span class="hljs-string">"screenshot.png"</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> idx <span class="hljs-keyword">in</span> range(<span class="hljs-number">3</span>):</span><br><span class="line">    time.sleep(<span class="hljs-number">1</span>)</span><br><span class="line">    driver.save_screenshot(<span class="hljs-string">"screenshot"</span> + str(idx) + <span class="hljs-string">".png"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.get(url)</span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line">driver.save_screenshot(<span class="string">"screenshot.png"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> idx <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    driver.save_screenshot(<span class="string">"screenshot"</span> + str(idx) + <span class="string">".png"</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>True
 </code></pre><h3 id="3-3-스크린샷-이미지-편집"><a href="#3-3-스크린샷-이미지-편집" class="headerlink" title="3.3 스크린샷 이미지 편집"></a>3.3 스크린샷 이미지 편집</h3><h4 id="저장한-스크린샷-이미지-확인"><a href="#저장한-스크린샷-이미지-확인" class="headerlink" title="저장한 스크린샷 이미지 확인"></a>저장한 스크린샷 이미지 확인</h4><p>스크린샷을 뜬 이미지는 아래와 같이 브라우저 전체를 담고 있음</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil.open(<span class="hljs-string">"screenshot.png"</span>)</span><br><span class="line">print(pil_im.size)</span><br><span class="line">pil_im</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil.open(<span class="string">"screenshot.png"</span>)</span><br><span class="line">print(pil_im.size)</span><br><span class="line">pil_im</span><br></pre></td></tr></table></figure>
 <pre><code>(2400, 1290)
 </code></pre><img src="/2018/10/04/web_10_selenium/output_60_1.png">
 <h4 id="영상이-나오는-영역만-자르기"><a href="#영상이-나오는-영역만-자르기" class="headerlink" title="영상이 나오는 영역만 자르기"></a>영상이 나오는 영역만 자르기</h4><p>영상이 재생되는 영역의 시작점과 크기를 구하기</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">element = driver.find_element_by_css_selector(<span class="hljs-string">"#player-container"</span>)</span><br><span class="line">location = element.location</span><br><span class="line">size = element.size</span><br><span class="line">location, size</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">element = driver.find_element_by_css_selector(<span class="string">"#player-container"</span>)</span><br><span class="line">location = element.location</span><br><span class="line">size = element.size</span><br><span class="line">location, size</span><br></pre></td></tr></table></figure>
 <pre><code>({&apos;x&apos;: 24, &apos;y&apos;: 80}, {&apos;height&apos;: 408, &apos;width&apos;: 726})
 </code></pre><p>이미지 잘라내기</p>
 <ul>
 <li>top, bottom, left, right를 구해서 잘라낼 area 지정<br>(retina display의 경우: 각각 곱하기 2)</li>
 </ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">left = location[<span class="hljs-string">"x"</span>]*<span class="hljs-number">2</span></span><br><span class="line">top = location [<span class="hljs-string">"y"</span>]*<span class="hljs-number">2</span></span><br><span class="line">right = left + size[<span class="hljs-string">"width"</span>]*<span class="hljs-number">2</span></span><br><span class="line">bottom = top + size[<span class="hljs-string">"height"</span>]*<span class="hljs-number">2</span></span><br><span class="line">area = (left, top, right, bottom)</span><br><span class="line">area</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">left = location[<span class="string">"x"</span>]*<span class="number">2</span></span><br><span class="line">top = location [<span class="string">"y"</span>]*<span class="number">2</span></span><br><span class="line">right = left + size[<span class="string">"width"</span>]*<span class="number">2</span></span><br><span class="line">bottom = top + size[<span class="string">"height"</span>]*<span class="number">2</span></span><br><span class="line">area = (left, top, right, bottom)</span><br><span class="line">area</span><br></pre></td></tr></table></figure>
 <pre><code>(48, 160, 1500, 976)
 </code></pre><p>이미지 잘라내기</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil_im.crop(area)</span><br><span class="line">pil_im.save(<span class="hljs-string">"screenshot_element.png"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil_im.crop(area)</span><br><span class="line">pil_im.save(<span class="string">"screenshot_element.png"</span>)</span><br></pre></td></tr></table></figure>
 <p>잘라낸 결과 이미지</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil.open(<span class="hljs-string">"screenshot_element.png"</span>)</span><br><span class="line">pil_im</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil.open(<span class="string">"screenshot_element.png"</span>)</span><br><span class="line">pil_im</span><br></pre></td></tr></table></figure>
 <img src="/2018/10/04/web_10_selenium/output_69_0.png">
 <p>잘라낸 부분에서 하단의 메뉴바 부분까지 잘라내기</p>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">element = driver.find_element_by_css_selector(<span class="hljs-string">".ytp-chrome-bottom"</span>)</span><br><span class="line">playbar_height = element.size[<span class="hljs-string">"height"</span>]</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">left = location[<span class="hljs-string">"x"</span>] * <span class="hljs-number">2</span></span><br><span class="line">top = location [<span class="hljs-string">"y"</span>] * <span class="hljs-number">2</span></span><br><span class="line">right = left + size[<span class="hljs-string">"width"</span>] * <span class="hljs-number">2</span></span><br><span class="line">bottom = top + size[<span class="hljs-string">"height"</span>] *<span class="hljs-number">2</span> - playbar_height *<span class="hljs-number">2</span></span><br><span class="line">area = (left, top, right, bottom)</span><br><span class="line">area</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">element = driver.find_element_by_css_selector(<span class="string">".ytp-chrome-bottom"</span>)</span><br><span class="line">playbar_height = element.size[<span class="string">"height"</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">left = location[<span class="string">"x"</span>] * <span class="number">2</span></span><br><span class="line">top = location [<span class="string">"y"</span>] * <span class="number">2</span></span><br><span class="line">right = left + size[<span class="string">"width"</span>] * <span class="number">2</span></span><br><span class="line">bottom = top + size[<span class="string">"height"</span>] *<span class="number">2</span> - playbar_height *<span class="number">2</span></span><br><span class="line">area = (left, top, right, bottom)</span><br><span class="line">area</span><br></pre></td></tr></table></figure>
 <pre><code>(48, 160, 1500, 898)
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil.open(<span class="hljs-string">"screenshot.png"</span>)</span><br><span class="line">pil_im = pil_im.crop(area)</span><br><span class="line">pil_im.save(<span class="hljs-string">"screenshot_element2.png"</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil.open(<span class="hljs-string">"screenshot_element2.png"</span>)</span><br><span class="line">pil_im</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil.open(<span class="string">"screenshot.png"</span>)</span><br><span class="line">pil_im = pil_im.crop(area)</span><br><span class="line">pil_im.save(<span class="string">"screenshot_element2.png"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pil_im = pil.open(<span class="string">"screenshot_element2.png"</span>)</span><br><span class="line">pil_im</span><br></pre></td></tr></table></figure>
 <img src="/2018/10/04/web_10_selenium/output_74_0.png">
 <h4 id="썸네일로-만들기"><a href="#썸네일로-만들기" class="headerlink" title="썸네일로 만들기"></a>썸네일로 만들기</h4><ul>
 <li>서비스할 때 작은 사이즈의 썸네일을 만들어서 씀으로써 트래픽 비용 절감</li>
 </ul>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pil_im.size</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pil_im.size</span><br></pre></td></tr></table></figure>
 <pre><code>(1452, 738)
-</code></pre><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pil_im.thumbnail((<span class="hljs-number">320</span>,<span class="hljs-number">160</span>))</span><br></pre></td></tr></table></figure>
-<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pil_im.thumbnail((<span class="number">320</span>,<span class="number">160</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
 <h4 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h4><ul>
 <li>패스트캠퍼스, ⟪데이터사이언스스쿨 8기⟫ 수업자료</li>
 </ul>
 
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/crawling/">crawling</a>, <a class="has-link-grey -link" href="/tags/programming/">programming</a>, <a class="has-link-grey -link" href="/tags/selenium/">selenium</a>, <a class="has-link-grey -link" href="/tags/web/">web</a>, <a class="has-link-grey -link" href="/tags/web-crawling/">web_crawling</a>, <a class="has-link-grey -link" href="/tags/웹크롤링/">웹크롤링</a>
-                </div>
-            </div>
-        </div>
-        
-        
-        
-        
-<div class="sharethis-inline-share-buttons"></div>
-<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5c334172a47fe500116a8ea8&amp;product=inline-share-buttons' async='async'></script>
+  </div>
+</article>
 
-        
-    </div>
-</div>
-
-
-
-
-
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/10/04/2018-10-04-TIL/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">2018-10-04-TIL</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/10/03/2018-10-02-TIL/">
-                <span class="level-item">2018-10-02-TIL</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
-
-
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
-        
-<script>
-    var disqus_config = function () {
-        this.page.url = 'https://hyeshinoh.github.io/2018/10/04/web_10_selenium/';
-        this.page.identifier = '2018/10/04/web_10_selenium/';
-    };
-    (function() {
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'hyeshinoh' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-
-<div id="disqus_thread">
-    
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-    </div>
-</div>
-</div>
-                
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <nav class="level">
-            <div class="level-item has-text-centered">
-                <div>
-                    <img class="image is-128x128 has-mb-6" src="/images/avatar_panda.png" alt="우와팬더(Hyeshin Oh)">
-                    
-                    <p class="is-size-4 is-block">
-                        우와팬더(Hyeshin Oh)
-                    </p>
-                    
-                    
-                    <p class="is-size-6 is-block">
-                        데이터 사이언티스트
-                    </p>
-                    
-                    
-                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
-                        <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Seoul, Korea</span>
-                    </p>
-                    
-                </div>
-            </div>
-        </nav>
-        <nav class="level is-mobile">
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        Posts
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        155
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        Categories
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        8
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        Tags
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        34
-                    </p>
-                </div>
-            </div>
-        </nav>
-        <div class="level">
-            <a class="level-item button is-link is-rounded" href="http://github.com/hyeshinoh">
-                Follow</a>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/hyeshinoh">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Facebook" href="http://facebook.com/hyeshinoh">
-                
-                <i class="fab fa-facebook"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Twitter" href="http://twitter.com/hyeshinoh">
-                
-                <i class="fab fa-twitter"></i>
-                
-            </a>
-            
-        </div>
-        
-    </div>
-</div>
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Categories
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/1-TIL-Today-I-Learned/">
-            <span class="level-start">
-                <span class="level-item">1. TIL(Today I Learned)</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">89</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/">
-            <span class="level-start">
-                <span class="level-item">2. Data Science 공부</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">66</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/2-수학/">
-            <span class="level-start">
-                <span class="level-item">2) 수학</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">23</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/3-파이썬-Python/">
-            <span class="level-start">
-                <span class="level-item">3) 파이썬 Python</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">22</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/4-알고리즘-Algorithm/">
-            <span class="level-start">
-                <span class="level-item">4) 알고리즘 Algorithm</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/5-데이터베이스-Database/">
-            <span class="level-start">
-                <span class="level-item">5) 데이터베이스 Database</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">5</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/6-웹-Web/">
-            <span class="level-start">
-                <span class="level-item">6) 웹 Web</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">12</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/2-Data-Science-공부/7-Hexo-블로그/">
-            <span class="level-start">
-                <span class="level-item">7) Hexo 블로그</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li></ul></li>
-            </ul>
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
         </div>
     </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            Archives
-        </h3>
-        <ul class="menu-list">
+
+
+
         
-        <li>
-            <a class="level is-marginless" href="/archives/2019/04/">
-                <span class="level-start">
-                    <span class="level-item">April 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">3</span>
-                </span>
-            </a>
-        </li>
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
         
-        <li>
-            <a class="level is-marginless" href="/archives/2019/03/">
-                <span class="level-start">
-                    <span class="level-item">March 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">8</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/02/">
-                <span class="level-start">
-                    <span class="level-item">February 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">7</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2019/01/">
-                <span class="level-start">
-                    <span class="level-item">January 2019</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">7</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/12/">
-                <span class="level-start">
-                    <span class="level-item">December 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">2</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/11/">
-                <span class="level-start">
-                    <span class="level-item">November 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">14</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/10/">
-                <span class="level-start">
-                    <span class="level-item">October 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">25</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/09/">
-                <span class="level-start">
-                    <span class="level-item">September 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">18</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/08/">
-                <span class="level-start">
-                    <span class="level-item">August 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">23</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/07/">
-                <span class="level-start">
-                    <span class="level-item">July 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">44</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/06/">
-                <span class="level-start">
-                    <span class="level-item">June 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">4</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
+      </ul>
     </div>
-</div>
-    
-    
-        <div class="column-right-shadow is-hidden-widescreen ">
-        
-            
-        
-            
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Recent
-        </h3>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-07T14:52:15.000Z">2019-04-07</time></div>
-                    <a href="/2019/04/07/2019-04-07-TIL/" class="has-link-black-ter is-size-6">2019-04-07-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/1-TIL-Today-I-Learned/">1. TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-07T14:35:53.000Z">2019-04-07</time></div>
-                    <a href="/2019/04/07/python_17_pandas_pivot/" class="has-link-black-ter is-size-6">python 17. Pandas - pivot &amp; pivot_table</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-05T14:35:53.000Z">2019-04-05</time></div>
-                    <a href="/2019/04/05/python_16_pandas_basic_2/" class="has-link-black-ter is-size-6">python 16. Pandas - basic(2)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-31T14:52:15.000Z">2019-03-31</time></div>
-                    <a href="/2019/03/31/2019-03-31-TIL/" class="has-link-black-ter is-size-6">2019-03-31-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/1-TIL-Today-I-Learned/">1. TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-30T14:35:53.000Z">2019-03-30</time></div>
-                    <a href="/2019/03/30/python_15_pandas_basic_1/" class="has-link-black-ter is-size-6">python 15. Pandas - basic(1)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Selenium-Intermediate"><span class="toc-number">1.</span> <span class="toc-text">Selenium - Intermediate</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#다룰-내용"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">다룰 내용</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Selenium-웹-데이터-스크래핑"><span class="toc-number">1.1.</span> <span class="toc-text">1. Selenium 웹 데이터 스크래핑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-webdriver-실행하고-gmarket-best-페이지로-이동"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 webdriver 실행하고 gmarket best 페이지로 이동</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-best-200-상품의-정보-스크래핑"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 best 200 상품의 정보 스크래핑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#200개-상품-정보-저장하기"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">200개 상품 정보 저장하기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#200개-상품의-이름-가격-할인가격-링크-pandas-dataframe으로-만들기"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">200개 상품의 이름/가격/할인가격/링크 pandas dataframe으로 만들기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sale하지-않는-품목에-o-price-채우기"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">sale하지 않는 품목에 o price 채우기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#할인율-column-추가하기"><span class="toc-number">1.1.2.4.</span> <span class="toc-text">할인율 column 추가하기</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Selenium-네이버-메일-크롤링"><span class="toc-number">1.2.</span> <span class="toc-text">2. Selenium 네이버 메일 크롤링</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-webdriver-실행하고-naver로-이동"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 webdriver 실행하고 naver로 이동</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-네이버-로그인하기"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 네이버 로그인하기</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#아이디-패스워드-입력"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">아이디 패스워드 입력</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-네이버-메일로-이동해서-메일-데이터-가져오기"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 네이버 메일로 이동해서 메일 데이터 가져오기</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#전체-메일-갯수-가져오기"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">전체 메일 갯수 가져오기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#안-읽은-메일-갯수-가져오기"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">안 읽은 메일 갯수 가져오기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#메일-데이터-가져오기-제목-보낸사람-메일링크"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">메일 데이터 가져오기 - 제목, 보낸사람, 메일링크</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Selenium-이미지-스크린샷"><span class="toc-number">1.3.</span> <span class="toc-text">3. Selenium 이미지 스크린샷</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-pillow-패키지"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 pillow 패키지</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-webdriver-실행하고-youtube-영상-스크린샷-저장"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 webdriver 실행하고 youtube 영상 스크린샷 저장</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-스크린샷-이미지-편집"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3 스크린샷 이미지 편집</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#저장한-스크린샷-이미지-확인"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">저장한 스크린샷 이미지 확인</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#영상이-나오는-영역만-자르기"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">영상이 나오는 영역만 자르기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#썸네일로-만들기"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">썸네일로 만들기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#참고자료"><span class="toc-number">1.3.3.4.</span> <span class="toc-text">참고자료</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
-</div>
 
-        
-            
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Tag Cloud
-        </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.5px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.5px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.83px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.17px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.5px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 15px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10.83px;">hexo</a> <a href="/tags/html/" style="font-size: 10.83px;">html</a> <a href="/tags/javascript/" style="font-size: 10.83px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10.83px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.33px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/numpy/" style="font-size: 11.67px;">numpy</a> <a href="/tags/pandas/" style="font-size: 11.67px;">pandas</a> <a href="/tags/programming/" style="font-size: 19.17px;">programming</a> <a href="/tags/python/" style="font-size: 18.33px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 12.5px;">selenium</a> <a href="/tags/web/" style="font-size: 16.67px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.17px;">web_crawling</a> <a href="/tags/귀찮은건-싫어/" style="font-size: 10px;">귀찮은건 싫어</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.33px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.83px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.17px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10.83px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 15.83px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&text=Web crawling - Selenium Intermediate"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&title=Web crawling - Selenium Intermediate"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&is_video=false&description=Web crawling - Selenium Intermediate"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Web crawling - Selenium Intermediate&body=Check out this article: https://hyeshinoh.github.io/2018/10/04/web_10_selenium/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&title=Web crawling - Selenium Intermediate"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&title=Web crawling - Selenium Intermediate"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&title=Web crawling - Selenium Intermediate"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&title=Web crawling - Selenium Intermediate"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2018/10/04/web_10_selenium/&name=Web crawling - Selenium Intermediate&description=&lt;h1 id=&#34;Selenium-Intermediate&#34;&gt;&lt;a href=&#34;#Selenium-Intermediate&#34; class=&#34;headerlink&#34; title=&#34;Selenium - Intermediate&#34;&gt;&lt;/a&gt;Selenium - Intermediate&lt;/h1&gt;&lt;h4 id=&#34;다룰-내용&#34;&gt;&lt;a href=&#34;#다룰-내용&#34; class=&#34;headerlink&#34; title=&#34;다룰 내용&#34;&gt;&lt;/a&gt;다룰 내용&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;Selenium 웹 데이터 스크래핑&lt;/li&gt;
+&lt;li&gt;Selenium 네이버 메일 크롤링&lt;/li&gt;
+&lt;li&gt;Selenium 이미지 스크린샷&lt;/li&gt;
+&lt;/ol&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
     </div>
-</div>
 
-        
-        </div>
-    
-</div>
-
-                
-
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
-    
-        
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Recent
-        </h3>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-07T14:52:15.000Z">2019-04-07</time></div>
-                    <a href="/2019/04/07/2019-04-07-TIL/" class="has-link-black-ter is-size-6">2019-04-07-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/1-TIL-Today-I-Learned/">1. TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-07T14:35:53.000Z">2019-04-07</time></div>
-                    <a href="/2019/04/07/python_17_pandas_pivot/" class="has-link-black-ter is-size-6">python 17. Pandas - pivot &amp; pivot_table</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-05T14:35:53.000Z">2019-04-05</time></div>
-                    <a href="/2019/04/05/python_16_pandas_basic_2/" class="has-link-black-ter is-size-6">python 16. Pandas - basic(2)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-31T14:52:15.000Z">2019-03-31</time></div>
-                    <a href="/2019/03/31/2019-03-31-TIL/" class="has-link-black-ter is-size-6">2019-03-31-TIL</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/1-TIL-Today-I-Learned/">1. TIL(Today I Learned)</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-30T14:35:53.000Z">2019-03-30</time></div>
-                    <a href="/2019/03/30/python_15_pandas_basic_1/" class="has-link-black-ter is-size-6">python 15. Pandas - basic(1)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/">2. Data Science 공부</a> / <a class="has-link-grey -link" href="/categories/2-Data-Science-공부/3-파이썬-Python/">3) 파이썬 Python</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
+
+  </div>
 </div>
 
-    
         
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            Tag Cloud
-        </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Database/" style="font-size: 13.33px;">Database</a> <a href="/tags/MySQL/" style="font-size: 12.5px;">MySQL</a> <a href="/tags/SQL/" style="font-size: 12.5px;">SQL</a> <a href="/tags/TIL-Today-I-Learned/" style="font-size: 20px;">TIL(Today I Learned)</a> <a href="/tags/algorithm/" style="font-size: 10.83px;">algorithm</a> <a href="/tags/crawling/" style="font-size: 14.17px;">crawling</a> <a href="/tags/data-analysis/" style="font-size: 17.5px;">data analysis</a> <a href="/tags/data-science/" style="font-size: 15px;">data science</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/hexo/" style="font-size: 10.83px;">hexo</a> <a href="/tags/html/" style="font-size: 10.83px;">html</a> <a href="/tags/javascript/" style="font-size: 10.83px;">javascript</a> <a href="/tags/jupyter-notebook/" style="font-size: 10.83px;">jupyter notebook</a> <a href="/tags/math/" style="font-size: 18.33px;">math</a> <a href="/tags/mathjax/" style="font-size: 10px;">mathjax</a> <a href="/tags/numpy/" style="font-size: 11.67px;">numpy</a> <a href="/tags/pandas/" style="font-size: 11.67px;">pandas</a> <a href="/tags/programming/" style="font-size: 19.17px;">programming</a> <a href="/tags/python/" style="font-size: 18.33px;">python</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/selenium/" style="font-size: 12.5px;">selenium</a> <a href="/tags/web/" style="font-size: 16.67px;">web</a> <a href="/tags/web-crawling/" style="font-size: 14.17px;">web_crawling</a> <a href="/tags/귀찮은건-싫어/" style="font-size: 10px;">귀찮은건 싫어</a> <a href="/tags/미적분/" style="font-size: 10px;">미적분</a> <a href="/tags/선형대수/" style="font-size: 18.33px;">선형대수</a> <a href="/tags/알고리즘/" style="font-size: 10.83px;">알고리즘</a> <a href="/tags/알고리즘-문제/" style="font-size: 10px;">알고리즘_문제</a> <a href="/tags/웹크롤링/" style="font-size: 14.17px;">웹크롤링</a> <a href="/tags/정규표현식/" style="font-size: 10px;">정규표현식</a> <a href="/tags/주피터노트북/" style="font-size: 10.83px;">주피터노트북</a> <a href="/tags/파이썬/" style="font-size: 15.83px;">파이썬</a> <a href="/tags/확률통계/" style="font-size: 10px;">확률통계</a>
-    </div>
-</div>
-
-    
-    
-</div>
-
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="level">
-            <div class="level-start has-text-centered-mobile">
-                <a class="footer-logo is-block has-mb-6" href="/">
-                
-                    <img src="/images/logo.png" alt="Web crawling - Selenium Intermediate" height="28">
-                
-                </a>
-                <p class="is-size-7">
-                &copy; 2019 우와팬더&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
-                </p>
-            </div>
-            <div class="level-end">
-            
-                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
-                        
-                        <i class="fab fa-creative-commons"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
-                        
-                        <i class="fab fa-creative-commons-by"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
-                        
-                        <i class="fab fa-github"></i>
-                        
-                    </a>
-                </p>
-                
-                </div>
-            
-            </div>
-        </div>
-    </div>
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 우와팬더
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </footer>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("en");</script>
 
-
-    
-    
-    
-    <script src="/js/animation.js"></script>
-    
-
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
-    
-
-    
-    
-
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
-            my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        });
-    });
-</script>
-
-
-    
-    
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    MathJax.Hub.Config({
-        'HTML-CSS': {matchFontHeight: false},
-        SVG: {matchFontHeight: false},
-        CommonHTML: {matchFontHeight: false}
-    });
-});
-</script>
-
-    
-    
-
-<a id="back-to-top" title="Back to Top" href="javascript:;">
-    <i class="fas fa-chevron-up"></i>
-</a>
-<script src="/js/back-to-top.js" defer></script>
-
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
-    <script src="/js/clipboard.js" defer></script>
-    
-
-    
-
-
-<script src="/js/main.js" defer></script>
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
     </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
-    
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-126954393-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'hyeshinoh';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
