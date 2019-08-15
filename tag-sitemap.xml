@@ -2,239 +2,246 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://hyeshinoh.github.io/tags/%ED%99%95%EB%A5%A0%ED%86%B5%EA%B3%84/</loc>
-        <lastmod>2019-07-16T13:59:43.381Z</lastmod>
+        <loc>https://hyeshinoh.github.io/tags/TIL-Today-I-Learned/</loc>
+        <lastmod>2019-08-15T15:10:17.765Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/tags/data-science/</loc>
-        <lastmod>2019-07-16T13:59:43.381Z</lastmod>
+        <loc>https://hyeshinoh.github.io/tags/%ED%99%95%EB%A5%A0%ED%86%B5%EA%B3%84/</loc>
+        <lastmod>2019-08-15T15:13:10.936Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeshinoh.github.io/tags/%EB%AF%B8%EC%A0%81%EB%B6%84/</loc>
-        <lastmod>2019-07-16T13:59:43.381Z</lastmod>
+        <lastmod>2019-08-15T15:13:10.936Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/data-science/</loc>
+        <lastmod>2019-08-15T15:14:27.957Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeshinoh.github.io/tags/data-analysis/</loc>
-        <lastmod>2019-07-16T14:03:23.874Z</lastmod>
+        <lastmod>2019-08-15T15:16:26.411Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeshinoh.github.io/tags/math/</loc>
-        <lastmod>2019-07-16T14:03:23.874Z</lastmod>
+        <lastmod>2019-08-15T15:16:26.411Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeshinoh.github.io/tags/%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98/</loc>
-        <lastmod>2019-07-16T14:03:23.874Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/html/</loc>
-        <lastmod>2019-07-16T14:11:41.432Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/CSS/</loc>
-        <lastmod>2019-07-16T14:11:48.251Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/javascript/</loc>
-        <lastmod>2019-07-16T14:12:04.483Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/email/</loc>
-        <lastmod>2019-07-16T14:12:14.408Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/web/</loc>
-        <lastmod>2019-07-16T14:13:00.489Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/crawling/</loc>
-        <lastmod>2019-07-16T14:13:00.489Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/web-crawling/</loc>
-        <lastmod>2019-07-16T14:13:00.489Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/%EC%9B%B9%ED%81%AC%EB%A1%A4%EB%A7%81/</loc>
-        <lastmod>2019-07-16T14:13:00.489Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/selenium/</loc>
-        <lastmod>2019-07-16T14:13:00.489Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/jupyter-notebook/</loc>
-        <lastmod>2019-07-16T14:14:36.361Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/%EC%A3%BC%ED%94%BC%ED%84%B0%EB%85%B8%ED%8A%B8%EB%B6%81/</loc>
-        <lastmod>2019-07-16T14:14:36.361Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/%EA%B7%80%EC%B0%AE%EC%9D%80%EA%B1%B4-%EC%8B%AB%EC%96%B4/</loc>
-        <lastmod>2019-07-16T14:14:36.361Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/Database/</loc>
-        <lastmod>2019-07-16T14:15:50.751Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/MySQL/</loc>
-        <lastmod>2019-07-16T14:15:50.751Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/SQL/</loc>
-        <lastmod>2019-07-16T14:15:50.751Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/hexo/</loc>
-        <lastmod>2019-07-16T14:18:44.224Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/mathjax/</loc>
-        <lastmod>2019-07-16T14:18:44.224Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</loc>
-        <lastmod>2019-07-16T14:19:47.588Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/algorithm/</loc>
-        <lastmod>2019-07-16T14:19:47.588Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2019-07-16T14:19:47.588Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/numpy/</loc>
-        <lastmod>2019-07-29T15:01:59.233Z</lastmod>
+        <lastmod>2019-08-15T15:16:26.411Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeshinoh.github.io/tags/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/</loc>
-        <lastmod>2019-07-29T15:02:19.543Z</lastmod>
+        <lastmod>2019-08-15T15:19:37.445Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeshinoh.github.io/tags/regex/</loc>
-        <lastmod>2019-07-29T15:02:19.543Z</lastmod>
+        <lastmod>2019-08-15T15:19:37.445Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/tags/python/</loc>
-        <lastmod>2019-08-12T14:04:14.457Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
-        <lastmod>2019-08-12T14:04:14.457Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/programming/</loc>
-        <lastmod>2019-08-12T14:04:14.457Z</lastmod>
+        <loc>https://hyeshinoh.github.io/tags/numpy/</loc>
+        <lastmod>2019-08-15T15:20:06.872Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeshinoh.github.io/tags/pandas/</loc>
-        <lastmod>2019-08-12T14:04:14.457Z</lastmod>
+        <lastmod>2019-08-15T15:20:28.783Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/tags/TIL-Today-I-Learned/</loc>
-        <lastmod>2019-08-14T09:46:10.595Z</lastmod>
+        <loc>https://hyeshinoh.github.io/tags/jupyter-notebook/</loc>
+        <lastmod>2019-08-15T15:21:25.396Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
+        <lastmod>2019-08-15T15:21:25.396Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/%EC%A3%BC%ED%94%BC%ED%84%B0%EB%85%B8%ED%8A%B8%EB%B6%81/</loc>
+        <lastmod>2019-08-15T15:21:25.396Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/%EA%B7%80%EC%B0%AE%EC%9D%80%EA%B1%B4-%EC%8B%AB%EC%96%B4/</loc>
+        <lastmod>2019-08-15T15:21:25.396Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/Database/</loc>
+        <lastmod>2019-08-15T15:22:23.555Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/MySQL/</loc>
+        <lastmod>2019-08-15T15:22:23.555Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/SQL/</loc>
+        <lastmod>2019-08-15T15:22:23.555Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/hexo/</loc>
+        <lastmod>2019-08-15T15:22:51.533Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/mathjax/</loc>
+        <lastmod>2019-08-15T15:22:51.533Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/python/</loc>
+        <lastmod>2019-08-15T15:23:18.078Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</loc>
+        <lastmod>2019-08-15T15:23:18.078Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/algorithm/</loc>
+        <lastmod>2019-08-15T15:23:18.078Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C/</loc>
+        <lastmod>2019-08-15T15:23:18.078Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/html/</loc>
+        <lastmod>2019-08-15T15:23:49.506Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/CSS/</loc>
+        <lastmod>2019-08-15T15:23:58.607Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/javascript/</loc>
+        <lastmod>2019-08-15T15:24:13.900Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/email/</loc>
+        <lastmod>2019-08-15T15:24:21.169Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/programming/</loc>
+        <lastmod>2019-08-15T15:25:03.625Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/web/</loc>
+        <lastmod>2019-08-15T15:25:03.625Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/crawling/</loc>
+        <lastmod>2019-08-15T15:25:03.625Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/web-crawling/</loc>
+        <lastmod>2019-08-15T15:25:03.625Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/%EC%9B%B9%ED%81%AC%EB%A1%A4%EB%A7%81/</loc>
+        <lastmod>2019-08-15T15:25:03.625Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/selenium/</loc>
+        <lastmod>2019-08-15T15:25:03.625Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/%EC%83%9D%EC%82%B0%EC%84%B1/</loc>
+        <lastmod>2019-08-15T15:27:02.983Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
