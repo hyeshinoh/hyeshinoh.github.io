@@ -71,7 +71,14 @@
 
     <url>
         <loc>https://hyeshinoh.github.io/categories/Life/</loc>
-        <lastmod>2019-08-15T15:27:02.983Z</lastmod>
+        <lastmod>2019-08-17T15:06:01.290Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/categories/Life/%EB%A6%AC%EB%B7%B0/</loc>
+        <lastmod>2019-08-17T15:06:01.290Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
