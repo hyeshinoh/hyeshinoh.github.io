@@ -2,13 +2,6 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://hyeshinoh.github.io/tags/TIL-Today-I-Learned/</loc>
-        <lastmod>2019-08-15T15:10:17.765Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://hyeshinoh.github.io/tags/%ED%99%95%EB%A5%A0%ED%86%B5%EA%B3%84/</loc>
         <lastmod>2019-08-15T15:13:10.936Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -235,6 +228,13 @@
     <url>
         <loc>https://hyeshinoh.github.io/tags/selenium/</loc>
         <lastmod>2019-08-15T15:25:03.625Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/TIL-Today-I-Learned/</loc>
+        <lastmod>2019-08-17T15:16:44.919Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

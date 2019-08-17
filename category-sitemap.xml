@@ -7,20 +7,6 @@
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/categories/Diary/</loc>
-        <lastmod>2019-08-15T15:10:17.765Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/categories/Diary/TIL-Today-I-Learned/</loc>
-        <lastmod>2019-08-15T15:10:17.765Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://hyeshinoh.github.io/categories/DataScience/Math/</loc>
         <lastmod>2019-08-15T15:16:26.411Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -65,6 +51,20 @@
     <url>
         <loc>https://hyeshinoh.github.io/categories/DataScience/Web-%EC%9B%B9/</loc>
         <lastmod>2019-08-15T15:25:03.625Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/categories/Diary/</loc>
+        <lastmod>2019-08-17T15:16:44.919Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/categories/Diary/TIL-Today-I-Learned/</loc>
+        <lastmod>2019-08-17T15:16:44.919Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
