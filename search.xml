@@ -623,11 +623,11 @@
     
     
     <entry>
-      <title>2019-01-14-TIL</title>
-      <link href="/2019/01/13/2019-01-14-TIL/"/>
-      <url>/2019/01/13/2019-01-14-TIL/</url>
+      <title>2019-01-13-TIL</title>
+      <link href="/2019/01/13/2019-01-13-TIL/"/>
+      <url>/2019/01/13/2019-01-13-TIL/</url>
       
-        <content type="html"><![CDATA[<p>1/14 월요일 Today I learned</p><h4 id="배운-것-amp-리뷰"><a href="#배운-것-amp-리뷰" class="headerlink" title="배운 것 &amp; 리뷰"></a>배운 것 &amp; 리뷰</h4><ul><li>패스트캠퍼스 파이썬 데이터 전처리 Level Up CAMP 4주차 수업 <ul><li>변수 치우침과 이상치 문제</li><li>클래스 불균형 문제</li></ul></li></ul><a id="more"></a> <ul><li>일하다 pandas 사용시 주의할 점을 알게 됨<ul><li>데이터프레임의 컬럼에서 몇자리수만 필터링으로 찾아내 값을 수정하려는데 기존 코드가 아래처럼 되어 있는 것을 발견했다.  <ul><li><code>df[&#39;컬럼명&#39;].str[:3][...] = ...</code></li></ul></li><li>이렇게 쓰면 <code>df[&#39;컬럼명&#39;]</code>은 수정되지 않는다. 다음과 같은 식으로 바꿔주어야 한다. <ul><li><code>df[&#39;컬럼명&#39;][df[&#39;컬럼명&#39;].str[:3]=...] = ...</code> </li></ul></li></ul></li></ul><h4 id="다음-배울-것"><a href="#다음-배울-것" class="headerlink" title="다음 배울 것"></a>다음 배울 것</h4><ul><li>코딩야학 8일차</li><li>파이썬 os</li><li>파이썬 정규표현식</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>1/13 일요일</p><h4 id="배운-것-amp-리뷰"><a href="#배운-것-amp-리뷰" class="headerlink" title="배운 것 &amp; 리뷰"></a>배운 것 &amp; 리뷰</h4><ul><li>정말 오랜만에 일욜 오전 스터디 참석 ㅋㅋ 오랜만에 오전이 있는 일요일, 긴- 일요일을 보냈다. 다시 꾸준히 참석해야지</li><li>패스트캠퍼스 파이썬 데이터 전처리 CAMP 3주차 복습</li><li>코딩야학 6-7일차: 이고잉님은 설명을 정말 알기 쉽게 잘 해주시는 것 같다.  코딩야학으로 올라온 web1말고도 webn으로 다양한 강의가 있는데 차근차근 조금씩 들어보고 싶당 </li></ul><h4 id="다음-배울-것"><a href="#다음-배울-것" class="headerlink" title="다음 배울 것"></a>다음 배울 것</h4><ul><li>코딩야학 8일차</li><li>파이썬 os</li><li>파이썬 정규표현식</li></ul>]]></content>
       
       
       <categories>
@@ -650,11 +650,11 @@
     
     
     <entry>
-      <title>2019-01-13-TIL</title>
-      <link href="/2019/01/13/2019-01-13-TIL/"/>
-      <url>/2019/01/13/2019-01-13-TIL/</url>
+      <title>2019-01-14-TIL</title>
+      <link href="/2019/01/13/2019-01-14-TIL/"/>
+      <url>/2019/01/13/2019-01-14-TIL/</url>
       
-        <content type="html"><![CDATA[<p>1/13 일요일</p><h4 id="배운-것-amp-리뷰"><a href="#배운-것-amp-리뷰" class="headerlink" title="배운 것 &amp; 리뷰"></a>배운 것 &amp; 리뷰</h4><ul><li>정말 오랜만에 일욜 오전 스터디 참석 ㅋㅋ 오랜만에 오전이 있는 일요일, 긴- 일요일을 보냈다. 다시 꾸준히 참석해야지</li><li>패스트캠퍼스 파이썬 데이터 전처리 CAMP 3주차 복습</li><li>코딩야학 6-7일차: 이고잉님은 설명을 정말 알기 쉽게 잘 해주시는 것 같다.  코딩야학으로 올라온 web1말고도 webn으로 다양한 강의가 있는데 차근차근 조금씩 들어보고 싶당 </li></ul><h4 id="다음-배울-것"><a href="#다음-배울-것" class="headerlink" title="다음 배울 것"></a>다음 배울 것</h4><ul><li>코딩야학 8일차</li><li>파이썬 os</li><li>파이썬 정규표현식</li></ul>]]></content>
+        <content type="html"><![CDATA[<p>1/14 월요일 Today I learned</p><h4 id="배운-것-amp-리뷰"><a href="#배운-것-amp-리뷰" class="headerlink" title="배운 것 &amp; 리뷰"></a>배운 것 &amp; 리뷰</h4><ul><li>패스트캠퍼스 파이썬 데이터 전처리 Level Up CAMP 4주차 수업 <ul><li>변수 치우침과 이상치 문제</li><li>클래스 불균형 문제</li></ul></li></ul><a id="more"></a> <ul><li>일하다 pandas 사용시 주의할 점을 알게 됨<ul><li>데이터프레임의 컬럼에서 몇자리수만 필터링으로 찾아내 값을 수정하려는데 기존 코드가 아래처럼 되어 있는 것을 발견했다.  <ul><li><code>df[&#39;컬럼명&#39;].str[:3][...] = ...</code></li></ul></li><li>이렇게 쓰면 <code>df[&#39;컬럼명&#39;]</code>은 수정되지 않는다. 다음과 같은 식으로 바꿔주어야 한다. <ul><li><code>df[&#39;컬럼명&#39;][df[&#39;컬럼명&#39;].str[:3]=...] = ...</code> </li></ul></li></ul></li></ul><h4 id="다음-배울-것"><a href="#다음-배울-것" class="headerlink" title="다음 배울 것"></a>다음 배울 것</h4><ul><li>코딩야학 8일차</li><li>파이썬 os</li><li>파이썬 정규표현식</li></ul>]]></content>
       
       
       <categories>
