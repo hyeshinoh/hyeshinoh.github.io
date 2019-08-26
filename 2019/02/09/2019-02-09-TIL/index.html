@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="배운 것 &amp;amp; 리뷰 생활코딩 리눅스 강좌: 리눅스 기초 이고잉님은 정말 쉽게 설명을 잘해주신다!! 기초 파트 들으면서 실습, 정리하고 포스팅까지 완료  포스팅: 리눅스(Linux) - 기초">
+    <meta name="description" content="배운 것 &amp;amp; 리뷰 생활코딩 리눅스 강좌: 프로세스(Process)와 실행(Execute) 강의 듣고 따라하고, 정리하고 포스팅까지 완료  이제 60% 이상 정도 들은 것 같은데 이고잉님 진짜 너무 잘 설명해주시고 유익하고 강의 너무 좋다 엉엉 포스팅: 리눅스(Linux) - 프로세스(Process)와 실행(Execute)">
 <meta name="keywords" content="TIL(Today I Learned)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-02-01-TIL">
-<meta property="og:url" content="https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/index.html">
+<meta property="og:title" content="2019-02-09-TIL">
+<meta property="og:url" content="https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/index.html">
 <meta property="og:site_name" content="우와팬더의 블로그">
-<meta property="og:description" content="배운 것 &amp;amp; 리뷰 생활코딩 리눅스 강좌: 리눅스 기초 이고잉님은 정말 쉽게 설명을 잘해주신다!! 기초 파트 들으면서 실습, 정리하고 포스팅까지 완료  포스팅: 리눅스(Linux) - 기초">
+<meta property="og:description" content="배운 것 &amp;amp; 리뷰 생활코딩 리눅스 강좌: 프로세스(Process)와 실행(Execute) 강의 듣고 따라하고, 정리하고 포스팅까지 완료  이제 60% 이상 정도 들은 것 같은데 이고잉님 진짜 너무 잘 설명해주시고 유익하고 강의 너무 좋다 엉엉 포스팅: 리눅스(Linux) - 프로세스(Process)와 실행(Execute)">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-26T13:57:17.477Z">
+<meta property="og:updated_time" content="2019-08-26T14:04:50.949Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2019-02-01-TIL">
-<meta name="twitter:description" content="배운 것 &amp;amp; 리뷰 생활코딩 리눅스 강좌: 리눅스 기초 이고잉님은 정말 쉽게 설명을 잘해주신다!! 기초 파트 들으면서 실습, 정리하고 포스팅까지 완료  포스팅: 리눅스(Linux) - 기초">
+<meta name="twitter:title" content="2019-02-09-TIL">
+<meta name="twitter:description" content="배운 것 &amp;amp; 리뷰 생활코딩 리눅스 강좌: 프로세스(Process)와 실행(Execute) 강의 듣고 따라하고, 정리하고 포스팅까지 완료  이제 60% 이상 정도 들은 것 같은데 이고잉님 진짜 너무 잘 설명해주시고 유익하고 강의 너무 좋다 엉엉 포스팅: 리눅스(Linux) - 프로세스(Process)와 실행(Execute)">
     
     
         
@@ -37,7 +37,7 @@
         
     
     <!-- title -->
-    <title>2019-02-01-TIL</title>
+    <title>2019-02-09-TIL</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- persian styles -->
@@ -81,10 +81,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2019/02/03/linux_002/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2019/02/11/book_001_rich_dad/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2019/02/01/linux_001/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2019/02/09/linux_005/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -97,16 +97,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&text=2019-02-01-TIL"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&title=2019-02-01-TIL"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&is_video=false&description=2019-02-01-TIL"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=2019-02-01-TIL&body=Check out this article: https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&title=2019-02-01-TIL"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&title=2019-02-01-TIL"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&title=2019-02-01-TIL"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&title=2019-02-01-TIL"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&name=2019-02-01-TIL&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&text=2019-02-09-TIL"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&title=2019-02-09-TIL"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&is_video=false&description=2019-02-09-TIL"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2019-02-09-TIL&body=Check out this article: https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&title=2019-02-09-TIL"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&title=2019-02-09-TIL"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&title=2019-02-09-TIL"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&title=2019-02-09-TIL"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&name=2019-02-09-TIL&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -123,7 +123,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        2019-02-01-TIL
+        2019-02-09-TIL
     </h1>
 
 
@@ -135,7 +135,7 @@
       
     <div class="postdate">
       
-        <time datetime="2019-02-01T14:04:15.000Z" itemprop="datePublished">2019-02-01</time>
+        <time datetime="2019-02-09T14:04:15.000Z" itemprop="datePublished">2019-02-09</time>
         
       
     </div>
@@ -161,12 +161,10 @@
 
   <div class="content" itemprop="articleBody">
     <h4 id="배운-것-amp-리뷰"><a href="#배운-것-amp-리뷰" class="headerlink" title="배운 것 &amp; 리뷰"></a>배운 것 &amp; 리뷰</h4><ul>
-<li>생활코딩 리눅스 강좌: 리눅스 기초<ul>
-<li>이고잉님은 정말 쉽게 설명을 잘해주신다!!</li>
-<li>기초 파트 들으면서 실습, 정리하고 포스팅까지 완료 <ul>
-<li>포스팅: <a href="https://hyeshinoh.github.io/2019/02/01/linux_001/">리눅스(Linux) - 기초</a></li>
-</ul>
-</li>
+<li>생활코딩 리눅스 강좌: 프로세스(Process)와 실행(Execute)<ul>
+<li>강의 듣고 따라하고, 정리하고 포스팅까지 완료 </li>
+<li>이제 60% 이상 정도 들은 것 같은데 이고잉님 진짜 너무 잘 설명해주시고 유익하고 강의 너무 좋다 엉엉</li>
+<li>포스팅: <a href="https://hyeshinoh.github.io/2019/02/09/linux_005/">리눅스(Linux) - 프로세스(Process)와 실행(Execute)</a></li>
 </ul>
 </li>
 </ul>
@@ -212,16 +210,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&text=2019-02-01-TIL"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&title=2019-02-01-TIL"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&is_video=false&description=2019-02-01-TIL"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=2019-02-01-TIL&body=Check out this article: https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&title=2019-02-01-TIL"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&title=2019-02-01-TIL"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&title=2019-02-01-TIL"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&title=2019-02-01-TIL"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2019/02/01/2019-02-01-TIL/&name=2019-02-01-TIL&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&text=2019-02-09-TIL"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&title=2019-02-09-TIL"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&is_video=false&description=2019-02-09-TIL"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2019-02-09-TIL&body=Check out this article: https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&title=2019-02-09-TIL"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&title=2019-02-09-TIL"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&title=2019-02-09-TIL"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&title=2019-02-09-TIL"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2019/02/09/2019-02-09-TIL/&name=2019-02-09-TIL&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
