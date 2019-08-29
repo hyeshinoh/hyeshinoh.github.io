@@ -15,7 +15,7 @@
 <meta property="og:description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트  강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!) 리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런    리눅스를 통해서 컴퓨터를 서버로 활용하는 방법에 대한 강의 1. 인터넷 구조 - client &amp;amp; server  클라이언트(client): request하는 컴퓨터 서버(s">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyeshinoh.github.io/2019/02/13/linux_007/internet.PNG">
-<meta property="og:updated_time" content="2019-08-28T14:32:46.133Z">
+<meta property="og:updated_time" content="2019-08-29T11:31:22.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="리눅스(Linux) - 인터넷, 네트워크, 그리고 서버">
 <meta name="twitter:description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트  강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!) 리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런    리눅스를 통해서 컴퓨터를 서버로 활용하는 방법에 대한 강의 1. 인터넷 구조 - client &amp;amp; server  클라이언트(client): request하는 컴퓨터 서버(s">
@@ -230,10 +230,7 @@
 <ul>
 <li><code>etc/apache2/</code>: 설정이 저장되어 있는 경로<ul>
 <li><code>apache2.conf</code>: 설정 파일</li>
-<li><code>/etc/apache2/sites-enable/000-default.conf</code> <blockquote>
-<p>DocumentRoot /var/www/html</p>
-</blockquote>
-</li>
+<li><code>/etc/apache2/sites-enable/000-default.conf</code><br>  → DocumentRoot /var/www/html</li>
 <li><code>/var/www/html</code> 안에 <code>index.html</code> 파일 존재</li>
 </ul>
 </li>
@@ -241,10 +238,7 @@
 </li>
 <li><p>로그(log)</p>
 <ul>
-<li><code>/etc/apache2/sites-enable/000-default.conf</code><blockquote>
-<p>ErrorLog ${APACHE LOG_DIR}/error.log <br> CustomLog ${APACHE LOG_DIR}/access.log combined</p>
-</blockquote>
-</li>
+<li><code>/etc/apache2/sites-enable/000-default.conf</code><br>  → ErrorLog ${APACHE LOG_DIR}/error.log <br> CustomLog ${APACHE LOG_DIR}/access.log combined</li>
 <li>${APACHE LOG_DIR}: <code>/var/log/apache2/</code></li>
 <li><code>$ tail -f /var/log/apache2/access.log</code>: 실시간으로 끝에 추가되는 정보를 화면에 출력</li>
 </ul>
