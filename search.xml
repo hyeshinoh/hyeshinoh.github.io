@@ -554,7 +554,7 @@
       <link href="/2019/02/20/2019-02-20-TIL/"/>
       <url>/2019/02/20/2019-02-20-TIL/</url>
       
-        <content type="html"><![CDATA[<h4 id="배운-것-amp-리뷰"><a href="#배운-것-amp-리뷰" class="headerlink" title="배운 것 &amp; 리뷰"></a>배운 것 &amp; 리뷰</h4><ul><li>파이썬 정규표현식 복습<ul><li>학원에서 공부할 때와 비교해 실제 업무에서 데이터 전처리를 하다보니 확실히 정규표현식을 활용할 일이 많다는 것을 깨닫게 되었다. 이참에 마무리하지 못했던 파이썬 복습 정리 &amp; 포스팅을 다시 시작! numpy, pandas, visualization까지 쭉쭉 복습해줘야겠다.</li></ul></li></ul><h4 id="다음에-배울-것"><a href="#다음에-배울-것" class="headerlink" title="다음에 배울 것"></a>다음에 배울 것</h4><ul><li>hexo 블로그에 facebook 댓글 기능 달기</li><li>파이썬 os 복습</li><li>R 기본 문법</li><li>SQL 기본 문법 복습</li><li>확률 통계 복습</li></ul>]]></content>
+        <content type="html"><![CDATA[<h4 id="배운-것-amp-리뷰"><a href="#배운-것-amp-리뷰" class="headerlink" title="배운 것 &amp; 리뷰"></a>배운 것 &amp; 리뷰</h4><ul><li>파이썬 정규표현식 복습<ul><li>학원에서 공부할 때와 비교해 실제 업무에서 데이터 전처리를 하다보니 확실히 정규표현식을 활용할 일이 많다는 것을 깨닫게 되었다. 이참에 마무리하지 못했던 파이썬 복습 정리 &amp; 포스팅을 다시 시작! numpy, pandas, visualization까지 쭉쭉 복습해줘야겠다.</li></ul></li><li>생활코딩 리눅스 강좌: 도메인(Domain)<ul><li>며칠동안 강의 듣고 정리해서 포스팅!    </li><li>포스팅: <a href="https://hyeshinoh.github.io/2019/02/20/linux_008/">리눅스(Linux) - 도메인(Domain)</a>  </li></ul></li></ul><h4 id="다음에-배울-것"><a href="#다음에-배울-것" class="headerlink" title="다음에 배울 것"></a>다음에 배울 것</h4><ul><li>hexo 블로그에 facebook 댓글 기능 달기</li><li>파이썬 os 복습</li><li>R 기본 문법</li><li>SQL 기본 문법 복습</li><li>확률 통계 복습</li></ul>]]></content>
       
       
       <categories>
@@ -577,7 +577,7 @@
     
     
     <entry>
-      <title>리눅스(Linux) - 도메인</title>
+      <title>리눅스(Linux) - 도메인(Domain)</title>
       <link href="/2019/02/20/linux_008/"/>
       <url>/2019/02/20/linux_008/</url>
       
