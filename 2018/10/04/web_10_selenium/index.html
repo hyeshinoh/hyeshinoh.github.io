@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang=en>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Selenium - Intermediate다룰 내용 Selenium 웹 데이터 스크래핑 Selenium 네이버 메일 크롤링 Selenium 이미지 스크린샷">
 <meta name="keywords" content="programming,web,crawling,web_crawling,웹크롤링">
 <meta property="og:type" content="article">
@@ -56,7 +56,7 @@
     <!-- rss -->
     
     
-      <link rel="alternate" href="/atom.xml" title="우와팬더의 블로그" type="application/atom+xml" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+      <link rel="alternate" href="/atom.xml" title="우와팬더의 블로그" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 </head>
 
@@ -184,7 +184,7 @@
 </ul>
 <h3 id="1-1-webdriver-실행하고-gmarket-best-페이지로-이동"><a href="#1-1-webdriver-실행하고-gmarket-best-페이지로-이동" class="headerlink" title="1.1 webdriver 실행하고 gmarket best 페이지로 이동"></a>1.1 webdriver 실행하고 gmarket best 페이지로 이동</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"http://corners.gmarket.co.kr/Bestsellers"</span></span><br><span class="line">driver = webdriver.Chrome() </span><br><span class="line">driver.get(url)</span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_001.png?raw=true" alt=""></p>
+<p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_001.png?raw=true" alt></p>
 <h3 id="1-2-best-200-상품의-정보-스크래핑"><a href="#1-2-best-200-상품의-정보-스크래핑" class="headerlink" title="1.2 best 200 상품의 정보 스크래핑"></a>1.2 best 200 상품의 정보 스크래핑</h3><h4 id="200개-상품-정보-저장하기"><a href="#200개-상품-정보-저장하기" class="headerlink" title="200개 상품 정보 저장하기"></a>200개 상품 정보 저장하기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">items = driver.find_elements_by_css_selector(<span class="string">".best-list:nth-child(3) &gt; ul &gt; li"</span>)</span><br><span class="line"></span><br><span class="line">len(items)</span><br></pre></td></tr></table></figure>
 <pre><code>200
 </code></pre><h4 id="200개-상품의-이름-가격-할인가격-링크-pandas-dataframe으로-만들기"><a href="#200개-상품의-이름-가격-할인가격-링크-pandas-dataframe으로-만들기" class="headerlink" title="200개 상품의 이름/가격/할인가격/링크 pandas dataframe으로 만들기"></a>200개 상품의 이름/가격/할인가격/링크 pandas dataframe으로 만들기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dict_list = []</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">    dict_list.append(&#123;</span><br><span class="line">        <span class="string">"title"</span>: item.find_element_by_css_selector(<span class="string">".itemname"</span>).text,</span><br><span class="line">        <span class="string">"s price"</span>: item.find_element_by_css_selector(<span class="string">".s-price"</span>).text.split(<span class="string">" "</span>)[<span class="number">0</span>].replace(<span class="string">","</span>,<span class="string">""</span>)[:<span class="number">-1</span>],</span><br><span class="line">        <span class="string">"o price"</span>: item.find_element_by_css_selector(<span class="string">".o-price"</span>).text.split(<span class="string">" "</span>)[<span class="number">0</span>].replace(<span class="string">","</span>,<span class="string">""</span>)[:<span class="number">-1</span>],</span><br><span class="line">        <span class="string">"link"</span>: item.find_element_by_css_selector(<span class="string">".itemname"</span>).get_attribute(<span class="string">"href"</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(dict_list)</span><br><span class="line">df.tail()</span><br></pre></td></tr></table></figure>
@@ -387,20 +387,20 @@ Name: s price, dtype: object
 </ul>
 <h3 id="2-1-webdriver-실행하고-naver로-이동"><a href="#2-1-webdriver-실행하고-naver로-이동" class="headerlink" title="2.1 webdriver 실행하고 naver로 이동"></a>2.1 webdriver 실행하고 naver로 이동</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">main_url = <span class="string">"http://naver.com"</span></span><br><span class="line">mail_url = <span class="string">"http://mail.naver.com"</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 네이버 페이지로 이동</span></span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.get(main_url)</span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_002.png?raw=true" alt=""></p>
+<p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_002.png?raw=true" alt></p>
 <h3 id="2-2-네이버-로그인하기"><a href="#2-2-네이버-로그인하기" class="headerlink" title="2.2 네이버 로그인하기"></a>2.2 네이버 로그인하기</h3><h4 id="아이디-패스워드-입력"><a href="#아이디-패스워드-입력" class="headerlink" title="아이디 패스워드 입력"></a>아이디 패스워드 입력</h4><p>비밀번호는 노출해서는 안되므로 pickle 파일로 저장해서 불러오기</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># with open("naver_pw.plk", "wb") as f:</span></span><br><span class="line"><span class="comment">#     pickle.dump("본인의 네이버 pw", f)</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">my_id = <span class="string">"panda706"</span></span><br><span class="line">my_pw = pickle.load(open(<span class="string">"naver_pw.plk"</span>, <span class="string">"rb"</span>))</span><br></pre></td></tr></table></figure>
 <p>로그인 버튼 클릭 &amp; 로그인 페이지로 이동</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="string">".lg_local_btn"</span>).click()</span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_003.png?raw=true" alt=""></p>
+<p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_003.png?raw=true" alt></p>
 <p>아이디와 패스워드 넣고 로그인 버튼 클릭하기  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="string">"#id"</span>).send_keys(my_id)</span><br><span class="line">driver.find_element_by_css_selector(<span class="string">"#pw"</span>).send_keys(my_pw)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.find_element_by_css_selector(<span class="string">".btn_global"</span>).click()</span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_004.png?raw=true" alt=""></p>
+<p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_004.png?raw=true" alt></p>
 <h3 id="2-3-네이버-메일로-이동해서-메일-데이터-가져오기"><a href="#2-3-네이버-메일로-이동해서-메일-데이터-가져오기" class="headerlink" title="2.3 네이버 메일로 이동해서 메일 데이터 가져오기"></a>2.3 네이버 메일로 이동해서 메일 데이터 가져오기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.get(mail_url)</span><br></pre></td></tr></table></figure>
-<p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_005.png?raw=true" alt=""></p>
+<p><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_09_image_005.png?raw=true" alt></p>
 <h4 id="전체-메일-갯수-가져오기"><a href="#전체-메일-갯수-가져오기" class="headerlink" title="전체 메일 갯수 가져오기"></a>전체 메일 갯수 가져오기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">total_mail_count = driver.find_element_by_css_selector(<span class="string">"#headTotalNum"</span>).text</span><br><span class="line">total_mail_count</span><br></pre></td></tr></table></figure>
 <pre><code>&apos;110&apos;
 </code></pre><h4 id="안-읽은-메일-갯수-가져오기"><a href="#안-읽은-메일-갯수-가져오기" class="headerlink" title="안 읽은 메일 갯수 가져오기"></a>안 읽은 메일 갯수 가져오기</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unread_mail_count = driver.find_element_by_css_selector(<span class="string">"#headUnreadNum"</span>).text</span><br><span class="line">unread_mail_count</span><br></pre></td></tr></table></figure>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang=en>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="자동화에 유용하게 사용할 수 있는 파이썬 라이브러리를 배워보자.python으로 이메일 보내기!  e.g. 광고메일 등을 보낼 수 있음 e.g. 머신러닝 모델을 학습시켜놓고 결과 데이터를 csv 파일로 메일을 받아볼 수 있음">
 <meta name="keywords" content="programming,web,email">
 <meta property="og:type" content="article">
@@ -52,7 +52,7 @@
     <!-- rss -->
     
     
-      <link rel="alternate" href="/atom.xml" title="우와팬더의 블로그" type="application/atom+xml" /><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+      <link rel="alternate" href="/atom.xml" title="우와팬더의 블로그" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 </head>
 
@@ -197,8 +197,8 @@ hyeshinoh+11@gmail.com
 hyeshinoh+h@gmail.com
 </code></pre><p>메일이 다음과 같이 잘 도착했다!</p>
 <ul>
-<li>naver메일<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_naver_mail_001.png?raw=true" alt=""></li>
-<li>gmail<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_gmail_001.png?raw=true" alt=""></li>
+<li>naver메일<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_naver_mail_001.png?raw=true" alt></li>
+<li>gmail<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_gmail_001.png?raw=true" alt></li>
 </ul>
 <h2 id="2-4-HTML-code-추가하기"><a href="#2-4-HTML-code-추가하기" class="headerlink" title="2.4 HTML code 추가하기"></a>2.4 HTML code 추가하기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">part_html = MIMEText(<span class="string">'&lt;br&gt;&lt;a href="https://github.com/hyeshinoh/"&gt;hyeshin github&lt;/a&gt;'</span>, <span class="string">'html'</span>)</span><br><span class="line">msg.attach(part_html)</span><br><span class="line">msg  <span class="comment">#msg 상태: 제목, 본문(text), html 코드</span></span><br></pre></td></tr></table></figure>
 <pre><code>&lt;email.mime.multipart.MIMEMultipart at 0x10d55d5f8&gt;
@@ -225,8 +225,8 @@ hyeshinoh+11@gmail.com
 hyeshinoh+h@gmail.com
 </code></pre><p>메일이 다음과 같이 잘 도착했다!</p>
 <ul>
-<li>naver메일<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_naver_mail_002.png?raw=true" alt=""></li>
-<li>gmail<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_gmail_002.png?raw=true" alt=""></li>
+<li>naver메일<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_naver_mail_002.png?raw=true" alt></li>
+<li>gmail<br><img src="https://github.com/hyeshinoh/Study_Web/blob/master/web_06_Send_Email_gmail_002.png?raw=true" alt></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># smtp close</span></span><br><span class="line">smtp.quit()</span><br></pre></td></tr></table></figure>
 <pre><code>(221, b&apos;2.0.0 closing connection d22-v6sm9509327pfk.69 - gsmtp&apos;)

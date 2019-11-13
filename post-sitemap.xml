@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://hyeshinoh.github.io/2019/02/01/linux_001/</loc>
+        <lastmod>2019-11-10T12:24:06.297Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hyeshinoh.github.io/2019/02/20/2019-02-20-TIL/</loc>
         <lastmod>2019-09-25T11:51:44.496Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,6 +33,14 @@
     <url>
         <loc>https://hyeshinoh.github.io/2019/02/13/linux_007/</loc>
         <lastmod>2019-08-29T11:34:11.526Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2019/02/09/linux_005/</loc>
+        <lastmod>2019-08-28T14:31:27.884Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -87,14 +103,6 @@
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/2019/02/09/linux_005/</loc>
-        <lastmod>2019-08-26T13:53:02.666Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://hyeshinoh.github.io/2019/02/07/linux_004/</loc>
         <lastmod>2019-08-26T12:24:34.305Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -105,14 +113,6 @@
     <url>
         <loc>https://hyeshinoh.github.io/2019/02/05/linux_003/</loc>
         <lastmod>2019-08-26T12:24:06.708Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2019/02/01/linux_001/</loc>
-        <lastmod>2019-08-26T12:21:53.738Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
