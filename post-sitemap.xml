@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://hyeshinoh.github.io/2018/07/01/python_00/</loc>
+        <lastmod>2019-11-20T12:06:06.978Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hyeshinoh.github.io/2019/02/20/linux_008/</loc>
         <lastmod>2019-11-13T13:55:40.760Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -489,14 +497,6 @@
     <url>
         <loc>https://hyeshinoh.github.io/2018/07/07/python_01/</loc>
         <lastmod>2019-08-15T15:17:11.522Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/07/01/python_00/</loc>
-        <lastmod>2019-08-15T15:16:57.460Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
