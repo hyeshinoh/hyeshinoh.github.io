@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트  강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!) 리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런    1. 다중 사용자 유닉스 계열 운영체제는 여러 명이 함께 사용할 수 있는 기능을 가지고 있음 다중 사용자 시스템이 되면 시스템의 복잡도가 높아짐 $ id: uid(유저아이디),">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-17T14:41:22.939Z">
+<meta property="og:updated_time" content="2020-01-17T14:47:43.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="리눅스(Linux) - 사용자와 권한">
 <meta name="twitter:description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트  강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!) 리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런    1. 다중 사용자 유닉스 계열 운영체제는 여러 명이 함께 사용할 수 있는 기능을 가지고 있음 다중 사용자 시스템이 되면 시스템의 복잡도가 높아짐 $ id: uid(유저아이디),">
@@ -231,11 +231,62 @@
 <li><code>$ chmod -R o+w [dirname]</code>: [dirname] 안의 모든 디렉토리에 대해 재귀적으로 other의 write 권한을 추가하기   </li>
 </ul>
 </li>
-<li><code>chmod</code> octal modes<br>| | Permission | wrx |<br>|—|—|—|<br>|7| read, write and execute | rwx |<br>|6| read and write | wr-|<br>|5| read and execute | r-x |<br>|4| read only | r– |<br>|3| write and execute | -wx |<br>|2| write only | -w- |<br>|1| execute only | –x |<br>|0| none | — |<ul>
+<li><code>chmod</code> octal modes  <ul>
 <li>e.g. <code>$ chmod 111 [filename]</code>: 모든 사용자가 실행만 가능하게 변경</li>
 </ul>
 </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>num</th>
+<th>Permission</th>
+<th>wrx</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+<td>read, write and execute</td>
+<td>rwx</td>
+</tr>
+<tr>
+<td>6</td>
+<td>read and write</td>
+<td>wr-</td>
+</tr>
+<tr>
+<td>5</td>
+<td>read and execute</td>
+<td>r-x</td>
+</tr>
+<tr>
+<td>4</td>
+<td>read only</td>
+<td>r--</td>
+</tr>
+<tr>
+<td>3</td>
+<td>write and execute</td>
+<td>-wx</td>
+</tr>
+<tr>
+<td>2</td>
+<td>write only</td>
+<td>-w-</td>
+</tr>
+<tr>
+<td>1</td>
+<td>execute only</td>
+<td>--x</td>
+</tr>
+<tr>
+<td>0</td>
+<td>none</td>
+<td>---</td>
+</tr>
+</tbody>
+</table>
 <h2 id="5-그룹-Group"><a href="#5-그룹-Group" class="headerlink" title="5. 그룹 (Group)"></a>5. 그룹 (Group)</h2><p>특정한 사용자 그룹에 대해서 파일/디렉토리에 대한 권한을 지정할 수 있음</p>
 <ul>
 <li><code>$ useradd -G [group_name] [username]</code>: group에 사용자를 생성해서 추가</li>
