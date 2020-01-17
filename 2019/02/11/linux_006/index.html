@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트  강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!) 리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런    1. 다중 사용자 유닉스 계열 운영체제는 여러 명이 함께 사용할 수 있는 기능을 가지고 있음 다중 사용자 시스템이 되면 시스템의 복잡도가 높아짐 $ id: uid(유저아이디),">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-17T14:27:47.821Z">
+<meta property="og:updated_time" content="2020-01-17T14:41:22.939Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="리눅스(Linux) - 사용자와 권한">
 <meta name="twitter:description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트  강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!) 리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런    1. 다중 사용자 유닉스 계열 운영체제는 여러 명이 함께 사용할 수 있는 기능을 가지고 있음 다중 사용자 시스템이 되면 시스템의 복잡도가 높아짐 $ id: uid(유저아이디),">
@@ -231,9 +231,7 @@
 <li><code>$ chmod -R o+w [dirname]</code>: [dirname] 안의 모든 디렉토리에 대해 재귀적으로 other의 write 권한을 추가하기   </li>
 </ul>
 </li>
-<li><p><code>chmod</code> octal modes</p>
-<p>  | | Permission | wrx |<br>|—|—|—|<br>|7| read, write and execute | rwx |<br>|6| read and write | wr-|<br>|5| read and execute | r-x |<br>|4| read only | r– |<br>|3| write and execute | -wx |<br>|2| write only | -w- |<br>|1| execute only | –x |<br>|0| none | — |</p>
-<ul>
+<li><code>chmod</code> octal modes<br>| | Permission | wrx |<br>|—|—|—|<br>|7| read, write and execute | rwx |<br>|6| read and write | wr-|<br>|5| read and execute | r-x |<br>|4| read only | r– |<br>|3| write and execute | -wx |<br>|2| write only | -w- |<br>|1| execute only | –x |<br>|0| none | — |<ul>
 <li>e.g. <code>$ chmod 111 [filename]</code>: 모든 사용자가 실행만 가능하게 변경</li>
 </ul>
 </li>
