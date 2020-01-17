@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트  강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!) 리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런    1. 다중 사용자 유닉스 계열 운영체제는 여러 명이 함께 사용할 수 있는 기능을 가지고 있음 다중 사용자 시스템이 되면 시스템의 복잡도가 높아짐 $ id: uid(유저아이디),">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-27T15:02:48.284Z">
+<meta property="og:updated_time" content="2020-01-17T14:24:51.264Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="리눅스(Linux) - 사용자와 권한">
 <meta name="twitter:description" content="생활코딩 생활코딩 리눅스 강좌 내용을 들으면서 정리하는 노트  강의 듣기 (같은 강의이니 편한 곳을 선택해서 공부하면 된다!) 리눅스 @생활코딩 생활코딩 리눅스 강좌 @인프런    1. 다중 사용자 유닉스 계열 운영체제는 여러 명이 함께 사용할 수 있는 기능을 가지고 있음 다중 사용자 시스템이 되면 시스템의 복잡도가 높아짐 $ id: uid(유저아이디),">
@@ -111,7 +111,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-다중-사용자"><span class="toc-number">1.</span> <span class="toc-text">1. 다중 사용자</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-관리자와-일반-사용자-Superuser-vs-User"><span class="toc-number">2.</span> <span class="toc-text">2. 관리자와 일반 사용자 (Superuser vs. User)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-사용자의-추가-Add-User"><span class="toc-number">3.</span> <span class="toc-text">3. 사용자의 추가 (Add User)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-권한-Permission"><span class="toc-number">4.</span> <span class="toc-text">4. 권한 (Permission)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Permission-wrx"><span class="toc-number"></span> <span class="toc-text">| Permission | wrx |</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-그룹-Group"><span class="toc-number">1.</span> <span class="toc-text">5. 그룹 (Group)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#참고자료"><span class="toc-number">2.</span> <span class="toc-text">참고자료</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-다중-사용자"><span class="toc-number">1.</span> <span class="toc-text">1. 다중 사용자</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-관리자와-일반-사용자-Superuser-vs-User"><span class="toc-number">2.</span> <span class="toc-text">2. 관리자와 일반 사용자 (Superuser vs. User)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-사용자의-추가-Add-User"><span class="toc-number">3.</span> <span class="toc-text">3. 사용자의 추가 (Add User)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-권한-Permission"><span class="toc-number">4.</span> <span class="toc-text">4. 권한 (Permission)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-그룹-Group"><span class="toc-number">5.</span> <span class="toc-text">5. 그룹 (Group)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#참고자료"><span class="toc-number">6.</span> <span class="toc-text">참고자료</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -189,7 +189,7 @@
 </li>
 </ul>
 <h2 id="3-사용자의-추가-Add-User"><a href="#3-사용자의-추가-Add-User" class="headerlink" title="3. 사용자의 추가 (Add User)"></a>3. 사용자의 추가 (Add User)</h2><ul>
-<li>‘$ sudo useradd -m username`: username으로 사용자 추가<ul>
+<li><code>$ sudo useradd -m username</code>: username으로 사용자 추가<ul>
 <li><code>-m</code>: 홈 디렉토리를 같이 만들어줌 (`/home/username)</li>
 </ul>
 </li>
@@ -231,7 +231,7 @@
 <li><code>$ chmod -R o+w [dirname]</code>: [dirname] 안의 모든 디렉토리에 대해 재귀적으로 other의 write 권한을 추가하기   </li>
 </ul>
 </li>
-<li><code>chmod</code> octal modes<h1 id="Permission-wrx"><a href="#Permission-wrx" class="headerlink" title="| Permission | wrx |"></a>| Permission | wrx |</h1>—|—|—|<br>7| read, write and execute | rwx |<br>6| read and write | wr-|<br>5| read and execute | r-x |<br>4| read only | r– |<br>3| write and execute | -wx |<br>2| write only | -w- |<br>1| execute only | –x |<br>0| none | — |<ul>
+<li><code>chmod</code> octal modes<br>   | Permission | wrx |<br>—|—|—|<br>7| read, write and execute | rwx |<br>6| read and write | wr-|<br>5| read and execute | r-x |<br>4| read only | r– |<br>3| write and execute | -wx |<br>2| write only | -w- |<br>1| execute only | –x |<br>0| none | — |<ul>
 <li>e.g. <code>$ chmod 111 [filename]</code>: 모든 사용자가 실행만 가능하게 변경</li>
 </ul>
 </li>
@@ -286,7 +286,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-다중-사용자"><span class="toc-number">1.</span> <span class="toc-text">1. 다중 사용자</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-관리자와-일반-사용자-Superuser-vs-User"><span class="toc-number">2.</span> <span class="toc-text">2. 관리자와 일반 사용자 (Superuser vs. User)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-사용자의-추가-Add-User"><span class="toc-number">3.</span> <span class="toc-text">3. 사용자의 추가 (Add User)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-권한-Permission"><span class="toc-number">4.</span> <span class="toc-text">4. 권한 (Permission)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Permission-wrx"><span class="toc-number"></span> <span class="toc-text">| Permission | wrx |</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-그룹-Group"><span class="toc-number">1.</span> <span class="toc-text">5. 그룹 (Group)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#참고자료"><span class="toc-number">2.</span> <span class="toc-text">참고자료</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-다중-사용자"><span class="toc-number">1.</span> <span class="toc-text">1. 다중 사용자</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-관리자와-일반-사용자-Superuser-vs-User"><span class="toc-number">2.</span> <span class="toc-text">2. 관리자와 일반 사용자 (Superuser vs. User)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-사용자의-추가-Add-User"><span class="toc-number">3.</span> <span class="toc-text">3. 사용자의 추가 (Add User)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-권한-Permission"><span class="toc-number">4.</span> <span class="toc-text">4. 권한 (Permission)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-그룹-Group"><span class="toc-number">5.</span> <span class="toc-text">5. 그룹 (Group)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#참고자료"><span class="toc-number">6.</span> <span class="toc-text">참고자료</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -318,7 +318,7 @@
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2019 우와팬더
+    Copyright &copy; 2020 우와팬더
   </div>
   <div class="footer-right">
     <nav>
