@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>https://hyeshinoh.github.io/2018/10/24/math-lin_alg-002/</loc>
+        <lastmod>2020-01-29T14:12:23.721Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/2018/10/24/math-lin_alg-001/</loc>
+        <lastmod>2020-01-29T14:11:53.601Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hyeshinoh.github.io/2019/02/11/linux_006/</loc>
         <lastmod>2020-01-17T14:49:55.744Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -689,22 +705,6 @@
     <url>
         <loc>https://hyeshinoh.github.io/2018/10/30/math-lin_alg-003/</loc>
         <lastmod>2019-08-15T15:14:06.103Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/10/24/math-lin_alg-002/</loc>
-        <lastmod>2019-08-15T15:13:57.125Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/10/24/math-lin_alg-001/</loc>
-        <lastmod>2019-08-15T15:13:43.087Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
