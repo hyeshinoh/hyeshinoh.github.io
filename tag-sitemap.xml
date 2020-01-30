@@ -16,13 +16,6 @@
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/tags/data-analysis/</loc>
-        <lastmod>2019-08-15T15:16:26.411Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://hyeshinoh.github.io/tags/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/</loc>
         <lastmod>2019-08-15T15:19:37.445Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -268,13 +261,6 @@
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/tags/math/</loc>
-        <lastmod>2020-01-30T14:18:20.342Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://hyeshinoh.github.io/tags/data-science/</loc>
         <lastmod>2020-01-30T14:18:20.342Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -282,8 +268,22 @@
     </url>
 
     <url>
+        <loc>https://hyeshinoh.github.io/tags/data-analysis/</loc>
+        <lastmod>2020-01-30T14:24:08.931Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/math/</loc>
+        <lastmod>2020-01-30T14:24:08.931Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://hyeshinoh.github.io/tags/%EC%84%A0%ED%98%95%EB%8C%80%EC%88%98/</loc>
-        <lastmod>2020-01-30T14:18:20.342Z</lastmod>
+        <lastmod>2020-01-30T14:24:08.931Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
