@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 9편 내용을 간략히 정리해본다.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-30T15:03:26.784Z">
+<meta property="og:updated_time" content="2020-02-01T15:17:48.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 3Blue1Brown - Essence of linear algebra E9">
 <meta name="twitter:description" content="선형대수 기본 개념을 익히는 데 아주 좋은 youtube 3Blue1Brown 채널의 Essence of linear algebra 시리즈의 9편 내용을 간략히 정리해본다.">
@@ -52,8 +52,7 @@
     
 </head>
 
-<body class="max-width mx-auto px3 ltr">
-    
+<body class="max-width mx-auto px3 ltr">    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -176,7 +175,7 @@
 <li>$\vec w$가 $\vec v$의 방향과 수직(perpendicular)이면 dot product는 0</li>
 </ul>
 <h2 id="2-Duality"><a href="#2-Duality" class="headerlink" title="2. Duality"></a>2. Duality</h2><ul>
-<li>Duality: natural-but-surprising correspondence between two mathematical thing</li>
+<li>Duality: natural-but-surprising correspondence between two mathematical things</li>
 <li>matrix-vector product ⇔ dot product<ul>
 <li>$1 \cdot 2$ matrix와 2차원 vector를 생각할 것  </li>
 </ul>
@@ -335,7 +334,25 @@
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }());
-    </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    </script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -353,7 +370,6 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
-
 
 </body>
 </html>
