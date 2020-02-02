@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="행렬의 부호1) 행렬의 양-정부호(positive definite) 특성 영벡터가 아닌 모든 벡터 $x$에 대해 다음 부등식이 성립하면 행렬 $A$가 양-정부호(positive definite)이라고 함  $$x^TAx&amp;gt;0$$  식이 등호를 포함하는 경우 양-준정부호(positive semi-definite)  $$x^TAx \geq 0$$  단위 행">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-15T15:15:43.736Z">
+<meta property="og:updated_time" content="2020-02-02T11:37:03.546Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 행렬의 성질 with python">
 <meta name="twitter:description" content="행렬의 부호1) 행렬의 양-정부호(positive definite) 특성 영벡터가 아닌 모든 벡터 $x$에 대해 다음 부등식이 성립하면 행렬 $A$가 양-정부호(positive definite)이라고 함  $$x^TAx&amp;gt;0$$  식이 등호를 포함하는 경우 양-준정부호(positive semi-definite)  $$x^TAx \geq 0$$  단위 행">
@@ -52,7 +52,8 @@
     
 </head>
 
-<body class="max-width mx-auto px3 ltr">    
+<body class="max-width mx-auto px3 ltr">
+    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -106,16 +107,7 @@
   <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2018/11/16/math-lin_alg-016/&title=&lt;선형대수&gt; 행렬의 성질 with python"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2018/11/16/math-lin_alg-016/&title=&lt;선형대수&gt; 행렬의 성질 with python"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2018/11/16/math-lin_alg-016/&title=&lt;선형대수&gt; 행렬의 성질 with python"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2018/11/16/math-lin_alg-016/&name=&lt;선형대수&gt; 행렬의 성질 with python&description=&lt;h2 id=&#34;행렬의-부호&#34;&gt;&lt;a href=&#34;#행렬의-부호&#34; class=&#34;headerlink&#34; title=&#34;행렬의 부호&#34;&gt;&lt;/a&gt;행렬의 부호&lt;/h2&gt;&lt;h3 id=&#34;1-행렬의-양-정부호-positive-definite-특성&#34;&gt;&lt;a href=&#34;#1-행렬의-양-정부호-positive-definite-특성&#34; class=&#34;headerlink&#34; title=&#34;1) 행렬의 양-정부호(positive definite) 특성&#34;&gt;&lt;/a&gt;1) 행렬의 양-정부호(positive definite) 특성&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;u&gt;영벡터가 아닌&lt;/u&gt; 모든 벡터 $x$에 대해 다음 부등식이 성립하면 행렬 $A$가 양-정부호(positive definite)이라고 함&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;$$x^TAx&amp;gt;0$$&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;식이 등호를 포함하는 경우 양-준정부호(positive semi-definite)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;$$x^TAx \geq 0$$&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;단위 행렬은 양-정부호"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2018/11/16/math-lin_alg-016/&name=&lt;선형대수&gt; 행렬의 성질 with python&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -178,10 +170,9 @@
 </ul>
 <p>$$x^TAx \geq 0$$</p>
 <ul>
-<li>단위 행렬은 양-정부호<a id="more"></a> 
-<h2 id="행렬의-크기"><a href="#행렬의-크기" class="headerlink" title="행렬의 크기"></a>행렬의 크기</h2></li>
+<li>단위 행렬은 양-정부호</li>
 </ul>
-<h3 id="1-놈-norm"><a href="#1-놈-norm" class="headerlink" title="1) 놈(norm)"></a>1) 놈(norm)</h3><ul>
+<h2 id="행렬의-크기"><a href="#행렬의-크기" class="headerlink" title="행렬의 크기"></a>행렬의 크기</h2><h3 id="1-놈-norm"><a href="#1-놈-norm" class="headerlink" title="1) 놈(norm)"></a>1) 놈(norm)</h3><ul>
 <li>행렬 $A$에 대해 다음처럼 정의되는 숫자로, 보통 $\Vert A \Vert_L$로 표기 <br>($L$은 1, 2, 또는 무한대를 많이 사용)</li>
 <li>벡터의 길이</li>
 </ul>
@@ -333,16 +324,7 @@
   <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2018/11/16/math-lin_alg-016/&title=&lt;선형대수&gt; 행렬의 성질 with python"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2018/11/16/math-lin_alg-016/&title=&lt;선형대수&gt; 행렬의 성질 with python"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2018/11/16/math-lin_alg-016/&title=&lt;선형대수&gt; 행렬의 성질 with python"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2018/11/16/math-lin_alg-016/&name=&lt;선형대수&gt; 행렬의 성질 with python&description=&lt;h2 id=&#34;행렬의-부호&#34;&gt;&lt;a href=&#34;#행렬의-부호&#34; class=&#34;headerlink&#34; title=&#34;행렬의 부호&#34;&gt;&lt;/a&gt;행렬의 부호&lt;/h2&gt;&lt;h3 id=&#34;1-행렬의-양-정부호-positive-definite-특성&#34;&gt;&lt;a href=&#34;#1-행렬의-양-정부호-positive-definite-특성&#34; class=&#34;headerlink&#34; title=&#34;1) 행렬의 양-정부호(positive definite) 특성&#34;&gt;&lt;/a&gt;1) 행렬의 양-정부호(positive definite) 특성&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;u&gt;영벡터가 아닌&lt;/u&gt; 모든 벡터 $x$에 대해 다음 부등식이 성립하면 행렬 $A$가 양-정부호(positive definite)이라고 함&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;$$x^TAx&amp;gt;0$$&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;식이 등호를 포함하는 경우 양-준정부호(positive semi-definite)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;$$x^TAx \geq 0$$&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;단위 행렬은 양-정부호"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2018/11/16/math-lin_alg-016/&name=&lt;선형대수&gt; 행렬의 성질 with python&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -444,25 +426,7 @@
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }());
-    </script>
-
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -480,6 +444,7 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
 
 </body>
 </html>
