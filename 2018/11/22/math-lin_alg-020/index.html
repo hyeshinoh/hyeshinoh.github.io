@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyeshinoh.github.io/2018/11/22/math-lin_alg-020/matrixvector1.jpeg">
 <meta property="og:image" content="https://hyeshinoh.github.io/2018/11/22/math-lin_alg-020/matrixvector2.jpeg">
-<meta property="og:updated_time" content="2019-08-15T15:16:10.371Z">
+<meta property="og:updated_time" content="2020-02-02T13:26:36.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 선형종속&#x2F;선형독립 &amp; 좌표변환">
 <meta name="twitter:description" content="1. 선형 종속과 선형 독립벡터의 선형 종속과 선형 독립 선형조합이 0벡터가 되는 경우로 선형 독립과 선형 종속을 판단함  $$c_1x_1 + c_2x_2 + \cdots + c_Nx_N = 0 $$   선형 독립(linearly independent): 위 식을 만족하는 모두 0이 아닌 스칼라값 $c_1, c_2, \cdots, x_N$이 존재하지 않는">
@@ -238,7 +238,7 @@
 <li><p>벡터 $a$의 기존 기저벡터($e_1, e_2$)에 대한 좌표 $a_1$를 새로운 기저 벡터($g_1, g_2$)에 대한 좌표 $a_2$로 변환하기</p>
 <ul>
 <li>기존 기저벡터에 대한 좌표값과 새로운 기저벡터에 대한 좌표값이 가리키는 실제 위치는 같아야 함<br>$$ a = a_1e_1 + a_2e_2  = a’_1g_1 + a’_2g_2 \\<br>a = \begin{bmatrix} e_1 &amp; e_2 \end{bmatrix}a_1<br>= \begin{bmatrix} g_1 &amp; g_2 \end{bmatrix}a’ $$</li>
-<li>이 식에서 $a’_1, a’_2$가 새로운 기저 벡터에 대한 좌표임<br>$$ \begin{align}<br>a’_1g_1 + a’_2g_2 &amp; =<br>\begin{bmatrix} g_1 &amp; g_2 \end{bmatrix}\begin{bmatrix} a’_1 \ a’_2 \end{bmatrix} \\<br>&amp; = \begin{bmatrix} g_1 &amp; g_2 \end{bmatrix}a’ \\<br>&amp; = Aa’<br>\end{align}$$</li>
+<li>이 식에서 $a’_1, a’_2$가 새로운 기저 벡터에 대한 좌표임<br>$$ \begin{align}<br>a’_1g_1 + a’_2g_2 &amp; = \begin{bmatrix} g_1 &amp; g_2 \end{bmatrix} \begin{bmatrix} a’_1 \\ a’_2 \end{bmatrix} \\<br>&amp; = \begin{bmatrix} g_1 &amp; g_2 \end{bmatrix} a’ \\<br>&amp; = Aa’<br>\end{align}$$</li>
 <li>이 때, $A$는 역행렬이 존재하므로 다음과 같이 새로운 좌표계를 계산 가능<br>$$ \begin{align}<br>Aa’ &amp; = a \\<br>a’ &amp; = A^{-1}a \\<br>&amp; = Ta<br>\end{align}$$</li>
 </ul>
 </li>
