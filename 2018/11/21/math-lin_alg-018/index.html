@@ -16,7 +16,7 @@
 <meta property="og:description" content="1. 유클리드 유사도(Euclidean Similarity) 유클리드 거리(Euclidean distance): 두 벡터가 가리키는 점 사이의 거리 두 벡터의 차의 길이로 구할 수 있음">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyeshinoh.github.io/2018/11/21/math-lin_alg-018/triangle.png">
-<meta property="og:updated_time" content="2019-08-15T15:15:57.126Z">
+<meta property="og:updated_time" content="2020-02-02T12:37:00.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 벡터와 유사도">
 <meta name="twitter:description" content="1. 유클리드 유사도(Euclidean Similarity) 유클리드 거리(Euclidean distance): 두 벡터가 가리키는 점 사이의 거리 두 벡터의 차의 길이로 구할 수 있음">
@@ -170,8 +170,8 @@
 <li>두 벡터의 차의 길이로 구할 수 있음</li>
 </ul>
 <a id="more"></a> 
-<p>$$<br>\begin{align}<br>| a - b | &amp; = \sqrt{\sum_{i=1} (a_i - b_i)^2} \\<br>&amp; = \sqrt{\sum_{i=1} ( a_i^2 - 2 a_i b_i + b_i^2 )} \\<br>&amp; = \sqrt{\sum_{i=1} a_i^2 + \sum_{i=1} b_i^2 - 2 \sum_{i=1} a_i b_i} \\<br>&amp; = \sqrt{| a |^2 + | b |^2  - 2 a^Tb } \\<br>\end{align}<br>$$</p>
-<p>$$<br>| a - b |^2 = | a |^2 + | b |^2 - 2 a^T b<br>$$</p>
+<p>$$<br>\begin{align}<br>\Vert a - b \Vert &amp; = \sqrt{\sum_{i=1} (a_i - b_i)^2} \\<br>&amp; = \sqrt{\sum_{i=1} ( a_i^2 - 2 a_i b_i + b_i^2 )} \\<br>&amp; = \sqrt{\sum_{i=1} a_i^2 + \sum_{i=1} b_i^2 - 2 \sum_{i=1} a_i b_i} \\<br>&amp; = \sqrt{\Vert a \Vert^2 + \Vert b \Vert^2  - 2 a^Tb } \\<br>\end{align}<br>$$</p>
+<p>$$<br>\Vert a - b \Vert^2 = \Vert a \Vert^2 + \Vert b \Vert^2 - 2 a^T b<br>$$</p>
 <ul>
 <li>유클리드 유사도: 유클리드 거리와 반비례하는 값으로 정의할 수 있음</li>
 </ul>
