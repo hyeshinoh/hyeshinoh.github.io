@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://hyeshinoh.github.io/2018/11/21/math-lin_alg-019/line.jpeg">
 <meta property="og:image" content="https://hyeshinoh.github.io/2018/11/21/math-lin_alg-019/distance.jpeg">
-<meta property="og:updated_time" content="2019-08-15T15:16:04.081Z">
+<meta property="og:updated_time" content="2020-02-02T13:04:44.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&lt;선형대수&gt; 직선과 점의 거리">
 <meta name="twitter:description" content="직선과 점의 거리는 분류 알고리즘인 서포트 벡터 머신(SVM: Support Vector Machine) 과 관련해 알아두어야 할 부분이다. 직선의 방정식  어떤 벡터 $w$가 있을 때, 다음의 조건을 만족하는 직선 $x$의 방정식  (1) 벡터 $w$와 수직  (2) 벡터 $w$가 가리키는 점을 지남">
@@ -179,7 +179,7 @@
 <p>$$ w^T(x-w) = 0 $$<br>$$ \begin{align}<br>w^T(x-w) &amp; = w^Tx-w^Tw \\<br>&amp; = w^Tx-\Vert w \Vert^2 \\<br>\end{align} $$</p>
 <p>$$ w^Tx-\Vert w \Vert^2  = 0 $$</p>
 <ul>
-<li>e.g.) $w= \begin{bmatrix} 3 \1 \end{bmatrix}$일 경우 $w$를 수직으로 지나는 직선의 방정식</li>
+<li>e.g. $w= \begin{bmatrix} 3 \\ 1 \end{bmatrix}$일 경우 $w$를 수직으로 지나는 직선의 방정식</li>
 </ul>
 <p>$$\begin{bmatrix} 3 &amp; 1 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = 3x_1 + x_2 -10 = 0 $$</p>
 <p>$$ 3x_1 + x_2 = 10 $$</p>
@@ -198,11 +198,11 @@
 </ul>
 </li>
 </ul>
-<p>$$ \begin{align}<br>d &amp; = \left|  |x’^{\Vert w}| - |w| \right| \\<br>&amp; = \left| \dfrac{w^Tx’}{|w|} - |w| \right| \\<br>&amp; = \dfrac{\left|w^Tx’ - |w|^2 \right|}{|w|} \\<br>\end{align}<br>$$</p>
+<p>$$ \begin{align}<br>d &amp; = \left|  |x’^{\Vert w}| - \Vert w \Vert \right| \\<br>&amp; = \left| \dfrac{w^Tx’}{\Vert w \Vert} - \Vert w \Vert \right| \\<br>&amp; = \dfrac{\left|w^Tx’ - \Vert w \Vert^2 \right|}{\Vert w \Vert} \\<br>\end{align}<br>$$</p>
 <ul>
 <li>직선의 방정식이 $w^Tx - w_0 = 0$인 경우 직선과 점의 거리</li>
 </ul>
-<p>$$ d = \dfrac{\left|w^Tx’ - w_0 \right|}{|w|} $$</p>
+<p>$$ d = \dfrac{\left|w^Tx’ - w_0 \right|}{\Vert w \Vert} $$</p>
 <h4 id="참고-자료"><a href="#참고-자료" class="headerlink" title="참고 자료"></a>참고 자료</h4><ul>
 <li><a href="https://datascienceschool.net/view-notebook/3f44cfdda2874080a9aa6b034c71d5ec/" target="_blank" rel="noopener">데이터 사이언스 스쿨 - 선형대수와 해석기하의 기초</a></li>
 </ul>
