@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="우와팬더의 블로그">
 <meta property="og:description" content="1. Database 개요1.1 데이터베이스의 개념DB(Database) 방대한 데이터를 효율적으로 관리하기 위해 컴퓨터에 통합·저장한 것 통합하여 관리되는 데이터들의 집합  DBMS(Database Management System) 데이터베이스를 관리하는 미들웨어 시스템 데이터베이스에 데이터를 저장하고, 효율적으로 검색하고 수정할 수 있는 환경을 제공 권">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-20T14:32:50.534Z">
+<meta property="og:updated_time" content="2020-02-18T09:50:45.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Database 개념 및 기초">
 <meta name="twitter:description" content="1. Database 개요1.1 데이터베이스의 개념DB(Database) 방대한 데이터를 효율적으로 관리하기 위해 컴퓨터에 통합·저장한 것 통합하여 관리되는 데이터들의 집합  DBMS(Database Management System) 데이터베이스를 관리하는 미들웨어 시스템 데이터베이스에 데이터를 저장하고, 효율적으로 검색하고 수정할 수 있는 환경을 제공 권">
@@ -52,7 +52,8 @@
     
 </head>
 
-<body class="max-width mx-auto px3 ltr">    
+<body class="max-width mx-auto px3 ltr">
+    
       <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -213,35 +214,30 @@
 </ol>
 <h3 id="1-4-데이터베이스-사용자"><a href="#1-4-데이터베이스-사용자" class="headerlink" title="1.4 데이터베이스 사용자"></a>1.4 데이터베이스 사용자</h3><p>DBMS 활용 형태에 따라 세 가지 유형으로 구분</p>
 <ul>
-<li><p>응용프로그래머</p>
-<ul>
+<li>응용프로그래머<ul>
 <li>일반 프로그래밍언어와 데이터조작어를 이용하여 프로그램을 만듦</li>
 </ul>
 </li>
-<li><p>최종 사용자</p>
-<ul>
+<li>최종 사용자<ul>
 <li>데이터의 검색, 삽입, 삭제, 갱신 등을 위해 DBMS를 사용하는 사람</li>
-<li>데이터베이스 질의어를 사요아여 데이터베이스 시스템에 접근한 후 원하는 정보를 찾음   </li>
+<li>데이터베이스 질의어를 사용하여 데이터베이스 시스템에 접근한 후 원하는 정보를 찾음   </li>
 </ul>
 </li>
-<li><p>데이터베이스 관리자</p>
-<ul>
+<li>데이터베이스 관리자<ul>
 <li>데이터 정의어와 데이터 제어어를 사용하여 데이터베이스 스키마를 생성하고 관리</li>
 <li>주요 업무: 데이터베이스 스키마의 생성과 변경, 무결성 제약 조건 명시, 보안 정책 수립(사용자의 권한 설정 및 역할 관리), 저장 구조 및 접근 방법 정의, 백업과 복구 절차 수립, 표준화 시행 등 </li>
 </ul>
 </li>
 </ul>
 <h3 id="1-5-데이터베이스의-구분"><a href="#1-5-데이터베이스의-구분" class="headerlink" title="1.5 데이터베이스의 구분"></a>1.5 데이터베이스의 구분</h3><ol>
-<li><p>관계형 데이터베이스(RDBMS, Relational Database Management System)</p>
-<ul>
+<li>관계형 데이터베이스(RDBMS, Relational Database Management System)<ul>
 <li>관계형 데이터 모델을 기반으로 하며 가장 널리 사용되는 데이터베이스</li>
 <li>Oracle, <strong>MySQL</strong>, Postgresql, Sqlite 등</li>
 <li>데이터 테이블 사이에 키값으로 관계를 가지고 있는 데이터베이스</li>
 <li>데이터 사이의 관계 설정으로 최적화된 스키마를 설계 가능</li>
 </ul>
 </li>
-<li><p>NoSQL</p>
-<ul>
+<li>NoSQL<ul>
 <li><strong>Mongodb</strong>, Hvase, Cassandra 등</li>
 <li>데이터 테이블 사이에 관계가 없이 저장하는 데이터베이스</li>
 <li>데이터 사이의 관계가 없으므로 복잡성이 줄고 많은 데이터를 저장가능하고 데이터 수정도 용이</li>
@@ -532,25 +528,7 @@
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }());
-    </script>
-
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -568,6 +546,7 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
 
 </body>
 </html>
