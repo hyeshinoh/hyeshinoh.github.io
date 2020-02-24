@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://hyeshinoh.github.io/2018/07/07/python_01/</loc>
+        <lastmod>2020-02-24T05:58:31.294Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hyeshinoh.github.io/2018/07/30/Database_05_mysql%20intermediate%20syntax/</loc>
         <lastmod>2020-02-19T14:37:24.976Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -641,14 +649,6 @@
     <url>
         <loc>https://hyeshinoh.github.io/2018/07/08/python_02_condition,%20loop/</loc>
         <lastmod>2019-08-15T15:17:24.796Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/07/07/python_01/</loc>
-        <lastmod>2019-08-15T15:17:11.522Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

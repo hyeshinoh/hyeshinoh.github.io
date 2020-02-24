@@ -198,27 +198,6 @@
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/tags/python/</loc>
-        <lastmod>2019-11-20T12:06:06.978Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
-        <lastmod>2019-11-20T12:06:06.978Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/tags/programming/</loc>
-        <lastmod>2019-11-20T12:06:06.978Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://hyeshinoh.github.io/tags/%EC%B1%85%EB%A6%AC%EB%B7%B0/</loc>
         <lastmod>2020-01-15T06:07:56.348Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -284,6 +263,27 @@
     <url>
         <loc>https://hyeshinoh.github.io/tags/SQL/</loc>
         <lastmod>2020-02-19T14:37:24.976Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/python/</loc>
+        <lastmod>2020-02-24T05:58:31.294Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
+        <lastmod>2020-02-24T05:58:31.294Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/programming/</loc>
+        <lastmod>2020-02-24T05:58:31.294Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

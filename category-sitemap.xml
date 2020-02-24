@@ -42,13 +42,6 @@
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/categories/DataScience/Python-%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
-        <lastmod>2019-11-20T12:06:06.978Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://hyeshinoh.github.io/categories/Life/</loc>
         <lastmod>2020-01-15T06:07:56.348Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -77,15 +70,22 @@
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/categories/DataScience/</loc>
+        <loc>https://hyeshinoh.github.io/categories/DataScience/Database-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/</loc>
         <lastmod>2020-02-19T14:37:24.976Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/categories/DataScience/Database-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/</loc>
-        <lastmod>2020-02-19T14:37:24.976Z</lastmod>
+        <loc>https://hyeshinoh.github.io/categories/DataScience/</loc>
+        <lastmod>2020-02-24T05:58:31.294Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/categories/DataScience/Python-%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
+        <lastmod>2020-02-24T05:58:31.294Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
