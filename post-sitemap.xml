@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://hyeshinoh.github.io/2018/07/25/Database_01/</loc>
+        <lastmod>2020-02-29T13:42:50.509Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hyeshinoh.github.io/2018/07/11/python_04_function_3_map%20filter%20reduce/</loc>
         <lastmod>2020-02-24T14:27:22.495Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,14 +33,6 @@
     <url>
         <loc>https://hyeshinoh.github.io/2018/07/30/Database_05_mysql%20intermediate%20syntax/</loc>
         <lastmod>2020-02-19T14:37:24.976Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://hyeshinoh.github.io/2018/07/25/Database_01/</loc>
-        <lastmod>2020-02-18T09:50:45.522Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
