@@ -198,13 +198,6 @@
     </url>
 
     <url>
-        <loc>https://hyeshinoh.github.io/tags/%EC%B1%85%EB%A6%AC%EB%B7%B0/</loc>
-        <lastmod>2020-01-15T06:07:56.348Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://hyeshinoh.github.io/tags/%EB%A6%AC%EB%88%85%EC%8A%A4/</loc>
         <lastmod>2020-01-17T14:49:55.744Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -284,6 +277,13 @@
     <url>
         <loc>https://hyeshinoh.github.io/tags/SQL/</loc>
         <lastmod>2020-03-01T01:50:43.998Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeshinoh.github.io/tags/%EC%B1%85%EB%A6%AC%EB%B7%B0/</loc>
+        <lastmod>2020-03-16T09:22:42.449Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
