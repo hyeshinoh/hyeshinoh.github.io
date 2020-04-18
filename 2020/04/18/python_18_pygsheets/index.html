@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang=en>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google-site-verification" content="gKrpPp3pdUTTicqIbNv6e3j6c232Ae4ouHGND_G68cI">
+    <meta name="description" content="jupyternotebook으로 보기 아마도 상당히 많은 사람들이 업무 혹은 개인 용도로 구글스프레드시트를 사용하고 있을 것이다.구글스프레드시트는 쉽게 말해 구글 아이디만 있다면 무료로 온라인 상에서 MS Office의 Excel의 기능을 상당 부분 사용할 수 있는 매우 편리한 애플리케이션으로, 특히 자동화와 협업에 강점을 가지고 있는 툴이라고 할 수 있다">
+<meta name="keywords" content="python,파이썬,programming,pandas,pysheets,구글스프레드시트">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지">
+<meta property="og:url" content="https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/index.html">
+<meta property="og:site_name" content="우와팬더의 블로그">
+<meta property="og:description" content="jupyternotebook으로 보기 아마도 상당히 많은 사람들이 업무 혹은 개인 용도로 구글스프레드시트를 사용하고 있을 것이다.구글스프레드시트는 쉽게 말해 구글 아이디만 있다면 무료로 온라인 상에서 MS Office의 Excel의 기능을 상당 부분 사용할 수 있는 매우 편리한 애플리케이션으로, 특히 자동화와 협업에 강점을 가지고 있는 툴이라고 할 수 있다">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/001.png">
+<meta property="og:image" content="https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/002.png">
+<meta property="og:image" content="https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/004.png">
+<meta property="og:image" content="https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/005.png">
+<meta property="og:image" content="https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/006.png">
+<meta property="og:image" content="https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/007.png">
+<meta property="og:image" content="https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/009.png">
+<meta property="og:image" content="https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/010.png">
+<meta property="og:image" content="https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/011.png">
+<meta property="og:image" content="https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/012.png">
+<meta property="og:image" content="https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/013.png">
+<meta property="og:updated_time" content="2020-04-18T13:08:02.689Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지">
+<meta name="twitter:description" content="jupyternotebook으로 보기 아마도 상당히 많은 사람들이 업무 혹은 개인 용도로 구글스프레드시트를 사용하고 있을 것이다.구글스프레드시트는 쉽게 말해 구글 아이디만 있다면 무료로 온라인 상에서 MS Office의 Excel의 기능을 상당 부분 사용할 수 있는 매우 편리한 애플리케이션으로, 특히 자동화와 협업에 강점을 가지고 있는 툴이라고 할 수 있다">
+<meta name="twitter:image" content="https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/001.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon_panda.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon_panda.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_panda.png">
+          
+        
+    
+    <!-- title -->
+    <title>python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/atom.xml" title="우와팬더의 블로그" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/categories/Diary">Diary</a></li>
+         
+          <li><a href="/categories/DataScience/">Data Science</a></li>
+         
+          <li><a href="/categories/Life/">Life</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2020/03/14/book_20200313_amazon_future/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&text=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&title=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&is_video=false&description=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지&body=Check out this article: https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&title=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&title=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&title=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&title=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&name=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지&description=&lt;p&gt;&lt;a href=&#34;https://nbviewer.jupyter.org/github/hyeshinoh/Study_Python/blob/master/python_27_pygsheets.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jupyternotebook으로 보기&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;아마도 상당히 많은 사람들이 업무 혹은 개인 용도로 구글스프레드시트를 사용하고 있을 것이다.&lt;br&gt;구글스프레드시트는 쉽게 말해 구글 아이디만 있다면 무료로 온라인 상에서 MS Office의 Excel의 기능을 상당 부분 사용할 수 있는 매우 편리한 애플리케이션으로, 특히 자동화와 협업에 강점을 가지고 있는 툴이라고 할 수 있다.&lt;br&gt;훌륭한 편의성을 갖추고 있기 때문에 구글스프레드시트를 작은 규모의 DB로 사용하기에도 무리가 없고, pygsheets 같은 패키지를 이용하면 파이썬으로 구글스프레드시트를 컨트롤 할 수 있어 꽤나 유용하다.&lt;br&gt;그렇다면 pygsheets를 사용해서 파이썬으로 구글스프레드시트의 데이터를 다루는 방법에 대해 알아보자.&lt;br&gt;여기서 커버되지 않은 더 자세한 내용은 언제나 그렇듯 공식문서 참조가 필요하다.&lt;br&gt;(공식문서: &lt;a href=&#34;https://pygsheets.readthedocs.io/en/stable/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://pygsheets.readthedocs.io/en/stable/&lt;/a&gt;)&lt;br&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Install-Package-패키지-설치하기"><span class="toc-number">1.</span> <span class="toc-text">1. Install Package 패키지 설치하기</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-구글-API-셋업-amp-인증"><span class="toc-number">2.</span> <span class="toc-text">2. 구글 API 셋업 &amp; 인증</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-OAuth"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 OAuth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-API-인증-Authorizing-방법"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 API 인증(Authorizing) 방법</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Handling-Sheets"><span class="toc-number">3.</span> <span class="toc-text">3. Handling Sheets</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Open-file-sheet"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 Open file/sheet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Create-Sheet-시트-생성"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 Create Sheet (시트 생성)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Copy-Sheet-시트-복사"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 Copy Sheet (시트 복사)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-Select-Sheet-시트-선택"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 Select Sheet (시트 선택)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-시트-제목"><span class="toc-number">3.5.</span> <span class="toc-text">3.5 시트 제목</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-시트-삭제"><span class="toc-number">3.6.</span> <span class="toc-text">3.6 시트 삭제</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Handling-Data"><span class="toc-number">4.</span> <span class="toc-text">4. Handling Data</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-데이터-가져오기"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 데이터 가져오기</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-전체-데이터-가져오기"><span class="toc-number">4.1.1.</span> <span class="toc-text">1) 전체 데이터 가져오기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-특정-범위-위치의-데이터-가져오기"><span class="toc-number">4.1.2.</span> <span class="toc-text">2) 특정 범위/위치의 데이터 가져오기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-특정-셀-데이터-가져오기"><span class="toc-number">4.1.3.</span> <span class="toc-text">3) 특정 셀 데이터 가져오기</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-문자열을-포함한-cell-찾기"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 문자열을 포함한 cell 찾기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-Update-amp-Insert"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 Update &amp; Insert</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-특정-범위에-데이터-업데이트"><span class="toc-number">4.3.1.</span> <span class="toc-text">1) 특정 범위에 데이터 업데이트</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-특정-셀-데이터-업데이트"><span class="toc-number">4.3.2.</span> <span class="toc-text">2) 특정 셀 데이터 업데이트</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-insert-amp-append"><span class="toc-number">4.3.3.</span> <span class="toc-text">3) insert &amp; append</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-셀-서식-지정"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 셀 서식 지정</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Pandas-DataFrame과의-호환"><span class="toc-number">5.</span> <span class="toc-text">5. Pandas DataFrame과의 호환</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-Sheet-→-DataFrame"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 Sheet → DataFrame</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-DataFrame-→-sheet"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 DataFrame → sheet</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-csv-파일을-불러와서-구글스프레드시트로-보내기"><span class="toc-number">5.2.1.</span> <span class="toc-text">1) csv 파일을 불러와서 구글스프레드시트로 보내기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-seaborn에서-iris-데이터를-가져와서-구글-스프레드시트에-넣기"><span class="toc-number">5.2.2.</span> <span class="toc-text">2) seaborn에서 iris 데이터를 가져와서 구글 스프레드시트에 넣기</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Share"><span class="toc-number">6.</span> <span class="toc-text">6. Share</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-공유-권한-추가"><span class="toc-number">6.1.</span> <span class="toc-text">6.1 공유 권한 추가</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-공유-권한-삭제"><span class="toc-number">6.2.</span> <span class="toc-text">6.2 공유 권한 삭제</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">우와팬더의 블로그</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-04-18T12:35:53.000Z" itemprop="datePublished">2020-04-18</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/DataScience/">DataScience</a> › <a class="category-link" href="/categories/DataScience/Python-파이썬/">Python 파이썬</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/pandas/">pandas</a>, <a class="tag-link" href="/tags/programming/">programming</a>, <a class="tag-link" href="/tags/pysheets/">pysheets</a>, <a class="tag-link" href="/tags/python/">python</a>, <a class="tag-link" href="/tags/구글스프레드시트/">구글스프레드시트</a>, <a class="tag-link" href="/tags/파이썬/">파이썬</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p><a href="https://nbviewer.jupyter.org/github/hyeshinoh/Study_Python/blob/master/python_27_pygsheets.ipynb" target="_blank" rel="noopener">jupyternotebook으로 보기</a></p>
+<p>아마도 상당히 많은 사람들이 업무 혹은 개인 용도로 구글스프레드시트를 사용하고 있을 것이다.<br>구글스프레드시트는 쉽게 말해 구글 아이디만 있다면 무료로 온라인 상에서 MS Office의 Excel의 기능을 상당 부분 사용할 수 있는 매우 편리한 애플리케이션으로, 특히 자동화와 협업에 강점을 가지고 있는 툴이라고 할 수 있다.<br>훌륭한 편의성을 갖추고 있기 때문에 구글스프레드시트를 작은 규모의 DB로 사용하기에도 무리가 없고, pygsheets 같은 패키지를 이용하면 파이썬으로 구글스프레드시트를 컨트롤 할 수 있어 꽤나 유용하다.<br>그렇다면 pygsheets를 사용해서 파이썬으로 구글스프레드시트의 데이터를 다루는 방법에 대해 알아보자.<br>여기서 커버되지 않은 더 자세한 내용은 언제나 그렇듯 공식문서 참조가 필요하다.<br>(공식문서: <a href="https://pygsheets.readthedocs.io/en/stable/" target="_blank" rel="noopener">https://pygsheets.readthedocs.io/en/stable/</a>)<br><a id="more"></a></p>
+<h2 id="1-Install-Package-패키지-설치하기"><a href="#1-Install-Package-패키지-설치하기" class="headerlink" title="1. Install Package 패키지 설치하기"></a><strong>1. Install Package 패키지 설치하기</strong></h2><p>운영체제에 따라 아래와 같이 패키지를 설치한다.</p>
+<ul>
+<li>mac<ul>
+<li><code>$ pip install pygsheets oauth2client</code> (구글 API 인증을 위한 oauth2client도 함께 설치)</li>
+</ul>
+</li>
+<li>windows<ul>
+<li><code>$ conda install -c marta-sd pygsheets</code></li>
+<li>아래와 같은 에러가 발생하면 pip로 설치<ul>
+<li>에러 메세지: <code>TypeError: parse() got an unexpected keyword argument &#39;transport_encoding&#39;</code></li>
+<li>pip 설치 명령어<ul>
+<li><code>$ conda install pip</code></li>
+<li><code>$ pip install pygsheets</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-구글-API-셋업-amp-인증"><a href="#2-구글-API-셋업-amp-인증" class="headerlink" title="2. 구글 API 셋업 &amp; 인증"></a><strong>2. 구글 API 셋업 &amp; 인증</strong></h2><p>파이썬으로 구글 드라이브와 구글스프레드시트에 접근하기 위해서는 아래와 같이 구글 API 셋업과 인증이 필요하다.</p>
+<h3 id="2-1-OAuth"><a href="#2-1-OAuth" class="headerlink" title="2.1 OAuth"></a>2.1 OAuth</h3><ul>
+<li>2006년에 IETF(Internet Engineering Task Force) OAuth Working Group에서 개발되고 유지보수 되는 인증을 위한 표준 프로토콜</li>
+<li>공식 문서: <a href="https://oauth.net/2/" target="_blank" rel="noopener">https://oauth.net/2/</a></li>
+<li><a href="https://confluence.atlassian.com/bitbucket/oauth-endpoint-300220600.html" target="_blank" rel="noopener">https://confluence.atlassian.com/bitbucket/oauth-endpoint-300220600.html</a></li>
+</ul>
+<h3 id="2-2-API-인증-Authorizing-방법"><a href="#2-2-API-인증-Authorizing-방법" class="headerlink" title="2.2 API 인증(Authorizing) 방법"></a>2.2 API 인증(Authorizing) 방법</h3><ul>
+<li>참고 자료: <a href="http://pygsheets.readthedocs.io/en/latest/authorizing.html" target="_blank" rel="noopener">http://pygsheets.readthedocs.io/en/latest/authorizing.html</a></li>
+<li>설정 방법<ol>
+<li>구글 개발자 콘솔에 접속 - <a href="https://console.developers.google.com" target="_blank" rel="noopener">https://console.developers.google.com</a></li>
+<li>왼쪽 상단의 프로젝트 만들기로 프로젝트 생성<img src="/2020/04/18/python_18_pygsheets/001.png"></li>
+<li>좌측의 <code>라이브러리</code> 탭에서 Google Sheets API, Google Drive API를 추가 (<code>사용 설정</code> 클릭)</li>
+<li>좌측의 <code>사용자 인증 정보</code>탭으로 이동 → OAuth 동의 화면 구성하기 → 정보 입력 후 저장 (애플리케이션 이름만 넣어도 됨)</li>
+<li><code>사용자 인증 정보</code>탭 → 사용자 인증정보 만들기 → OAuth 클라이언트 ID </li>
+<li>기타 선택 → 이름 설정후 확인 클릭</li>
+<li>OAuth 클라이언트 생성됨 → OAuth 2.0 클라이언트 ID 항목에서 우측 다운로드 버튼 클릭 (json 확장자의 키 파일 다운로드)<img src="/2020/04/18/python_18_pygsheets/002.png"></li>
+<li>다운로드 받은 파일을 노트북파일(.ipynb)과 같은 디렉토리에 위치하도록 파일을 이동 및 파일이름을 “client_secret.json”으로 변경 &lt;/br&gt;(각자 사용하기 편리한 경로와 파일명으로 설정)</li>
+</ol>
+</li>
+</ul>
+<script src="https://gist.github.com/hyeshinoh/496b86e7e369d4b9b2223f44956d49b3.js"></script>
+
+
+<h2 id="3-Handling-Sheets"><a href="#3-Handling-Sheets" class="headerlink" title="3. Handling Sheets"></a><strong>3. Handling Sheets</strong></h2><p>먼저 시트를 열고, 복사하고, 선택하고, 지우는 방법부터 다뤄보자.<br>다음과 같은 테스트용 구글스프레트시트 <code>people</code>(파일명)을 만들어 pygsheets 실습을 진행해보겠다.<br><img src="/2020/04/18/python_18_pygsheets/004.png"></p>
+<h3 id="3-1-Open-file-sheet"><a href="#3-1-Open-file-sheet" class="headerlink" title="3.1 Open file/sheet"></a>3.1 Open file/sheet</h3><ul>
+<li>구글 드라이브 내의 스프레드시트 파일명으로 오픈</li>
+<li>파일 접근<ul>
+<li><code>open</code> 함수 이용</li>
+<li>파라미터: 구글 드라이브 내의 스프레드시트 파일명</li>
+</ul>
+</li>
+<li>시트 접근<ul>
+<li>시트 오브젝트에 대해 <code>.sheet1</code> 으로 첫번째 시트를 가져올수 있음</li>
+<li>처음에 항상 sheet1을 가져오고 다른 시트는 selecting 기능으로 선택함</li>
+</ul>
+</li>
+</ul>
+<script src="https://gist.github.com/hyeshinoh/770b80f4606118681b9ec3eb28e00ac7.js"></script>
+
+<h3 id="3-2-Create-Sheet-시트-생성"><a href="#3-2-Create-Sheet-시트-생성" class="headerlink" title="3.2 Create Sheet (시트 생성)"></a>3.2 Create Sheet (시트 생성)</h3><p>현재 시트가 하나 뿐인 people 파일에 새로운 시트 “new_sheet”를 추가할 수 있다.</p>
+<ul>
+<li><code>add_worksheet</code> 함수 이용</li>
+<li>파라미터: 생성할 시트이름, 행과 열의 크기</li>
+</ul>
+<script src="https://gist.github.com/hyeshinoh/82b5b2b20fac361961e4c78516fb6f58.js"></script>
+
+<p><code>new_sheet</code> 시트가 생겼다!<br><img src="/2020/04/18/python_18_pygsheets/005.png"></p>
+<h3 id="3-3-Copy-Sheet-시트-복사"><a href="#3-3-Copy-Sheet-시트-복사" class="headerlink" title="3.3 Copy Sheet (시트 복사)"></a>3.3 Copy Sheet (시트 복사)</h3><p>기존의 시트를 복사해 새로운 시트를 만들 수 있다.</p>
+<ul>
+<li><code>add_worksheet</code> 함수 이용</li>
+<li>파라미터: <code>src_worksheet</code>=복사할 시트 객체</li>
+</ul>
+<script src="https://gist.github.com/hyeshinoh/92ab541d8e6162cab260b45f2d46639a.js"></script>
+
+<p><code>copied</code> 시트가 생겼다!<br><img src="/2020/04/18/python_18_pygsheets/006.png"></p>
+<h3 id="3-4-Select-Sheet-시트-선택"><a href="#3-4-Select-Sheet-시트-선택" class="headerlink" title="3.4 Select Sheet (시트 선택)"></a>3.4 Select Sheet (시트 선택)</h3><p>하나의 파일에 여러 개의 시트가 존재할 때 시트의 리스트를 확인하고, 원하는 시트를 선택하는 방법을 알아보자.</p>
+<ul>
+<li>전체 시트의 객체에서 원하는 시트 객체를 선택</li>
+<li>제목과 순서에 대한 값으로 시트를 선택 가능</li>
+</ul>
+<script src="https://gist.github.com/hyeshinoh/c81d4269145091e66a2eb8a261f2688f.js"></script>
+
+<h3 id="3-5-시트-제목"><a href="#3-5-시트-제목" class="headerlink" title="3.5 시트 제목"></a>3.5 시트 제목</h3><script src="https://gist.github.com/hyeshinoh/7286c4686718ac5eb745c5bcea940c95.js"></script>
+
+<h3 id="3-6-시트-삭제"><a href="#3-6-시트-삭제" class="headerlink" title="3.6 시트 삭제"></a>3.6 시트 삭제</h3><script src="https://gist.github.com/hyeshinoh/926fc9e1e2e18b3dd17329be667fba89.js"></script>
+
+
+<h2 id="4-Handling-Data"><a href="#4-Handling-Data" class="headerlink" title="4. Handling Data"></a><strong>4. Handling Data</strong></h2><p>이제는 좀 더 구체적으로, 시트에 들어있는 데이터를 실제로 다루는 방법을 알아보자.<br>파이썬으로 구글스프레드시트의 데이터를 읽어오고, 수정하고, 셀 서식도 지정할 수 있다.</p>
+<h3 id="4-1-데이터-가져오기"><a href="#4-1-데이터-가져오기" class="headerlink" title="4.1 데이터 가져오기"></a>4.1 데이터 가져오기</h3><h4 id="1-전체-데이터-가져오기"><a href="#1-전체-데이터-가져오기" class="headerlink" title="1) 전체 데이터 가져오기"></a>1) 전체 데이터 가져오기</h4><script src="https://gist.github.com/hyeshinoh/b874792d215c99fb7c7d4a7b2e260e85.js"></script>
+
+<h4 id="2-특정-범위-위치의-데이터-가져오기"><a href="#2-특정-범위-위치의-데이터-가져오기" class="headerlink" title="2) 특정 범위/위치의 데이터 가져오기"></a>2) 특정 범위/위치의 데이터 가져오기</h4><script src="https://gist.github.com/hyeshinoh/c09c53eca0dc2a6d52416395a6688fcb.js"></script>
+
+<h4 id="3-특정-셀-데이터-가져오기"><a href="#3-특정-셀-데이터-가져오기" class="headerlink" title="3) 특정 셀 데이터 가져오기"></a>3) 특정 셀 데이터 가져오기</h4><script src="https://gist.github.com/hyeshinoh/6851c8e2e0cf37fc727c7a0a7b74cba2.js"></script>
+
+<img src="/2020/04/18/python_18_pygsheets/007.png">
+<h3 id="4-2-문자열을-포함한-cell-찾기"><a href="#4-2-문자열을-포함한-cell-찾기" class="headerlink" title="4.2 문자열을 포함한 cell 찾기"></a>4.2 문자열을 포함한 cell 찾기</h3><script src="https://gist.github.com/hyeshinoh/c5f7c0f5d59bc2a30f196a309325b6a3.js"></script>
+
+
+<h3 id="4-3-Update-amp-Insert"><a href="#4-3-Update-amp-Insert" class="headerlink" title="4.3 Update &amp; Insert"></a>4.3 Update &amp; Insert</h3><h4 id="1-특정-범위에-데이터-업데이트"><a href="#1-특정-범위에-데이터-업데이트" class="headerlink" title="1) 특정 범위에 데이터 업데이트"></a>1) 특정 범위에 데이터 업데이트</h4><script src="https://gist.github.com/hyeshinoh/47bb3e618be715536d73a49a366882e0.js"></script>
+
+<h4 id="2-특정-셀-데이터-업데이트"><a href="#2-특정-셀-데이터-업데이트" class="headerlink" title="2) 특정 셀 데이터 업데이트"></a>2) 특정 셀 데이터 업데이트</h4><script src="https://gist.github.com/hyeshinoh/b54ca681207514fc0d28b7e9234c68f2.js"></script>
+
+<p>행/열 크기를 재설정한 모습<br><img src="/2020/04/18/python_18_pygsheets/009.png"></p>
+<h4 id="3-insert-amp-append"><a href="#3-insert-amp-append" class="headerlink" title="3) insert &amp; append"></a>3) insert &amp; append</h4><script src="https://gist.github.com/hyeshinoh/ab0206261f2c36f961c4909628e87d50.js"></script>
+
+<img src="/2020/04/18/python_18_pygsheets/010.png">
+<h3 id="4-4-셀-서식-지정"><a href="#4-4-셀-서식-지정" class="headerlink" title="4.4 셀 서식 지정"></a>4.4 셀 서식 지정</h3><p>셀에 메모를 추가하거나 셀 배경 색상, 폰트 크기 등의 텍스트 포맷 설정 등 셀 서식 지정도 가능하다.</p>
+<script src="https://gist.github.com/hyeshinoh/6d027ec40f2da38f7449e0937f978dee.js"></script>
+
+<img src="/2020/04/18/python_18_pygsheets/011.png">
+<h2 id="5-Pandas-DataFrame과의-호환"><a href="#5-Pandas-DataFrame과의-호환" class="headerlink" title="5. Pandas DataFrame과의 호환"></a><strong>5. Pandas DataFrame과의 호환</strong></h2><p>사실 구글스프레드시트에서 데이터를 불러와 실제로 분석 작업 등을 편하게 하기 위해서는 Pandas와의 호환이 가장 중요하다고 할 수 있다. 구글스프레드시트에서 DataFrame으로 가져올 수만 있다면 평소에 pandas로 하던 데이터 관련작업을 그대로 사용하면 되니까.<br>그렇다면 구글스프레드시트를 DataFrame으로 가져오는 방법, 반대로 내가 가진 DataFrame을 구글스프레드시트로 보내는 방법을 알아볼까.</p>
+<h3 id="5-1-Sheet-→-DataFrame"><a href="#5-1-Sheet-→-DataFrame" class="headerlink" title="5.1 Sheet → DataFrame"></a>5.1 Sheet → DataFrame</h3><ul>
+<li><code>get_as_df()</code> 함수 이용</li>
+</ul>
+<script src="https://gist.github.com/hyeshinoh/dba544d3001a789eebbc297fe1a9260e.js"></script>
+
+<h3 id="5-2-DataFrame-→-sheet"><a href="#5-2-DataFrame-→-sheet" class="headerlink" title="5.2 DataFrame → sheet"></a>5.2 DataFrame → sheet</h3><ul>
+<li><code>set_dataframe(DataFrame, cell_start)</code> 함수 이용</li>
+</ul>
+<h4 id="1-csv-파일을-불러와서-구글스프레드시트로-보내기"><a href="#1-csv-파일을-불러와서-구글스프레드시트로-보내기" class="headerlink" title="1) csv 파일을 불러와서 구글스프레드시트로 보내기"></a>1) csv 파일을 불러와서 구글스프레드시트로 보내기</h4><script src="https://gist.github.com/hyeshinoh/a82397e07af236c16be9b6bea080fb00.js"></script>
+
+<img src="/2020/04/18/python_18_pygsheets/012.png">
+<h4 id="2-seaborn에서-iris-데이터를-가져와서-구글-스프레드시트에-넣기"><a href="#2-seaborn에서-iris-데이터를-가져와서-구글-스프레드시트에-넣기" class="headerlink" title="2) seaborn에서 iris 데이터를 가져와서 구글 스프레드시트에 넣기"></a>2) seaborn에서 iris 데이터를 가져와서 구글 스프레드시트에 넣기</h4><script src="https://gist.github.com/hyeshinoh/6f077c7846de341d4b76540c66b6ce49.js"></script>
+
+<img src="/2020/04/18/python_18_pygsheets/013.png">
+<h2 id="6-Share"><a href="#6-Share" class="headerlink" title="6. Share"></a><strong>6. Share</strong></h2><p>구글스프레드시트의 공유 권한을 추가하거나 삭제하는 것도 아래와 같이 가능하다.</p>
+<h3 id="6-1-공유-권한-추가"><a href="#6-1-공유-권한-추가" class="headerlink" title="6.1 공유 권한 추가"></a>6.1 공유 권한 추가</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># role: 'owner','writer','commenter','reader'</span></span><br><span class="line">sh.share(<span class="string">"hyeshinoh+h@gmail.com"</span>, role=<span class="string">'reader'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-공유-권한-삭제"><a href="#6-2-공유-권한-삭제" class="headerlink" title="6.2 공유 권한 삭제"></a>6.2 공유 권한 삭제</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh.remove_permission(<span class="string">"hyeshinoh+h@gmail.com"</span>)</span><br></pre></td></tr></table></figure>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/categories/Diary">Diary</a></li>
+         
+          <li><a href="/categories/DataScience/">Data Science</a></li>
+         
+          <li><a href="/categories/Life/">Life</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Install-Package-패키지-설치하기"><span class="toc-number">1.</span> <span class="toc-text">1. Install Package 패키지 설치하기</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-구글-API-셋업-amp-인증"><span class="toc-number">2.</span> <span class="toc-text">2. 구글 API 셋업 &amp; 인증</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-OAuth"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 OAuth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-API-인증-Authorizing-방법"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 API 인증(Authorizing) 방법</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Handling-Sheets"><span class="toc-number">3.</span> <span class="toc-text">3. Handling Sheets</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Open-file-sheet"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 Open file/sheet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Create-Sheet-시트-생성"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 Create Sheet (시트 생성)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Copy-Sheet-시트-복사"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 Copy Sheet (시트 복사)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-Select-Sheet-시트-선택"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 Select Sheet (시트 선택)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-시트-제목"><span class="toc-number">3.5.</span> <span class="toc-text">3.5 시트 제목</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-시트-삭제"><span class="toc-number">3.6.</span> <span class="toc-text">3.6 시트 삭제</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Handling-Data"><span class="toc-number">4.</span> <span class="toc-text">4. Handling Data</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-데이터-가져오기"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 데이터 가져오기</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-전체-데이터-가져오기"><span class="toc-number">4.1.1.</span> <span class="toc-text">1) 전체 데이터 가져오기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-특정-범위-위치의-데이터-가져오기"><span class="toc-number">4.1.2.</span> <span class="toc-text">2) 특정 범위/위치의 데이터 가져오기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-특정-셀-데이터-가져오기"><span class="toc-number">4.1.3.</span> <span class="toc-text">3) 특정 셀 데이터 가져오기</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-문자열을-포함한-cell-찾기"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 문자열을 포함한 cell 찾기</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-Update-amp-Insert"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 Update &amp; Insert</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-특정-범위에-데이터-업데이트"><span class="toc-number">4.3.1.</span> <span class="toc-text">1) 특정 범위에 데이터 업데이트</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-특정-셀-데이터-업데이트"><span class="toc-number">4.3.2.</span> <span class="toc-text">2) 특정 셀 데이터 업데이트</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-insert-amp-append"><span class="toc-number">4.3.3.</span> <span class="toc-text">3) insert &amp; append</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-셀-서식-지정"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 셀 서식 지정</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Pandas-DataFrame과의-호환"><span class="toc-number">5.</span> <span class="toc-text">5. Pandas DataFrame과의 호환</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-Sheet-→-DataFrame"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 Sheet → DataFrame</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-DataFrame-→-sheet"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 DataFrame → sheet</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-csv-파일을-불러와서-구글스프레드시트로-보내기"><span class="toc-number">5.2.1.</span> <span class="toc-text">1) csv 파일을 불러와서 구글스프레드시트로 보내기</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-seaborn에서-iris-데이터를-가져와서-구글-스프레드시트에-넣기"><span class="toc-number">5.2.2.</span> <span class="toc-text">2) seaborn에서 iris 데이터를 가져와서 구글 스프레드시트에 넣기</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Share"><span class="toc-number">6.</span> <span class="toc-text">6. Share</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-공유-권한-추가"><span class="toc-number">6.1.</span> <span class="toc-text">6.1 공유 권한 추가</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-공유-권한-삭제"><span class="toc-number">6.2.</span> <span class="toc-text">6.2 공유 권한 삭제</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&text=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&title=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&is_video=false&description=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지&body=Check out this article: https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&title=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&title=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&title=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&title=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://hyeshinoh.github.io/2020/04/18/python_18_pygsheets/&name=python 18. 파이썬으로 구글스프레드시트 다루기 - pygsheets 패키지&description=&lt;p&gt;&lt;a href=&#34;https://nbviewer.jupyter.org/github/hyeshinoh/Study_Python/blob/master/python_27_pygsheets.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jupyternotebook으로 보기&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;아마도 상당히 많은 사람들이 업무 혹은 개인 용도로 구글스프레드시트를 사용하고 있을 것이다.&lt;br&gt;구글스프레드시트는 쉽게 말해 구글 아이디만 있다면 무료로 온라인 상에서 MS Office의 Excel의 기능을 상당 부분 사용할 수 있는 매우 편리한 애플리케이션으로, 특히 자동화와 협업에 강점을 가지고 있는 툴이라고 할 수 있다.&lt;br&gt;훌륭한 편의성을 갖추고 있기 때문에 구글스프레드시트를 작은 규모의 DB로 사용하기에도 무리가 없고, pygsheets 같은 패키지를 이용하면 파이썬으로 구글스프레드시트를 컨트롤 할 수 있어 꽤나 유용하다.&lt;br&gt;그렇다면 pygsheets를 사용해서 파이썬으로 구글스프레드시트의 데이터를 다루는 방법에 대해 알아보자.&lt;br&gt;여기서 커버되지 않은 더 자세한 내용은 언제나 그렇듯 공식문서 참조가 필요하다.&lt;br&gt;(공식문서: &lt;a href=&#34;https://pygsheets.readthedocs.io/en/stable/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://pygsheets.readthedocs.io/en/stable/&lt;/a&gt;)&lt;br&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 우와팬더
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/categories/Diary">Diary</a></li>
+         
+          <li><a href="/categories/DataScience/">Data Science</a></li>
+         
+          <li><a href="/categories/Life/">Life</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
+
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-126954393-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'hyeshinoh';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+</html>
